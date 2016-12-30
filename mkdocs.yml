@@ -1,0 +1,27 @@
+site_name: DCAE Platform
+
+# http://squidfunk.github.io/mkdocs-material/
+theme: material
+
+pages:
+  - Home: 'index.md'
+  - Architecture:
+    - Technologies: 'architecture/pieces.md'
+    - Service Discovery: 'architecture/service-discovery.md'
+  - Component Developers:
+    - Overview: 'components/intro.md'
+    - Component Specification:
+      - Start here: 'components/component-specification/start-here.md'
+      - For CDAP: 'components/component-specification/cdap-specification.md'
+      - For Docker: 'components/component-specification/docker-specification.md'
+      - Common elements: 'components/component-specification/common-specification.md'
+      - Generated configuration: 'components/component-specification/generated-configuration.md'
+    - Data Formats: 'components/data-formats.md'
+    - Component Requirements:
+      - CDAP: 'components/component-type-cdap.md'
+      - Docker: 'components/component-type-docker.md'
+    - dcae-cli:
+      - Quickstart: 'components/dcae-cli/quickstart.md'
+      - Walk-through: 'components/dcae-cli/walkthrough.md'
+      - DMaaP connection objects: 'components/dcae-cli/dmaap-connection-objects.md'
+  - Glossary: 'glossary.md'
