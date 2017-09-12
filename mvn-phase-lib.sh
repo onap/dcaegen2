@@ -237,9 +237,12 @@ build_and_push_docker()
   VERSION2=$(echo "$VERSION" | cut -f1-2 -d'.')
 
   LFQI="${IMAGENAME}:${VERSION}-${TIMESTAMP}"
-  BUILD_PATH="${WORKSPACE}"
+  #BUILD_PATH="${WORKSPACE}"
   # build a docker image
-  docker build --rm -f "${WORKSPACE}"/Dockerfile -t "${LFQI}" "${BUILD_PATH}"
+  #docker build --rm -f "${WORKSPACE}"/Dockerfile -t "${LFQI}" "${BUILD_PATH}"
+  #BUILD_PATH="${WORKSPACE}"
+  # build a docker image
+  docker build --rm -f ./Dockerfile -t "${LFQI}" ./
 
   REPO=""
   if [ $MVN_DEPLOYMENT_TYPE == "SNAPSHOT" ]; then
