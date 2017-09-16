@@ -5,7 +5,7 @@ DCAEGEN2 Components Offered APIs
 
 - `Config Binding Service Swagger Yaml <https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/configbinding.git;a=blob_plain;f=config_binding_service/swagger/swagger.yaml;hb=HEAD>`_.
 
-- `Deployment Handler Swagger Yaml <https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/deployment-handler.git;a=blob_plain;f=dispatcherAPI.yaml;hb=HEAD>`_.
+- `Deployment Handler Swagger Yaml <https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/deployment-handler.git;a=blob_plain;f=deployment-handler-API.yaml;hb=HEAD>`_.
 
 - `Inventory API Swagger Yaml <https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/inventory-api.git;a=blob_plain;f=swagger_inventory.yaml;hb=HEAD>`_.
 
