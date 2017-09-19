@@ -22,7 +22,7 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.onap.dcaegen2</groupId>
-    <artifactId>dcaegen2</artifactId>
+    <artifactId>root</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <groupId>org.onap.dcaegen2</groupId>
@@ -51,6 +51,35 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
   </properties>
   <build>
     <finalName>${project.artifactId}-${project.version}</finalName>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>1.2.1</version>
+          <configuration>
+            <executable>${session.executionRootDirectory}/mvn-phase-script.sh</executable>
+            <environmentVariables>
+              <!-- make mvn properties as env for our script -->
+              <MVN_PROJECT_GROUPID>${project.parent.groupId}</MVN_PROJECT_GROUPID>
+              <MVN_PROJECT_ARTIFACTID>${project.parent.artifactId}</MVN_PROJECT_ARTIFACTID>
+              <MVN_PROJECT_VERSION>${project.version}</MVN_PROJECT_VERSION>
+              <MVN_NEXUSPROXY>${onap.nexus.url}</MVN_NEXUSPROXY>
+              <MVN_RAWREPO_BASEURL_UPLOAD>${onap.nexus.rawrepo.baseurl.upload}</MVN_RAWREPO_BASEURL_UPLOAD>
+              <MVN_RAWREPO_BASEURL_DOWNLOAD>${onap.nexus.rawrepo.baseurl.download}</MVN_RAWREPO_BASEURL_DOWNLOAD>
+              <MVN_RAWREPO_SERVERID>${onap.nexus.rawrepo.serverid}</MVN_RAWREPO_SERVERID>
+              <MVN_DOCKERREGISTRY_SNAPSHOT>${onap.nexus.dockerregistry.snapshot}</MVN_DOCKERREGISTRY_SNAPSHOT>
+              <MVN_DOCKERREGISTRY_RELEASE>${onap.nexus.dockerregistry.release}</MVN_DOCKERREGISTRY_RELEASE>
+              <MVN_DOCKERREGISTRY_SNAPSHOT_SERVERID>${onap.nexus.dockerregistry.snapshot.serverid}</MVN_DOCKERREGISTRY_SNAPSHOT_SERVERID>
+              <MVN_DOCKERREGISTRY_RELEASE_SERVERID>${onap.nexus.dockerregistry.release.serverid}</MVN_DOCKERREGISTRY_RELEASE_SERVERID>
+              <MVN_PYPISERVER_BASEURL>${onap.nexus.pypiserver.baseurl}</MVN_PYPISERVER_BASEURL>
+              <MVN_PYPISERVER_SERVERID>${onap.nexus.pypiserver.serverid}</MVN_PYPISERVER_SERVERID>
+            </environmentVariables>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
     <plugins>
       <!-- plugin>
         <artifactId>maven-assembly-plugin</artifactId>

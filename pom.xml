@@ -23,12 +23,12 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
   <parent>
     <groupId>org.onap.oparent</groupId>
     <artifactId>oparent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.1</version>
   </parent>
   <!--- CHANGE THE FOLLOWING 3 OBJECTS for your own repo -->
   <groupId>org.onap.dcaegen2</groupId>
-  <artifactId>dcaegen2</artifactId>
-  <name>dcaegen2</name>
+  <artifactId>root</artifactId>
+  <name>dcaegen2-root</name>
 
   <version>1.0.0-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
@@ -38,8 +38,22 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
   </modules>
 
   <properties>
+    <onap.nexus.url>https://nexus.onap.org</onap.nexus.url>
+    <!-- properties for Nexus raw repo -->
+    <onap.nexus.rawrepo.baseurl.upload>https://nexus.onap.org/content/sites/raw</onap.nexus.rawrepo.baseurl.upload>
+    <onap.nexus.rawrepo.baseurl.download>https://nexus.onap.org/service/local/repositories/raw/content</onap.nexus.rawrepo.baseurl.download>
+    <onap.nexus.rawrepo.serverid>ecomp-raw</onap.nexus.rawrepo.serverid>
+    <!-- properties for Nexus Docker registry -->
+    <onap.nexus.dockerregistry.snapshot>nexus3.onap.org:10003</onap.nexus.dockerregistry.snapshot>
+    <onap.nexus.dockerregistry.release>nexus3.onap.org:10002</onap.nexus.dockerregistry.release>
+    <onap.nexus.dockerregistry.snapshot.serverid>nexus3.onap.org:10003</onap.nexus.dockerregistry.snapshot.serverid>
+    <onap.nexus.dockerregistry.release.serverid>nexus3.onap.org:10002</onap.nexus.dockerregistry.release.serverid>
+    <!-- properties for Pypi server -->
+    <onap.nexus.pypiserver.baseurl>https://nexus3.onap.org/repository/PyPi</onap.nexus.pypiserver.baseurl>
+    <onap.nexus.pypiserver.serverid>onap-pypi</onap.nexus.pypiserver.serverid>
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.skip>true</sonar.skip>
+    <sonar.skip>false</sonar.skip>
     <sonar.sources>.</sonar.sources>
     <!-- customize the SONARQUBE URL -->
     <!-- sonar.host.url>http://localhost:9000</sonar.host.url -->
@@ -59,77 +73,6 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
     <finalName>${project.artifactId}-${project.version}</finalName>
     <pluginManagement>
       <plugins>
-        <!-- the following plugins are invoked from oparent, we do not need them -->
-        <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.7</version>
-          <configuration>
-            <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
-            <skip>true</skip>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <!-- This version supports the "deployAtEnd" parameter -->
-          <version>2.8</version>
-          <configuration>
-            <skip>true</skip>
-          </configuration>
-        </plugin>
-        <!-- first disable the default Java plugins at various stages -->
-        <!-- maven-resources-plugin is called during "*resource" phases by default behavior.  it prepares 
-         the resources dir.  we do not need it -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>2.6</version>
-          <configuration>
-            <skip>true</skip>
-          </configuration>
-        </plugin>
-        <!-- maven-compiler-plugin is called during "compile" phases by default behavior.  we do not need it -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.1</version>
-          <configuration>
-            <skip>true</skip>
-          </configuration>
-        </plugin>
-        <!-- maven-jar-plugin is called during "compile" phase by default behavior.  we do not need it -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>2.4</version>
-          <executions>
-            <execution>
-              <id>default-jar</id>
-              <phase/>
-            </execution>
-          </executions>
-        </plugin>
-        <!-- maven-install-plugin is called during "install" phase by default behavior.  it tries to copy stuff under 
-         target dir to ~/.m2.  we do not need it -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.4</version>
-          <configuration>
-            <skip>true</skip>
-          </configuration>
-        </plugin>
-        <!-- maven-surefire-plugin is called during "test" phase by default behavior.  it triggers junit test.
-         we do not need it -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.12.4</version>
-          <configuration>
-            <skipTests>true</skipTests>
-          </configuration>
-        </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
@@ -138,15 +81,20 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
             <executable>${session.executionRootDirectory}/mvn-phase-script.sh</executable>
             <environmentVariables>
               <!-- make mvn properties as env for our script -->
-              <MVN_PROJECT_GROUPID>${parent.groupId}</MVN_PROJECT_GROUPID>
-              <MVN_PROJECT_ARTIFACTID>${parent.artifactId}</MVN_PROJECT_ARTIFACTID>
-              <MVN_PROJECT_VERSION>${parent.version}</MVN_PROJECT_VERSION>
+              <!-- make mvn properties as env for our script -->
+              <MVN_PROJECT_GROUPID>${project.groupId}</MVN_PROJECT_GROUPID>
+              <MVN_PROJECT_ARTIFACTID>${project.artifactId}</MVN_PROJECT_ARTIFACTID>
+              <MVN_PROJECT_VERSION>${project.version}</MVN_PROJECT_VERSION>
               <MVN_NEXUSPROXY>${onap.nexus.url}</MVN_NEXUSPROXY>
               <MVN_RAWREPO_BASEURL_UPLOAD>${onap.nexus.rawrepo.baseurl.upload}</MVN_RAWREPO_BASEURL_UPLOAD>
               <MVN_RAWREPO_BASEURL_DOWNLOAD>${onap.nexus.rawrepo.baseurl.download}</MVN_RAWREPO_BASEURL_DOWNLOAD>
               <MVN_RAWREPO_SERVERID>${onap.nexus.rawrepo.serverid}</MVN_RAWREPO_SERVERID>
-              <MVN_DOCKERREGISTRY_DAILY>${onap.nexus.dockerregistry.daily}</MVN_DOCKERREGISTRY_DAILY>
+              <MVN_DOCKERREGISTRY_SNAPSHOT>${onap.nexus.dockerregistry.snapshot}</MVN_DOCKERREGISTRY_SNAPSHOT>
               <MVN_DOCKERREGISTRY_RELEASE>${onap.nexus.dockerregistry.release}</MVN_DOCKERREGISTRY_RELEASE>
+              <MVN_DOCKERREGISTRY_SNAPSHOT_SERVERID>${onap.nexus.dockerregistry.snapshot.serverid}</MVN_DOCKERREGISTRY_SNAPSHOT_SERVERID>
+              <MVN_DOCKERREGISTRY_RELEASE_SERVERID>${onap.nexus.dockerregistry.release.serverid}</MVN_DOCKERREGISTRY_RELEASE_SERVERID>
+              <MVN_PYPISERVER_BASEURL>${onap.nexus.pypiserver.baseurl}</MVN_PYPISERVER_BASEURL>
+              <MVN_PYPISERVER_SERVERID>${onap.nexus.pypiserver.serverid}</MVN_PYPISERVER_SERVERID>
             </environmentVariables>
           </configuration>
         </plugin>
