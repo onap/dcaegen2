@@ -27,7 +27,7 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
   </parent>
   <!--- CHANGE THE FOLLOWING 3 OBJECTS for your own repo -->
   <groupId>org.onap.dcaegen2</groupId>
-  <artifactId>root</artifactId>
+  <artifactId>dcaegen2</artifactId>
   <name>dcaegen2-root</name>
 
   <version>1.0.0-SNAPSHOT</version>
