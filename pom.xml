@@ -78,23 +78,22 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
     <pluginManagement>
       <plugins>
         <!-- the following plugins are invoked from oparent, we do not need them -->
-        <plugin>
+        <!--plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
           <version>1.6.7</version>
           <configuration>
             <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
           </configuration>
-        </plugin>
-        <plugin>
+        </plugin-->
+        <!--plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <!-- This version supports the "deployAtEnd" parameter -->
           <version>2.8</version>
           <configuration>
             <skip>true</skip>
           </configuration>
-        </plugin>
+        </plugin-->
         <!-- first disable the default Java plugins at various stages -->
         <!-- maven-resources-plugin is called during "*resource" phases by default behavior.  it prepares 
          the resources dir.  we do not need it -->
