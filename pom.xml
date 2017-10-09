@@ -97,25 +97,25 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
         <!-- first disable the default Java plugins at various stages -->
         <!-- maven-resources-plugin is called during "*resource" phases by default behavior.  it prepares 
          the resources dir.  we do not need it -->
-        <plugin>
+        <!--plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>2.6</version>
           <configuration>
             <skip>true</skip>
           </configuration>
-        </plugin>
+        </plugin-->
         <!-- maven-compiler-plugin is called during "compile" phases by default behavior.  we do not need it -->
-        <plugin>
+        <!--plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.1</version>
           <configuration>
             <skip>true</skip>
           </configuration>
-        </plugin>
+        </plugin-->
         <!-- maven-jar-plugin is called during "compile" phase by default behavior.  we do not need it -->
-        <plugin>
+        <!--plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>2.4</version>
@@ -125,27 +125,27 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
               <phase/>
             </execution>
           </executions>
-        </plugin>
+        </plugin-->
         <!-- maven-install-plugin is called during "install" phase by default behavior.  it tries to copy stuff under 
          target dir to ~/.m2.  we do not need it -->
-        <plugin>
+        <!--plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.4</version>
           <configuration>
             <skip>true</skip>
           </configuration>
-        </plugin>
+        </plugin-->
         <!-- maven-surefire-plugin is called during "test" phase by default behavior.  it triggers junit test.
          we do not need it -->
-        <plugin>
+        <!--plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.12.4</version>
           <configuration>
             <skipTests>true</skipTests>
           </configuration>
-        </plugin>
+        </plugin-->
 
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
