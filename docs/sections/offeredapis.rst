@@ -1,26 +1,12 @@
-.. This work is licensed under a Creative Commons Attribution 4.0 International License.
-.. http://creativecommons.org/licenses/by/4.0
-
-Offered APIs
-============
-
-.. note::
-   * This section is used to describe the external interfaces offered by a software component
-   
-   * This section is typically: provided for a  platform-component and sdk; and 
-     referenced in developer guides and api reference manuals.
-   
-   * This note must be removed after content has been added.
-
-
-
-Here are several examples:
+DCAEGEN2 Components Offered APIs
+==================================
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
 
-   apiexample/swaggerv2doc.rst
-   apiexample/swagger2markup.rst
-   apiexample/worddoc2rst.rst
-   apiexample/httpdomain.rst
+   apis/cdapbroker.rst
+   apis/config_binding.rst
+   apis/deploymenthandler.rst
+   apis/inventory_api.rst
+   apis/ves.rst

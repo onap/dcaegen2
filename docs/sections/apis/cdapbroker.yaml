@@ -1,0 +1,418 @@
+# Example YAML to get you started quickly.
+# Be aware that YAML has indentation based scoping.
+# Code completion support is available so start typing for available options.
+swagger: '2.0'
+
+# This is your document metadata
+info:
+  version: "4.0.10"
+  title: CDAP Broker API
+
+paths:
+  /:
+    get:
+      description: shows some information about this service
+      responses:
+        200:
+          description: successful response
+          schema:
+            $ref: '#/definitions/info'
+            
+  /application:
+    get:
+      description: get all applications registered with this broker
+      responses:
+        200:
+          description: successful response
+          schema: 
+            type: array
+            items: 
+              $ref: '#/definitions/appname'
+  
+  /application/delete:
+    post:
+      description: endpoint to delete multiple applications at once. Returns an array of status codes, where statuscode[i] = response returned from DELETE(application/i)
+      parameters:
+        - name: postbody 
+          in: body
+          description: required post body
+          required: true
+          schema:
+            $ref: '#/definitions/multideleteput'
+      responses:
+        200:
+          description: successful response
+          schema: 
+            type: array
+            items: 
+              $ref: '#/definitions/returncode'
+  
+  /application/{appname}:
+    parameters:
+      - name: appname
+        in: path
+        description: Name of the application. 
+        required: true
+        type: string
+        format: text
+          
+    get:
+      description: Returns the representation of the application resource, including the links for healthcheck and metrics.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Application'
+        404:
+          description: no app with name 'appname' registered with this broker.
+            
+    put:
+      description: Register an app for service and configuration discovery. This will light up a metrics and health endpoint for this app. `appname` is assumed to also be the key in  consul.
+      consumes:
+        - application/json 
+      produces:
+        - application/json
+      parameters:
+        - name: putbody 
+          in: body
+          description: required put body
+          required: true
+          schema:
+            $ref: '#/definitions/appput'
+      
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Application'
+        400: 
+          description: put was performed but the appname was already registered with the broker, or Invalid PUT body
+        
+  
+    delete:
+      description: Remove an app for service and configuration discovery. This will remove the metrics and health endpoints for this app.
+      responses:
+        200:
+          description: Successful response
+        404:
+          description: no app with name 'appname' registered with this broker. 
+        
+  /application*/{appname}:
+    parameters:
+      - name: appname
+        in: path
+        description: Name of the application. 
+        required: true
+        type: string
+        format: text
+          
+    put:
+      description: (This is a hacky way of supporting "oneOf" because Swagger does not support oneOf https://github.com/OAI/OpenAPI-Specification/issues/333. This is the same endpoint as PUT /application/appname, except the PUT body is different.)
+        
+      
+        Register a hydrator app for service and configuration discovery. This will light up a metrics and health endpoint for this app. `appname` is assumed to also be the key in  consul.
+      consumes:
+        - application/json 
+      produces:
+        - application/json
+      parameters:
+        - name: putbody 
+          in: body
+          description: required put body
+          required: true
+          schema:
+            $ref: '#/definitions/hydratorappput'
+      
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Application'
+        400: 
+          description: put was performed but the appname was already registered with the broker, or Invalid PUT body
+        
+  
+  /application/{appname}/metrics:
+    get:
+      # This is array of GET operation parameters:
+      description: Get live (real-time) app specific metrics for the running app appname. Metrics are customized per each app by the component developer
+      parameters:
+        # An example parameter that is in query and is required
+        - name: appname
+          in: path
+          description: Name of the application to get metrics for. 
+          required: true
+          type: string
+          format: test
+          
+      # Expected responses for this operation:
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/MetricsObject'
+        404:
+          description: no app with name 'appname' registered with this broker. 
+              
+  /application/{appname}/healthcheck:
+    get:
+      # This is array of GET operation parameters:
+      description: Perform a healthcheck on the running app appname. 
+      parameters:
+        # An example parameter that is in query and is required
+        - name: appname
+          in: path
+          description: Name of the application to get the healthcheck for.
+          required: true
+          type: string
+          format: test
+          
+      # Expected responses for this operation:
+      responses:
+        # Response code
+        200:
+          description: Successful response, healthcheck pass
+        404:
+          description: no app with name 'appname' registered with this broker, or the healthcheck has failed (though I would like to disambiguiate from the first case, CDAP returns a 404 for this). 
+  
+  /application/{appname}/reconfigure:
+    parameters:
+      - name: appname
+        in: path
+        description: Name of the application. 
+        required: true
+        type: string
+        format: text
+    put:
+      description: Reconfigures the application. 
+      parameters:
+        - name: putbody 
+          in: body
+          description: required put body
+          required: true
+          schema:
+            $ref: '#/definitions/reconfigput'
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request. Can happen with 1)  {appname} is not registered with the broker, 2) the required PUT body is wrong, or 3) the smart interface was chosen and none of the config keys match anything in app_config or app_preferences
+          
+definitions:
+  MetricsObject:
+    type: object
+    description: key,value object where the key is 'appmetrics' and the value is an app dependent json and specified by the component developer
+    properties:
+      appmetrics:
+        type: object
+        
+  Application:
+    type: object
+    properties:
+      appname:
+        description: application name
+        type: string
+      healthcheckurl:
+        description: fully qualified url to perform healthcheck
+        type: string
+      metricsurl:
+        description: fully qualified url to get metrics from
+        type: string
+      url:
+        description: fully qualified url of the resource
+        type: string
+      connectionurl:
+        description: input URL that you can POST data into (URL of the CDAP stream)
+        type: string
+      serviceendpoints:
+        description: a list of HTTP services exposed by this CDAP application
+        type: array
+        items:
+          $ref: '#/definitions/service_method'
+         
+  reconfigput:
+    type: object
+    properties:
+      reconfiguration_type:
+        description: the type of reconfiguration
+        type: string
+        enum: ["program-flowlet-app-config", "program-flowlet-app-preferences", "program-flowlet-smart"]
+      config:
+        description: the config JSON
+        type: object
+    required: ["reconfiguration_type", "config"]
+  
+  multideleteput:
+    type: object
+    properties:
+      appnames:
+        type: array
+        items: 
+          $ref: '#/definitions/appname'
+  
+  appname:
+    description: an application name
+    type: string
+  
+  hydratorappput:
+    type: object
+    properties:
+      cdap_application_type:
+        description: denotes whether this is a program-flowlet style application or a hydrator pipeline. For hydrator, this value must be "hydrator-pipeline"
+        type: string
+        enum: ["hydrator-pipeline"]
+      namespace:
+        description: the cdap namespace this is deployed into
+        type: string
+      pipeline_config_json_url:
+        description: the URL of the config.json for this pipeline
+        type: string
+      streamname:
+        description: name of the CDAP stream to ingest data into this app. Should come from the developer and Tosca model.
+        type: string
+      dependencies:
+        description: represents a list of dependencies to be loaded for this pipeline. Not required. 
+        type: array
+        items:
+          $ref: '#/definitions/hydratordep'
+    required: ["cdap_application_type", "namespace", "pipeline_config_json_url", "streamname"]
+        
+  appput:
+    type: object
+    properties:
+      cdap_application_type:
+        description: denotes whether this is a program-flowlet style application or a hydrator pipeline. For program-flowlet style apps, this value must be "program-flowlet"
+        type: string
+        enum: ["program-flowlet"]
+      streamname:
+        description: name of the CDAP stream to ingest data into this app. Should come from the developer and Tosca model.
+        type: string
+      namespace:
+        description: the cdap namespace this is deployed into
+        type: string
+      jar_url:
+        description: the URL that the JAR you're deploying resides
+        type: string
+      artifact_name: 
+        description: the name of the CDAP artifact to be added
+        type: string
+      artifact_ver: 
+        description: the version of the artifact. Must be in X.Y.Z form
+      app_config:
+        description: the application config JSON
+        type: object
+      app_preferences:
+        description: the application preferences JSON
+        type: object
+      programs:
+        type: array
+        items:
+          $ref: '#/definitions/programs'
+      program_preferences:
+        type: array
+        items:
+          $ref: '#/definitions/programpref'
+      services:
+        type: array
+        items: 
+          $ref: '#/definitions/service_endpoint'
+  
+  service_endpoint:
+    description: descirbes a service endpoint, including the service name, the method name, and the method type (GET, PUT, etc, most of the time will be GET)
+    type: object
+    properties:
+      service_name:
+        type: string
+        description: the name of the service
+      service_endpoint:
+        type: string
+        description: the name of the endpoint on the service
+      endpoint_method:
+        type: string
+        description: GET, POST, PUT, etc
+  
+  service_method:
+    description: a URL and HTTP method exposed via a CDAP service
+    type: object
+    properties:
+      url: 
+        type: string
+        description: the fully qualified URL in CDAP for this service 
+      method:
+        type: string
+        description: HTTP method you can perform on the URL, e.g., GET, PUT, etc
+  
+  programs:
+    description: the list of programs in this CDAP app
+    type: object
+    properties:
+      program_type:
+        description: must be one of flows, mapreduce, schedules, spark, workflows, workers, or services
+        type: string
+      program_id: 
+        description: the name of the program
+        type: string
+  
+  returncode:
+    description: an httpreturncode
+    type: integer
+  
+  hydratordep:
+    description: represents a hydrator pipeline dependency. An equivelent to the following CURLs are formed with the below four params shown in CAPS "curl -v -w"\n" -X POST http://cdapurl:11015/v3/namespaces/setelsewhere/artifacts/ARTIFACT_NAME -H "Artifact-Extends:ARTIFACT_EXTENDS_HEADER"  -H “Artifact-Version:ARTIFACT_VERSION_HEADER” --data-binary @(DOWNLOADED FROM ARTIFACT_URL)","curl -v -w"\n" -X PUT http://cdapurl:11015/v3/namespaces/setelsewhere/artifacts/ARTIFACT_NAME/versions/ARTIFACT_VERSION_HEADER/properties -d (DOWNLOADED FROM UI_PROPERTIES_URL)"
+    properties:
+      artifact_extends_header: 
+        description: the value of the header that gets passed in for artifact-extends, e.g., "Artifact-Extends:system:cdap-data-pipeline[4.0.1,5.0.0)"
+        type: string
+      artifact_name: 
+        description: the name of the artifact
+        type: string
+      artifact_version_header :
+        description: the value of the header that gets passed in for artifact-version, e.g., "Artifact-Version:1.0.0-SNAPSHOT"
+        type: string
+      artifact_url:
+        description: the URL of the artifact JAR
+        type: string
+      ui_properties_url:
+        description: the URL of the properties.json if the custom artifact has UI properties. This is optional. 
+        type: string
+    required: ["artifact_extends_header", "artifact_name", "artifact_version_header", "artifact_url"]
+        
+  programpref:
+    description: the list of programs in this CDAP app
+    type: object
+    properties:
+      program_type:
+        description: must be one of flows, mapreduce, schedules, spark, workflows, workers, or services
+        type: string
+      program_id: 
+        description: the name of the program
+        type: string
+      program_pref:
+        description: the preference JSON to set for this program
+        type: object
+  
+  info:
+    description: some broker information
+    type: object
+    properties:
+      managed cdap url: 
+        description: the url of the CDAP cluster API this broker is managing
+        type: string
+      number of applications registered:
+        type: integer
+      uptime (s):
+        type: integer
+      cdap GUI port:
+        type: integer
+        description: The GUI port of the CDAP cluster this broker is managing. Mostly to help users of this API check their application in cdap. Note, will return UNKNOWN_CDAP_VERSION if it cannot be determined. 
+      cdap cluster version: 
+        type: string
+        description: the version of the CDAP cluster this broker is managing. Note, will return UKNOWN_CDAP_VERSION if it cannot be determined. 
+      broker API version:
+        type: string
+        description: the API version of this running broker
+        
+
+ 
+  
+      

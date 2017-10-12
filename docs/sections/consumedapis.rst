@@ -13,4 +13,9 @@ Consumed APIs
 
    * This note must be removed after content has been added.
 
+DCAEGEN2 Components making following API calls into other ONAP components.
 
+DMaaP Message Router
+Policy
+SDC
+A&AI

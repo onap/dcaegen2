@@ -1,0 +1,33 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Config Binding Service"
+paths:
+  /service_component/{service_component_name}:
+    parameters:
+      - name: "service_component_name"
+        in: "path"
+        description: "Service Component Name. service_component_name and  service_component_name:rels must be keys in consul."
+        required: true
+        type: "string"
+    get:
+      description: "Binds the configuration for service_component_name and returns the bound configuration as a JSON"
+      operationId: "config_binding_service.controller.bind_config_for_scn"
+      responses:
+        200:
+          description: OK; the bound config is returned as an object
+          schema: 
+            type: object
+        404:
+          description: there is no configuration in Consul for this component
+  /healthcheck:
+    get:
+      description: "This is the  health check endpoint. If this returns a 200, the server is alive and consul can be reached. If not a 200, either dead, or no connection to consul"
+      operationId: "config_binding_service.controller.healthcheck"
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+        503:
+          description: the config binding service cannot reach Consul
