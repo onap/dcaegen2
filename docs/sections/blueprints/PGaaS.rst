@@ -1,10 +1,12 @@
-= PostgreSQL as a Service
+PostgreSQL as a Service
+============
 
 PostgreSQL as a Service comes in two flavors: all-in-one blueprint, and
 separate disk/cluster/database blueprints to separate the management of
 the lifetime of those constituent parts. Both are provided for use.
 
-== Why Two Flavors?
+Why Two Flavors?
+------------
 
 The reason there are two flavors of blueprints lays in the difference in
 lifetime management of the constituent parts.
