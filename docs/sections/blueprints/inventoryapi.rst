@@ -1,4 +1,4 @@
-My BluePrint Name
+Inventory API
 ======================
 
 Overview of my blueprint and the part it plays in DCAE.

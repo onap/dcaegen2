@@ -11,6 +11,19 @@ and details for how to configure them.
    :maxdepth: 1
    :titlesonly:
 
+   ./blueprints/centos_vm.rst
+   ./blueprints/consul.rst
+   ./blueprints/DockerHost.rst
+   ./blueprints/cdap.rst
+   ./blueprints/cbs.rst
+   ./blueprints/cdapbroker.rst
+   ./blueprints/deploymenthandler.rst
+   ./blueprints/servicechangehandler.rst
+   ./blueprints/inventoryapi.rst
+   ./blueprints/policyhandler.rst
    ./blueprints/PGaaS.rst
+   ./blueprints/ves.rst
+   ./blueprints/tca.rst
+   ./blueprints/holmes.rst
 
 
