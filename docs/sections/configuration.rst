@@ -9,6 +9,7 @@ and details for how to configure them.
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
 
    ./blueprints/PGaaS.rst
 
