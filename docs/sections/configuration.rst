@@ -4,24 +4,12 @@
 Configuration
 =============
 
-.. note::
-   * This section is used to describe the options a software component offers for configuration.
+DACEGEN2 platform deploys its components via Cloudify Blueprints. Below is the list of Blueprints included in ONAP DCAEGEN2
+and details for how to configure them.
 
-   * Configuration is typically: provided for platform-component and sdk projects;
-     and referenced in developer and user guides.
-   
-   * This note must be removed after content has been added.
+.. toctree::
+   :maxdepth: 1
+
+   ./blueprints/PGaaS.rst
 
 
-
-Example ...
-
-You can provide the following in ``basic.conf``
-
-``host=ADDRESS``
-  The address of the host
-
-``port=PORT``
-  The port used for signaling
-
-  Optional. Default: ``8080``
