@@ -112,8 +112,8 @@ This blueprint has the following required input parameters:
   ``instconsulagentub16.sh`` These scripts are part of the
   dcaegen2.deployments ONAP project.  This blueprint assumes that curl/wget
   can find these scripts at
-  *codesource_url/codesource_version*\ ``/raw/cloud_init/cdap-init.sh`` and
-  *codesource_url/codesource_version*\ ``/raw/cloud_init/instconsulagentub16.sh``
+  *codesource_url/codesource_version*\ ``/cloud_init/cdap-init.sh`` and
+  *codesource_url/codesource_version*\ ``/cloud_init/instconsulagentub16.sh``
   respectively.  For example, if codesource_url is
   ``https://mymirror.example.com`` and codesource_version is ``rel1.0``,
   then the installation scripts would be expected to be stored under
