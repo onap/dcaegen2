@@ -23,8 +23,11 @@ lifetime. When the application is undeployed, the associated database should
 be deployed too. OR, the database should have a lifetime beyond the scope
 of the applications that are writing to it or reading from it.
 
-The Blueprints for PG Services and Cinder
+Blueprint Files
 ------------
+
+The Blueprints for PG Services and Cinder
+^^^^^^^^^^^
 
 The all-in-one blueprint PGaaS.yaml assumes that the PG servers and Cinder volumes can be allocated and
 deallocated together. This PGaaS.yaml blueprint creates a cluster named "pstg" by default.
@@ -35,7 +38,7 @@ PGaaS-disk.yaml, and then use PGaaS-cluster.yaml to create the cluster. The PG c
 redeployed without affecting the data on the Cinder volumes.
 
 The Blueprints for Databases
-------------
+^^^^^^^^^^^
 
 The PGaaS-database.yaml blueprint shows how a database can be created separately from any application
 that uses it. That database will remain present until the PGaaS-database.yaml blueprint is
@@ -45,3 +48,102 @@ needed to access a given database on a given PostgreSQL cluster.
 If the lifetime of your database is tied to the lifetime of your application, use a block similar to what
 is in PGaaS-database.yaml to allocate the database, and use the attributes as shown in PGaaS-getdbinfo.yaml
 to access the credentials.
+
+
+What is Created by the Blueprints
+^^^^^^^^^^^^
+
+Each PostgreSQL cluster has a name, represented below as ``${CLUSTER}`` or ``CLNAME``. Each cluster is created
+with two VMs, one VM used for the writable master and the other as a cascaded read-only secondary. 
+
+
+There are two DNS A records added, ``${LOCATIONPREFIX}${CLUSTER}00.${LOCATIONDOMAIN}`` and
+``${LOCATIONPREFIX}${CLUSTER}01.${LOCATIONDOMAIN}``. In addition, 
+there are two CNAME entries added:
+``${LOCATIONPREFIX}-${CLUSTER}-write.${LOCATIONDOMAIN} ``
+and 
+``${LOCATIONPREFIX}-${CLUSTER}.${LOCATIONDOMAIN}``. The CNAME 
+``${LOCATIONPREFIX}-${CLUSTER}-write.${LOCATIONDOMAIN}`` will be used by further
+blueprints to create and attach to databases.
+
+
+Parameters
+------------
+
+The blueprints are designed to run using the standard inputs file used for all of the blueprints,
+plus several additional parameters that are given reasonable defaults.
+
+How to Run
+------------
+
+
+
+To install the PostgreSQL as a Service
+^^^^^^^^^^^^
+
+Installing the all-in-one blueprint is straightforward:
+
+::
+
+    cfy install -p pgaas.yaml -i inputs.yaml
+
+By default, the all-in-one blueprint creates a cluster by the name ``pstg``.
+
+You can override that name using another ``-i`` option. 
+(When overriding the defaults, it is also best to explicitly
+set the -b and -d names.)
+
+::
+    cfy install -p pgaas.yaml -b pgaas-CLNAME -d pgaas-CLNAME -i inputs.yaml -i pgaas_cluster_name=CLNAME
+
+
+Separating out the disk allocation from the service creation requires using two blueprints:
+
+::
+    cfy install -p pgaas-disk.yaml -i inputs.yaml
+    cfy install -p pgaas-cluster.yaml -i inputs.yaml
+
+By default, these blueprints create a cluster named ``pgcl``, which can be overridden the same 
+way as shown above:
+
+::
+    cfy install -p pgaas-disk.yaml -b pgaas-disk-CLNAME -d pgaas-disk-CLNAME -i inputs.yaml -i pgaas_cluster_name=CLNAME
+    cfy install -p pgaas-cluster.yaml -b pgaas-disk-CLNAME -d pgaas-disk-CLNAME -i inputs.yaml -i pgaas_cluster_name=CLNAME
+
+
+You must use the same pgaas_cluster_name for the two blueprints to work together.
+
+For the disk, you can also specify a ``cinder_volume_size``, as in ``-i cinder_volume_size=1000`` 
+for  1TiB volume. (There is no need to override the ``-b`` and ``-d`` names when changing the
+volume size.)
+
+
+You can verify that the cluster is up and running by connecting to the PostgreSQL service
+on port 5432:
+
+::
+    telnet ${LOCATIONPREFIX}-${CLUSTER}-write.${LOCATIONDOMAIN} 5432
+
+Once you have the cluster created, you can then allocate databases. An application that
+wants a persistent database not tied to the lifetime of the application blueprint can
+use the ``pgaas-database.yaml`` blueprint to create the database;
+
+::
+    cfy install -p pgaas-database.yaml -i inputs.yaml
+
+By default, the ``pgaas-database.yaml`` blueprint creates a database with the name ``sample``, which
+can be overridden using ``database_name``. 
+
+
+::
+    cfy install -p pgaas-database.yaml -b pgaas-database-DBNAME -d pgaas-database-DBNAME -i inputs.yaml -i database_name=DBNAME
+    cfy install -p pgaas-database.yaml -b pgaas-database-CLNAME-DBNAME -d pgaas-database-CLNAME-DBNAME -i inputs.yaml -i pgaas_cluster_name=CLNAME -i database_name=DBNAME
+
+
+The ``pgaas-getdbinfo.yaml`` blueprint shows how an application can attach to an existing
+database and access its attributes:
+
+::
+    cfy install -p pgaas-getdbinfo.yaml -d pgaas-getdbinfo -b pgaas-getdbinfo -i inputs.yaml
+    cfy deployments outputs -d pgaas-getdbinfo
+    cfy uninstall -d pgaas-getdbinfo
