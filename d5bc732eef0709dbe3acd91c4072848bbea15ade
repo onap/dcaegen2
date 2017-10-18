@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_23641e21",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 19
+      },
+      "writtenOn": "2017-10-18T19:59:38Z",
+      "side": 1,
+      "message": "The vfc example was 1 of several examples used to illustrate how to document APIs.\n\nI believe these examples were copied with the templates into DCAE.   All but the DCAE example should be removed and if the DCAE example is going maintained in DCAE we will add just a cross reference to somewhere is docs/templates description and refer to it here.",
+      "range": {
+        "startLine": 7,
+        "startChar": 36,
+        "endLine": 7,
+        "endChar": 50
+      },
+      "revId": "d5bc732eef0709dbe3acd91c4072848bbea15ade",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
