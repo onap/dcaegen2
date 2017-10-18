@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_58fcb53e",
+        "filename": "docs/sections/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-10-18T13:52:05Z",
+      "side": 1,
+      "message": "need to remove the note",
+      "revId": "9c2af32159138ab05658462c5637b3065049f59f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
