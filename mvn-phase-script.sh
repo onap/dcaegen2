@@ -76,7 +76,7 @@ deploy)
     virtualenv ./venv-doc
     source ./venv-doc/bin/activate
     pip install --upgrade pip
-    pip install --upgrade mkdocs mkdocs-material
+    pip install --upgrade 'mkdocs==0.16.3' mkdocs-material
     pip freeze
 
     mkdocs build
