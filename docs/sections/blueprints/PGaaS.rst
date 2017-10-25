@@ -119,10 +119,15 @@ volume size.)
 
 
 You can verify that the cluster is up and running by connecting to the PostgreSQL service
-on port 5432:
+on port 5432. To verify that all of the DNS names were created properly and that PostgreSQL is
+answering on port 5432, you can use something like this:
 
 ::
-    telnet ${LOCATIONPREFIX}-${CLUSTER}-write.${LOCATIONDOMAIN} 5432
+    sleep 1 | nc -v ${LOCATIONPREFIX}${CLUSTER}00.${LOCATIONDOMAIN} 5432
+    sleep 1 | nc -v ${LOCATIONPREFIX}${CLUSTER}01.${LOCATIONDOMAIN} 5432
+    sleep 1 | nc -v ${LOCATIONPREFIX}-${CLUSTER}-write.${LOCATIONDOMAIN} 5432
+    sleep 1 | nc -v ${LOCATIONPREFIX}-${CLUSTER}.${LOCATIONDOMAIN} 5432
+
 
 Once you have the cluster created, you can then allocate databases. An application that
 wants a persistent database not tied to the lifetime of the application blueprint can
