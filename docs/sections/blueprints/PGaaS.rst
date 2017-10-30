@@ -94,12 +94,14 @@ You can override that name using another ``-i`` option.
 set the -b and -d names.)
 
 ::
+
     cfy install -p pgaas.yaml -b pgaas-CLNAME -d pgaas-CLNAME -i inputs.yaml -i pgaas_cluster_name=CLNAME
 
 
 Separating out the disk allocation from the service creation requires using two blueprints:
 
 ::
+
     cfy install -p pgaas-disk.yaml -i inputs.yaml
     cfy install -p pgaas-cluster.yaml -i inputs.yaml
 
@@ -107,6 +109,7 @@ By default, these blueprints create a cluster named ``pgcl``, which can be overr
 way as shown above:
 
 ::
+
     cfy install -p pgaas-disk.yaml -b pgaas-disk-CLNAME -d pgaas-disk-CLNAME -i inputs.yaml -i pgaas_cluster_name=CLNAME
     cfy install -p pgaas-cluster.yaml -b pgaas-disk-CLNAME -d pgaas-disk-CLNAME -i inputs.yaml -i pgaas_cluster_name=CLNAME
 
@@ -123,6 +126,7 @@ on port 5432. To verify that all of the DNS names were created properly and that
 answering on port 5432, you can use something like this:
 
 ::
+
     sleep 1 | nc -v ${LOCATIONPREFIX}${CLUSTER}00.${LOCATIONDOMAIN} 5432
     sleep 1 | nc -v ${LOCATIONPREFIX}${CLUSTER}01.${LOCATIONDOMAIN} 5432
     sleep 1 | nc -v ${LOCATIONPREFIX}-${CLUSTER}-write.${LOCATIONDOMAIN} 5432
@@ -134,6 +138,7 @@ wants a persistent database not tied to the lifetime of the application blueprin
 use the ``pgaas-database.yaml`` blueprint to create the database;
 
 ::
+
     cfy install -p pgaas-database.yaml -i inputs.yaml
 
 By default, the ``pgaas-database.yaml`` blueprint creates a database with the name ``sample``, which
@@ -141,6 +146,7 @@ can be overridden using ``database_name``.
 
 
 ::
+
     cfy install -p pgaas-database.yaml -b pgaas-database-DBNAME -d pgaas-database-DBNAME -i inputs.yaml -i database_name=DBNAME
     cfy install -p pgaas-database.yaml -b pgaas-database-CLNAME-DBNAME -d pgaas-database-CLNAME-DBNAME -i inputs.yaml -i pgaas_cluster_name=CLNAME -i database_name=DBNAME
 
@@ -149,6 +155,7 @@ The ``pgaas-getdbinfo.yaml`` blueprint shows how an application can attach to an
 database and access its attributes:
 
 ::
+
     cfy install -p pgaas-getdbinfo.yaml -d pgaas-getdbinfo -b pgaas-getdbinfo -i inputs.yaml
     cfy deployments outputs -d pgaas-getdbinfo
     cfy uninstall -d pgaas-getdbinfo
