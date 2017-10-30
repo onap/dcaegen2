@@ -19,7 +19,7 @@ storage
 
   sudo apt install `docker.io <http://docker.io/>`__
 
-1. Pull the latest container from onap nexus
+2. Pull the latest container from onap nexus
 
     sudo docker login -u docker -p docker
     `nexus.onap.org <http://nexus.onap.org/>`__:10001
@@ -27,7 +27,7 @@ storage
     sudo docker pull
     `nexus.onap.org <http://nexus.onap.org/>`__:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:1.1
 
-1. Start the VESCollector with below command
+3. Start the VESCollector with below command
 
     sudo docker run -d --name vescollector -p 8080:8080/tcp -p
     8443:8443/tcp -P -e DMAAPHOST='<dmaap IP>'
@@ -37,7 +37,7 @@ storage
     dmaap information for a running container,  stop the active
     container and rerun above command changing the dmaap IP.
 
-1. Verification
+4. Verification
 
 i.  Check logs under container /opt/app/VESCollector/logs/collector.log
         for errors
@@ -114,20 +114,64 @@ m1.medium size and 50gb cinder volumes.
 
      sudo apt install `docker.io <http://docker.io/>`__
 
-1. Pull CDAP SDK container
+2. Pull CDAP SDK container
 
 sudo docker pull caskdata/cdap-standalone:4.1.2
 
-1. Deploy and run the CDAP container
+3. Deploy and run the CDAP container
 
     sudo docker run -d --name cdap-sdk-2 -p 11011:11011 -p 11015:11015
     caskdata/cdap-standalone:4.1.2
 
-1. Create Namespace on CDAP application
+4. Create Namespace on CDAP application
 
 curl -X PUT http://localhost:11015/v3/namespaces/cdap_tca_hi_lo
 
-1. Create TCA app preference file under ~ubuntu as below
+5. Create TCA app config file - "tca\_app\_config.json" under ~ubuntu as
+   below
+
++------------------------------------------------------------------------------+
+| {                                                                            |
+|                                                                              |
+|  "artifact": {                                                               |
+|                                                                              |
+|   "name": "dcae-analytics-cdap-tca",                                         |
+|                                                                              |
+|   "version": "2.0.0",                                                        |
+|                                                                              |
+|   "scope": "user"                                                            |
+|                                                                              |
+|  },                                                                          |
+|                                                                              |
+|  "config": {                                                                 |
+|                                                                              |
+|   "appName": "dcae-tca",                                                     |
+|                                                                              |
+|   "appDescription": "DCAE Analytics Threshold Crossing Alert Application",   |
+|                                                                              |
+|   "tcaVESMessageStatusTableName": "TCAVESMessageStatusTable",                |
+|                                                                              |
+|   "tcaVESMessageStatusTableTTLSeconds": 86400.0,                             |
+|                                                                              |
+|   "tcaAlertsAbatementTableName": "TCAAlertsAbatementTable",                  |
+|                                                                              |
+|   "tcaAlertsAbatementTableTTLSeconds": 1728000.0,                            |
+|                                                                              |
+|   "tcaVESAlertsTableName": "TCAVESAlertsTable",                              |
+|                                                                              |
+|   "tcaVESAlertsTableTTLSeconds": 1728000.0,                                  |
+|                                                                              |
+|   "thresholdCalculatorFlowletInstances": 2.0,                                |
+|                                                                              |
+|   "tcaSubscriberOutputStreamName": "TCASubscriberOutputStream"               |
+|                                                                              |
+|  }                                                                           |
+|                                                                              |
+| }                                                                            |
++==============================================================================+
++------------------------------------------------------------------------------+
+
+6. Create TCA app preference file under ~ubuntu as below
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 | {                                                                                                                                          |
@@ -324,86 +368,101 @@ curl -X PUT http://localhost:11015/v3/namespaces/cdap_tca_hi_lo
     publisherHostName and subscriberHostName. To be changed as
     required\*\*
 
-1. Copy below script to CDAP server (this gets latest image from nexus
+7. Copy below script to CDAP server (this gets latest image from nexus
    and deploys TCA application) and execute it
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| #!/bin/sh                                                                                                                                                     |
-|                                                                                                                                                               |
-| TCA\_JAR=dcae-analytics-cdap-tca-2.0.0.jar                                                                                                                    |
-|                                                                                                                                                               |
-| rm -f /home/ubuntu/$TCA\_JAR                                                                                                                                  |
-|                                                                                                                                                               |
-| cd /home/ubuntu/                                                                                                                                              |
-|                                                                                                                                                               |
-| wget https://nexus.onap.org/service/local/repositories/staging/content/org/onap/dcaegen2/analytics/tca/dcae-analytics-cdap-tca/2.0.0/$TCA\_JAR                |
-|                                                                                                                                                               |
-| if [ $? -eq 0 ]; then                                                                                                                                         |
-|                                                                                                                                                               |
-|         if [ -f /home/ubuntu/$TCA\_JAR ]; then                                                                                                                |
-|                                                                                                                                                               |
-|                 echo "Restarting TCA CDAP application using $TCA\_JAR artifact"                                                                               |
-|                                                                                                                                                               |
-|         else                                                                                                                                                  |
-|                                                                                                                                                               |
-|                 echo "ERROR: $TCA\_JAR missing"                                                                                                               |
-|                                                                                                                                                               |
-|                 exit 1                                                                                                                                        |
-|                                                                                                                                                               |
-|         fi                                                                                                                                                    |
-|                                                                                                                                                               |
-| else                                                                                                                                                          |
-|                                                                                                                                                               |
-|         echo "ERROR: $TCA\_JAR not found in nexus"                                                                                                            |
-|                                                                                                                                                               |
-|         exit 1                                                                                                                                                |
-|                                                                                                                                                               |
-| fi                                                                                                                                                            |
-|                                                                                                                                                               |
-| # stop programs                                                                                                                                               |
-|                                                                                                                                                               |
-| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRPublisherWorker/stop                                      |
-|                                                                                                                                                               |
-| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRSubscriberWorker/stop                                     |
-|                                                                                                                                                               |
-| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/flows/TCAVESCollectorFlow/stop                                              |
-|                                                                                                                                                               |
-| # delete application                                                                                                                                          |
-|                                                                                                                                                               |
-| curl -X DELETE http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca# delete artifact                                                          |
-|                                                                                                                                                               |
-| curl -X DELETE http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/artifacts/dcae-analytics-cdap-tca/versions/2.0.0# load artifact                         |
-|                                                                                                                                                               |
-| curl -X POST --data-binary @/home/ubuntu/$TCA\_JAR http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/artifacts/dcae-analytics-cdap-tcaecho# create app   |
-|                                                                                                                                                               |
-| curl -X PUT -d @/home/ubuntu/tca\_app\_config.json http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca# load preferences                     |
-|                                                                                                                                                               |
-| curl -X PUT -d @/home/ubuntu/tca\_app\_preferences.json http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/preferences# start programs      |
-|                                                                                                                                                               |
-| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRPublisherWorker/start                                     |
-|                                                                                                                                                               |
-| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRSubscriberWorker/start                                    |
-|                                                                                                                                                               |
-| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/flows/TCAVESCollectorFlow/startecho# get status of programs                 |
-|                                                                                                                                                               |
-| curl http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRPublisherWorker/status                                            |
-|                                                                                                                                                               |
-| curl http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRSubscriberWorker/status                                           |
-|                                                                                                                                                               |
-| curl http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/flows/TCAVESCollectorFlow/statusecho                                                |
-+===============================================================================================================================================================+
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+| #!/bin/sh                                                                                                                                        |
+|                                                                                                                                                  |
+| TCA\_JAR=dcae-analytics-cdap-tca-2.0.0.jar                                                                                                       |
+|                                                                                                                                                  |
+| rm -f /home/ubuntu/$TCA\_JAR                                                                                                                     |
+|                                                                                                                                                  |
+| cd /home/ubuntu/                                                                                                                                 |
+|                                                                                                                                                  |
+| wget https://nexus.onap.org/service/local/repositories/staging/content/org/onap/dcaegen2/analytics/tca/dcae-analytics-cdap-tca/2.0.0/$TCA\_JAR   |
+|                                                                                                                                                  |
+| if [ $? -eq 0 ]; then                                                                                                                            |
+|                                                                                                                                                  |
+|         if [ -f /home/ubuntu/$TCA\_JAR ]; then                                                                                                   |
+|                                                                                                                                                  |
+|                 echo "Restarting TCA CDAP application using $TCA\_JAR artifact"                                                                  |
+|                                                                                                                                                  |
+|         else                                                                                                                                     |
+|                                                                                                                                                  |
+|                 echo "ERROR: $TCA\_JAR missing"                                                                                                  |
+|                                                                                                                                                  |
+|                 exit 1                                                                                                                           |
+|                                                                                                                                                  |
+|         fi                                                                                                                                       |
+|                                                                                                                                                  |
+| else                                                                                                                                             |
+|                                                                                                                                                  |
+|         echo "ERROR: $TCA\_JAR not found in nexus"                                                                                               |
+|                                                                                                                                                  |
+|         exit 1                                                                                                                                   |
+|                                                                                                                                                  |
+| fi                                                                                                                                               |
+|                                                                                                                                                  |
+| # stop programs                                                                                                                                  |
+|                                                                                                                                                  |
+| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRPublisherWorker/stop                         |
+|                                                                                                                                                  |
+| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRSubscriberWorker/stop                        |
+|                                                                                                                                                  |
+| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/flows/TCAVESCollectorFlow/stop                                 |
+|                                                                                                                                                  |
+| # delete application                                                                                                                             |
+|                                                                                                                                                  |
+| curl -X DELETE http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca                                                              |
+|                                                                                                                                                  |
+| # delete artifact                                                                                                                                |
+|                                                                                                                                                  |
+| curl -X DELETE http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/artifacts/dcae-analytics-cdap-tca/versions/2.0.0                           |
+|                                                                                                                                                  |
+| # load artifact                                                                                                                                  |
+|                                                                                                                                                  |
+| curl -X POST --data-binary @/home/ubuntu/$TCA\_JAR http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/artifacts/dcae-analytics-cdap-tca      |
+|                                                                                                                                                  |
+| # create app                                                                                                                                     |
+|                                                                                                                                                  |
+| curl -X PUT -d @/home/ubuntu/tca\_app\_config.json http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca                          |
+|                                                                                                                                                  |
+| # load preferences                                                                                                                               |
+|                                                                                                                                                  |
+| curl -X PUT -d @/home/ubuntu/tca\_app\_preferences.json http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/preferences         |
+|                                                                                                                                                  |
+| # start programs                                                                                                                                 |
+|                                                                                                                                                  |
+| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRPublisherWorker/start                        |
+|                                                                                                                                                  |
+| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRSubscriberWorker/start                       |
+|                                                                                                                                                  |
+| curl -X POST http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/flows/TCAVESCollectorFlow/start                                |
+|                                                                                                                                                  |
+| echo                                                                                                                                             |
+|                                                                                                                                                  |
+| # get status of programs                                                                                                                         |
+|                                                                                                                                                  |
+| curl http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRPublisherWorker/status                               |
+|                                                                                                                                                  |
+| curl http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/workers/TCADMaaPMRSubscriberWorker/status                              |
+|                                                                                                                                                  |
+| curl http://localhost:11015/v3/namespaces/cdap\_tca\_hi\_lo/apps/dcae-tca/flows/TCAVESCollectorFlow/status                                       |
+|                                                                                                                                                  |
+| echo                                                                                                                                             |
++==================================================================================================================================================+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
 
-1. Verify TCA application and logs via CDAP GUI processes
+8. Verify TCA application and logs via CDAP GUI processes
 
     The overall flow can be checked here
 
 TCA Configuration Change
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Typical configuration changes include changing DMAAP host and/or Policy
-configuration. If necessary, modify the file on step #5 and run the
-script noted as step #6 to redeploy TCA with updated configuration.
+Typical configuration changes include changing DMAAP host and/or Policy configuration. If necessary, modify the file on step #6 and run the script noted as step #7 to redeploy TCA with updated configuration.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 VM Init
 ~~~~~~
