@@ -1,31 +1,21 @@
 # Component specification (CDAP)
 
-## Overview
+The CDAP component specification contains the following groups of information. Many of these are common to both CDAP and Docker components and are therefore described in the common specification.
 
-This page contains details specific to CDAP applications.
+* [Metadata](common-specification.md#metadata)
+* [Interfaces](common-specification.md#interfaces) including the associated [Data Formats](/components/data-formats.md)
+* [Parameters](#parameters) - for specifying parameters in your AppConfig, AppPreferences, and ProgramPreferences to the Designer and Policy. This of course is CDAP-specific and is described below. 
+* [Auxiliary Details](#auxiliary-details)
+* [List of artifacts](common-specification.md#artifacts)
 
-The component specification contains the following top-level groups of information:
-
-* Component [Metadata](#metadata)
-* [Parameters](#Parameters): the section for specifying parameters in your AppConfig, AppPreferences, and ProgramPreferences to the Designer and Policy. 
-* [Interfaces](#interfaces): the connections from this component to other components
-* [Auxiliary details](#auxiliary)
-* [List of artifacts](#artifacts)
-
-Note: this page does not talk about [DCAE specific requirements](/components/component-type-cdap.md) that your component must adhere to. Please see that page for discussions about DMaaP, Policy, Metrics, and more.  
 
 ## Current Limitations and TODOs
 
-* Currently we only support CDAP applications that have a stream.
 * The integration of DMD is likely to significantly change the [Interfaces](#interfaces) section in this specification, see [DMaaP abstraction](/components/component-type-cdap.md#dmaap-abstraction).
-
-## Metadata
-
-See [Metadata](common-specification.md#metadata)
 
 ## Parameters
 
-There is a `parameters` section in your component specification. This section contains three optional keys: [app_config](#appconfig), [app_preferences](#apppreferences), and [propram_preferences](#prorgram_preferences):
+There is a `parameters` section in your component specification. This section contains three optional keys: [app_config](#appconfig), [app_preferences](#apppreferences), and [propram_preferences](#program_preferences):
 ```
 "parameters" : {
     "app_config" : [ ...],               
@@ -42,21 +32,15 @@ There is a `parameters` section in your component specification. This section co
 * Despite the AppConfig being optional to *specify* in the case that you have no parameters in your AppConfig, it is *required for processing* in your application. That is because the DCAE platform will place important information into your AppConfig as discussed below. 
 
 ### Parameter
-We use the following definition of a _single parameter_, which is used in several places below:
-```
-  {
-      "name" : "param name",
-      "value" : "developer default",
-      "description" : "tell policy/ops what this does"
-   }
-```
+
+The following CDAP specific definitions use `param1` to refer to the common parameter layout in [Parameter](common-specification.md#parameters)
 
 ### AppConfig
 
 The `app_config` key refers to the [CDAP AppConfig](http://docs.cask.co/cdap/current/en/reference-manual/http-restful-api/configuration.html). It is expected to be a JSON:
 ```
 "app_config" : [ // list of JSON
-    param1,      // see Parameter above
+    param1,      // common parameter layout
     ...
 ]
 ```
@@ -70,15 +54,15 @@ Unfortunately, at the time of writing, the AppConfig is a Java map of `string:st
 >>>
 ```
 
-The final AppConfig (after the designer and policy override parameter values) is passed into CDAP's AppConfig API when starting your application. 
+The final AppConfig (after the designer and policy override parameter values) is passed into CDAP's AppConfig API when starting the application. 
 
 ### AppPreferences
 
-In addition to the CDAP AppConfig, we support [Application Preferences](http://docs.cask.co/cdap/current/en/reference-manual/http-restful-api/preferences.html#set-preferences). 
+In addition to the CDAP AppConfig, the platform supports [Application Preferences](http://docs.cask.co/cdap/current/en/reference-manual/http-restful-api/preferences.html#set-preferences). 
 The format of the `app_preferences` value  is the same as the above:
 ```
 "app_preferences" : [   // list of JSON
-    param1,             // see Parameter above
+    param1,      // common parameter layout
     ...
 ]
 ```
@@ -94,22 +78,20 @@ Preferences can also be specified [per program](http://docs.cask.co/cdap/current
       "program_id" :   "program name 1",  // the name of this CDAP program
       "program_type" : "e.g., flows",     // "must be one of flows, mapreduce, schedules, spark, workflows, workers, or services",
       "program_pref" : [                  // list of JSON
-          param1,             // see Parameter above
+      param1,      // common parameter layout
           ...
       ]
     },
-    // repeat for each program you want to pass a preferences JSON to
+    // repeat for each program that receives a program_preferences JSON 
 ]
 ```
 Each `program_pref` JSON is passed into the CDAP API as the preference for `program_id`. 
 
-## Interfaces
-See [Interfaces](common-specification.md#interfaces)
 
 NOTE: for CDAP, this section is very likely to change when DMD  is available. 
 The _future_ vision, as per [DMaaP intentionally abstracted](/components/component-type-cdap.md#dmaap-abstraction) is that you would publish your data as a series of files on HDFS, and DMD will pick them up and send them to the appropriate DMaaP feeds or directly when needed. 
 
-## Auxiliary
+## Auxiliary Details
 
 `auxiliary` contains details about CDAP specific parameters.
 
@@ -126,7 +108,7 @@ program_id | string | name of CDAP entity (eg "WhoFlow")
 Example:
 
 ```json
-+"auxiliary": {
+"auxiliary": {
     "streamname" : "who",
     "artifact_name" : "HelloWorld",
     "artifact_version" : "3.4.3",
@@ -142,22 +124,4 @@ The `programs` key is identical to the `program_preferences` key discussed [abov
 
 * each JSON in the list does not contain `program_pref`
 * this is required! You must include all of your programs in this, as it is used to start each program as well as for DCAE to perform periodic healthchecks on your application. Don't forget about your services; they are programs too.
-
-+
-## Artifacts
-
-`artifacts` contains a list of artifacts associated with this component.  This is where you specify your CDAP jar.
-
-Property Name | Type | Description
-------------- | ---- | -----------
-artifacts | JSON array | Each entry is a artifact object
-
-Each artifact object has:
-
-Property Name | Type | Description
-------------- | ---- | -----------
-uri | string | *Required*. Uri to the artifact
-type | string | *Required*. For CDAP, use `jar`
-
-This file is uploading using the CLI tool at the same time as your component specification. 
 

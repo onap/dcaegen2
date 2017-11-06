@@ -1,96 +1,39 @@
 # Component specification (Docker)
 
-This page contains details specific to Dockerized applications.
+The Docker component specification contains the following groups of information. Many of these are common to both Docker and CDAP components and are therefore described in the common specification.
 
-The component specification contains the following top-level groups of information:
+* [Metadata](common-specification.md#metadata)
+* [Interfaces](common-specification.md#interfaces) including the associated [Data Formats](/components/data-formats.md)
+* [Parameters](common-specification.md#parameters)
+* [Auxiliary Details](#auxiliary-details)
+* [List of Artifacts](common-specification.md#artifacts)
 
-* [Component metadata](#metadata)
-* [Component interfaces](#interfaces) including the associated [data formats](/components/data-formats.md)
-* [Configuration parameters](#configuration-parameters)
-* [Auxiliary details](#auxilary)
-* [List of artifacts](#artifacts)
+## Auxiliary Details
 
-## Metadata
+`auxiliary` contains Docker specific details like health check, port mapping, volume mapping, and policy reconfiguration script details.  
 
-See [Metadata](common-specification.md#metadata)
-
-## Interfaces
-
-See [Interfaces](common-specification.md#interfaces)
-
-## Configuration parameters
-
-`parameters` is where to specify the component's application configuration parameters that are not connection information.
-
-Property Name | Type | Description
-------------- | ---- | -----------
-parameters | JSON array | Each entry is a parameter object
-
-Parameter object has the following available properties:
-
-Property Name | Type | Description | Default
-------------- | ---- | ----------- | -------
-name | string | *Required*. The property name that will be used as the key in the generated config |
-value | any | *Required*.  The default value for the given parameter |
-description | string | *Required*.  Human-readable text describing the parameter like what its for |
-type | string | The required data type for the parameter |
-required | boolean | An optional key that declares a parameter as required (true) or not (false) | true
-constraints | array | The optional list of sequenced constraint clauses for the parameter | 
-entry_schema | string | The optional key that is used to declare the name of the Datatype definition for entries of set types such as the TOSCA list or map | 
-designer_editable | boolean | An optional key that declares a parameter to be editable by designer (true) or not (false) | true
-policy_editable | boolean | An optional key that declares a parameter to be editable by policy (true) or not (false) | true
-policy_schema | array | The optional list of schema definitions used for policy |
-
-Many of the parameter properties have been copied from TOSCA model property definitions and are to be used for service design composition and policy creation.  See [section 3.5.8 *Property definition*](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.1/TOSCA-Simple-Profile-YAML-v1.1.html).
-
-The property `constraints` is a list of objects where each constraint object:
-
-Property Name | Type | Description
-------------- | ---- | -----------
-equal | | Constrains a property or parameter to a value equal to (‘=’) the value declared
-greater_than | number | Constrains a property or parameter to a value greater than (‘>’) the value declared
-greater_or_equal | number | Constrains a property or parameter to a value greater than or equal to (‘>=’) the value declared
-less_than | number | Constrains a property or parameter to a value less than (‘<’) the value declared
-less_or_equal | number | Constrains a property or parameter to a value less than or equal to (‘<=’) the value declared
-valid_values | array | Constrains a property or parameter to a value that is in the list of declared values
-length | number | Constrains the property or parameter to a value of a given length
-min_length | number | Constrains the property or parameter to a value to a minimum length
-max_length | number | Constrains the property or parameter to a value to a maximum length
-
-From the example specification:
-
-```json
-"parameters": [
-    {
-        "name": "threshold",
-        "value": 0.75,
-        "description": "Probability threshold to exceed to be anomalous"
-    }
-]
-```
-
-`threshold` is the configuration parameter and will get set to 0.75 when the configuration gets generated.
-
-## Auxiliary
-
-`auxilary` contains Docker specific details like health check and port mapping information.
-
-Property Name | Type | Description
+Name | Type | Description
 ------------- | ---- | -----------
 healthcheck | JSON object | *Required*.  Health check definition details
 ports | JSON array | each array item maps a container port to the host port. See example below.
+volume | JSON array | each array item contains a host and container object. See example below. | |
+policy | JSON array | *Required*. Policy script details
 
-### Health check definition
+### Health Check Definition
 
-The platform uses Consul to perform periodic health check calls.  Consul provides different types of [check definitions](https://www.consul.io/docs/agent/checks.html).  The platform currently supports http and docker health checks.
+The platform uses Consul to perform periodic health check calls.  Consul provides different types of [check definitions](https://www.consul.io/docs/agent/checks.html).  The platform currently supports http and docker health checks. 
 
-#### http
+When choosing a value for interval, consider that too frequent healthchecks will put unnecessary load on Consul and DCAE. If there is a problematic resource, then more frequent healthchecks are warranted (eg 15s or 60s), but as stablility increases, so can these values, (eg 300s).
+
+When choosing a value for timeout, consider that too small a number will result in increasing timeout failures, and too large a number will result in a delay in the notification of resource problem. A suggestion is to start with 5s and workd from there.
+
+#### http 
 
 Property Name | Type | Description
 ------------- | ---- | -----------
 type | string | *Required*.  `http`
-interval | string | Interval duration in seconds i.e. `15s`
-timeout | string | Timeout in seconds i.e. `1s`
+interval | string | Interval duration in seconds i.e. `60s`
+timeout | string | Timeout in seconds i.e. `5s`
 endpoint | string | *Required*. GET endpoint provided by the component for Consul to call to check health
 
 Example:
@@ -106,7 +49,7 @@ Example:
 }
 ```
 
-#### docker
+#### docker script example
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -130,9 +73,7 @@ Example:
 }
 ```
 
-### Ports example
-
-Example:
+### Ports
 
 ```json
 "auxilary": {
@@ -142,23 +83,93 @@ Example:
 
 In the example above, container port 8080 maps to host port 8000.
 
-## Artifacts
+### Volume Mapping 
 
-`artifacts` contains a list of artifacts associated with this component.  For Docker, this would be where you specify your Docker image full path including registry.
+```json
+"auxilary": {
+    "volumes": [
+        {
+           "container": {
+               "bind": "/tmp/docker.sock",
+               "mode": "ro"
+            },
+            "host": {
+                "path": "/var/run/docker.sock"
+            }
+        }
+    ]
+}
+```
+
+At the top-level:
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-artifacts | JSON array | Each entry is a artifact object
+volumes | array | Contains container and host objects
 
-Each artifact object has:
+The `container` object contains:
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-uri | string | *Required*. Uri to the artifact
-type | string | *Required*. `docker image` or `jar`
+bind | string | path to the container volume
+mode | string | "ro" - indicates read-only volume
+     |        | "" - indicates that the contain can write into the bind mount
 
-## Example
-Here is a full example of a component spec:
+The `host` object contains:
+
+Property Name | Type | Description
+------------- | ---- | -----------
+path | string | path to the host volume
+
+Here's an example of the minimal JSON that must be provided as an input:
+
+```json
+"auxilary": {
+    "volumes": [
+        {
+           "container": {
+               "bind": "/tmp/docker.sock"
+            },
+            "host": {
+                "path": "/var/run/docker.sock"
+            }
+        }
+    ]
+}
+```
+
+In the example above, the container volume "/tmp/docker.sock" maps to host volume "/var/run/docker.sock".
+
+### Policy 
+
+Policy changes made in the Policy UI will be provided to the Docker component by triggering a script that is defined here.
+
+Property Name | Type | Description
+------------- | ---- | -----------
+reconfigure_type | string | *Required*.  Current value supported is `policy` 
+script_path | string | *Required*.  Current value for 'policy' reconfigure_type must be "/opt/app/reconfigure.sh"
+
+Example:
+
+```json
+"auxilary": {
+    "policy": {
+        "reconfigure_type": "policy",
+        "script_path": "/opt/app/reconfigure.sh"
+    }
+}
+```
+
+The docker script interface is as follows: <br><br> `/opt/app/reconfigure.sh $reconfigure_type {"updated policies": <updated policies object>, "application config": <applcation config object>}
+
+Name | Type | Description
+---- | ---- | -----------
+reconfigure_type | string | "policy"
+updated_policies | json | TBD
+updated_appl_config | json | complete generated app_config, not fully-resolved, but `policy-enabled` parameters have been updated. In order to get the complete updated app_config, the component would have to call `config-binding-service`.
+
+
+## Docker Component Spec - Complete Example
 
 ```json
 {
@@ -222,25 +233,9 @@ Here is a full example of a component spec:
         }
     },
     "artifacts": [{
-        "uri": "YOUR_NEXUS_DOCKER_REGISTRY/kpi_anomaly:1.0.0",
+        "uri": "fake.nexus.com/dcae/kpi_anomaly:1.0.0",
         "type": "docker image"
     }]
 }
 ```
 
-## Generate application configuration
-
-The above example `asimov.component.kpi_anomaly` will get transformed into the following application configuration JSON that is fully resolved and provided at runtime by calling the config binding service:
-
-```json
-{
-    "streams_publishes": {
-        "prediction": ["10.100.1.100:32567"]
-    },
-    "streams_subscribes": {},
-    "threshold": 0.75,
-    "services_calls": {
-        "vnf-db": ["10.100.1.101:32890"]
-    }
-}
-```

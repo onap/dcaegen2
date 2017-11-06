@@ -11,23 +11,23 @@ The vision is to have a repository of shared data formats that developers and te
 
 # Meta Schema Definition
 
-The current "Meta Schema" implementation defines how data formats can be written. It requires the name of the data format entry, the data format entry version and allows a description under "self". The meta schema version as "dataformatversion"  must be specified.  Then the schema is described.  There are four types of schema descriptions - jsonschema for inline JSON Schema definitions, delimitedschema for JSON schema descriptions of delimited data, unstructured for unstructured text, and reference that allows a pointer to another artifact for a schema.  The reference allows for XML schema, but can be used for JSON, Delimited Format, and Unstructured formats as well. 
+The "Meta Schema" implementation defines how data format JSON schemas can be written to define user input. It is itself a JSON schema (thus it is a "meta schema").  It requires the name of the data format entry, the data format entry version and allows a description under "self" object. The meta schema version must be specified as the value of the "dataformatversion" key.  Then the input schema itself is described.  There are four types of schema descriptions objects - jsonschema for inline standard JSON Schema definitions of JSON inputs, delimitedschema for delimited data input using a defined JSON description, unstructured for unstructured text, and reference that allows a pointer to another artifact for a schema.  The reference allows for XML schema, but can be used as a pointer to JSON, Delimited Format, and Unstructured schemas as well. 
 
-The current implementation is defined by the "format_schema" at the link below.  There are descriptions of each entity:
+The current Meta Schema implementation is defined at the link below.  
 
 [schema](ONAP URL TBD)
 
 #TCA Example
 
-TCA Input - Common Event Format by referemce
+TCA Input - Common Event Format by reference
 
-First the full json schema description of the Commen Event Format would be loaded with a name of "Common Event Format" and the current version of "25.0.0".
+First the full JSON schema description of the Common Event Format would be loaded with a name of "Common Event Format" and the current version of "25.0.0".
 
 Then the data format description is loaded by the example at this link:
 
 [tcainput](ONAP URL TBD)
 
-TCA Output JSON inline example:  (TBD Types ok?)
+TCA Output JSON inline example: 
 
 [tcaoutput](ONAP URL TBD)
 
@@ -45,7 +45,7 @@ CUDA Unstructured Example:
 
 [unstructuredtext](ONAP URL TBD)
 
-#A possible example of a delimited schema
+# An example of a delimited schema
 
 ```
 {

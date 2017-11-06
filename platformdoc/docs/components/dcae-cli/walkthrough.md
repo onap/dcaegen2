@@ -27,6 +27,7 @@ Options:
 
 Commands:
   add      Tracks a data format file SPECIFICATION...
+  generate Generates a data format file from JSON input examples
   list     Lists all your data formats
   publish  Publishes data format to make publicly...
   show     Provides more information about FORMAT
@@ -69,6 +70,14 @@ Data formats for mh677g
 ```
 
 Go ahead and add other referenced data formats.
+
+If you have JSON input you can generate a data format like this:
+
+```
+$ dcae_cli data_format --keywords generate myname:1.0.0  myjsoninputfile
+```
+
+where `myname` is the name of your data format, `1.0.0` is an example version, and `myjsoninputfile` is an example JSON input file (a directory of input JSON files can also be provided).   The `--keywords` option adds additional data attributes that can be completed to provide a more detailed data characterization. In any event the output should be reviewed for accuracy.  The data format is written to stdout.   
 
 ## Adding component
 
@@ -220,6 +229,7 @@ Use the "--deployed" option to see more details on deployments
 
 For Docker containers, you can run either attached or unattached.  Attached means that the dcae-cli tool will launch the container and not terminate.  The dcae-cli while attached will stream in the logs of the Docker container.  Doing a Ctrl-C will terminate the run session which means undeploy your container and force a clean up automatically.
 
+Running unattached means simply deploy your container.  You will need to execute `undeploy` when you are done testing.
 #### CDAP
 
 **NOTE** Make sure your CDAP jar has been uploaded to Nexus.
@@ -354,6 +364,43 @@ DCAE.Run | WARNING | Your component is a data router subscriber. Here are the de
 
         some-sub-dr: http://SOME_IP:32838/identity
 
+```
+
+### *Sourced at deployment* testing
+
+Components may have configuration parameters whose values are to be sourced at deployment time.  For example, there are components whose configuration parameters are to come from DTI events which are only available when the component is getting deployed.  These configuration parameters must be setup correctly in the [component specification](http://localhost:8000/components/component-specification/docker-specification/#configuration-parameters) by setting the property `sourced_at_deployment` to `true` for each and every parameter that is expected to come in at deployment time.
+
+Once your component specification has been updated correctly, you must use the `--inputs-file` command-line argument when running the commands `dev` or `run` with your component.  This is to simulate providing the dynamic, deployment time values for those parameters marked as `sourced_at_deployment`.
+
+For example, if your component specification has the following configuration parameters:
+
+```
+"parameters": [{
+    "name": "vnf-ip",
+    "value": "",
+    "sourced_at_deployment": true
+},
+{
+    "name": "static-param",
+    "value": 5
+}]
+```
+
+You would have to pass in an inputs file that looks like:
+
+```
+{
+    "vnf-ip": "10.100.1.100"
+}
+```
+
+Your application configuration would look like:
+
+```
+{
+    "vnf-ip": "10.100.1.100",
+    "static-param": 5
+}
 ```
 
 ## Publishing component

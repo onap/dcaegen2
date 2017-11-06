@@ -20,6 +20,7 @@ This is a [Mkdocs](http://www.mkdocs.org/) project.  To serve a local version of
     ```
 
 2. Clone this repo
+
 3. Run the following at the root of the cloned repo:
 
     ```
@@ -35,19 +36,18 @@ This is a [Mkdocs](http://www.mkdocs.org/) project.  To serve a local version of
     mkdocs build
     ```
 
-2. Build and push the Docker image - note the repository and group `YOUR_NEXUS_DOCKER_REGISTRY/onap` can be customized and replaced:
+2. Build the Docker image, tag as desired - eg `dcae-platform-documentation:YYYYMMDD`
 
     ```
-    docker build -t YOUR_NEXUS_DOCKER_REGISTRY/onap/dcae-platform-documentation:latest .
-    docker push YOUR_NEXUS_DOCKER_REGISTRY/onap/dcae-platform-documentation:latest
+    docker build -t dcae-platform-documentation:20171002 .
     ```
 
 3. Run the Docker container:
 
     ```
     export DOCKER_HOST=tcp://<target docker host>
-    # REVIEW: Does this always pull latest?
-    docker pull YOUR_NEXUS_DOCKER_REGISTRY/onap/dcae-platform-documentation:latest
-    docker run -d --name dpd -p 80:80 YOUR_NEXUS_DOCKER_REGISTRY/onap/dcae-platform-documentation:latest
+    docker stop dpd
+    docker rm -f dpd
+    docker run -d --name dpd -p 80:80 dcae-platform-documentation:YYYYMMDD
     ```
 

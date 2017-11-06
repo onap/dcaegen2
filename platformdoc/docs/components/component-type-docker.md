@@ -76,9 +76,10 @@ Regarding `<config binding service hostname>:<port>`, there is DNS work going on
 However, currently you will be given a name as an ENV variable, `CONFIG_BINDING_SERVICE`, and you will need to query Consul's service discovery to get
 `<config binding service hostname>:<port>`. 
 
-### Policy Reconfiguration
+### Policy Reconfiguration 
+*(Draft and subject to change)*
 
-*Details coming soon*
+Components must provide a way to receive policy reconfiguration, that is, configuration parameters that have been updated via the Policy UI. The component developer provides a docker script (defined in the [Docker auxiliary specification](component-specification/docker-specification#policy-example)) that will be triggered when this occurs. 
 
 ### DMaaP
 
@@ -93,6 +94,18 @@ In order to test DMaaP connections in onboarding, the developer (currently) must
 Docker images must be pushed to the environment specific Nexus repository.  This requires tagging your build with the full name of you image which includes the Nexus repository name.
 
 Use the Docker command-line to [tag](https://docs.docker.com/engine/reference/commandline/tag/) your Docker image where the *target image* must contain the registry host name and port.
+
+For example, an application called laika has been tagged for an example Nexus registry:
+
+```
+$ docker images
+REPOSITORY                                                                               TAG                 IMAGE ID            CREATED             SIZE
+YOUR_NEXUS_DOCKER_REGISTRY/laika                                       	 		 0.4.0               154cc382df61        7 weeks ago         710.5 MB
+laika                                                                                    0.4.0               154cc382df61        7 weeks ago         710.5 MB
+```
+
+Note, the Docker registry that is used may require a login to authenticate.
+
 
 ```
 docker login YOUR_NEXUS_DOCKER_REGISTRY
@@ -116,7 +129,7 @@ After tagging, upload your image to the remote registry using the Docker [push c
 docker push YOUR_NEXUS_DOCKER_REGISTRY/laika:0.4.0
 ```
 
-*NOTE*  Replace `laika` with your application's name.  Replace the `0.4.0` version with your application's version.
+*NOTE* Replace `laika` with your application's name.  Replace the `0.4.0` version with your application's version.
 
 ### Ports
 

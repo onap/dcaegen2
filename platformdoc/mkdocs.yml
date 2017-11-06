@@ -7,20 +7,22 @@ pages:
   - Home: 'index.md'
   - Architecture:
     - Technologies: 'architecture/pieces.md'
+    - Services: 'architecture/services.md'
     - Service Discovery: 'architecture/service-discovery.md'
   - Component Developers:
     - Overview: 'components/intro.md'
-    - Component Specification:
-      - Start here: 'components/component-specification/start-here.md'
-      - For CDAP: 'components/component-specification/cdap-specification.md'
-      - For Docker: 'components/component-specification/docker-specification.md'
-      - Common elements: 'components/component-specification/common-specification.md'
-      - Generated configuration: 'components/component-specification/generated-configuration.md'
-    - Data Formats: 'components/data-formats.md'
-    - Component Requirements:
+    - Requirements/Guidelines:
       - CDAP: 'components/component-type-cdap.md'
       - Docker: 'components/component-type-docker.md'
-    - dcae-cli:
+    - Component Specification:
+      - Common Elements: 'components/component-specification/common-specification.md'
+      - CDAP Specific: 'components/component-specification/cdap-specification.md'
+      - Docker Specific: 'components/component-specification/docker-specification.md'
+      - Generated Configuration: 'components/component-specification/generated-configuration.md'
+      - Streams Quick Reference: 'components/component-specification/streams-grid.md'
+      - Configuration Quick Reference: 'components/component-specification/configuration-grid.md'
+    - Data Formats: 'components/data-formats.md'
+    - dcae-cli Tool:
       - Quickstart: 'components/dcae-cli/quickstart.md'
       - Walk-through: 'components/dcae-cli/walkthrough.md'
       - DMaaP connection objects: 'components/dcae-cli/dmaap-connection-objects.md'

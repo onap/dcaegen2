@@ -38,7 +38,7 @@ To do an upgrade, use the `--upgrade` flag.
 
 When you run the tool for the first time, the tool will create a [configuration directory](http://click.pocoo.org/5/api/#click.get_app_dir) and generate a configuration file.
 
-Configuration is first sourced from an remote server that the platform team manages.  This is overlaid with configuration details that you will be prompted to input particularly your AT&T UID.
+Configuration is first sourced from an remote server that the platform team manages.  This is overlaid with configuration details that you will be prompted to input particularly your user id.
 
 #### `--reinit`
 

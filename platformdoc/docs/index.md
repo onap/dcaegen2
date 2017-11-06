@@ -10,5 +10,5 @@ This is the home for the documetation for the DCAE platform where you will find:
 
 ## Background
 
-DCAE is composed of a platform and services.  The DCAE platform are the technical pieces responsible for the deployment and the management of DCAE services.  The DCAE services are the technical pieces responsible for monitoring network services.
+DCAE is composed of a platform and services.  The DCAE platform is all of the technical pieces responsible for the deployment and the management of DCAE services.  The DCAE services are the components responsible for monitoring network services, and data collection and analytics.
 
