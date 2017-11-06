@@ -4,19 +4,27 @@
 Logging
 =======
 
-.. note::
-   * This section is used to describe the informational or diagnostic messages emitted from 
-     a software component and the methods or collecting them.
-   
-   * This section is typically: provided for a platform-component and sdk; and
-     referenced in developer and user guides
-   
-   * This note must be removed after content has been added.
+DCAE logging is available in several levels.
+
+Platform VM Logging
+-------------------
+1. DCAE bootstrap VM: 
+    * /var/log directory containing various system logs including cloud init logs.
+    * /tmp/dcae2_install.log file provided installation logs.
+    * **docker logs** command for DCAE bootstrap container logs.
+2. Cloudify Manager VM: 
+    * /var/log directory containing various system logs including cloud init logs.
+    * Cloudify Manager GUI provides viewing access to Cloudify's operation logs.
+3. Consul cluster: 
+    * /var/log directory containing various system logs including cloud init logs.
+    * Consul GUI provides viewing access to Consul registered platform and service components healthcheck logs.
+4. Docker hosts
+    * /var/log directory containing various system logs including cloud init logs.
+    * **docker logs** command for Docker container logs.
 
 
-Where to Access Information
----------------------------
+Component Logging
+-----------------
 
+In general the logs of service component can be accessed under the /opt/log directory of the container, either the Docker container or the VM.  Their deployment logs can be found at the deployment engine and deployment location, e.g. Cloudify Manager, CDAP, and Docker hosts.  
 
-Error / Warning Messages
-------------------------
