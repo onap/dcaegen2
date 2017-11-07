@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a4e6583_b3c4fb5f",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T15:31:38Z",
+      "side": 1,
+      "message": "PostgreSQL",
+      "revId": "0617d20cfa7b7b3aa3f1f8ca2d057867577313b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_d3c77763",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T15:31:38Z",
+      "side": 1,
+      "message": "Inventory (note \"n\")",
+      "revId": "0617d20cfa7b7b3aa3f1f8ca2d057867577313b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_13ce2f84",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T15:31:38Z",
+      "side": 1,
+      "message": "\"This component is delivered under the CCSDK project, and deployed by ...\"\n\nPostgres \u003d\u003e PostgreSQL\n\navailbility \u003d\u003e availability\n\n\nInstead of using \"+\" and \"*\" for the footnote indicators, more common usage is to use the same character but vary the number for all indicators within a common block. For example, \"*\", \"**\", \"***\", etc.",
+      "revId": "0617d20cfa7b7b3aa3f1f8ca2d057867577313b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_53ab8789",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T15:31:38Z",
+      "side": 1,
+      "message": "This component is delivered under the Holmes project and deployed in DCAE in R1.",
+      "revId": "0617d20cfa7b7b3aa3f1f8ca2d057867577313b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_738d6331",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T15:31:38Z",
+      "side": 1,
+      "message": "Restful \u003d\u003e RESTful",
+      "revId": "0617d20cfa7b7b3aa3f1f8ca2d057867577313b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
