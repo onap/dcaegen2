@@ -3,44 +3,122 @@
 Release Notes
 =============
 
-.. note::
-	* This Release Notes must be updated each time the team decides to Release new artifacts.
-	* The scope of this Release Notes is for this particular component. In other words, each ONAP component has its Release Notes.
-	* This Release Notes is cumulative, the most recently Released artifact is made visible in the top of this Release Notes.
-	* Except the date and the version number, all the other sections are optional but there must be at least one section describing the purpose of this new release.
-	* This note must be removed after content has been added.
-
-
-Version: x.y.z
+Version: 1.0.0
 --------------
 
-
-:Release Date: yyyy-mm-dd
-
+:Release Date: 2017-11-16
 
 
 **New Features**
 
-One or two sentences explaining the purpose of this Release.
+DCAE is the data collection and analytics sub-system of ONAP.  Under ONAP Release 1 the DCAE sub-system includes both platform components and DCAE service components.  Collectively the ONAP R1 DCAE components support the data collection and analytics functions for the R1 use cases, i.e. vFW, vDNS, vCPU, and vVoLTE.  
+
+Specifically, DCAE R1 includes the following components:
+
+- Core platform
+    - Cloudify manager
+    - Consul cluster
+- Extended platform
+    - Platform component docker host
+    - Service component docker host
+    - CDAP cluster
+    - Postgres database
+- Platform docker container components
+    - Configuration binding service
+    - Deployment handler
+    - Service change handler
+    - Invetory API
+    - Policy handler
+    - CDAP broker
+- Service components                            
+    - Docker container components
+        - VNF Event Streaming (VES) collector
+        - Holmes engine (*)
+        - Holmes rule management (*)
+    - CDAP analytics component
+        - Threshold crossing analysis (TCA)
+
+(*) Note: Component not delivered under the DCAE project but used as DCAE component in R1.
+
+Source codes of DCAE are released undre the following repositories on gerrit.onap.org:
+
+- dcaegen2
+- dcaegen2/analytics
+- dcaegen2/analytics/tca
+- dcaegen2/collectors
+- dcaegen2/collectors/snmptrap
+- dcaegen2/collectors/ves
+- dcaegen2/deployments
+- dcaegen2/platform
+- dcaegen2/platform/blueprints
+- dcaegen2/platform/cdapbroker
+- dcaegen2/platform/cli
+- dcaegen2/platform/configbinding
+- dcaegen2/platform/deployment-handler
+- dcaegen2/platform/inventory-api
+- dcaegen2/platform/plugins
+- dcaegen2/platform/policy-handler
+- dcaegen2/platform/servicechange-handler
+- dcaegen2/utils
+
 
 **Bug Fixes**
-	- `CIMAN-65 <https://jira.onap.org/browse/CIMAN-65>`_ and a sentence explaining what this defect is addressing.
+
+This is the initial release.
+
+
 **Known Issues**
-	- `CIMAN-65 <https://jira.onap.org/browse/CIMAN-65>`_ and two, three sentences.
-	  One sentences explaining what is the issue.
-	  
-	  Another sentence explaining the impact of the issue.
-	  
-	  And an optional sentence providing a workaround.
+
+- Need to test/integration in OpenStack environment other than Intel/Windriver Pod25.
+- Need to provide a dev configuration DCAE.
+
 
 **Security Issues**
-	You may want to include a reference to CVE (Common Vulnerabilities and Exposures) `CVE <https://cve.mitre.org>`_
 
+- DCAE Bootstrap container needs to have the secret key for accessing VMs its launches.  This key is currently passed in as a Heat template parameter.  JIRA DCAEGEN2-178.
+- Restful API calls are generally not secure.  That is, they are either over http, or https without certificate verification.  Once there is an ONAP wide solution for handling certificates, DCAE will switch to https.
 
 **Upgrade Notes**
 
+This is the initial release.
+
+
 **Deprecation Notes**
+
+There is a GEN1 DCAE sub-system implementation existing in pre-R1 ONAP Gerrit system.  The GEN1 DCAE is deprecated by the R1.  The DCAE included in ONAP R1 is also known as the DCAE GEN2.  The deprecation voids the following Gerrit repos, which are already locked as read-only:
+
+- dcae
+- dcae/apod
+- dcae/apod/analytics
+- dcae/apod/buildtools
+- dcae/apod/cdap
+- dcae/collectors
+- dcae/collectors/ves
+- dcae/controller
+- dcae/controller/analytics
+- dcae/dcae-inventory
+- dcae/demo
+- dcae/demo/startup
+- dcae/demo/startup/aaf
+- dcae/demo/startup/controller
+- dcae/demo/startup/message-router
+- dcae/dmaapbc
+- dcae/operation
+- dcae/operation/utils
+- dcae/orch-dispatcher
+- dcae/pgaas
+- dcae/utils
+- dcae/utils/buildtools
+- ncomp
+- ncomp/cdap
+- ncomp/core
+- ncomp/docker
+- ncomp/maven
+- ncomp/openstack
+- ncomp/sirius
+- ncomp/sirius/manager
+- ncomp/utils
+
 
 **Other**
 
-===========
