@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a4e6583_b3475b4b",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "keep lines shorter",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_53570703",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "shared PostgreSQL database cluster (deployed in the demo as a single VM)",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_f336f3e6",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "inventory",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_f3d95384",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "should there be mention of the deployed plugins?",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_133aafcd",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "undre \u003d\u003e under",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_536ee7ca",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "list the components from ccsdk that are used in the demo:\nccsdk/platform/plugins\nccsdk/storage/pgaas",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_13dd0f71",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "Need to test/integrate into an OpenStack environment other than Intel/Windriver Pod25.",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_33f80be5",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "\"DCAE Bootstrap container needs to have the secret key for accessing VMs its launches.\" \u003d\u003e \"The DCAE Bootstrap container needs to have a secret key for accessing VMs that it launches.\"",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_73ee8324",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "\"Restful API calls\" \u003d\u003e \"The Restful API calls\"",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_b35e3b11",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "\"in pre-R1\" \u003d\u003e \"in the pre-R1\"\n\nknown as the DCAE GEN2 \u003d\u003e known as DCAE GEN2\n\nThe deprecation voids the following Gerrit repos, which are already locked as read-only: \u003d\u003e The following Gerrit repos are voided and already locked as read-only.",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_13962f95",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-11-07T14:55:17Z",
+      "side": 1,
+      "message": "If there are any, I think it would be worth discussing which options of DCAE were picked for the demo and which were NOT picked for the demo.",
+      "revId": "ed0a3c252e87e4352026fcd7afc84defcd5555e6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
