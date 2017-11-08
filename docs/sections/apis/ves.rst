@@ -99,850 +99,850 @@ Body
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  | 
+        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  |
 
 .. code-block:: javascript
 
     {
         "event": {
             "commonEventHeader": {
-                "domain": "fault", 
-                "eventId": "somestring", 
-                "eventName": "somestring", 
-                "eventType": "somestring", 
-                "internalHeaderFields": {}, 
-                "lastEpochMicrosec": 1, 
-                "nfNamingCode": "somestring", 
-                "nfcNamingCode": "somestring", 
-                "priority": "High", 
-                "reportingEntityId": "somestring", 
-                "reportingEntityName": "somestring", 
-                "sequence": 1, 
-                "sourceId": "somestring", 
-                "sourceName": "somestring", 
-                "startEpochMicrosec": 1, 
+                "domain": "fault",
+                "eventId": "somestring",
+                "eventName": "somestring",
+                "eventType": "somestring",
+                "internalHeaderFields": {},
+                "lastEpochMicrosec": 1,
+                "nfNamingCode": "somestring",
+                "nfcNamingCode": "somestring",
+                "priority": "High",
+                "reportingEntityId": "somestring",
+                "reportingEntityName": "somestring",
+                "sequence": 1,
+                "sourceId": "somestring",
+                "sourceName": "somestring",
+                "startEpochMicrosec": 1,
                 "version": 1
-            }, 
+            },
             "faultFields": {
                 "alarmAdditionalInformation": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "alarmCondition": "somestring", 
-                "alarmInterfaceA": "somestring", 
-                "eventCategory": "somestring", 
-                "eventSeverity": "CRITICAL", 
-                "eventSourceType": "somestring", 
-                "faultFieldsVersion": 1, 
-                "specificProblem": "somestring", 
+                ],
+                "alarmCondition": "somestring",
+                "alarmInterfaceA": "somestring",
+                "eventCategory": "somestring",
+                "eventSeverity": "CRITICAL",
+                "eventSourceType": "somestring",
+                "faultFieldsVersion": 1,
+                "specificProblem": "somestring",
                 "vfStatus": "Active"
-            }, 
+            },
             "heartbeatFields": {
                 "additionalFields": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "heartbeatFieldsVersion": 1, 
+                ],
+                "heartbeatFieldsVersion": 1,
                 "heartbeatInterval": 1
-            }, 
+            },
             "measurementsForVfScalingFields": {
                 "additionalFields": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
+                ],
                 "additionalMeasurements": [
                     {
                         "arrayOfFields": [
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
-                            }, 
+                            },
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
                             }
-                        ], 
+                        ],
                         "name": "somestring"
-                    }, 
+                    },
                     {
                         "arrayOfFields": [
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
-                            }, 
+                            },
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
                             }
-                        ], 
+                        ],
                         "name": "somestring"
                     }
-                ], 
+                ],
                 "additionalObjects": [
                     {
-                        "nfSubscribedObjectName": "somestring", 
-                        "nfSubscriptionId": "somestring", 
+                        "nfSubscribedObjectName": "somestring",
+                        "nfSubscriptionId": "somestring",
                         "objectInstances": [
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
-                            }, 
+                            },
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
                             }
-                        ], 
-                        "objectName": "somestring", 
-                        "objectSchema": "somestring", 
+                        ],
+                        "objectName": "somestring",
+                        "objectSchema": "somestring",
                         "objectSchemaUrl": "somestring"
-                    }, 
+                    },
                     {
-                        "nfSubscribedObjectName": "somestring", 
-                        "nfSubscriptionId": "somestring", 
+                        "nfSubscribedObjectName": "somestring",
+                        "nfSubscriptionId": "somestring",
                         "objectInstances": [
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
-                            }, 
+                            },
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
                             }
-                        ], 
-                        "objectName": "somestring", 
-                        "objectSchema": "somestring", 
+                        ],
+                        "objectName": "somestring",
+                        "objectSchema": "somestring",
                         "objectSchemaUrl": "somestring"
                     }
-                ], 
+                ],
                 "codecUsageArray": [
                     {
-                        "codecIdentifier": "somestring", 
+                        "codecIdentifier": "somestring",
                         "numberInUse": 1
-                    }, 
+                    },
                     {
-                        "codecIdentifier": "somestring", 
+                        "codecIdentifier": "somestring",
                         "numberInUse": 1
                     }
-                ], 
-                "concurrentSessions": 1, 
-                "configuredEntities": 1, 
+                ],
+                "concurrentSessions": 1,
+                "configuredEntities": 1,
                 "cpuUsageArray": [
                     {
-                        "cpuIdentifier": "somestring", 
-                        "cpuIdle": 1, 
-                        "cpuUsageInterrupt": 1, 
-                        "cpuUsageNice": 1, 
-                        "cpuUsageSoftIrq": 1, 
-                        "cpuUsageSteal": 1, 
-                        "cpuUsageSystem": 1, 
-                        "cpuUsageUser": 1, 
-                        "cpuWait": 1, 
+                        "cpuIdentifier": "somestring",
+                        "cpuIdle": 1,
+                        "cpuUsageInterrupt": 1,
+                        "cpuUsageNice": 1,
+                        "cpuUsageSoftIrq": 1,
+                        "cpuUsageSteal": 1,
+                        "cpuUsageSystem": 1,
+                        "cpuUsageUser": 1,
+                        "cpuWait": 1,
                         "percentUsage": 1
-                    }, 
+                    },
                     {
-                        "cpuIdentifier": "somestring", 
-                        "cpuIdle": 1, 
-                        "cpuUsageInterrupt": 1, 
-                        "cpuUsageNice": 1, 
-                        "cpuUsageSoftIrq": 1, 
-                        "cpuUsageSteal": 1, 
-                        "cpuUsageSystem": 1, 
-                        "cpuUsageUser": 1, 
-                        "cpuWait": 1, 
+                        "cpuIdentifier": "somestring",
+                        "cpuIdle": 1,
+                        "cpuUsageInterrupt": 1,
+                        "cpuUsageNice": 1,
+                        "cpuUsageSoftIrq": 1,
+                        "cpuUsageSteal": 1,
+                        "cpuUsageSystem": 1,
+                        "cpuUsageUser": 1,
+                        "cpuWait": 1,
                         "percentUsage": 1
                     }
-                ], 
+                ],
                 "diskUsageArray": [
                     {
-                        "diskIdentifier": "somestring", 
-                        "diskIoTimeAvg": 1, 
-                        "diskIoTimeLast": 1, 
-                        "diskIoTimeMax": 1, 
-                        "diskIoTimeMin": 1, 
-                        "diskMergedReadAvg": 1, 
-                        "diskMergedReadLast": 1, 
-                        "diskMergedReadMax": 1, 
-                        "diskMergedReadMin": 1, 
-                        "diskMergedWriteAvg": 1, 
-                        "diskMergedWriteLast": 1, 
-                        "diskMergedWriteMax": 1, 
-                        "diskMergedWriteMin": 1, 
-                        "diskOctetsReadAvg": 1, 
-                        "diskOctetsReadLast": 1, 
-                        "diskOctetsReadMax": 1, 
-                        "diskOctetsReadMin": 1, 
-                        "diskOctetsWriteAvg": 1, 
-                        "diskOctetsWriteLast": 1, 
-                        "diskOctetsWriteMax": 1, 
-                        "diskOctetsWriteMin": 1, 
-                        "diskOpsReadAvg": 1, 
-                        "diskOpsReadLast": 1, 
-                        "diskOpsReadMax": 1, 
-                        "diskOpsReadMin": 1, 
-                        "diskOpsWriteAvg": 1, 
-                        "diskOpsWriteLast": 1, 
-                        "diskOpsWriteMax": 1, 
-                        "diskOpsWriteMin": 1, 
-                        "diskPendingOperationsAvg": 1, 
-                        "diskPendingOperationsLast": 1, 
-                        "diskPendingOperationsMax": 1, 
-                        "diskPendingOperationsMin": 1, 
-                        "diskTimeReadAvg": 1, 
-                        "diskTimeReadLast": 1, 
-                        "diskTimeReadMax": 1, 
-                        "diskTimeReadMin": 1, 
-                        "diskTimeWriteAvg": 1, 
-                        "diskTimeWriteLast": 1, 
-                        "diskTimeWriteMax": 1, 
+                        "diskIdentifier": "somestring",
+                        "diskIoTimeAvg": 1,
+                        "diskIoTimeLast": 1,
+                        "diskIoTimeMax": 1,
+                        "diskIoTimeMin": 1,
+                        "diskMergedReadAvg": 1,
+                        "diskMergedReadLast": 1,
+                        "diskMergedReadMax": 1,
+                        "diskMergedReadMin": 1,
+                        "diskMergedWriteAvg": 1,
+                        "diskMergedWriteLast": 1,
+                        "diskMergedWriteMax": 1,
+                        "diskMergedWriteMin": 1,
+                        "diskOctetsReadAvg": 1,
+                        "diskOctetsReadLast": 1,
+                        "diskOctetsReadMax": 1,
+                        "diskOctetsReadMin": 1,
+                        "diskOctetsWriteAvg": 1,
+                        "diskOctetsWriteLast": 1,
+                        "diskOctetsWriteMax": 1,
+                        "diskOctetsWriteMin": 1,
+                        "diskOpsReadAvg": 1,
+                        "diskOpsReadLast": 1,
+                        "diskOpsReadMax": 1,
+                        "diskOpsReadMin": 1,
+                        "diskOpsWriteAvg": 1,
+                        "diskOpsWriteLast": 1,
+                        "diskOpsWriteMax": 1,
+                        "diskOpsWriteMin": 1,
+                        "diskPendingOperationsAvg": 1,
+                        "diskPendingOperationsLast": 1,
+                        "diskPendingOperationsMax": 1,
+                        "diskPendingOperationsMin": 1,
+                        "diskTimeReadAvg": 1,
+                        "diskTimeReadLast": 1,
+                        "diskTimeReadMax": 1,
+                        "diskTimeReadMin": 1,
+                        "diskTimeWriteAvg": 1,
+                        "diskTimeWriteLast": 1,
+                        "diskTimeWriteMax": 1,
                         "diskTimeWriteMin": 1
-                    }, 
+                    },
                     {
-                        "diskIdentifier": "somestring", 
-                        "diskIoTimeAvg": 1, 
-                        "diskIoTimeLast": 1, 
-                        "diskIoTimeMax": 1, 
-                        "diskIoTimeMin": 1, 
-                        "diskMergedReadAvg": 1, 
-                        "diskMergedReadLast": 1, 
-                        "diskMergedReadMax": 1, 
-                        "diskMergedReadMin": 1, 
-                        "diskMergedWriteAvg": 1, 
-                        "diskMergedWriteLast": 1, 
-                        "diskMergedWriteMax": 1, 
-                        "diskMergedWriteMin": 1, 
-                        "diskOctetsReadAvg": 1, 
-                        "diskOctetsReadLast": 1, 
-                        "diskOctetsReadMax": 1, 
-                        "diskOctetsReadMin": 1, 
-                        "diskOctetsWriteAvg": 1, 
-                        "diskOctetsWriteLast": 1, 
-                        "diskOctetsWriteMax": 1, 
-                        "diskOctetsWriteMin": 1, 
-                        "diskOpsReadAvg": 1, 
-                        "diskOpsReadLast": 1, 
-                        "diskOpsReadMax": 1, 
-                        "diskOpsReadMin": 1, 
-                        "diskOpsWriteAvg": 1, 
-                        "diskOpsWriteLast": 1, 
-                        "diskOpsWriteMax": 1, 
-                        "diskOpsWriteMin": 1, 
-                        "diskPendingOperationsAvg": 1, 
-                        "diskPendingOperationsLast": 1, 
-                        "diskPendingOperationsMax": 1, 
-                        "diskPendingOperationsMin": 1, 
-                        "diskTimeReadAvg": 1, 
-                        "diskTimeReadLast": 1, 
-                        "diskTimeReadMax": 1, 
-                        "diskTimeReadMin": 1, 
-                        "diskTimeWriteAvg": 1, 
-                        "diskTimeWriteLast": 1, 
-                        "diskTimeWriteMax": 1, 
+                        "diskIdentifier": "somestring",
+                        "diskIoTimeAvg": 1,
+                        "diskIoTimeLast": 1,
+                        "diskIoTimeMax": 1,
+                        "diskIoTimeMin": 1,
+                        "diskMergedReadAvg": 1,
+                        "diskMergedReadLast": 1,
+                        "diskMergedReadMax": 1,
+                        "diskMergedReadMin": 1,
+                        "diskMergedWriteAvg": 1,
+                        "diskMergedWriteLast": 1,
+                        "diskMergedWriteMax": 1,
+                        "diskMergedWriteMin": 1,
+                        "diskOctetsReadAvg": 1,
+                        "diskOctetsReadLast": 1,
+                        "diskOctetsReadMax": 1,
+                        "diskOctetsReadMin": 1,
+                        "diskOctetsWriteAvg": 1,
+                        "diskOctetsWriteLast": 1,
+                        "diskOctetsWriteMax": 1,
+                        "diskOctetsWriteMin": 1,
+                        "diskOpsReadAvg": 1,
+                        "diskOpsReadLast": 1,
+                        "diskOpsReadMax": 1,
+                        "diskOpsReadMin": 1,
+                        "diskOpsWriteAvg": 1,
+                        "diskOpsWriteLast": 1,
+                        "diskOpsWriteMax": 1,
+                        "diskOpsWriteMin": 1,
+                        "diskPendingOperationsAvg": 1,
+                        "diskPendingOperationsLast": 1,
+                        "diskPendingOperationsMax": 1,
+                        "diskPendingOperationsMin": 1,
+                        "diskTimeReadAvg": 1,
+                        "diskTimeReadLast": 1,
+                        "diskTimeReadMax": 1,
+                        "diskTimeReadMin": 1,
+                        "diskTimeWriteAvg": 1,
+                        "diskTimeWriteLast": 1,
+                        "diskTimeWriteMax": 1,
                         "diskTimeWriteMin": 1
                     }
-                ], 
+                ],
                 "featureUsageArray": [
                     {
-                        "featureIdentifier": "somestring", 
+                        "featureIdentifier": "somestring",
                         "featureUtilization": 1
-                    }, 
+                    },
                     {
-                        "featureIdentifier": "somestring", 
+                        "featureIdentifier": "somestring",
                         "featureUtilization": 1
                     }
-                ], 
+                ],
                 "filesystemUsageArray": [
                     {
-                        "blockConfigured": 1, 
-                        "blockIops": 1, 
-                        "blockUsed": 1, 
-                        "ephemeralConfigured": 1, 
-                        "ephemeralIops": 1, 
-                        "ephemeralUsed": 1, 
+                        "blockConfigured": 1,
+                        "blockIops": 1,
+                        "blockUsed": 1,
+                        "ephemeralConfigured": 1,
+                        "ephemeralIops": 1,
+                        "ephemeralUsed": 1,
                         "filesystemName": "somestring"
-                    }, 
+                    },
                     {
-                        "blockConfigured": 1, 
-                        "blockIops": 1, 
-                        "blockUsed": 1, 
-                        "ephemeralConfigured": 1, 
-                        "ephemeralIops": 1, 
-                        "ephemeralUsed": 1, 
+                        "blockConfigured": 1,
+                        "blockIops": 1,
+                        "blockUsed": 1,
+                        "ephemeralConfigured": 1,
+                        "ephemeralIops": 1,
+                        "ephemeralUsed": 1,
                         "filesystemName": "somestring"
                     }
-                ], 
+                ],
                 "latencyDistribution": [
                     {
-                        "countsInTheBucket": 1, 
-                        "highEndOfLatencyBucket": 1, 
+                        "countsInTheBucket": 1,
+                        "highEndOfLatencyBucket": 1,
                         "lowEndOfLatencyBucket": 1
-                    }, 
+                    },
                     {
-                        "countsInTheBucket": 1, 
-                        "highEndOfLatencyBucket": 1, 
+                        "countsInTheBucket": 1,
+                        "highEndOfLatencyBucket": 1,
                         "lowEndOfLatencyBucket": 1
                     }
-                ], 
-                "meanRequestLatency": 1, 
-                "measurementInterval": 1, 
-                "measurementsForVfScalingVersion": 1, 
+                ],
+                "meanRequestLatency": 1,
+                "measurementInterval": 1,
+                "measurementsForVfScalingVersion": 1,
                 "memoryUsageArray": [
                     {
-                        "memoryBuffered": 1, 
-                        "memoryCached": 1, 
-                        "memoryConfigured": 1, 
-                        "memoryFree": 1, 
-                        "memorySlabRecl": 1, 
-                        "memorySlabUnrecl": 1, 
-                        "memoryUsed": 1, 
+                        "memoryBuffered": 1,
+                        "memoryCached": 1,
+                        "memoryConfigured": 1,
+                        "memoryFree": 1,
+                        "memorySlabRecl": 1,
+                        "memorySlabUnrecl": 1,
+                        "memoryUsed": 1,
                         "vmIdentifier": "somestring"
-                    }, 
+                    },
                     {
-                        "memoryBuffered": 1, 
-                        "memoryCached": 1, 
-                        "memoryConfigured": 1, 
-                        "memoryFree": 1, 
-                        "memorySlabRecl": 1, 
-                        "memorySlabUnrecl": 1, 
-                        "memoryUsed": 1, 
+                        "memoryBuffered": 1,
+                        "memoryCached": 1,
+                        "memoryConfigured": 1,
+                        "memoryFree": 1,
+                        "memorySlabRecl": 1,
+                        "memorySlabUnrecl": 1,
+                        "memoryUsed": 1,
                         "vmIdentifier": "somestring"
                     }
-                ], 
-                "numberOfMediaPortsInUse": 1, 
-                "requestRate": 1, 
+                ],
+                "numberOfMediaPortsInUse": 1,
+                "requestRate": 1,
                 "vNicPerformanceArray": [
                     {
-                        "receivedBroadcastPacketsAccumulated": 1, 
-                        "receivedBroadcastPacketsDelta": 1, 
-                        "receivedDiscardedPacketsAccumulated": 1, 
-                        "receivedDiscardedPacketsDelta": 1, 
-                        "receivedErrorPacketsAccumulated": 1, 
-                        "receivedErrorPacketsDelta": 1, 
-                        "receivedMulticastPacketsAccumulated": 1, 
-                        "receivedMulticastPacketsDelta": 1, 
-                        "receivedOctetsAccumulated": 1, 
-                        "receivedOctetsDelta": 1, 
-                        "receivedTotalPacketsAccumulated": 1, 
-                        "receivedTotalPacketsDelta": 1, 
-                        "receivedUnicastPacketsAccumulated": 1, 
-                        "receivedUnicastPacketsDelta": 1, 
-                        "transmittedBroadcastPacketsAccumulated": 1, 
-                        "transmittedBroadcastPacketsDelta": 1, 
-                        "transmittedDiscardedPacketsAccumulated": 1, 
-                        "transmittedDiscardedPacketsDelta": 1, 
-                        "transmittedErrorPacketsAccumulated": 1, 
-                        "transmittedErrorPacketsDelta": 1, 
-                        "transmittedMulticastPacketsAccumulated": 1, 
-                        "transmittedMulticastPacketsDelta": 1, 
-                        "transmittedOctetsAccumulated": 1, 
-                        "transmittedOctetsDelta": 1, 
-                        "transmittedTotalPacketsAccumulated": 1, 
-                        "transmittedTotalPacketsDelta": 1, 
-                        "transmittedUnicastPacketsAccumulated": 1, 
-                        "transmittedUnicastPacketsDelta": 1, 
-                        "vNicIdentifier": "somestring", 
+                        "receivedBroadcastPacketsAccumulated": 1,
+                        "receivedBroadcastPacketsDelta": 1,
+                        "receivedDiscardedPacketsAccumulated": 1,
+                        "receivedDiscardedPacketsDelta": 1,
+                        "receivedErrorPacketsAccumulated": 1,
+                        "receivedErrorPacketsDelta": 1,
+                        "receivedMulticastPacketsAccumulated": 1,
+                        "receivedMulticastPacketsDelta": 1,
+                        "receivedOctetsAccumulated": 1,
+                        "receivedOctetsDelta": 1,
+                        "receivedTotalPacketsAccumulated": 1,
+                        "receivedTotalPacketsDelta": 1,
+                        "receivedUnicastPacketsAccumulated": 1,
+                        "receivedUnicastPacketsDelta": 1,
+                        "transmittedBroadcastPacketsAccumulated": 1,
+                        "transmittedBroadcastPacketsDelta": 1,
+                        "transmittedDiscardedPacketsAccumulated": 1,
+                        "transmittedDiscardedPacketsDelta": 1,
+                        "transmittedErrorPacketsAccumulated": 1,
+                        "transmittedErrorPacketsDelta": 1,
+                        "transmittedMulticastPacketsAccumulated": 1,
+                        "transmittedMulticastPacketsDelta": 1,
+                        "transmittedOctetsAccumulated": 1,
+                        "transmittedOctetsDelta": 1,
+                        "transmittedTotalPacketsAccumulated": 1,
+                        "transmittedTotalPacketsDelta": 1,
+                        "transmittedUnicastPacketsAccumulated": 1,
+                        "transmittedUnicastPacketsDelta": 1,
+                        "vNicIdentifier": "somestring",
                         "valuesAreSuspect": "true"
-                    }, 
+                    },
                     {
-                        "receivedBroadcastPacketsAccumulated": 1, 
-                        "receivedBroadcastPacketsDelta": 1, 
-                        "receivedDiscardedPacketsAccumulated": 1, 
-                        "receivedDiscardedPacketsDelta": 1, 
-                        "receivedErrorPacketsAccumulated": 1, 
-                        "receivedErrorPacketsDelta": 1, 
-                        "receivedMulticastPacketsAccumulated": 1, 
-                        "receivedMulticastPacketsDelta": 1, 
-                        "receivedOctetsAccumulated": 1, 
-                        "receivedOctetsDelta": 1, 
-                        "receivedTotalPacketsAccumulated": 1, 
-                        "receivedTotalPacketsDelta": 1, 
-                        "receivedUnicastPacketsAccumulated": 1, 
-                        "receivedUnicastPacketsDelta": 1, 
-                        "transmittedBroadcastPacketsAccumulated": 1, 
-                        "transmittedBroadcastPacketsDelta": 1, 
-                        "transmittedDiscardedPacketsAccumulated": 1, 
-                        "transmittedDiscardedPacketsDelta": 1, 
-                        "transmittedErrorPacketsAccumulated": 1, 
-                        "transmittedErrorPacketsDelta": 1, 
-                        "transmittedMulticastPacketsAccumulated": 1, 
-                        "transmittedMulticastPacketsDelta": 1, 
-                        "transmittedOctetsAccumulated": 1, 
-                        "transmittedOctetsDelta": 1, 
-                        "transmittedTotalPacketsAccumulated": 1, 
-                        "transmittedTotalPacketsDelta": 1, 
-                        "transmittedUnicastPacketsAccumulated": 1, 
-                        "transmittedUnicastPacketsDelta": 1, 
-                        "vNicIdentifier": "somestring", 
+                        "receivedBroadcastPacketsAccumulated": 1,
+                        "receivedBroadcastPacketsDelta": 1,
+                        "receivedDiscardedPacketsAccumulated": 1,
+                        "receivedDiscardedPacketsDelta": 1,
+                        "receivedErrorPacketsAccumulated": 1,
+                        "receivedErrorPacketsDelta": 1,
+                        "receivedMulticastPacketsAccumulated": 1,
+                        "receivedMulticastPacketsDelta": 1,
+                        "receivedOctetsAccumulated": 1,
+                        "receivedOctetsDelta": 1,
+                        "receivedTotalPacketsAccumulated": 1,
+                        "receivedTotalPacketsDelta": 1,
+                        "receivedUnicastPacketsAccumulated": 1,
+                        "receivedUnicastPacketsDelta": 1,
+                        "transmittedBroadcastPacketsAccumulated": 1,
+                        "transmittedBroadcastPacketsDelta": 1,
+                        "transmittedDiscardedPacketsAccumulated": 1,
+                        "transmittedDiscardedPacketsDelta": 1,
+                        "transmittedErrorPacketsAccumulated": 1,
+                        "transmittedErrorPacketsDelta": 1,
+                        "transmittedMulticastPacketsAccumulated": 1,
+                        "transmittedMulticastPacketsDelta": 1,
+                        "transmittedOctetsAccumulated": 1,
+                        "transmittedOctetsDelta": 1,
+                        "transmittedTotalPacketsAccumulated": 1,
+                        "transmittedTotalPacketsDelta": 1,
+                        "transmittedUnicastPacketsAccumulated": 1,
+                        "transmittedUnicastPacketsDelta": 1,
+                        "vNicIdentifier": "somestring",
                         "valuesAreSuspect": "true"
                     }
-                ], 
+                ],
                 "vnfcScalingMetric": 1
-            }, 
+            },
             "mobileFlowFields": {
                 "additionalFields": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "appProtocolType": "somestring", 
-                "appProtocolVersion": "somestring", 
-                "applicationType": "somestring", 
-                "cid": "somestring", 
-                "connectionType": "somestring", 
-                "ecgi": "somestring", 
-                "flowDirection": "somestring", 
+                ],
+                "appProtocolType": "somestring",
+                "appProtocolVersion": "somestring",
+                "applicationType": "somestring",
+                "cid": "somestring",
+                "connectionType": "somestring",
+                "ecgi": "somestring",
+                "flowDirection": "somestring",
                 "gtpPerFlowMetrics": {
-                    "avgBitErrorRate": 1, 
-                    "avgPacketDelayVariation": 1, 
-                    "avgPacketLatency": 1, 
-                    "avgReceiveThroughput": 1, 
-                    "avgTransmitThroughput": 1, 
-                    "durConnectionFailedStatus": 1, 
-                    "durTunnelFailedStatus": 1, 
-                    "flowActivatedBy": "somestring", 
-                    "flowActivationEpoch": 1, 
-                    "flowActivationMicrosec": 1, 
-                    "flowActivationTime": "somestring", 
-                    "flowDeactivatedBy": "somestring", 
-                    "flowDeactivationEpoch": 1, 
-                    "flowDeactivationMicrosec": 1, 
-                    "flowDeactivationTime": "somestring", 
-                    "flowStatus": "somestring", 
-                    "gtpConnectionStatus": "somestring", 
-                    "gtpTunnelStatus": "somestring", 
+                    "avgBitErrorRate": 1,
+                    "avgPacketDelayVariation": 1,
+                    "avgPacketLatency": 1,
+                    "avgReceiveThroughput": 1,
+                    "avgTransmitThroughput": 1,
+                    "durConnectionFailedStatus": 1,
+                    "durTunnelFailedStatus": 1,
+                    "flowActivatedBy": "somestring",
+                    "flowActivationEpoch": 1,
+                    "flowActivationMicrosec": 1,
+                    "flowActivationTime": "somestring",
+                    "flowDeactivatedBy": "somestring",
+                    "flowDeactivationEpoch": 1,
+                    "flowDeactivationMicrosec": 1,
+                    "flowDeactivationTime": "somestring",
+                    "flowStatus": "somestring",
+                    "gtpConnectionStatus": "somestring",
+                    "gtpTunnelStatus": "somestring",
                     "ipTosCountList": [
                         [
-                            1, 
+                            1,
                             1
-                        ], 
+                        ],
                         [
-                            1, 
+                            1,
                             1
                         ]
-                    ], 
+                    ],
                     "ipTosList": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "largePacketRtt": 1, 
-                    "largePacketThreshold": 1, 
-                    "maxPacketDelayVariation": 1, 
-                    "maxReceiveBitRate": 1, 
-                    "maxTransmitBitRate": 1, 
+                    ],
+                    "largePacketRtt": 1,
+                    "largePacketThreshold": 1,
+                    "maxPacketDelayVariation": 1,
+                    "maxReceiveBitRate": 1,
+                    "maxTransmitBitRate": 1,
                     "mobileQciCosCountList": [
                         [
-                            1, 
+                            1,
                             1
-                        ], 
+                        ],
                         [
-                            1, 
+                            1,
                             1
                         ]
-                    ], 
+                    ],
                     "mobileQciCosList": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "numActivationFailures": 1, 
-                    "numBitErrors": 1, 
-                    "numBytesReceived": 1, 
-                    "numBytesTransmitted": 1, 
-                    "numDroppedPackets": 1, 
-                    "numGtpEchoFailures": 1, 
-                    "numGtpTunnelErrors": 1, 
-                    "numHttpErrors": 1, 
-                    "numL7BytesReceived": 1, 
-                    "numL7BytesTransmitted": 1, 
-                    "numLostPackets": 1, 
-                    "numOutOfOrderPackets": 1, 
-                    "numPacketErrors": 1, 
-                    "numPacketsReceivedExclRetrans": 1, 
-                    "numPacketsReceivedInclRetrans": 1, 
-                    "numPacketsTransmittedInclRetrans": 1, 
-                    "numRetries": 1, 
-                    "numTimeouts": 1, 
-                    "numTunneledL7BytesReceived": 1, 
-                    "roundTripTime": 1, 
+                    ],
+                    "numActivationFailures": 1,
+                    "numBitErrors": 1,
+                    "numBytesReceived": 1,
+                    "numBytesTransmitted": 1,
+                    "numDroppedPackets": 1,
+                    "numGtpEchoFailures": 1,
+                    "numGtpTunnelErrors": 1,
+                    "numHttpErrors": 1,
+                    "numL7BytesReceived": 1,
+                    "numL7BytesTransmitted": 1,
+                    "numLostPackets": 1,
+                    "numOutOfOrderPackets": 1,
+                    "numPacketErrors": 1,
+                    "numPacketsReceivedExclRetrans": 1,
+                    "numPacketsReceivedInclRetrans": 1,
+                    "numPacketsTransmittedInclRetrans": 1,
+                    "numRetries": 1,
+                    "numTimeouts": 1,
+                    "numTunneledL7BytesReceived": 1,
+                    "roundTripTime": 1,
                     "tcpFlagCountList": [
                         [
-                            1, 
+                            1,
                             1
-                        ], 
+                        ],
                         [
-                            1, 
+                            1,
                             1
                         ]
-                    ], 
+                    ],
                     "tcpFlagList": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
+                    ],
                     "timeToFirstByte": 1
-                }, 
-                "gtpProtocolType": "somestring", 
-                "gtpVersion": "somestring", 
-                "httpHeader": "somestring", 
-                "imei": "somestring", 
-                "imsi": "somestring", 
-                "ipProtocolType": "somestring", 
-                "ipVersion": "somestring", 
-                "lac": "somestring", 
-                "mcc": "somestring", 
-                "mnc": "somestring", 
-                "mobileFlowFieldsVersion": 1, 
-                "msisdn": "somestring", 
-                "otherEndpointIpAddress": "somestring", 
-                "otherEndpointPort": 1, 
-                "otherFunctionalRole": "somestring", 
-                "rac": "somestring", 
-                "radioAccessTechnology": "somestring", 
-                "reportingEndpointIpAddr": "somestring", 
-                "reportingEndpointPort": 1, 
-                "sac": "somestring", 
-                "samplingAlgorithm": 1, 
-                "tac": "somestring", 
-                "tunnelId": "somestring", 
+                },
+                "gtpProtocolType": "somestring",
+                "gtpVersion": "somestring",
+                "httpHeader": "somestring",
+                "imei": "somestring",
+                "imsi": "somestring",
+                "ipProtocolType": "somestring",
+                "ipVersion": "somestring",
+                "lac": "somestring",
+                "mcc": "somestring",
+                "mnc": "somestring",
+                "mobileFlowFieldsVersion": 1,
+                "msisdn": "somestring",
+                "otherEndpointIpAddress": "somestring",
+                "otherEndpointPort": 1,
+                "otherFunctionalRole": "somestring",
+                "rac": "somestring",
+                "radioAccessTechnology": "somestring",
+                "reportingEndpointIpAddr": "somestring",
+                "reportingEndpointPort": 1,
+                "sac": "somestring",
+                "samplingAlgorithm": 1,
+                "tac": "somestring",
+                "tunnelId": "somestring",
                 "vlanId": "somestring"
-            }, 
+            },
             "otherFields": {
                 "hashOfNameValuePairArrays": [
                     {
                         "arrayOfFields": [
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
-                            }, 
+                            },
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
                             }
-                        ], 
+                        ],
                         "name": "somestring"
-                    }, 
+                    },
                     {
                         "arrayOfFields": [
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
-                            }, 
+                            },
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
                             }
-                        ], 
+                        ],
                         "name": "somestring"
                     }
-                ], 
+                ],
                 "jsonObjects": [
                     {
-                        "nfSubscribedObjectName": "somestring", 
-                        "nfSubscriptionId": "somestring", 
+                        "nfSubscribedObjectName": "somestring",
+                        "nfSubscriptionId": "somestring",
                         "objectInstances": [
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
-                            }, 
+                            },
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
                             }
-                        ], 
-                        "objectName": "somestring", 
-                        "objectSchema": "somestring", 
+                        ],
+                        "objectName": "somestring",
+                        "objectSchema": "somestring",
                         "objectSchemaUrl": "somestring"
-                    }, 
+                    },
                     {
-                        "nfSubscribedObjectName": "somestring", 
-                        "nfSubscriptionId": "somestring", 
+                        "nfSubscribedObjectName": "somestring",
+                        "nfSubscriptionId": "somestring",
                         "objectInstances": [
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
-                            }, 
+                            },
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
                             }
-                        ], 
-                        "objectName": "somestring", 
-                        "objectSchema": "somestring", 
+                        ],
+                        "objectName": "somestring",
+                        "objectSchema": "somestring",
                         "objectSchemaUrl": "somestring"
                     }
-                ], 
+                ],
                 "nameValuePairs": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
+                ],
                 "otherFieldsVersion": 1
-            }, 
+            },
             "sipSignalingFields": {
                 "additionalInformation": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "compressedSip": "somestring", 
-                "correlator": "somestring", 
-                "localIpAddress": "somestring", 
-                "localPort": "somestring", 
-                "remoteIpAddress": "somestring", 
-                "remotePort": "somestring", 
-                "sipSignalingFieldsVersion": 1, 
-                "summarySip": "somestring", 
+                ],
+                "compressedSip": "somestring",
+                "correlator": "somestring",
+                "localIpAddress": "somestring",
+                "localPort": "somestring",
+                "remoteIpAddress": "somestring",
+                "remotePort": "somestring",
+                "sipSignalingFieldsVersion": 1,
+                "summarySip": "somestring",
                 "vendorVnfNameFields": {
-                    "vendorName": "somestring", 
-                    "vfModuleName": "somestring", 
+                    "vendorName": "somestring",
+                    "vfModuleName": "somestring",
                     "vnfName": "somestring"
                 }
-            }, 
+            },
             "stateChangeFields": {
                 "additionalFields": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "newState": "inService", 
-                "oldState": "inService", 
-                "stateChangeFieldsVersion": 1, 
+                ],
+                "newState": "inService",
+                "oldState": "inService",
+                "stateChangeFieldsVersion": 1,
                 "stateInterface": "somestring"
-            }, 
+            },
             "syslogFields": {
-                "additionalFields": "somestring", 
-                "eventSourceHost": "somestring", 
-                "eventSourceType": "somestring", 
-                "syslogFacility": 1, 
-                "syslogFieldsVersion": 1, 
-                "syslogMsg": "somestring", 
-                "syslogPri": 1, 
-                "syslogProc": "somestring", 
-                "syslogProcId": 1, 
-                "syslogSData": "somestring", 
-                "syslogSdId": "somestring", 
-                "syslogSev": "Alert", 
-                "syslogTag": "somestring", 
+                "additionalFields": "somestring",
+                "eventSourceHost": "somestring",
+                "eventSourceType": "somestring",
+                "syslogFacility": 1,
+                "syslogFieldsVersion": 1,
+                "syslogMsg": "somestring",
+                "syslogPri": 1,
+                "syslogProc": "somestring",
+                "syslogProcId": 1,
+                "syslogSData": "somestring",
+                "syslogSdId": "somestring",
+                "syslogSev": "Alert",
+                "syslogTag": "somestring",
                 "syslogVer": 1
-            }, 
+            },
             "thresholdCrossingAlertFields": {
                 "additionalFields": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
+                ],
                 "additionalParameters": [
                     {
-                        "criticality": "CRIT", 
-                        "name": "somestring", 
-                        "thresholdCrossed": "somestring", 
+                        "criticality": "CRIT",
+                        "name": "somestring",
+                        "thresholdCrossed": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "criticality": "CRIT", 
-                        "name": "somestring", 
-                        "thresholdCrossed": "somestring", 
+                        "criticality": "CRIT",
+                        "name": "somestring",
+                        "thresholdCrossed": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "alertAction": "CLEAR", 
-                "alertDescription": "somestring", 
-                "alertType": "CARD-ANOMALY", 
-                "alertValue": "somestring", 
+                ],
+                "alertAction": "CLEAR",
+                "alertDescription": "somestring",
+                "alertType": "CARD-ANOMALY",
+                "alertValue": "somestring",
                 "associatedAlertIdList": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
-                ], 
-                "collectionTimestamp": "somestring", 
-                "dataCollector": "somestring", 
-                "elementType": "somestring", 
-                "eventSeverity": "CRITICAL", 
-                "eventStartTimestamp": "somestring", 
-                "interfaceName": "somestring", 
-                "networkService": "somestring", 
-                "possibleRootCause": "somestring", 
+                ],
+                "collectionTimestamp": "somestring",
+                "dataCollector": "somestring",
+                "elementType": "somestring",
+                "eventSeverity": "CRITICAL",
+                "eventStartTimestamp": "somestring",
+                "interfaceName": "somestring",
+                "networkService": "somestring",
+                "possibleRootCause": "somestring",
                 "thresholdCrossingFieldsVersion": 1
-            }, 
+            },
             "voiceQualityFields": {
                 "additionalInformation": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "calleeSideCodec": "somestring", 
-                "callerSideCodec": "somestring", 
-                "correlator": "somestring", 
+                ],
+                "calleeSideCodec": "somestring",
+                "callerSideCodec": "somestring",
+                "correlator": "somestring",
                 "endOfCallVqmSummaries": {
-                    "adjacencyName": "somestring", 
-                    "endpointDescription": "Caller", 
-                    "endpointJitter": 1, 
-                    "endpointRtpOctetsDiscarded": 1, 
-                    "endpointRtpOctetsReceived": 1, 
-                    "endpointRtpOctetsSent": 1, 
-                    "endpointRtpPacketsDiscarded": 1, 
-                    "endpointRtpPacketsReceived": 1, 
-                    "endpointRtpPacketsSent": 1, 
-                    "localJitter": 1, 
-                    "localRtpOctetsDiscarded": 1, 
-                    "localRtpOctetsReceived": 1, 
-                    "localRtpOctetsSent": 1, 
-                    "localRtpPacketsDiscarded": 1, 
-                    "localRtpPacketsReceived": 1, 
-                    "localRtpPacketsSent": 1, 
-                    "mosCqe": 1, 
-                    "packetLossPercent": 1, 
-                    "packetsLost": 1, 
-                    "rFactor": 1, 
+                    "adjacencyName": "somestring",
+                    "endpointDescription": "Caller",
+                    "endpointJitter": 1,
+                    "endpointRtpOctetsDiscarded": 1,
+                    "endpointRtpOctetsReceived": 1,
+                    "endpointRtpOctetsSent": 1,
+                    "endpointRtpPacketsDiscarded": 1,
+                    "endpointRtpPacketsReceived": 1,
+                    "endpointRtpPacketsSent": 1,
+                    "localJitter": 1,
+                    "localRtpOctetsDiscarded": 1,
+                    "localRtpOctetsReceived": 1,
+                    "localRtpOctetsSent": 1,
+                    "localRtpPacketsDiscarded": 1,
+                    "localRtpPacketsReceived": 1,
+                    "localRtpPacketsSent": 1,
+                    "mosCqe": 1,
+                    "packetLossPercent": 1,
+                    "packetsLost": 1,
+                    "rFactor": 1,
                     "roundTripDelay": 1
-                }, 
-                "midCallRtcp": "somestring", 
-                "phoneNumber": "somestring", 
+                },
+                "midCallRtcp": "somestring",
+                "phoneNumber": "somestring",
                 "vendorVnfNameFields": {
-                    "vendorName": "somestring", 
-                    "vfModuleName": "somestring", 
+                    "vendorName": "somestring",
+                    "vfModuleName": "somestring",
                     "vnfName": "somestring"
-                }, 
+                },
                 "voiceQualityFieldsVersion": 1
             }
         }
@@ -964,8 +964,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -982,8 +982,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1000,8 +1000,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1018,8 +1018,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1063,850 +1063,850 @@ Body
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  | 
+        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  |
 
 .. code-block:: javascript
 
     {
         "event": {
             "commonEventHeader": {
-                "domain": "fault", 
-                "eventId": "somestring", 
-                "eventName": "somestring", 
-                "eventType": "somestring", 
-                "internalHeaderFields": {}, 
-                "lastEpochMicrosec": 1, 
-                "nfNamingCode": "somestring", 
-                "nfcNamingCode": "somestring", 
-                "priority": "High", 
-                "reportingEntityId": "somestring", 
-                "reportingEntityName": "somestring", 
-                "sequence": 1, 
-                "sourceId": "somestring", 
-                "sourceName": "somestring", 
-                "startEpochMicrosec": 1, 
+                "domain": "fault",
+                "eventId": "somestring",
+                "eventName": "somestring",
+                "eventType": "somestring",
+                "internalHeaderFields": {},
+                "lastEpochMicrosec": 1,
+                "nfNamingCode": "somestring",
+                "nfcNamingCode": "somestring",
+                "priority": "High",
+                "reportingEntityId": "somestring",
+                "reportingEntityName": "somestring",
+                "sequence": 1,
+                "sourceId": "somestring",
+                "sourceName": "somestring",
+                "startEpochMicrosec": 1,
                 "version": 1
-            }, 
+            },
             "faultFields": {
                 "alarmAdditionalInformation": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "alarmCondition": "somestring", 
-                "alarmInterfaceA": "somestring", 
-                "eventCategory": "somestring", 
-                "eventSeverity": "CRITICAL", 
-                "eventSourceType": "somestring", 
-                "faultFieldsVersion": 1, 
-                "specificProblem": "somestring", 
+                ],
+                "alarmCondition": "somestring",
+                "alarmInterfaceA": "somestring",
+                "eventCategory": "somestring",
+                "eventSeverity": "CRITICAL",
+                "eventSourceType": "somestring",
+                "faultFieldsVersion": 1,
+                "specificProblem": "somestring",
                 "vfStatus": "Active"
-            }, 
+            },
             "heartbeatFields": {
                 "additionalFields": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "heartbeatFieldsVersion": 1, 
+                ],
+                "heartbeatFieldsVersion": 1,
                 "heartbeatInterval": 1
-            }, 
+            },
             "measurementsForVfScalingFields": {
                 "additionalFields": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
+                ],
                 "additionalMeasurements": [
                     {
                         "arrayOfFields": [
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
-                            }, 
+                            },
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
                             }
-                        ], 
+                        ],
                         "name": "somestring"
-                    }, 
+                    },
                     {
                         "arrayOfFields": [
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
-                            }, 
+                            },
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
                             }
-                        ], 
+                        ],
                         "name": "somestring"
                     }
-                ], 
+                ],
                 "additionalObjects": [
                     {
-                        "nfSubscribedObjectName": "somestring", 
-                        "nfSubscriptionId": "somestring", 
+                        "nfSubscribedObjectName": "somestring",
+                        "nfSubscriptionId": "somestring",
                         "objectInstances": [
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
-                            }, 
+                            },
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
                             }
-                        ], 
-                        "objectName": "somestring", 
-                        "objectSchema": "somestring", 
+                        ],
+                        "objectName": "somestring",
+                        "objectSchema": "somestring",
                         "objectSchemaUrl": "somestring"
-                    }, 
+                    },
                     {
-                        "nfSubscribedObjectName": "somestring", 
-                        "nfSubscriptionId": "somestring", 
+                        "nfSubscribedObjectName": "somestring",
+                        "nfSubscriptionId": "somestring",
                         "objectInstances": [
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
-                            }, 
+                            },
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
                             }
-                        ], 
-                        "objectName": "somestring", 
-                        "objectSchema": "somestring", 
+                        ],
+                        "objectName": "somestring",
+                        "objectSchema": "somestring",
                         "objectSchemaUrl": "somestring"
                     }
-                ], 
+                ],
                 "codecUsageArray": [
                     {
-                        "codecIdentifier": "somestring", 
+                        "codecIdentifier": "somestring",
                         "numberInUse": 1
-                    }, 
+                    },
                     {
-                        "codecIdentifier": "somestring", 
+                        "codecIdentifier": "somestring",
                         "numberInUse": 1
                     }
-                ], 
-                "concurrentSessions": 1, 
-                "configuredEntities": 1, 
+                ],
+                "concurrentSessions": 1,
+                "configuredEntities": 1,
                 "cpuUsageArray": [
                     {
-                        "cpuIdentifier": "somestring", 
-                        "cpuIdle": 1, 
-                        "cpuUsageInterrupt": 1, 
-                        "cpuUsageNice": 1, 
-                        "cpuUsageSoftIrq": 1, 
-                        "cpuUsageSteal": 1, 
-                        "cpuUsageSystem": 1, 
-                        "cpuUsageUser": 1, 
-                        "cpuWait": 1, 
+                        "cpuIdentifier": "somestring",
+                        "cpuIdle": 1,
+                        "cpuUsageInterrupt": 1,
+                        "cpuUsageNice": 1,
+                        "cpuUsageSoftIrq": 1,
+                        "cpuUsageSteal": 1,
+                        "cpuUsageSystem": 1,
+                        "cpuUsageUser": 1,
+                        "cpuWait": 1,
                         "percentUsage": 1
-                    }, 
+                    },
                     {
-                        "cpuIdentifier": "somestring", 
-                        "cpuIdle": 1, 
-                        "cpuUsageInterrupt": 1, 
-                        "cpuUsageNice": 1, 
-                        "cpuUsageSoftIrq": 1, 
-                        "cpuUsageSteal": 1, 
-                        "cpuUsageSystem": 1, 
-                        "cpuUsageUser": 1, 
-                        "cpuWait": 1, 
+                        "cpuIdentifier": "somestring",
+                        "cpuIdle": 1,
+                        "cpuUsageInterrupt": 1,
+                        "cpuUsageNice": 1,
+                        "cpuUsageSoftIrq": 1,
+                        "cpuUsageSteal": 1,
+                        "cpuUsageSystem": 1,
+                        "cpuUsageUser": 1,
+                        "cpuWait": 1,
                         "percentUsage": 1
                     }
-                ], 
+                ],
                 "diskUsageArray": [
                     {
-                        "diskIdentifier": "somestring", 
-                        "diskIoTimeAvg": 1, 
-                        "diskIoTimeLast": 1, 
-                        "diskIoTimeMax": 1, 
-                        "diskIoTimeMin": 1, 
-                        "diskMergedReadAvg": 1, 
-                        "diskMergedReadLast": 1, 
-                        "diskMergedReadMax": 1, 
-                        "diskMergedReadMin": 1, 
-                        "diskMergedWriteAvg": 1, 
-                        "diskMergedWriteLast": 1, 
-                        "diskMergedWriteMax": 1, 
-                        "diskMergedWriteMin": 1, 
-                        "diskOctetsReadAvg": 1, 
-                        "diskOctetsReadLast": 1, 
-                        "diskOctetsReadMax": 1, 
-                        "diskOctetsReadMin": 1, 
-                        "diskOctetsWriteAvg": 1, 
-                        "diskOctetsWriteLast": 1, 
-                        "diskOctetsWriteMax": 1, 
-                        "diskOctetsWriteMin": 1, 
-                        "diskOpsReadAvg": 1, 
-                        "diskOpsReadLast": 1, 
-                        "diskOpsReadMax": 1, 
-                        "diskOpsReadMin": 1, 
-                        "diskOpsWriteAvg": 1, 
-                        "diskOpsWriteLast": 1, 
-                        "diskOpsWriteMax": 1, 
-                        "diskOpsWriteMin": 1, 
-                        "diskPendingOperationsAvg": 1, 
-                        "diskPendingOperationsLast": 1, 
-                        "diskPendingOperationsMax": 1, 
-                        "diskPendingOperationsMin": 1, 
-                        "diskTimeReadAvg": 1, 
-                        "diskTimeReadLast": 1, 
-                        "diskTimeReadMax": 1, 
-                        "diskTimeReadMin": 1, 
-                        "diskTimeWriteAvg": 1, 
-                        "diskTimeWriteLast": 1, 
-                        "diskTimeWriteMax": 1, 
+                        "diskIdentifier": "somestring",
+                        "diskIoTimeAvg": 1,
+                        "diskIoTimeLast": 1,
+                        "diskIoTimeMax": 1,
+                        "diskIoTimeMin": 1,
+                        "diskMergedReadAvg": 1,
+                        "diskMergedReadLast": 1,
+                        "diskMergedReadMax": 1,
+                        "diskMergedReadMin": 1,
+                        "diskMergedWriteAvg": 1,
+                        "diskMergedWriteLast": 1,
+                        "diskMergedWriteMax": 1,
+                        "diskMergedWriteMin": 1,
+                        "diskOctetsReadAvg": 1,
+                        "diskOctetsReadLast": 1,
+                        "diskOctetsReadMax": 1,
+                        "diskOctetsReadMin": 1,
+                        "diskOctetsWriteAvg": 1,
+                        "diskOctetsWriteLast": 1,
+                        "diskOctetsWriteMax": 1,
+                        "diskOctetsWriteMin": 1,
+                        "diskOpsReadAvg": 1,
+                        "diskOpsReadLast": 1,
+                        "diskOpsReadMax": 1,
+                        "diskOpsReadMin": 1,
+                        "diskOpsWriteAvg": 1,
+                        "diskOpsWriteLast": 1,
+                        "diskOpsWriteMax": 1,
+                        "diskOpsWriteMin": 1,
+                        "diskPendingOperationsAvg": 1,
+                        "diskPendingOperationsLast": 1,
+                        "diskPendingOperationsMax": 1,
+                        "diskPendingOperationsMin": 1,
+                        "diskTimeReadAvg": 1,
+                        "diskTimeReadLast": 1,
+                        "diskTimeReadMax": 1,
+                        "diskTimeReadMin": 1,
+                        "diskTimeWriteAvg": 1,
+                        "diskTimeWriteLast": 1,
+                        "diskTimeWriteMax": 1,
                         "diskTimeWriteMin": 1
-                    }, 
+                    },
                     {
-                        "diskIdentifier": "somestring", 
-                        "diskIoTimeAvg": 1, 
-                        "diskIoTimeLast": 1, 
-                        "diskIoTimeMax": 1, 
-                        "diskIoTimeMin": 1, 
-                        "diskMergedReadAvg": 1, 
-                        "diskMergedReadLast": 1, 
-                        "diskMergedReadMax": 1, 
-                        "diskMergedReadMin": 1, 
-                        "diskMergedWriteAvg": 1, 
-                        "diskMergedWriteLast": 1, 
-                        "diskMergedWriteMax": 1, 
-                        "diskMergedWriteMin": 1, 
-                        "diskOctetsReadAvg": 1, 
-                        "diskOctetsReadLast": 1, 
-                        "diskOctetsReadMax": 1, 
-                        "diskOctetsReadMin": 1, 
-                        "diskOctetsWriteAvg": 1, 
-                        "diskOctetsWriteLast": 1, 
-                        "diskOctetsWriteMax": 1, 
-                        "diskOctetsWriteMin": 1, 
-                        "diskOpsReadAvg": 1, 
-                        "diskOpsReadLast": 1, 
-                        "diskOpsReadMax": 1, 
-                        "diskOpsReadMin": 1, 
-                        "diskOpsWriteAvg": 1, 
-                        "diskOpsWriteLast": 1, 
-                        "diskOpsWriteMax": 1, 
-                        "diskOpsWriteMin": 1, 
-                        "diskPendingOperationsAvg": 1, 
-                        "diskPendingOperationsLast": 1, 
-                        "diskPendingOperationsMax": 1, 
-                        "diskPendingOperationsMin": 1, 
-                        "diskTimeReadAvg": 1, 
-                        "diskTimeReadLast": 1, 
-                        "diskTimeReadMax": 1, 
-                        "diskTimeReadMin": 1, 
-                        "diskTimeWriteAvg": 1, 
-                        "diskTimeWriteLast": 1, 
-                        "diskTimeWriteMax": 1, 
+                        "diskIdentifier": "somestring",
+                        "diskIoTimeAvg": 1,
+                        "diskIoTimeLast": 1,
+                        "diskIoTimeMax": 1,
+                        "diskIoTimeMin": 1,
+                        "diskMergedReadAvg": 1,
+                        "diskMergedReadLast": 1,
+                        "diskMergedReadMax": 1,
+                        "diskMergedReadMin": 1,
+                        "diskMergedWriteAvg": 1,
+                        "diskMergedWriteLast": 1,
+                        "diskMergedWriteMax": 1,
+                        "diskMergedWriteMin": 1,
+                        "diskOctetsReadAvg": 1,
+                        "diskOctetsReadLast": 1,
+                        "diskOctetsReadMax": 1,
+                        "diskOctetsReadMin": 1,
+                        "diskOctetsWriteAvg": 1,
+                        "diskOctetsWriteLast": 1,
+                        "diskOctetsWriteMax": 1,
+                        "diskOctetsWriteMin": 1,
+                        "diskOpsReadAvg": 1,
+                        "diskOpsReadLast": 1,
+                        "diskOpsReadMax": 1,
+                        "diskOpsReadMin": 1,
+                        "diskOpsWriteAvg": 1,
+                        "diskOpsWriteLast": 1,
+                        "diskOpsWriteMax": 1,
+                        "diskOpsWriteMin": 1,
+                        "diskPendingOperationsAvg": 1,
+                        "diskPendingOperationsLast": 1,
+                        "diskPendingOperationsMax": 1,
+                        "diskPendingOperationsMin": 1,
+                        "diskTimeReadAvg": 1,
+                        "diskTimeReadLast": 1,
+                        "diskTimeReadMax": 1,
+                        "diskTimeReadMin": 1,
+                        "diskTimeWriteAvg": 1,
+                        "diskTimeWriteLast": 1,
+                        "diskTimeWriteMax": 1,
                         "diskTimeWriteMin": 1
                     }
-                ], 
+                ],
                 "featureUsageArray": [
                     {
-                        "featureIdentifier": "somestring", 
+                        "featureIdentifier": "somestring",
                         "featureUtilization": 1
-                    }, 
+                    },
                     {
-                        "featureIdentifier": "somestring", 
+                        "featureIdentifier": "somestring",
                         "featureUtilization": 1
                     }
-                ], 
+                ],
                 "filesystemUsageArray": [
                     {
-                        "blockConfigured": 1, 
-                        "blockIops": 1, 
-                        "blockUsed": 1, 
-                        "ephemeralConfigured": 1, 
-                        "ephemeralIops": 1, 
-                        "ephemeralUsed": 1, 
+                        "blockConfigured": 1,
+                        "blockIops": 1,
+                        "blockUsed": 1,
+                        "ephemeralConfigured": 1,
+                        "ephemeralIops": 1,
+                        "ephemeralUsed": 1,
                         "filesystemName": "somestring"
-                    }, 
+                    },
                     {
-                        "blockConfigured": 1, 
-                        "blockIops": 1, 
-                        "blockUsed": 1, 
-                        "ephemeralConfigured": 1, 
-                        "ephemeralIops": 1, 
-                        "ephemeralUsed": 1, 
+                        "blockConfigured": 1,
+                        "blockIops": 1,
+                        "blockUsed": 1,
+                        "ephemeralConfigured": 1,
+                        "ephemeralIops": 1,
+                        "ephemeralUsed": 1,
                         "filesystemName": "somestring"
                     }
-                ], 
+                ],
                 "latencyDistribution": [
                     {
-                        "countsInTheBucket": 1, 
-                        "highEndOfLatencyBucket": 1, 
+                        "countsInTheBucket": 1,
+                        "highEndOfLatencyBucket": 1,
                         "lowEndOfLatencyBucket": 1
-                    }, 
+                    },
                     {
-                        "countsInTheBucket": 1, 
-                        "highEndOfLatencyBucket": 1, 
+                        "countsInTheBucket": 1,
+                        "highEndOfLatencyBucket": 1,
                         "lowEndOfLatencyBucket": 1
                     }
-                ], 
-                "meanRequestLatency": 1, 
-                "measurementInterval": 1, 
-                "measurementsForVfScalingVersion": 1, 
+                ],
+                "meanRequestLatency": 1,
+                "measurementInterval": 1,
+                "measurementsForVfScalingVersion": 1,
                 "memoryUsageArray": [
                     {
-                        "memoryBuffered": 1, 
-                        "memoryCached": 1, 
-                        "memoryConfigured": 1, 
-                        "memoryFree": 1, 
-                        "memorySlabRecl": 1, 
-                        "memorySlabUnrecl": 1, 
-                        "memoryUsed": 1, 
+                        "memoryBuffered": 1,
+                        "memoryCached": 1,
+                        "memoryConfigured": 1,
+                        "memoryFree": 1,
+                        "memorySlabRecl": 1,
+                        "memorySlabUnrecl": 1,
+                        "memoryUsed": 1,
                         "vmIdentifier": "somestring"
-                    }, 
+                    },
                     {
-                        "memoryBuffered": 1, 
-                        "memoryCached": 1, 
-                        "memoryConfigured": 1, 
-                        "memoryFree": 1, 
-                        "memorySlabRecl": 1, 
-                        "memorySlabUnrecl": 1, 
-                        "memoryUsed": 1, 
+                        "memoryBuffered": 1,
+                        "memoryCached": 1,
+                        "memoryConfigured": 1,
+                        "memoryFree": 1,
+                        "memorySlabRecl": 1,
+                        "memorySlabUnrecl": 1,
+                        "memoryUsed": 1,
                         "vmIdentifier": "somestring"
                     }
-                ], 
-                "numberOfMediaPortsInUse": 1, 
-                "requestRate": 1, 
+                ],
+                "numberOfMediaPortsInUse": 1,
+                "requestRate": 1,
                 "vNicPerformanceArray": [
                     {
-                        "receivedBroadcastPacketsAccumulated": 1, 
-                        "receivedBroadcastPacketsDelta": 1, 
-                        "receivedDiscardedPacketsAccumulated": 1, 
-                        "receivedDiscardedPacketsDelta": 1, 
-                        "receivedErrorPacketsAccumulated": 1, 
-                        "receivedErrorPacketsDelta": 1, 
-                        "receivedMulticastPacketsAccumulated": 1, 
-                        "receivedMulticastPacketsDelta": 1, 
-                        "receivedOctetsAccumulated": 1, 
-                        "receivedOctetsDelta": 1, 
-                        "receivedTotalPacketsAccumulated": 1, 
-                        "receivedTotalPacketsDelta": 1, 
-                        "receivedUnicastPacketsAccumulated": 1, 
-                        "receivedUnicastPacketsDelta": 1, 
-                        "transmittedBroadcastPacketsAccumulated": 1, 
-                        "transmittedBroadcastPacketsDelta": 1, 
-                        "transmittedDiscardedPacketsAccumulated": 1, 
-                        "transmittedDiscardedPacketsDelta": 1, 
-                        "transmittedErrorPacketsAccumulated": 1, 
-                        "transmittedErrorPacketsDelta": 1, 
-                        "transmittedMulticastPacketsAccumulated": 1, 
-                        "transmittedMulticastPacketsDelta": 1, 
-                        "transmittedOctetsAccumulated": 1, 
-                        "transmittedOctetsDelta": 1, 
-                        "transmittedTotalPacketsAccumulated": 1, 
-                        "transmittedTotalPacketsDelta": 1, 
-                        "transmittedUnicastPacketsAccumulated": 1, 
-                        "transmittedUnicastPacketsDelta": 1, 
-                        "vNicIdentifier": "somestring", 
+                        "receivedBroadcastPacketsAccumulated": 1,
+                        "receivedBroadcastPacketsDelta": 1,
+                        "receivedDiscardedPacketsAccumulated": 1,
+                        "receivedDiscardedPacketsDelta": 1,
+                        "receivedErrorPacketsAccumulated": 1,
+                        "receivedErrorPacketsDelta": 1,
+                        "receivedMulticastPacketsAccumulated": 1,
+                        "receivedMulticastPacketsDelta": 1,
+                        "receivedOctetsAccumulated": 1,
+                        "receivedOctetsDelta": 1,
+                        "receivedTotalPacketsAccumulated": 1,
+                        "receivedTotalPacketsDelta": 1,
+                        "receivedUnicastPacketsAccumulated": 1,
+                        "receivedUnicastPacketsDelta": 1,
+                        "transmittedBroadcastPacketsAccumulated": 1,
+                        "transmittedBroadcastPacketsDelta": 1,
+                        "transmittedDiscardedPacketsAccumulated": 1,
+                        "transmittedDiscardedPacketsDelta": 1,
+                        "transmittedErrorPacketsAccumulated": 1,
+                        "transmittedErrorPacketsDelta": 1,
+                        "transmittedMulticastPacketsAccumulated": 1,
+                        "transmittedMulticastPacketsDelta": 1,
+                        "transmittedOctetsAccumulated": 1,
+                        "transmittedOctetsDelta": 1,
+                        "transmittedTotalPacketsAccumulated": 1,
+                        "transmittedTotalPacketsDelta": 1,
+                        "transmittedUnicastPacketsAccumulated": 1,
+                        "transmittedUnicastPacketsDelta": 1,
+                        "vNicIdentifier": "somestring",
                         "valuesAreSuspect": "true"
-                    }, 
+                    },
                     {
-                        "receivedBroadcastPacketsAccumulated": 1, 
-                        "receivedBroadcastPacketsDelta": 1, 
-                        "receivedDiscardedPacketsAccumulated": 1, 
-                        "receivedDiscardedPacketsDelta": 1, 
-                        "receivedErrorPacketsAccumulated": 1, 
-                        "receivedErrorPacketsDelta": 1, 
-                        "receivedMulticastPacketsAccumulated": 1, 
-                        "receivedMulticastPacketsDelta": 1, 
-                        "receivedOctetsAccumulated": 1, 
-                        "receivedOctetsDelta": 1, 
-                        "receivedTotalPacketsAccumulated": 1, 
-                        "receivedTotalPacketsDelta": 1, 
-                        "receivedUnicastPacketsAccumulated": 1, 
-                        "receivedUnicastPacketsDelta": 1, 
-                        "transmittedBroadcastPacketsAccumulated": 1, 
-                        "transmittedBroadcastPacketsDelta": 1, 
-                        "transmittedDiscardedPacketsAccumulated": 1, 
-                        "transmittedDiscardedPacketsDelta": 1, 
-                        "transmittedErrorPacketsAccumulated": 1, 
-                        "transmittedErrorPacketsDelta": 1, 
-                        "transmittedMulticastPacketsAccumulated": 1, 
-                        "transmittedMulticastPacketsDelta": 1, 
-                        "transmittedOctetsAccumulated": 1, 
-                        "transmittedOctetsDelta": 1, 
-                        "transmittedTotalPacketsAccumulated": 1, 
-                        "transmittedTotalPacketsDelta": 1, 
-                        "transmittedUnicastPacketsAccumulated": 1, 
-                        "transmittedUnicastPacketsDelta": 1, 
-                        "vNicIdentifier": "somestring", 
+                        "receivedBroadcastPacketsAccumulated": 1,
+                        "receivedBroadcastPacketsDelta": 1,
+                        "receivedDiscardedPacketsAccumulated": 1,
+                        "receivedDiscardedPacketsDelta": 1,
+                        "receivedErrorPacketsAccumulated": 1,
+                        "receivedErrorPacketsDelta": 1,
+                        "receivedMulticastPacketsAccumulated": 1,
+                        "receivedMulticastPacketsDelta": 1,
+                        "receivedOctetsAccumulated": 1,
+                        "receivedOctetsDelta": 1,
+                        "receivedTotalPacketsAccumulated": 1,
+                        "receivedTotalPacketsDelta": 1,
+                        "receivedUnicastPacketsAccumulated": 1,
+                        "receivedUnicastPacketsDelta": 1,
+                        "transmittedBroadcastPacketsAccumulated": 1,
+                        "transmittedBroadcastPacketsDelta": 1,
+                        "transmittedDiscardedPacketsAccumulated": 1,
+                        "transmittedDiscardedPacketsDelta": 1,
+                        "transmittedErrorPacketsAccumulated": 1,
+                        "transmittedErrorPacketsDelta": 1,
+                        "transmittedMulticastPacketsAccumulated": 1,
+                        "transmittedMulticastPacketsDelta": 1,
+                        "transmittedOctetsAccumulated": 1,
+                        "transmittedOctetsDelta": 1,
+                        "transmittedTotalPacketsAccumulated": 1,
+                        "transmittedTotalPacketsDelta": 1,
+                        "transmittedUnicastPacketsAccumulated": 1,
+                        "transmittedUnicastPacketsDelta": 1,
+                        "vNicIdentifier": "somestring",
                         "valuesAreSuspect": "true"
                     }
-                ], 
+                ],
                 "vnfcScalingMetric": 1
-            }, 
+            },
             "mobileFlowFields": {
                 "additionalFields": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "appProtocolType": "somestring", 
-                "appProtocolVersion": "somestring", 
-                "applicationType": "somestring", 
-                "cid": "somestring", 
-                "connectionType": "somestring", 
-                "ecgi": "somestring", 
-                "flowDirection": "somestring", 
+                ],
+                "appProtocolType": "somestring",
+                "appProtocolVersion": "somestring",
+                "applicationType": "somestring",
+                "cid": "somestring",
+                "connectionType": "somestring",
+                "ecgi": "somestring",
+                "flowDirection": "somestring",
                 "gtpPerFlowMetrics": {
-                    "avgBitErrorRate": 1, 
-                    "avgPacketDelayVariation": 1, 
-                    "avgPacketLatency": 1, 
-                    "avgReceiveThroughput": 1, 
-                    "avgTransmitThroughput": 1, 
-                    "durConnectionFailedStatus": 1, 
-                    "durTunnelFailedStatus": 1, 
-                    "flowActivatedBy": "somestring", 
-                    "flowActivationEpoch": 1, 
-                    "flowActivationMicrosec": 1, 
-                    "flowActivationTime": "somestring", 
-                    "flowDeactivatedBy": "somestring", 
-                    "flowDeactivationEpoch": 1, 
-                    "flowDeactivationMicrosec": 1, 
-                    "flowDeactivationTime": "somestring", 
-                    "flowStatus": "somestring", 
-                    "gtpConnectionStatus": "somestring", 
-                    "gtpTunnelStatus": "somestring", 
+                    "avgBitErrorRate": 1,
+                    "avgPacketDelayVariation": 1,
+                    "avgPacketLatency": 1,
+                    "avgReceiveThroughput": 1,
+                    "avgTransmitThroughput": 1,
+                    "durConnectionFailedStatus": 1,
+                    "durTunnelFailedStatus": 1,
+                    "flowActivatedBy": "somestring",
+                    "flowActivationEpoch": 1,
+                    "flowActivationMicrosec": 1,
+                    "flowActivationTime": "somestring",
+                    "flowDeactivatedBy": "somestring",
+                    "flowDeactivationEpoch": 1,
+                    "flowDeactivationMicrosec": 1,
+                    "flowDeactivationTime": "somestring",
+                    "flowStatus": "somestring",
+                    "gtpConnectionStatus": "somestring",
+                    "gtpTunnelStatus": "somestring",
                     "ipTosCountList": [
                         [
-                            1, 
+                            1,
                             1
-                        ], 
+                        ],
                         [
-                            1, 
+                            1,
                             1
                         ]
-                    ], 
+                    ],
                     "ipTosList": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "largePacketRtt": 1, 
-                    "largePacketThreshold": 1, 
-                    "maxPacketDelayVariation": 1, 
-                    "maxReceiveBitRate": 1, 
-                    "maxTransmitBitRate": 1, 
+                    ],
+                    "largePacketRtt": 1,
+                    "largePacketThreshold": 1,
+                    "maxPacketDelayVariation": 1,
+                    "maxReceiveBitRate": 1,
+                    "maxTransmitBitRate": 1,
                     "mobileQciCosCountList": [
                         [
-                            1, 
+                            1,
                             1
-                        ], 
+                        ],
                         [
-                            1, 
+                            1,
                             1
                         ]
-                    ], 
+                    ],
                     "mobileQciCosList": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "numActivationFailures": 1, 
-                    "numBitErrors": 1, 
-                    "numBytesReceived": 1, 
-                    "numBytesTransmitted": 1, 
-                    "numDroppedPackets": 1, 
-                    "numGtpEchoFailures": 1, 
-                    "numGtpTunnelErrors": 1, 
-                    "numHttpErrors": 1, 
-                    "numL7BytesReceived": 1, 
-                    "numL7BytesTransmitted": 1, 
-                    "numLostPackets": 1, 
-                    "numOutOfOrderPackets": 1, 
-                    "numPacketErrors": 1, 
-                    "numPacketsReceivedExclRetrans": 1, 
-                    "numPacketsReceivedInclRetrans": 1, 
-                    "numPacketsTransmittedInclRetrans": 1, 
-                    "numRetries": 1, 
-                    "numTimeouts": 1, 
-                    "numTunneledL7BytesReceived": 1, 
-                    "roundTripTime": 1, 
+                    ],
+                    "numActivationFailures": 1,
+                    "numBitErrors": 1,
+                    "numBytesReceived": 1,
+                    "numBytesTransmitted": 1,
+                    "numDroppedPackets": 1,
+                    "numGtpEchoFailures": 1,
+                    "numGtpTunnelErrors": 1,
+                    "numHttpErrors": 1,
+                    "numL7BytesReceived": 1,
+                    "numL7BytesTransmitted": 1,
+                    "numLostPackets": 1,
+                    "numOutOfOrderPackets": 1,
+                    "numPacketErrors": 1,
+                    "numPacketsReceivedExclRetrans": 1,
+                    "numPacketsReceivedInclRetrans": 1,
+                    "numPacketsTransmittedInclRetrans": 1,
+                    "numRetries": 1,
+                    "numTimeouts": 1,
+                    "numTunneledL7BytesReceived": 1,
+                    "roundTripTime": 1,
                     "tcpFlagCountList": [
                         [
-                            1, 
+                            1,
                             1
-                        ], 
+                        ],
                         [
-                            1, 
+                            1,
                             1
                         ]
-                    ], 
+                    ],
                     "tcpFlagList": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
+                    ],
                     "timeToFirstByte": 1
-                }, 
-                "gtpProtocolType": "somestring", 
-                "gtpVersion": "somestring", 
-                "httpHeader": "somestring", 
-                "imei": "somestring", 
-                "imsi": "somestring", 
-                "ipProtocolType": "somestring", 
-                "ipVersion": "somestring", 
-                "lac": "somestring", 
-                "mcc": "somestring", 
-                "mnc": "somestring", 
-                "mobileFlowFieldsVersion": 1, 
-                "msisdn": "somestring", 
-                "otherEndpointIpAddress": "somestring", 
-                "otherEndpointPort": 1, 
-                "otherFunctionalRole": "somestring", 
-                "rac": "somestring", 
-                "radioAccessTechnology": "somestring", 
-                "reportingEndpointIpAddr": "somestring", 
-                "reportingEndpointPort": 1, 
-                "sac": "somestring", 
-                "samplingAlgorithm": 1, 
-                "tac": "somestring", 
-                "tunnelId": "somestring", 
+                },
+                "gtpProtocolType": "somestring",
+                "gtpVersion": "somestring",
+                "httpHeader": "somestring",
+                "imei": "somestring",
+                "imsi": "somestring",
+                "ipProtocolType": "somestring",
+                "ipVersion": "somestring",
+                "lac": "somestring",
+                "mcc": "somestring",
+                "mnc": "somestring",
+                "mobileFlowFieldsVersion": 1,
+                "msisdn": "somestring",
+                "otherEndpointIpAddress": "somestring",
+                "otherEndpointPort": 1,
+                "otherFunctionalRole": "somestring",
+                "rac": "somestring",
+                "radioAccessTechnology": "somestring",
+                "reportingEndpointIpAddr": "somestring",
+                "reportingEndpointPort": 1,
+                "sac": "somestring",
+                "samplingAlgorithm": 1,
+                "tac": "somestring",
+                "tunnelId": "somestring",
                 "vlanId": "somestring"
-            }, 
+            },
             "otherFields": {
                 "hashOfNameValuePairArrays": [
                     {
                         "arrayOfFields": [
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
-                            }, 
+                            },
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
                             }
-                        ], 
+                        ],
                         "name": "somestring"
-                    }, 
+                    },
                     {
                         "arrayOfFields": [
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
-                            }, 
+                            },
                             {
-                                "name": "somestring", 
+                                "name": "somestring",
                                 "value": "somestring"
                             }
-                        ], 
+                        ],
                         "name": "somestring"
                     }
-                ], 
+                ],
                 "jsonObjects": [
                     {
-                        "nfSubscribedObjectName": "somestring", 
-                        "nfSubscriptionId": "somestring", 
+                        "nfSubscribedObjectName": "somestring",
+                        "nfSubscriptionId": "somestring",
                         "objectInstances": [
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
-                            }, 
+                            },
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
                             }
-                        ], 
-                        "objectName": "somestring", 
-                        "objectSchema": "somestring", 
+                        ],
+                        "objectName": "somestring",
+                        "objectSchema": "somestring",
                         "objectSchemaUrl": "somestring"
-                    }, 
+                    },
                     {
-                        "nfSubscribedObjectName": "somestring", 
-                        "nfSubscriptionId": "somestring", 
+                        "nfSubscribedObjectName": "somestring",
+                        "nfSubscriptionId": "somestring",
                         "objectInstances": [
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
-                            }, 
+                            },
                             {
-                                "objectInstance": {}, 
-                                "objectInstanceEpochMicrosec": 1, 
+                                "objectInstance": {},
+                                "objectInstanceEpochMicrosec": 1,
                                 "objectKeys": [
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
-                                    }, 
+                                    },
                                     {
-                                        "keyName": "somestring", 
-                                        "keyOrder": 1, 
+                                        "keyName": "somestring",
+                                        "keyOrder": 1,
                                         "keyValue": "somestring"
                                     }
                                 ]
                             }
-                        ], 
-                        "objectName": "somestring", 
-                        "objectSchema": "somestring", 
+                        ],
+                        "objectName": "somestring",
+                        "objectSchema": "somestring",
                         "objectSchemaUrl": "somestring"
                     }
-                ], 
+                ],
                 "nameValuePairs": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
+                ],
                 "otherFieldsVersion": 1
-            }, 
+            },
             "sipSignalingFields": {
                 "additionalInformation": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "compressedSip": "somestring", 
-                "correlator": "somestring", 
-                "localIpAddress": "somestring", 
-                "localPort": "somestring", 
-                "remoteIpAddress": "somestring", 
-                "remotePort": "somestring", 
-                "sipSignalingFieldsVersion": 1, 
-                "summarySip": "somestring", 
+                ],
+                "compressedSip": "somestring",
+                "correlator": "somestring",
+                "localIpAddress": "somestring",
+                "localPort": "somestring",
+                "remoteIpAddress": "somestring",
+                "remotePort": "somestring",
+                "sipSignalingFieldsVersion": 1,
+                "summarySip": "somestring",
                 "vendorVnfNameFields": {
-                    "vendorName": "somestring", 
-                    "vfModuleName": "somestring", 
+                    "vendorName": "somestring",
+                    "vfModuleName": "somestring",
                     "vnfName": "somestring"
                 }
-            }, 
+            },
             "stateChangeFields": {
                 "additionalFields": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "newState": "inService", 
-                "oldState": "inService", 
-                "stateChangeFieldsVersion": 1, 
+                ],
+                "newState": "inService",
+                "oldState": "inService",
+                "stateChangeFieldsVersion": 1,
                 "stateInterface": "somestring"
-            }, 
+            },
             "syslogFields": {
-                "additionalFields": "somestring", 
-                "eventSourceHost": "somestring", 
-                "eventSourceType": "somestring", 
-                "syslogFacility": 1, 
-                "syslogFieldsVersion": 1, 
-                "syslogMsg": "somestring", 
-                "syslogPri": 1, 
-                "syslogProc": "somestring", 
-                "syslogProcId": 1, 
-                "syslogSData": "somestring", 
-                "syslogSdId": "somestring", 
-                "syslogSev": "Alert", 
-                "syslogTag": "somestring", 
+                "additionalFields": "somestring",
+                "eventSourceHost": "somestring",
+                "eventSourceType": "somestring",
+                "syslogFacility": 1,
+                "syslogFieldsVersion": 1,
+                "syslogMsg": "somestring",
+                "syslogPri": 1,
+                "syslogProc": "somestring",
+                "syslogProcId": 1,
+                "syslogSData": "somestring",
+                "syslogSdId": "somestring",
+                "syslogSev": "Alert",
+                "syslogTag": "somestring",
                 "syslogVer": 1
-            }, 
+            },
             "thresholdCrossingAlertFields": {
                 "additionalFields": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
+                ],
                 "additionalParameters": [
                     {
-                        "criticality": "CRIT", 
-                        "name": "somestring", 
-                        "thresholdCrossed": "somestring", 
+                        "criticality": "CRIT",
+                        "name": "somestring",
+                        "thresholdCrossed": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "criticality": "CRIT", 
-                        "name": "somestring", 
-                        "thresholdCrossed": "somestring", 
+                        "criticality": "CRIT",
+                        "name": "somestring",
+                        "thresholdCrossed": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "alertAction": "CLEAR", 
-                "alertDescription": "somestring", 
-                "alertType": "CARD-ANOMALY", 
-                "alertValue": "somestring", 
+                ],
+                "alertAction": "CLEAR",
+                "alertDescription": "somestring",
+                "alertType": "CARD-ANOMALY",
+                "alertValue": "somestring",
                 "associatedAlertIdList": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
-                ], 
-                "collectionTimestamp": "somestring", 
-                "dataCollector": "somestring", 
-                "elementType": "somestring", 
-                "eventSeverity": "CRITICAL", 
-                "eventStartTimestamp": "somestring", 
-                "interfaceName": "somestring", 
-                "networkService": "somestring", 
-                "possibleRootCause": "somestring", 
+                ],
+                "collectionTimestamp": "somestring",
+                "dataCollector": "somestring",
+                "elementType": "somestring",
+                "eventSeverity": "CRITICAL",
+                "eventStartTimestamp": "somestring",
+                "interfaceName": "somestring",
+                "networkService": "somestring",
+                "possibleRootCause": "somestring",
                 "thresholdCrossingFieldsVersion": 1
-            }, 
+            },
             "voiceQualityFields": {
                 "additionalInformation": [
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
-                    }, 
+                    },
                     {
-                        "name": "somestring", 
+                        "name": "somestring",
                         "value": "somestring"
                     }
-                ], 
-                "calleeSideCodec": "somestring", 
-                "callerSideCodec": "somestring", 
-                "correlator": "somestring", 
+                ],
+                "calleeSideCodec": "somestring",
+                "callerSideCodec": "somestring",
+                "correlator": "somestring",
                 "endOfCallVqmSummaries": {
-                    "adjacencyName": "somestring", 
-                    "endpointDescription": "Caller", 
-                    "endpointJitter": 1, 
-                    "endpointRtpOctetsDiscarded": 1, 
-                    "endpointRtpOctetsReceived": 1, 
-                    "endpointRtpOctetsSent": 1, 
-                    "endpointRtpPacketsDiscarded": 1, 
-                    "endpointRtpPacketsReceived": 1, 
-                    "endpointRtpPacketsSent": 1, 
-                    "localJitter": 1, 
-                    "localRtpOctetsDiscarded": 1, 
-                    "localRtpOctetsReceived": 1, 
-                    "localRtpOctetsSent": 1, 
-                    "localRtpPacketsDiscarded": 1, 
-                    "localRtpPacketsReceived": 1, 
-                    "localRtpPacketsSent": 1, 
-                    "mosCqe": 1, 
-                    "packetLossPercent": 1, 
-                    "packetsLost": 1, 
-                    "rFactor": 1, 
+                    "adjacencyName": "somestring",
+                    "endpointDescription": "Caller",
+                    "endpointJitter": 1,
+                    "endpointRtpOctetsDiscarded": 1,
+                    "endpointRtpOctetsReceived": 1,
+                    "endpointRtpOctetsSent": 1,
+                    "endpointRtpPacketsDiscarded": 1,
+                    "endpointRtpPacketsReceived": 1,
+                    "endpointRtpPacketsSent": 1,
+                    "localJitter": 1,
+                    "localRtpOctetsDiscarded": 1,
+                    "localRtpOctetsReceived": 1,
+                    "localRtpOctetsSent": 1,
+                    "localRtpPacketsDiscarded": 1,
+                    "localRtpPacketsReceived": 1,
+                    "localRtpPacketsSent": 1,
+                    "mosCqe": 1,
+                    "packetLossPercent": 1,
+                    "packetsLost": 1,
+                    "rFactor": 1,
                     "roundTripDelay": 1
-                }, 
-                "midCallRtcp": "somestring", 
-                "phoneNumber": "somestring", 
+                },
+                "midCallRtcp": "somestring",
+                "phoneNumber": "somestring",
                 "vendorVnfNameFields": {
-                    "vendorName": "somestring", 
-                    "vfModuleName": "somestring", 
+                    "vendorName": "somestring",
+                    "vfModuleName": "somestring",
                     "vnfName": "somestring"
-                }, 
+                },
                 "voiceQualityFieldsVersion": 1
             }
         }
@@ -1928,8 +1928,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1946,8 +1946,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1964,8 +1964,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1982,8 +1982,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1997,7 +1997,7 @@ Security
     :widths: 15, 45
 
         :ref:`basicAuth <securities_basicAuth>`, ""
-  
+
 Data Structures
 ~~~~~~~~~~~~~~~
 
@@ -2011,9 +2011,9 @@ ApiResponseMessage Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        code | No | integer | int32 |  | 
-        message | No | string |  |  | 
-        type | No | string |  |  | 
+        code | No | integer | int32 |  |
+        message | No | string |  |  |
+        type | No | string |  |  |
 
 .. _d_f598222d7a83ca9c3538556b263682d1:
 
@@ -2025,7 +2025,7 @@ VES5Request Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  | 
+        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  |
 
 .. _d_df249c51a416f54e5609f2ffffe059c0:
 
@@ -2039,8 +2039,8 @@ number of times an identified codec was used over the measurementInterval
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        codecIdentifier | Yes | string |  |  | 
-        numberInUse | Yes | integer |  |  | 
+        codecIdentifier | Yes | string |  |  |
+        numberInUse | Yes | integer |  |  |
 
 .. _d_a68e1b21fdcef792db73f711201c56ad:
 
@@ -2054,10 +2054,10 @@ command from an event collector toward an event source
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        commandType | Yes | string |  | {'enum': ['heartbeatIntervalChange', 'measurementIntervalChange', 'provideThrottlingState', 'throttlingSpecification']} | 
-        eventDomainThrottleSpecification | No | :ref:`eventDomainThrottleSpecification <d_4089a4a9ee684770c6f37a588a577589>` |  |  | 
-        heartbeatInterval | No | integer |  |  | 
-        measurementInterval | No | integer |  |  | 
+        commandType | Yes | string |  | {'enum': ['heartbeatIntervalChange', 'measurementIntervalChange', 'provideThrottlingState', 'throttlingSpecification']} |
+        eventDomainThrottleSpecification | No | :ref:`eventDomainThrottleSpecification <d_4089a4a9ee684770c6f37a588a577589>` |  |  |
+        heartbeatInterval | No | integer |  |  |
+        measurementInterval | No | integer |  |  |
 
 .. _d_2dc9a27be1410f60241c5f63c636bb7e:
 
@@ -2075,7 +2075,7 @@ fields common to all events
         eventId | Yes | string |  |  | event key that is unique to the event source
         eventName | Yes | string |  |  | unique event name
         eventType | No | string |  |  | for example - applicationVnf, guestOS, hostOS, platform
-        internalHeaderFields | No | :ref:`internalHeaderFields <d_2873d30f54c59ef635c1fc0cbbaa89f1>` |  |  | 
+        internalHeaderFields | No | :ref:`internalHeaderFields <d_2873d30f54c59ef635c1fc0cbbaa89f1>` |  |  |
         lastEpochMicrosec | Yes | number |  |  | the latest unix time aka epoch time associated with the event from any component--as microseconds elapsed since 1 Jan 1970 not including leap seconds
         nfNamingCode | No | string |  |  | 4 character network function type, aligned with vnf naming standards
         nfcNamingCode | No | string |  |  | 3 character network function component type, aligned with vfc naming standards
@@ -2100,10 +2100,10 @@ performance counter
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        criticality | Yes | string |  | {'enum': ['CRIT', 'MAJ']} | 
-        name | Yes | string |  |  | 
-        thresholdCrossed | Yes | string |  |  | 
-        value | Yes | string |  |  | 
+        criticality | Yes | string |  | {'enum': ['CRIT', 'MAJ']} |
+        name | Yes | string |  |  |
+        thresholdCrossed | Yes | string |  |  |
+        value | Yes | string |  |  |
 
 .. _d_6f081937f31c09078c8acf9212d6c449:
 
@@ -2196,23 +2196,23 @@ provides end of call voice quality metrics
 
         adjacencyName | Yes | string |  |  |  adjacency name
         endpointDescription | Yes | string |  | {'enum': ['Caller', 'Callee']} | Either Caller or Callee
-        endpointJitter | No | number |  |  | 
-        endpointRtpOctetsDiscarded | No | number |  |  | 
-        endpointRtpOctetsReceived | No | number |  |  | 
-        endpointRtpOctetsSent | No | number |  |  | 
-        endpointRtpPacketsDiscarded | No | number |  |  | 
-        endpointRtpPacketsReceived | No | number |  |  | 
-        endpointRtpPacketsSent | No | number |  |  | 
-        localJitter | No | number |  |  | 
-        localRtpOctetsDiscarded | No | number |  |  | 
-        localRtpOctetsReceived | No | number |  |  | 
-        localRtpOctetsSent | No | number |  |  | 
-        localRtpPacketsDiscarded | No | number |  |  | 
-        localRtpPacketsReceived | No | number |  |  | 
-        localRtpPacketsSent | No | number |  |  | 
+        endpointJitter | No | number |  |  |
+        endpointRtpOctetsDiscarded | No | number |  |  |
+        endpointRtpOctetsReceived | No | number |  |  |
+        endpointRtpOctetsSent | No | number |  |  |
+        endpointRtpPacketsDiscarded | No | number |  |  |
+        endpointRtpPacketsReceived | No | number |  |  |
+        endpointRtpPacketsSent | No | number |  |  |
+        localJitter | No | number |  |  |
+        localRtpOctetsDiscarded | No | number |  |  |
+        localRtpOctetsReceived | No | number |  |  |
+        localRtpOctetsSent | No | number |  |  |
+        localRtpPacketsDiscarded | No | number |  |  |
+        localRtpPacketsReceived | No | number |  |  |
+        localRtpPacketsSent | No | number |  |  |
         mosCqe | No | number |  |  | 1-5 1dp
         packetLossPercent | No | number |  |  | Calculated percentage packet loss based on Endpoint RTP packets lost (as reported in RTCP) and Local RTP packets sent. Direction is based on Endpoint description (Caller, Callee). Decimal (2 dp)
-        packetsLost | No | number |  |  | 
+        packetsLost | No | number |  |  |
         rFactor | No | number |  |  | 0-100
         roundTripDelay | No | number |  |  | millisecs
 
@@ -2228,17 +2228,17 @@ the root level of the common event format
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        commonEventHeader | Yes | :ref:`commonEventHeader <d_2dc9a27be1410f60241c5f63c636bb7e>` |  |  | 
-        faultFields | No | :ref:`faultFields <d_e7aa5254472f7823fdd6d5a090bfd0a4>` |  |  | 
-        heartbeatFields | No | :ref:`heartbeatFields <d_6ea626e11ce7887cddd39c36ff4f0926>` |  |  | 
-        measurementsForVfScalingFields | No | :ref:`measurementsForVfScalingFields <d_669cf98e276c9992abd27056c432bbb2>` |  |  | 
-        mobileFlowFields | No | :ref:`mobileFlowFields <d_dc18fe1d28fe3ef664c3f4ab777d8424>` |  |  | 
-        otherFields | No | :ref:`otherFields <d_5a79cd7ce784d60fd832d9c7c0a24322>` |  |  | 
-        sipSignalingFields | No | :ref:`sipSignalingFields <d_c3e191f0b26ddd68f927ac0c8b551c5e>` |  |  | 
-        stateChangeFields | No | :ref:`stateChangeFields <d_c5450f1a263d0a2b0c64c96119f7d759>` |  |  | 
-        syslogFields | No | :ref:`syslogFields <d_782271970af04a3b0e5a5da9b30996d2>` |  |  | 
-        thresholdCrossingAlertFields | No | :ref:`thresholdCrossingAlertFields <d_bd95ac8a5536a5bb5e6a0de7e64b9f20>` |  |  | 
-        voiceQualityFields | No | :ref:`voiceQualityFields <d_9551641bd1c775d9fcf4e45353de8e43>` |  |  | 
+        commonEventHeader | Yes | :ref:`commonEventHeader <d_2dc9a27be1410f60241c5f63c636bb7e>` |  |  |
+        faultFields | No | :ref:`faultFields <d_e7aa5254472f7823fdd6d5a090bfd0a4>` |  |  |
+        heartbeatFields | No | :ref:`heartbeatFields <d_6ea626e11ce7887cddd39c36ff4f0926>` |  |  |
+        measurementsForVfScalingFields | No | :ref:`measurementsForVfScalingFields <d_669cf98e276c9992abd27056c432bbb2>` |  |  |
+        mobileFlowFields | No | :ref:`mobileFlowFields <d_dc18fe1d28fe3ef664c3f4ab777d8424>` |  |  |
+        otherFields | No | :ref:`otherFields <d_5a79cd7ce784d60fd832d9c7c0a24322>` |  |  |
+        sipSignalingFields | No | :ref:`sipSignalingFields <d_c3e191f0b26ddd68f927ac0c8b551c5e>` |  |  |
+        stateChangeFields | No | :ref:`stateChangeFields <d_c5450f1a263d0a2b0c64c96119f7d759>` |  |  |
+        syslogFields | No | :ref:`syslogFields <d_782271970af04a3b0e5a5da9b30996d2>` |  |  |
+        thresholdCrossingAlertFields | No | :ref:`thresholdCrossingAlertFields <d_bd95ac8a5536a5bb5e6a0de7e64b9f20>` |  |  |
+        voiceQualityFields | No | :ref:`voiceQualityFields <d_9551641bd1c775d9fcf4e45353de8e43>` |  |  |
 
 .. _d_4089a4a9ee684770c6f37a588a577589:
 
@@ -2290,8 +2290,8 @@ number of times an identified feature was used over the measurementInterval
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        featureIdentifier | Yes | string |  |  | 
-        featureUtilization | Yes | integer |  |  | 
+        featureIdentifier | Yes | string |  |  |
+        featureUtilization | Yes | integer |  |  |
 
 .. _d_a9799335edbbc52c7f0c5191f7bd09ee:
 
@@ -2305,8 +2305,8 @@ name value pair
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        name | Yes | string |  |  | 
-        value | Yes | string |  |  | 
+        name | Yes | string |  |  |
+        value | Yes | string |  |  |
 
 .. _d_18e1fa5fd6774deefce826b075f8b6e7:
 
@@ -2320,13 +2320,13 @@ disk usage of an identified virtual machine in gigabytes and/or gigabytes per se
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        blockConfigured | Yes | number |  |  | 
-        blockIops | Yes | number |  |  | 
-        blockUsed | Yes | number |  |  | 
-        ephemeralConfigured | Yes | number |  |  | 
-        ephemeralIops | Yes | number |  |  | 
-        ephemeralUsed | Yes | number |  |  | 
-        filesystemName | Yes | string |  |  | 
+        blockConfigured | Yes | number |  |  |
+        blockIops | Yes | number |  |  |
+        blockUsed | Yes | number |  |  |
+        ephemeralConfigured | Yes | number |  |  |
+        ephemeralIops | Yes | number |  |  |
+        ephemeralUsed | Yes | number |  |  |
+        filesystemName | Yes | string |  |  |
 
 .. _d_bb1527d221e848e0896c78552979238b:
 
@@ -2488,9 +2488,9 @@ number of counts falling within a defined latency bucket
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        countsInTheBucket | Yes | number |  |  | 
-        highEndOfLatencyBucket | No | number |  |  | 
-        lowEndOfLatencyBucket | No | number |  |  | 
+        countsInTheBucket | Yes | number |  |  |
+        highEndOfLatencyBucket | No | number |  |  |
+        lowEndOfLatencyBucket | No | number |  |  |
 
 .. _d_669cf98e276c9992abd27056c432bbb2:
 
@@ -2565,7 +2565,7 @@ mobileFlow fields
         connectionType | No | string |  |  | Abbreviation referencing a 3GPP reference point e.g., S1-U, S11, etc
         ecgi | No | string |  |  | Evolved Cell Global Id
         flowDirection | Yes | string |  |  | Flow direction, indicating if the reporting node is the source of the flow or destination for the flow
-        gtpPerFlowMetrics | Yes | :ref:`gtpPerFlowMetrics <d_bb1527d221e848e0896c78552979238b>` |  |  | 
+        gtpPerFlowMetrics | Yes | :ref:`gtpPerFlowMetrics <d_bb1527d221e848e0896c78552979238b>` |  |  |
         gtpProtocolType | No | string |  |  | GTP protocol
         gtpVersion | No | string |  |  | GTP protocol version
         httpHeader | No | string |  |  | HTTP request header, if the flow connects to a node referenced by HTTP
@@ -2604,7 +2604,7 @@ an array of name value pairs along with a name for the array
     :widths: 20, 10, 15, 15, 30, 25
 
         arrayOfFields | Yes | array of :ref:`field <d_a9799335edbbc52c7f0c5191f7bd09ee>` |  |  | array of name value pairs
-        name | Yes | string |  |  | 
+        name | Yes | string |  |  |
 
 .. _d_5a79cd7ce784d60fd832d9c7c0a24322:
 
@@ -2661,7 +2661,7 @@ sip signaling fields
         remotePort | Yes | string |  |  | port of peer endpoint
         sipSignalingFieldsVersion | Yes | number |  |  | version of the sipSignalingFields block
         summarySip | No | string |  |  | the SIP Method or Response (INVITE, 200 OK, BYE, etc)
-        vendorVnfNameFields | Yes | :ref:`vendorVnfNameFields <d_d694eebbbc0078612d2ba22e0cbf814c>` |  |  | 
+        vendorVnfNameFields | Yes | :ref:`vendorVnfNameFields <d_d694eebbbc0078612d2ba22e0cbf814c>` |  |  |
 
 .. _d_c5450f1a263d0a2b0c64c96119f7d759:
 
@@ -2704,24 +2704,24 @@ syslogFields Model Structure
 sysLog fields
 
 .. csv-table::
-    :delim: |
+    :delim: ;
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        additionalFields | No | string |  |  | additional syslog fields if needed provided as name=value delimited by a pipe | symbol, for example: 'name1=value1|name2=value2|'
-        eventSourceHost | No | string |  |  | hostname of the device
-        eventSourceType | Yes | string |  |  | type of event source; examples: other, router, switch, host, card, port, slotThreshold, portThreshold, virtualMachine, virtualNetworkFunction
-        syslogFacility | No | integer |  |  | numeric code from 0 to 23 for facility--see table in documentation
-        syslogFieldsVersion | Yes | number |  |  | version of the syslogFields block
-        syslogMsg | Yes | string |  |  | syslog message
-        syslogPri | No | integer |  |  | 0-192 combined severity and facility
-        syslogProc | No | string |  |  | identifies the application that originated the message
-        syslogProcId | No | number |  |  | a change in the value of this field indicates a discontinuity in syslog reporting
-        syslogSData | No | string |  |  | syslog structured data consisting of a structured data Id followed by a set of key value pairs
-        syslogSdId | No | string |  |  | 0-32 char in format name@number for example ourSDID@32473
-        syslogSev | No | string |  | {'enum': ['Alert', 'Critical', 'Debug', 'Emergency', 'Error', 'Info', 'Notice', 'Warning']} | numerical Code for  severity derived from syslogPri as remaider of syslogPri / 8
-        syslogTag | Yes | string |  |  | msgId indicating the type of message such as TCPOUT or TCPIN; NILVALUE should be used when no other value can be provided
-        syslogVer | No | number |  |  | IANA assigned version of the syslog protocol specification - typically 1
+        additionalFields ; No ; string ;  ;  ; additional syslog fields if needed provided as name=value delimited by a pipe | symbol, for example: 'name1=value1|name2=value2|'
+        eventSourceHost ; No ; string ;  ;  ; hostname of the device
+        eventSourceType ; Yes ; string ;  ;  ; type of event source, examples: other, router, switch, host, card, port, slotThreshold, portThreshold, virtualMachine, virtualNetworkFunction
+        syslogFacility ; No ; integer ;  ;  ; numeric code from 0 to 23 for facility--see table in documentation
+        syslogFieldsVersion ; Yes ; number ;  ;  ; version of the syslogFields block
+        syslogMsg ; Yes ; string ;  ;  ; syslog message
+        syslogPri ; No ; integer ;  ;  ; 0-192 combined severity and facility
+        syslogProc ; No ; string ;  ;  ; identifies the application that originated the message
+        syslogProcId ; No ; number ;  ;  ; a change in the value of this field indicates a discontinuity in syslog reporting
+        syslogSData ; No ; string ;  ;  ; syslog structured data consisting of a structured data Id followed by a set of key value pairs
+        syslogSdId ; No ; string ;  ;  ; 0-32 char in format name@number for example ourSDID@32473
+        syslogSev ; No ; string ; ; {'enum': ['Alert', 'Critical', 'Debug', 'Emergency', 'Error', 'Info', 'Notice', 'Warning']} , numerical Code for  severity derived from syslogPri as remaider of syslogPri / 8
+        syslogTag ; Yes ; string ;  ;  ; msgId indicating the type of message such as TCPOUT or TCPIN, NILVALUE should be used when no other value can be provided
+        syslogVer ; No ; number ;  ;  ; IANA assigned version of the syslog protocol specification - typically 1
 
 .. _d_bd95ac8a5536a5bb5e6a0de7e64b9f20:
 
@@ -2827,9 +2827,8 @@ provides statistics related to customer facing voice products
         calleeSideCodec | Yes | string |  |  | callee codec for the call
         callerSideCodec | Yes | string |  |  | caller codec for the call
         correlator | Yes | string |  |  | this is the same for all events on this call
-        endOfCallVqmSummaries | No | :ref:`endOfCallVqmSummaries <d_c911a0a8abdb511d7cd6590f383d817b>` |  |  | 
+        endOfCallVqmSummaries | No | :ref:`endOfCallVqmSummaries <d_c911a0a8abdb511d7cd6590f383d817b>` |  |  |
         midCallRtcp | Yes | string |  |  | Base64 encoding of the binary RTCP data excluding Eth/IP/UDP headers
         phoneNumber | No | string |  |  | phone number associated with the correlator
-        vendorVnfNameFields | Yes | :ref:`vendorVnfNameFields <d_d694eebbbc0078612d2ba22e0cbf814c>` |  |  | 
+        vendorVnfNameFields | Yes | :ref:`vendorVnfNameFields <d_d694eebbbc0078612d2ba22e0cbf814c>` |  |  |
         voiceQualityFieldsVersion | Yes | number |  |  | version of the voiceQualityFields block
-
