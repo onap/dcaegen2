@@ -36,9 +36,9 @@ Specifically, DCAE R1 includes the following components:
 - Service components                            
     - Docker container components
         - VNF Event Streaming (VES) collector
-        - Holmes engine (**)
-        - Holmes rule management (**)
+        - Holmes (engine and rule management) **
     - CDAP analytics component
+        - Threshold Crossing Analytics (TCA)
 
 (*) Note: This component is delivered under the CCSDK project, deployed by DCAE under a single 
 VM configuration as a shared PostgreSQL database for the R1 demos.  (CCSDK PostgreSQL supports 
@@ -133,3 +133,4 @@ following Gerrit repos are voided and already locked as read-only.
 
 **Other**
 
+SNMP trap collector is seed code delivery only.
