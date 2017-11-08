@@ -5,15 +5,15 @@ Testing and Debugging ONAP DCAE Deployment
 Check Component Status
 ======================
 
-Testing of a DCAE system starts with checking the health of the deployed components.  This can be done by accessing the Consul becsue all DCAE components register their staus with Consul.  Such API is accessible at http://{{ANY_CONSUL_VM_IP}}:8500 .  
+Testing of a DCAE system starts with checking the health of the deployed components.  This can be done by accessing the Consul becsue all DCAE components register their staus with Consul. Such API is accessible at http://{{ANY_CONSUL_VM_IP}}:8500.
 
-In addition, more details status information can be obtained in additional ways. 
+In addition, more details status information can be obtained in additional ways.
 
 1. Check VES Status
-    VES status and running logs can be found on the {{RAND}}doks00 VM.  The detailed API and access methods can be found in the logging and human interface sections.
+    VES status and running logs can be found on the {{RAND}}doks00 VM. The detailed API and access methods can be found in the logging and human interface sections.
 
 2. Check TCA Status
-    TCA has its own GUI that provides detailed operation information.  Point browser to http://{{CDAP02_VM_IP}}:11011/oldcdap/ns/cdap_tca_hi_lo/apps/, select the application with Description "DCAE Analytics Threshold Crossing Alert Application"; then select "TCAVESCollectorFlow".  This leads to a flow display where all stages of processing are illustrated and the number inside of each stage icon shows the number of events/messages processed. 
+    TCA has its own GUI that provides detailed operation information. Point browser to http://{{CDAP02_VM_IP}}:11011/oldcdap/ns/cdap_tca_hi_lo/apps/, select the application with Description "DCAE Analytics Threshold Crossing Alert Application"; then select "TCAVESCollectorFlow". This leads to a flow display where all stages of processing are illustrated and the number inside of each stage icon shows the number of events/messages processed.
 
 
 3. Check Message Router Status

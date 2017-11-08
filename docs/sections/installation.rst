@@ -1,5 +1,5 @@
-DCAE mS Installation
-====================
+DCAE Installation
+=================
 
 .. toctree::
    :maxdepth: 1
