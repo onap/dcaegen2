@@ -44,7 +44,7 @@ in ONAP R1
 Usage Scenarios
 ---------------
 
-For ONPA R1 DCAE participates in all use cases.
+For ONAP R1 DCAE participates in all use cases.
 
 vDNS/vFW:  VES collector, TCA analytics
 vCPE:  VES collector, TCA analytics
