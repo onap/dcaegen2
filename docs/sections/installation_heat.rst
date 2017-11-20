@@ -1,11 +1,11 @@
 OpenStack Heat Template Based ONAP Deployment
 =============================================
 
-For ONAP R1, ONAP is deployed using OpenStack Heat template.  DCAE is also deployed through this process.  This document describes the details of the Heat template deployment process and how to configure DCAE related parameters in the Heat template and its parameter file.
+For ONAP R1, ONAP is deployed using OpenStack Heat template.  DCAE is also deployed through this process.  This i document describes the details of the Heat template deployment process and how to configure DCAE related parameters in the Heat template and its parameter file.
 
 
-ONAP Deployment
----------------
+ONAP Deployment Overview
+------------------------
 
 ONAP supports an OpenStack Heat template based system deployment.  When a new "stack" is created using the template, the following virtual resources will be launched in the target OpenStack tenant:
 
@@ -14,7 +14,7 @@ ONAP supports an OpenStack Heat template based system deployment.  When a new "s
 * A virtual router interconnecting the private OAM network with the external network of the OpenStack installation.
 * A key-pair named onap_key_{{RAND}}.
 * A security group named onap_sg_{{RAND}}.
-* A list of VMs for ONAP components. Each VM has one NIC connected to the OAM network and assigned a fixed IP. Each VM is also assigned a floating IP address from the external network. The VM hostnames are name consistently across different ONAP deployments, a user defined prefix, denoted as {{PREFIX}}, followed by a descriptive string for the ONAP component this VM runs, and optionally followed by a sub-function name. The VMs of the same ONAP role across different ONAP deployments will always have the same OAM network IP address. For example, the Message Router will always have the OAM network IP address of 10.0.11.1.
+* A list of VMs for ONAP components. Each VM has one NIC connected to the OAM network and assigned a fixed IP. Each VM is also assigned a floating IP address from the external network. The VM hostnames are name consistently across different ONAP deployments, a user defined prefix, denoted as {{PREFIX}}, followed by a descriptive string for the ONAP component this VM runs, and optionally followed by a sub-function name.  In the parameter env file supplied when running the Heat template, the {{PREFIX}} is defined by the **vm_base_name** parameter.  The VMs of the same ONAP role across different ONAP deployments will always have the same OAM network IP address. For example, the Message Router will always have the OAM network IP address of 10.0.11.1.
 
     ==============     ==========================    ==========================
     ONAP Role          VM (Neutron) hostname          OAM IP address(s)
@@ -35,8 +35,8 @@ ONAP supports an OpenStack Heat template based system deployment.  When a new "s
     MultiService       {{PREFIX}}-multi-service      10.0.14.1
     Private DNS        {{PREFIX}}-dns-server         10.0.100.1
     ==============     ==========================    ==========================
-
-* A list of DCAE VMs, launched by the {{PREFIX}}-dcae-bootstrap VM.  These VMs are also connected to the OAM network and associated with floating IP addresses on teh external network.  What's different is that their OAM IP addresses are DHCP assigned, not statically assigned.  The table below lists the DCAE VMs that are deployed for R1 use stories.
+* Each of the above VMs will also be associated with a floating IP address from the external network.
+* A list of DCAE VMs, launched by the {{PREFIX}}-dcae-bootstrap VM.  These VMs are also connected to the OAM network and associated with floating IP addresses on the external network.  What's different is that their OAM IP addresses are DHCP assigned.  The table below lists the DCAE VMs that are deployed for R1 use stories.
 
     =====================     ============================
     DCAE Role                 VM (Neutron) hostname(s)
@@ -49,46 +49,98 @@ ONAP supports an OpenStack Heat template based system deployment.  When a new "s
     Postgres                  {{DCAEPREFIX}}pgvm{00}
     =====================     ============================
 
-DNS
-===
 
-ONAP VMs deployed by Heat template are all registered with the private DNS server under the domain name of **simpledemo.onap.org**.  This domain can not be exposed to any where outside of the ONAP deployment because all ONAP deployments use the same domain name and same address space. Hence these host names remain only resolvable within the same ONAP deployment.
+DNS Configurations and Designate
+================================
 
-On the other hand DCAE VMs, although attached to the same OAM network as the rest of ONAP VMs, all have dynamic IP addresses allocated by the DHCP server and resort to a DNS based solution for registering the hostname and IP address mapping. DCAE VMs of different ONAP deployments are registered under different zones named as **{{RAND}}.dcaeg2.onap.org**. The API that DCAE calls to request the DNS zone registration and record registration is provided by OpenStack's DNS as a Service technology Designate.
+.. image:: images/designate.gif
 
-To enable VMs spun up by ONAP Heat template and DCAE's bootstrap process communicate with each other using hostnames, all VMs are configured to use the private DNS server launched by the Heat template as their name resolution server. In the configuration of this private DNS server, the DNS server that backs up Designate API frontend is used as the DNS forwarder.
+When DCAE VMs are launched by the dcae-bootstrap VM, they obtain their OAM IP addresses from
+the DHCP server running on the OAM network (ONAP private network).  Because these addresses 
+are dynamic, DCAE VMs rely on the OpenStack **Designate** DNSaaS API for registering their 
+IP-address-to-hostname bindings.
 
-For simpledemo.onap.org VM to simpledemo.onap.org VM communications and {{RAND}}.dcaeg2.onap.org VM to simpledemo.onap.org VM communications, the resolution is completed by the private DNS server itself.  For simpledemo.onap.org VM to {{RAND}}.dcaeg2.onap.org VM communications and {{RAND}}.dcaeg2.onap.org VM to {{RAND}}.dcaeg2.onap.org VM communications, the resolution request is forwarded from the private DNS server to the Designate DNS server and resolved there.  Communications to outside world are resolved also by the Designate DNS server if the hostname belongs to a zone registered under the Designate DNS server, or forwarded to the next DNS server, either an organizational DNS server or a DNS server even higher in the global DNS server hierarchy.
+DCAE VMs register their hostnames under a DNS zone.  This zone can be a zone that is exposed 
+to the global DNS hierarchy, or a zone that is only known to the ONAP deployment.  The actual
+zone name is configurable, by the blueprint input files of the DCAE VMs.  By default they are 
+set to be {{DCAE_ZONE}}.{{DOMAIN_NAME}}, where {{DCAE_ZONE}} is set to the {{RANDID}} and the 
+domain name is set to "dcaeg2.onap.org".  If DCAE VMs are required to be routable in operator organization or on the Internet, it is expected that the DNS domain is already configured in 
+the organizational or global DNS hierarchy.
 
-For OpenStack installations where there is no existing DNS service, a "proxyed" Designate solution is supported.  In this arrangement, DCAE bootstrap process will use MultiCloud service node as its Keystone API endpoint.  For non Designate API calls, the MultiCloud service node forwards to the underlying cloud provider.  However, for Designate API calls, the MultiCloud service node forwards to an off-stack Designate server.
+For OpenStack installations without Designate, there is an alternative "Proxyed-Designate"
+solution.  That is, a second OpenStack installation with Designate support is used for 
+providing Designate API and DNSaaS for the first OpenStack installation where ONAP is 
+deployed.  The Designate API calls from DCAE VMs are proxyed through the MultiCloud 
+service running in the same ONAP installation.  The diagram above illustrates the solution.
+Such a solution can be utilized by operators who have difficulties enhancing their existing 
+OpenStack infrastructure with Designate.  The ONAP Pod25 lab is configured using this 
+approach.
+
+To prepare for using the proxyed-Designate solution for an ONAP deployment, a surrogate 
+tenant needs to be set up in the Designate-providing OpenStack.  The name of the surrogate
+tenant must match with the name of the tenant where the ONAP is deployed.  At DCAE bootstrap
+time, the dcae2_vm_init.sh script will first register two records into A&AI, which contain
+parameters describing the two OpenStack installations, parameters that are needed by the MultiCloud service when performing the Designate and other API call proxying.
+
+When DCAE VMs make OpenStack API calls, these calls are made to the MultiCloud service
+node instead, not to the underlying OpenStack cloud infrastructure.  For non-Designate 
+calls, the MultiCloud node proxys them to the same OpenStack installation and the project 
+where the ONAP is installed.  For Designate 
+calls, the MultiCloud node proxys to the Designate-providing OpenStack installation as if 
+such calls are for the surrogate tenant.  The result is that the Designate providing 
+OpenStack's backend DNS server will have the new records for DCAE VMs and their IP 
+addresses.  
+
+ONAP VMs deployed by Heat template are all registered with the private DNS server under the domain name of **simpledemo.onap.org**.  This domain can not be exposed to any where outside of the ONAP deployment because all ONAP deployments use the same domain name and same address space. Hence these host names remain only resolvable within the same ONAP deployment.  On the
+other hand DCAE VMs have host names under the DNS zone of **{{DCAE_ZONE}}.{{DOMAIN_NAME}}**, 
+which can be set up to be resolvable within organizational network or even global Internet.
+
+To make the hostnames of ONAP VMs and external servers (e.g. onap.org) resolvable, the 
+following DNS related configurations are needed.  
+
+* The ONAP deployment's private DNS server, 10.0.100.1, is the default resolver for all the VMS.  This is necessary to make the **simpledemo.onap.org** hostnames resolvable.
+* The ONAP deployment's private DNS server, 10.0.100.1, must have the Designate backend DNS server as the forwarder.  This is necessary to make the **{{DCAE_ZONE}}.{{DOMAIN_NAME}}** hostnames resolvable.
+* The Designate backend DNS server needs to be configured so it can resolve all global hostnames.  One exemplary configuration for achieving this is to have an external DNS server such as an organizational or global DNS server, e.g. Google's 8.8.8.8, as the forwarder.
+
+As the result of such configurations, below lists how different hostnames are resolved, as illustrated in the figure above:
+
+* For hostnames within the **simpledemo.onap.org** domain, the private DNS server at 10.0.100.1 has the bindings;
+* For hostnames within the **{{DCAE_ZONE}}.{{DOMAIN_NAME}}** domain, the private DNS server forwards to the Designate backend DNS server, which has the bindings;
+* For all other hostnames, e.g. ubuntu.org, the private DNS server forwards to the Designate backend DNS server, which then forwards to an external DNS server that has or is able to further forward request to a DNS server that has the bindings.
+
+We wil go over the details of related Heat template env parameters in the next section.
 
 Heat Template Parameters
 ========================
 
 Here we list Heat template parameters that are related to DCAE operation.  Bold values are the default values that should be used "as-is".
 
-* public_net_id: the UUID of the external network where floating IPs are assigned from.  For example: 971040b2-7059-49dc-b220-4fab50cb2ad4
-* public_net_name: the name of the external network where floating IPs are assigned from.  For example: external
+* public_net_id: the UUID of the external network where floating IPs are assigned from.  For example: 971040b2-7059-49dc-b220-4fab50cb2ad4.
+* public_net_name: the name of the external network where floating IPs are assigned from.  For example: external.
 * openstack_tenant_id: the ID of the OpenStack tenant/project that will host the ONAP deployment.  For example: dd327af0542e47d7853e0470fe9ad625.
 * openstack_tenant_name: the name of the OpenStack tenant/project that will host the ONAP deployment.  For example: Integration-SB-01.
 * openstack_username: the username for accessing the OpenStack tenant specified by openstack_tenant_id/openstack_tenant_name.
 * openstack_api_key: the password for accessing the OpenStack tenant specified by openstack_tenant_id/openstack_tenant_name.
-* openstack_auth_method: **password**
-* openstack_region: **RegionOne**
-* cloud_env: **openstack**
-* dns_forwarder:  This is the DNS forwarder for the ONAP deployment private DNS server.  It must point to the IP address of the Designate DNS. For example '10.12.25.5'.
-* dcae_ip_addr: **10.0.4.1**.  The static IP address on the OAM network that is assigned to the DCAE bootstraping VM.
+* openstack_auth_method: '**password**'.
+* openstack_region: '**RegionOne**'.
+* cloud_env: '**openstack**'.
+* dns_list: This is the list of DNS servers to be configured into DHCP server of the ONAP OAM network.  As mentioned above it needs to have the ONAP private DNS server as the first item, then one or more external DNS servers next, for example:  **["10.0.100.1", "8.8.8.8"]**.
+* external_dns: This is the first external DNS server in the list above.  For example, **"8.8.8.8"**
+* dns_forwarder:  This is the DNS forwarder for the ONAP private DNS server.  It must point to the IP address of the Designate backend DNS. For example **'10.12.25.5'** for the Integration Pod25 lab.
+* dcae_ip_addr: The static IP address on the OAM network that is assigned to the DCAE bootstraping VM.  **10.0.4.1**.  
 * dnsaas_config_enabled: Whether a proxy-ed Designate solution is used. For example: **true**.
-* dnsaas_region: The region of the Designate providing OpenStack. For example: RegionOne
-* dnsaas_tenant_name: The tenant/project name of the Designate providing OpenStack. For example Integration-SB-01.
-* dnsaas_keystone_url: The keystone URL of the Designate providing OpenStack. For example http://10.12.25.5:5000/v3.
-* dnsaas_username: The username for accessing the Designate providing OpenStack.
-* dnsaas_password: The password for accessing the Designate providing OpenStack.
-* dcae_keystone_url: This is the API endpoint for MltiCloud service node.  **"http://10.0.14.1/api/multicloud-titanium_cloud/v0/pod25_RegionOne/identity/v2.0"**
+* dnsaas_region: The OpenStack region of the Designate-providing OpenStack installation. For example: **RegionOne**.
+* dnsaas_tenant_name: The surrogate tenant/project name of the Designate-providing OpenStack. It must match with the *openstack_tenant_name* parameter.  For example Integration-SB-01.  
+* dnsaas_keystone_url: The keystone URL of the Designate providing OpenStack.  For example **http://10.12.25.5:5000/v3**.
+* dnsaas_username: The username for accessing the surrogate tenant/project in Designate providing OpenStack.  For Pod25 Integration lab, this value is set to **demo**.
+* dnsaas_password: The password for accessing surrogate tenant/project in the Designate providing OpenStack.  For Pod25 Integration lab, this value is set to **onapdemo**.
+* dcae_keystone_url: This is the keystone API endpoint used by DCAE VMs.  If MultiCloud proxying is used, this parameter needs to provide the service endpoint of the MltiCloud service node: **"http://10.0.14.1/api/multicloud-titanium_cloud/v0/pod25_RegionOne/identity/v2.0"**. Otherwise it shall point to the keystone 2.0 API endpoint of the under-lying OpenStack installation.  
 * dcae_centos_7_image: The name of the CentOS-7 image.
-* dcae_domain: The domain under which ONAP deployment zones are registered. For example: 'dcaeg2.onap.org'.
+* dcae_domain: The domain under which DCAE VMs register their zone. For example: **'dcaeg2.onap.org'**.
 * dcae_public_key: the public key of the onap_key_{{RAND}} key-pair.
-* dcae_private_key: The private key of the onap_key_{{RAND}} key-pair (put a literal \n at the end of each line of text).
+* dcae_private_key: The private key of the onap_key_{{RAND}} key-pair (with the additions of  literal \n at the end of each line of text). 
+
+
 
 Heat Deployment
 ===============
@@ -123,5 +175,30 @@ For DCAE bootstrap VM, the dcae2_vm_init.sh script completes the following steps
     * Install Holmes Rules onto service component Docker host
 * Starts a Nginx docker container to proxy the healthcheck API to Consul
 * Enters a infinite sleep loop to keep the bootstrap container up
+
+
+Removing Deployed ONAP Deployment
+=================================
+
+Because DACE VMs are not deployed directly from Heat template, they need to be deleted using
+a separate method.
+
+* Ssh into the dcae-bootstrap VM
+* Enter the dcae-bootstrap container by executing: 
+    * **sudo docker exec -it boot /bin/bash**
+* Inside of the bootstrap container, execute:
+    * **bash ./teardown**
+    * All DCAE assets deployed by the bootstrap container will be uninstalled in the reverse order that they are installed.
+* Exit from the bootstrap container.
+
+After all DCAE assets are deleted, the next step is to delete the ONAP stack, using either the
+dashboard GUI or openstack CLI.
+
+When VMs are not terminated in a graceful fashion, certain resources such as ports and floating
+IP addresses may not be released promptly by OpenStack.  One "quick-nad-dirty" way to release 
+these resources is to use the openstack CLI with the following commands::
+
+    openstack port list |grep 'DOWN' |cut -b 3-38 |xargs openstack port delete
+    openstack floating ip list |grep 'None' |cut -b 3-38 |xargs openstack floating ip delete
 
 
