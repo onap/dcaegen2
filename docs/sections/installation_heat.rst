@@ -51,7 +51,7 @@ ONAP supports an OpenStack Heat template based system deployment.  When a new "s
 
 
 DNS Configurations and Designate
-================================
+--------------------------------
 
 .. image:: images/designate.gif
 
@@ -111,7 +111,7 @@ As the result of such configurations, below lists how different hostnames are re
 We wil go over the details of related Heat template env parameters in the next section.
 
 Heat Template Parameters
-========================
+------------------------
 
 Here we list Heat template parameters that are related to DCAE operation.  Bold values are the default values that should be used "as-is".
 
@@ -124,7 +124,7 @@ Here we list Heat template parameters that are related to DCAE operation.  Bold 
 * openstack_auth_method: '**password**'.
 * openstack_region: '**RegionOne**'.
 * cloud_env: '**openstack**'.
-* dns_list: This is the list of DNS servers to be configured into DHCP server of the ONAP OAM network.  As mentioned above it needs to have the ONAP private DNS server as the first item, then one or more external DNS servers next, for example:  **["10.0.100.1", "8.8.8.8"]**.
+* dns_list: This is the list of DNS servers to be configured into DHCP server of the ONAP OAM network.  As mentioned above it needs to have the ONAP private DNS server as the first item, then one or more external DNS servers next, for example:  **["10.0.100.1", "8.8.8.8"]**.  For installations where the private DNS server VM takes too long to be set up, the solution is to use the Designate backend DNS server as the first entry in this list.  Fot example  **["10.12.25.5", "8.8.8.8"]**. 
 * external_dns: This is the first external DNS server in the list above.  For example, **"8.8.8.8"**
 * dns_forwarder:  This is the DNS forwarder for the ONAP private DNS server.  It must point to the IP address of the Designate backend DNS. For example **'10.12.25.5'** for the Integration Pod25 lab.
 * dcae_ip_addr: The static IP address on the OAM network that is assigned to the DCAE bootstraping VM.  **10.0.4.1**.  
@@ -143,7 +143,7 @@ Here we list Heat template parameters that are related to DCAE operation.  Bold 
 
 
 Heat Deployment
-===============
+---------------
 
 Heat template can be deployed using the OpenStack CLI.  For more details, please visit the demo project of ONAP.  All files references in this secton can be found under the **demo** project.
 
@@ -178,7 +178,7 @@ For DCAE bootstrap VM, the dcae2_vm_init.sh script completes the following steps
 
 
 Removing Deployed ONAP Deployment
-=================================
+---------------------------------
 
 Because DACE VMs are not deployed directly from Heat template, they need to be deleted using
 a separate method.
@@ -201,4 +201,64 @@ these resources is to use the openstack CLI with the following commands::
     openstack port list |grep 'DOWN' |cut -b 3-38 |xargs openstack port delete
     openstack floating ip list |grep 'None' |cut -b 3-38 |xargs openstack floating ip delete
 
+
+Tips for Manual Interventions
+-----------------------------
+
+During DCAE deployment, there are several places where manual interventions are possible:
+
+* Running dcae2_install.sh
+* Running dcae2_vm_init.sh
+* Running the dcae bootstrap docker.
+
+All these require ssh-ing into the dcae-botstrap VM, then change directory or /opt and sudo.  
+Configurations injected from the Heat template and cloud init can be found under /opt/config.
+DCAE run time configuration values can be found under /opt/app/config.  After any parameters are changed, the dcae2_vm_init.sh script needs to be rerun.
+
+Some manual interventions also require interaction with the OpenStack environment.  This can be 
+done by using the OpenStack CLI tool.  OpenStack CLI tool comes very handy for various uses in deployment and maintenance of ONAP/DCAE.  
+
+It is usually most convenient to install OpenStack CLI tool in a Python virtual environment.  Here are the steps and commands::
+
+    # create and activate the virtual environment, install CLI
+    $ virtualenv openstackcli
+    $ . openstackcli/bin/activate
+    $ pip install --upgrade pip python-openstackclient python-designateclient python-novaclient python-keystoneclient python-heatclient
+
+    # here we need to download the RC file form OpenStack dashboard: 
+    # Compute->Access & Security_>API Aceess->Download OpenStack RC file 
+
+    # activate the environment variables with values point to the taregt OpenStack tenant
+    (openstackcli) $ . ./openrc.sh
+    
+Now we are all set for using OpenStack cli tool to run various commands.  For example::
+
+    # list all tenants
+    (openstackcli) $ openstack project list
+
+Designate/DNS related operations::
+
+    # DNS/Designate related commands
+    # list all DNS zones
+    (openstackcli) $ openstack zone list
+    # create a new zone
+    (openstackcli) $ openstack zone create ${ZONENAME} --email dcae@onap.org
+    # delete an existing zone
+    (openstackcli) $ openstack zone delete ${ZONENAME}
+
+Note that depending on OpenStack configuration, there may be a quota for how many zones can be created
+under each tenant.  If such limit is reached, further zone creation request will be rejected.  In this case manual deletions for zones no longer needed is one of the ways to reduce outstanding zones.
+
+When VMs are not terminated in a graceful fashion, certain resources such as ports and floating
+IP addresses may not be released properly by OpenStack.  One "quick-nad-dirty" way to release
+these resources is to use the openstack CLI with the following commands::
+
+    (openstackcli) $ openstack port list |grep 'DOWN' |cut -b 3-38 |xargs openstack port delete
+    (openstackcli) $ openstack floating ip list |grep 'None' |cut -b 3-38 |xargs openstack floating ip delete
+   
+
+Finally to deactivate from the virtual environment, run::
+
+    (openstackcli) $ deactivate
+ 
 
