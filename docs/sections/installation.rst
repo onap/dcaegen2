@@ -1,5 +1,5 @@
-DCAE Installation
-=================
+DCAE Deployment (Installation)
+===============================
 
 .. toctree::
    :maxdepth: 1

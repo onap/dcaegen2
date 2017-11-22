@@ -3,7 +3,7 @@ Testing and Debugging ONAP DCAE Deployment
 
 
 Check Component Status
-======================
+----------------------
 
 Testing of a DCAE system starts with checking the health of the deployed components.  This can be done by accessing the Consul becsue all DCAE components register their staus with Consul. Such API is accessible at http://{{ANY_CONSUL_VM_IP}}:8500.
 
@@ -22,7 +22,8 @@ In addition, more details status information can be obtained in additional ways.
 
 
 Check data Flow
-===============
+---------------
+
 After the platform is assessed as heathy, the next step is to check the functionality of the system.  This can be monitored at a number of "observation" points.
 
 1. Check incoming VNF Data
