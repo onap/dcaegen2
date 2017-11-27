@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_06ada031",
+        "filename": "version.properties",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-27T19:41:04Z",
+      "side": 1,
+      "message": "The minor version I suppose should also be set to 1 (it was likely incorrect earlier). Lusheng can you confirm?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 7
+      },
+      "revId": "da31a985afc16953047f705720ccacb15a9c6efc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
