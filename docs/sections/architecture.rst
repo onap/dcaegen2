@@ -8,12 +8,14 @@ Architecture
 Capabilities
 ------------
 Data Collection Analytics and Events (DCAE) is the data collection and analysis subsystem of ONAP.
-Its functions include collection of FCAPs data from the network entitiess (VNFs, PNFs, etc), normalization and transportation of
+Its functions include among other things the collection of FCAPs data from the network entitiess (VNFs, PNFs, etc).It provides also a framework for the  normalization of data format, the transportation of
 data, analysis of data, and generations of ONAP events which can be received by other ONAP components such as Policy for
-subsequent operations.
-
+subsequent operations
+like closed loops.
 DCAE consists of DCAE Platform components and DCAE Services components.  The following list shows the details of what are included
 in ONAP R1
+When VM is indicated, it means that the components runs on its own VM on the platform.
+DCAE platform is based both on virtual machines (VM) and containers.
 
 - DCAE Platform
     - Core Platform
@@ -31,6 +33,7 @@ in ONAP R1
         - Docker Host for containerized service components (VM)
         - PostgreSQL Database (VM)
 
+note: the ONAP DCAEGEN2 CDAP blueprint deploys a 7 node CAsk Data Application Platform (CDAP) cluster (version 4.1.X), for running data analysis applications.
 
 - DCAE Services
     - Collectors
@@ -52,4 +55,4 @@ vVoLTE:  VES collector, Holmes analytics
 
 Interactions
 ------------
-
+DCAE is interfacing with the DMaaP(Data Movement as a Platform) message Bus
