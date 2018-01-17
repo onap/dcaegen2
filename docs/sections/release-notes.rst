@@ -3,10 +3,10 @@
 Release Notes
 =============
 
-Version: 1.0.0
+Version: 1.0.1
 --------------
 
-:Release Date: 2017-11-16
+:Release Date: 2018-01-18
 
 
 **New Features**
@@ -71,7 +71,7 @@ Source codes of DCAE are released under the following repositories on gerrit.ona
 **Bug Fixes**
 
 This is the initial release.
-
+- Fixed [DCAEGEN2-205]: bootstrap process quits if failed to ssh into Cloudify Manager instead of wait-and-retry.
 
 **Known Issues**
 
@@ -89,7 +89,7 @@ DCAE will switch to https.
 
 **Upgrade Notes**
 
-This is the initial release.
+DCAE Boot Strap docker container version is now v1.1.2
 
 
 **Deprecation Notes**
