@@ -8,6 +8,27 @@ Version: 1.0.1
 
 :Release Date: 2018-01-18
 
+**Bug Fixes**
+
+- `DCAEGEN2-205 <https://jira.onap.org/browse/DCAEGEN2-205>`_, `DCAEGEN2-201 <https://jira.onap.org/browse/DCAEGEN2-201>`_, `DCAEGEN2-217 <https://jira.onap.org/browse/DCAEGEN2-217>`_: bootstrap process quits if failed to ssh into Cloudify Manager instead of wait-and-retry.
+
+- `DCAEGEN2-252 <https://jira.onap.org/browse/DCAEGEN2-252>`_: bootstrap deploys policy handler container v1.1-latest instead of 1.1.0.
+
+
+ 
+**Upgrade Notes**
+
+DCAE Boot Strap docker container version is now v1.1.2
+
+
+Release Notes
+=============
+
+Version: 1.0.0
+--------------
+
+:Release Date: 2017-11-16
+
 
 **New Features**
 
@@ -71,7 +92,7 @@ Source codes of DCAE are released under the following repositories on gerrit.ona
 **Bug Fixes**
 
 This is the initial release.
-- Fixed [DCAEGEN2-205]: bootstrap process quits if failed to ssh into Cloudify Manager instead of wait-and-retry.
+
 
 **Known Issues**
 
@@ -89,7 +110,7 @@ DCAE will switch to https.
 
 **Upgrade Notes**
 
-DCAE Boot Strap docker container version is now v1.1.2
+This is the initial release.
 
 
 **Deprecation Notes**
