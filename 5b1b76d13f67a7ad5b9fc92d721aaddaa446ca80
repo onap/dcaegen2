@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a93c517_d3a82a8f",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-02-27T14:20:57Z",
+      "side": 1,
+      "message": "Agenda/minutes are maintained here - https://wiki.onap.org/display/DW/Meetings",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 72
+      },
+      "revId": "5b1b76d13f67a7ad5b9fc92d721aaddaa446ca80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a93c517_c59700eb",
         "filename": "INFO.yaml",
         "patchSetId": 1
@@ -18,6 +41,29 @@
         "startChar": 0,
         "endLine": 19,
         "endChar": 73
+      },
+      "revId": "5b1b76d13f67a7ad5b9fc92d721aaddaa446ca80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_d38fca28",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-02-27T14:20:57Z",
+      "side": 1,
+      "message": "should be 15:30 UTC",
+      "range": {
+        "startLine": 23,
+        "startChar": 13,
+        "endLine": 23,
+        "endChar": 25
       },
       "revId": "5b1b76d13f67a7ad5b9fc92d721aaddaa446ca80",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
