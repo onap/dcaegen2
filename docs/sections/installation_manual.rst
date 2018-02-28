@@ -18,17 +18,15 @@ storage
 .. code-block:: bash
 
    sudo apt-get update
-   sudo apt install `docker.io <http://docker.io/>`__
+   sudo apt install docker.io
 
 2. Pull the latest container from onap nexus
 
 .. code-block:: bash
 
-   sudo docker login -u docker -p docker
-   `nexus.onap.org <http://nexus.onap.org/>`__:10001
+   sudo docker login -u docker -p docker nexus.onap.org:10001
 
-   sudo docker pull
-   `nexus.onap.org <http://nexus.onap.org/>`__:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:1.1
+   sudo docker pull nexus.onap.org:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:v1.1.0
 
 3. Start the VESCollector with below command
 
@@ -36,7 +34,7 @@ storage
 
    sudo docker run -d --name vescollector -p 8080:8080/tcp -p
    8443:8443/tcp -P -e DMAAPHOST='<dmaap IP>'
-   `nexus.onap.org <http://nexus.onap.org/>`__:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:1.1
+   nexus.onap.org:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:v1.1.0
 
 .. Note:  Change the dmaaphost to required DMAAP ip. To change the
    dmaap information for a running container,  stop the active
@@ -110,7 +108,7 @@ m1.medium size and 50gb cinder volumes.
 .. code-block:: bash
 
    sudo apt-get update
-   sudo apt install `docker.io <http://docker.io/>`__
+   sudo apt install docker.io
 
 2. Pull CDAP SDK container
 
@@ -138,7 +136,7 @@ m1.medium size and 50gb cinder volumes.
  {
    "artifact": {
      "name": "dcae-analytics-cdap-tca",
-     "version": "2.0.0",
+     "version": "2.0.1",
      "scope": "user"
    },
 
@@ -189,71 +187,71 @@ m1.medium size and 50gb cinder volumes.
   "aaiEnrichmentIgnoreSSLCertificateErrors" : false,
   "aaiVNFEnrichmentAPIPath" : "/aai/v11/network/generic-vnfs/generic-vnf",
   "aaiVMEnrichmentAPIPath" :  "/aai/v11/search/nodes-query",
-  "tca_policy" : {
-        "domain": "measurementsForVfScaling",
-        "metricsPerEventName": [{
-                "eventName": "vFirewallBroadcastPackets",
-                "controlLoopSchemaType": "VNF",
-                "policyScope": "DCAE",
-                "policyName": "DCAE.Config_tca-hi-lo",
-                "policyVersion": "v0.0.1",
-                "thresholds": [{
-                        "closedLoopControlName": "ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a",
-                        "version": "1.0.2",
-                        "fieldPath": "$.event.measurementsForVfScalingFields.vNicUsageArray[*].receivedTotalPacketsDelta",
-                        "thresholdValue": 300,
-                        "direction": "LESS_OR_EQUAL",
-                        "severity": "MAJOR",
-                        "closedLoopEventStatus": "ONSET"
+  "tca_policy" : "{
+        \"domain\": \"measurementsForVfScaling\",
+        \"metricsPerEventName\": [{
+                \"eventName\": \"vFirewallBroadcastPackets\",
+                \"controlLoopSchemaType\": \"VNF\",
+                \"policyScope\": \"DCAE\",
+                \"policyName\": \"DCAE.Config_tca-hi-lo\",
+                \"policyVersion\": \"v0.0.1\",
+                \"thresholds\": [{
+                        \"closedLoopControlName\": \"ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",
+                        \"version\": \"1.0.2\",
+                        \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicUsageArray[*].receivedTotalPacketsDelta\",
+                        \"thresholdValue\": 300,
+                        \"direction\": \"LESS_OR_EQUAL\",
+                        \"severity\": \"MAJOR\",
+                        \"closedLoopEventStatus\": \"ONSET\"
                 }, {
-                        "closedLoopControlName": "ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a",
-                        "version": "1.0.2",
-                        "fieldPath": "$.event.measurementsForVfScalingFields.vNicUsageArray[*].receivedTotalPacketsDelta",
-                        "thresholdValue": 700,
-                        "direction": "GREATER_OR_EQUAL",
-                        "severity": "CRITICAL",
-                        "closedLoopEventStatus": "ONSET"
+                        \"closedLoopControlName\": \"ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",
+                        \"version\": \"1.0.2\",
+                        \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicUsageArray[*].receivedTotalPacketsDelta\",
+                        \"thresholdValue\": 700,
+                        \"direction\": \"GREATER_OR_EQUAL\",
+                        \"severity\": \"CRITICAL\",
+                        \"closedLoopEventStatus\": \"ONSET\"
                 }]
         }, {
-                "eventName": "vLoadBalancer",
-                "controlLoopSchemaType": "VM",
-                "policyScope": "DCAE",
-                "policyName": "DCAE.Config_tca-hi-lo",
-                "policyVersion": "v0.0.1",
-                "thresholds": [{
-                        "closedLoopControlName": "ControlLoop-vDNS-6f37f56d-a87d-4b85-b6a9-cc953cf779b3",
-                        "version": "1.0.2",
-                        "fieldPath": "$.event.measurementsForVfScalingFields.vNicUsageArray[*].receivedTotalPacketsDelta",
-                        "thresholdValue": 300,
-                        "direction": "GREATER_OR_EQUAL",
-                        "severity": "CRITICAL",
-                        "closedLoopEventStatus": "ONSET"
+                \"eventName\": \"vLoadBalancer\",
+                \"controlLoopSchemaType\": \"VM\",
+                \"policyScope\": \"DCAE\",
+                \"policyName\": \"DCAE.Config_tca-hi-lo\",
+                \"policyVersion\": \"v0.0.1\",
+                \"thresholds\": [{
+                        \"closedLoopControlName\": \"ControlLoop-vDNS-6f37f56d-a87d-4b85-b6a9-cc953cf779b3\",
+                        \"version\": \"1.0.2\",
+                        \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicUsageArray[*].receivedTotalPacketsDelta\",
+                        \"thresholdValue\": 300,
+                        \"direction\": \"GREATER_OR_EQUAL\",
+                        \"severity\": \"CRITICAL\",
+                        \"closedLoopEventStatus\": \"ONSET\"
                 }]
         }, {
-                "eventName": "Measurement_vGMUX",
-                "controlLoopSchemaType": "VNF",
-                "policyScope": "DCAE",
-                "policyName": "DCAE.Config_tca-hi-lo",
-                "policyVersion": "v0.0.1",
-                "thresholds": [{
-                        "closedLoopControlName": "ControlLoop-vCPE-48f0c2c3-a172-4192-9ae3-052274181b6e",
-                        "version": "1.0.2",
-                        "fieldPath": "$.event.measurementsForVfScalingFields.additionalMeasurements[*].arrayOfFields[0].value",
-                        "thresholdValue": 0,
-                        "direction": "EQUAL",
-                        "severity": "MAJOR",
-                        "closedLoopEventStatus": "ABATED"
+                \"eventName\": \"Measurement_vGMUX\",
+                \"controlLoopSchemaType\": \"VNF\",
+                \"policyScope\": \"DCAE\",
+                \"policyName\": \"DCAE.Config_tca-hi-lo\",
+                \"policyVersion\": \"v0.0.1\",
+                \"thresholds\": [{
+                        \"closedLoopControlName\": \"ControlLoop-vCPE-48f0c2c3-a172-4192-9ae3-052274181b6e\",
+                        \"version\": \"1.0.2\",
+                        \"fieldPath\": \"$.event.measurementsForVfScalingFields.additionalMeasurements[*].arrayOfFields[0].value\",
+                        \"thresholdValue\": 0,
+                        \"direction\": \"EQUAL\",
+                        \"severity\": \"MAJOR\",
+                        \"closedLoopEventStatus\": \"ABATED\"
                 }, {
-                        "closedLoopControlName": "ControlLoop-vCPE-48f0c2c3-a172-4192-9ae3-052274181b6e",
-                        "version": "1.0.2",
-                        "fieldPath": "$.event.measurementsForVfScalingFields.additionalMeasurements[*].arrayOfFields[0].value",
-                        "thresholdValue": 0,
-                        "direction": "GREATER",
-                        "severity": "CRITICAL",
-                        "closedLoopEventStatus": "ONSET"
+                        \"closedLoopControlName\": \"ControlLoop-vCPE-48f0c2c3-a172-4192-9ae3-052274181b6e\",
+                        \"version\": \"1.0.2\",
+                        \"fieldPath\": \"$.event.measurementsForVfScalingFields.additionalMeasurements[*].arrayOfFields[0].value\",
+                        \"thresholdValue\": 0,
+                        \"direction\": \"GREATER\",
+                        \"severity\": \"CRITICAL\",
+                       \"closedLoopEventStatus\": \"ONSET\"
                 }]
         }]
-  }
+}"
  }
 
 
@@ -261,15 +259,25 @@ m1.medium size and 50gb cinder volumes.
    publisherHostName and subscriberHostName. To be changed as
    required\*\*
 
+6a. To enable AAI Enrichment in TCA for CL event, following updates should be done to TCA app preference file before proceeding
+
+.. code-block:: json
+
+          "enableAAIEnrichment" :  true
+          "aaiEnrichmentHost" :  <should be set to aai1_ip_addr>
+          "aaiEnrichmentIgnoreSSLCertificateErrors" : true
+
+
+
 7. Copy below script to CDAP server (this gets latest image from nexus and deploys TCA application) and execute it
 
 .. code-block:: bash
 
  #!/bin/sh
- TCA_JAR=dcae-analytics-cdap-tca-2.0.0.jar
+ TCA_JAR=dcae-analytics-cdap-tca-2.0.1.jar
  rm -f /home/ubuntu/$TCA_JAR
  cd /home/ubuntu/
- wget https://nexus.onap.org/service/local/repositories/staging/content/org/onap/dcaegen2/analytics/tca/dcae-analytics-cdap-tca/2.0.0/$TCA_JAR
+ wget https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/analytics/tca/dcae-analytics-cdap-tca/2.0.1/$TCA_JAR
  if [ $? -eq 0 ]; then
         if [ -f /home/ubuntu/$TCA_JAR ]; then
                 echo “Restarting TCA CDAP application using $TCA_JAR artifact”
