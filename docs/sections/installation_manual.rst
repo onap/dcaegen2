@@ -136,7 +136,7 @@ m1.medium size and 50gb cinder volumes.
  {
    "artifact": {
      "name": "dcae-analytics-cdap-tca",
-     "version": "2.0.1",
+     "version": "2.0.0",
      "scope": "user"
    },
 
@@ -251,7 +251,7 @@ m1.medium size and 50gb cinder volumes.
                        \"closedLoopEventStatus\": \"ONSET\"
                 }]
         }]
-}"
+ }"
  }
 
 
@@ -274,10 +274,10 @@ m1.medium size and 50gb cinder volumes.
 .. code-block:: bash
 
  #!/bin/sh
- TCA_JAR=dcae-analytics-cdap-tca-2.0.1.jar
+ TCA_JAR=dcae-analytics-cdap-tca-2.0.0.jar
  rm -f /home/ubuntu/$TCA_JAR
  cd /home/ubuntu/
- wget https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/analytics/tca/dcae-analytics-cdap-tca/2.0.1/$TCA_JAR
+ wget https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/analytics/tca/dcae-analytics-cdap-tca/2.0.0/$TCA_JAR
  if [ $? -eq 0 ]; then
         if [ -f /home/ubuntu/$TCA_JAR ]; then
                 echo “Restarting TCA CDAP application using $TCA_JAR artifact”
