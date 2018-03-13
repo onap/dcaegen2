@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_0b614004",
+        "filename": "docs/sections/installation_manual.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-13T21:48:26Z",
+      "side": 1,
+      "message": "Staged repo should not be referenced. Noticed the 2.0.1 artifact has been removed by LF. For now the documentation can point to 2.0.0 under releases. \n\nhttp://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/analytics/tca/dcae-analytics-cdap-tca/2.0.0/dcae-analytics-cdap-tca-2.0.0.jar",
+      "range": {
+        "startLine": 280,
+        "startChar": 56,
+        "endLine": 280,
+        "endChar": 73
+      },
+      "revId": "a63296cd512271b908691642e8b148d2472ddb08",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
