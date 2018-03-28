@@ -20,7 +20,7 @@
 swagger: '2.0'
 
 info:
-  version: "4.1.0"
+  version: "4.2.0"
   title: "deployment-handler API"
   license:
     name: "Apache 2.0"
@@ -486,11 +486,57 @@ definitions:
     description: request to update policies on DCAE components.
     type: object
     required:
+      - catch_up
       - latest_policies
+      - removed_policies
 
     properties:
+      catch_up:
+        description: flag to indicate whether the request contains all the policies in PDP or not
+        type: boolean
+        default: false
+
       latest_policies:
-        description: "dictionary of (policy_id -> Policy object).  In example: replace additionalProp1,2,3 with policy_id1,2,3 values"
+        description: |
+          dictionary of (policy_id -> DCAEPolicy object).
+          In example: replace additionalProp1,2,3 with policy_id1,2,3 values
         type: object
+        default: {}
         additionalProperties:
           $ref: "#/definitions/DCAEPolicy"
+
+      removed_policies:
+        description: |
+          whether policy was removed from policy-engine.
+          dictionary of (policy_id -> true).
+          In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+        type: object
+        default: {}
+        additionalProperties:
+          type: boolean
+
+      errored_policies:
+        description: |
+          whether policy-engine returned an error on the policy.
+          dictionary of (policy_id -> true).
+          In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+        type: object
+        default: {}
+        additionalProperties:
+          type: boolean
+
+      errored_scopes:
+        description: >
+          on cartchup - list of policy scope_prefix values on wchich
+          the policy-engine experienced an error other than not-found data.
+        type: array
+        items:
+          type: string
+
+      scope_prefixes:
+        description: >
+          on catchup - list of all scope_prefixes used by the policy-handler
+          to retrieve the policies from policy-engine.
+        type: array
+        items:
+          type: string

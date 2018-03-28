@@ -1,4 +1,4 @@
-deployment-handler API 4.1.0
+deployment-handler API 4.2.0
 ============================
 
 .. toctree::
@@ -79,9 +79,9 @@ Type: :ref:`DCAEDeploymentResponse <d_6157bd3de5c8c7de78f2ab86397667e0>`
 
     {
         "links": {
-            "self": "somestring", 
+            "self": "somestring",
             "status": "somestring"
-        }, 
+        },
         "requestId": "somestring"
     }
 
@@ -99,7 +99,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -118,7 +118,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -137,7 +137,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -156,7 +156,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -213,11 +213,11 @@ Type: :ref:`DCAEDeploymentsListResponse <d_c51e57d9583f6119caf83dd017cf214c>`
         "deployments": [
             {
                 "href": "somestring"
-            }, 
+            },
             {
                 "href": "somestring"
             }
-        ], 
+        ],
         "requestId": "somestring"
     }
 
@@ -236,7 +236,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -255,7 +255,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -274,7 +274,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -327,13 +327,13 @@ Type: :ref:`DCAEOperationStatusResponse <d_f0103f05736b04468a4f85fe90da2e16>`
 .. code-block:: javascript
 
     {
-        "error": "somestring", 
+        "error": "somestring",
         "links": {
-            "self": "somestring", 
+            "self": "somestring",
             "uninstall": "somestring"
-        }, 
-        "operationType": "somestring", 
-        "requestId": "somestring", 
+        },
+        "operationType": "somestring",
+        "requestId": "somestring",
         "status": "somestring"
     }
 
@@ -350,7 +350,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -369,7 +369,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -388,7 +388,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -407,7 +407,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -457,13 +457,13 @@ Request for deploying a DCAE service.
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        inputs | No | :ref:`inputs <i_51dfb5d178ebacb6d6617c15cefffa86>` |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
+        inputs | No | :ref:`inputs <i_08ada55a389e24cd45beef83306fd08e>` |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
 Content of the object depends on the service being deployed.
 
         serviceTypeId | Yes | string |  |  | The service type identifier (a unique ID assigned by DCAE inventory) for the service to be deployed.
 
 
-.. _i_51dfb5d178ebacb6d6617c15cefffa86:
+.. _i_08ada55a389e24cd45beef83306fd08e:
 
 **Inputs schema:**
 
@@ -477,7 +477,7 @@ Content of the object depends on the service being deployed.
 .. code-block:: javascript
 
     {
-        "inputs": {}, 
+        "inputs": {},
         "serviceTypeId": "somestring"
     }
 
@@ -501,9 +501,9 @@ Type: :ref:`DCAEDeploymentResponse <d_6157bd3de5c8c7de78f2ab86397667e0>`
 
     {
         "links": {
-            "self": "somestring", 
+            "self": "somestring",
             "status": "somestring"
-        }, 
+        },
         "requestId": "somestring"
     }
 
@@ -521,7 +521,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -539,7 +539,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -558,7 +558,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -577,7 +577,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -596,7 +596,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -615,7 +615,7 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 .. code-block:: javascript
 
     {
-        "message": "somestring", 
+        "message": "somestring",
         "status": 1
     }
 
@@ -658,18 +658,51 @@ Responses
 Success
 
 
-Type: :ref:`DispatcherInfo <d_01a325801d3165f9b15dbdaa15b94815>`
+.. _i_2e7b26d45eaa7203222963d454a86a88:
+
+**Response Schema:**
+
+.. csv-table::
+    :delim: |
+    :header: "Name", "Required", "Type", "Format", "Properties", "Description"
+    :widths: 20, 10, 15, 15, 30, 25
+
+        apiVersion | No | string |  |  | version of API supported by this server
+
+        links | No | :ref:`links <i_bcea41e897f5de95cd50fa873acb5f65>` |  |  | Links to API resources
+
+        serverVersion | No | string |  |  | version of software running on this server
+
+
+.. _i_bcea41e897f5de95cd50fa873acb5f65:
+
+**Links schema:**
+
+
+Links to API resources
+
+
+.. csv-table::
+    :delim: |
+    :header: "Name", "Required", "Type", "Format", "Properties", "Description"
+    :widths: 20, 10, 15, 15, 30, 25
+
+        events | No | string |  |  | path for the events endpoint
+
+        info | No | string |  |  | path for the server information endpoint
+
+
 
 **Example:**
 
 .. code-block:: javascript
 
     {
-        "apiVersion": "somestring", 
+        "apiVersion": "somestring",
         "links": {
-            "events": "somestring", 
+            "events": "somestring",
             "info": "somestring"
-        }, 
+        },
         "serverVersion": "somestring"
     }
 
@@ -746,32 +779,84 @@ request to update policies on DCAE components.
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        latest_policies | Yes | :ref:`latest_policies <i_22fec92398d6fc407cf75f0b4c0f3614>` |  |  | dictionary of (policy_id -> Policy object).  In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+        catch_up | Yes | boolean |  |  | flag to indicate whether the request contains all the policies in PDP or not
+        errored_policies | No | :ref:`errored_policies <i_0e88fa72c5312eaae3990753181ce5fe>` |  |  | whether policy-engine returned an error on the policy.
+dictionary of (policy_id -> true).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
-.. _i_22fec92398d6fc407cf75f0b4c0f3614:
+        errored_scopes | No | array of string |  |  | on cartchup - list of policy scope_prefix values on wchich the policy-engine experienced an error other than not-found data.
+
+        latest_policies | Yes | :ref:`latest_policies <i_cbc40bad95bddbd536eeab0a92f483af>` |  |  | dictionary of (policy_id -> DCAEPolicy object).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+
+        removed_policies | Yes | :ref:`removed_policies <i_0ce52a29e44aa0cc7929fe7b555551bc>` |  |  | whether policy was removed from policy-engine.
+dictionary of (policy_id -> true).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+
+        scope_prefixes | No | array of string |  |  | on catchup - list of all scope_prefixes used by the policy-handler to retrieve the policies from policy-engine.
+
+
+.. _i_0e88fa72c5312eaae3990753181ce5fe:
+
+**Errored_policies schema:**
+
+
+whether policy-engine returned an error on the policy.
+dictionary of (policy_id -> true).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+
+
+Map of {"key":"boolean"}
+
+.. _i_cbc40bad95bddbd536eeab0a92f483af:
 
 **Latest_policies schema:**
 
 
-dictionary of (policy_id -> Policy object).  In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+dictionary of (policy_id -> DCAEPolicy object).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+
 
 Map of {"key":":ref:`DCAEPolicy <d_1e3e880a733b457b648bd8c99e6c859c>`"}
 
 
 
+.. _i_0ce52a29e44aa0cc7929fe7b555551bc:
+
+**Removed_policies schema:**
+
+
+whether policy was removed from policy-engine.
+dictionary of (policy_id -> true).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+
+
+Map of {"key":"boolean"}
+
 .. code-block:: javascript
 
     {
+        "catch_up": true,
+        "errored_policies": {},
+        "errored_scopes": [
+            "somestring",
+            "somestring"
+        ],
         "latest_policies": {
             "DCAEPolicy": {
                 "policy_body": {
-                    "config": {}, 
-                    "policyName": "somestring", 
+                    "config": {},
+                    "policyName": "somestring",
                     "policyVersion": "somestring"
-                }, 
+                },
                 "policy_id": "somestring"
             }
-        }
+        },
+        "removed_policies": {},
+        "scope_prefixes": [
+            "somestring",
+            "somestring"
+        ]
     }
 
 Responses
@@ -802,13 +887,13 @@ Request for deploying a DCAE service.
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        inputs | No | :ref:`inputs <i_51dfb5d178ebacb6d6617c15cefffa86>` |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
+        inputs | No | :ref:`inputs <i_08ada55a389e24cd45beef83306fd08e>` |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
 Content of the object depends on the service being deployed.
 
         serviceTypeId | Yes | string |  |  | The service type identifier (a unique ID assigned by DCAE inventory) for the service to be deployed.
 
 
-.. _i_51dfb5d178ebacb6d6617c15cefffa86:
+.. _i_08ada55a389e24cd45beef83306fd08e:
 
 **Inputs schema:**
 
@@ -832,14 +917,15 @@ Response body for a PUT or DELETE to /dcae-deployments/{deploymentId}
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        links | No | :ref:`DCAEDeploymentResponse_links <d_e5951c399cff33430222aefe098fbbbb>` |  |  | 
+        links | Yes | :ref:`links <i_4a894329f99280d2268e250444b59376>` |  |  | Links that the API client can access.
+
         requestId | Yes | string |  |  | Unique identifier for the request
 
 
-.. _d_e5951c399cff33430222aefe098fbbbb:
+.. _i_4a894329f99280d2268e250444b59376:
 
-DCAEDeploymentResponse_links Model Structure
---------------------------------------------
+**Links schema:**
+
 
 Links that the API client can access.
 
@@ -866,14 +952,14 @@ Object providing a list of deployments
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        deployments | Yes | array of :ref:`DCAEDeploymentsListResponse_deployments <d_bf53389ec58f942852b6e44f2f35173c>` |  |  | 
+        deployments | Yes | array of :ref:`deployments <i_98a80d81e7d1973d54db7713913d37e8>` |  |  | 
         requestId | Yes | string |  |  | Unique identifier for the request
 
 
-.. _d_bf53389ec58f942852b6e44f2f35173c:
+.. _i_98a80d81e7d1973d54db7713913d37e8:
 
-DCAEDeploymentsListResponse_deployments Model Structure
--------------------------------------------------------
+**Deployments schema:**
+
 
 .. csv-table::
     :delim: |
@@ -914,7 +1000,8 @@ Response body for a request for status of an installation or uninstallation oper
 
         error | No | string |  |  | If status is 'failed', this field will be present and contain additional information about the reason the operation failed.
 
-        links | No | :ref:`DCAEOperationStatusResponse_links <d_d0c8dc90669705fbfd08cca966a5fcae>` |  |  | 
+        links | No | :ref:`links <i_2feace8c1d3584ec637edc0eb1b92699>` |  |  | If the operation succeeded, links that the client can follow to take further action.  Note that a successful 'uninstall' operation removes the DCAE service instance completely, so there are no possible further actions, and no links.
+
         operationType | Yes | string |  |  | Type of operation being reported on. ('install' or 'uninstall')
 
         requestId | Yes | string |  |  | A unique identifier assigned to the request.  Useful for tracing a request through logs.
@@ -923,10 +1010,10 @@ Response body for a request for status of an installation or uninstallation oper
 'succeeded', and 'failed'
 
 
-.. _d_d0c8dc90669705fbfd08cca966a5fcae:
+.. _i_2feace8c1d3584ec637edc0eb1b92699:
 
-DCAEOperationStatusResponse_links Model Structure
--------------------------------------------------
+**Links schema:**
+
 
 If the operation succeeded, links that the client can follow to take further action.  Note that a successful 'uninstall' operation removes the DCAE service instance completely, so there are no possible further actions, and no links.
 
@@ -967,11 +1054,11 @@ policy_body - the whole object received from policy-engine
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        config | Yes | :ref:`config <i_4926bbee050a2d1f47c3281f6c9095cf>` |  |  | the policy-config - the config data provided by policy owner
+        config | Yes | :ref:`config <i_ba9593ef6832fb8401f266e173acaa5c>` |  |  | the policy-config - the config data provided by policy owner
         policyName | Yes | string |  |  | unique policy name that contains the version and extension
         policyVersion | Yes | string |  |  | stringified int that is autoincremented by policy-engine
 
-.. _i_4926bbee050a2d1f47c3281f6c9095cf:
+.. _i_ba9593ef6832fb8401f266e173acaa5c:
 
 **Config schema:**
 
@@ -992,50 +1079,57 @@ request to update policies on DCAE components.
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        latest_policies | Yes | :ref:`latest_policies <i_22fec92398d6fc407cf75f0b4c0f3614>` |  |  | dictionary of (policy_id -> Policy object).  In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+        catch_up | Yes | boolean |  |  | flag to indicate whether the request contains all the policies in PDP or not
+        errored_policies | No | :ref:`errored_policies <i_0e88fa72c5312eaae3990753181ce5fe>` |  |  | whether policy-engine returned an error on the policy.
+dictionary of (policy_id -> true).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
-.. _i_22fec92398d6fc407cf75f0b4c0f3614:
+        errored_scopes | No | array of string |  |  | on cartchup - list of policy scope_prefix values on wchich the policy-engine experienced an error other than not-found data.
+
+        latest_policies | Yes | :ref:`latest_policies <i_cbc40bad95bddbd536eeab0a92f483af>` |  |  | dictionary of (policy_id -> DCAEPolicy object).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+
+        removed_policies | Yes | :ref:`removed_policies <i_0ce52a29e44aa0cc7929fe7b555551bc>` |  |  | whether policy was removed from policy-engine.
+dictionary of (policy_id -> true).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+
+        scope_prefixes | No | array of string |  |  | on catchup - list of all scope_prefixes used by the policy-handler to retrieve the policies from policy-engine.
+
+
+.. _i_0e88fa72c5312eaae3990753181ce5fe:
+
+**Errored_policies schema:**
+
+
+whether policy-engine returned an error on the policy.
+dictionary of (policy_id -> true).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+
+
+Map of {"key":"boolean"}
+
+.. _i_cbc40bad95bddbd536eeab0a92f483af:
 
 **Latest_policies schema:**
 
 
-dictionary of (policy_id -> Policy object).  In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+dictionary of (policy_id -> DCAEPolicy object).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
+
 
 Map of {"key":":ref:`DCAEPolicy <d_1e3e880a733b457b648bd8c99e6c859c>`"}
 
 
 
-.. _d_01a325801d3165f9b15dbdaa15b94815:
+.. _i_0ce52a29e44aa0cc7929fe7b555551bc:
 
-DispatcherInfo Model Structure
-------------------------------
-
-.. csv-table::
-    :delim: |
-    :header: "Name", "Required", "Type", "Format", "Properties", "Description"
-    :widths: 20, 10, 15, 15, 30, 25
-
-        apiVersion | No | string |  |  | version of API supported by this server
-
-        links | No | :ref:`DispatcherInfo_links <d_0a18e12425d91480a8516b17efe05340>` |  |  | 
-        serverVersion | No | string |  |  | version of software running on this server
+**Removed_policies schema:**
 
 
-.. _d_0a18e12425d91480a8516b17efe05340:
-
-DispatcherInfo_links Model Structure
-------------------------------------
-
-Links to API resources
+whether policy was removed from policy-engine.
+dictionary of (policy_id -> true).
+In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
 
-.. csv-table::
-    :delim: |
-    :header: "Name", "Required", "Type", "Format", "Properties", "Description"
-    :widths: 20, 10, 15, 15, 30, 25
-
-        events | No | string |  |  | path for the events endpoint
-
-        info | No | string |  |  | path for the server information endpoint
-
+Map of {"key":"boolean"}
 

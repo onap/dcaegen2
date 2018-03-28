@@ -3,6 +3,74 @@
 Release Notes
 =============
 
+Version: 2.0.0
+--------------
+
+:Release Date: 2018-05-24
+
+**New Features**
+DCAE R2 improves upon previous release with the following new features:
+
+- Kubernetes deployment support for DCAE.  In R2 all DCAE components can be deployed using Kubernetes into a Kubernetes cluster.  The list of a R2 DCAE include the following components.
+    - Platform components
+        - Cloudify Manager (Community Version 18.3.23)
+        - Bootstrap container
+        - Configuration Binding Service
+        - Deployment Handler
+        - Policy Handler
+        - Service Change Handler
+        - Inventory API
+    - Service components
+        - VES Collector
+        - SNMP Collector
+        - Mapper Microservice
+        - PNF Registration Handler Microservice
+        - Missing Heartbeat Microservice
+        - Threshold Crossing Analytics
+        - Holmes Rule Management*
+        - Holmes Engine Management*
+
+(*) Note: This component is delivered under the Holmes project and used as a DCAE analytics component in R2.
+
+In addition, DCAE R2 utilizes the following shared resources that are provided by OOM ONAP deployment:
+    - Postgres Database
+    - Redis Cluster Database
+    - Consul Cluster
+
+All DCAE components are designed to support platform maturity requirements.
+
+Source code of DCAE components are released under the following repositories on gerrit.onap.org:
+    - dcaegen2
+    - dcaegen2.analytics
+    - dcaegen2.analytics.tca
+    - dcaegen2.collectors
+    - dcaegen2.collectors.snmptrap
+    - dcaegen2.collectors.ves
+    - dcaegen2.deployments
+    - dcaegen2.platform
+    - dcaegen2.platform.blueprints
+    - dcaegen2.platform.cli
+    - dcaegen2.platform.configbinding
+    - dcaegen2.platform.deployment-handler
+    - dcaegen2.platform.inventory-api
+    - dcaegen2.platform.plugins
+    - dcaegen2.platform.policy-handler
+    - dcaegen2.platform.servicechange-handler
+    - dcaegen2.services.heartbeat
+    - dcaegen2.services.mapper
+    - dcaegen2.services.prh
+    - dcaegen2.utils
+
+**Bug Fixes**
+
+**Known Issues**
+
+**Security Issues**
+
+**Upgrade Notes**
+
+
+
 Version: 1.0.0
 --------------
 

@@ -87,104 +87,104 @@ Type: :ref:`InlineResponse200 <d_b1ccd4187d31690b8e704c0aa01b2c59>`
     {
         "items": [
             {
-                "asdcResourceId": "somestring", 
-                "asdcServiceId": "somestring", 
-                "asdcServiceURL": "somestring", 
-                "blueprintTemplate": "somestring", 
-                "created": "2015-01-01T15:00:00.000Z", 
-                "deactivated": "2015-01-01T15:00:00.000Z", 
-                "owner": "somestring", 
+                "asdcResourceId": "somestring",
+                "asdcServiceId": "somestring",
+                "asdcServiceURL": "somestring",
+                "blueprintTemplate": "somestring",
+                "created": "2015-01-01T15:00:00.000Z",
+                "deactivated": "2015-01-01T15:00:00.000Z",
+                "owner": "somestring",
                 "selfLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
+                },
                 "serviceIds": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
-                ], 
+                ],
                 "serviceLocations": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
-                ], 
-                "typeId": "somestring", 
-                "typeName": "somestring", 
-                "typeVersion": 1, 
+                ],
+                "typeId": "somestring",
+                "typeName": "somestring",
+                "typeVersion": 1,
                 "vnfTypes": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
                 ]
-            }, 
+            },
             {
-                "asdcResourceId": "somestring", 
-                "asdcServiceId": "somestring", 
-                "asdcServiceURL": "somestring", 
-                "blueprintTemplate": "somestring", 
-                "created": "2015-01-01T15:00:00.000Z", 
-                "deactivated": "2015-01-01T15:00:00.000Z", 
-                "owner": "somestring", 
+                "asdcResourceId": "somestring",
+                "asdcServiceId": "somestring",
+                "asdcServiceURL": "somestring",
+                "blueprintTemplate": "somestring",
+                "created": "2015-01-01T15:00:00.000Z",
+                "deactivated": "2015-01-01T15:00:00.000Z",
+                "owner": "somestring",
                 "selfLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
+                },
                 "serviceIds": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
-                ], 
+                ],
                 "serviceLocations": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
-                ], 
-                "typeId": "somestring", 
-                "typeName": "somestring", 
-                "typeVersion": 1, 
+                ],
+                "typeId": "somestring",
+                "typeName": "somestring",
+                "typeVersion": 1,
                 "vnfTypes": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
                 ]
             }
-        ], 
+        ],
         "links": {
             "nextLink": {
-                "params": {}, 
-                "rel": "somestring", 
+                "params": {},
+                "rel": "somestring",
                 "rels": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
-                ], 
-                "title": "somestring", 
-                "type": "somestring", 
-                "uri": "somestring", 
+                ],
+                "title": "somestring",
+                "type": "somestring",
+                "uri": "somestring",
                 "uriBuilder": {}
-            }, 
+            },
             "previousLink": {
-                "params": {}, 
-                "rel": "somestring", 
+                "params": {},
+                "rel": "somestring",
                 "rels": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
-                ], 
-                "title": "somestring", 
-                "type": "somestring", 
-                "uri": "somestring", 
+                ],
+                "title": "somestring",
+                "type": "somestring",
+                "uri": "somestring",
                 "uriBuilder": {}
             }
-        }, 
+        },
         "totalCount": 1
     }
 
@@ -235,8 +235,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -253,8 +253,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -271,8 +271,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -323,38 +323,38 @@ Type: :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>`
 .. code-block:: javascript
 
     {
-        "asdcResourceId": "somestring", 
-        "asdcServiceId": "somestring", 
-        "asdcServiceURL": "somestring", 
-        "blueprintTemplate": "somestring", 
-        "created": "2015-01-01T15:00:00.000Z", 
-        "deactivated": "2015-01-01T15:00:00.000Z", 
-        "owner": "somestring", 
+        "asdcResourceId": "somestring",
+        "asdcServiceId": "somestring",
+        "asdcServiceURL": "somestring",
+        "blueprintTemplate": "somestring",
+        "created": "2015-01-01T15:00:00.000Z",
+        "deactivated": "2015-01-01T15:00:00.000Z",
+        "owner": "somestring",
         "selfLink": {
-            "params": {}, 
-            "rel": "somestring", 
+            "params": {},
+            "rel": "somestring",
             "rels": [
-                "somestring", 
+                "somestring",
                 "somestring"
-            ], 
-            "title": "somestring", 
-            "type": "somestring", 
-            "uri": "somestring", 
+            ],
+            "title": "somestring",
+            "type": "somestring",
+            "uri": "somestring",
             "uriBuilder": {}
-        }, 
+        },
         "serviceIds": [
-            "somestring", 
+            "somestring",
             "somestring"
-        ], 
+        ],
         "serviceLocations": [
-            "somestring", 
+            "somestring",
             "somestring"
-        ], 
-        "typeId": "somestring", 
-        "typeName": "somestring", 
-        "typeVersion": 1, 
+        ],
+        "typeId": "somestring",
+        "typeName": "somestring",
+        "typeVersion": 1,
         "vnfTypes": [
-            "somestring", 
+            "somestring",
             "somestring"
         ]
     }
@@ -372,38 +372,38 @@ Type: :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>`
 .. code-block:: javascript
 
     {
-        "asdcResourceId": "somestring", 
-        "asdcServiceId": "somestring", 
-        "asdcServiceURL": "somestring", 
-        "blueprintTemplate": "somestring", 
-        "created": "2015-01-01T15:00:00.000Z", 
-        "deactivated": "2015-01-01T15:00:00.000Z", 
-        "owner": "somestring", 
+        "asdcResourceId": "somestring",
+        "asdcServiceId": "somestring",
+        "asdcServiceURL": "somestring",
+        "blueprintTemplate": "somestring",
+        "created": "2015-01-01T15:00:00.000Z",
+        "deactivated": "2015-01-01T15:00:00.000Z",
+        "owner": "somestring",
         "selfLink": {
-            "params": {}, 
-            "rel": "somestring", 
+            "params": {},
+            "rel": "somestring",
             "rels": [
-                "somestring", 
+                "somestring",
                 "somestring"
-            ], 
-            "title": "somestring", 
-            "type": "somestring", 
-            "uri": "somestring", 
+            ],
+            "title": "somestring",
+            "type": "somestring",
+            "uri": "somestring",
             "uriBuilder": {}
-        }, 
+        },
         "serviceIds": [
-            "somestring", 
+            "somestring",
             "somestring"
-        ], 
+        ],
         "serviceLocations": [
-            "somestring", 
+            "somestring",
             "somestring"
-        ], 
-        "typeId": "somestring", 
-        "typeName": "somestring", 
-        "typeVersion": 1, 
+        ],
+        "typeId": "somestring",
+        "typeName": "somestring",
+        "typeVersion": 1,
         "vnfTypes": [
-            "somestring", 
+            "somestring",
             "somestring"
         ]
     }
@@ -454,23 +454,23 @@ Body
 .. code-block:: javascript
 
     {
-        "asdcResourceId": "somestring", 
-        "asdcServiceId": "somestring", 
-        "asdcServiceURL": "somestring", 
-        "blueprintTemplate": "somestring", 
-        "owner": "somestring", 
+        "asdcResourceId": "somestring",
+        "asdcServiceId": "somestring",
+        "asdcServiceURL": "somestring",
+        "blueprintTemplate": "somestring",
+        "owner": "somestring",
         "serviceIds": [
-            "somestring", 
+            "somestring",
             "somestring"
-        ], 
+        ],
         "serviceLocations": [
-            "somestring", 
+            "somestring",
             "somestring"
-        ], 
-        "typeName": "somestring", 
-        "typeVersion": 1, 
+        ],
+        "typeName": "somestring",
+        "typeVersion": 1,
         "vnfTypes": [
-            "somestring", 
+            "somestring",
             "somestring"
         ]
     }
@@ -491,38 +491,38 @@ Type: :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>`
 .. code-block:: javascript
 
     {
-        "asdcResourceId": "somestring", 
-        "asdcServiceId": "somestring", 
-        "asdcServiceURL": "somestring", 
-        "blueprintTemplate": "somestring", 
-        "created": "2015-01-01T15:00:00.000Z", 
-        "deactivated": "2015-01-01T15:00:00.000Z", 
-        "owner": "somestring", 
+        "asdcResourceId": "somestring",
+        "asdcServiceId": "somestring",
+        "asdcServiceURL": "somestring",
+        "blueprintTemplate": "somestring",
+        "created": "2015-01-01T15:00:00.000Z",
+        "deactivated": "2015-01-01T15:00:00.000Z",
+        "owner": "somestring",
         "selfLink": {
-            "params": {}, 
-            "rel": "somestring", 
+            "params": {},
+            "rel": "somestring",
             "rels": [
-                "somestring", 
+                "somestring",
                 "somestring"
-            ], 
-            "title": "somestring", 
-            "type": "somestring", 
-            "uri": "somestring", 
+            ],
+            "title": "somestring",
+            "type": "somestring",
+            "uri": "somestring",
             "uriBuilder": {}
-        }, 
+        },
         "serviceIds": [
-            "somestring", 
+            "somestring",
             "somestring"
-        ], 
+        ],
         "serviceLocations": [
-            "somestring", 
+            "somestring",
             "somestring"
-        ], 
-        "typeId": "somestring", 
-        "typeName": "somestring", 
-        "typeVersion": 1, 
+        ],
+        "typeId": "somestring",
+        "typeName": "somestring",
+        "typeVersion": 1,
         "vnfTypes": [
-            "somestring", 
+            "somestring",
             "somestring"
         ]
     }
@@ -540,8 +540,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -558,8 +558,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -621,212 +621,212 @@ Type: :ref:`InlineResponse2001 <d_31bb361a8900a0bed20df49b94f1e33b>`
             {
                 "components": [
                     {
-                        "componentId": "somestring", 
+                        "componentId": "somestring",
                         "componentLink": {
-                            "params": {}, 
-                            "rel": "somestring", 
+                            "params": {},
+                            "rel": "somestring",
                             "rels": [
-                                "somestring", 
+                                "somestring",
                                 "somestring"
-                            ], 
-                            "title": "somestring", 
-                            "type": "somestring", 
-                            "uri": "somestring", 
+                            ],
+                            "title": "somestring",
+                            "type": "somestring",
+                            "uri": "somestring",
                             "uriBuilder": {}
-                        }, 
-                        "componentSource": "DCAEController", 
-                        "componentType": "somestring", 
-                        "created": "2015-01-01T15:00:00.000Z", 
-                        "location": "somestring", 
-                        "modified": "2015-01-01T15:00:00.000Z", 
-                        "shareable": 1, 
+                        },
+                        "componentSource": "DCAEController",
+                        "componentType": "somestring",
+                        "created": "2015-01-01T15:00:00.000Z",
+                        "location": "somestring",
+                        "modified": "2015-01-01T15:00:00.000Z",
+                        "shareable": 1,
                         "status": "somestring"
-                    }, 
+                    },
                     {
-                        "componentId": "somestring", 
+                        "componentId": "somestring",
                         "componentLink": {
-                            "params": {}, 
-                            "rel": "somestring", 
+                            "params": {},
+                            "rel": "somestring",
                             "rels": [
-                                "somestring", 
+                                "somestring",
                                 "somestring"
-                            ], 
-                            "title": "somestring", 
-                            "type": "somestring", 
-                            "uri": "somestring", 
+                            ],
+                            "title": "somestring",
+                            "type": "somestring",
+                            "uri": "somestring",
                             "uriBuilder": {}
-                        }, 
-                        "componentSource": "DCAEController", 
-                        "componentType": "somestring", 
-                        "created": "2015-01-01T15:00:00.000Z", 
-                        "location": "somestring", 
-                        "modified": "2015-01-01T15:00:00.000Z", 
-                        "shareable": 1, 
+                        },
+                        "componentSource": "DCAEController",
+                        "componentType": "somestring",
+                        "created": "2015-01-01T15:00:00.000Z",
+                        "location": "somestring",
+                        "modified": "2015-01-01T15:00:00.000Z",
+                        "shareable": 1,
                         "status": "somestring"
                     }
-                ], 
-                "created": "2015-01-01T15:00:00.000Z", 
-                "deploymentRef": "somestring", 
-                "modified": "2015-01-01T15:00:00.000Z", 
+                ],
+                "created": "2015-01-01T15:00:00.000Z",
+                "deploymentRef": "somestring",
+                "modified": "2015-01-01T15:00:00.000Z",
                 "selfLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
-                "serviceId": "somestring", 
+                },
+                "serviceId": "somestring",
                 "typeLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
-                "vnfId": "somestring", 
+                },
+                "vnfId": "somestring",
                 "vnfLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
-                "vnfLocation": "somestring", 
+                },
+                "vnfLocation": "somestring",
                 "vnfType": "somestring"
-            }, 
+            },
             {
                 "components": [
                     {
-                        "componentId": "somestring", 
+                        "componentId": "somestring",
                         "componentLink": {
-                            "params": {}, 
-                            "rel": "somestring", 
+                            "params": {},
+                            "rel": "somestring",
                             "rels": [
-                                "somestring", 
+                                "somestring",
                                 "somestring"
-                            ], 
-                            "title": "somestring", 
-                            "type": "somestring", 
-                            "uri": "somestring", 
+                            ],
+                            "title": "somestring",
+                            "type": "somestring",
+                            "uri": "somestring",
                             "uriBuilder": {}
-                        }, 
-                        "componentSource": "DCAEController", 
-                        "componentType": "somestring", 
-                        "created": "2015-01-01T15:00:00.000Z", 
-                        "location": "somestring", 
-                        "modified": "2015-01-01T15:00:00.000Z", 
-                        "shareable": 1, 
+                        },
+                        "componentSource": "DCAEController",
+                        "componentType": "somestring",
+                        "created": "2015-01-01T15:00:00.000Z",
+                        "location": "somestring",
+                        "modified": "2015-01-01T15:00:00.000Z",
+                        "shareable": 1,
                         "status": "somestring"
-                    }, 
+                    },
                     {
-                        "componentId": "somestring", 
+                        "componentId": "somestring",
                         "componentLink": {
-                            "params": {}, 
-                            "rel": "somestring", 
+                            "params": {},
+                            "rel": "somestring",
                             "rels": [
-                                "somestring", 
+                                "somestring",
                                 "somestring"
-                            ], 
-                            "title": "somestring", 
-                            "type": "somestring", 
-                            "uri": "somestring", 
+                            ],
+                            "title": "somestring",
+                            "type": "somestring",
+                            "uri": "somestring",
                             "uriBuilder": {}
-                        }, 
-                        "componentSource": "DCAEController", 
-                        "componentType": "somestring", 
-                        "created": "2015-01-01T15:00:00.000Z", 
-                        "location": "somestring", 
-                        "modified": "2015-01-01T15:00:00.000Z", 
-                        "shareable": 1, 
+                        },
+                        "componentSource": "DCAEController",
+                        "componentType": "somestring",
+                        "created": "2015-01-01T15:00:00.000Z",
+                        "location": "somestring",
+                        "modified": "2015-01-01T15:00:00.000Z",
+                        "shareable": 1,
                         "status": "somestring"
                     }
-                ], 
-                "created": "2015-01-01T15:00:00.000Z", 
-                "deploymentRef": "somestring", 
-                "modified": "2015-01-01T15:00:00.000Z", 
+                ],
+                "created": "2015-01-01T15:00:00.000Z",
+                "deploymentRef": "somestring",
+                "modified": "2015-01-01T15:00:00.000Z",
                 "selfLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
-                "serviceId": "somestring", 
+                },
+                "serviceId": "somestring",
                 "typeLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
-                "vnfId": "somestring", 
+                },
+                "vnfId": "somestring",
                 "vnfLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
-                "vnfLocation": "somestring", 
+                },
+                "vnfLocation": "somestring",
                 "vnfType": "somestring"
             }
-        ], 
+        ],
         "links": {
             "nextLink": {
-                "params": {}, 
-                "rel": "somestring", 
+                "params": {},
+                "rel": "somestring",
                 "rels": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
-                ], 
-                "title": "somestring", 
-                "type": "somestring", 
-                "uri": "somestring", 
+                ],
+                "title": "somestring",
+                "type": "somestring",
+                "uri": "somestring",
                 "uriBuilder": {}
-            }, 
+            },
             "previousLink": {
-                "params": {}, 
-                "rel": "somestring", 
+                "params": {},
+                "rel": "somestring",
                 "rels": [
-                    "somestring", 
+                    "somestring",
                     "somestring"
-                ], 
-                "title": "somestring", 
-                "type": "somestring", 
-                "uri": "somestring", 
+                ],
+                "title": "somestring",
+                "type": "somestring",
+                "uri": "somestring",
                 "uriBuilder": {}
             }
-        }, 
+        },
         "totalCount": 1
     }
 
@@ -843,8 +843,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -861,8 +861,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -913,38 +913,38 @@ Type: :ref:`DCAEServiceGroupByResults <d_a6dc4f986873bc126fc916189ffa5e91>`
 .. code-block:: javascript
 
     {
-        "propertyName": "somestring", 
+        "propertyName": "somestring",
         "propertyValues": [
             {
-                "count": 1, 
+                "count": 1,
                 "dcaeServiceQueryLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
+                },
                 "propertyValue": "somestring"
-            }, 
+            },
             {
-                "count": 1, 
+                "count": 1,
                 "dcaeServiceQueryLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
+                },
                 "propertyValue": "somestring"
             }
         ]
@@ -1003,8 +1003,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1057,92 +1057,92 @@ Type: :ref:`DCAEService <d_ae85cd292c2b4046e1ea1bbb02c7ea63>`
     {
         "components": [
             {
-                "componentId": "somestring", 
+                "componentId": "somestring",
                 "componentLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
-                "componentSource": "DCAEController", 
-                "componentType": "somestring", 
-                "created": "2015-01-01T15:00:00.000Z", 
-                "location": "somestring", 
-                "modified": "2015-01-01T15:00:00.000Z", 
-                "shareable": 1, 
+                },
+                "componentSource": "DCAEController",
+                "componentType": "somestring",
+                "created": "2015-01-01T15:00:00.000Z",
+                "location": "somestring",
+                "modified": "2015-01-01T15:00:00.000Z",
+                "shareable": 1,
                 "status": "somestring"
-            }, 
+            },
             {
-                "componentId": "somestring", 
+                "componentId": "somestring",
                 "componentLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
-                "componentSource": "DCAEController", 
-                "componentType": "somestring", 
-                "created": "2015-01-01T15:00:00.000Z", 
-                "location": "somestring", 
-                "modified": "2015-01-01T15:00:00.000Z", 
-                "shareable": 1, 
+                },
+                "componentSource": "DCAEController",
+                "componentType": "somestring",
+                "created": "2015-01-01T15:00:00.000Z",
+                "location": "somestring",
+                "modified": "2015-01-01T15:00:00.000Z",
+                "shareable": 1,
                 "status": "somestring"
             }
-        ], 
-        "created": "2015-01-01T15:00:00.000Z", 
-        "deploymentRef": "somestring", 
-        "modified": "2015-01-01T15:00:00.000Z", 
+        ],
+        "created": "2015-01-01T15:00:00.000Z",
+        "deploymentRef": "somestring",
+        "modified": "2015-01-01T15:00:00.000Z",
         "selfLink": {
-            "params": {}, 
-            "rel": "somestring", 
+            "params": {},
+            "rel": "somestring",
             "rels": [
-                "somestring", 
+                "somestring",
                 "somestring"
-            ], 
-            "title": "somestring", 
-            "type": "somestring", 
-            "uri": "somestring", 
+            ],
+            "title": "somestring",
+            "type": "somestring",
+            "uri": "somestring",
             "uriBuilder": {}
-        }, 
-        "serviceId": "somestring", 
+        },
+        "serviceId": "somestring",
         "typeLink": {
-            "params": {}, 
-            "rel": "somestring", 
+            "params": {},
+            "rel": "somestring",
             "rels": [
-                "somestring", 
+                "somestring",
                 "somestring"
-            ], 
-            "title": "somestring", 
-            "type": "somestring", 
-            "uri": "somestring", 
+            ],
+            "title": "somestring",
+            "type": "somestring",
+            "uri": "somestring",
             "uriBuilder": {}
-        }, 
-        "vnfId": "somestring", 
+        },
+        "vnfId": "somestring",
         "vnfLink": {
-            "params": {}, 
-            "rel": "somestring", 
+            "params": {},
+            "rel": "somestring",
             "rels": [
-                "somestring", 
+                "somestring",
                 "somestring"
-            ], 
-            "title": "somestring", 
-            "type": "somestring", 
-            "uri": "somestring", 
+            ],
+            "title": "somestring",
+            "type": "somestring",
+            "uri": "somestring",
             "uriBuilder": {}
-        }, 
-        "vnfLocation": "somestring", 
+        },
+        "vnfLocation": "somestring",
         "vnfType": "somestring"
     }
 
@@ -1159,8 +1159,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1177,8 +1177,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1195,8 +1195,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1254,22 +1254,22 @@ Body
     {
         "components": [
             {
-                "componentId": "somestring", 
-                "componentSource": "DCAEController", 
-                "componentType": "somestring", 
+                "componentId": "somestring",
+                "componentSource": "DCAEController",
+                "componentType": "somestring",
                 "shareable": 1
-            }, 
+            },
             {
-                "componentId": "somestring", 
-                "componentSource": "DCAEController", 
-                "componentType": "somestring", 
+                "componentId": "somestring",
+                "componentSource": "DCAEController",
+                "componentType": "somestring",
                 "shareable": 1
             }
-        ], 
-        "deploymentRef": "somestring", 
-        "typeId": "somestring", 
-        "vnfId": "somestring", 
-        "vnfLocation": "somestring", 
+        ],
+        "deploymentRef": "somestring",
+        "typeId": "somestring",
+        "vnfId": "somestring",
+        "vnfLocation": "somestring",
         "vnfType": "somestring"
     }
 
@@ -1291,92 +1291,92 @@ Type: :ref:`DCAEService <d_ae85cd292c2b4046e1ea1bbb02c7ea63>`
     {
         "components": [
             {
-                "componentId": "somestring", 
+                "componentId": "somestring",
                 "componentLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
-                "componentSource": "DCAEController", 
-                "componentType": "somestring", 
-                "created": "2015-01-01T15:00:00.000Z", 
-                "location": "somestring", 
-                "modified": "2015-01-01T15:00:00.000Z", 
-                "shareable": 1, 
+                },
+                "componentSource": "DCAEController",
+                "componentType": "somestring",
+                "created": "2015-01-01T15:00:00.000Z",
+                "location": "somestring",
+                "modified": "2015-01-01T15:00:00.000Z",
+                "shareable": 1,
                 "status": "somestring"
-            }, 
+            },
             {
-                "componentId": "somestring", 
+                "componentId": "somestring",
                 "componentLink": {
-                    "params": {}, 
-                    "rel": "somestring", 
+                    "params": {},
+                    "rel": "somestring",
                     "rels": [
-                        "somestring", 
+                        "somestring",
                         "somestring"
-                    ], 
-                    "title": "somestring", 
-                    "type": "somestring", 
-                    "uri": "somestring", 
+                    ],
+                    "title": "somestring",
+                    "type": "somestring",
+                    "uri": "somestring",
                     "uriBuilder": {}
-                }, 
-                "componentSource": "DCAEController", 
-                "componentType": "somestring", 
-                "created": "2015-01-01T15:00:00.000Z", 
-                "location": "somestring", 
-                "modified": "2015-01-01T15:00:00.000Z", 
-                "shareable": 1, 
+                },
+                "componentSource": "DCAEController",
+                "componentType": "somestring",
+                "created": "2015-01-01T15:00:00.000Z",
+                "location": "somestring",
+                "modified": "2015-01-01T15:00:00.000Z",
+                "shareable": 1,
                 "status": "somestring"
             }
-        ], 
-        "created": "2015-01-01T15:00:00.000Z", 
-        "deploymentRef": "somestring", 
-        "modified": "2015-01-01T15:00:00.000Z", 
+        ],
+        "created": "2015-01-01T15:00:00.000Z",
+        "deploymentRef": "somestring",
+        "modified": "2015-01-01T15:00:00.000Z",
         "selfLink": {
-            "params": {}, 
-            "rel": "somestring", 
+            "params": {},
+            "rel": "somestring",
             "rels": [
-                "somestring", 
+                "somestring",
                 "somestring"
-            ], 
-            "title": "somestring", 
-            "type": "somestring", 
-            "uri": "somestring", 
+            ],
+            "title": "somestring",
+            "type": "somestring",
+            "uri": "somestring",
             "uriBuilder": {}
-        }, 
-        "serviceId": "somestring", 
+        },
+        "serviceId": "somestring",
         "typeLink": {
-            "params": {}, 
-            "rel": "somestring", 
+            "params": {},
+            "rel": "somestring",
             "rels": [
-                "somestring", 
+                "somestring",
                 "somestring"
-            ], 
-            "title": "somestring", 
-            "type": "somestring", 
-            "uri": "somestring", 
+            ],
+            "title": "somestring",
+            "type": "somestring",
+            "uri": "somestring",
             "uriBuilder": {}
-        }, 
-        "vnfId": "somestring", 
+        },
+        "vnfId": "somestring",
         "vnfLink": {
-            "params": {}, 
-            "rel": "somestring", 
+            "params": {},
+            "rel": "somestring",
             "rels": [
-                "somestring", 
+                "somestring",
                 "somestring"
-            ], 
-            "title": "somestring", 
-            "type": "somestring", 
-            "uri": "somestring", 
+            ],
+            "title": "somestring",
+            "type": "somestring",
+            "uri": "somestring",
             "uriBuilder": {}
-        }, 
-        "vnfLocation": "somestring", 
+        },
+        "vnfLocation": "somestring",
         "vnfType": "somestring"
     }
 
@@ -1393,8 +1393,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 .. code-block:: javascript
 
     {
-        "code": 1, 
-        "message": "somestring", 
+        "code": 1,
+        "message": "somestring",
         "type": "somestring"
     }
 
@@ -1618,7 +1618,7 @@ Link Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        params | No | :ref:`params <i_adf17ca32891d8ece6efd40541d227f2>` |  |  | 
+        params | No | :ref:`params <i_f76783e4d75c137d1fc68696fcfdb72c>` |  |  | 
         rel | No | string |  |  | 
         rels | No | array of string |  |  | 
         title | No | string |  |  | 
@@ -1626,7 +1626,7 @@ Link Model Structure
         uri | No | string | uri |  | 
         uriBuilder | No | :ref:`UriBuilder <d_a7b6b5c694147ea9dcfb5a5a6cbef017>` |  |  | 
 
-.. _i_adf17ca32891d8ece6efd40541d227f2:
+.. _i_f76783e4d75c137d1fc68696fcfdb72c:
 
 **Params schema:**
 
