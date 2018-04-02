@@ -1,16 +1,25 @@
 site_name: DCAE Platform
+site_url: https://github.research.att.com/pages/DCAE-Rework/dcae-rework.github.io/
+
+repo_url: https://github.research.att.com/DCAE-Rework
 
 # http://squidfunk.github.io/mkdocs-material/
 theme: material
 
 pages:
   - Home: 'index.md'
+  - Change Log: 'changelog.md'
   - Architecture:
     - Technologies: 'architecture/pieces.md'
     - Services: 'architecture/services.md'
     - Service Discovery: 'architecture/service-discovery.md'
   - Component Developers:
     - Overview: 'components/intro.md'
+    - Concepts:
+      - Closed Loop/CLAMP: 'concepts/clamp.md'
+      - DTI Reconfiguration: 'concepts/dti.md'
+      - Policy: 'concepts/policy.md'
+      - Service Design: 'concepts/service-designer.md'
     - Requirements/Guidelines:
       - CDAP: 'components/component-type-cdap.md'
       - Docker: 'components/component-type-docker.md'
@@ -18,12 +27,13 @@ pages:
       - Common Elements: 'components/component-specification/common-specification.md'
       - CDAP Specific: 'components/component-specification/cdap-specification.md'
       - Docker Specific: 'components/component-specification/docker-specification.md'
-      - Generated Configuration: 'components/component-specification/generated-configuration.md'
+      - DMaaP connection objects: 'components/component-specification/dmaap-connection-objects.md'
       - Streams Quick Reference: 'components/component-specification/streams-grid.md'
-      - Configuration Quick Reference: 'components/component-specification/configuration-grid.md'
-    - Data Formats: 'components/data-formats.md'
+      - Configuration Types Quick Reference: 'components/component-specification/configuration-grid.md'
+      - Examples: 'components/component-specification/examples-grid.md'
+    - Data Format Specification: 'components/data-formats.md'
     - dcae-cli Tool:
       - Quickstart: 'components/dcae-cli/quickstart.md'
+      - Commands: 'components/dcae-cli/commands.md'
       - Walk-through: 'components/dcae-cli/walkthrough.md'
-      - DMaaP connection objects: 'components/dcae-cli/dmaap-connection-objects.md'
   - Glossary: 'glossary.md'

@@ -1,14 +1,14 @@
 # Overview
 
-DCAE components are services that provide a specific functionality and are written to be composable with other DCAE service components.  The DCAE platform is responsible for running and managing DCAE service components reliably.  
+DCAE components are services that provide a specific functionality and are generally written to be composable with other DCAE components, although a component can run independently as well. The DCAE platform is responsible for running and managing DCAE service components reliably.  
 
 Currently, the DCAE platform supports two types of components, CDAP applications and Docker containers. For each, there are requirements that must be met for the component to integrate into the DCAE platform (see [CDAP](component-type-cdap.md) and [Docker](component-type-docker.md)).
 
-### Components requires one or more data formats.
+### A Component requires one or more data formats.
 
-Components are software applications that do some function.  Components don't run independently, they depend upon other components.  A component's function could require connecting to other components to fulfill that function.  A component could also be providing its function as a service through an interface for other components to use.
+A component is a software application that performs a function. It doesn't run independently; it depends upon other components. A component's function could require connecting to other components to fulfill that function.  A component could also be providing its function as a service through an interface for other components to use.
 
-Components cannot connect to or be connected with any other component.  The upstream and downstream components must *speak* the same vocabulary or *data format*.  The output of an one component must match another component's input. This is necessary for components to function correctly and without errors.
+A component cannot connect to or be connected with any other component.  The upstream and downstream components must *speak* the same vocabulary or *data format*.  The output of an one component must match another component's input. This is necessary for components to function correctly and without errors.
 
 The platform requires data formats to ensure that a component will be run with other *compatible* components.
 
@@ -17,7 +17,7 @@ Data formats can and should be shared by multiple components.
 
 ### Each Component requires a component specification.
 
-The component specification is a JSON artifact that fully specifies the component, it's interfaces, and configuration. It's standardized for CDAP and Docker applications and is validated using a [JSON schema](ONAP URL TBD).
+The component specification is a JSON artifact that fully specifies the component, it's interfaces, and configuration. It's standardized for CDAP and Docker applications and is validated using a [JSON schema](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/component-json-schemas/browse/component-spec-schema.json).
 
 The component specification fully specifies all the configuration parameters of the component. This is used by the designer and by policy (future) to configure the runtime behavior of the component. 
 
@@ -41,8 +41,8 @@ Onboarding is a process that ensures that the component is compliant with the DC
 
 1. Defining the [data formats](data-formats.md) if they don't already exist.
 2. Defining the [component specification](/components/component-specification/common-specification.md). See [docker](component-specification/docker-specification.md) and [CDAP](component-specification/cdap-specification.md).
-3. Use the dcae_cli tool to [add the data formats](/components/dcae-cli/walkthrough/#adding-data-formats) and [add the component](/components/dcae-cli/walkthrough/#adding-component) to the onboarding catalog. This process will validate them as well.
-4. Use the dcae_cli tool to [deploy](/components/dcae-cli/walkthrough/#development-and-testing) the component. (The component is deployed to the environment indicated in the [profile](/components/dcae-cli/walkthrough/#setting-profile) section.
+3. Use the dcae_cli tool to [add the data formats](/components/dcae-cli/commands/#add-a-data-format) and [add the component](/components/dcae-cli/commands/#add-a-component) to the onboarding catalog. This process will validate them as well.
+4. Use the dcae_cli tool to [deploy](/components/dcae-cli/commands/#run-a-component) the component. (The component is deployed to the environment indicated in the [profile](/components/dcae-cli/commands/#activate-a-profile) section).
 5. Test the component. Also do pairwise-test the component with any other components it connects with.
-7. Publish the component and data formats into the Service Design and Creation (SDC) 'catalog'. (Currently, this is a manual step).
+7. Publish the component and data formats into the Service Design and Creation (SDC) 'catalog'. (Currently, this is a manual step, not done via the dcae_cli tool).
 

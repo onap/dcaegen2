@@ -10,14 +10,16 @@ The Docker component specification contains the following groups of information.
 
 ## Auxiliary Details
 
-`auxiliary` contains Docker specific details like health check, port mapping, volume mapping, and policy reconfiguration script details.  
+`auxiliary` contains Docker specific details like health check, port mapping, volume mapping, dti and policy reconfiguration script details. (Policy reconfiguration is not yet supported).  
 
 Name | Type | Description
 ------------- | ---- | -----------
 healthcheck | JSON object | *Required*.  Health check definition details
 ports | JSON array | each array item maps a container port to the host port. See example below.
-volume | JSON array | each array item contains a host and container object. See example below. | |
-policy | JSON array | *Required*. Policy script details
+volume | JSON array | each array item contains a host and container object. See example below.
+reconfigs | string | DTI reconfiguration script details
+*Planned for 1806* | |
+policy | JSON array | *Required*. Policy reconfiguration script details
 
 ### Health Check Definition
 
@@ -25,7 +27,7 @@ The platform uses Consul to perform periodic health check calls.  Consul provide
 
 When choosing a value for interval, consider that too frequent healthchecks will put unnecessary load on Consul and DCAE. If there is a problematic resource, then more frequent healthchecks are warranted (eg 15s or 60s), but as stablility increases, so can these values, (eg 300s).
 
-When choosing a value for timeout, consider that too small a number will result in increasing timeout failures, and too large a number will result in a delay in the notification of resource problem. A suggestion is to start with 5s and workd from there.
+When choosing a value for timeout, consider that too small a number will result in increasing timeout failures, and too large a number will result in a delay in the notification of the resource problem. A suggestion is to start with 5s and work from there.
 
 #### http 
 
@@ -74,6 +76,8 @@ Example:
 ```
 
 ### Ports
+
+This method of exposing/mapping a local port to a host port is NOT RECOMMENDED because of the possibility of port conflicts. If multiple instances of a docker container will be running, there definitely will be port conflicts. Use at your own risk. (The preferred way to expose a port is to do so in the Dockerfile as described [here](/components/component-type-docker/#ports)).
 
 ```json
 "auxilary": {
@@ -140,7 +144,35 @@ Here's an example of the minimal JSON that must be provided as an input:
 
 In the example above, the container volume "/tmp/docker.sock" maps to host volume "/var/run/docker.sock".
 
-### Policy 
+### DTI Reconfiguration
+
+DTI changes will be provided to the Docker component by triggering a script that is defined here.
+
+Property Name | Type | Description
+------------- | ---- | -----------
+dti | string | *Required*. Suggested value is "/opt/app/reconfigure.sh"
+
+Example:
+
+```json
+"auxilary": {
+    "dti": "/opt/app/reconfigure.sh"
+}
+```
+
+The docker script interface is as follows: <br><br> `/opt/app/reconfigure.sh $reconfigure_type {<updated_dti object>}
+
+Name | Type | Description
+---- | ---- | -----------
+reconfigure_type | string | "dti"
+updated_dti | json | dti_event object 
+
+The dti_event object can be seen [here](https://codecloud.web.att.com/projects/ST_DCAE/repos/com.att.dcae.orch.dti-handler/browse/dti_inputs.yaml).
+
+An example of a DTI reconfiguration script can be found [here](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/docker-cloudify/browse/examples/reconfigure.py?at=refs%2Fheads%2Frelease%2F1802).
+
+
+### Policy (not yet supported) 
 
 Policy changes made in the Policy UI will be provided to the Docker component by triggering a script that is defined here.
 
@@ -233,7 +265,7 @@ updated_appl_config | json | complete generated app_config, not fully-resolved, 
         }
     },
     "artifacts": [{
-        "uri": "fake.nexus.com/dcae/kpi_anomaly:1.0.0",
+        "uri": "fake.nexus.att.com/dcae/kpi_anomaly:1.0.0",
         "type": "docker image"
     }]
 }

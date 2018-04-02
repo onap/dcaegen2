@@ -10,7 +10,7 @@ Component Specification
    ./common-specification.rst
    ./cdap-specification.rst
    ./docker-specification.rst
-   ./generated-configuration.rst
+   ./dmaap-connection-objects.rst
    ./streams-grid.rst
    ./configuration-grid.rst
 

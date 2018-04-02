@@ -6,9 +6,9 @@ This page contains information about CDAP app development in DCAE.
 The DCAE component specification has you input your `jar_url`, the URL on Nexus to your Jar file. This DCAE controller deploys out of Nexus. 
 You can upload your jar(s) using the following command, replacing NAME:
 ```
-curl -v --user 'user:password' http://YOUR_NEXUS_RAW_REPO/NAME.jar --upload-file NAME.jar
+curl -v --user 'dcae-dev:dev123' http://nexus01.research.att.com:8081/repository/dcae-dev-raw/jar_files/NAME.jar --upload-file NAME.jar
 ```
-During the CLI Tool Usage, in your spec, supply `http://YOUR_NEXUS_RAW_REPO/NAME.jar` as the JAR artifact URL. 
+During the CLI Tool Usage, in your spec, supply `http://nexus01.research.att.com:8081/repository/dcae-dev-raw/jar_files/NAME.jar` as the JAR artifact URL. 
 
 ## Policy Reconfiguration
 We support reconfiguration of both AppConfig and AppPreferences.

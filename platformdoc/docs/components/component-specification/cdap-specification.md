@@ -11,11 +11,11 @@ The CDAP component specification contains the following groups of information. M
 
 ## Current Limitations and TODOs
 
-* The integration of DMD is likely to significantly change the [Interfaces](#interfaces) section in this specification, see [DMaaP abstraction](/components/component-type-cdap.md#dmaap-abstraction).
+* The integration of DMD is likely to significantly change the [Interfaces](common-specification.md#interfaces) section in this specification..
 
 ## Parameters
 
-There is a `parameters` section in your component specification. This section contains three optional keys: [app_config](#appconfig), [app_preferences](#apppreferences), and [propram_preferences](#program_preferences):
+There is a `parameters` section in your component specification. This section contains three optional keys: [app_config](#appconfig), [app_preferences](#apppreferences), and [program_preferences](#programpreferences):
 ```
 "parameters" : {
     "app_config" : [ ...],               
@@ -89,7 +89,7 @@ Each `program_pref` JSON is passed into the CDAP API as the preference for `prog
 
 
 NOTE: for CDAP, this section is very likely to change when DMD  is available. 
-The _future_ vision, as per [DMaaP intentionally abstracted](/components/component-type-cdap.md#dmaap-abstraction) is that you would publish your data as a series of files on HDFS, and DMD will pick them up and send them to the appropriate DMaaP feeds or directly when needed. 
+The _future_ vision is that you would publish your data as a series of files on HDFS, and DMD will pick them up and send them to the appropriate DMaaP feeds or directly when needed. 
 
 ## Auxiliary Details
 

@@ -1,376 +1,150 @@
 # Walk-through
 
-The goal of this quickstart is to provide an overview of the functionalities of the `dcae-cli` and walk you through the capabilities:
+This section demonstrates the flow and usage of the dcae_cli tool to onboard a typical component to the DCAE platform. The commands are explained in more detail in [dcae_cli Commands](/components/dcae-cli/commands).
 
-* [Adding data formats](#adding-data-formats)
-* [Adding component](#adding-component)
-* [Setting profile](#setting-profile)
-* [Development and testing](#development-and-testing)
-* [Publishing component](#publishing-component)
-* [Shared catalog](#shared-catalog)
+* [Add (and validate) a data format](#add-a-data-format)
+* [Add (and validate) the component](#add-the-component)
+* [View the platform generated configuration](#view-the-platform-generated-configuration)
+* [If needed, Create the dmaap file for Dmaap Testing](#create-input-file-for-dmaap-testing)
+* [If needed, Create the input file for *Sourced at Deployment* Testing](#create-input-file-for-sourced-at-deployment-testing)
+* [Run the component](#run-the-component)
+* [If needed, Create the DTI entry in CONSUL for DTI Reconfiguration Testing](#create-DTI-entry-for-reconfiguration)
+* [Undeploy the component](#undeploy-the-component)
+* [Publish the component and data_format](#publish-the-component-and-data_format) to let others know its ready for reuse
+* [List the Catalog Contents](#list-the-catalog-contents) to see your published resources
 
-This walk-through uses example projects:
+This walk-through uses example projects that can be found in CodeCloud:
 
-* [laika](ONAP URL TBD)
-* [CDAP examples](ONAP URL TBD)
+* [laika](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/laika/browse)
+* [CDAP examples](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/dcae_cli_examples/browse)
 
-## Adding data formats
+-------------------------------------------------------------------
 
-`data_format` is the sub-command that is used to execute operations that manage [data formats](../data-formats.md).
-
+## Add a Data Format
 ```
-$ dcae_cli data_format --help
-Usage: dcae_cli data_format [OPTIONS] COMMAND [ARGS]...
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  add      Tracks a data format file SPECIFICATION...
-  generate Generates a data format file from JSON input examples
-  list     Lists all your data formats
-  publish  Publishes data format to make publicly...
-  show     Provides more information about FORMAT
+$ dcae_cli data_format add $HOME/laika/data-formats/health.json
 ```
 
-Your data format must be in the catalog in order to use in the component specification.  Check the catalog using the `data_format list` sub-command:
-
+Verify that the data_format was added
 ```
-$ dcae_cli data_format list
-
-Data formats for mh677g
-+------+---------+-------------+--------+----------+
-| Name | Version | Description | Status | Modified |
-+------+---------+-------------+--------+----------+
-|      |         |             |        |          |
-+------+---------+-------------+--------+----------+
+$ dcae_cli data_format list | grep laika                                                                                              
+| sandbox.platform.laika.health | 0.1.0   | Data format used for the /health endpoint                   | staged    | 2017-11-07 21:48:47.736518 |
 ```
 
-The fields `name`, `version`, `description` are referenced from the data format JSON from the `self` JSON.
+(Note: Each of the data formats for your component need to be added, unless already existing in the onboarding catalog )
 
-There are no data formats so you must add the data formats that your component specification references.  Use the `data_format add` sub-command:
+-------------------------------------------------------------------
 
-Here's an example command:
-
-```
-dcae_cli data_format add health.json
-```
-
-Verify that it was added:
+## Add the Component
 
 ```
-$ dcae_cli data_format list
-
-Data formats for mh677g
-+-------------------------------+---------+-------------------------------------------+--------+----------------------------+
-| Name                          | Version | Description                               | Status | Modified                   |
-+-------------------------------+---------+-------------------------------------------+--------+----------------------------+
-| sandbox.platform.laika.health | 0.1.0   | Data format used for the /health endpoint | staged | 2017-05-23 04:02:38.952799 |
-+-------------------------------+---------+-------------------------------------------+--------+----------------------------+
+$ dcae_cli component add $HOME/laika/component-spec.json
 ```
 
-Go ahead and add other referenced data formats.
-
-If you have JSON input you can generate a data format like this:
-
+Verify that the component was added
 ```
-$ dcae_cli data_format --keywords generate myname:1.0.0  myjsoninputfile
-```
-
-where `myname` is the name of your data format, `1.0.0` is an example version, and `myjsoninputfile` is an example JSON input file (a directory of input JSON files can also be provided).   The `--keywords` option adds additional data attributes that can be completed to provide a more detailed data characterization. In any event the output should be reviewed for accuracy.  The data format is written to stdout.   
-
-## Adding component
-
-`component` is the sub-command that is used to work with operations for components:
-
-```
-$ dcae_cli component --help
-Usage: dcae_cli component [OPTIONS] COMMAND [ARGS]...
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  add
-  dev       Set up component in development for...
-  list      Lists components in the public catalog.
-  publish   Pushes COMPONENT to the public catalog
-  run       Runs the latest version of COMPONENT.
-  show      Provides more information about COMPONENT
-  undeploy  Undeploys the latest version of COMPONENT.
-```
-
-Your component must be accessible from the catalog in order for it to be used.  Check the catalog using the `component list` sub-command:
-
-```
-$ dcae_cli component list
+$ dcae_cli component list 
 Active profile: solutioning
 
-+------+---------+------+-------------+--------+----------+-----------+
-| Name | Version | Type | Description | Status | Modified | #Deployed |
-+------+---------+------+-------------+--------+----------+-----------+
-|      |         |      |             |        |          |           |
-+------+---------+------+-------------+--------+----------+-----------+
-
-Use the "--deployed" option to see more details on deployments
++-------------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
+| Name                          | Version | Type   | Description                                                   | Status | Modified                   | #Deployed |
++-------------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
+| sandbox.platform.laika        | 0.7.0   | docker | Web service used as a stand-alone test DCAE service compone.. | staged | 2017-11-08 20:27:34.168854 | 0         |
++-------------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
 ```
 
-The fields `name`, `version`, `type`, `description` are referenced from the component specification's `self` JSON.
+-------------------------------------------------------------------
 
-There are no components so you must add your component.  Use the `component add` sub-command.  The command is the same for docker and cdap components:
+## View the platform generated configuration
 
-```
-$ dcae_cli component add --help
-Usage: dcae_cli component add [OPTIONS] SPECIFICATION
+The `component dev` command is useful during onboarding. Running this command is part of a multi-step process that sets up a temporary test environment, generates your application configuration, makes it available in that environment, and allows you to view that configuration to help with debugging.
 
-Options:
-  --update  Updates a locally added component if it has not been already
-            pushed
-  --help    Show this message and exit.
-```
+Here is a step-by-step example based on a component specification called `component-spec.json`. 
 
-*Note* use the `--update` flag to replace existing staged instances.
+### Step 1 - Run the component dev command
 
-The `component dev` sub-command can be useful in validating and experimenting when crafting your component specification.  See details about `dev` under [Development and testing](#development-and-testing).
-
-Once we add the components laika and helloworld, let's verify that they got added ok:
+(This creates a file called env_$ENV (in the current directory)- where $ENV is the name of the active profile. Note: SERVICE_NAME and HOSTNAME always resolve to the same value).
 
 ```
-$ dcae_cli component list
-Active profile: solutioning
-
-+-------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
-| Name                    | Version | Type   | Description                                                   | Status | Modified                   | #Deployed |
-+-------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
-| cdap.helloworld.endnode | 0.8.0   | cdap   | cdap test component                                           | staged | 2017-05-23 04:14:35.588075 | 0         |
-| sandbox.platform.laika  | 0.5.0   | docker | Web service used as a stand-alone test DCAE service compone.. | staged | 2017-05-23 04:07:44.065610 | 0         |
-+-------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
-
-Use the "--deployed" option to see more details on deployments
-```
-
-## Setting profile
-
-`profile` is the sub-command that is used to manage profiles.  These profiles contain environment variables used to connect to different environments.  This is used in the running and deployment of your component using the `dcae_cli component run` command.  The `dcae-cli` ships with profiles for `solutioning` and `rework`.
-
-```
-$ dcae_cli profiles --help
-Usage: dcae_cli profiles [OPTIONS] COMMAND [ARGS]...
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  activate  Sets profile NAME as the active profile
-  create    Creates a new profile NAME initialized with...
-  delete    Deletes profile NAME
-  list      Lists available profiles
-  set       Updates profile NAME such that KEY=VALUE
-  show      Prints the profile dictionary
-```
-
-To see what variables a profile contains, you can use the `show` command, as in `dcae_cli profiles show PROFILE_NAME`
-
-Use the `create` sub-command to create your own profile and assign new values using the `set` command.  Afterwards you will need to `activate` the profile you wish to use.  First take a look at which profile is active:
-
-```
-$ dcae_cli profiles list
-   rework
-*  solutioning
-```
-
-The active profile is `solutioning` so to activate *rework* to use `rework`:
-
-```
-$ dcae_cli profiles activate rework
-```
-
-Check
-
-```
-$ dcae_cli profiles list
-*  rework
-   solutioning
-```
-
-## Development and testing
-
-The following operations under the sub-command `component` are aimed to help developers with testing:
-
-* `run`
-* `undeploy`
-* `dev`
-
-### `run`
-
-The `run` operation is to be used for running your application in its container remotely on the activated environment.  Docker containers have the additional option to run locally on your development machine.
-
-In order to run your application, you must have added your data formats and your component to your catalog.
-
-Let's verify that your component is in the catalog:
-
-```
-$ dcae_cli component list                                                                                       
-Active profile: solutioning
-
-+-------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
-| Name                    | Version | Type   | Description                                                   | Status | Modified                   | #Deployed |
-+-------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
-| cdap.helloworld.endnode | 0.8.0   | cdap   | cdap test component                                           | staged | 2017-05-23 04:14:35.588075 | 0         |
-| sandbox.platform.laika  | 0.5.0   | docker | Web service used as a stand-alone test DCAE service compone.. | staged | 2017-05-23 04:07:44.065610 | 0         |
-+-------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
-
-Use the "--deployed" option to see more details on deployments
-```
-
-#### Docker
-
-**NOTE** Make sure your Docker image has been uploaded to the shared registry.
-
-For Docker containers, you can run either attached or unattached.  Attached means that the dcae-cli tool will launch the container and not terminate.  The dcae-cli while attached will stream in the logs of the Docker container.  Doing a Ctrl-C will terminate the run session which means undeploy your container and force a clean up automatically.
-
-Running unattached means simply deploy your container.  You will need to execute `undeploy` when you are done testing.
-#### CDAP
-
-**NOTE** Make sure your CDAP jar has been uploaded to Nexus.
-
-TODO
-
-### `undeploy`
-
-The `undeploy` operation is to be used to undeploy any instances of a specified component, version that you have deployed.  This includes cleaning up of configuration.
-
-Let's undeploy `sandbox.platform.laika` that was deployed from the previous section:
-
-```
-$ dcae_cli component undeploy sandbox.platform.laika:0.5.0
-DCAE.Undeploy | WARNING | Undeploying components: 1
-DCAE.Undeploy | WARNING | Undeployed components: 1
-```
-
-### `dev`
-
-The `dev` operation is a convenient operation that can be useful for the development and testing of your component.  It can be used to:
-
-* Help validate your experimental component specification before uploading to the catalog
-* Generate the application configuration from the component specification and make it available in a test environment.  This allows you to view your resulting configuration for local development and to help debug potential related issues.
-
-Let's say you have a component specification called `component-spec.json`:
-
-```
-$ dcae_cli component dev component-spec.json 
+$ dcae_cli component dev component-spec.json
 Ready for component development
 
-Setup these environment varibles. Run "source env_solutioning":
+Setup these environment variables. Run "source env_solutioning":
 
-export DOCKER_HOST=SOME_DOCKER_HOST:2376
+export DOCKER_HOST=realsoldokr00.dcae.solutioning.homer.att.com:2376
 export SERVICE_CHECK_INTERVAL=15s
 export CONFIG_BINDING_SERVICE=config_binding_service
-export HOSTNAME=mh677g.95740959-63d2-492a-b964-62a6dce2591d.0-6-0.sandbox-platform-laika
-export CONSUL_HOST=SOME_CONSUL_HOST
+export HOSTNAME=ph8547.b599cf0e-75e8-484b-b8e2-557576d77036.0-7-0.sandbox-platform-laika
+export CONSUL_HOST=realsolcnsl00.dcae.solutioning.homer.att.com
 export CDAP_BROKER=cdap_broker
-export SERVICE_NAME=mh677g.95740959-63d2-492a-b964-62a6dce2591d.0-6-0.sandbox-platform-laika
+export SERVICE_NAME=ph8547.b599cf0e-75e8-484b-b8e2-557576d77036.0-7-0.sandbox-platform-laika
 export SERVICE_CHECK_TIMEOUT=1s
 export SERVICE_CHECK_HTTP=/health
 
 Press any key to stop and to clean up
 ```
 
-Your application configuration is now available under the name `mh677g.95740959-63d2-492a-b964-62a6dce2591d.0-6-0.sandbox-platform-laika`.
-
-To view the resulting configuration, you can `curl` a request to the config binding service or programmatically fetch your configuration within your application.
-
-You need to first query Consul to get the ip and port of config binding service:
+### Step 2 - Setup the environment
+In another window, setup the temporary testing environment, by executing the environment file created above.
 
 ```
-curl http://$CONSUL_HOST:8500/v1/catalog/service/$CONFIG_BINDING_SERVICE
+$ source env_solutioning
+```
+
+(The application configuration is now available under the SERVICE_NAME shown above - `ph8547.b599cf0e-75e8-484b-b8e2-557576d77036.0-7-0.sandbox-platform-laika`).
+
+
+### Step 3 - Query CONSUL 
+Query CONSUL to get the IP/PORT of CONFIG BINDING SERVICE
+
+```
+$ curl http://$CONSUL_HOST:8500/v1/catalog/service/$CONFIG_BINDING_SERVICE
 [
   {
-    "ID": "983d5c94-c508-4a8a-9be3-5912bd09786b",
-    "Node": "realsolcnsl00",
-    "Address": "10.226.1.22",
+    "ID": "bfbc220d-4603-7f90-ec2e-611d3c330f20",
+    "Node":"realsoldokr00",
+    "Address": "10.226.1.15",
+    "Datacenter":"solutioning-central",
     "TaggedAddresses": {
-      "lan": "10.226.1.22",
-      "wan": "10.226.1.22"
+      "lan":"10.226.1.15",
+      "wan":"10.226.1.15"
     },
     "NodeMeta": {},
-    "ServiceID": "5f371f295c90:config_binding_service:10000",
+    "ServiceID": "472b116f9035:config_binding_service:10000",
     "ServiceName": "config_binding_service",
     "ServiceTags": [],
-    "ServiceAddress": "XXXX",
-    "ServicePort": 32770,
+    "ServiceAddress":"135.205.226.126",
+    "ServicePort":10000,
     "ServiceEnableTagOverride": false,
-    "CreateIndex": 487,
-    "ModifyIndex": 487
+    "CreateIndex":1078990,
+    "ModifyIndex":1078990
   }
 ]
 ```
 
-### DMaaP testing
-
-Currently, the dcae-cli does not have the capability of provisioning topics.  In order to do testing with message router topics or with data router feeds, the developer must provision the topic or the feed manually and provide the connection details in the form of a JSON in a file to the dcae-cli.  This file is to be passed in when using the `run` and `dev` commands with the option `--dmaap-file`.
-
-The structure of the DMaaP JSON is an object of config keys to matching topic or feed connection details.  Config keys are the `config_key` values specified in your component specification streams section where the streams must be type message router or data router.  Information about the associated connection details can be found on [this page](dmaap-connection-objects.md).  Please check it out.
-
-For example, if you have a component specification that has the following streams entry:
-
-```json
-"streams": {
-    "publishes": [{
-        "format": "ves",
-        "version": "1.0.0",
-        "type": "message router",
-        "config_key": "ves_connection"
-    }]
-}
-```
-
-Then to deploy and to run your component, you must use the `--dmaap-file` command and pass in a JSON that looks like:
-
-```json
-{
-    "ves_connection": {
-        "type": "message_router",
-        "dmaap_info": {
-            "topic_url": "https://we-are-message-router.us:3905/events/some-topic"
-        }
-    }
-}
-```
-
-The provided DMaaP JSON is used to simulate the output of provisioning and will be used to merge with the generated application configuration at runtime.
-
-Your final application config will look like:
-
-```json
-{
-    "streams_publishes": {
-        "ves_connection": {
-            "type": "message_router",
-            "dmaap_info": {
-                "topic_url": "https://we-are-message-router.us:3905/events/some-topic"
-            }
-        }
-    }
-}
-```
-
-#### Data router subscribers
-
-Note for data router subscriber testing, you will need the delivery url in order to provision the subscriber to the feed.  This is constructed at deployment time and will be provided by the dcae-cli after you deploy your component.  The delivery urls will be displayed to the screen:
+Fetch the generated configuration from CONFIG BINDING SERVICE using the 'serviceaddress' and 'serviceport' from above along with $SERVICE_NAME from earlier.
 
 ```
-DCAE.Run | WARNING | Your component is a data router subscriber. Here are the delivery urls: 
+$ curl http://135.205.226.126:10000/service_component/ph8547.b599cf0e-75e8-484b-b8e2-557576d77036.0-7-0.sandbox-platform-laika
 
-        some-sub-dr: http://SOME_IP:32838/identity
-
+{"streams_subscribes": {}, "services_calls": {}, "multiplier": 3, "streams_publishes": {}}
 ```
 
-### *Sourced at deployment* testing
+-------------------------------------------------------------------
 
-Components may have configuration parameters whose values are to be sourced at deployment time.  For example, there are components whose configuration parameters are to come from DTI events which are only available when the component is getting deployed.  These configuration parameters must be setup correctly in the [component specification](http://localhost:8000/components/component-specification/docker-specification/#configuration-parameters) by setting the property `sourced_at_deployment` to `true` for each and every parameter that is expected to come in at deployment time.
+## Create the input file for Dmaap Testing
 
-Once your component specification has been updated correctly, you must use the `--inputs-file` command-line argument when running the commands `dev` or `run` with your component.  This is to simulate providing the dynamic, deployment time values for those parameters marked as `sourced_at_deployment`.
+Currently, the dcae-cli tool does not have the capability to provision topics or feeds. Therefore, in order to test with `message router` or `data router` feeds, the developer must manually provision the topic or feed and then provide the connection details in the form of a DMaap JSON file for testing.  This file is then passed in on the `component run` or `component dev` commands by using the argument `--dmaap-file`.
+
+The structure of the DMaaP JSON is an object of config keys with the topic or feed connection details. The config keys are the `config_key` values specified in the component specification streams section where the streams must be type `message router` or `data router`. This file corresponds to the `Dmaap Connection Object` which is generated by the platform and provided to the component at runtime. The exception is that `delivery_url` cannot be provided in the dmaap-file because it is not created until the component is deployed. Refer to [Dmaap Connection Object](/components/component-specification/dmaap-connection-objects), for details on creating the dmaap-file for testing.
+
+-------------------------------------------------------------------
+
+## Create the input file for *Sourced at Deployment* Testing
+
+Components may have configuration parameters whose values are to be sourced at deployment time.  For example, there are components whose configuration parameters are to come from DTI events which are only available when the component is deployed.  This is established in the [component specification](/components/component-specification/common-specification/#parameters) by setting the property `sourced_at_deployment` to `true` for each applicable parameter.
+
+Then, use the `--inputs-file` command-line argument when running the component `dev` or `run` command for your component.  This is to simulate providing the dynamic, deployment time values for those parameters marked as `sourced_at_deployment`.
 
 For example, if your component specification has the following configuration parameters:
 
@@ -386,7 +160,7 @@ For example, if your component specification has the following configuration par
 }]
 ```
 
-You would have to pass in an inputs file that looks like:
+Pass in an input file that looks like:
 
 ```
 {
@@ -394,7 +168,7 @@ You would have to pass in an inputs file that looks like:
 }
 ```
 
-Your application configuration would look like:
+The  application configuration would look like:
 
 ```
 {
@@ -403,36 +177,164 @@ Your application configuration would look like:
 }
 ```
 
-## Publishing component
+-------------------------------------------------------------------
 
-Once components have their component specifications crafted and validated and have been tested, components should be published in the shared onboarding catalog using the `publish` sub-command for both data formats and components.  You must publish all data formats of a component before publishing a component.
+## Run the component
 
-Publishing will change the status of a component, be made accessible for other developers to use, and will generate the associated TOSCA models for use in designing of compositions.
+The `run` operation is to be used for running your application in its container remotely on the activated environment.  Docker containers have the additional option to run locally on your development machine. If the component uses Dmaap, you can specify the Dmaap Connection Object as well. Refer to [Dmaap Connection Object](/components/component-specification/dmaap-connection-objects). 
 
-```
-dcae_cli component publish sandbox.platform.laika:0.5.0
-```
+In order to run the component, the data formats and component must have been added to the onboarding catalog.
 
-## Shared catalog
-
-`catalog` is the sub-command used to access and to browse the shared onboarding catalog to view components and data formats that have been published and that are being worked on.  Components and data formats have two statuses `staged` and `published`.
-
-Staged means that the resource has been simply added and is under development.  It is to be used only by the owner.  Published means that the resource has been fully developed and tested and is ready to be shared.
-
-Published components can be deployed by non-owners and published data formats can be used in component specifications of non-owners.
-
-There are two available operations:
+To verify what's in the catalog:
 
 ```
-$ dcae_cli catalog --help
-Usage: dcae_cli catalog [OPTIONS] COMMAND [ARGS]...
+$ dcae_cli catalog list --expanded                                                                                      
+Active profile: solutioning
++-------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
+| Name                    | Version | Type   | Description                                                   | Status | Modified                   | #Deployed |
++-------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
+| sandbox.platform.laika  | 0.7.0   | docker | Web service used as a stand-alone test DCAE service compone.. | staged | 2017-11-08 20:27:34.168854 | 0         |
++-------------------------+---------+--------+---------------------------------------------------------------+--------+----------------------------+-----------+
 
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  list
-  show
 ```
 
-Staged components can be viewed under the `list` operation using the `--expanded` flag.
+
+For Docker
+
+**NOTE** Make sure the Docker image has been uploaded to the shared registry.
+
+A docker component can be run in either `attached` or `unattached` mode. (Default is unattached).  
+
+Mode | Description
+---- | -----------
+attached | component is run in the 'foreground', container logs are streamed to stdout. Ctrl-C is used to terminate the dcae_cli session. 
+unattached | component is run in the 'background', container logs are viewed via `docker logs` command, container runs until undeployed with dcae_cli `undeploy` command.  
+
+
+#### Run a component in attached mode:
+
+```
+$ dcae_cli -v component run --attached sandbox.platform.laika:0.7.0
+DCAE.Docker | INFO | Running image 'nexus01.research.att.com:18443/repository/solutioning01-mte2-docker/dcae-platform/laika:0.7.0' as 'ph8547.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-laika'
+DCAE.Docker.ph8547.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-laika | INFO | Consul host: realsolcnsl00.dcae.solutioning.homer.att.com
+
+DCAE.Docker.ph8547.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-laika | INFO | service name: ph8547.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-laika
+
+DCAE.Docker.ph8547.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-laika | INFO | get_config returned the following configuration: {"streams_subscribes": {}, "multiplier": 3, "services_calls": {}, "streams_publishes": {}}
+
+DCAE.Docker.ph8547.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-laika | INFO |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+
+DCAE.Docker.ph8547.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-laika | INFO | 135.205.226.156 - - [08/Nov/2017 23:27:30] "GET /health HTTP/1.1" 200 -
+
+
+Hit Ctrl-C to terminate session.
+
+^C
+DCAE.Docker | INFO | Stopping container 'ph8547.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-laika' and cleaning up...
+```
+
+#### Run a component in unattached mode:
+
+```
+$ dcae_cli -v component run sandbox.platform.laika:0.7.0
+DCAE.Docker | INFO | Running image 'nexus01.research.att.com:18443/repository/solutioning01-mte2-docker/dcae-platform/laika:0.7.0' as 'ph8547.22629ebd-417e-4e61-a9a0-f0cb16d4cef2.0-7-0.sandbox-platform-laika'
+DCAE.Run | INFO | Deployed ph8547.22629ebd-417e-4e61-a9a0-f0cb16d4cef2.0-7-0.sandbox-platform-laika. Verifying..
+DCAE.Run | INFO | Container is up and healthy
+```
+
+**NOTE** You must undeploy this component when finished testing. This is important to conserve resources in the environment.
+
+#### Run a component that subscribes to Dmaap Message Router or Data Router
+
+```
+$ dcae_cli -v component run $component-that-uses-dmamp --dmaap-file $dmaap-connection-object
+```
+
+#### Run a component that expects input that is `sourced at deployment`
+
+```
+$ dcae_cli -v component run $component-that-expects-dti --inputs-file $input-file-to-simulate-dti
+```
+
+-------------------------------------------------------------------
+
+## Create the DTI Entry for Reconfiguration
+
+Go the the CONSUL UI for the environment that you are working in. Add a `dti` entry to represent one or more instances of `vnfType-vnfFuncId` for your component.
+
+For example, in 1802, go (here)[http://zldcrdm5bdcc2cnsl00.2f3fb3.rdm5b.tci.att.com:8500/ui/#/zldcrdm5bdcc2/kv/).
+
+Do CNTL-F to find your running MS
+Click on + to add your entry
+Enter your $SERVICE_NAME:dti as the Key 
+Paste your JSON into the box, remember to `check` the VALIDATE JSON box
+Click on CREATE
+
+Verify that you can retrieve the dti entry you just created as in this example: (Remember to use the 'serviceaddress' and 'serviceport' from above for CONFIG BINDING SERVICE).
+
+```
+http://135.203.226.126:10000/dti/<service name>``
+```
+(You should see the entry you created above)
+
+-------------------------------------------------------------------
+
+## Run the reconfigure script
+
+Execute the components reconfigure script as defined in the Auxilary section of the component spec, such as in this example:
+
+```
+/opt/app/reconfigure.sh dti $updated_dti 
+```
+
+(Refer to [DTI Reconfiguration](/components/component-specification/docker-specification/#dti-reconfiguration)
+
+Verify that your component received and is processed the updated set of vnfType-vnfFuncId instances.
+
+------------------------------------------------------------------
+## Undeploy the component
+
+The `undeploy` command is used to undeploy any instance of a specified component/version that you have deployed.  This includes cleaning up the configuration.
+
+Undeploy `sandbox.platform.laika:0.7.0` that was deployed above:
+
+```
+$ dcae_cli -v component undeploy sandbox.platform.laika:0.7.0
+DCAE.Undeploy | WARNING | Undeploying components: 1
+DCAE.Undeploy | WARNING | Undeployed components: 1
+```
+
+-------------------------------------------------------------------
+
+## Publish the component and data_format
+
+Once a component has been tested, it (and the data_format(s)) should be published in the onboarding catalog using the `publish` sub-command for both the `data_format` and `component` command.  
+
+**Note** Before a component can be published, all data_formats that it references must be published.
+
+Publishing will change the status of a component or data_format, indicating that it has been tested, make accessible for other developers to use.
+
+```
+$ dcae_cli data_format publish sandbox.platform.laika:0.7.0
+Data format has been published
+
+$dcae_cli component publish sandbox.platform.laika:0.7.0
+Component has been published
+
+```
+-------------------------------------------------------------------
+
+## List the catalog contents
+
+```
+$dcae_cli catalog list
+
+$ dcae_cli data_format list | grep sandbox
+| sandbox.platform.laika         | 0.7.0   | docker | Web service used as a stand-alone test DCAE service compone..       | ph8547 | published | 2017-11-13 |
+| sandbox.platform.laika.health            | 0.1.0   | Data format used for the /health endpoint                          | published | 2017-11-13 17:48:10.121588 |
+| sandbox.platform.any                     | 0.1.0   | Data format used when no data format is required.                  | published | 2017-11-13 17:47:51.622607 |
+| sandbox.platform.laika.identity.response | 0.1.0   | Data format used for the /identity endpoint response which should  | published | 2017-11-13 17:47:43.234715 |
+| sandbox.platform.laika.identity.request  | 0.1.0   | Data format used for the /identity endpoint request. This is       | published | 2017-11-13 17:47:36.693643 |
+| sandbox.platform.laika.rollcall.response | 0.1.0   | Data format used for the /rollcall endpoint respon..               | published | 2017-11-13 17:46:30.026846 |
+```
+

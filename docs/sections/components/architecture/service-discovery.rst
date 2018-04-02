@@ -11,7 +11,7 @@ discovery <http://microservices.io/patterns/server-side-discovery.html>`__
 and is using `Consul <https://www.consul.io/>`__ as the service registry
 solution.
 
-Service registration
+Service Registration
 --------------------
 
 All components are required to register with Consul in order to be
