@@ -8,6 +8,6 @@ dcae-cli Tool
    :maxdepth: 1
 
    ./quickstart.rst
+   ./commands.rst
    ./walkthrough.rst
-   ./dmaap-connection-objects.rst
 

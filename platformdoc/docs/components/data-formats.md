@@ -1,51 +1,38 @@
 # Data Formats
 
-Because the DCAE designer composes your component with others at service design time, in most cases you do not know what specific component(s) your component will send data to during runtime. 
-Thus, it is vital that DCAE has a language of describing the data passed between components, so that it is known which components are composable with others. 
-Data formats are descriptions of data---they are the data contract between your component and other components. 
-You need to describe the available outputs and assumed inputs of your components as data formats. 
-These data descriptions are onboarded into ASDC, and each receives a UUID. 
-If component X outputs data format DF-Y, and another component Z specifies DF-Y as their input data format, then X is said to be _composable_ with that component. 
-The data formats are referenced in the component specifications by the data format's id and version.  
-The vision is to have a repository of shared data formats that developers and teams can re-use and also provide them the means to extend and create new custom data formats.
+Data formats are descriptions of data; they are the data contract between your component and other components. When the components are 'composed' into services in the SDC tool, they can only be matched with components that have compatible data formats. Data formats will be onboarded to SDC and assigned a UUID at that time. This UUID is then used to ensure compatibility amoung components. (If component X outputs data format 'DF-Y', and another component Z specifies 'DF-Y' as its input data format, then X is said to be `composable` with component Z).
 
-# Meta Schema Definition
+Since data formats will be shared across components, the onboarding catalog should be checked first to see if the desired data format is available before creating one. 
+The vision is to have a repository of shared data formats that developers and teams can re-use and also provide them the means to extend and create new custom data formats. 
+A data format is referenced by its data format id and version number.  
 
-The "Meta Schema" implementation defines how data format JSON schemas can be written to define user input. It is itself a JSON schema (thus it is a "meta schema").  It requires the name of the data format entry, the data format entry version and allows a description under "self" object. The meta schema version must be specified as the value of the "dataformatversion" key.  Then the input schema itself is described.  There are four types of schema descriptions objects - jsonschema for inline standard JSON Schema definitions of JSON inputs, delimitedschema for delimited data input using a defined JSON description, unstructured for unstructured text, and reference that allows a pointer to another artifact for a schema.  The reference allows for XML schema, but can be used as a pointer to JSON, Delimited Format, and Unstructured schemas as well. 
+## JSON schema
 
-The current Meta Schema implementation is defined at the link below.  
+The data format specification is represented (and validated) against this  
+[Data Format json schema](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/component-json-schemas/browse/data-format-schema.json) and described below:
 
-[schema](ONAP URL TBD)
+### Meta Schema Definition
 
-#TCA Example
+The "Meta Schema" implementation defines how data format JSON schemas can be written to define user input. It is itself a JSON schema (thus it is a "meta schema").  It requires the name of the data format entry, the data format entry version and allows a description under "self" object. The meta schema version must be specified as the value of the "dataformatversion" key.  Then the input schema itself is described as one of the four types listed below:
 
-TCA Input - Common Event Format by reference
+Type | Description
+---- | -----------
+jsonschema | inline standard JSON Schema definitions of JSON inputs
+delimitedschema | delimited data input using a JSON description and defined delimiter
+unstructured | unstructured text, and reference that allows a pointer to another artifact for a schema. 
+reference | allows for XML schema, but can be used to reference other JSON, delimitedschema, and unstructured schemas as well. 
 
-First the full JSON schema description of the Common Event Format would be loaded with a name of "Common Event Format" and the current version of "25.0.0".
+## Example Schemas:
 
-Then the data format description is loaded by the example at this link:
+### `jsonschema`
 
-[tcainput](ONAP URL TBD)
+* [TCA output](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/dcae_cli_examples/browse/tca_hi_lo/tcaoutput.json)
 
-TCA Output JSON inline example: 
+* [CUDA simple example](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/dcae_cli_examples/browse/cuda/simplejson.json)
 
-[tcaoutput](ONAP URL TBD)
+* [CUDA nested example](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/dcae_cli_examples/browse/cuda/nestedjson.json)
 
-#CUDA Example
-
-CUDA Simple JSON Example:
-
-[simplejson](ONAP URL TBD)
-
-CUDA Nested JSON Example:
-
-[nestedjson](ONAP URL TBD)
-
-CUDA Unstructured Example:
-
-[unstructuredtext](ONAP URL TBD)
-
-# An example of a delimited schema
+### `delimitedschema`
 
 ```
 {
@@ -70,3 +57,18 @@ CUDA Unstructured Example:
     }
 }
 ```
+
+### `unstructured`
+
+* [CUDA example](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/dcae_cli_examples/browse/cuda/unstructuredtext.json)
+
+### `reference`
+
+* [TCA Hi Lo input](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/dcae_cli_examples/browse/tca_hi_lo/tcainput.json)
+
+Note: The referenced data format (in this case, a schema named "Common Event Format" with version of "25.0.0") must already exist in the onboarding catalog.
+
+## Working with Data Formats
+
+Data Formats can be added to the onboarding catalog (which first validates them) by using the [dcae_cli Tool](http://dcae-platform.research.att.com/components/dcae-cli/quickstart/). Here you can also list all of your data formats, show the contents of a data format, publish your data format, and even generate a data format from a input sample file. For a list of these capabilities, see [Data Format Commands](/components/dcae-cli/commands/#data_format).
+

@@ -23,8 +23,7 @@ Current Limitations and TODOs
 -----------------------------
 
 -  The integration of DMD is likely to significantly change the
-   :any:`Interfaces <interfaces>` section in this specification, see
-   :any:`DMaaP abstraction <dmaap-abstraction>`.
+   :any:`Interfaces <interfaces>` section in this specification.
 
 .. _parameters:
 
@@ -34,7 +33,7 @@ Parameters
 There is a ``parameters`` section in your component specification. This
 section contains three optional keys: `app_config <#appconfig>`__,
 `app_preferences <#apppreferences>`__, and
-`propram_preferences <#programpreferences>`__:
+`program_preferences <#programpreferences>`__:
 
 ::
 
@@ -146,7 +145,7 @@ Each ``program_pref`` JSON is passed into the CDAP API as the preference
 for ``program_id``.
 
 NOTE: for CDAP, this section is very likely to change when DMD is
-available. The *future* vision, as per :any:`DMaaP intentionally abstracted <dmaap-abstraction>` is
+available. The *future* vision is
 that you would publish your data as a series of files on HDFS, and DMD
 will pick them up and send them to the appropriate DMaaP feeds or
 directly when needed.

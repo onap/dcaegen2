@@ -3,86 +3,125 @@
 
 .. _quickstart:
 
-Quickstart
-==========
+Overview
+========
 
-The ``dcae-cli`` is a Python command-line tool built to aide component
-developers with the development and testing of their micro-service
-component for the DCAE platform. It will help developers do functional
-and integration testing of their components locally and on remote
-environments as simple as possible.
+The ``dcae-cli`` is a Python command-line tool for component developers.
+With it, the developer can :
 
-The tool requires the component developers to create a valid component
-specification for their component which is used by the tool. This same
-component specification will be published in the :any:`onboarding catalog <glossary-onboarding-catalog>` at the end of development
-and testing.
+-  validate the data formats and component specifications
+-  publish the validated data formats and component specifications into
+   the ``onboarding catalog``
+-  access the ``onboarding catalog`` to search for existing data formats
+   (for possible reuse) and component specs
+-  deploy a component onto a local or remote DCAE platform for
+   functional and pair-wise testing (This is done without Cloudify)
 
-.. The git repository can be found `here <ONAP%20LINK%20TBD>`__
+The git repository for the dcae_cli tool can be found
+`here <https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/cli.git>`__
 
-Pre-requisite
--------------
+Pre-requisites
+--------------
 
 For Docker
 ~~~~~~~~~~
 
-There are two options for development with Docker: developing locally on
-your machine which requires Docker to be installed and developing
-remotely by deploying onto remote infrastructure.
+There are two options for development with Docker:
 
 For local development
 ^^^^^^^^^^^^^^^^^^^^^
 
--  You must install `Docker
-   engine <https://docs.docker.com/engine/installation/>`__ locally on
+-  Install `Docker engine <https://docs.docker.com/engine/installation/>`__ locally on
    your machine.
--  You must know the *external ip* of where the Docker engine is
-   running. The external ip is needed so that service discovery will
-   wire up correctly.
+-  Know the *external ip* of where the Docker engine is running. The
+   external ip is needed so that service discovery will connect to it.
 
-   -  For OSX users, this means making sure the VirtualBox VM that is
+   -  *(For OSX users, this means making sure the VirtualBox VM that is
       running your Docker engine has a bridged adapter and getting the
-      ip of that adapter.
+      ip of that adapter).*
 
 For remote development
 ^^^^^^^^^^^^^^^^^^^^^^
 
-You need access to a remote host with Docker engine installed with
-remote API access. You must have the associated connection information:
-domain name or IP and port (should be either 2375 or 2376). This
-information should be set in :any:`an active profile <setting-profile>`.
+-  Have access to a remote host with Docker engine installed and with
+   remote API access.
+-  Have the associated connection information:
+
+   -  domain name or IP and port (port should be either 2375 or 2376).
+      Use this information to establish an active
+      :any:`profile <dcae_cli_activate_profile>`.
 
 For CDAP
 ~~~~~~~~
 
-TBD
+None at this time.
 
-Install
--------
+Python, Pip, Virtualenv
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Install python, pip (9.0.1 or higher), and virtualenv if they are not
+installed. Do these when not in a VPN to avoid possible network issues.
 
 ::
 
-    pip install --extra-index-url https://YOUR_NEXUS_PYPI_SERVER/simple dcae-cli
+      sudo apt-get -f install python
+      sudo apt-get -f install python-pip
+      sudo pip install virtualenv
 
-To do an upgrade, use the ``--upgrade`` flag.
+Set up a virtual environment and activate
+
+::
+
+      virtualenv cli_tool
+      source cli_tool/biin/activate 
+
+Install dcae_cli
+----------------
+
+::
+
+    pip install onap-dcae-cli
+
+Check dcae_cli version
+----------------------
+
+You can verify the version of the dcae-cli with the following command.
+To get the latest version of the dcae_cli tool,
+
+::
+
+    $ dcae_cli --version
+
+Upgrade dcae_cli
+----------------
+
+Periodically, upgrade the dcae_cli to get the latest version
+
+::
+
+    pip install --upgrade onap-dcae-cli
 
 Configuration
-~~~~~~~~~~~~~
+-------------
 
-When you run the tool for the first time, the tool will create a
-`configuration
+When running the tool for the first time, a `configuration
 directory <http://click.pocoo.org/5/api/#click.get_app_dir>`__ and
-generate a configuration file.
+configuration file will be created.
 
-Configuration is first sourced from an remote server that the platform
-team manages. This is overlaid with configuration details that you will
-be prompted to input particularly your user id.
+The configuration is first sourced from a remote server that is managed
+by the platform team. You will be prompted to enter your ATTUID to
+complete this process.
 
-``--reinit``
-^^^^^^^^^^^^
+Re-initializing Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configuration can be re-initialized or reset. There is a ``--reinit``
 flag that is to be used to re-initialize your configuration and your
-environment profiles.
+environment profiles. You may be instructed to re-initialize after
+certain updates are made to the dcae_cli tool. When you re-initialize
+the configuration, your configuration will be added to or updated from
+the platform configuration and profiles. No profiles will be deleted via
+the reinit process.
 
 To re-initialize:
 
@@ -90,10 +129,11 @@ To re-initialize:
 
     $ dcae_cli --reinit
 
-Verify
-~~~~~~
+Verify Installation
+-------------------
 
-Verify that its installed:
+To Verify that the dcae_cli tool is installed, run the following command
+and look for the output below.
 
 ::
 
@@ -112,11 +152,5 @@ Verify that its installed:
       data_format
       profiles
 
-Version
--------
+Refer to :doc:`dcae_cli Commands <./commands>`.
 
-You can verify the version of the dcae-cli with the following command:
-
-::
-
-    $ dcae_cli --version

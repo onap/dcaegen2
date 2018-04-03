@@ -4,7 +4,7 @@ Contains the public facing technical documentation for the dcae platform whose a
 
 * Architects
 * Component developers
-* Operations
+* Operations (TBD)
 
 ## Usage
 
@@ -51,3 +51,4 @@ This is a [Mkdocs](http://www.mkdocs.org/) project.  To serve a local version of
     docker run -d --name dpd -p 80:80 dcae-platform-documentation:YYYYMMDD
     ```
 
+Or email Patty Heffner (ph8547@att.com)

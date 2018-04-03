@@ -11,6 +11,32 @@ common to both Docker and CDAP components. Differences for each are
 pointed out below. Elements that are very different, and described in
 the CDAP or Docker specific pages.
 
+.. _metaschema: 
+
+Meta Schema Definition
+----------------------
+
+The component specification is represented (and validated) against this
+`Component Spec json
+schema <https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/cli.git;a=blob;f=component-json-schemas/component-specification/dcae-cli-v1/component-spec-schema.json;h=27d0403af67eac00e03ab89437d5f07aa06fbee3;hb=HEAD>`__
+and described below:
+
+The “Meta Schema” implementation defines how component specification
+JSON schemas can be written to define user input. It is itself a JSON
+schema (thus it is a “meta schema”). It requires the name of the
+component entry, component type (either ‘cdap’ or ‘docker’) and a
+description under “self” object. The meta schema version must be
+specified as the value of the “version” key. Then the input schema
+itself is described.
+
+There are four types of schema descriptions objects - jsonschema for
+inline standard JSON Schema definitions of JSON inputs, delimitedschema
+for delimited data input using a JSON description defined by AT&T,
+unstructured for unstructured text, and reference that allows a pointer
+to another artifact for a schema. The reference allows for XML and Protocol Buffer schema,
+but can be used as a pointer to JSON, Delimited Format, and Unstructured
+schemas as well.
+
 .. _metadata:
 
 Component Metadata
@@ -27,7 +53,7 @@ Example:
 
     "self": {
         "version": "1.0.0",
-        "name": "asimov.component.kpi_anomaly",
+        "name": "yourapp.component.kpi_anomaly",
         "description": "Classifies VNF KPI data as anomalous",
         "component_type": "docker"
     },
@@ -109,7 +135,9 @@ Streams
    feed, it could be a direct stream of data being routed via HTTP too.
    It abstractly refers to a sequence of data leaving a publisher.
 -  Streams have anonymous publish/subscribe semantics, which decouples
-   the production of information from its consumption.
+   the production of information from its consumption.  Like the component 
+   specification, the data format specification is represented/validated against this
+   `Data Format json schema <https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/cli.git;a=blob;f=component-json-schemas/data-format/dcae-cli-v1/data-format-schema.json;h=be1568291300305c7adb9a8d244d39f9e6ddadbd;hb=HEAD>`__
 -  In general, components are not aware of who they are communicating
    with.
 -  Instead, components that are interested in data, subscribe to the
@@ -178,7 +206,7 @@ Example:
     ...
     }
 
-This describes that ``asimov.component.kpi_anomaly`` exposes an HTTP
+This describes that ``yourapp.component.kpi_anomaly`` exposes an HTTP
 endpoint called ``/data`` which accepts requests that have the data
 format of ``dcae.vnf.kpi`` version ``1.0.0``.
 
@@ -290,7 +318,7 @@ be used to construct the delivery url needed to register the subscriber
 to the provisioned feed. Developers must also provide a ``config_key``
 because there is dynamic configuration information associated with the
 feed that the application will need e.g. username and password. See the
-page on :doc:`DMaaP connection objects <../dcae-cli/dmaap-connection-objects>` for more details on
+page on :any:`DMaaP connection objects <dmaap-data-router>` for more details on
 the configuration information.
 
 Example (not tied to the larger example):
@@ -318,16 +346,16 @@ Example:
     "streams": {
     ...
         "publishes": [{
-            "format": "asimov.format.integerClassification",
+            "format": "yourapp.format.integerClassification",
             "version": "1.0.0",
             "config_key": "prediction",
             "type": "http"
         }]
     },
 
-This describes that ``asimov.component.kpi_anomaly`` publishes by making
+This describes that ``yourapp.component.kpi_anomaly`` publishes by making
 POST requests to streams that support the data format
-``asimov.format.integerClassification`` version ``1.0.0``.
+``yourapp.format.integerClassification`` version ``1.0.0``.
 
 ``publishes`` Schema:
 
@@ -408,8 +436,8 @@ Message router
 Message router publishers are http clients of DMaap message_router.
 Developers must provide a ``config_key`` because there is dynamic
 configuration information associated with the feed that the application
-will need to receive e.g. topic url, username, password. See the page on
-:doc:`DMaaP connection objects <../dcae-cli/dmaap-connection-objects>` for more details on
+needs to receive e.g. topic url, username, password. See the page on
+:any:`DMaaP connection objects <dmaap-message-router>` for more details on
 the configuration information.
 
 Example (not tied to the larger example):
@@ -435,7 +463,7 @@ Data router publishers are http clients that make ``PUT`` requests to
 data router. Developers must also provide a ``config_key`` because there
 is dynamic configuration information associated with the feed that the
 application will need to receive e.g. publish url, username, password.
-See the page on :doc:`DMaaP connection objects <../dcae-cli/dmaap-connection-objects>` for more details on
+See the page on :any:`DMaaP connection objects <dmaap-data-router>` for more details on
 the configuration information.
 
 Example (not tied to the larger example):
@@ -537,7 +565,7 @@ Example:
     ...
     }
 
-This describes that ``asimov.component.kpi_anomaly`` will make HTTP
+This describes that ``yourapp.component.kpi_anomaly`` will make HTTP
 calls to a downstream component that accepts requests of data format
 ``dcae.vnf.meta`` version ``1.0.0`` and is expecting the response to be
 ``dcae.vnf.kpi`` version ``1.0.0``.
@@ -649,17 +677,17 @@ Example:
                 "version": "1.0.0"
                 },
             "response": {
-                "format": "asimov.format.integerClassification",
+                "format": "yourapp.format.integerClassification",
                 "version": "1.0.0"
                 }
         }]
     },
 
-This describes that ``asimov.component.kpi_anomaly`` provides a service
+This describes that ``yourapp.component.kpi_anomaly`` provides a service
 interface and it is exposed on the ``/score-vnf`` HTTP endpoint. The
 endpoint accepts requests that have the data format ``dcae.vnf.meta``
 version ``1.0.0`` and gives back a response of
-``asimov.format.integerClassification`` version ``1.0.0``.
+``yourapp.format.integerClassification`` version ``1.0.0``.
 
 ``provides`` Schema for a Docker component:
 
@@ -807,6 +835,8 @@ services:
 |             |    | ‘POST’    |
 +-------------+----+-----------+
 
+.. _common-specification-parameters:
+
 Parameters
 ----------
 
@@ -926,7 +956,7 @@ Parameter object has the following available properties:
 |              |    | at this  |      |
 |              |    | time     |      |
 +--------------+----+----------+------+
-| designer_ed\ | bo\| An       | true |
+| designer_ed\ | bo\| An       |      |
 | itable       | ol\| optional |      |
 |              | ea\| key that |      |
 |              | n  | declares |      |
@@ -941,8 +971,8 @@ Parameter object has the following available properties:
 |              |    | or not   |      |
 |              |    | (false)  |      |
 +--------------+----+----------+------+
-| sourced_at_d\| bo\| An       | fals\|
-| eployment    | ol\| optional | e    |
+| sourced_at_d\| bo\| An       |      |
+| eployment    | ol\| optional |      |
 |              | ea\| key that |      |
 |              | n  | declares |      |
 |              |    | a        |      |
@@ -957,7 +987,7 @@ Parameter object has the following available properties:
 |              |    | time     |      |
 |              |    | (true)   |      |
 +--------------+----+----------+------+
-| policy_edit\ | bo\| An       | true |
+| policy_edit\ | bo\| An       |      |
 | able         | ol\| optional |      |
 |              | ea\| key that |      |
 |              | n  | declares |      |
@@ -1374,23 +1404,8 @@ policy_schema object:
 Generated Application Configuration
 -----------------------------------
 
-The above example for component ``asimov.component.kpi_anomaly`` will
-get transformed into the following application configuration JSON that
-is fully resolved and provided at runtime by calling the
-``config binding service``:
+The Platform generates configuration for the component (based on the component spec) at deployment time. The generated application configuration will be made up of the Parameters, Streams, and Services sections, after any provisioning for streams and services. The component developer can see what this configuration will look like by reviewing the :any:`component dev command <dcae-cli-run-the-dev-command>`.
 
-.. code:: json
-
-    {
-        "streams_publishes": {
-            "prediction": ["10.100.1.100:32567"]
-        },
-        "streams_subscribes": {},
-        "threshold": 0.75,
-        "services_calls": {
-            "vnf-db": ["10.100.1.101:32890"]
-        }
-    }
 
 .. _artifacts:
 
@@ -1416,3 +1431,12 @@ the Docker image. For CDAP, this is the full path to the CDAP jar.
 +---------------+--------+--------------------------------------------+
 | type          | string | *Required*. ``docker image`` or ``jar``    |
 +---------------+--------+--------------------------------------------+
+
+.. _component_spec:
+
+Working with Component Specs
+============================
+ 
+Components can be added to the onboarding catalog (which first validates the component spec) by using the :doc:`dcae_cli Tool <../dcae-cli/quickstart/>` 
+Here you can also list the components, show the contents of a component, publish the component, validate the generated configuration for the component, deploy (run) and undeploy the component. For a list of these capabilities, see :any:`Component Commands <dcae_cli_component_commands>`
+

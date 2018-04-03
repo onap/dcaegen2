@@ -65,10 +65,7 @@ Future DMaaP abstraction
 Shown below is our *vision* for how DMaaP is abstracted from component
 developers:
 
-.. figure:: ../images/dmdvision.png
-   :alt: Screenshot
-
-   Screenshot
+.. figure:: ./images/dmdvision.png
 
 Today, this is a vision; it is not in place. Today, each CDAP app is
 built with built in assumptions about where they are getting their data
@@ -84,7 +81,7 @@ of by the platform. They should be spending their time on the problem at
 hand—the analytic.
 
 This also allows each CDAP application to have a standard set of
-interfaces: HTTP and HDFS: |Screenshot|
+interfaces: HTTP and HDFS: 
 
-.. |Screenshot| image:: ../images/io.png
+.. figure::  ./images/io.png
 

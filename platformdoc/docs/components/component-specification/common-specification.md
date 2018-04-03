@@ -2,6 +2,16 @@
 
 This page describes the component specification (JSON) sections that are common to both Docker and CDAP components. Differences for each are pointed out below. Elements that are very different, and described in the CDAP or Docker specific pages. 
 
+## Meta Schema Definition
+
+The component specification is represented (and validated) against this
+[Component Spec json schema](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/component-json-schemas/browse/component-spec-schema.json) and described below:
+
+The "Meta Schema" implementation defines how component specification JSON schemas can be written to define user input. It is itself a JSON schema (thus it is a "meta schema").  It requires the name of the component entry, component type (either 'cdap' or 'docker') and a description under "self" object. The meta schema version must be specified as the value of the "version" key.  Then the input schema itself is described.
+
+The table below shows the four types of schema descriptions supported
+There are four types of schema descriptions objects - jsonschema for inline standard JSON Schema definitions of JSON inputs, delimitedschema for delimited data input using a JSON description defined by AT&T, unstructured for unstructured text, and reference that allows a pointer to another artifact for a schema.  The reference allows for XML schema, but can be used as a pointer to JSON, Delimited Format, and Unstructured schemas as well.
+
 ## Component Metadata
 Metadata refers to the properties found under the `self` JSON.  This group of properties is used to uniquely identify this component specification and identify the component that this specification is used to capture. 
 
@@ -32,6 +42,9 @@ Interfaces are the JSON objects found under the `streams` key and the `services`
  * The `streams` JSON is for specifying data produced for consumption by other components, and the streams expected to subscribe to that is produced by other components. These are "fire and forget" type interfaces where the publisher of a stream does not expect or parse a response from the subscriber.
 * The term `stream` here is abstract and neither refers to "CDAP streams" or "DMaaP feeds". While a stream is very likely a DMaaP feed, it could be a direct stream of data being routed via HTTP too. It abstractly refers to a sequence of data leaving a publisher.
 * Streams have anonymous publish/subscribe semantics, which decouples the production of information from its consumption.
+Like the component specification, the data format specification is represented/validated against this
+[Data Format json schema](https://codecloud.web.att.com/projects/ST_DCAECNTR/repos/component-json-schemas/browse/data-format-schema.json)
+
 * In general, components are not aware of who they are communicating with.
 * Instead, components that are interested in data, subscribe to the relevant stream; components that generate data publish to the relevant stream.
 * There can be multiple publishers and subscribers to a stream. Streams are intended for unidirectional, streaming communication.
@@ -93,7 +106,7 @@ Message router subscribers are http clients rather than http services and perfor
 
 ##### Data router
 
-Data router subscribers are http or https services that handle `PUT` requests from data router.  Developers must provide the `route` or url path/endpoint that is expected to handle data router requests.  This will be used to construct the delivery url needed to register the subscriber to the provisioned feed.  Developers must also provide a `config_key` because there is dynamic configuration information associated with the feed that the application will need e.g. username and password.  See the page on [DMaaP connection objects](../dcae-cli/dmaap-connection-objects) for more details on the configuration information.
+Data router subscribers are http or https services that handle `PUT` requests from data router.  Developers must provide the `route` or url path/endpoint that is expected to handle data router requests.  This will be used to construct the delivery url needed to register the subscriber to the provisioned feed.  Developers must also provide a `config_key` because there is dynamic configuration information associated with the feed that the application will need e.g. username and password.  See the page on [DMaaP connection objects](/components/component-specification/dmaap-connection-objects/#data-router) for more details on the configuration information.
 
 Example (not tied to the larger example):
 
@@ -140,7 +153,7 @@ type | string | *Required*. Type of stream: `http`, `message router`, `data rout
 
 ##### Message router
 
-Message router publishers are http clients of DMaap message_router.  Developers must provide a `config_key` because there is dynamic configuration information associated with the feed that the application will need to receive e.g. topic url, username, password.  See the page on [DMaaP connection objects](../dcae-cli/dmaap-connection-objects/#message_router) for more details on the configuration information.
+Message router publishers are http clients of DMaap message_router.  Developers must provide a `config_key` because there is dynamic configuration information associated with the feed that the application needs to receive e.g. topic url, username, password.  See the page on [DMaaP connection objects](/components/component-specification/dmaap-connection-objects/#message-router) for more details on the configuration information.
 
 Example (not tied to the larger example):
 
@@ -158,7 +171,7 @@ Example (not tied to the larger example):
 
 ##### Data router
 
-Data router publishers are http clients that make `PUT` requests to data router.  Developers must also provide a `config_key` because there is dynamic configuration information associated with the feed that the application will need to receive e.g. publish url, username, password.  See the page on [DMaaP connection objects](../dcae-cli/dmaap-connection-objects) for more details on the configuration information.
+Data router publishers are http clients that make `PUT` requests to data router.  Developers must also provide a `config_key` because there is dynamic configuration information associated with the feed that the application will need to receive e.g. publish url, username, password.  See the page on [DMaaP connection objects](/components/component-specification/dmaap-connection-objects/#data-router) for more details on the configuration information.
 
 Example (not tied to the larger example):
 
@@ -313,9 +326,9 @@ type | string | The required data type for the parameter |
 required | boolean | An optional key that declares a parameter as required (true) or not (false) | true
 constraints | array | The optional list of sequenced constraint clauses for the parameter. See below | 
 entry_schema | string | The optional key that is used to declare the name of the Datatype definition for entries of set types such as the TOSCA 'list' or 'map'. Only 1 level is supported at this time | 
-designer_editable | boolean | An optional key that declares a parameter to be editable by designer (true) or not (false) | true
-sourced_at_deployment | boolean | An optional key that declares a parameter's value to be assigned at deployment time (true) | false
-policy_editable | boolean | An optional key that declares a parameter to be editable by policy (true) or not (false) | true
+designer_editable | boolean | An optional key that declares a parameter to be editable by designer (true) or not (false) | 
+sourced_at_deployment | boolean | An optional key that declares a parameter's value to be assigned at deployment time (true) |
+policy_editable | boolean | An optional key that declares a parameter to be editable by policy (true) or not (false) | 
 policy_schema | array | The optional list of schema definitions used for policy. See below |
 
 Example:
@@ -365,21 +378,8 @@ entry_schema | string | The optional key that is used to declare the name of the
 
 ## Generated Application Configuration
 
-The above example for component `asimov.component.kpi_anomaly` will get transformed into the following application configuration JSON that is fully resolved and provided at runtime by calling the `config binding service`:
-
-```json
-{
-    "streams_publishes": {
-        "prediction": ["10.100.1.100:32567"]
-    },
-    "streams_subscribes": {},
-    "threshold": 0.75,
-    "services_calls": {
-        "vnf-db": ["10.100.1.101:32890"]
-    }
-}
-```
-
+The Platform generates configuration for the component (based on the component spec) at deployment time. The generated application configuration will be made up of the Parameters, Streams, and Services sections, after any provisioning for streams and services. The component developer can see what this configuration will look like by reviewing the [component dev command](/components/dcae_cli/commands/#run-the-dev-command).
+ 
 ## Artifacts
 
 `artifacts` contains a list of artifacts associated with this component.  For Docker, this is the full path (including the registry) to the Docker image. For CDAP, this is the full path to the CDAP jar.
@@ -394,4 +394,9 @@ Property Name | Type | Description
 ------------- | ---- | -----------
 uri | string | *Required*. Uri to the artifact, full path
 type | string | *Required*. `docker image` or `jar`
+
+# Working with Component Specs
+
+Components can be added to the onboarding catalog (which first validates the component spec) by using the [dcae_cli Tool](http://dcae-platform.research.att.com/components/dcae-cli/quickstart/). Here you can also list the components, show the contents of a component, publish the component, validate the generated configuration for the component, deploy (run) and undeploy the component. For a list of these capabilities, see [Component Commands](/components/dcae-cli/commands/#component).
+
 
