@@ -33,7 +33,7 @@ DCAE platform is based both on virtual machines (VM) and containers.
         - Docker Host for containerized service components (VM)
         - PostgreSQL Database (VM)
 
-note: the ONAP DCAEGEN2 CDAP blueprint deploys a 7 node CAsk Data Application Platform (CDAP) cluster (version 4.1.X), for running data analysis applications.
+note: the ONAP DCAEGEN2 CDAP blueprint deploys a 7 node Cask Data Application Platform (CDAP) cluster (version 4.1.X), for running data analysis applications.
 
 - DCAE Services
     - Collectors
@@ -55,4 +55,6 @@ vVoLTE:  VES collector, Holmes analytics
 
 Interactions
 ------------
-DCAE is interfacing with the DMaaP(Data Movement as a Platform) message Bus
+DCAE is interfacing with the DMaaP(Data Movement as a Platform) message Bus, A&AI, CLAMP, Policy, SDC.
+
+.. image:: images/dcae_and_interacting_components.png
