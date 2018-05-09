@@ -23,14 +23,14 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
   <parent>
     <groupId>org.onap.oparent</groupId>
     <artifactId>oparent</artifactId>
-    <version>0.1.1</version>
+    <version>1.1.1</version>
   </parent>
   <!--- CHANGE THE FOLLOWING 3 OBJECTS for your own repo -->
   <groupId>org.onap</groupId>
   <artifactId>dcaegen2</artifactId>
   <name>dcaegen2</name>
 
-  <version>1.2.0-SNAPSHOT</version>
+  <version>1.2.1-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
   <packaging>pom</packaging>
   <!-- TODO: Revisit. Port platform docs to sphinx/rst first.
