@@ -6,7 +6,7 @@ Release Notes
 Version: 2.0.0
 --------------
 
-:Release Date: 2018-05-24
+:Release Date: 2018-06-07
 
 **New Features**
 DCAE R2 improves upon previous release with the following new features:
@@ -65,7 +65,16 @@ Source code of DCAE components are released under the following repositories on 
 
 **Known Issues**
 
-**Security Issues**
+**Security Notes**
+
+DCAE code has been formally scanned during build time using NexusIQ and all Critical vulnerabilities have been addressed, items that remain open have been assessed for risk and determined to be false positive. The DCAE open Critical security vulnerabilities and their risk assessment have been documented as part of the `project <https://wiki.onap.org/pages/viewpage.action?pageId=28377647>`_.
+
+Quick Links:
+ 	- `DCAE project page <https://wiki.onap.org/display/DW/Data+Collection+Analytics+and+Events+Project>`_
+ 	
+ 	- `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
+ 	
+ 	- `Project Vulnerability Review Table for DCAE <https://wiki.onap.org/pages/viewpage.action?pageId=28377647>`_
 
 **Upgrade Notes**
 
