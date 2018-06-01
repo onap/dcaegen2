@@ -3,7 +3,7 @@
 
 
 Data Collection, Analytics, and Events (DCAE)
-=======================
+=============================================
 
 .. Add or remove sections below as appropriate for the platform component.
 
@@ -13,11 +13,11 @@ Data Collection, Analytics, and Events (DCAE)
    ./sections/architecture.rst
    ./sections/offeredapis.rst
    ./sections/consumedapis.rst
+   ./sections/installation.rst
    #./sections/delivery.rst
    ./sections/logging.rst
-   ./sections/installation.rst
    ./sections/configuration.rst
-   ./sections/administration.rst
+   #./sections/administration.rst
    ./sections/humaninterfaces.rst
    ./sections/components/component-development.rst
    ./sections/release-notes.rst
