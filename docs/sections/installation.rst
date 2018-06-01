@@ -6,6 +6,6 @@ DCAE Deployment (Installation)
    :titlesonly:
 
    ./installation_heat.rst
-   ./installation_manual.rst
+   ./installation_oom.rst
    ./installation_test.rst
 
