@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_be560ccd",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-06-04T01:38:48Z",
+      "side": 1,
+      "message": "Typo to be corrected",
+      "range": {
+        "startLine": 37,
+        "startChar": 2,
+        "endLine": 37,
+        "endChar": 6
+      },
+      "revId": "fd0801c589b7df0d86cf1f8aed5bf6641cd6c936",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
