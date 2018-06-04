@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_9991ea9c",
+        "filename": "docs/sections/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 511
+      },
+      "writtenOn": "2018-06-04T12:11:21Z",
+      "side": 1,
+      "message": "\"fingure\" should be figure",
+      "revId": "67f136c1b9bd55d7dc49cfa0fc3be45bb9d8300b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
