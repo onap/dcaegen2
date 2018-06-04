@@ -16,6 +16,29 @@
       "revId": "67f136c1b9bd55d7dc49cfa0fc3be45bb9d8300b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_19307a9d",
+        "filename": "docs/sections/installation_oom.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-06-04T13:18:06Z",
+      "side": 1,
+      "message": "Jack - Lusheng informed this is placeholder for your additions. Are you planning to submit them as separate update after this is merged?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 15
+      },
+      "revId": "67f136c1b9bd55d7dc49cfa0fc3be45bb9d8300b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
