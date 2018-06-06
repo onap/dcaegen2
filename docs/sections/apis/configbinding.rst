@@ -109,8 +109,6 @@ Responses
 OK; the bound config is returned as an object
 
 
-.. _i_4d863967ef9a9d9efdadd1b250c76bd6:
-
 **Response Schema:**
 
 
@@ -169,7 +167,6 @@ Responses
 OK; returns service_component_name:key
 
 
-.. _i_4d863967ef9a9d9efdadd1b250c76bd6:
 
 **Response Schema:**
 
