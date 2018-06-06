@@ -1,9 +1,13 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
+.. Copyright (c) 2017-2018 AT&T Intellectual Property. All rights reserved. 
 
+
+Data Collection, Analytics, and Events (DCAE)
+=============================================
 
 Architecture
-============
+------------
 
 Data Collection Analytics and Events (DCAE) is the data collection and analysis subsystem of ONAP.  Its tasks include collecting measurement, fault, status, configuration, and other types of data from network entities and infrastructure that ONAP interacts with, applying analytics on collected data, and generating intelligence (i.e. events) for other ONAP components such as Policy, APPC, and SDNC to operate upon; hence completing the ONAP's close control loop for managing network services and applications.
 
