@@ -457,7 +457,8 @@ Request for deploying a DCAE service.
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        inputs | No | :ref:`inputs <i_08ada55a389e24cd45beef83306fd08e>` |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
+        inputs | No |  |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
+
 Content of the object depends on the service being deployed.
 
         serviceTypeId | Yes | string |  |  | The service type identifier (a unique ID assigned by DCAE inventory) for the service to be deployed.
@@ -780,17 +781,20 @@ request to update policies on DCAE components.
     :widths: 20, 10, 15, 15, 30, 25
 
         catch_up | Yes | boolean |  |  | flag to indicate whether the request contains all the policies in PDP or not
-        errored_policies | No | :ref:`errored_policies <i_0e88fa72c5312eaae3990753181ce5fe>` |  |  | whether policy-engine returned an error on the policy.
+        errored_policies | No |  |  |  | whether policy-engine returned an error on the policy.
 dictionary of (policy_id -> true).
+
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
         errored_scopes | No | array of string |  |  | on cartchup - list of policy scope_prefix values on wchich the policy-engine experienced an error other than not-found data.
 
-        latest_policies | Yes | :ref:`latest_policies <i_cbc40bad95bddbd536eeab0a92f483af>` |  |  | dictionary of (policy_id -> DCAEPolicy object).
+        latest_policies | Yes | |  |  | dictionary of (policy_id -> DCAEPolicy object).
+
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
-        removed_policies | Yes | :ref:`removed_policies <i_0ce52a29e44aa0cc7929fe7b555551bc>` |  |  | whether policy was removed from policy-engine.
+        removed_policies | Yes | |  |  | whether policy was removed from policy-engine.
 dictionary of (policy_id -> true).
+
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
         scope_prefixes | No | array of string |  |  | on catchup - list of all scope_prefixes used by the policy-handler to retrieve the policies from policy-engine.
@@ -887,7 +891,7 @@ Request for deploying a DCAE service.
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        inputs | No | :ref:`inputs <i_08ada55a389e24cd45beef83306fd08e>` |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
+        inputs | No | |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
 Content of the object depends on the service being deployed.
 
         serviceTypeId | Yes | string |  |  | The service type identifier (a unique ID assigned by DCAE inventory) for the service to be deployed.
@@ -1080,16 +1084,16 @@ request to update policies on DCAE components.
     :widths: 20, 10, 15, 15, 30, 25
 
         catch_up | Yes | boolean |  |  | flag to indicate whether the request contains all the policies in PDP or not
-        errored_policies | No | :ref:`errored_policies <i_0e88fa72c5312eaae3990753181ce5fe>` |  |  | whether policy-engine returned an error on the policy.
+        errored_policies | No |  |  |  | whether policy-engine returned an error on the policy.
 dictionary of (policy_id -> true).
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
         errored_scopes | No | array of string |  |  | on cartchup - list of policy scope_prefix values on wchich the policy-engine experienced an error other than not-found data.
 
-        latest_policies | Yes | :ref:`latest_policies <i_cbc40bad95bddbd536eeab0a92f483af>` |  |  | dictionary of (policy_id -> DCAEPolicy object).
+        latest_policies | Yes | |  |  | dictionary of (policy_id -> DCAEPolicy object).
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
-        removed_policies | Yes | :ref:`removed_policies <i_0ce52a29e44aa0cc7929fe7b555551bc>` |  |  | whether policy was removed from policy-engine.
+        removed_policies | Yes | |  |  | whether policy was removed from policy-engine.
 dictionary of (policy_id -> true).
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 

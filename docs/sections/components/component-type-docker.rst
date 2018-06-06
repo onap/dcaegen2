@@ -12,8 +12,8 @@ Overview
 Component developers are required to provide artifacts for the platform
 to be able to deploy your component including:
 
--  :any:`Component specification <docker-specification>`
--  :any:`One or more Data Formats <data-formats>` \*unless they already exist
+-  `Component specification <docker-specification>`
+-  `One or more Data Formats <data-formats>` \*unless they already exist
 -  `Docker image <#docker-on-the-platform>`__
 
 In addition, components will have to be enhanced to be compliant with
@@ -408,10 +408,10 @@ container:
 | ``HOSTNAME`` | string       | Unique name of the component instance  |
 |              |              | that is generated                      |
 +--------------+--------------+----------------------------------------+
-| ``CONSUL_HOS | string       | Hostname of the platform’s Consul      |
+| ``CONSUL_HOS | string       | Hostname of the platform's Consul      |
 | T``          |              | instance                               |
 +--------------+--------------+----------------------------------------+
-| ``CONFIG_BIN | string       | Hostname of the platform’s config      |
+| ``CONFIG_BIN | string       | Hostname of the platform's config      |
 | DING_SERVICE |              | binding service instance               |
 | ``           |              |                                        |
 +--------------+--------------+----------------------------------------+
