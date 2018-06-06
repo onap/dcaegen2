@@ -13,6 +13,7 @@ Data Collection, Analytics, and Events (DCAE)
    ./sections/architecture.rst
    ./sections/offeredapis.rst
    ./sections/consumedapis.rst
+   ./sections/build.rst
    ./sections/installation.rst
    #./sections/delivery.rst
    ./sections/logging.rst

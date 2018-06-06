@@ -267,21 +267,21 @@ registry.
 A docker component can be run in either ``attached`` or ``unattached``
 mode. (Default is unattached).
 
-+------------------+---------------------------------------------------+
-| Mode             | Description                                       |
-+==================+===================================================+
-| attached         | component is run in the ‘foreground’, container   |
-|                  | logs are streamed to stdout. Ctrl-C is used to    |
-|                  | terminate the dcae_cli session.                   |
-+------------------+---------------------------------------------------+
-| unattached       | component is run in the ‘background’, container   |
-|                  | logs are viewed via ``docker logs`` command,      |
-|                  | container runs until undeployed with dcae_cli     |
-|                  | ``undeploy`` command.                             |
-+------------------+---------------------------------------------------+
++------------------+-----------------------------------------------------------+
+| Mode             | Description                                               |
++==================+===========================================================+
+| attached         | component is run in the foreground�, container            |
+|                  | logs are streamed to stdout. Ctrl-C is used to            |
+|                  | terminate the dcae_cli session.                           |
++------------------+-----------------------------------------------------------+
+| unattached       | component is run in the background container              |
+|                  | logs are viewed via ``docker logs`` command,              |
+|                  | container runs until undeployed with dcae_cli             |
+|                  | ``undeploy`` command.                                     |
++------------------+-----------------------------------------------------------+
 
 Run a component in attached mode:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 ::
 
@@ -304,7 +304,7 @@ Run a component in attached mode:
     DCAE.Docker | INFO | Stopping container 'user12.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-yourapp' and cleaning up...
 
 Run a component in unattached mode:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 ::
 
@@ -317,14 +317,14 @@ Run a component in unattached mode:
 important to conserve resources in the environment.
 
 Run a component that subscribes to Dmaap Message Router or Data Router
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------------------------
 
 ::
 
     $ dcae_cli -v component run $component-that-uses-dmamp --dmaap-file $dmaap-connection-object
 
 Run a component that expects input that is ``sourced at deployment``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------------------------------
 
 ::
 
@@ -338,18 +338,18 @@ Run a component that expects input that is ``sourced at deployment``
 Undeploy the component
 ----------------------
 
-+-----------------------------------------------------------------+
-| The ``undeploy`` command is used to undeploy any instance of a  |
-| specified component/version that you have deployed. This        |
-| includes cleaning up the configuration.                         |
-+-----------------------------------------------------------------+
++-------------------------------------------------------------------+
+| The ``undeploy`` command is used to undeploy any instance of a    |
+| specified component/version that you have deployed. This          |
+| includes cleaning up the configuration.                           |
++-------------------------------------------------------------------+
 | Undeploy ``sandbox.platform.yourapp:0.7.0`` that was deployed     |
-| above:                                                          |
-+-----------------------------------------------------------------+
+| above:                                                            |
++-------------------------------------------------------------------+
 | ``$ dcae_cli -v component undeploy sandbox.platform.yourapp:0.7.0 |
-|  DCAE.Undeploy | WARNING | Undeploying components: 1 DCAE.Undep |
-| loy | WARNING | Undeployed components: 1``                      |
-+-----------------------------------------------------------------+
+|  DCAE.Undeploy | WARNING | Undeploying components: 1 DCAE.Undep   |
+| loy | WARNING | Undeployed components: 1``                        |
++-------------------------------------------------------------------+
 
 .. _dcae_cli_publish_the_component_and_data_format:
 

@@ -1,18 +1,15 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-Build
-=====
-
-Build
-=====
+Building DCAE
+=============
 
 
 Description
 -----------
 DCAE has multiple code repos and these repos are in several different languages.  All DCAE projects are built in similar fashion, following Maven framework as Maven projects.  Although many DCAE projects are not written in Java, adopting the Maven framework does help including DCAE projects in  the overall ONAP building methodology and CICD process.
 
-All DCAE projects use ONAP oparent project POM as ancestor.  That is, DCAE projects inherent all parameters defined in oparent project which include many ONAP wide configuration parameters such as the location of various artifact repos.
+All DCAE projects use ONAP **oparent** project POM as ancestor.  That is, DCAE projects inherent all parameters defined in the oparent project which include many ONAP wide configuration parameters such as the location of various artifact repos.
 
 A number of DCAE projects are not written Java.  For these projects we use the CodeHaus Maven Execution plugin for triggering a Bash script at various stages of Maven lifecycle. The script is  mvn-phase-script.sh, located at the root of each non-Java DACE project.  It is in this script that the actual build operation is performed at different Maven phases.  For example, for a Python project, Maven test will actually trigger a call to tox to conduct project unit tests.
 
@@ -41,8 +38,8 @@ Below is a list of the repos and their sub-modules, and the language they are wr
 
 * dcaegen2.collectors
 
- - dcaegen2.collectors.snmptrap (Java)
- - dcaegen2.collectors.ves (Python)
+ - dcaegen2.collectors.snmptrap (Python)
+ - dcaegen2.collectors.ves (Java)
 
 * dcaegen2.deployments
 
@@ -58,9 +55,7 @@ Below is a list of the repos and their sub-modules, and the language they are wr
  - check-blueprint-vs-input (yaml)
  - input-templates (yaml)
 
-* dcaegen2.platform.cdapbroker (Erlang)
-
-* dcaegen2.platform.cli
+* dcaegen2.platform.cli (Python)
 
  - component-json-schemas (yaml)
  - dcae-cli (Python)

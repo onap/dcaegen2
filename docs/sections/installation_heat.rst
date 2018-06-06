@@ -35,7 +35,8 @@ that are relevant to DCAE.
     CLAMP              {{PREFIX}}-clamp              10.0.12.1
     Private DNS        {{PREFIX}}-dns-server         10.0.100.1
     ==============     ==========================    ==========================
-* Each of the above VMs will also be associated with a floating IP address from the external network.
+
+(Each of the above VMs will also be associated with a floating IP address from the external network.)
 
 
 DCAE Deployment
