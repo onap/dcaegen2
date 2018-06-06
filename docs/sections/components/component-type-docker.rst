@@ -408,10 +408,10 @@ container:
 | ``HOSTNAME`` | string       | Unique name of the component instance  |
 |              |              | that is generated                      |
 +--------------+--------------+----------------------------------------+
-| ``CONSUL_HOS | string       | Hostname of the platform’s Consul      |
+| ``CONSUL_HOS | string       | Hostname of the platform’s Consul  |
 | T``          |              | instance                               |
 +--------------+--------------+----------------------------------------+
-| ``CONFIG_BIN | string       | Hostname of the platform’s config      |
+| ``CONFIG_BIN | string       | Hostname of the platform’s config  |
 | DING_SERVICE |              | binding service instance               |
 | ``           |              |                                        |
 +--------------+--------------+----------------------------------------+

@@ -34,10 +34,10 @@ DCAE R2 improves upon previous release with the following new features:
     Notes:
         \*  These components are delivered by the Holmes project and used as a DCAE analytics component in R2.
 
-- DCAE R2 supports both OpenStack Heat Orchestration Template based deployment and Helm Chart based deployment. 
+- DCAE R2 supports both OpenStack Heat Orchestration Template based deployment and OOM (Kubernetes) based deployment. 
 
     - Under Heat based deployment all DCAE component containers are deployed onto a single Docker host VM that is launched from an OpenStack Heat Orchestration Template as part of "stack creation".
-    - Under Helm/Kubernetes deployment all DCAE component containers are deployed as Kubernetes Pods/Deployments/Services into Kubernetes cluster.
+    - Under OOM (Kubernetes) deployment all DCAE component containers are deployed as Kubernetes Pods/Deployments/Services into Kubernetes cluster.
 
 - DCAE R2 includes a new Cloudify Manager plugin (k8splugin) that is capable of expanding a Blueprint node specification written for Docker container to a full Kubernetes specification, with additional enhancements such as replica scaling, sidecar for logging to ONAP ELK stack, registering services to MSB, etc. 
 
@@ -95,7 +95,7 @@ The following components are upgraded from R1:
        - Description: R2 DCAE's Cloudify Manager container is based on Cloudify Manager Community Version 18.2.28, which is based on Cloudify Manager 4.3.
     - Bootstrap container: 
        - Docker container tag: onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:1.1.11
-       - Description: R2 DCAE no longer uses bootstrap container for Heat based deployment, -- deployment is done through cloud-init scripts and docker-compose specifications.  The bootstrap is for Helm/Kubernetes based deployment.
+       - Description: R2 DCAE no longer uses bootstrap container for Heat based deployment, -- deployment is done through cloud-init scripts and docker-compose specifications.  The bootstrap is for OOM (Kubernetes) based deployment.
     - Configuration Binding Service: 
        - Docker container tag: onap/org.onap.dcaegen2.platform.configbinding:2.1.5
        - Description: Configuration Binding Sevice now supports the new configuration policy format.
