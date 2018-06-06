@@ -12,8 +12,8 @@ Overview
 Component developers are required to provide artifacts for the platform
 to be able to deploy your component including:
 
--  :any:`Component specification <docker-specification>`
--  :any:`One or more Data Formats <data-formats>` \*unless they already exist
+-  `Component specification <docker-specification>`
+-  `One or more Data Formats <data-formats>` \*unless they already exist
 -  `Docker image <#docker-on-the-platform>`__
 
 In addition, components will have to be enhanced to be compliant with
@@ -402,22 +402,22 @@ Envs
 The platform provides a set of environment variables into each Docker
 container:
 
-+--------------+--------------+----------------------------------------+
-| Name         | Type         | Description                            |
-+==============+==============+========================================+
-| ``HOSTNAME`` | string       | Unique name of the component instance  |
-|              |              | that is generated                      |
-+--------------+--------------+----------------------------------------+
-| ``CONSUL_HOS | string       | Hostname of the platform’s Consul      |
-| T``          |              | instance                               |
-+--------------+--------------+----------------------------------------+
-| ``CONFIG_BIN | string       | Hostname of the platform’s config      |
-| DING_SERVICE |              | binding service instance               |
-| ``           |              |                                        |
-+--------------+--------------+----------------------------------------+
-| ``DOCKER_HOS | string       | Host of the target platform Docker     |
-| T``          |              | host to run the container on           |
-+--------------+--------------+----------------------------------------+
++----------------------------+--------------+----------------------------------------+
+| Name                       | Type         | Description                            |
++============================+==============+========================================+
+| ``HOSTNAME``               | string       | Unique name of the component instance  |
+|                            |              | that is generated                      |
++----------------------------+--------------+----------------------------------------+
+| ``CONSUL_HOST``            | string       | Hostname of the platform's Consul      |
+|                            |              | instance                               |
++----------------------------+--------------+----------------------------------------+
+| ``CONFIG_BINDING_SERVICE`` | string       | Hostname of the platform's config      |
+|                            |              | binding service instance               |
+|                            |              |                                        |
++----------------------------+--------------+----------------------------------------+
+| ``DOCKER_HOST``            | string       | Host of the target platform Docker     |
+|                            |              | host to run the container on           |
++----------------------------+--------------+----------------------------------------+
 
 Operational Concerns
 --------------------

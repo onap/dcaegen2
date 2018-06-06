@@ -8,8 +8,11 @@ DCAE Component Development
    :maxdepth: 1
 
    ./intro.rst
+   ./architecture/pieces.rst
+   ./architecture/service-discovery.rst
    ./requirements-guidelines.rst
    ./component-specification/component-specification.rst
+   ./component-json-schema.rst
    ./data-formats.rst
    ./dcae-cli/dcae-cli-tool.rst
    ./glossary.rst

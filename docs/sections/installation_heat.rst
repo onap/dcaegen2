@@ -19,23 +19,26 @@ When a new "stack" is created using the template, the following virtual resource
 * A virtual router interconnecting the private OAM network with the external network of the OpenStack installation.
 * A key-pair named onap_key_{{RAND}}.
 * A security group named onap_sg_{{RAND}}.
-* A list of VMs for ONAP components. Each VM has one NIC connected to the OAM network and assigned a fixed IP. Each VM is also assigned a floating IP address from the external network. The VM hostnames are name consistently across different ONAP deployments, a user defined prefix, denoted as {{PREFIX}}, followed by a descriptive string for the ONAP component this VM runs, and optionally followed by a sub-function name.  In the parameter env file supplied when running the Heat template, the {{PREFIX}} is defined by the **vm_base_name** parameter.  The VMs of the same ONAP role across different ONAP deployments will always have the same OAM network IP address. For example, the Message Router will always have the OAM network IP address of 10.0.11.1.  The list below provides the IP addresses and hostnames for ONAP components
-that are relevant to DCAE.
+* A list of VMs for ONAP components. Each VM has one NIC connected to the OAM network and assigned a fixed IP. Each VM is also assigned a floating IP address from the external network. The VM hostnames are name consistently across different ONAP deployments, a user defined prefix, denoted as {{PREFIX}}, followed by a descriptive string for the ONAP component this VM runs, and optionally followed by a sub-function name.  In the parameter env file supplied when running the Heat template, the {{PREFIX}} is defined by the **vm_base_name** parameter.  The VMs of the same ONAP role across different ONAP deployments will always have the same OAM network IP address. For example, the Message Router will always have the OAM network IP address of 10.0.11.1.  
 
-    ==============     ==========================    ==========================
-    ONAP Role          VM (Neutron) hostname          OAM IP address(s)
-    ==============     ==========================    ==========================
-    A&AI               {{PREFIX}}-aai-inst1          10.0.1.1
-    SDC                {{PREFIX}}-sdc                10.0.3.1
-    DCAE               {{PREFIX}}-dcae               10.0.4.1
-    Policy             {{PREFIX}}-policy             10.0.6.1
-    SD&C               {{PREFIX}}-sdnc               10.0.7.1
-    Robot TF           {{PREFIX}}-robot              10.0.10.1
-    Message Router     {{PREFIX}}-message-router     10.0.11.1
-    CLAMP              {{PREFIX}}-clamp              10.0.12.1
-    Private DNS        {{PREFIX}}-dns-server         10.0.100.1
-    ==============     ==========================    ==========================
-* Each of the above VMs will also be associated with a floating IP address from the external network.
+
+The list below provides the IP addresses and hostnames for ONAP components that are relevant to DCAE.
+
+==============     ==========================    ==========================
+ONAP Role          VM (Neutron) hostname          OAM IP address(s)
+==============     ==========================    ==========================
+A&AI               {{PREFIX}}-aai-inst1          10.0.1.1
+SDC                {{PREFIX}}-sdc                10.0.3.1
+DCAE               {{PREFIX}}-dcae               10.0.4.1
+Policy             {{PREFIX}}-policy             10.0.6.1
+SD&C               {{PREFIX}}-sdnc               10.0.7.1
+Robot TF           {{PREFIX}}-robot              10.0.10.1
+Message Router     {{PREFIX}}-message-router     10.0.11.1
+CLAMP              {{PREFIX}}-clamp              10.0.12.1
+Private DNS        {{PREFIX}}-dns-server         10.0.100.1
+==============     ==========================    ==========================
+
+(Each of the above VMs will also be associated with a floating IP address from the external network.)
 
 
 DCAE Deployment

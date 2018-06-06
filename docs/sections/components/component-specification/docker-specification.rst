@@ -188,19 +188,20 @@ At the top-level:
 
 The ``container`` object contains:
 
-+-----------------------+-----------------------+-----------------------+
-| Property Name         | Type                  | Description           |
-+=======================+=======================+=======================+
-| bind                  | string                | path to the container |
-|                       |                       | volume                |
-+-----------------------+-----------------------+-----------------------+
-| mode                  | string                | “ro” - indicates      |
-|                       |                       | read-only volume      |
-+-----------------------+-----------------------+-----------------------+
-|                       | “” - indicates that   |
-|                       | the contain can write |
-|                       | into the bind mount   |
-+-----------------------+-----------------------+-----------------------+
+
++-----------------------+-----------------------+-------------------------------+
+| Property Name         | Type                  | Description                   |
++=======================+=======================+===============================+
+| bind                  | string                | path to the container         |
+|                       |                       | volume                        |
++-----------------------+-----------------------+-------------------------------+
+| mode                  | string                | ro - indicates                |
+|                       |                       | read-only volume              |
++-----------------------+-----------------------+-------------------------------+
+|                       |                       | w - indicates that            |
+|                       |                       | the contain can write         |
+|                       |                       | into the bind mount           |
++-----------------------+-----------------------+-------------------------------+
 
 The ``host`` object contains:
 
@@ -263,22 +264,20 @@ Example:
 The docker script interface is as follows: \`/opt/app/reconfigure.sh
 $reconfigure_type {“updated policies”: , “application config”: }
 
-+--------------+--------------+----------------------------------------+
-| Name         | Type         | Description                            |
-+==============+==============+========================================+
-| reconfigure_ | string       | “policy”                               |
-| type         |              |                                        |
-+--------------+--------------+----------------------------------------+
-| updated_poli | json         | TBD                                    |
-| cies         |              |                                        |
-+--------------+--------------+----------------------------------------+
-| updated_appl | json         | complete generated app_config, not     |
-| _config      |              | fully-resolved, but ``policy-enabled`` |
-|              |              | parameters have been updated. In order |
-|              |              | to get the complete updated            |
-|              |              | app_config, the component would have   |
-|              |              | to call ``config-binding-service``.    |
-+--------------+--------------+----------------------------------------+
++---------------------+--------------+----------------------------------------+
+| Name                | Type         | Description                            |
++=====================+==============+========================================+
+| reconfigure_type    | string       | policy                                 |
++---------------------+--------------+----------------------------------------+
+| updated_policies    | json         | TBD                                    |
++---------------------+--------------+----------------------------------------+
+| updated_appl_config | json         | complete generated app_config, not     |
+|                     |              | fully-resolved, but ``policy-enabled`` |
+|                     |              | parameters have been updated. In order |
+|                     |              | to get the complete updated            |
+|                     |              | app_config, the component would have   |
+|                     |              | to call ``config-binding-service``.    |
++---------------------+--------------+----------------------------------------+
 
 Docker Component Spec - Complete Example
 ----------------------------------------

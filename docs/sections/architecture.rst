@@ -1,5 +1,7 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
+
+
 Architecture
 ============
 
@@ -7,7 +9,7 @@ Data Collection Analytics and Events (DCAE) is the data collection and analysis 
 
 The design of DCAE separates DCAE Services from DCAE Platform so that the DCAE system is flexible, elastic, and expansive enough for supporting the potentially infinite number of ways of constructing intelligent and automated control loops on distributed and heterogeneous infrastructure. 
 
-DCAE Service components are the virtual functional entities that realize the collection and analysis needs of ONAP control loops.  They include the collectors for various data collection needs, the analytics that assess collected data, and various auxiliary microservices that assist data collection and analytics, and support other ONAP functions.  Service components and DMaaP buses form the "data plane" for ONAP, where DCAE collected data is transported among different DCAE service components.
+DCAE Service components are the virtual functional entities that realize the collection and analysis needs of ONAP control loops.  They include the collectors for various data collection needs, the analytics that assess collected data, and various auxiliary microservices that assist data collection and analytics, and support other ONAP functions.  Service components and DMaaP buses form the "data plane" for DCAE, where DCAE collected data is transported among different DCAE service components.
 
 On the other hand DCAE Platform components enable model driven deployment of service components and middleware infrastructures that service components depend upon, such as special storage and computation platforms.  That is, when triggered by an invocation call,  DCAE Platform follows the TOSCA model of the control loop that is specified by the triggering call, interacts with the underlying networking and computing infrastructure such as OpenSatck installations and Kubernetes clusters to deploy and configure the virtual apparatus (i.e. the collectors, the analytics, and auxiliary microservices) that are needed to form the control loop, at locations that are requested by the requirements of the control loop model.  DCAE Platform also provisions DMaaP topics and manages the distribution scopes of the topics following the prescription of the control loop model by interacting with controlling function of DMaaP.
 
