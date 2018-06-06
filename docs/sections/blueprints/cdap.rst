@@ -12,7 +12,7 @@ applications.  The template for the blueprint is at
 will be the CDAP master.
 
 Blueprint Input Parameters
----------------------
+--------------------------
 
 This blueprint has the following required input parameters:
 

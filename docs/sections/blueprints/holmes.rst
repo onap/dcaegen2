@@ -1,5 +1,5 @@
 Holmes Correlation Analytics
-======================
+============================
 
 Overview of my blueprint and the part it plays in DCAE.
 
@@ -19,5 +19,5 @@ How To Run
 Cfy command for running the blueprint
 
 Additional Information
----------------------
+----------------------
 Any additional information that help other people understanding and using yor blueprint

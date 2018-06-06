@@ -1053,7 +1053,6 @@ Request
 
 
 
-.. _d_f598222d7a83ca9c3538556b263682d1:
 
 Body
 ^^^^
@@ -2001,7 +2000,6 @@ Security
 Data Structures
 ~~~~~~~~~~~~~~~
 
-.. _d_8a94f348f7df00259702f8d9b7d2ea84:
 
 ApiResponseMessage Model Structure
 ----------------------------------
@@ -2015,7 +2013,6 @@ ApiResponseMessage Model Structure
         message | No | string |  |  | 
         type | No | string |  |  | 
 
-.. _d_f598222d7a83ca9c3538556b263682d1:
 
 VES5Request Model Structure
 ---------------------------
@@ -2708,7 +2705,7 @@ sysLog fields
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        additionalFields | No | string |  |  | additional syslog fields if needed provided as name=value delimited by a pipe | symbol, for example: 'name1=value1|name2=value2|'
+        additionalFields | No | string |  |  | additional syslog fields if needed provided as name=value 
         eventSourceHost | No | string |  |  | hostname of the device
         eventSourceType | Yes | string |  |  | type of event source; examples: other, router, switch, host, card, port, slotThreshold, portThreshold, virtualMachine, virtualNetworkFunction
         syslogFacility | No | integer |  |  | numeric code from 0 to 23 for facility--see table in documentation

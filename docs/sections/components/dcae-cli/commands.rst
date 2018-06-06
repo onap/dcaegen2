@@ -18,29 +18,29 @@ resource can have a status of ``staged`` or ``published``. By default,
 only ``published`` resources are displayed. To see ``staged`` resources,
 add the –expanded argument.
 
-+-----------------------------------------------+-----------------------+
-| Catalog Status                                | Meaning               |
-+===============================================+=======================+
-| staged                                        | resource has be added |
-|                                               | (and validated), but  |
-|                                               | is under development  |
-+-----------------------------------------------+-----------------------+
-| staged data_formats can only be referenced in |
-| their owners component specs                  |
-+-----------------------------------------------+-----------------------+
-| staged components can only be deployed by     |
-| their owners                                  |
-+-----------------------------------------------+-----------------------+
-| published                                     | resource has been     |
-|                                               | tested and can be     |
-|                                               | shared                |
-+-----------------------------------------------+-----------------------+
-| published data_formats can be used in         |
-| anyone’s component spec                       |
-+-----------------------------------------------+-----------------------+
-| published components and be deployed by       |
-| anyone                                        |
-+-----------------------------------------------+-----------------------+
++------------------------------+----------------------------------------+
+| Catalog Status               | Meaning                                |
++==============================+========================================+
+| staged                       | resource has be added                  |
+|                              | (and validated), but                   |
+|                              | is under development                   |
++------------------------------+----------------------------------------+
+| staged                       | data_formats can only be referenced in |
+|                              | their owners component specs           |
++------------------------------+----------------------------------------+
+| staged                       | components can only be deployed by     |
+|                              | their owners                           |
++------------------------------+----------------------------------------+
+| published                    | resource has been                      |
+|                              | tested and can be                      |
+|                              | shared                                 |
++------------------------------+----------------------------------------+
+|                              | published data_formats can be used in  |
+|                              | anyone's component spec                |
++------------------------------+----------------------------------------+
+|                              | published components and be deployed by|
+|                              | anyone                                 |
++------------------------------+----------------------------------------+
 
 ::
 

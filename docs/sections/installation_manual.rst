@@ -261,8 +261,6 @@ m1.medium size and 50gb cinder volumes.
 
 6a. To enable AAI Enrichment in TCA for CL event, following updates should be done to TCA app preference file before proceeding
 
-.. code-block:: json
-
           "enableAAIEnrichment" :  true
           "aaiEnrichmentHost" :  <should be set to aai1_ip_addr>
           "aaiEnrichmentIgnoreSSLCertificateErrors" : true
