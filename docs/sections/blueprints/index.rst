@@ -3,7 +3,7 @@
 
 
 Data Collection, Analytics, and Events (DCAE) blueprints
-=======================
+========================================================
 
 .. toctree::
    :maxdepth: 1

@@ -457,7 +457,8 @@ Request for deploying a DCAE service.
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        inputs | No | :ref:`inputs <i_08ada55a389e24cd45beef83306fd08e>` |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
+        inputs | No |  |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
+
 Content of the object depends on the service being deployed.
 
         serviceTypeId | Yes | string |  |  | The service type identifier (a unique ID assigned by DCAE inventory) for the service to be deployed.
@@ -780,19 +781,10 @@ request to update policies on DCAE components.
     :widths: 20, 10, 15, 15, 30, 25
 
         catch_up | Yes | boolean |  |  | flag to indicate whether the request contains all the policies in PDP or not
-        errored_policies | No | :ref:`errored_policies <i_0e88fa72c5312eaae3990753181ce5fe>` |  |  | whether policy-engine returned an error on the policy.
-dictionary of (policy_id -> true).
-In example: replace additionalProp1,2,3 with policy_id1,2,3 values
-
+        errored_policies | No |  |  |  | whether policy-engine returned an error on the policy.
         errored_scopes | No | array of string |  |  | on cartchup - list of policy scope_prefix values on wchich the policy-engine experienced an error other than not-found data.
-
-        latest_policies | Yes | :ref:`latest_policies <i_cbc40bad95bddbd536eeab0a92f483af>` |  |  | dictionary of (policy_id -> DCAEPolicy object).
-In example: replace additionalProp1,2,3 with policy_id1,2,3 values
-
-        removed_policies | Yes | :ref:`removed_policies <i_0ce52a29e44aa0cc7929fe7b555551bc>` |  |  | whether policy was removed from policy-engine.
-dictionary of (policy_id -> true).
-In example: replace additionalProp1,2,3 with policy_id1,2,3 values
-
+        latest_policies | Yes | |  |  | dictionary of (policy_id -> DCAEPolicy object).
+        removed_policies | Yes | |  |  | whether policy was removed from policy-engine.
         scope_prefixes | No | array of string |  |  | on catchup - list of all scope_prefixes used by the policy-handler to retrieve the policies from policy-engine.
 
 
@@ -874,7 +866,6 @@ deployment-handler always responds with ok to /policy before processing the requ
 Data Structures
 ~~~~~~~~~~~~~~~
 
-.. _d_eea14e4929853a5aa415f44cd4868302:
 
 DCAEDeploymentRequest Model Structure
 -------------------------------------
@@ -887,13 +878,10 @@ Request for deploying a DCAE service.
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        inputs | No | :ref:`inputs <i_08ada55a389e24cd45beef83306fd08e>` |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
-Content of the object depends on the service being deployed.
-
+        inputs | No | |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
         serviceTypeId | Yes | string |  |  | The service type identifier (a unique ID assigned by DCAE inventory) for the service to be deployed.
 
 
-.. _i_08ada55a389e24cd45beef83306fd08e:
 
 **Inputs schema:**
 
@@ -1007,7 +995,6 @@ Response body for a request for status of an installation or uninstallation oper
         requestId | Yes | string |  |  | A unique identifier assigned to the request.  Useful for tracing a request through logs.
 
         status | Yes | string |  |  | Status of the installation or uninstallation operation.  Possible values are 'processing',
-'succeeded', and 'failed'
 
 
 .. _i_2feace8c1d3584ec637edc0eb1b92699:
@@ -1067,8 +1054,6 @@ the policy-config - the config data provided by policy owner
 
 
 
-.. _d_6ea6e6f48a0302e963a67833bbd0ff4a:
-
 DCAEPolicyRequest Model Structure
 ---------------------------------
 
@@ -1080,23 +1065,12 @@ request to update policies on DCAE components.
     :widths: 20, 10, 15, 15, 30, 25
 
         catch_up | Yes | boolean |  |  | flag to indicate whether the request contains all the policies in PDP or not
-        errored_policies | No | :ref:`errored_policies <i_0e88fa72c5312eaae3990753181ce5fe>` |  |  | whether policy-engine returned an error on the policy.
-dictionary of (policy_id -> true).
-In example: replace additionalProp1,2,3 with policy_id1,2,3 values
-
+        errored_policies | No |  |  |  | whether policy-engine returned an error on the policy.
         errored_scopes | No | array of string |  |  | on cartchup - list of policy scope_prefix values on wchich the policy-engine experienced an error other than not-found data.
-
-        latest_policies | Yes | :ref:`latest_policies <i_cbc40bad95bddbd536eeab0a92f483af>` |  |  | dictionary of (policy_id -> DCAEPolicy object).
-In example: replace additionalProp1,2,3 with policy_id1,2,3 values
-
-        removed_policies | Yes | :ref:`removed_policies <i_0ce52a29e44aa0cc7929fe7b555551bc>` |  |  | whether policy was removed from policy-engine.
-dictionary of (policy_id -> true).
-In example: replace additionalProp1,2,3 with policy_id1,2,3 values
-
+        latest_policies | Yes | |  |  | dictionary of (policy_id -> DCAEPolicy object).
+        removed_policies | Yes | |  |  | whether policy was removed from policy-engine.
         scope_prefixes | No | array of string |  |  | on catchup - list of all scope_prefixes used by the policy-handler to retrieve the policies from policy-engine.
 
-
-.. _i_0e88fa72c5312eaae3990753181ce5fe:
 
 **Errored_policies schema:**
 
@@ -1108,8 +1082,6 @@ In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
 Map of {"key":"boolean"}
 
-.. _i_cbc40bad95bddbd536eeab0a92f483af:
-
 **Latest_policies schema:**
 
 
@@ -1120,8 +1092,6 @@ In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 Map of {"key":":ref:`DCAEPolicy <d_1e3e880a733b457b648bd8c99e6c859c>`"}
 
 
-
-.. _i_0ce52a29e44aa0cc7929fe7b555551bc:
 
 **Removed_policies schema:**
 

@@ -1502,7 +1502,6 @@ DCAEServiceGroupByResultsPropertyValues Model Structure
         dcaeServiceQueryLink | No | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  | Link.title is the DCAE service property value. Following this link will provide a list of DCAE services that all have this property value.
         propertyValue | No | string |  |  | 
 
-.. _d_81c18e0dd7a3af8fb1ba658e72907e7b:
 
 DCAEServiceRequest Model Structure
 ----------------------------------
@@ -1544,7 +1543,6 @@ DCAEServiceType Model Structure
         typeVersion | Yes | integer | int32 |  | Version number for this DCAE service type
         vnfTypes | No | array of string |  |  | 
 
-.. _d_57dc24aa38507ded2f27eec90206336e:
 
 DCAEServiceTypeRequest Model Structure
 --------------------------------------
