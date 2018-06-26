@@ -32,6 +32,7 @@ Following Helm conventions, each Helm chart directory usually consists of the fo
 * charts: subdirectory for sub-charts.
 
 The dcaegen2 chart has the following sub-charts:
+
 * dcae-bootstrap: a Kubernetes job that deploys additional DCAE components;
 * dcae-cloudify-manager: a Kubernetes deployment of a Cloudify Manager;
 * dcae-healthcheck: a Kubernetes deployment that provides a DCAE health check API;
