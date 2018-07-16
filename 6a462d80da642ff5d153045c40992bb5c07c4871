@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_b0e65e43",
+        "filename": "docs/sections/services/serviceindex.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-07-16T18:54:43Z",
+      "side": 1,
+      "message": "Thanks for catching it; this is fixed in latest patch",
+      "parentUuid": "1a9dcd25_d5ee7cb4",
+      "range": {
+        "startLine": 13,
+        "startChar": 3,
+        "endLine": 13,
+        "endChar": 23
+      },
+      "revId": "6a462d80da642ff5d153045c40992bb5c07c4871",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a9dcd25_9530f457",
         "filename": "docs/sections/services/serviceindex.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-07-16T16:26:06Z",
       "side": 1,
       "message": "Same comment as above.",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 23
+      },
+      "revId": "6a462d80da642ff5d153045c40992bb5c07c4871",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_d0e3ea31",
+        "filename": "docs/sections/services/serviceindex.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-07-16T18:54:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a9dcd25_9530f457",
       "range": {
         "startLine": 14,
         "startChar": 3,
