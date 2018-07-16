@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9dcd25_d5ee7cb4",
+        "filename": "docs/sections/services/serviceindex.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 19
+      },
+      "writtenOn": "2018-07-16T16:26:06Z",
+      "side": 1,
+      "message": "This reference should be relative to the location where serviceindex.rst is located.   You can find these by looking at the console log for warnings about dcaegen2 For example \n\n13:48:04  /w/workspace/doc-master-verify-rtd/docs/submodules/dcaegen2.git/docs/sections/services/serviceindex.rst:10: WARNING: toctree contains reference to nonexisting document u\u0027submodules/dcaegen2.git/docs/sections/services/sections/services/snmptrap/index\u0027\n\n13:48:04  /w/workspace/doc-master-verify-rtd/docs/submodules/dcaegen2.git/docs/sections/services/serviceindex.rst:10: WARNING: toctree contains reference to nonexisting document u\u0027submodules/dcaegen2.git/docs/sections/services/sections/services/ves-http/index\u0027",
+      "range": {
+        "startLine": 13,
+        "startChar": 3,
+        "endLine": 13,
+        "endChar": 23
+      },
+      "revId": "6a462d80da642ff5d153045c40992bb5c07c4871",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_9530f457",
+        "filename": "docs/sections/services/serviceindex.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 19
+      },
+      "writtenOn": "2018-07-16T16:26:06Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 23
+      },
+      "revId": "6a462d80da642ff5d153045c40992bb5c07c4871",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
