@@ -3,9 +3,9 @@ project: 'dcaegen2'
 project_creation_date: '2017-06-28'
 lifecycle_state: 'Incubation'
 project_lead: &onap_releng_ptl
-    name: 'Lusheng Ji'
-    email: 'lji@research.att.com'
-    id: 'wrider'
+    name: 'Vijay Venkatesh Kumar'
+    email: 'vv770d@att.com'
+    id: 'vv770d'
     company: 'ATT'
     timezone: 'America/New York'
 primary_contact: *onap_releng_ptl
