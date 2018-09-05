@@ -36,8 +36,8 @@ attributes obtained from configuration binding service ("CBS").
    snmp_agent_1 -> SNMPTRAP;
    snmp_agent_2 -> SNMPTRAP;
    snmp_agent_n -> SNMPTRAP;
-   config binding service -> SNMPTRAP;
-   SNMPTRAP -> dmaap mr;
+   config_binding_service -> SNMPTRAP;
+   SNMPTRAP -> dmaap_mr;
 
    group l1 {
     color = orange;
@@ -49,11 +49,11 @@ attributes obtained from configuration binding service ("CBS").
     }
    group l3 {
     color = orange;
-    dmaap mr;
+    dmaap_mr;
     }
    group l4 {
     color = gray;
-    config binding service;
+    config_binding_service;
     }
 
    }
@@ -71,12 +71,11 @@ subscribed to the topic they were published to.
 Usage Scenarios
 ---------------
 
-**SNMPTRAP** can be run on any device (physical, logical, container) that
-is capable of running python 3.6+ and has SNMP traps targeted at it.  Running
+**SNMPTRAP** runs in a docker container based on python 3.6.  Running
 an instance of **SNMPTRAP** will result in arriving traps being published
 to the topic specified by config binding services.  If CBS is not present,
 SNMPTRAP will look for or a JSON configuration file specified via the
-environment vvariable CBS_SIM_JSON at startup.  Note that relative paths
+environment variable CBS_SIM_JSON at startup.  Note that relative paths
 will be located from the bin (<SNMPTRAP base directory>/bin directory. E.g.
 
 .. code-block:: bash
