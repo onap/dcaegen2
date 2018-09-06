@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_70a26dfe",
+        "filename": "docs/sections/services/snmptrap/consumedapis.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-09-06T15:35:52Z",
+      "side": 1,
+      "message": "Consumed api should indicate cbs and dmaap api\u0027s used. Current content seems duplicate to offeredapi.rst.",
+      "revId": "61bd0e6097a97994230fe76bd4de0c8aedf3d11a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
