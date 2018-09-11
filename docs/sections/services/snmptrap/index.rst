@@ -7,5 +7,15 @@ SNMP TRAP COLLECTOR MS (DCAE)
 
 .. Add or remove sections below as appropriate for the platform component.
 
-Trap collector overview and functions to be listed
+.. toctree::
+   :maxdepth: 1
 
+   ./architecture.rst
+   ./delivery.rst
+   ./offeredapis.rst
+   ./logging.rst
+   ./installation.rst
+   ./configuration.rst
+   ./administration.rst
+   ./humaninterfaces.rst
+   ./release-notes.rst
