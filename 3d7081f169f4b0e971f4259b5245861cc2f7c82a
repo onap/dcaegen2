@@ -1,0 +1,11 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Przemyslaw Wasala <przemyslaw.wasala@nokia.com>
+Code-Review+1: Michal Dziedzic <michal.1.dziedzic@nokia.com>
+Code-Review+1: Jakub Dudycz <jakub.dudycz@nokia.com>
+Code-Review+1: Marcin Migdal <marcin.migdal@nokia.com>
+Code-Review+2: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-by: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-at: Thu, 13 Sep 2018 21:12:05 +0000
+Reviewed-on: https://gerrit.onap.org/r/66345
+Project: dcaegen2
+Branch: refs/heads/master
