@@ -1,0 +1,76 @@
+---
+swagger: '2.0'
+info:
+  description: This page lists all the rest apis for PRH app server.
+  version: '1.0'
+  title: PRH app server
+host: localhost:8100
+basePath: "/"
+tags:
+- name: heartbeat-controller
+  description: Check liveness of PRH service
+- name: schedule-controller
+  description: Schedule Controller
+paths:
+  "/heartbeat":
+    get:
+      tags:
+      - heartbeat-controller
+      summary: Returns liveness of PRH service
+      operationId: heartbeatUsingGET
+      produces:
+      - "*/*"
+      responses:
+        '200':
+          description: PRH sevice is living
+          schema:
+            "$ref": "#/definitions/Mono«ResponseEntity«string»»"
+        '401':
+          description: You are not authorized to view the resource
+        '403':
+          description: Accessing the resource you were trying to reach is forbidden
+        '404':
+          description: The resource you were trying to reach is not found
+  "/start":
+    get:
+      tags:
+      - schedule-controller
+      summary: Start scheduling worker request
+      operationId: startTasksUsingGET
+      produces:
+      - "*/*"
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Mono«ResponseEntity«string»»"
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  "/stopPrh":
+    get:
+      tags:
+      - schedule-controller
+      summary: Stop scheduling worker request
+      operationId: stopTaskUsingGET
+      produces:
+      - "*/*"
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Mono«ResponseEntity«string»»"
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  Mono«ResponseEntity«string»»:
+    type: object
+    title: Mono«ResponseEntity«string»»
+

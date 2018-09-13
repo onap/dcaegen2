@@ -10,5 +10,6 @@ DCAEGEN2 Components Offered APIs
    apis/inventory.rst
    apis/ves.rst
    apis/dcaecdap.rst
+   apis/PRH.rst
 
 
