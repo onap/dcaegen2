@@ -20,10 +20,10 @@ During the registration process, DCAE components also register a health-check AP
 More over, Consul's distributed K-V store service is the foundation for DCAE to distribute and manage component configurations where each key is based on the unique identity of a DACE component, and the value is the configuration for the corresponding component.  DCAE platform creates and updates the K-V pairs based on information provided as part of the control loop blueprint, or received from other ONAP components such as Policy Framework and SDC.  Either through periodically polling or proactive pushing, the DCAE components get the configuration updates in realtime and apply the configuration updates.  DCAE Platform also offers dynamic template resolution for configuration parameters that are dynamic and only known by the DCAE platform, such as dynamically provisioned DMaaP topics.  
 
 
-DCAE R2 Components
+DCAE R3 Components
 ------------------
 
-The following list displays the details of what are included in ONAP DCAE R2.  All DCAE R2 components are offered as Docker containers.  Following ONAP level deployment methods, these components can be deployed as Docker containers running on Docker host VM that is launched by OpenStack Heat Orchestration Template; or as Kubernetes Deployments and Services by Helm.  
+The following list displays the details of what are included in ONAP DCAE R3.  All DCAE R3 components are offered as Docker containers.  Following ONAP level deployment methods, these components can be deployed as Docker containers running on Docker host VM that is launched by OpenStack Heat Orchestration Template; or as Kubernetes Deployments and Services by Helm.  
 
 - DCAE Platform
     - Core Platform
@@ -43,19 +43,23 @@ The following list displays the details of what are included in ONAP DCAE R2.  A
     - Collectors
         - Virtual Event Streaming (VES) collector
         - SNMP Trap collector
+        - High-Volume VES collector (HV-VES)
+        - DataFile collector
     - Analytics
         - Holmes correlation analytics
-        - Threshold Crosssing Analytics (TCA)
+        - CDAP based Threshold Crosssing Analytics application (tca)
+        - Dockerized standalone TCA (tca-gen2)
     - Microservices
         - PNF Registration Handler
         - Missing Heartbeat analytics
         - Universal Data Mapper service
 
 
-The fingure below shows the DCAE R2 architecture and how the components work with each other.  Among the components, blue boxes represent platform components; white boxes represent service components; purple boxes represent other ONAP components that DCAE Platform interfaces with; and orange pieces represent operator or operator like actors.
+The figure below shows the DCAE R3 architecture and how the components work with each other.  The components on the right constitute the Platform/controller components which are statically deployed. The components on the right represent the services which can be both deployed statically or dynamically (via CLAMP)  
 
-.. image:: images/architecture.gif
+.. image:: images/R3_architecture_diagram.gif
  
+Note: PM-Mapper was descoped from R3
 
 Deployment Scenarios
 --------------------
@@ -64,19 +68,23 @@ Because DCAE service components are deployed on-demand following the control loo
 
 For R2, ONAP supports two deployment methodologies: Heat Orchestration Template method, or Helm Chart method. No matter which method, DCAE is deployed following the same flow.  At its minimum, only the TOSCA model executor, the DCAE Cloudify Manager, needs to be deployed through the ONAP deployment process.  Once the Cloudify Manager is up and running, all the rest of DCAE platform can be deployed by a bootstrap script, which makes a number of calls into the Cloudify Manager API with Blueprints for various DCAE components, first the DCAE Platform components, then the service components that are needed for the built-in control loops, such as vFW/vDNS traffic throttling.  It is also possible that additional DCAE components are also launched as part of the ONAP deployment process using the ONAP level method instead of TOSCA model based method.
 
-More details of the DCAE R2 deployment will be covered by the Installation section.
+More details of the DCAE R3 deployment will be covered by the Installation section.
 
 
 Usage Scenarios
 ---------------
 
-For ONAP R2 DCAE participates in the following use cases.
+For ONAP R3 DCAE participates in the following use cases.
 
-- vDNS/vFW:  VES collector, TCA analytics
+- vDNS:  VES collector, TCA analytics
+
+- vFW:  VES collector, TCA analytics
 
 - vCPE:  VES collector, TCA analytics
 
 - vVoLTE:  VES collector, Holmes analytics
+
+- OSAM/PNF: VES Collector, PRH
 
 In addition, DCAE supports on-demand deployment and configuration of service components via CLAMP.  In such case CLAMP invokes the deployment and configuration of additional TCA instances.
 

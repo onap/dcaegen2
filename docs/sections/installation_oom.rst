@@ -4,13 +4,13 @@
 Helm Chart Based DCAE Deployment
 ================================
 
-This document describes the details of the Helm Chart based deployment process for R2 ONAP and how DCAE is deployed through this process.
+This document describes the details of the Helm Chart based deployment process for R3 ONAP and how DCAE is deployed through this process.
 
 
 ONAP Deployment Overview
 ------------------------
 
-ONAP R2 supports Kubernetes deployment.  Kuberenetes is a container orchestration technology that organizes containers into composites of various patterns for easy deployment, management, and scaling.  R2 ONAP utilizes Kubernetes as the foundation for fulfilling its platform maturity promises.
+ONAP R3 is extention to R2 Kubernetes deployment.  Kuberenetes is a container orchestration technology that organizes containers into composites of various patterns for easy deployment, management, and scaling.  R2 ONAP utilizes Kubernetes as the foundation for fulfilling its platform maturity promises.
 
 Further, R2 ONAP manages Kubernetes specifications using Helm Charts, under which all Kuberentes yaml-formatted resource specifications and additional files are organized into a hierarchy of charts, sub-charts, and resources.  These yaml files are further augmented with Helm's templating, which makes dependencies and cross-references of parameters and parameter derivatives among resources manageable for a large and complex Kuberentes system such as ONAP.
 
@@ -57,7 +57,7 @@ The dcae-bootstrap job has a number of prerequisites because the subsequently de
   * msb-discovery;
   * kube2msb.
 
-Once started, the DCAE bootstrap job will call Cloudify Manager to deploy a series of Blueprints which specify the additional DCAE R2 components.  These Blueprints are almost identical to the Docker container Blueprints used by DACE R1 and Heat based R2 deployment, except that they are using the k8splugin instead of dockerplugin.  The k8splugin is a major contribution of DCAE R2.  It is a Cloudify Manager plugin that is capable of expanding a Docker container node definition into a Kubernetes deployment definition, with enhancements such as replica scaling, ONAP logging sidecar, MSB registration, etc.
+Once started, the DCAE bootstrap job will call Cloudify Manager to deploy a series of Blueprints which specify the additional DCAE R3 components.  These Blueprints are almost identical to the Docker container Blueprints used by DACE R1 and Heat based R2 deployment, except that they are using the k8splugin instead of dockerplugin.  The k8splugin is a major contribution of DCAE R2.  It is a Cloudify Manager plugin that is capable of expanding a Docker container node definition into a Kubernetes deployment definition, with enhancements such as replica scaling, ONAP logging sidecar, MSB registration, etc.
 
 The additional DCAE components launched into ONAP deployment are:
   * deploy/dep-config-binding-service;
@@ -69,7 +69,10 @@ The additional DCAE components launched into ONAP deployment are:
   * deploy/dep-inventory;
   * deploy/dep-policy-handler;
   * deploy/dep-pstg-write;
-  * deploy/dep-service-change-handler.
+  * deploy/dep-service-change-handler;
+  * deploy/dep-dcae-snmptrap-collector;
+  * deploy/dep-dcae-prh;
+  * deploy/dep-dcae-hv-ves-collector.
 
 
 DCAE Configuration

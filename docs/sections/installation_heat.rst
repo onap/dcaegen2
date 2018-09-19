@@ -10,7 +10,7 @@ This document describes the details of the OpenStack Heat Orchestration Template
 ONAP Deployment Overview
 ------------------------
 
-ONAP R2 supports an OpenStack Heat template based system deployment.  The Heat Orchestration Template file and its parameter input file can be found under the **heat/ONAP** directory of the **demo** repo.  
+ONAP R3 supports an OpenStack Heat template based system deployment.  The Heat Orchestration Template file and its parameter input file can be found under the **heat/ONAP** directory of the **demo** repo.  
 
 When a new "stack" is created using the template, the following virtual resources will be launched in the target OpenStack tenant:
 
@@ -50,9 +50,9 @@ Firstly, during the execution of the dcae2_vm_init.sh script, files under the **
 
 In addition, the dcae2_vm_init.sh script also calls the scripts to register the components with Consul about their health check APIs, and their default configurations.
 
-Next, the dcae2_vm_init.sh script deploys the resources defined in the docker-compose-1.yaml and docker-compose-2.yaml files, with proper waiting in between to make sure the resource in docker-compose-1.yaml file have entered ready state before deploying the docker-compose-2.ayml file because the formers are the dependencies of the latter.  These resources are a number of services components and their minimum supporting platform components (i.e. Consul server and Config Binding Service).  With these resources, DCAE is able to provide a minimum configuration that supports the ONAP R2 use cases, namely, the vFW/vDNS, vCPE, cVoLTE use cases.  However, lacking the DCAE full platform, this configuration does not support CLAMP and Policy update from Policy Framework.  The only way to change the configurations of the service components (e.g. publishing to a different DMaaP topic) can only be accomplished by changing the value on the Consul for the KV of the service component, using Consul GUI or API call.
+Next, the dcae2_vm_init.sh script deploys the resources defined in the docker-compose-1.yaml and docker-compose-2.yaml files, with proper waiting in between to make sure the resource in docker-compose-1.yaml file have entered ready state before deploying the docker-compose-2.yaml file because the formers are the dependencies of the latter.  These resources are a number of services components and their minimum supporting platform components (i.e. Consul server and Config Binding Service).  With these resources, DCAE is able to provide a minimum configuration that supports the ONAP R2 use cases, namely, the vFW/vDNS, vCPE, cVoLTE use cases.  However, lacking the DCAE full platform, this configuration does not support CLAMP and Policy update from Policy Framework.  The only way to change the configurations of the service components (e.g. publishing to a different DMaaP topic) can only be accomplished by changing the value on the Consul for the KV of the service component, using Consul GUI or API call.
 
-For more complete deployment, the dcae2_vm_init.sh script further deploys docker-compose-3.yaml file, which deploys the rest of the DCAE platform components, and if configured so docker-compose-4.yaml file, which deploys DCAE R2 stretch goal service components such as PRH, Missing Heartbeat, etc.
+For more complete deployment, the dcae2_vm_init.sh script further deploys docker-compose-3.yaml file, which deploys the rest of the DCAE platform components, and if configured so docker-compose-4.yaml file, which deploys DCAE R3 stretch goal service components such as PRH, Missing Heartbeat,HV-VES, DataFile etc.
 
 After all DCAE components are deployed, the dcae2_vm_init.sh starts to provide health check results.  Due to the complexity of the DCAE system, a proxy is set up for returning a single binary result for DCAE health check instead of having each individual DCAE component report its health status.  To accomplish this, the dcae2_vm_init.sh script deploys a Nginx reverse proxy then enters an infinite health check loop.  
 
@@ -64,10 +64,10 @@ If the DCAE system is considered healthy, the dcae2_vm_init.sh script will gener
 Heat Template Parameters
 ------------------------
 
-In DCAE R2, the configuration for DCAE deployment in Heat is greatly simplified.  In addition to paramaters such as docker container image tags, the only parameter that configures DCAE deployment behavior is dcae_deployment_profiles.
+In DCAE R3, the configuration for DCAE deployment in Heat is greatly simplified.  In addition to paramaters such as docker container image tags, the only parameter that configures DCAE deployment behavior is dcae_deployment_profiles.
 
 * dcae_deployment_profile: the parameter determines which DCAE components (containers) will be deployed.  The following profiles are supported for R2:
-    * R2MVP: This profile includes a minimum set of DACE components that will support the vFW/vDNS, vCPE. and vVoLTE use cases.  It will deploy the following components: 
+    * R3MVP: This profile includes a minimum set of DACE components that will support the vFW/vDNS, vCPE. and vVoLTE use cases.  It will deploy the following components: 
         * Consul server,
         * Config Binding Service,
         * Postgres database,
@@ -75,13 +75,13 @@ In DCAE R2, the configuration for DCAE deployment in Heat is greatly simplified.
         * TCA analytics
         * Holmes rule management
         * Holmes engine management.
-    * R2: This profile also deploys the rest of the DCAE platform.  With R2 deployment profile, DCAE supports CLAMP and full control loop functionalities.  These additional components are:
+    * R3: This profile also deploys the rest of the DCAE platform.  With R3 deployment profile, DCAE supports CLAMP and full control loop functionalities.  These additional components are:
         * Cloudify Manager,
         * Deployment Handler,   
         * Policy Handler,
         * Service Change Handler,
         * Inventory API.
-    * R2PLUS: This profile deploys the DCAE R2 stretch goal service components, namely:
+    * R3PLUS: This profile deploys the DCAE R2 stretch goal service components, namely:
         * PNF Registration Handler,
         * SNMP Trap collector,
         * Missing Heartbeat Detection analytics,

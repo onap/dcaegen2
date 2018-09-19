@@ -36,16 +36,35 @@ Below is a list of the repos and their sub-modules, and the language they are wr
  - dcae-analytics-test (Java)
  - dpo (Java)
 
+* dcaegen2.analytics.tca-gen2
+ - dcae-analytics (Java)
+ - eelf-logger (Java)
+ 
 * dcaegen2.collectors
 
  - dcaegen2.collectors.snmptrap (Python)
  - dcaegen2.collectors.ves (Java)
+ - dcaegen2.collectors.hv-ves (Kotlin)
+ - dcaegen2.collectors.datafile (Java)
+
+* dcaegen2.services
+
+ - dcaegen2.services.heartbeat (Python)
+ - dcaegen2.services.prh (Java)
+ - dcaegen2.services.mapper (Java)
+
 
 * dcaegen2.deployments
 
  - bootstrap (bash)
  - cloud_init (bash)
  - scripts (bash, python)
+ - tls-init-container (bash)
+ - k8s-bootstrap-container (bash)
+ - healthcheck-container (Node.js)
+ - k8s-bootstrap-container (bash)
+ - pnda-bootstrap-container (bash)
+ - pnda-mirror-container (bash)
 
 * dcaegen2.platform
 
