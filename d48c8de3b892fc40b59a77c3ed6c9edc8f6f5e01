@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_6dd32660",
+        "filename": "docs/sections/apis/DFC.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-09-20T14:14:13Z",
+      "side": 1,
+      "message": "Remove PRH specific info",
+      "range": {
+        "startLine": 51,
+        "startChar": 1,
+        "endLine": 128,
+        "endChar": 109
+      },
+      "revId": "d48c8de3b892fc40b59a77c3ed6c9edc8f6f5e01",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
