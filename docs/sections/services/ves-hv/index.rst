@@ -2,15 +2,10 @@
 .. http://creativecommons.org/licenses/by/4.0
 
 
-Service components under DCAE
-=============================
+High Volume VNF Event Streaming (HV-VES) Collector
+==================================================
 
 .. Add or remove sections below as appropriate for the platform component.
 
-.. toctree::
-   :maxdepth: 1
-
-   ./snmptrap/index.rst
-   ./ves-http/index.rst
-   ./ves-hv/index.rst
+High Volume VES Collector overview and functions
 

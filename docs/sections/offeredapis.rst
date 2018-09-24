@@ -9,6 +9,7 @@ DCAEGEN2 Components Offered APIs
    apis/deployment-handler.rst
    apis/inventory.rst
    apis/ves.rst
+   apis/ves-hv.rst
    apis/dcaecdap.rst
    apis/PRH.rst
 
