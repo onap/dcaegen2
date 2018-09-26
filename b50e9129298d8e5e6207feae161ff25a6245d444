@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_2b941f43",
+        "filename": "docs/sections/services/ves-hv/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-09-26T11:49:56Z",
+      "side": 1,
+      "message": "Remove tunneled in SSL/TLS. It is implemented but not officially supported for now.\n\nConsider removing these measurements.",
+      "revId": "b50e9129298d8e5e6207feae161ff25a6245d444",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
