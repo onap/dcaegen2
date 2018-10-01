@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bada0100_16ab9c8a",
+        "filename": "docs/sections/services/ves-hv/design.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2018-10-01T07:38:23Z",
+      "side": 1,
+      "message": "It sounds strange, but maybe its just me. Do as you wish.",
+      "parentUuid": "bada0100_16dddc42",
+      "revId": "0fe4074afbbb66f0ca7e7fdbda8dd19a9359a5f3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bada0100_7631c8a1",
         "filename": "docs/sections/services/ves-hv/installation.rst",
         "patchSetId": 4
