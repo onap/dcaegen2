@@ -316,7 +316,7 @@ This is the initial release.
 
 **Security Issues**
 
-- The DCAE Bootstrap container needs to have a secret key for accessing VMs that it launches.  This key is currently passed in as a Heat template parameter.  Tracked by JIRA DCAEGEN2-178.
+- The DCAE Bootstrap container needs to have a secret key for accessing VMs that it launches.  This key is currently passed in as a Heat template parameter.  Tracked by JIRA `DCAEGEN2-178 <https://jira.onap.org/browse/DCAEGEN2-178>`_.>`_.
 - The RESTful API calls are generally not secure.  That is, they are either over http, or https without certificate verification.  Once there is an ONAP wide solution for handling certificates, DCAE will switch to https.
 
 
