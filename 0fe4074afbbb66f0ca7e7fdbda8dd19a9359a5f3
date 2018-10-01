@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bada0100_96022cb3",
+        "filename": "docs/sections/services/ves-hv/design.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2018-10-01T07:24:35Z",
+      "side": 1,
+      "message": "I think this should be: \"Analytics applications will have to be equipped with this new domain-specific PROTO file as well.\"",
+      "revId": "0fe4074afbbb66f0ca7e7fdbda8dd19a9359a5f3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bada0100_7631c8a1",
+        "filename": "docs/sections/services/ves-hv/installation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2018-10-01T07:24:35Z",
+      "side": 1,
+      "message": "Maybe it would be good to add an example here?",
+      "revId": "0fe4074afbbb66f0ca7e7fdbda8dd19a9359a5f3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
