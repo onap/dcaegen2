@@ -20,25 +20,26 @@
 syntax = "proto3";
 package org.onap.ves;
 
-message VesEvent {
+message VesEvent                            // top-level message, currently the maximum event size supported by the HV-VES Collector is 1 MiB
+{
     CommonEventHeader commonEventHeader=1;  // required
 
     bytes eventFields=2;                    // required, payload
-    // this field contains a domain-specific GPB message
-    // the field being opaque (bytes), the decoding of the payload occurs in a separate step
-    // the name of the GPB message for domain XYZ is XYZFields
-    // e.g. for domain==HVMEAS, the GPB message is HVMEASFields
+        // this field contains a domain-specific GPB message
+        // the field being opaque (bytes), the decoding of the payload occurs in a separate step
+        // the name of the GPB message for domain XYZ is XyzFields
+        // e.g. for domain==perf3gpp, the GPB message is Perf3gppFields
 }
 
 // VES CommonEventHeader adapted to GPB (Google Protocol Buffers)
-// Aligned with VES 7.0.1 schema, and extending to hvMeas Domain.
+// Aligned with VES 7.0.1 schema, and extending to Performance Domain.
 
 message CommonEventHeader
 {
-    string version = 1;                     // required, "version of the gpb common event header"
+    string version = 1;                     // required, "version of the gpb common event header", current value "1.0"
     string domain = 2;                      // required, "the eventing domain associated with the event", allowed values:
-    // FAULT, HEARTBEAT, MEASUREMENT, MOBILE_FLOW, OTHER, PNFREGISTRATION, SIP_SIGNALING,
-    // STATE_CHANGE, SYSLOG, THRESHOLD_CROSSING_ALERT, VOICE_QUALITY, HVMEAS
+                                            // fault, heartbeat, measurement, mobileFlow, other, pnfRegistration, sipSignaling,
+                                            // stateChange, syslog, thresholdCrossingAlert, voiceQuality, perf3gpp
 
     uint32 sequence = 3;                    // required, "ordering of events communicated by an event source instance or 0 if not needed"
 
@@ -68,7 +69,7 @@ message CommonEventHeader
     bytes sourceId = 15;                    // "UUID identifying the entity experiencing the event issue; must be populated by the ATT enrichment process"
     string sourceName = 16;                 // required, "name of the entity experiencing the event issued use A&AI entry"
     string timeZoneOffset = 17;             // "Offset to GMT to indicate local time zone for the device"
-    string vesEventListenerVersion = 18;    // required, "Version of the VesEvent Listener"
+    string vesEventListenerVersion = 18;    // required, "Version of the VesEvent Listener", current value "7.0.2"
 
     reserved "InternalHeaderFields";        // "enrichment fields for internal VES Event Listener service use only, not supplied by event sources"
     reserved 100;

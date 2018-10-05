@@ -1,0 +1,17 @@
+-- Wire Transfer Protocol (binary, defined using ASN.1 notation)
+-- Encoding: use "direct encoding" to the number of octets indicated in the comment [n], using network byte order.
+
+WTP DEFINITIONS ::= BEGIN
+
+-- Used to sent data from the data provider
+WtpData ::= SEQUENCE {
+    magic           INTEGER (0..255),           -- [1] always 0xAA
+    versionMajor    INTEGER (0..255),           -- [1] major interface version, forward incompatible with previous major version, current value: 1
+    versionMinor    INTEGER (0..255),           -- [1] minor interface version, forward compatible with previous minor version, current value: 0
+    reserved        OCTET STRING (SIZE (3)),    -- [3] reserved for future use (ignored, but use 0)
+    payloadId       INTEGER (0..65535),         -- [2] payload type: 0x0000=undefined, 0x0001=ONAP VesEvent (protobuf)
+    payloadLength   INTEGER (0..4294967295).    -- [4] payload length in octets
+    payload         OCTET STRING                -- [length as per payloadLength]
+}
+
+END

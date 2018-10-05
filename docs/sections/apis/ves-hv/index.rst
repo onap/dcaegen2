@@ -5,7 +5,7 @@
 HV-VES (High Volume VES)
 ========================
 
-:Date: 2018-09-24
+:Date: 2018-10-05
 
 .. contents::
     :depth: 3
@@ -16,7 +16,7 @@ Overview
 
 Component description can be found under `HV-VES Collector`_.
 
-.. _HV-VES Collector: ../services/ves-hv/index.html
+.. _HV-VES Collector: ../../services/ves-hv/index.html
 
 
 TCP Endpoint
@@ -26,6 +26,11 @@ HV-VES is exposed as NodePort service on Kubernetes cluster on port 30222/tcp.
 It uses plain TCP connections tunneled in SSL/TLS or can be run in insecure manner without data encryption on the socket.
 Without TLS client authentication/authorization is not possible.
 Connections are stream-based (as opposed to request-based) and long running.
+
+Communication is wrapped with thin Wire Transfer Protocol, which mainly provides delimitation.
+
+.. literalinclude:: WTP.asn
+    :language: asn
 
 Payload is binary-encoded, currently using Google Protocol Buffers representation of the VES Common Header.
 
