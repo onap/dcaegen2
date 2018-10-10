@@ -23,7 +23,7 @@ DFC is delivered as one **Docker container** which hosts application server and 
 
 Functionality
 =============
-../images/DFC.png
+.. image:: ../images/DFC.png
 
 
 Paths
@@ -77,6 +77,18 @@ Compiling DFC
 Whole project (top level of DFC directory) and each module (sub module directory) can be compiled using
 `mvn clean install` command.
 
+Configuration file: Config/datafile_endpoints.json
+
+Main API Endpoints
+==================
+
+Running with dev-mode of DFC
+    - Heartbeat: **http://<container_address>:8100/heartbeat** or **https://<container_address>:8433/heartbeat**
+    - Start DFC: **http://<container_address>:8100/start** or **https://<container_address>:8433/start**
+    - Stop DFC: **http://<container_address>:8100/stopDatafile** or **https://<container_address>:8433/stopDatafile**
+    
+The external port allocated for 8100 (http) is 30245.
+
 Maven GroupId:
 ==============
 
@@ -93,5 +105,5 @@ Maven Children Artifacts:
 1. datafile-app-server: DFC server
 2. datafile-dmaap-client: Contains implementation of DmaaP client
 3. datafile-commons: Common code for whole DFC modules
-
+4. docker-compose: Contains the docker-compose
 
