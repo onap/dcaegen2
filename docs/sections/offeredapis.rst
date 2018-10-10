@@ -12,5 +12,6 @@ DCAEGEN2 Components Offered APIs
    apis/ves-hv/index.rst
    apis/dcaecdap.rst
    apis/PRH.rst
+   apis/DFC.rst
 
 
