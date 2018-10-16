@@ -4,36 +4,121 @@
 Installation
 ============
 
-**SNMPTRAP** is delivered as a docker container.  The host or VM that
-will run this container must have the docker application loaded and
-available to the userID that will be running the SNMPTRAP container.
-
-The instructions below will download and run the latest SNMPTRAP
-container from the NEXUS repository.
-
-Environment
------------
-
 An environment suitable for running docker containers is recommended.
 If that is not available, SNMPTRAP source can be downloaded and run
 in a VM or on baremetal.  
 
+Both scenarios are documented below.
+
+As a docker container
+---------------------
+
+Installation
+^^^^^^^^^^^^
+
+**SNMPTRAP** is delivered as a docker container based on python 3.6.  The 
+host or VM that will run this container must have the docker application 
+loaded and available to the userID that will be running the SNMPTRAP container.
+
 If running from a docker container, it is assumed that the config
-binding service has been installed and is successfully instantiating
-container configurations as needed.
+binding service has been installed and is successfully providing valid
+configuration assets to instantiated containers as needed.
 
 Also required is a working DMAAP/MR message router environment.  SNMPTRAP
-publishes traps to DMAAP/MR as JSON messages, and expect the host
+publishes traps to DMAAP/MR as JSON messages, and expects the host
 resources and publishing credentials to be included in the CONFIG
 BINDING SERVICE config.
 
-Steps
------
-
-The following command will download the latest snmptrap container
-from nexus and launch it in the container named "snmptrap":
+The following command will download the latest SNMPTRAP container from
+nexus and launch it in the container named "SNMPTRAP":
 
 .. code-block:: bash
 
-    docker run --detach -t --rm -p 162:6162/udp -P --name=snmptrap nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.snmptrap ./bin/snmptrapd.sh start
+    docker run --detach -t --rm -p 162:6162/udp -P --name=SNMPTRAP nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.snmptrap ./bin/snmptrapd.sh start
+
+Running an instance of **SNMPTRAP** will result in arriving traps being published
+to the topic specified by config binding services.  
+
+Standalone
+----------
+
+**SNMPTRAPD** can also be run outside of a container environment, without CBS interactions. 
+If CBS is not present, SNMPTRAP will look for a JSON configuration file specified via the
+environment variable CBS_SIM_JSON at startup.  Location of this file should be specified
+as a relative path from the <SNMPTRAP base directory>/bin directory. E.g.
+
+Installation
+^^^^^^^^^^^^
+
+Prerequisites
+"""""""""""""
+
+trapd requires the following to run in a non-docker environment:
+
+    - Python 3.6+
+    - Python module “pysnmp” 4.4.5
+    - Python module “requests” 2.18.3
+
+To install prerequisites:
+
+.. code-block:: bash
+
+    export PATH=<path to Python 3.6 binary>:$PATH
+    pip3 install requests==2.18.3 
+    pip3 install pysnmp==4.4.5
+
+Download latest trapd version from Gerrit
+"""""""""""""""""""""""""""""""""""""""""
+
+Download a copy of the latest trapd image from gerrit in it's standard runtime location:
+
+.. code-block:: bash
+
+    cd /opt/app
+    git clone ssh://<your linux foundation id>@gerrit.onap.org:29418/dcaegen2/collectors/snmptrap snmptrap
+
+"Un-dockerize"
+""""""""""""""
+
+.. code-block:: bash
+
+    mv /opt/app/snmptrap/snmptrap /opt/app/snmptrap/bin
+
+Configure for your environment
+""""""""""""""""""""""""""""""
+
+In a non-docker environment, ONAP trapd is controlled by a locally hosted JSON configuration file.  It is 
+referenced in the trapd startup script as:
+
+.. code-block:: bash
+
+    CBS_SIM_JSON=../etc/snmptrapd.json
+
+
+This file should be in the exact same format is the response from CBS in a fully implemented container/controller environment.  A sample file is included with source/container images, at:
+
+.. code-block:: bash
+
+    /opt/app/snmptrap/etc/snmptrapd.json
+
+Make applicable changes to this file - typically things that will need to change include: 
+
+.. code-block:: bash
+
+    "topic_url": "http://localhost:3904/events/ONAP-COLLECTOR-SNMPTRAP"
+
+Action:  Change 'localhost' and topic name (ONAP-COLLECTOR-SNMPTRAP) to desired values in your environment.
+
+.. code-block:: bash
+
+    "snmpv3_config" (needed only when SNMPv3 agents are present)
+
+Action:  Add/delete/modify entries as needed to align with SNMP agent configurations in a SNMPv3 environment.
+
+Start the application
+"""""""""""""""""""""
+
+.. code-block:: bash
+
+    nohup /opt/app/snmptrap/bin/snmptrapd.sh start > /opt/app/snmptrap/logs/snmptrapd.out 2>&1 &
 

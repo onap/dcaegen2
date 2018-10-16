@@ -18,17 +18,17 @@ running instance.  To accomplish this, you may:
    setting the "trap target" or "snmp manager" to the IP address
    of the running VM/container hosting SNMPTRAP.
 
-2. Mimic a SNMP trap using various freely available utilities.  Two
-   examples are provided below, be sure to change the target
+2. Simulate a SNMP trap using various freely available utilities.  Two
+   examples are provided below, *be sure to change the target
    ("localhost") and port ("162") to applicable values in your
-   environment.
+   environment.*
 
-Net-SNMP
---------
+Net-SNMP snmptrap
+-----------------
 
 .. code-block:: bash
 
-   snmptrap -d -v 1 -c public ${to_ip_address}:${to_portt} .1.3.6.1.4.1.99999 localhost 6 1 '55' .1.11.12.13.14.15  s "test trap"
+   snmptrap -d -v 1 -c not_public ${to_ip_address}:${to_portt} .1.3.6.1.4.1.99999 localhost 6 1 '55' .1.11.12.13.14.15  s "test trap"
 
 .. note::
 
@@ -36,8 +36,12 @@ Net-SNMP
    they can be ignored, the trap has successfully been sent to the
    specified destination.
 
-pysnmp
-------
+python using pysnmp
+-------------------
+
+A trap can also be sent using the python module *pysnmp* module.  To do this, create a python script
+called "send_trap.py" with the following contents.  You'll need to change the target (from "localhost" to 
+whatever the destination IP/hostname of the trap receiver is) before saving:
 
 .. code-block:: python
 
@@ -58,4 +62,12 @@ pysnmp
         if errorIndication:
             print(errorIndication)
         else:
-            print("successfully sent first trap example, number %d" % i)
+            print("successfully sent trap")
+
+To run the pysnmp example:
+
+.. code-block:: bash
+
+   python ./send_trap.py
+
+

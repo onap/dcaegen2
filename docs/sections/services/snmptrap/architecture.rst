@@ -7,13 +7,10 @@ Architecture
 **SNMPTRAP** (or "trapd", as in trap daemon) is a network facing ONAP platform
 component.
 
-The simple network management protocol (or "SNMP", for short) is a
-standardized communication protocol used between managed devices (physical,
-virtual - or anything in between!) and a management system.  It is used to
-relay data that can be valuable in the operation, fault identification and
-planning processes of all networks.
-
-It is the "front line" of management in all environments.
+The simple network management protocol (or "SNMP", for short) is a pervasive
+communication protocol standard used between managed devices and a management system.  
+It is used to relay data that can be valuable in the operation, fault identification 
+and planning processes of all networks.
 
 SNMP utilizes a message called a "trap" to inform SNMP managers of abnormal
 or changed conditions on a resource that is running a SNMP agent.  These
@@ -33,25 +30,36 @@ attributes obtained from configuration binding service ("CBS").
 
    blockdiag layers {
    orientation = portrait
+
+   snmp_agent_1 [stacked];
+   snmp_agent_2 [stacked];
+   snmp_agent_n [stacked];
+
    snmp_agent_1 -> SNMPTRAP;
    snmp_agent_2 -> SNMPTRAP;
    snmp_agent_n -> SNMPTRAP;
-   config_binding_service -> SNMPTRAP;
+
+   config_binding_service [shape = "database", stacked];
+   SNMPTRAP [shape = "diamond"];
+
+   config_binding_service <-> SNMPTRAP;
    SNMPTRAP -> dmaap_mr;
 
-   group l1 {
+   group 1 {
+    label = "SNMP Agents"
     color = orange;
     snmp_agent_1; snmp_agent_2; snmp_agent_n;
     }
-   group l2 {
+   group 2 {
+    label = "ONAP Trap Receiver"
     color = blue;
     SNMPTRAP;
     }
-   group l3 {
+   group 3 {
     color = orange;
     dmaap_mr;
     }
-   group l4 {
+   group 4 {
     color = gray;
     config_binding_service;
     }
@@ -74,7 +82,7 @@ Usage Scenarios
 **SNMPTRAP** runs in a docker container based on python 3.6.  Running
 an instance of **SNMPTRAP** will result in arriving traps being published
 to the topic specified by config binding services.  If CBS is not present,
-SNMPTRAP will look for or a JSON configuration file specified via the
+SNMPTRAP will look for a JSON configuration file specified via the
 environment variable CBS_SIM_JSON at startup.  Note that relative paths
 will be located from the bin (<SNMPTRAP base directory>/bin directory. E.g.
 
@@ -82,3 +90,6 @@ will be located from the bin (<SNMPTRAP base directory>/bin directory. E.g.
 
    CBS_SIM_JSON=../etc/snmptrapd.json
 
+Note that this file should be in the exact same format is the response from
+CBS in a fully implemented container/controller environment.  A sample file is
+included with source/container images.
