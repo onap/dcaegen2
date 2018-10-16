@@ -24,7 +24,7 @@ Usage
 
     stop -  terminate the snmptrapd process currently running inside container
 
-    restart - start an instance of snmptrapd inside current container
+    restart - restart an instance of snmptrapd inside current container (NOTE: this may cause container to stop, depending on how it was started!)
 
     status - check and display status of snmptrapd inside container
 
