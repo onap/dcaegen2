@@ -4,9 +4,9 @@
 Logging
 =======
 
-Logging is controlled by the configuration provided to **SNMPTRAP** by CBS,
+Logging is controlled by the configuration provided to **trapd** by CBS,
 or via the fallback config file specified as the environment
-variable "CBS_SIM_JSON" at startup.  The section of that JSON configuration
+variable "CBS_SIM_JSON" at startup.  The section of the JSON configuration
 that influences the various forms of application logging is referenced
 throughout this document, with examples.
 
@@ -17,8 +17,7 @@ filename for use by SNMPTRAP.
 
 Also available is the ability to modify how frequently logs are rolled to
 time-stamped versions (and a new empty file is started) as well as what
-severity level to log to program diagnostic logs.  Files will be rolled to
-an archived/timestamped version hourly.  The actual archival (to a
+severity level to log to program diagnostic logs.  The actual archival (to a
 timestamped filename) occurs when the first trap is
 received **in a new hour** (or minute, or day - depending
 on "roll_frequency" value).
@@ -30,20 +29,45 @@ Defaults are shown below:
     "files": {
         <other json data>
         ...
-        "roll_frequency": "hour",
-        "minimum_severity_to_log": 2
+        "roll_frequency": "day",
+        "minimum_severity_to_log": 3
         <other json data>
         ...
     },
 
 
-Where to Access Information: APPLICATION DATA (TRAPS)
------------------------------------------------------
+Roll Frequency
+""""""""""""""
 
-APPLICATION DATA (TRAPS)
-^^^^^^^^^^^^^^^^^^^^^^^^
+Roll frequency can be modified based on your environment (e.g. if trapd is handling a 
+heavy trap load, you will probably want files to roll more frequently).  Valid "roll_frequency" values are:
 
-**SNMPTRAP** produces application-specific logs (e.g. trap logs/payloads,
+- minute
+- hour
+- day
+
+Minimum Severity To Log
+"""""""""""""""""""""""
+
+Logging levels should be modified based on your need.  Log levels in lab environments should be "lower" 
+(e.g. minimum severity to log = "0" creates verbose logging) vs. production (values of "3" and above is a good choice).
+
+Valid "minimum_severity_to_log" values are:
+
+- "1"   (debug mode - everything you want to know about process, and more.  *NOTE:* Not recommended for production environments)
+- "2"   (info - verbose logging.  *NOTE:* Not recommended for production environments)
+- "3"   (warnings - functionality not impacted, but abnormal/uncommon event)
+- "4"   (critical - functionality impacted, but remains running)
+- "5"   (fatal - causing runtime exit)
+
+
+WHERE ARE THE LOG FILES?
+------------------------
+
+APPLICATION DATA
+^^^^^^^^^^^^^^^^
+
+**trapd** produces application-specific logs (e.g. trap logs/payloads,
 etc) as well as various other statistical and diagnostic logs.  The
 location of these logs is controlled by the JSON config, using these
 values:
@@ -51,7 +75,7 @@ values:
 .. code-block:: json
 
     "files": {
-        "**runtime_base_dir**": "/opt/app/snmptrap",
+        "runtime_base_dir": "/opt/app/snmptrap",
         "log_dir": "logs",
         "data_dir": "data",
         "pid_dir": "tmp",
@@ -84,7 +108,7 @@ above example would create the files:
 ARRIVING TRAPS
 ^^^^^^^^^^^^^^^
 
-**SNMPTRAP** logs all arriving traps.  These traps are saved in a
+**trapd** logs all arriving traps.  These traps are saved in a
 filename created by appending *runtime_base_dir*, *log_dir*
 and *arriving_traps_log* from the JSON config.  Using the example
 above, the resulting arriving trap log would be:
@@ -99,12 +123,12 @@ An example from this log is shown below:
 
     1529960544.4896748 Mon Jun 25 17:02:24 2018; Mon Jun 25 17:02:24 2018 com.att.dcae.dmaap.IST3.DCAE-COLLECTOR-UCSNMP 15299605440000 1.3.6.1.4.1.999.0.1 server001 127.0.0.1 server001 v2c 751564798 0f40196a-78bb-11e8-bac7-005056865aac , "varbinds": [{"varbind_oid": "1.3.6.1.4.1.999.0.1.1", "varbind_type": "OctetString", "varbind_value": "TEST TRAP"}]
 
-*(Add:  varbind type enumerations)*
+*NOTE:*  Format of this log will change with 1.5.0; specifically, "varbinds" section will be reformatted/json struct removed and will be replaced with a flat file format.  
  
 PUBLISHED TRAPS
 ^^^^^^^^^^^^^^^
 
-SNMPTRAP's first priority is to receive and decode SNMP traps, then
+SNMPTRAP's main purpose is to receive and decode SNMP traps, then
 publish the results to a configured DMAAP/MR message bus.  Traps that
 are successfully published (e.g. publish attempt gets a "200/ok"
 response from the DMAAP/MR server) are logged to a file named by
@@ -132,7 +156,7 @@ and
     "files": {
         "**runtime_base_dir**": "/opt/app/snmptrap",
 
-result in traps that are confirmed (200/ok) as published logged to the file:
+result in traps that are confirmed as published (200/ok response from DMAAP/MR) logged to the file:
 
 .. code-block:: bash
 
@@ -170,14 +194,14 @@ An example from this JSON log is shown below:
 EELF
 ^^^^
 
-For program/operational logging, **SNMPTRAP** follows the EELF logging
+For program/operational logging, **trapd** follows the EELF logging
 convention.  Please be aware that the EELF specification results in
 messages spread across various files.  Some work may be required to
 find the right location (file) that contains the message you are
 looking for.
 
 EELF logging is controlled by the configuration provided
-to **SNMPTRAP** by CBS, or via the fallback config file specified
+to **trapd** by CBS, or via the fallback config file specified
 as an environment variable "CBS_SIM_JSON" at startup.  The section
 of that JSON configuration that influences EELF logging is:
 
@@ -249,13 +273,24 @@ Messages will be in the general format of:
     2018-04-25T17:28:48,036|notif_receiver_cb|snmptrapd||||DETAILED|100||processing varbinds for 0f40196a-78bb-11e8-bac7-005056
     2018-04-25T17:28:48,040|notif_receiver_cb|snmptrapd||||DETAILED|100||adding 0f40196a-78bb-11e8-bac7-005056 to buffer
     
-    2018-06-25T21:02:24,491|notif_receiver_cb|snmptrapd||||DETAILED|100||trap 0f40196a-78bb-11e8-bac7-005056865aac : {"uuid": "0f40196a-78bb-11e8-bac7-005056865aac", "agent address": "192.168.1.139", "agent name": "server001", "cambria.partition": "server001", "community": "", "community len": 0, "epoch_serno": 15299605440000, "protocol version": "v2c", "time received": 1529960544.4896748, "trap category": "com.att.dcae.dmaap.IST3.DCAE-COLLECTOR-UCSNMP", "sysUptime": "751564798", "notify OID": "1.3.6.1.4.1.999.0.1", "notify OID len": 9, "varbinds": [{"varbind_oid": "1.3.6.1.4.1.999.0.1.1", "varbind_type": "OctetString", "varbind_value": "TEST TRAP"}]}
+    2018-06-25T21:02:24,491|notif_receiver_cb|snmptrapd||||DETAILED|100||trap 0f40196a-78bb-11e8-bac7-005056865aac : {"uuid": "0f40196a-78bb-11e8-bac7-005056865aac", "agent address": "192.168.1.139", "agent name": "server001", "cambria.partition": "server001", "community": "", "community len": 0, "epoch_serno": 15299605440000, "protocol version": "v2c", "time received": 1529960544.4896748, "trap category": "com.companyname.dcae.dmaap.location.DCAE-COLLECTOR-UCSNMP", "sysUptime": "751564798", "notify OID": "1.3.6.1.4.1.999.0.1", "notify OID len": 9, "varbinds": [{"varbind_oid": "1.3.6.1.4.1.999.0.1.1", "varbind_type": "OctetString", "varbind_value": "TEST TRAP"}]}
     2018-06-25T21:02:24,496|post_dmaap|snmptrapd||||DETAILED|100||post_data_enclosed: {"uuid": "0f40196a-78bb-11e8-bac7-005056865aac", "agent address": "192.168.1.139", "agent name": "server001", "cambria.partition": "server001", "community": "", "community len": 0, "epoch_serno": 15299605440000, "protocol version": "v2c", "time received": 1529960544.4896748, "trap category": "com.att.dcae.dmaap.IST3.DCAE-COLLECTOR-UCSNMP", "sysUptime": "751564798", "notify OID": "1.3.6.1.4.1.999.0.1", "notify OID len": 9, "varbinds": [{"varbind_oid": "1.3.6.1.4.1.999.0.1.1", "varbind_type": "OctetString", "varbind_value": "TEST TRAP"}]}
      
 
 Platform Status
 ^^^^^^^^^^^^^^^
 
+A permanent (left to user to archive/compress/etc) status file is maintained in the file referenced by:
+
+    **perm_status_file**
+
 .. code-block:: json
 
         "perm_status_file": "snmptrapd_status.log",
+
+Combined with **runtime_base_dir** and **log_dir** settings from snmptrapd.json, the perm_status_file in default installations
+can be found at:
+
+.. code-block:: json
+
+        /opt/app/uc/logs/snmptrapd_stats.log

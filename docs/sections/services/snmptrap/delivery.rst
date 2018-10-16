@@ -4,15 +4,20 @@
 Delivery
 ========
 
-**SNMPTRAP** is delivered as a docker container.  The host or VM that will
-run this container must have the docker application loaded and available
-to the userID that will be running the SNMPTRAP container.
+Docker Container
+----------------
 
-The following command will download the latest SNMPTRAP container from
-nexus and launch it in the container named "SNMPTRAP":
+**trapd** is delivered as a docker container that can be downloaded from onap:
+
+    ``docker run --detach -t --rm -p 162:6162/udp -P --name=SNMPTRAP nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.snmptrap ./bin/snmptrapd.sh start``
+
+
+Standalone
+----------
+
+**trapd** can also be run outside of a docker environment (for details, see "Installation" link) by downloading the source image from:
 
 .. code-block:: bash
 
-    docker run --detach -t --rm -p 162:6162/udp -P --name=SNMPTRAP nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.snmptrap ./bin/snmptrapd.sh start
-
+    gerrit.onap.org:29418/dcaegen2/collectors/snmptrap
 

@@ -13,7 +13,7 @@ Command Line
 ^^^^^^^^^^^^
 
 There is a command line interface available, which is a shell script
-that provides all needed interactions with **SNMPTRAP**.
+that provides all needed interactions with **trapd**.
 
 Usage
 """""
@@ -24,8 +24,8 @@ Usage
 
     stop -  terminate the snmptrapd process currently running inside container
 
-    restart - start an instance of snmptrapd inside current container
+    restart - restart an instance of snmptrapd inside current container (NOTE: this may cause container to exit depending on how it was started!)
 
     status - check and display status of snmptrapd inside container
 
-    reloadCfg - signal current instance of snmptrapd to re-request configuration from Config Binding Service
+    reloadCfg - signal current instance of snmptrapd to re-request configuration from Config Binding Service (NOTE: Known issue for configurations that include SNMPv3 credentials, this option will not work as expected)
