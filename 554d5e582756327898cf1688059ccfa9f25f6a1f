@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bada0100_f1fee2ad",
+        "filename": "docs/sections/apis/DFC.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-18T18:49:19Z",
+      "side": 1,
+      "message": "protocols",
+      "range": {
+        "startLine": 112,
+        "startChar": 17,
+        "endLine": 112,
+        "endChar": 26
+      },
+      "revId": "554d5e582756327898cf1688059ccfa9f25f6a1f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bada0100_5127ae64",
+        "filename": "docs/sections/apis/DFC.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-18T18:49:19Z",
+      "side": 1,
+      "message": "file",
+      "range": {
+        "startLine": 171,
+        "startChar": 14,
+        "endLine": 171,
+        "endChar": 19
+      },
+      "revId": "554d5e582756327898cf1688059ccfa9f25f6a1f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
