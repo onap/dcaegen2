@@ -84,10 +84,9 @@ In DCAE R3, the configuration for DCAE deployment in Heat is greatly simplified.
     * R3PLUS: This profile deploys the DCAE R2 stretch goal service components, namely:
         * PNF Registration Handler,
         * SNMP Trap collector,
+        * HV-VES Collector
         * Missing Heartbeat Detection analytics,
-        * Universal Mapper.
-
-
+        * Universal Mapper
 
 
 Tips for Manual Interventions

@@ -120,19 +120,21 @@ DCAE Service Endpoints
 ----------------------
 
 Below is a table of default hostnames and ports for DCAE component service endpoints in Kuubernetes deployment:
-    ==================   ============================      =================================
-    Component            Cluster Internal (host:port)      Cluster external (svc_name:port)
-    ==================   ============================      =================================
-    VES                  dcae-ves-collector:8080           xdcae-ves-collector.onap:30235
-    HV-VES               dcae-hv-ves-collector:6061        xdcae-hv-ves-collector.onap:30222
-    TCA                  dcae-tca-analytics:11011          xdcae-tca-analytics.onap:32010
-    Policy Handler       policy-handler:25577              NA
-    Deployment Handler   deployment-handler:8443           NA
-    Inventory            inventory:8080                    NA
-    Config binding       config-binding-service:10000      NA
-    DCAE Healthcheck     dcae-healthcheck:80               NA
-    Cloudify Manager     dcae-cloudify-manager:80          NA
-    ==================   ============================      =================================
+    ==================   ============================        ======================================================
+    Component            Cluster Internal (host:port)        Cluster external (svc_name:port)
+    ==================   ============================        ======================================================
+    VES                  dcae-ves-collector:8080             xdcae-ves-collector.onap:30235
+    HV-VES               dcae-hv-ves-collector:6061          xdcae-hv-ves-collector.onap:30222
+    TCA                  dcae-tca-analytics:11011            xdcae-tca-analytics.onap:32010
+    DataFileCollector    dcae-datafile-collector:8443/8100   xdcae-datafile-collector:8433:30224/TCP,8100:30223/TCP
+    SNMPTrap             dcae-snmptrap-collector:6162/udp    NA
+    Policy Handler       policy-handler:25577                NA
+    Deployment Handler   deployment-handler:8443             NA
+    Inventory            inventory:8080                      NA
+    Config binding       config-binding-service:10000        NA
+    DCAE Healthcheck     dcae-healthcheck:80                 NA
+    Cloudify Manager     dcae-cloudify-manager:80            NA
+    ==================   ============================        ======================================================
 
 In addition, a number of ONAP service endpoints that are used by DCAE components are listed as follows
 for reference by DCAE developers and testers:

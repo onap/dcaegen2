@@ -1,4 +1,4 @@
-DCAE Inventory API 2.1.0
+DCAE Inventory API 3.0.4
 ========================
 
 .. toctree::

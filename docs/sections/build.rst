@@ -51,7 +51,6 @@ Below is a list of the repos and their sub-modules, and the language they are wr
 
  - dcaegen2.services.heartbeat (Python)
  - dcaegen2.services.prh (Java)
- - dcaegen2.services.mapper (Java)
 
 
 * dcaegen2.deployments
