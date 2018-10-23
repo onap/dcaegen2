@@ -59,14 +59,14 @@ The figure below shows the DCAE R3 architecture and how the components work with
 
 .. image:: images/R3_architecture_diagram.gif
  
-Note: PM-Mapper was descoped from R3
+Note: Missing Heartbeat, Universal Data-mapper,  PM-Mapper descoped from R3
 
 Deployment Scenarios
 --------------------
 
 Because DCAE service components are deployed on-demand following the control loop needs for managing ONAP deployed services, DCAE must support dynamic and on-demand deployment of service components based on ONAP control loop demands.  This is why all other ONAP components are launched from the ONAP level method, DCAE only deploys a subset of its components during this ONAP deployment process and rest of DCAE components will be deployed either as TOSCA executor launches a series of Blueprints, or deployed by control loop request originated from CLAMP, or even by operator manually invoking DCAE's deployment API call.
 
-For R2, ONAP supports two deployment methodologies: Heat Orchestration Template method, or Helm Chart method. No matter which method, DCAE is deployed following the same flow.  At its minimum, only the TOSCA model executor, the DCAE Cloudify Manager, needs to be deployed through the ONAP deployment process.  Once the Cloudify Manager is up and running, all the rest of DCAE platform can be deployed by a bootstrap script, which makes a number of calls into the Cloudify Manager API with Blueprints for various DCAE components, first the DCAE Platform components, then the service components that are needed for the built-in control loops, such as vFW/vDNS traffic throttling.  It is also possible that additional DCAE components are also launched as part of the ONAP deployment process using the ONAP level method instead of TOSCA model based method.
+For R3, ONAP supports two deployment methodologies: Heat Orchestration Template method, or Helm Chart method. No matter which method, DCAE is deployed following the same flow.  At its minimum, only the TOSCA model executor, the DCAE Cloudify Manager, needs to be deployed through the ONAP deployment process.  Once the Cloudify Manager is up and running, all the rest of DCAE platform can be deployed by a bootstrap script, which makes a number of calls into the Cloudify Manager API with Blueprints for various DCAE components, first the DCAE Platform components, then the service components that are needed for the built-in control loops, such as vFW/vDNS traffic throttling.  It is also possible that additional DCAE components are also launched as part of the ONAP deployment process using the ONAP level method instead of TOSCA model based method.
 
 More details of the DCAE R3 deployment will be covered by the Installation section.
 

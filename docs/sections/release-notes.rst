@@ -94,16 +94,16 @@ Quick Links:
 
 The following components are upgraded from R2:
     - Cloudify Manager:
-       - Docker container tag: onap/org.onap.dcaegen2.deployments.cm-container:1.4.1
+       - Docker container tag: onap/org.onap.dcaegen2.deployments.cm-container:1.4.2
        - Description: R3 DCAE's Cloudify Manager container is based on Cloudify Manager Community Version 18.2.28, which is based on Cloudify Manager 4.3.
     - Bootstrap container: 
-       - Docker container tag: onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:1.4.2
+       - Docker container tag: onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:1.4.4
        - Description: R3 DCAE no longer uses bootstrap container for Heat based deployment, -- deployment is done through cloud-init scripts and docker-compose specifications.  The bootstrap is for OOM (Kubernetes) based deployment.
     - Configuration Binding Service: 
        - Docker container tag: onap/org.onap.dcaegen2.platform.configbinding.app-app:2.2.3
        - Description: Configuration Binding Sevice now supports the new configuration policy format and support for TLS
     - Deployment Handler
-       - Docker container image tag: onap/org.onap.dcaegen2.platform.deployment-handler:3.0.2
+       - Docker container image tag: onap/org.onap.dcaegen2.platform.deployment-handler:3.0.3
     - Policy Handler
        - Docker container image tag: onap/org.onap.dcaegen2.platform.policy-handler:4.3.1
        - Description: Policy Handler now supports the new configuration policy format and support for TLS
