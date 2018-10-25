@@ -1,0 +1,78 @@
+/*
+ * ============LICENSE_START=======================================================
+ * dcaegen2-collectors-veshv
+ * ================================================================================
+ * Copyright (C) 2018 NOKIA
+ * ================================================================================
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ============LICENSE_END=========================================================
+ */
+syntax = "proto3";
+package org.onap.ves;
+
+// Definition for RTPM, structure aligned with 3GPP PM format optimized for RTPM delivery pre-standard TS 28.550 V2.0.0 (2018-09).
+// Some field details are taken from 3GPP TS 32.436 V15.0.0 (2018-06) ASN.1 file.
+// Note (2018-09): work is in progress for 3GPP TS 28.550. Changes will be made, if needed, to align with final version.
+// Differences/additions to 3GPP TS 28.550 are marked with "%%".
+
+message MeasDataCollection                  // top-level message 
+{
+    // %% Combined messageFileHeader, measData (single instance), messageFileFooter (not needed: timestamp = collectionBeginTime + granularityPeriod).
+    string formatVersion = 1;               // required, current value "28.550 2.0"
+    uint32 granularityPeriod = 2;           // required, duration in seconds, %% moved from MeasInfo (single reporting period per event)
+    string measuredEntityUserName = 3;      // network function user definable name ("userLabel") defined for the measured entity in 3GPP TS 28.622
+    string measuredEntityDn = 4;            // DN as per 3GPP TS 32.300
+    string measuredEntitySoftwareVersion = 5;
+    repeated string measObjInstIdList = 6; // %%: optional, monitored object LDNs as per 3GPP TS 32.300 and 3GPP TS 32.432
+    repeated MeasInfo measInfo = 7; 
+}
+
+message MeasInfo
+{
+    oneof MeasInfoId {                      // measurement group identifier
+        uint32 iMeasInfoId = 1;             // identifier as integer (%%: more compact)
+        string measInfoId = 2;              // identifier as string (more generic)
+    }
+
+    oneof MeasTypes {                       // measurement identifiers associated with the measurement results
+        IMeasTypes iMeasTypes = 3;          // identifiers as integers (%%: more compact)
+        SMeasTypes measTypes = 4;           // identifiers as strings (more generic)
+    }
+    // Needed only because GPB does not support repeated fields directly inside 'oneof'
+    message IMeasTypes { repeated uint32 iMeasType = 1; }
+    message SMeasTypes { repeated string measType = 1; }
+
+    string jobId = 5;
+    repeated MeasValue measValues = 6;      // performance measurements grouped by measurement object
+}
+
+message MeasValue
+{
+    oneof MeasObjInstId {                   // monitored object LDN as per 3GPP TS 32.300 and 3GPP TS 32.432
+        string measObjInstId = 1;           // LDN itself
+        uint32 measObjInstIdListIdx = 2;    // %%: index into measObjInstIdList (zero-based)
+    }
+    repeated MeasResult measResults = 3;
+    bool suspectFlag = 4;
+    map<string, string> measObjAddlFlds = 5; // %%: optional per-object data (name/value HashMap)
+}
+
+message MeasResult
+{
+    uint32 p = 1;                           // Index in the MeasTypes array (zero-based), needed only if measResults has fewer elements than MeasTypes
+    oneof xValue {
+        sint64 iValue = 2;
+        double rValue = 3;
+        bool isNull = 4;
+    }
+}

@@ -1,0 +1,45 @@
+WTP:
+  -- direct encoding using ASN.1 notation - WTP.asn
+  magic: 0xAA
+  versionMajor: 0x01
+  versionMinor: 0x00
+  reserved: 0x00 0x00 0x00
+  payloadId: 0x00 0x01
+  -- payloadLength set to the highest value 1MiB = 1024 * 1024 = 1048576 B
+  payloadLength: 0x00 0x10 0x00 0x00
+  payload:
+    -- GPB encoded payload - VesEvent.proto
+      commonEventHeader:
+        version: "1.0"
+        domain: "perf3gpp"
+        sequence: 0
+        priority: 1
+        eventId: "sampleEventId01"
+        eventName: "sampleEventName01"
+        lastEpochMicrosec: 120034455
+        startEpochMicrosec: 120034455
+        reportingEntityName: "sampleEntityName"
+        sourceName: "sampleSourceName"
+        vesEventListenerVersion: "anotherVersion"
+      eventFields:
+        -- GPB encoded fields for perf3gpp domain - Perf3gppFields.proto
+        perf3gppFieldsVersion: "1.0"
+        measDataCollection:
+          -- GPB encoded RTPM - MeasDataCollection.proto
+          formatVersion: "28.550 2.0"
+          granularityPeriod: 5
+          measuredEntityUserName: "sampleEntityUserName"
+          measuredEntityDn: "sampleEntityDn"
+          measuredEntitySoftwareVersion: "1.0"
+          measInfo:
+            - measInfo1:
+              iMeasInfoId: 1
+              iMeasTypes: 1
+              jobId: "sampleJobId"
+              measValues:
+                - measValue1:
+                  measObjInstIdListIdx: 1
+                  measResults:
+                    p: 0
+                    sint64 iValue: 63888
+                    suspectFlag: false
