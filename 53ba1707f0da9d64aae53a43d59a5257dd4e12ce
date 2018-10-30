@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Piotr Jaszczyk <piotr.jaszczyk@nokia.com>
+Code-Review+1: Damian Nowak <damain.nowak@nokia.com>
+Code-Review+2: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-by: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-at: Tue, 30 Oct 2018 20:51:37 +0000
+Reviewed-on: https://gerrit.onap.org/r/71231
+Project: dcaegen2
+Branch: refs/heads/master
