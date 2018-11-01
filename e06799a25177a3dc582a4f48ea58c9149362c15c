@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_f59ff04e",
+        "filename": "docs/sections/apis/DFC.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2787
+      },
+      "writtenOn": "2018-11-01T13:14:20Z",
+      "side": 1,
+      "message": "Please make consistent with Heading 1 (Capitalization and ampersand)",
+      "range": {
+        "startLine": 126,
+        "startChar": 1,
+        "endLine": 126,
+        "endChar": 54
+      },
+      "revId": "e06799a25177a3dc582a4f48ea58c9149362c15c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
