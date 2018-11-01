@@ -1,6 +1,6 @@
-==============================
+========================
 DFC (DataFile Collector)
-==============================
+========================
 
 :Date: 2018-09-21
 
@@ -30,7 +30,7 @@ Paths
 =====
 
 GET /events/unauthenticated.VES_NOTIFICATION_OUTPUT
------------------------------------------------
+---------------------------------------------------
 
 Description
 ~~~~~~~~~~~
@@ -41,16 +41,16 @@ Reads fileReady events from DMaaP (Data Movement as a Platform)
 Responses
 ~~~~~~~~~
 
-+-----------+-------------------------------------------+
-| HTTP Code | Description                               |
-+===========+===========================================+
-| **200**   | successful response                       |
-+-----------+-------------------------------------------+
++-----------+---------------------+
+| HTTP Code | Description         |
++===========+=====================+
+| **200**   | successful response |
++-----------+---------------------+
 
 
 
 POST /publish
---------------------------------------
+-------------
 
 Description
 ~~~~~~~~~~~
@@ -65,11 +65,11 @@ Publish the collected file/s as a stream to DataRouter
 Responses
 ~~~~~~~~~
 
-+-----------+-------------------------------------------+
-| HTTP Code | Description                               |
-+===========+===========================================+
-| **200**   | successful response                       |
-+-----------+-------------------------------------------+
++-----------+---------------------+
+| HTTP Code | Description         |
++===========+=====================+
+| **200**   | successful response |
++-----------+---------------------+
 
 Compiling DFC
 =============
@@ -109,46 +109,86 @@ Maven Children Artifacts:
 
 Configuration of Certificates in test environment(For FTP over TLS):
 ====================================================================
+
 DFC supports two protocols: FTPES and SFTP.
 For FTPES, it is mutual authentication with certificates.
 In our test environment, we use vsftpd to simulate xNF, and we generate self-signed
 keys & certificates on both vsftpd server and DFC.
-1. generate key & certificate with openssl for DFC：
+
+1. Generate key/certificate with openssl for DFC:
+-------------------------------------------------
+.. code:: bash
+
     openssl genrsa -out dfc.key 2048
     openssl req -new -out dfc.csr -key dfc.key
     openssl x509 -req -days 365 -in dfc.csr -signkey dfc.key -out dfc.crt
-2. generate key & certificate with openssl for vsftpd:
-    openssl genrsa -out ftp.key 2048
-    openssl req -new -out ftp.csr -key ftp.key
-    openssl x509 -req -days 365 -in ftp.csr -signkey ftp.key -out ftp.crt
-3. configure java keystore in DFC:
-    We have two keystore files, one for TrustManager, one for KeyManager.
-    First, create a jks keystore for TrustManager:
-      keytool -keystore ftp.jks -genkey -alias ftp
-    Second, convert your certificate in a DER format :
-      openssl x509 -outform der -in ftp.crt -out ftp.der
-    And after, import it in the keystore :
-      keytool -import -alias ftp -keystore ftp.jks -file ftp.der
 
-    For KeyManager:
-    First, create a jks keystore:
-      keytool -keystore dfc.jks -genkey -alias dfc
-    Second, import dfc.crt and dfc.key to dfc.jks. This is a bit troublesome.
-      Step one: Convert x509 Cert and Key to a pkcs12 file
-      openssl pkcs12 -export -in dfc.crt -inkey dfc.key \
-               -out dfc.p12 -name [some-alias] \
-      Note: Make sure you put a password on the p12 file - otherwise you'll get
-      a null reference exception when you try to import it. (In case anyone else had this headache).
-      Note 2: You might want to add the -chainoption to preserve the full certificate chain.
-      Step two: Convert the pkcs12 file to a java keystore
-      keytool -importkeystore \
-        -deststorepass [changeit] -destkeypass [changeit] -destkeystore dfc.jks \
-        -srckeystore dfc.p12 -srcstoretype PKCS12 -srcstorepass some-password \
-        -alias [some-alias]
-    Finished
+2. Generate key & certificate with openssl for vsftpd:
+------------------------------------------------------
+.. code:: bash
 
-4. configure vsftpd:
+   openssl genrsa -out ftp.key 2048
+   openssl req -new -out ftp.csr -key ftp.key
+   openssl x509 -req -days 365 -in ftp.csr -signkey ftp.key -out ftp.crt
+
+3. Configure java keystore in DFC:
+----------------------------------
+We have two keystore files, one for TrustManager, one for KeyManager.
+
+**For TrustManager:**
+
+1. First, create a jks keystore for TrustManager:
+
+ .. code:: bash
+
+   keytool -keystore ftp.jks -genkey -alias ftp
+
+2. Second, convert your certificate in a DER format :
+
+ .. code:: bash
+
+   openssl x509 -outform der -in ftp.crt -out ftp.der
+
+3. And after, import it in the keystore :
+
+ .. code:: bash
+
+   keytool -import -alias ftp -keystore ftp.jks -file ftp.der
+
+**For KeyManager:**
+
+1. First, create a jks keystore:
+
+ .. code:: bash
+
+    keytool -keystore dfc.jks -genkey -alias dfc
+
+2. Second, import dfc.crt and dfc.key to dfc.jks. This is a bit troublesome.
+
+ 1). Step one: Convert x509 Cert and Key to a pkcs12 file
+
+ .. code:: bash
+
+    openssl pkcs12 -export -in dfc.crt -inkey dfc.key -out dfc.p12 -name [some-alias]
+
+ Note: Make sure you put a password on the p12 file - otherwise you'll get a null reference exception when yy to import it. (In case anyone else had this headache).
+
+ Note 2: You might want to add the -chainoption to preserve the full certificate chain.
+
+ 2). Step two: Convert the pkcs12 file to a java keystore:
+
+ .. code:: bash
+
+    keytool -importkeystore -deststorepass [changeit] -destkeypass [changeit] -destkeystore dfc.jks -srckeystore dfc.p12 -srcstoretype PKCS12 -srcstorepass [some-password] -alias [some-alias]
+
+3. Finished
+
+4. Configure vsftpd:
+--------------------
     update /etc/vsftpd/vsftpd.conf:
+
+  .. code-block:: javascript
+
       rsa_cert_file=/etc/ssl/private/ftp.crt
       rsa_private_key_file=/etc/ssl/private/ftp.key
       ssl_enable=YES
@@ -167,14 +207,19 @@ keys & certificates on both vsftpd server and DFC.
       ssl_request_cert=YES
       ca_certs_file=/home/vsftpd/myuser/dfc.crt
 
-5. configure config/datafile_endpoints.json:
+5. Configure config/datafile_endpoints.json:
+--------------------------------------------
    Update the file accordingly:
+
+  .. code-block:: javascript
+
             "ftpesConfiguration": {
                 "keyCert": "/config/dfc.jks",
                 "keyPassword": "[yourpassword]",
                 "trustedCA": "/config/ftp.jks",
                 "trustedCAPassword": "[yourpassword]"
             }
+
 6. This has been tested with vsftpd and dfc, with self-signed certificates.
-   In real deployment, we should use ONAP-CA signed certificate for DFC, and vendor-CA signed
-   certificate for xNF.
+---------------------------------------------------------------------------
+   In real deployment, we should use ONAP-CA signed certificate for DFC, and vendor-CA signed certificate for xNF
