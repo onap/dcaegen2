@@ -5,18 +5,13 @@ Configuration
 =============
 
 DACEGEN2 platform deploys its components via Cloudify Blueprints. Below is the list of Blueprints included in ONAP DCAEGEN2
-and details for how to configure them.  For how to configure the deployemnt of the DCAE platform and service components, please see teh Installation document: ./installation.rst.
+and details for how to configure them.  For how to configure the deployment of the DCAE platform and service components, please see the Installation document: ./installation.rst.
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
 
-   ./blueprints/centos_vm.rst
-   ./blueprints/consul.rst
-   ./blueprints/DockerHost.rst
-   ./blueprints/cdap.rst
    ./blueprints/cbs.rst
-   ./blueprints/cdapbroker.rst
    ./blueprints/deploymenthandler.rst
    ./blueprints/servicechangehandler.rst
    ./blueprints/inventoryapi.rst
@@ -25,5 +20,3 @@ and details for how to configure them.  For how to configure the deployemnt of t
    ./blueprints/ves.rst
    ./blueprints/tca.rst
    ./blueprints/holmes.rst
-
-
