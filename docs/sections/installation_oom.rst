@@ -126,6 +126,7 @@ Below is a table of default hostnames and ports for DCAE component service endpo
     VES                  dcae-ves-collector:8080             xdcae-ves-collector.onap:30235
     HV-VES               dcae-hv-ves-collector:6061          xdcae-hv-ves-collector.onap:30222
     TCA                  dcae-tca-analytics:11011            xdcae-tca-analytics.onap:32010
+    PRH                  dcae-prh:8100                       NA
     DataFileCollector    dcae-datafile-collector:8443/8100   xdcae-datafile-collector:8433:30224/TCP,8100:30223/TCP
     SNMPTrap             dcae-snmptrap-collector:6162/udp    NA
     Policy Handler       policy-handler:25577                NA

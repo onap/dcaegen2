@@ -89,15 +89,31 @@ Quick Links:
         - `Project Vulnerability Review Table for DCAE <https://wiki.onap.org/pages/viewpage.action?pageId=28377647>`_
 
 
+**New component Notes**
+The following components are introduced in R3
+
+    - DataFile Collector
+       - Docker container tag: onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.0.3
+       - Description : Bulk data file collector to fetch non-realtime PM data
+    - PNF Registrator handler
+       - Docker container tag: onap/org.onap.dcaegen2.services.prh.prh-app-server:1.1.1
+       - Description : Recieves VES registration event and updates AAI and SO 
+    - HV-VES Collector
+       - Docker container tag: onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main:1.0.0
+       - Description : High Volume VES Collector for fetching real-time PM measurement data
+    - SNMP Trap Collector
+       - Docker container tag: onap/org.onap.dcaegen2.collectors.snmptrap:1.4.0
+       - Description : Receives SNMP traps and publishes them to a  message router (DMAAP/MR) in json structure 
+
 
 **Upgrade Notes**
 
 The following components are upgraded from R2:
     - Cloudify Manager:
        - Docker container tag: onap/org.onap.dcaegen2.deployments.cm-container:1.4.2
-       - Description: R3 DCAE's Cloudify Manager container is based on Cloudify Manager Community Version 18.2.28, which is based on Cloudify Manager 4.3.
+       - Description: R3 DCAE's Cloudify Manager container is based on Cloudify Manager Community Version 18.7.23, which is based on Cloudify Manager 4.3.
     - Bootstrap container: 
-       - Docker container tag: onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:1.4.4
+       - Docker container tag: onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:1.4.5
        - Description: R3 DCAE no longer uses bootstrap container for Heat based deployment, -- deployment is done through cloud-init scripts and docker-compose specifications.  The bootstrap is for OOM (Kubernetes) based deployment.
     - Configuration Binding Service: 
        - Docker container tag: onap/org.onap.dcaegen2.platform.configbinding.app-app:2.2.3
@@ -105,7 +121,7 @@ The following components are upgraded from R2:
     - Deployment Handler
        - Docker container image tag: onap/org.onap.dcaegen2.platform.deployment-handler:3.0.3
     - Policy Handler
-       - Docker container image tag: onap/org.onap.dcaegen2.platform.policy-handler:4.3.1
+       - Docker container image tag: onap/org.onap.dcaegen2.platform.policy-handler:4.4.0
        - Description: Policy Handler now supports the new configuration policy format and support for TLS
     - Service Change Handler
        - Docker container image tag: onap/org.onap.dcaegen2.platform.servicechange-handler:1.1.5

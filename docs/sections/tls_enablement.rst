@@ -17,6 +17,16 @@ Solution overview
         * A boolean (``use_tls``) that indicates whether the component uses TLS. 
         * A string (``cert_directory``) that indicates where the component expects to find certificate artifacts.
     
+        Example
+.. code-block:: yaml
+
+        tls_info:
+           cert_directory: '/opt/app/dh/etc/cert/'
+           use_tls: true
+
+For this example the certificates are mounted into /opt/app/dh/etc/cert directory within the conainer.
+        
+    
     During deployment Kubernetes plugin (referenced in blueprint) will check if the ``tls_info`` property is set and ``use_tls`` is set to true, then the plugin will add some elements to the Kubernetes Deployment for the component:
           * A Kubernetes volume (``tls-info``) that will hold the certificate artifacts
           * A Kubernetes initContainer (``tls-init``)

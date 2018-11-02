@@ -13,7 +13,7 @@ The collector verifies the source (when authentication is enabled) and validates
 
 
 VES Collector (HTTP) overview and functions
-===========================================
+-------------------------------------------
 
 
 .. toctree::
@@ -22,5 +22,6 @@ VES Collector (HTTP) overview and functions
    ./configuration.rst
    ./delivery.rst
    ./installation.rst
-   `API`_
-.. _API: ../../apis/swagger_vescollector.yaml
+
+   
+.. _`Offered APIs`: ../../apis/ves.rst

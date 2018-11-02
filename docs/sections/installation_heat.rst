@@ -88,6 +88,7 @@ In DCAE R3, the configuration for DCAE deployment in Heat is greatly simplified.
         * Missing Heartbeat Detection analytics,
         * Universal Mapper
 
+Note: Missing Heartbeat and Universal Mapper are not part of official Casablanca release
 
 Tips for Manual Interventions
 -----------------------------

@@ -17,14 +17,14 @@ VES Schema Validation
 
 VES Collector is configured to support below VES Version; the corresponding API uses VES schema definition for event validation.
 
-==============     ==========================    =================================
-VES Version        API version                   Schema Definition
-==============     ==========================    =================================
-VES 1.2            eventListener/v1              CommonEventFormat_Vendors_v25.json   
-VES 4.1            eventListener/v4              CommonEventFormat_27.2.json
-VES 5.4            eventListener/v5              CommonEventFormat_28.4.1.json
-VES 7.0            eventListener/v7              CommonEventFormat_30.0.1.json
-==============     ==========================    ==================================
+===========     ================    ==================================
+VES Version     API version         Schema Definition
+===========     ================    ==================================
+VES 1.2         eventListener/v1    CommonEventFormat_Vendors_v25.json   
+VES 4.1         eventListener/v4    CommonEventFormat_27.2.json
+VES 5.4         eventListener/v5    CommonEventFormat_28.4.1.json
+VES 7.0         eventListener/v7    CommonEventFormat_30.0.1.json
+===========     ================    ==================================
 
 Schema definition files are contained within VES collector gerrit repo - https://git.onap.org/dcaegen2/collectors/ves/tree/etc
 
