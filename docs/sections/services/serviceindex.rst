@@ -13,3 +13,4 @@ Service components under DCAE
    ./snmptrap/index.rst
    ./ves-http/index.rst
    ./ves-hv/index.rst
+   ./mapper/index.rst
