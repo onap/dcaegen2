@@ -9,6 +9,7 @@ HV-VES (High Volume VES)
 
 .. contents::
     :depth: 4
+
 ..
 
 Overview
@@ -43,40 +44,6 @@ HV-VES makes routing decisions based mostly on the content of the **Domain** par
 The PROTO file, which contains the VES CommonEventHeader, comes with a binary-type Payload (eventFields) parameter, where domain-specific
 data should be placed. Domain-specific data are encoded as well with GPB. A domain-specific PROTO file is required to decode the data.
 
-Domain **perf3gpp**
-===================
-
-The purpose of the **perf3gpp** domain is to deliver performance measurements from a network function (NF) to ONAP in 3GPP format.
-The first application of this domain is frequent periodic delivery of structured RAN PM data commonly referred to as Real Time PM (RTPM).
-The equipment sends an event right after collecting the PM data for a granularity period.
-
-The characteristics of each event in the **perf3gpp** domain:
-
-- Single measured entity, for example, BTS
-- Single granularity period (collection *begin time* and *duration*)
-- Optional top-level grouping in one or more PM groups
-- Grouping in one or more measured objects, for example, cells
-- One or more reported PM values for each measured object
-
-Due to the single granularity period per event, single equipment supporting multiple concurrent granularity periods might send more than one event at a given reporting time.
-
-The **perf3gpp** domain is based on 3GPP specifications:
-
-- `3GPP TS 28.550 <http://www.3gpp.org/ftp//Specs/archive/28_series/28.550/>`_
-- `3GPP TS 32.431 <http://www.3gpp.org/ftp//Specs/archive/32_series/32.431/>`_
-- `3GPP TS 32.436 <http://www.3gpp.org/ftp//Specs/archive/32_series/32.436/>`_
-
-The event structure is changed in comparison to the one presented in 3GPP technical specifications. The 3GPP structure is enhanced to provide support for efficient transport.
-
-Definitions for the **perf3gpp** domain are stored in Perf3gppFields.proto and MeasDataCollection.proto, listed below:
-
-.. literalinclude:: Perf3gppFields.proto
-    :language: protobuf
-
-.. literalinclude:: MeasDataCollection.proto
-    :language: protobuf
-
-
 API towards DMaaP
 =================
 
@@ -87,6 +54,18 @@ HV-VES Collector forwards incoming messages to a particular DMaaP Kafka topic ba
 
 In both cases raw bytes might be extracted using ``org.apache.kafka.common.serialization.ByteArrayDeserializer``. The resulting bytes might be further passed to ``parseFrom`` methods included in classes generated from GPB definitions. WTP is not used here - it is only used in communication between PNF/VNF and the collector.
 
+By default, **HV-VES** will use routing defined in **k8s-hv-ves.yaml-template** in **dcaegen2/platform/blueprints project**. Currently defined domain->topic mapping looks as follows:
+
+- perf3gpp -> HV_VES_PERF3GPP
+
+Supported domains
+=================
+
+Domains supported by **HV-VES**:
+
+- perf3gpp
+
+For domains descriptions, see :ref:`supported_domains`
 
 .. _hv_ves_behaviors:
 
@@ -113,3 +92,4 @@ Messages handling:
 .. note:: xNF (VNF/PNF) can split  messages bigger than 1 MiB and set `sequence` field in CommonEventHeader accordingly. It is advised to use smaller than 1 MiB messages for GPBs encoding/decoding efficiency.
 
 - Skipped messages (for any of the above reasons) might not leave any trace in HV-VES logs.
+
