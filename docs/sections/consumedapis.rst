@@ -19,3 +19,9 @@ DMaaP Message Router
 Policy
 SDC
 A&AI
+
+DataFile Collector uses the following APIs:
+DMaaP Message Router (https://onap.readthedocs.io/en/latest/submodules/dmaap/messagerouter/messageservice.git/docs/offeredapis/offeredapis.html#subscribers)
+FTPES (https://commons.apache.org/proper/commons-net/apidocs/org/apache/commons/net/ftp/FTPSClient.htm)
+SFTP (http://www.jcraft.com/jsch/)
+DMaaP Data Router (https://onap.readthedocs.io/en/latest/submodules/dmaap/datarouter.git/docs/data-router/data-router.html#publish-to-feed)
