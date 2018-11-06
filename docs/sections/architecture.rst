@@ -36,6 +36,7 @@ The following list displays the details of what are included in ONAP DCAE R3.  A
         - DCAE Inventory-API: API for DCAE's TOSCA model store.
     - Platform services
         - Consul: Distributed service discovery service and KV store.
+        - PNDA: Platform for Network Data Analytics.
         - Postgres Database: DCAE's TOSCA model store.
         - Redis Database: DCAE's transactional state store, used by TCA for supporting persistence and seamless scaling.
 
@@ -55,7 +56,7 @@ The following list displays the details of what are included in ONAP DCAE R3.  A
         - Universal Data Mapper service
 
 
-The figure below shows the DCAE R3 architecture and how the components work with each other.  The components on the right constitute the Platform/controller components which are statically deployed. The components on the right represent the services which can be both deployed statically or dynamically (via CLAMP)  
+The figure below shows the DCAE R3 architecture and how the components work with each other.  The components on the right constitute the Platform/controller components which are statically deployed. The components on the right represent the services which can be both deployed statically or dynamically (via CLAMP)
 
 .. image:: images/R3_architecture_diagram.gif
  
@@ -68,6 +69,8 @@ Because DCAE service components are deployed on-demand following the control loo
 
 For R3, ONAP supports two deployment methodologies: Heat Orchestration Template method, or Helm Chart method. No matter which method, DCAE is deployed following the same flow.  At its minimum, only the TOSCA model executor, the DCAE Cloudify Manager, needs to be deployed through the ONAP deployment process.  Once the Cloudify Manager is up and running, all the rest of DCAE platform can be deployed by a bootstrap script, which makes a number of calls into the Cloudify Manager API with Blueprints for various DCAE components, first the DCAE Platform components, then the service components that are needed for the built-in control loops, such as vFW/vDNS traffic throttling.  It is also possible that additional DCAE components are also launched as part of the ONAP deployment process using the ONAP level method instead of TOSCA model based method.
 
+The PNDA platform service is an optional component that can be installed when using the OOM Helm Chart installation method on Openstack based Kubernetes infrastructure.
+
 More details of the DCAE R3 deployment will be covered by the Installation section.
 
 
@@ -78,7 +81,7 @@ For ONAP R3 DCAE participates in the following use cases.
 
 - vDNS:  VES collector, TCA analytics
 
-- vFW:  VES collector, TCA analytics
+- vFW:  VES collector, TCA analytics, PNDA based analytics
 
 - vCPE:  VES collector, TCA analytics
 

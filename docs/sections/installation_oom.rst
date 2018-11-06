@@ -18,6 +18,10 @@ At deployment time, with a single **helm install** command, Helm resolves all th
 
 All ONAP Helm Charts are organized under the **kubernetes** directory of the **OOM** project, where roughly each ONAP component occupied a subdirectory.  DCAE charts are placed under the **dcaegen2** directory.  DCAE Kubernetes deployment is based on the same set of Docker containers that the Heat based deployment uses, with the exception of bootstrap container and health check container are only used in Kubernetes deployment.
 
+The PNDA data platform is an optional DCAE component that is placed under the **pnda**
+directory. Details for how to configure values to enable PNDA installation during Helm install
+are described in `Installing PNDA During Helm Chart Based DCAE Deployment
+<installation_pnda.html>`_.
 
 DCAE Chart Organization
 -----------------------
@@ -43,15 +47,17 @@ DCAE Deployment
 ---------------
 
 At deployment time, when the **helm install** command is executed, all DCAE resources defined within charts under the OOM Chart hierarchy are deployed.  They are the 1st order components, namely the Cloudify Manager deployment, the Health Check deployment, the Redis cluster deployment, and the Bootstrap job.  In addition, a Postgres database deployment is also launched, which is specified as a dependency of the DCAE Bootstrap job.  These resources will show up as the following, where the name before / indicates resource type and the term "dev" is a tag that **helm install** command uses as "release name":
+
   * deploy/dev-dcae-cloudify-manager;
   * deploy/dev-dcae-healthcheck;
   * statefulsets/dev-dcae-redis;
   * statefulsets/dev-dcae-db;
   * job/dev-dcae-bootstrap.
 
-In addition, DCAE operations depends on a Consul server cluster.  For ONAP OOM deployment, since Consul cluster is provided as a shared resource, its charts are defined under the consul direcory, not part of DCAE charts. 
+In addition, DCAE operations depends on a Consul server cluster.  For ONAP OOM deployment, since Consul cluster is provided as a shared resource, its charts are defined under the consul direcory, not part of DCAE charts.
 
 The dcae-bootstrap job has a number of prerequisites because the subsequently deployed DCAE components depends on a number of resources having entered their normal operation state.  DCAE bootstrap job will not start before these resources are ready.  They are:
+
   * dcae-cloudify-manager;
   * consul-server;
   * msb-discovery;
@@ -60,6 +66,7 @@ The dcae-bootstrap job has a number of prerequisites because the subsequently de
 Once started, the DCAE bootstrap job will call Cloudify Manager to deploy a series of Blueprints which specify the additional DCAE R3 components.  These Blueprints are almost identical to the Docker container Blueprints used by DACE R1 and Heat based R2 deployment, except that they are using the k8splugin instead of dockerplugin.  The k8splugin is a major contribution of DCAE R2.  It is a Cloudify Manager plugin that is capable of expanding a Docker container node definition into a Kubernetes deployment definition, with enhancements such as replica scaling, ONAP logging sidecar, MSB registration, etc.
 
 The additional DCAE components launched into ONAP deployment are:
+
   * deploy/dep-config-binding-service;
   * deploy/dep-dcae-tca-analytics;
   * deploy/dep-dcae-ves-collector;
@@ -90,6 +97,7 @@ Deployment time configuration of DCAE components are defined in several places.
      * Helm command line supplied values supersedes values defined in any values.yaml files.
 
 In addition, for DCAE components deployed through Cloudify Manager Blueprints, their configuration parameters are defined in the following places:
+
      * The Blueprint files can contain static values for configuration parameters;
         * The Blueprint files are defined under the blueprints directory of the dcaegen2/platform/blueprints repo, named with "k8s" prefix.
      * The Blueprint files can specify input parameters and the values of these parameters will be used for configuring parameters in Blueprints.  The values for these input parameters can be supplied in several ways as listed below in the order of precedence (low to high):
@@ -139,6 +147,7 @@ Below is a table of default hostnames and ports for DCAE component service endpo
 
 In addition, a number of ONAP service endpoints that are used by DCAE components are listed as follows
 for reference by DCAE developers and testers:
+
     ====================   ============================      ================================
     Component              Cluster Internal (host:port)      Cluster external (svc_name:port)
     ====================   ============================      ================================
