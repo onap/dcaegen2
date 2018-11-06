@@ -13,7 +13,7 @@ Overview
 
 Component description can be found under `DFC`_.
 
-.. _DFC: ../../services/dfc/index.html
+.. _DFC: ../../sections/services/dfc/index.html
 
 
 Paths
