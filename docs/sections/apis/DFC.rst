@@ -11,19 +11,9 @@ DFC (DataFile Collector)
 Overview
 ========
 
-DFC will orchestrate the collection of bulk PM data flow:
-    1. Subscribes to fileReady DMaaP topic
-    2. Collects the file from the xNF
-    3. Sends new event to DataRouter with file.
+Component description can be found under `DFC`_.
 
-Introduction
-============
-
-DFC is delivered as one **Docker container** which hosts application server and can be started by `docker-compose`.
-
-Functionality
-=============
-.. image:: ../images/DFC.png
+.. _DFC: ../../services/dfc/index.html
 
 
 Paths
@@ -78,16 +68,6 @@ Whole project (top level of DFC directory) and each module (sub module directory
 `mvn clean install` command.
 
 Configuration file: Config/datafile_endpoints.json
-
-Main API Endpoints
-==================
-
-Running with dev-mode of DFC
-    - Heartbeat: **http://<container_address>:8100/heartbeat** or **https://<container_address>:8433/heartbeat**
-    - Start DFC: **http://<container_address>:8100/start** or **https://<container_address>:8433/start**
-    - Stop DFC: **http://<container_address>:8100/stopDatafile** or **https://<container_address>:8433/stopDatafile**
-
-The external port allocated for 8100 (http) is 30245.
 
 Maven GroupId:
 ==============
