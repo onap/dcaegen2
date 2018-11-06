@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_0abb610f",
+        "filename": "docs/sections/consumedapis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-11-06T21:42:30Z",
+      "side": 1,
+      "message": "This can be removed as this generic across project.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 43
+      },
+      "revId": "b2c18d0e7aae9b4f3a1f1b32c53e8b1afe017fbd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_4ac1697f",
+        "filename": "docs/sections/consumedapis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-11-06T21:42:30Z",
+      "side": 1,
+      "message": "DMaap Message router already noted above; pls add reference link on the same.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 20
+      },
+      "revId": "b2c18d0e7aae9b4f3a1f1b32c53e8b1afe017fbd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_2ac42591",
+        "filename": "docs/sections/consumedapis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-11-06T21:42:30Z",
+      "side": 1,
+      "message": "We refer to external ONAP API\u0027 consumed here.. FTPES/SFTP can go under DFC specific rst.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 34
+      },
+      "revId": "b2c18d0e7aae9b4f3a1f1b32c53e8b1afe017fbd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
