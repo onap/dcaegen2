@@ -14,3 +14,4 @@ Service components under DCAE
    ./ves-http/index.rst
    ./ves-hv/index.rst
    ./mapper/index.rst
+   ./prh/index.rst
