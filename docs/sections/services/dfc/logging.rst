@@ -1,0 +1,13 @@
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+.. http://creativecommons.org/licenses/by/4.0
+
+Logging
+=======
+
+Logging is controlled by the configuration provided to **datafile** in the application.yaml
+file located in datafile-app-server/config folder.
+
+
+**Where is the log file?**
+
+The log file is located under /opt/log and called application.log.
