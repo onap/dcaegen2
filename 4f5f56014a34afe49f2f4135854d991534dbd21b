@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_8473cab0",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4593
+      },
+      "writtenOn": "2018-11-06T16:27:47Z",
+      "side": 1,
+      "message": "line endings are incorrect here",
+      "revId": "4f5f56014a34afe49f2f4135854d991534dbd21b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_2468deb9",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4593
+      },
+      "writtenOn": "2018-11-06T16:27:47Z",
+      "side": 1,
+      "message": "line ending on this line is incorrect",
+      "revId": "4f5f56014a34afe49f2f4135854d991534dbd21b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_c479d294",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4593
+      },
+      "writtenOn": "2018-11-06T16:27:47Z",
+      "side": 1,
+      "message": "mixed spaces/tabs",
+      "revId": "4f5f56014a34afe49f2f4135854d991534dbd21b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_e46176d4",
+        "filename": "docs/sections/services/dfc/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4593
+      },
+      "writtenOn": "2018-11-06T16:27:47Z",
+      "side": 1,
+      "message": "line endings in these two lines are incorrect",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 73
+      },
+      "revId": "4f5f56014a34afe49f2f4135854d991534dbd21b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_a49b6ec8",
+        "filename": "docs/sections/services/dfc/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4593
+      },
+      "writtenOn": "2018-11-06T16:27:47Z",
+      "side": 1,
+      "message": "line ending incorrect",
+      "revId": "4f5f56014a34afe49f2f4135854d991534dbd21b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_24af7ee5",
+        "filename": "docs/sections/services/dfc/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4593
+      },
+      "writtenOn": "2018-11-06T16:27:47Z",
+      "side": 1,
+      "message": "should this be /opt/log ? (note starting \u0027/\u0027)",
+      "revId": "4f5f56014a34afe49f2f4135854d991534dbd21b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
