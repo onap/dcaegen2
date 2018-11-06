@@ -30,4 +30,6 @@ DCAE provides a number of interfaces for users to interact with the DCAE system.
     * The CDAP VMs accept ssh connection with the standard access key.
     * The CDAP GUI can be accessed from http://{{CDAP02_VM_IP}}:11011 .
 
-
+6. DCAE PNDA
+    * The PNDA Console can be accessed from http://knox.service.dc1.pnda.local:8443/gateway/pnda/console .
+    * The PNDA UIs can be accessed from the PNDA Console which is described here: http://pnda.io/pnda-guide/console/ .
