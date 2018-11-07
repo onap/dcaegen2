@@ -1,6 +1,8 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
+.. _prh_configuration:
+
 Configuration
 =============
 
@@ -8,46 +10,51 @@ PRH expects to be able to fetch configuration directly from consul service in fo
 
 .. code-block:: json
 
-    {
-        "dmaap.dmaapProducerConfiguration.dmaapTopicName":"/events/unauthenticated.PNF_READY",
-        "dmaap.dmaapConsumerConfiguration.dmaapHostName":"message-router.onap.svc.cluster.local",
-        "aai.aaiClientConfiguration.aaiPnfPath":"/network/pnfs/pnf",
-        "aai.aaiClientConfiguration.aaiUserPassword":"AAI",
-        "dmaap.dmaapConsumerConfiguration.dmaapUserName":"admin",
-        "aai.aaiClientConfiguration.aaiBasePath":"/aai/v12",
-        "dmaap.dmaapConsumerConfiguration.timeoutMs":-1,
-        "dmaap.dmaapProducerConfiguration.dmaapPortNumber":3904,
-        "aai.aaiClientConfiguration.aaiHost":"aai.onap.svc.cluster.local",
-        "dmaap.dmaapConsumerConfiguration.dmaapUserPassword":"admin",
-        "dmaap.dmaapProducerConfiguration.dmaapProtocol":"http",
-        "aai.aaiClientConfiguration.aaiIgnoreSslCertificateErrors":true,
-        "dmaap.dmaapProducerConfiguration.dmaapContentType":"application/json",
-        "dmaap.dmaapConsumerConfiguration.dmaapTopicName":"/events/unauthenticated.VES_PNFREG_OUTPUT",
-        "dmaap.dmaapConsumerConfiguration.dmaapPortNumber":3904,
-        "dmaap.dmaapConsumerConfiguration.dmaapContentType":"application/json",
-        "dmaap.dmaapConsumerConfiguration.messageLimit":-1,
-        "dmaap.dmaapConsumerConfiguration.dmaapProtocol":"http",
-        "aai.aaiClientConfiguration.aaiUserName":"AAI",
-        "dmaap.dmaapConsumerConfiguration.consumerId":"c12",
-        "dmaap.dmaapProducerConfiguration.dmaapHostName":"message-router.onap.svc.cluster.local",
-        "aai.aaiClientConfiguration.aaiHostPortNumber":8443,
-        "dmaap.dmaapConsumerConfiguration.consumerGroup":"OpenDCAE-c12",
-        "aai.aaiClientConfiguration.aaiProtocol":"https",
-        "dmaap.dmaapProducerConfiguration.dmaapUserName":"admin",
-        "dmaap.dmaapProducerConfiguration.dmaapUserPassword":"admin"
-    }
-
-
-There are also optional configuration parameters:
-
-.. code-block:: json
-
-   "security": {
-      "keyFile": "/opt/app/prh/local/org.onap.prh.keyfile",
-      "trustStore": "/opt/app/prh/local/org.onap.prh.trust.jks",
-      "trustStorePassword": "change it",
-      "keyStore": "/opt/app/prh/local/org.onap.prh.p12",
-      "keyStorePassword": "change it",
+  {
+    "aai": {
+      "aaiClientConfiguration": {
+        "aaiHost": "aai.onap.svc.cluster.local",
+        "aaiHostPortNumber": 8443,
+        "aaiIgnoreSslCertificateErrors": true,
+        "aaiProtocol": "https",
+        "aaiUserName": "AAI",
+        "aaiUserPassword": "AAI",
+        "aaiBasePath": "/aai/v12",
+        "aaiPnfPath": "/network/pnfs/pnf",
+      }
+    },
+    "dmaap": {
+      "dmaapConsumerConfiguration": {
+        "consumerGroup": "OpenDCAE-c12",
+        "consumerId": "c12",
+        "dmaapContentType": "application/json",
+        "dmaapHostName": "message-router.onap.svc.cluster.local",
+        "dmaapPortNumber": 3904,
+        "dmaapProtocol": "http",
+        "dmaapTopicName": "/events/unauthenticated.VES_PNFREG_OUTPUT",
+        "dmaapUserName": "admin",
+        "dmaapUserPassword": "admin",
+        "messageLimit": -1,
+        "timeoutMs": -1
+      },
+      "dmaapProducerConfiguration": {
+        "dmaapContentType": "application/json",
+        "dmaapHostName": "message-router.onap.svc.cluster.local",
+        "dmaapPortNumber": 3904,
+        "dmaapProtocol": "http",
+        "dmaapTopicName": "/events/unauthenticated.PNF_READY",
+        "dmaapUserName": "admin",
+        "dmaapUserPassword": "admin"
+      }
+    },
+    "security": {
+      "trustStorePath": "/opt/app/prh/etc/cert/trust.jks",
+      "trustStorePasswordPath": "/opt/app/prh/etc/cert/trust.pass",
+      "keyStorePath": "/opt/app/prh/etc/cert/cert.jks",
+      "keyStorePasswordPath": "/opt/app/prh/etc/cert/jks.pass",
       "enableAaiCertAuth": "false",
       "enableDmaapCertAuth": "false"
     }
+  }
+
+The configuration is created from PRH Cloudify blueprint by specifying **application_config** node during ONAP OOM/Kubernetes deployment.

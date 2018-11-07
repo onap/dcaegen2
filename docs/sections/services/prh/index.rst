@@ -14,13 +14,16 @@ the PNF Registration event.
 PRH overview and functions
 --------------------------
 
-
 .. toctree::
-    :maxdepth: 1
-       ./architecture.rst
-       ./configuration.rst
-       ./delivery.rst
-       ./installation.rst
+   :maxdepth: 1
 
+   ./architecture
+   ./configuration
+   ./delivery
+   ./installation
+   ./authorization
 
-.. _`Offered APIs`: ../../apis/prh.rst
+API reference
+^^^^^^^^^^^^^
+
+Refer to :doc:`PRH offered APIs<../../apis/PRH>` for detailed PRH api information.
