@@ -24,4 +24,7 @@ VES Collector (HTTP) overview and functions
    ./installation.rst
 
    
-.. _`Offered APIs`: ../../apis/ves.rst
+API reference
+^^^^^^^^^^^^^
+
+Refer to :doc:`VES APIs<../../apis/ves.rst>` for detailed api information.

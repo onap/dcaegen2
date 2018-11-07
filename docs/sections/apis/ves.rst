@@ -1,4 +1,4 @@
-VES Collector 1.1.0
+VES Collector 1.3.1
 ===================
 
 .. toctree::

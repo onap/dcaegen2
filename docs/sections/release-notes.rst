@@ -93,7 +93,7 @@ Quick Links:
 The following components are introduced in R3
 
     - DataFile Collector
-       - Docker container tag: onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.0.3
+       - Docker container tag: onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.0.4
        - Description : Bulk data file collector to fetch non-realtime PM data
     - PNF Registrator handler
        - Docker container tag: onap/org.onap.dcaegen2.services.prh.prh-app-server:1.1.1
