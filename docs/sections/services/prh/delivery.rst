@@ -4,6 +4,6 @@
 Delivery
 ========
 
-**PRH** is delivered as a docker container and published in ONAP Nexus repository in the following image naming convention.
+**PRH** is delivered as a docker container. It is published in ONAP Nexus repository.
 
 Full image name is `onap/org.onap.dcaegen2.services.prh.prh-app-server`.

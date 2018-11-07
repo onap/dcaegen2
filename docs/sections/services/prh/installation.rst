@@ -4,7 +4,7 @@
 Installation
 ============
 
-Following docker-compose-yaml file shows default configuration and can be run using `docker compose up` command:
+The following docker-compose-yaml file shows a default configuration. The file can be run using `docker compose up` command:
 
 .. code-block:: yaml
 
