@@ -7,8 +7,8 @@ PNF Registration Handler (PRH)
 
 .. Add or remove sections below as appropriate for the platform component.
 
-**PNF Registration Handler** is a micro-service in DCAE used during Physical Network Function (PNF) Plug-n-Play to process
-the PNF Registration event.
+**PNF Registration Handler** is a micro-service in DCAE. It is used during Physical Network Function (PNF) Plug-n-Play
+procedure to process the PNF Registration event.
 
 
 PRH overview and functions
