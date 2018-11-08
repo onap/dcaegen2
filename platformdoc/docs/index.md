@@ -17,12 +17,12 @@ Currently, the current DCAE Platform is a hybrid running both the 'classic (or o
 ### For 1710
 
 The classic controller is deploying and managing all CDAP applications, and docker applications that were deployed prior to 1710.
-All other docker applications are being deployed and mananged by the new controller.
+All other docker applications are being deployed and managed by the new controller.
 
 ### For 1802
 
 The classic controller is deploying and managing all CDAP applications, and some docker applications that were deployed prior to 1710.
-Some docker applications are being migrated from the classic to the new controller. All new docker applications are being deployed and mananged by the new controller.
+Some docker applications are being migrated from the classic to the new controller. All new docker applications are being deployed and managed by the new controller.
 
 
 
