@@ -6,7 +6,7 @@
 Configuration
 =============
 
-PRH expects to be able to fetch configuration directly from consul service in following JSON format:
+PRH fetches configuration directly from Consul service in the following JSON format:
 
 .. code-block:: json
 
