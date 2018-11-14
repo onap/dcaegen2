@@ -1,6 +1,6 @@
     **WARNING: SSL/TLS authorization is a part of an experimental feature for ONAP Casablanca release and thus should be treated as unstable and subject to change in future releases.**
 
-.. _authorization:
+.. _ssl_tls_authorization:
 
 SSL/TLS authorization
 =====================

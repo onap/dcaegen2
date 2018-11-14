@@ -27,14 +27,12 @@ High Volume VES Collector overview and functions
 .. toctree::
     :maxdepth: 1
 
-   ./architecture
-   ./design
-   ./run-time-configuration
-   ./repositories
-   ./deployment
-   ./troubleshooting
-   `Offered APIs`_
-   ./authorization
-   ./example-event
-
-.. _`Offered APIs`: ../../apis/ves-hv
+    architecture
+    design
+    run-time-configuration
+    repositories
+    deployment
+    troubleshooting
+    HV-VES Offered APIs <../../apis/ves-hv/index>
+    authorization
+    example-event
