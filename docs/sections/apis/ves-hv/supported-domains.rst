@@ -33,6 +33,14 @@ The **perf3gpp** domain is based on 3GPP specifications:
 
 The event structure is changed in comparison to the one presented in 3GPP technical specifications. The 3GPP structure is enhanced to provide support for efficient transport.
 
+Definitions for the **perf3gpp** domain are stored in Perf3gppFields.proto and MeasDataCollection.proto, listed below:
+
+.. literalinclude:: Perf3gppFields.proto
+    :language: protobuf
+
+.. literalinclude:: MeasDataCollection.proto
+    :language: protobuf
+
 Selecting Complimentary fields for population of **perf3gpp** event
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
