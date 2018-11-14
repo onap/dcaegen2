@@ -388,7 +388,7 @@ Authorization related errors
 ----------------------------
 
 **WARNING: SSL/TLS authorization is a part of an experimental feature for ONAP Casablanca release and should be treated as unstable and subject to change in future releases.**
-**For more information, see** :ref:`authorization`.
+**For more information, see** :ref:`ssl_tls_authorization`.
 
 **Key or trust store missing**
 
