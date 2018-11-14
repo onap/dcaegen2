@@ -25,7 +25,7 @@ TCP Endpoint
 ============
 
 HV-VES is exposed as NodePort service on Kubernetes cluster on port 30222/tcp.
-It uses plain, insecure TCP connection without socket data encryption. In Casablanca release, there is an experimental option to enable SSL/TLS (see :ref:`authorization`).
+It uses plain, insecure TCP connection without socket data encryption. In Casablanca release, there is an experimental option to enable SSL/TLS (see :ref:`ssl_tls_authorization`).
 Without TLS client authentication/authorization is not possible.
 Connections are stream-based (as opposed to request-based) and long-running.
 

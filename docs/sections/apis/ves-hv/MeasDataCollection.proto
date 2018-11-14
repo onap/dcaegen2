@@ -41,16 +41,16 @@ message MeasInfo
 {
     oneof MeasInfoId {                      // measurement group identifier
         uint32 iMeasInfoId = 1;             // identifier as integer (%%: more compact)
-        string measInfoId = 2;              // identifier as string (more generic)
+        string sMeasInfoId = 2;             // identifier as string (more generic)
     }
 
     oneof MeasTypes {                       // measurement identifiers associated with the measurement results
         IMeasTypes iMeasTypes = 3;          // identifiers as integers (%%: more compact)
-        SMeasTypes measTypes = 4;           // identifiers as strings (more generic)
+        SMeasTypes sMeasTypes = 4;          // identifiers as strings (more generic)
     }
     // Needed only because GPB does not support repeated fields directly inside 'oneof'
     message IMeasTypes { repeated uint32 iMeasType = 1; }
-    message SMeasTypes { repeated string measType = 1; }
+    message SMeasTypes { repeated string sMeasType = 1; }
 
     string jobId = 5;
     repeated MeasValue measValues = 6;      // performance measurements grouped by measurement object
@@ -59,7 +59,7 @@ message MeasInfo
 message MeasValue
 {
     oneof MeasObjInstId {                   // monitored object LDN as per 3GPP TS 32.300 and 3GPP TS 32.432
-        string measObjInstId = 1;           // LDN itself
+        string sMeasObjInstId = 1;          // LDN itself
         uint32 measObjInstIdListIdx = 2;    // %%: index into measObjInstIdList (zero-based)
     }
     repeated MeasResult measResults = 3;
