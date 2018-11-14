@@ -36,5 +36,8 @@ High Volume VES Collector overview and functions
    `Offered APIs`_
    ./authorization
    ./example-event
+   ./configuration
+   ./delivery
+   ./installation
 
-.. _`Offered APIs`: ../../apis/ves-hv
+.. _`Offered APIs`: ../../apis/ves-hv/index
