@@ -60,7 +60,7 @@ platform currently supports http and docker health checks.
 When choosing a value for interval, consider that too frequent
 healthchecks will put unnecessary load on Consul and DCAE. If there is a
 problematic resource, then more frequent healthchecks are warranted (eg
-15s or 60s), but as stablility increases, so can these values, (eg
+15s or 60s), but as stability increases, so can these values, (eg
 300s).
 
 When choosing a value for timeout, consider that too small a number will
