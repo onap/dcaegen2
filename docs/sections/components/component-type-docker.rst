@@ -94,7 +94,7 @@ Components are required to pull their
 component must provide an initialization script that retrieves the
 application configuration and reference that script in its Dockerfile.
 Other calls can be made to CONFIG BINDING SERVICE to retrieve DMaaP, 
-or Pollicy Reconfiguration (not yet supported).
+or Policy Reconfiguration (not yet supported).
 
 You can see more details on the generated application configuration
 :any:`here <dcae-cli-view-the-platform>`
@@ -341,7 +341,7 @@ Nexus registry:
     YOUR_NEXUS_DOCKER_REGISTRY/yourapp                                                 0.4.0               154cc382df61        7 weeks ago         710.5 MB
     yourapp                                                                                    0.4.0               154cc382df61        7 weeks ago         710.5 MB
 
-The solutioning evironment’s Nexus host for the Docker registry is
+The solutioning environment’s Nexus host for the Docker registry is
 ``YOUR_NEXSUS_HOST:18443``. You must run
 ``docker login YOUR_NEXSUS_HOST:18443`` to access the registry.
 Please contact the DCAE platform team to provide you with the

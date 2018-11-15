@@ -201,7 +201,7 @@ List components in the onboarding catalog that owned by YOUR userid..
 
 The fields ``Name``, ``Version``, ``Type``, ``Description`` are
 referenced from the component specification’s ``self`` JSON. Use the
-“–deployed” argument to see more details on deploymed components
+“–deployed” argument to see more details on deployed components
 
 --------------
 
