@@ -146,13 +146,13 @@ DCAE Platform Component that received Policy updates from Policy UI
 Policy UI (not yet implemented)
 -------------------------------
 
-Non DCAE Component - Policy User Interace where Operations assigns
-values to configuraton specified for this.
+Non DCAE Component - Policy User Interface where Operations assigns
+values to configuration specified for this.
 
 Run-Time
 --------
 
-Refers to the when a service is running on the platform. 
+Refers to the when a service is running on the platform.
 
 SCH - Service Change Handler
 ----------------------------
