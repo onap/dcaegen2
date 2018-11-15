@@ -33,7 +33,7 @@ In either scenario, the format of the config message/transaction *is the same*. 
 JSON CONFIGURATION EXPLAINED
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Variables of interest (e.g. variables that should be inspected/modifed for a specific runtime environment) are listed below for convenience.  The entire file is provided later in this page for reference.
+Variables of interest (e.g. variables that should be inspected/modified for a specific runtime environment) are listed below for convenience.  The entire file is provided later in this page for reference.
 
 Potential Config Changes in your environment
 """"""""""""""""""""""""""""""""""""""""""""

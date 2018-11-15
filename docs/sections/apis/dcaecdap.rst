@@ -630,7 +630,7 @@ an httpreturncode
 service\_endpoint
 -----------------
 
-descirbes a service endpoint, including the service name, the method
+describes a service endpoint, including the service name, the method
 name, and the method type (GET, PUT, etc, most of the time will be GET)
 
 +--------------------------+-----------------------------------------+---------+
