@@ -32,7 +32,6 @@ message VesEvent                            // top-level message, currently the 
 }
 
 // VES CommonEventHeader adapted to GPB (Google Protocol Buffers)
-// Aligned with VES 7.0.1 schema, and extending to Performance Domain.
 
 message CommonEventHeader
 {
@@ -69,7 +68,7 @@ message CommonEventHeader
     bytes sourceId = 15;                    // "UUID identifying the entity experiencing the event issue; must be populated by the ATT enrichment process"
     string sourceName = 16;                 // required, "name of the entity experiencing the event issued use A&AI entry"
     string timeZoneOffset = 17;             // "Offset to GMT to indicate local time zone for the device"
-    string vesEventListenerVersion = 18;    // required, "Version of the VesEvent Listener", current value "7.0.2"
+    string vesEventListenerVersion = 18;    // required, "Version of the VesEvent Listener", current value "7.2"
 
     reserved "InternalHeaderFields";        // "enrichment fields for internal VES Event Listener service use only, not supplied by event sources"
     reserved 100;
