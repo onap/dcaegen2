@@ -24,6 +24,7 @@ Certificate-based
 | To achieve this secure flag needs to be turned on in PRH :ref:`configuration<prh_configuration>` :
 
 .. code-block:: json
+
   security.enableAaiCertAuth=true
 
 DMaaP BC authentication
@@ -41,6 +42,7 @@ Certificate-based
 | To achieve this secure flag needs to be turned on in PRH :ref:`configuration<prh_configuration>` :
 
 .. code-block:: json
+
   --security.enableDmaapCertAuth=true
 
 PRH identity and certificate data

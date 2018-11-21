@@ -167,7 +167,7 @@ We have two keystore files, one for TrustManager, one for KeyManager.
 --------------------
     update /etc/vsftpd/vsftpd.conf:
 
-  .. code-block:: javascript
+  .. code-block:: bash
 
       rsa_cert_file=/etc/ssl/private/ftp.crt
       rsa_private_key_file=/etc/ssl/private/ftp.key
