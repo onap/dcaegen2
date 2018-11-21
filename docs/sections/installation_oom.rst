@@ -10,9 +10,9 @@ This document describes the details of the Helm Chart based deployment process f
 ONAP Deployment Overview
 ------------------------
 
-ONAP R3 is extention to R2 Kubernetes deployment.  Kuberenetes is a container orchestration technology that organizes containers into composites of various patterns for easy deployment, management, and scaling.  R2 ONAP utilizes Kubernetes as the foundation for fulfilling its platform maturity promises.
+ONAP R3 is an extension of R2 Kubernetes deployment.  Kubernetes is a container orchestration technology that organizes containers into composites of various patterns for easy deployment, management, and scaling.  R2 ONAP utilized Kubernetes as the foundation for fulfilling its platform maturity promises and R3 contiunues to do so.
 
-Further, R2 ONAP manages Kubernetes specifications using Helm Charts, under which all Kuberentes yaml-formatted resource specifications and additional files are organized into a hierarchy of charts, sub-charts, and resources.  These yaml files are further augmented with Helm's templating, which makes dependencies and cross-references of parameters and parameter derivatives among resources manageable for a large and complex Kuberentes system such as ONAP.
+ONAP manages Kubernetes specifications using Helm Charts, under which all Kubernetes yaml-formatted resource specifications and additional files are organized into a hierarchy of charts, sub-charts, and resources.  These yaml files are further augmented with Helm's templating, which makes dependencies and cross-references of parameters and parameter derivatives among resources manageable for a large and complex Kubernetes system such as ONAP.
 
 At deployment time, with a single **helm install** command, Helm resolves all the templates and compiles the chart hierarchy into Kubernetes resource definitions, and invokes Kubernetes deployment operation for all the resources.
 
