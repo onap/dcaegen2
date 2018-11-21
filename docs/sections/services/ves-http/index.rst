@@ -17,14 +17,15 @@ VES Collector (HTTP) overview and functions
 
 
 .. toctree::
-    :maxdepth: 1
-   ./architecture.rst
-   ./configuration.rst
-   ./delivery.rst
-   ./installation.rst
+  :maxdepth: 1
 
-   
+  ./architecture.rst
+  ./configuration.rst
+  ./delivery.rst
+  ./installation.rst
+
+
 API reference
 ^^^^^^^^^^^^^
 
-Refer to :doc:`VES APIs<../../apis/ves.rst>` for detailed api information.
+Refer to :doc:`VES APIs <../../apis/ves>` for detailed api information.

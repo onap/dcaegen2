@@ -21,7 +21,7 @@ There are 2 micro services in the mapper functionality.
 
 
 .. toctree::
-   :maxdepth: 1
+  :maxdepth: 1
 
   ./flow.rst
   ./delivery.rst

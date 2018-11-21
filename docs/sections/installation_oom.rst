@@ -20,8 +20,8 @@ All ONAP Helm Charts are organized under the **kubernetes** directory of the **O
 
 The PNDA data platform is an optional DCAE component that is placed under the **pnda**
 directory. Details for how to configure values to enable PNDA installation during Helm install
-are described in `Installing PNDA During Helm Chart Based DCAE Deployment
-<installation_pnda.html>`_.
+are described in :doc:`Installing PNDA During Helm Chart Based DCAE Deployment
+<installation_pnda>`.
 
 DCAE Chart Organization
 -----------------------
@@ -128,9 +128,9 @@ DCAE Service Endpoints
 ----------------------
 
 Below is a table of default hostnames and ports for DCAE component service endpoints in Kuubernetes deployment:
-    ==================   ============================        ======================================================
+    ==================   =================================   ======================================================
     Component            Cluster Internal (host:port)        Cluster external (svc_name:port)
-    ==================   ============================        ======================================================
+    ==================   =================================   ======================================================
     VES                  dcae-ves-collector:8080             xdcae-ves-collector.onap:30235
     HV-VES               dcae-hv-ves-collector:6061          xdcae-hv-ves-collector.onap:30222
     TCA                  dcae-tca-analytics:11011            xdcae-tca-analytics.onap:32010
@@ -143,7 +143,7 @@ Below is a table of default hostnames and ports for DCAE component service endpo
     Config binding       config-binding-service:10000        NA
     DCAE Healthcheck     dcae-healthcheck:80                 NA
     Cloudify Manager     dcae-cloudify-manager:80            NA
-    ==================   ============================        ======================================================
+    ==================   =================================   ======================================================
 
 In addition, a number of ONAP service endpoints that are used by DCAE components are listed as follows
 for reference by DCAE developers and testers:
