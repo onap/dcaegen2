@@ -9,10 +9,10 @@ DCAE provides a number of interfaces for users to interact with the DCAE system.
 
 1. DCAE Bootstrap VM
     * The DCAE bootstrap VM accepts ssh connection with the standard access key.
-    * After ssh into the VM, the DCAE bootstarp docker container can be access via "docker exec" command.
+    * After ssh into the VM, the DCAE bootstrap docker container can be access via "docker exec" command.
 
-2. DCAE Clouify Manager
-    * The DCAE Clouify Manager VM accepts ssh connection with the standard access key.  The access account is **centos** because this is a CentOS 7 VM.
+2. DCAE Cloudify Manager
+    * The DCAE Cloudify Manager VM accepts ssh connection with the standard access key.  The access account is **centos** because this is a CentOS 7 VM.
     * The Cloudify Manager GUI can be accessed from http://{{CLOUDIFY_MANAGER_VM_IP}} .
     * The standard Cloudify command line CLI as specified here: http://cloudify.co/guide/3.2/cli-general.html .
 

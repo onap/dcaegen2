@@ -20,4 +20,4 @@ Cfy command for running the blueprint
 
 Additional Information
 ----------------------
-Any additional information that help other people understanding and using yor blueprint
+Any additional information that help other people understanding and using your blueprint
