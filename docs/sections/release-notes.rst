@@ -33,7 +33,7 @@ DCAE R3 improves upon previous release with the following new features:
         - Consul Cluster
 
     Notes:
-        \*  These components are delivered by the Holmes project and used as a DCAE analytics component in R3.
+        \*  These components are delivered by the Holmes project.
 
 - DCAE R3 supports both OpenStack Heat Orchestration Template based deployment and OOM (Kubernetes) based deployment. 
 
@@ -86,7 +86,7 @@ Quick Links:
 
         - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
 
-        - `Project Vulnerability Review Table for DCAE <https://wiki.onap.org/pages/viewpage.action?pageId=28377647>`_
+        - `Project Vulnerability Review Table for DCAE <https://wiki.onap.org/pages/viewpage.action?pageId=41421168>`_
 
 
 **New component Notes**
