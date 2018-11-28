@@ -23,7 +23,7 @@ VES Collector (HTTP) overview and functions
   ./configuration.rst
   ./delivery.rst
   ./installation.rst
-
+  ./tls-authentication.rst
 
 API reference
 ^^^^^^^^^^^^^
