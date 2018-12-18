@@ -6,6 +6,18 @@
 Troubleshooting
 ===============
 
+**NOTE**
+
+According to **ONAP** logging policy, **HV-VES** logs contain all required markers as well as service and client specific MDC's.
+Fully qualified log looks as follows:
+
+::
+
+        | 2018-12-18T13:12:44.369Z	 | p.dcae.collectors.veshv.impl.socket.NettyTcpServer	 | DEBUG	 | Client connection request received	 | ENTRY	 | 	 | RequestID=d7762b18-854c-4b8c-84aa-95762c6f8e62, InstanceID=9b9799ca-33a5-4f61-ba33-5c7bf7e72d07, InvocationID=b13d34ba-e1cd-4816-acda-706415308107, PartnerName=C=PL, ST=DL, L=Wroclaw, O=Nokia, OU=MANO, CN=dcaegen2-hvves-client, StatusCode=INPROGRESS, ClientIPAddress=192.168.0.9, ServerFQDN=a4ca8f96c7e5	 | reactor-tcp-nio-2
+
+In case of simplicity, all sample logs in this section are shortened to contain only logger name, log level, message and also, in case of errors and warning, exception message and stack trace.
+
+
 Deployment/Installation errors
 ------------------------------
 
@@ -75,35 +87,82 @@ Configuration errors
 
 ::
 
-    ap.dcae.collectors.veshv.impl.adapters.HttpAdapter | 2018-10-16T13:13:01.155Z | ERROR | Failed to get resource on path: http://localhost:8500/v1/hv/veshv-config (Connection refused: localhost/127.0.0.1:8500) |  | reactor-http-client-epoll-8
-    ap.dcae.collectors.veshv.impl.adapters.HttpAdapter | 2018-10-16T13:13:01.155Z | DEBUG | Nested exception: | java.net.ConnectException: Connection refused
-        ... 10 common frames omitted
-    Wrapped by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8500
-        at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
-        at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
-        at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
-        at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
-        at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:616)
-        at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:563)
-        at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:480)
-        at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+     | ap.dcae.collectors.veshv.impl.adapters.HttpAdapter	 | ERROR	 | Failed to get resource on path: http://invalid-host:8500/v1/kv/veshv-config?raw=true (consul-server1: Temporary failure in name resolution)
+     | ap.dcae.collectors.veshv.impl.adapters.HttpAdapter	 | DEBUG	 | Nested exception:	 | 	 | java.net.UnknownHostException: consul-server1: Temporary failure in name resolution
+        at java.base/java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+        at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+        at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+        at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+        at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+        at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364)
+        at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298)
+        at java.base/java.net.InetAddress.getByName(InetAddress.java:1248)
+        at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:146)
+        at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:143)
+        at java.base/java.security.AccessController.doPrivileged(Native Method)
+        at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:143)
+        at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:43)
+        at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:63)
+        at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:55)
+        at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:57)
+        at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:32)
+        at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:108)
+        at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:208)
+        at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49)
+        at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188)
+        at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174)
+        at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511)
+        at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485)
+        at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424)
+        at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103)
+        at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+        at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978)
+        at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512)
+        at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423)
+        at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482)
+        at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+        at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+        at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:315)
         at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
-        at java.lang.Thread.run(Thread.java:748)
-     | reactor-http-client-epoll-8
-    rs.veshv.impl.adapters.ConsulConfigurationProvider | 2018-10-16T13:13:01.163Z | WARN  | Could not get fresh configuration | java.net.ConnectException: Connection refused
-        ... 10 common frames omitted
-    Wrapped by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8500
-        at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
-        at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
-        at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
-        at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
-        at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:616)
-        at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:563)
-        at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:480)
-        at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+     | rs.veshv.impl.adapters.ConsulConfigurationProvider	 | WARN 	 | Could not get fresh configuration	 | java.net.UnknownHostException: consul-server1: Temporary failure in name resolution
+        at java.base/java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method)
+        at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+        at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+        at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+        at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+        at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364)
+        at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298)
+        at java.base/java.net.InetAddress.getByName(InetAddress.java:1248)
+        at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:146)
+        at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:143)
+        at java.base/java.security.AccessController.doPrivileged(Native Method)
+        at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:143)
+        at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:43)
+        at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:63)
+        at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:55)
+        at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:57)
+        at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:32)
+        at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:108)
+        at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:208)
+        at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49)
+        at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188)
+        at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174)
+        at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511)
+        at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485)
+        at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424)
+        at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103)
+        at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+        at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978)
+        at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512)
+        at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423)
+        at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482)
+        at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+        at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+        at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:315)
         at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
-        at java.lang.Thread.run(Thread.java:748)
-     | reactor-http-client-epoll-8
+        at java.base/java.lang.Thread.run(Thread.java:834)
+     | ors.veshv.healthcheck.factory.HealthCheckApiServer	 | DEBUG	 | HV-VES status: OUT_OF_SERVICE, Consul configuration not available. Retrying.
 
 
 
@@ -116,55 +175,19 @@ Make sure Consul is up and running and the **ip + port** combination is correct.
 
 ::
 
-    ap.dcae.collectors.veshv.impl.adapters.HttpAdapter | 2018-10-16T13:52:20.585Z | ERROR | Failed to get resource on path: http://consul:8500/v1/kv/veshv-config (HTTP request failed with code: 404.
-    Failing URI: /v1/kv/veshv-config) |  | reactor-http-nio-1
-    ap.dcae.collectors.veshv.impl.adapters.HttpAdapter | 2018-10-16T13:52:20.586Z | DEBUG | Nested exception: | reactor.ipc.netty.http.client.HttpClientException: HTTP request failed with code: 404.
-    Failing URI: /v1/kv/veshv-config
-     | reactor-http-nio-1
-    rs.veshv.impl.adapters.ConsulConfigurationProvider | 2018-10-16T13:52:20.591Z | WARN  | Could not get fresh configuration | reactor.ipc.netty.http.client.HttpClientException: HTTP request failed with code: 404.
-    Failing URI: /v1/kv/veshv-config
-     | reactor-http-nio-1
-
-
-**HV-VES** logs this information when connected to Consul, but cannot find any json configuration under given key which in this case is **veshv-config**.
-For more information, see :ref:`run_time_configuration`
-
-====
-
-**Invalid configuration format**
-
-::
-
-    rs.veshv.impl.adapters.ConsulConfigurationProvider | 2018-10-16T14:06:14.792Z | INFO  | Obtained new configuration from consul:
-    {
-        "invalidKey": "value"
-    } |  | reactor-http-nio-1
-    rs.veshv.impl.adapters.ConsulConfigurationProvider | 2018-10-16T14:06:14.796Z | WARN  | Could not get fresh configuration | java.lang.NullPointerException: null
-        at org.glassfish.json.JsonObjectBuilderImpl$JsonObjectImpl.getString(JsonObjectBuilderImpl.java:257)
-        at org.onap.dcae.collectors.veshv.impl.adapters.ConsulConfigurationProvider.createCollectorConfiguration(ConsulConfigurationProvider.kt:113)
-        at org.onap.dcae.collectors.veshv.impl.adapters.ConsulConfigurationProvider.access$createCollectorConfiguration(ConsulConfigurationProvider.kt:44)
-        at org.onap.dcae.collectors.veshv.impl.adapters.ConsulConfigurationProvider$invoke$6.invoke(ConsulConfigurationProvider.kt:80)
-        at org.onap.dcae.collectors.veshv.impl.adapters.ConsulConfigurationProvider$invoke$6.invoke(ConsulConfigurationProvider.kt:44)
-        at org.onap.dcae.collectors.veshv.impl.adapters.ConsulConfigurationProvider$sam$java_util_function_Function$0.apply(ConsulConfigurationProvider.kt)
-        at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:100)
-        at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:108)
-        at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmitScalar(FluxFlatMap.java:432)
-        at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:366)
-        at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:108)
-        at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:108)
-        at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmit(FluxFlatMap.java:484)
-        at reactor.core.publisher.FluxFlatMap$FlatMapInner.onNext(FluxFlatMap.java:916)
-        at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:115)
-        at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1083)
-        at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:241)
-        at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:76)
-        at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:108)
-        at reactor.core.publisher.FluxFilter$FilterSubscriber.onNext(FluxFilter.java:97)
-        at reactor.ipc.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:213)
-        at reactor.ipc.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:329)
-        at reactor.ipc.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:311)
-        at reactor.ipc.netty.http.client.HttpClientOperations.onInboundNext(HttpClientOperations.java:605)
-        at reactor.ipc.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:138)
+     | ap.dcae.collectors.veshv.impl.adapters.HttpAdapter	 | ERROR	 | Failed to get resource on path: http://consul-server:8500/v1/kv/invalid-resource?raw=true (http://consul-server:8500/v1/kv/invalid-resource?raw=true 404 Not Found)
+     | ap.dcae.collectors.veshv.impl.adapters.HttpAdapter	 | DEBUG	 | Nested exception:	 | java.lang.IllegalStateException: http://consul-server:8500/v1/kv/invalid-resource?raw=true 404 Not Found
+        at org.onap.dcae.collectors.veshv.impl.adapters.HttpAdapter$get$2.apply(HttpAdapter.kt:46)
+        at org.onap.dcae.collectors.veshv.impl.adapters.HttpAdapter$get$2.apply(HttpAdapter.kt:34)
+        at reactor.netty.http.client.HttpClientFinalizer.lambda$responseSingle$7(HttpClientFinalizer.java:95)
+        at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:118)
+        at reactor.core.publisher.FluxRetryPredicate$RetryPredicateSubscriber.onNext(FluxRetryPredicate.java:81)
+        at reactor.core.publisher.MonoCreate$DefaultMonoSink.success(MonoCreate.java:147)
+        at reactor.netty.http.client.HttpClientConnect$HttpObserver.onStateChange(HttpClientConnect.java:383)
+        at reactor.netty.resources.PooledConnectionProvider$DisposableAcquire.onStateChange(PooledConnectionProvider.java:501)
+        at reactor.netty.resources.PooledConnectionProvider$PooledConnection.onStateChange(PooledConnectionProvider.java:443)
+        at reactor.netty.http.client.HttpClientOperations.onInboundNext(HttpClientOperations.java:494)
+        at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:141)
         at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
         at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
         at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
@@ -179,14 +202,111 @@ For more information, see :ref:`run_time_configuration`
         at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
         at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
         at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
-        at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
-        at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:628)
-        at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:563)
-        at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:480)
-        at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+        at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:808)
+        at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:410)
+        at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:310)
         at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
-        at java.lang.Thread.run(Thread.java:748)
-     | reactor-http-nio-1
+        at java.base/java.lang.Thread.run(Thread.java:834)
+     | rs.veshv.impl.adapters.ConsulConfigurationProvider	 | WARN 	 | Could not get fresh configuration	 | java.lang.IllegalStateException: http://consul-server:8500/v1/kv/veshv-config1?raw=true 404 Not Found
+        at org.onap.dcae.collectors.veshv.impl.adapters.HttpAdapter$get$2.apply(HttpAdapter.kt:46)
+        at org.onap.dcae.collectors.veshv.impl.adapters.HttpAdapter$get$2.apply(HttpAdapter.kt:34)
+        at reactor.netty.http.client.HttpClientFinalizer.lambda$responseSingle$7(HttpClientFinalizer.java:95)
+        at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:118)
+        at reactor.core.publisher.FluxRetryPredicate$RetryPredicateSubscriber.onNext(FluxRetryPredicate.java:81)
+        at reactor.core.publisher.MonoCreate$DefaultMonoSink.success(MonoCreate.java:147)
+        at reactor.netty.http.client.HttpClientConnect$HttpObserver.onStateChange(HttpClientConnect.java:383)
+        at reactor.netty.resources.PooledConnectionProvider$DisposableAcquire.onStateChange(PooledConnectionProvider.java:501)
+        at reactor.netty.resources.PooledConnectionProvider$PooledConnection.onStateChange(PooledConnectionProvider.java:443)
+        at reactor.netty.http.client.HttpClientOperations.onInboundNext(HttpClientOperations.java:494)
+        at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:141)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)
+        at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)
+        at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)
+        at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+        at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:808)
+        at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:410)
+        at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:310)
+        at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+     | ors.veshv.healthcheck.factory.HealthCheckApiServer	 | DEBUG	 | HV-VES status: OUT_OF_SERVICE, Consul configuration not available. Retrying.
+
+
+**HV-VES** logs this information when connected to Consul, but cannot find any json configuration under given key which in this case is **veshv-config**.
+For more information, see :ref:`run_time_configuration`
+
+====
+
+**Invalid configuration format**
+
+//TODO we probably want to handle this in a better manner
+
+::
+
+     | 2018-12-18T11:42:41.823Z	 | rs.veshv.impl.adapters.ConsulConfigurationProvider	 | INFO 	 | Obtained new configuration from consul:
+        { "invalidKey": "value" }
+     | 2018-12-18T11:42:41.837Z	 | rs.veshv.impl.adapters.ConsulConfigurationProvider	 | WARN 	 | Could not get fresh configuration	 | java.lang.NullPointerException: null
+        at org.glassfish.json.JsonObjectBuilderImpl$JsonObjectImpl.getString(JsonObjectBuilderImpl.java:257)
+        at org.onap.dcae.collectors.veshv.impl.adapters.ConsulConfigurationProvider.createCollectorConfiguration(ConsulConfigurationProvider.kt:113)
+        at org.onap.dcae.collectors.veshv.impl.adapters.ConsulConfigurationProvider.access$createCollectorConfiguration(ConsulConfigurationProvider.kt:47)
+        at org.onap.dcae.collectors.veshv.impl.adapters.ConsulConfigurationProvider$invoke$4.invoke(ConsulConfigurationProvider.kt:80)
+        at org.onap.dcae.collectors.veshv.impl.adapters.ConsulConfigurationProvider$invoke$4.invoke(ConsulConfigurationProvider.kt:47)
+        at org.onap.dcae.collectors.veshv.impl.adapters.ConsulConfigurationProvider$sam$java_util_function_Function$0.apply(ConsulConfigurationProvider.kt)
+        at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:100)
+        at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:114)
+        at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmitScalar(FluxFlatMap.java:449)
+        at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:384)
+        at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.innerNext(FluxConcatMap.java:275)
+        at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:849)
+        at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121)
+        at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:204)
+        at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1476)
+        at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:241)
+        at reactor.core.publisher.FluxDoFinally$DoFinallySubscriber.onNext(FluxDoFinally.java:123)
+        at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:113)
+        at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:287)
+        at reactor.core.publisher.FluxUsing$UsingFuseableSubscriber.onNext(FluxUsing.java:350)
+        at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onNext(FluxFilterFuseable.java:113)
+        at reactor.core.publisher.FluxPeekFuseable$PeekFuseableConditionalSubscriber.onNext(FluxPeekFuseable.java:486)
+        at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1476)
+        at reactor.core.publisher.MonoReduceSeed$ReduceSeedSubscriber.onComplete(MonoReduceSeed.java:156)
+        at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:136)
+        at reactor.netty.channel.FluxReceive.terminateReceiver(FluxReceive.java:378)
+        at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:202)
+        at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:343)
+        at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:325)
+        at reactor.netty.channel.ChannelOperations.terminate(ChannelOperations.java:372)
+        at reactor.netty.http.client.HttpClientOperations.onInboundNext(HttpClientOperations.java:522)
+        at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:141)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)
+        at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)
+        at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)
+        at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+        at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:808)
+        at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:410)
+        at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:310)
+        at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+     | ors.veshv.healthcheck.factory.HealthCheckApiServer	 | DEBUG	 | HV-VES status: OUT_OF_SERVICE, Consul configuration not available. Retrying.
 
 
 This log is printed when you upload a configuration in an invalid format (for example, with missing fields). In the first log you can see that configuration on Consul is:
@@ -204,148 +324,55 @@ For more information on **Consul configuration**, see :ref:`run_time_configurati
 Message handling errors
 -----------------------
 
-**Handling messages when invalid kafka url is specified**
+**Handling messages when invalid Kafka url is specified**
 
 ::
 
-     | reactor-tcp-server-epoll-6
-                  org.apache.kafka.clients.ClientUtils | 2018-10-19T08:29:36.917Z | WARN  | Removing server invalid-kafka:9093 from bootstrap.servers as DNS resolution failed for invalid-kafka |  | reactor-tcp-server-epoll-6
-       org.apache.kafka.clients.producer.KafkaProducer | 2018-10-19T08:29:36.918Z | INFO  | [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 0 ms. |  | reactor-tcp-server-epoll-6
-    org.onap.dcae.collectors.veshv.impl.VesHvCollector | 2018-10-19T08:29:36.962Z | WARN  | Error while handling message stream: org.apache.kafka.common.KafkaException (Failed to construct kafka producer) |  | reactor-tcp-server-epoll-6
-    org.onap.dcae.collectors.veshv.impl.VesHvCollector | 2018-10-19T08:29:36.966Z | DEBUG | Detailed stack trace | org.apache.kafka.common.config.ConfigException: No resolvable bootstrap urls given in bootstrap.servers
-        at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:64)
-        at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:396)
-        ... 24 common frames omitted
-    Wrapped by: org.apache.kafka.common.KafkaException: Failed to construct kafka producer
-        at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:441)
-        at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:285)
+     | p.dcae.collectors.veshv.impl.socket.NettyTcpServer	 | DEBUG	 | Client connection request received
+     | p.dcae.collectors.veshv.impl.socket.NettyTcpServer	 | INFO 	 | Handling new connection
+     |               org.apache.kafka.clients.ClientUtils	 | WARN 	 | Removing server invalid-kafka-host:9092 from bootstrap.servers as DNS resolution failed for invalid-kafka-host
+     | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | WARN 	 | Error while handling message stream: org.apache.kafka.common.KafkaException (Failed to construct kafka producer)
+     | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | DEBUG	 | Detailed stack trace	| org.apache.kafka.common.config.ConfigException: No resolvable bootstrap urls given in bootstrap.servers
+        at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:66)
+        at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:406)
+        ... 49 common frames omitted
+        Wrapped by: org.apache.kafka.common.KafkaException: Failed to construct kafka producer
+        at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:457)
+        at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:289)
         at reactor.kafka.sender.internals.ProducerFactory.createProducer(ProducerFactory.java:33)
-        at reactor.kafka.sender.internals.DefaultKafkaSender.lambda$new$0(DefaultKafkaSender.java:90)
-        at reactor.core.publisher.MonoCallable.subscribe(MonoCallable.java:57)
+        at reactor.kafka.sender.internals.DefaultKafkaSender.lambda$new$0(DefaultKafkaSender.java:96)
+        at reactor.core.publisher.MonoCallable.subscribe(MonoCallable.java:56)
         at reactor.core.publisher.MonoPeekFuseable.subscribe(MonoPeekFuseable.java:74)
-        at reactor.core.publisher.Mono.subscribe(Mono.java:3088)
+        at reactor.core.publisher.Mono.subscribe(Mono.java:3590)
         at reactor.core.publisher.MonoProcessor.add(MonoProcessor.java:531)
         at reactor.core.publisher.MonoProcessor.subscribe(MonoProcessor.java:444)
         at reactor.core.publisher.MonoFlatMapMany.subscribe(MonoFlatMapMany.java:49)
-        at reactor.core.publisher.FluxPeek.subscribe(FluxPeek.java:80)
-        at reactor.core.publisher.FluxFilter.subscribe(FluxFilter.java:52)
-        at reactor.core.publisher.FluxMap.subscribe(FluxMap.java:62)
-        at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:55)
         at reactor.core.publisher.FluxPeek.subscribe(FluxPeek.java:83)
-        at reactor.core.publisher.FluxDoFinally.subscribe(FluxDoFinally.java:73)
+        at reactor.core.publisher.FluxMap.subscribe(FluxMap.java:62)
+        at reactor.core.publisher.FluxPeek.subscribe(FluxPeek.java:83)
+        at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:54)
+        at reactor.core.publisher.FluxPeek.subscribe(FluxPeek.java:83)
         at reactor.core.publisher.FluxOnErrorResume.subscribe(FluxOnErrorResume.java:47)
+        at reactor.core.publisher.FluxDoFinally.subscribe(FluxDoFinally.java:73)
         at reactor.core.publisher.MonoIgnoreElements.subscribe(MonoIgnoreElements.java:37)
-        at reactor.ipc.netty.channel.ChannelOperations.applyHandler(ChannelOperations.java:381)
-        at reactor.ipc.netty.channel.ChannelOperations.onHandlerStart(ChannelOperations.java:296)
-        at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
-        at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
-        at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:315)
-        at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
-        at java.lang.Thread.run(Thread.java:748)
-     | reactor-tcp-server-epoll-6
-    p.dcae.collectors.veshv.impl.socket.NettyTcpServer | 2018-10-19T08:29:36.971Z | INFO  | Connection from /172.26.0.6:55574 has been closed |  | reactor-tcp-server-epoll-6
-
-
-**HV-VES** responds with the above when it handles a message and currently applied configuration has invalid Kafka bootstrap server defined.
-The configuration read from Consul in this case:
-
-.. code-block:: json
-
-    {
-        "dmaap.kafkaBootstrapServers": "invalid-kafka:9093",
-        "collector.routing": [
-                {
-                    "fromDomain": "perf3gpp",
-                    "toTopic": "HV_VES_PERF3GPP"
-                },
-                {
-                    "fromDomain": "heartbeat",
-                    "toTopic": "HV_VES_HEARTBEAT"
-                }
-        ]
-    }
-
-where **invalid-kafka:9093** is not an existing **ip+port** combination.
-
-
-====
-
-**First creation of topics on kafka**
-
-
-On the first try of creating and publishing to a given kafka topic, **HV-VES** logs the following warnings and creates the requested topics anyway.
-
-::
-
-    org.apache.kafka.clients.NetworkClient | 2018-10-22T10:11:53.396Z | WARN  | [Producer clientId=producer-1] Error while fetching metadata with correlation id 1 : {HV_VES_PERF3GPP=LEADER_NOT_AVAILABLE} |  | kafka-producer-network-thread | producer-1
-    org.apache.kafka.clients.NetworkClient | 2018-10-22T10:11:53.524Z | WARN  | [Producer clientId=producer-1] Error while fetching metadata with correlation id 3 : {HV_VES_PERF3GPP=LEADER_NOT_AVAILABLE} |  | kafka-producer-network-thread | producer-1
-    org.apache.kafka.clients.NetworkClient | 2018-10-22T10:11:53.636Z | WARN  | [Producer clientId=producer-1] Error while fetching metadata with correlation id 4 : {HV_VES_PERF3GPP=LEADER_NOT_AVAILABLE} |  | kafka-producer-network-thread | producer-1
-    org.apache.kafka.clients.NetworkClient | 2018-10-22T10:11:53.749Z | WARN  | [Producer clientId=producer-1] Error while fetching metadata with correlation id 5 : {HV_VES_PERF3GPP=LEADER_NOT_AVAILABLE} |  | kafka-producer-network-thread | producer-1
-
-====
-
-**Kafka service became unavailable after producer for a given topic was successfully created**
-
-
-After receiving a **Ves Common Event**, **HV-VES** creates a producer for a given topic and keeps it for the whole lifetime of an application.
-If Kafka service becomes unreachable after the producer creation, you will see the following logs when trying to establish another connection with the Kafka server.
-
-::
-
-     org.apache.kafka.clients.NetworkClient | 2018-10-22T10:04:08.604Z | WARN  | [Producer clientId=producer-1] Connection to node 1001 could not be established. Broker may not be available. |  | kafka-producer-network-thread | producer-1
-                org.apache.kafka.clients.NetworkClient | 2018-10-22T10:04:11.896Z | WARN  | [Producer clientId=producer-1] Connection to node 1001 could not be established. Broker may not be available. |  | kafka-producer-network-thread | producer-1
-                org.apache.kafka.clients.NetworkClient | 2018-10-22T10:04:14.968Z | WARN  | [Producer clientId=producer-1] Connection to node 1001 could not be established. Broker may not be available. |  | kafka-producer-network-thread | producer-1
-                org.apache.kafka.clients.NetworkClient | 2018-10-22T10:04:18.040Z | WARN  | [Producer clientId=producer-1] Connection to node 1001 could not be established. Broker may not be available. |  | kafka-producer-network-thread | producer-1
-                org.apache.kafka.clients.NetworkClient | 2018-10-22T10:04:21.111Z | WARN  | [Producer clientId=producer-1] Connection to node 1001 could not be established. Broker may not be available. |  | kafka-producer-network-thread | producer-1
-     reactor.kafka.sender.internals.DefaultKafkaSender | 2018-10-22T10:04:23.519Z | ERROR | error {} | org.apache.kafka.common.errors.TimeoutException: Expiring 1 record(s) for HV_VES_PERF3GPP-0: 30050 ms has passed since batch creation plus linger time
-     | kafka-producer-network-thread | producer-1
-    cae.collectors.veshv.impl.adapters.kafka.KafkaSink | 2018-10-22T10:04:23.522Z | WARN  | Failed to send message to Kafka | org.apache.kafka.common.errors.TimeoutException: Expiring 1 record(s) for HV_VES_PERF3GPP-0: 30050 ms has passed since batch creation plus linger time
-     | single-1
-    org.onap.dcae.collectors.veshv.impl.VesHvCollector | 2018-10-22T10:04:23.528Z | WARN  | Error while handling message stream: org.apache.kafka.common.errors.TimeoutException (Expiring 1 record(s) for HV_VES_PERF3GPP-0: 30050 ms has passed since batch creation plus linger time) |  | single-1
-
-To resolve this issue, **HV-VES** restart is required.
-
-====
-
-**Message with too big payload size**
-
-::
-
-    g.onap.dcae.collectors.veshv.impl.VesHvCollector | 2018-10-19T08:53:18.349Z | WARN  | Error while handling message stream: org.onap.dcae.collectors.veshv.impl.wire.WireFrameException (PayloadSizeExceeded: payload size exceeds the limit (1048576 bytes)) |  | single-1
-    org.onap.dcae.collectors.veshv.impl.VesHvCollector | 2018-10-19T08:53:18.349Z | DEBUG | Detailed stack trace | org.onap.dcae.collectors.veshv.impl.wire.WireFrameException: PayloadSizeExceeded: payload size exceeds the limit (1048576 bytes)
-        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$onError$1$1.invoke(WireChunkDecoder.kt:67)
-        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$onError$1$1.invoke(WireChunkDecoder.kt:38)
-        at arrow.effects.IO$Companion$invoke$1.invoke(IO.kt:28)
-        at arrow.effects.IO$Companion$invoke$1.invoke(IO.kt:22)
-        at arrow.effects.IORunLoop.step(IORunLoop.kt:50)
-        at arrow.effects.IO.unsafeRunTimed(IO.kt:109)
-        at arrow.effects.IO.unsafeRunSync(IO.kt:106)
-        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$generateFrames$1.accept(WireChunkDecoder.kt:61)
-        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$generateFrames$1.accept(WireChunkDecoder.kt:38)
-        at reactor.core.publisher.FluxGenerate.lambda$new$1(FluxGenerate.java:56)
-        at reactor.core.publisher.FluxGenerate$GenerateSubscription.slowPath(FluxGenerate.java:262)
-        at reactor.core.publisher.FluxGenerate$GenerateSubscription.request(FluxGenerate.java:204)
-        at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.request(FluxPeekFuseable.java:138)
-        at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:1454)
-        at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:1328)
-        at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onSubscribe(FluxPeekFuseable.java:172)
-        at reactor.core.publisher.FluxGenerate.subscribe(FluxGenerate.java:83)
-        at reactor.core.publisher.FluxPeekFuseable.subscribe(FluxPeekFuseable.java:86)
-        at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:55)
-        at reactor.core.publisher.Flux.subscribe(Flux.java:6877)
-        at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:418)
-        at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onNext(FluxConcatMap.java:241)
-        at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:185)
-        at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:185)
-        at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:108)
-        at reactor.ipc.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:213)
-        at reactor.ipc.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:329)
-        at reactor.ipc.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:311)
-        at reactor.ipc.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:138)
-        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
-        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
-        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
-        at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+        at reactor.netty.tcp.TcpServerHandle.onStateChange(TcpServerHandle.java:64)
+        at reactor.netty.tcp.TcpServerBind$ChildObserver.onStateChange(TcpServerBind.java:226)
+        at reactor.netty.channel.ChannelOperationsHandler.channelActive(ChannelOperationsHandler.java:112)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelActive(AbstractChannelHandlerContext.java:213)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelActive(AbstractChannelHandlerContext.java:199)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelActive(AbstractChannelHandlerContext.java:192)
+        at reactor.netty.tcp.SslProvider$SslReadHandler.userEventTriggered(SslProvider.java:720)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeUserEventTriggered(AbstractChannelHandlerContext.java:329)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeUserEventTriggered(AbstractChannelHandlerContext.java:315)
+        at io.netty.channel.AbstractChannelHandlerContext.fireUserEventTriggered(AbstractChannelHandlerContext.java:307)
+        at io.netty.handler.ssl.SslHandler.setHandshakeSuccess(SslHandler.java:1530)
+        at io.netty.handler.ssl.SslHandler.wrapNonAppData(SslHandler.java:937)
+        at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1360)
+        at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1199)
+        at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1243)
+        at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:489)
+        at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:428)
+        at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265)
         at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
         at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
         at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
@@ -353,36 +380,295 @@ To resolve this issue, **HV-VES** restart is required.
         at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
         at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
         at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
-        at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:808)
-        at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:410)
-        at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:310)
+        at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:628)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:528)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:482)
+        at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
         at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
-        at java.lang.Thread.run(Thread.java:748)
-     | single-1
-    p.dcae.collectors.veshv.impl.socket.NettyTcpServer | 2018-10-19T08:53:18.351Z | INFO  | Connection from /172.26.0.6:56924 has been closed |  | single-1
+        at java.base/java.lang.Thread.run(Thread.java:834)
+     | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | DEBUG	 | Released buffer memory after handling message stream
+
+
+**HV-VES** responds with the above when it handles a message and currently applied configuration has invalid DmaaP MR Kafka bootstrap server defined.
+The configuration read from Consul in this case:
+
+.. code-block:: json
+
+    {
+        "dmaap.kafkaBootstrapServers": "invalid-kafka-host:9093",
+        "collector.routing": [
+                {
+                    "fromDomain": "perf3gpp",
+                    "toTopic": "HV_VES_PERF3GPP"
+                }
+        ]
+    }
+
+where **invalid-kafka:9093** is not an existing **ip+port** combination.
+
+====
+
+**Kafka service became unavailable after producer has been created**
+
+
+On start of the application **HV-VES** creates a producer for a given DmaaP MR Kafka server.
+If Kafka service becomes unreachable after the producer creation, it will be removed from bootstrap.servers list on next connection.
+
+Following information will be logged:
+
+::
+
+     | org.apache.kafka.clients.NetworkClient   | WARN 	 | [Producer clientId=producer-1] Connection to node 1001 could not be established. Broker may not be available.
+     | org.apache.kafka.clients.NetworkClient   | WARN 	 | [Producer clientId=producer-1] Connection to node 1001 could not be established. Broker may not be available.
+     | org.apache.kafka.clients.NetworkClient   | WARN 	 | [Producer clientId=producer-1] Connection to node 1001 could not be established. Broker may not be available.
+     | org.apache.kafka.clients.NetworkClient   | WARN 	 | [Producer clientId=producer-1] Connection to node 1001 could not be established. Broker may not be available.
+     | org.apache.kafka.clients.NetworkClient   | WARN 	 | [Producer clientId=producer-1] Error connecting to node message-router-kafka:9092 (id: 1001 rack: null)	 | 	 | java.nio.channels.UnresolvedAddressException: null
+        at java.base/sun.nio.ch.Net.checkAddress(Net.java:130)
+        at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:675)
+        at org.apache.kafka.common.network.Selector.doConnect(Selector.java:233)
+        ... 9 common frames omitted
+        Wrapped by: java.io.IOException: Can't resolve address: message-router-kafka:9092
+        at org.apache.kafka.common.network.Selector.doConnect(Selector.java:235)
+        at org.apache.kafka.common.network.Selector.connect(Selector.java:214)
+        at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:864)
+        at org.apache.kafka.clients.NetworkClient.access$700(NetworkClient.java:64)
+        at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1035)
+        at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:920)
+        at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:508)
+        at org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:239)
+        at org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:163)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+         | 	 | kafka-producer-network-thread | producer-1
+    | p.dcae.collectors.veshv.impl.socket.NettyTcpServer	 | INFO 	 | Handling new connection
+    |               org.apache.kafka.clients.ClientUtils	 | WARN 	 | Removing server message-router-kafka:9092 from bootstrap.servers as DNS resolution failed for message-router-kafka
+    | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | WARN 	 | Error while handling message stream: org.apache.kafka.common.KafkaException (Failed to construct kafka producer)
+    | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | DEBUG	 | Detailed stack trace
+        at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:66)
+        at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:406)
+        ... 48 common frames omitted
+        Wrapped by: org.apache.kafka.common.KafkaException: Failed to construct kafka producer
+        at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:457)
+        at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:289)
+        at reactor.kafka.sender.internals.ProducerFactory.createProducer(ProducerFactory.java:33)
+        at reactor.kafka.sender.internals.DefaultKafkaSender.lambda$new$0(DefaultKafkaSender.java:96)
+        at reactor.core.publisher.MonoCallable.subscribe(MonoCallable.java:56)
+        at reactor.core.publisher.MonoPeekFuseable.subscribe(MonoPeekFuseable.java:74)
+        at reactor.core.publisher.Mono.subscribe(Mono.java:3590)
+        at reactor.core.publisher.MonoProcessor.add(MonoProcessor.java:531)
+        at reactor.core.publisher.MonoProcessor.subscribe(MonoProcessor.java:444)
+        at reactor.core.publisher.MonoFlatMapMany.subscribe(MonoFlatMapMany.java:49)
+        at reactor.core.publisher.FluxPeek.subscribe(FluxPeek.java:83)
+        at reactor.core.publisher.FluxMap.subscribe(FluxMap.java:62)
+        at reactor.core.publisher.FluxPeek.subscribe(FluxPeek.java:83)
+        at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:54)
+        at reactor.core.publisher.FluxPeek.subscribe(FluxPeek.java:83)
+        at reactor.core.publisher.FluxOnErrorResume.subscribe(FluxOnErrorResume.java:47)
+        at reactor.core.publisher.FluxDoFinally.subscribe(FluxDoFinally.java:73)
+        at reactor.core.publisher.MonoIgnoreElements.subscribe(MonoIgnoreElements.java:37)
+        at reactor.netty.tcp.TcpServerHandle.onStateChange(TcpServerHandle.java:64)
+        at reactor.netty.tcp.TcpServerBind$ChildObserver.onStateChange(TcpServerBind.java:226)
+        at reactor.netty.channel.ChannelOperationsHandler.channelActive(ChannelOperationsHandler.java:112)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelActive(AbstractChannelHandlerContext.java:213)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelActive(AbstractChannelHandlerContext.java:199)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelActive(AbstractChannelHandlerContext.java:192)
+        at reactor.netty.tcp.SslProvider$SslReadHandler.userEventTriggered(SslProvider.java:720)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeUserEventTriggered(AbstractChannelHandlerContext.java:329)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeUserEventTriggered(AbstractChannelHandlerContext.java:315)
+        at io.netty.channel.AbstractChannelHandlerContext.fireUserEventTriggered(AbstractChannelHandlerContext.java:307)
+        at io.netty.handler.ssl.SslHandler.setHandshakeSuccess(SslHandler.java:1530)
+        at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1368)
+        at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1199)
+        at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1243)
+        at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:489)
+        at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:428)
+        at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+        at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:628)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:528)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:482)
+        at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+        at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+     | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | DEBUG	 | Released buffer memory after handling message stream
+
+
+To resolve this issue, you can either wait for that Kafka service to be available, or change bootstrap server in consul configuration.
+For more information, see: :ref:`run_time_configuration`
+
+====
+
+**Message with too big payload size**
+
+::
+
+     | p.dcae.collectors.veshv.impl.socket.NettyTcpServer	 | DEBUG	 | Client connection request received
+     | p.dcae.collectors.veshv.impl.socket.NettyTcpServer	 | INFO 	 | Handling new connection
+     | p.dcae.collectors.veshv.impl.wire.WireChunkDecoder	 | TRACE	 | Got message with total size of 16384 B
+     | p.dcae.collectors.veshv.impl.wire.WireChunkDecoder	 | WARN 	 | Error while handling message stream: org.onap.dcae.collectors.veshv.impl.wire.WireFrameException (PayloadSizeExceeded: payload size exceeds the limit (1048576 bytes))
+     | p.dcae.collectors.veshv.impl.wire.WireChunkDecoder	 | DEBUG	 | Detailed stack trace	| org.onap.dcae.collectors.veshv.impl.wire.WireFrameException: PayloadSizeExceeded: payload size exceeds the limit (1048576 bytes)
+        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$onError$1$1.invoke(WireChunkDecoder.kt:72)
+        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$onError$1$1.invoke(WireChunkDecoder.kt:41)
+        at arrow.effects.IO$Companion$invoke$1.invoke(IO.kt:33)
+        at arrow.effects.IO$Companion$invoke$1.invoke(IO.kt:27)
+        at arrow.effects.IORunLoop.step(IORunLoop.kt:49)
+        at arrow.effects.IO.unsafeRunTimed(IO.kt:115)
+        at arrow.effects.IO.unsafeRunSync(IO.kt:112)
+        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$generateFrames$1.accept(WireChunkDecoder.kt:66)
+        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$generateFrames$1.accept(WireChunkDecoder.kt:41)
+        at reactor.core.publisher.FluxGenerate.lambda$new$1(FluxGenerate.java:56)
+        at reactor.core.publisher.FluxGenerate$GenerateSubscription.slowPath(FluxGenerate.java:262)
+        at reactor.core.publisher.FluxGenerate$GenerateSubscription.request(FluxGenerate.java:204)
+        at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:1849)
+        at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onSubscribe(FluxOnErrorResume.java:68)
+        at reactor.core.publisher.FluxGenerate.subscribe(FluxGenerate.java:83)
+        at reactor.core.publisher.FluxOnErrorResume.subscribe(FluxOnErrorResume.java:47)
+        at reactor.core.publisher.FluxDoFinally.subscribe(FluxDoFinally.java:73)
+        at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:54)
+        at reactor.core.publisher.Flux.subscribe(Flux.java:7734)
+        at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:442)
+        at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onNext(FluxConcatMap.java:244)
+        at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:192)
+        at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:192)
+        at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:114)
+        at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:211)
+        at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:327)
+        at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:310)
+        at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:141)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1429)
+        at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1199)
+        at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1243)
+        at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:489)
+        at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:428)
+        at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+        at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:628)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:528)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:482)
+        at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+        at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+     | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | WARN 	 | Error while handling message stream: org.onap.dcae.collectors.veshv.impl.wire.WireFrameException (PayloadSizeExceeded: payload size exceeds the limit (1048576 bytes))
+     | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | DEBUG	 | Detailed stack trace	| org.onap.dcae.collectors.veshv.impl.wire.WireFrameException: PayloadSizeExceeded: payload size exceeds the limit (1048576 bytes)
+        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$onError$1$1.invoke(WireChunkDecoder.kt:72)
+        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$onError$1$1.invoke(WireChunkDecoder.kt:41)
+        at arrow.effects.IO$Companion$invoke$1.invoke(IO.kt:33)
+        at arrow.effects.IO$Companion$invoke$1.invoke(IO.kt:27)
+        at arrow.effects.IORunLoop.step(IORunLoop.kt:49)
+        at arrow.effects.IO.unsafeRunTimed(IO.kt:115)
+        at arrow.effects.IO.unsafeRunSync(IO.kt:112)
+        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$generateFrames$1.accept(WireChunkDecoder.kt:66)
+        at org.onap.dcae.collectors.veshv.impl.wire.WireChunkDecoder$generateFrames$1.accept(WireChunkDecoder.kt:41)
+        at reactor.core.publisher.FluxGenerate.lambda$new$1(FluxGenerate.java:56)
+        at reactor.core.publisher.FluxGenerate$GenerateSubscription.slowPath(FluxGenerate.java:262)
+        at reactor.core.publisher.FluxGenerate$GenerateSubscription.request(FluxGenerate.java:204)
+        at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:1849)
+        at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onSubscribe(FluxOnErrorResume.java:68)
+        at reactor.core.publisher.FluxGenerate.subscribe(FluxGenerate.java:83)
+        at reactor.core.publisher.FluxOnErrorResume.subscribe(FluxOnErrorResume.java:47)
+        at reactor.core.publisher.FluxDoFinally.subscribe(FluxDoFinally.java:73)
+        at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:54)
+        at reactor.core.publisher.Flux.subscribe(Flux.java:7734)
+        at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:442)
+        at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onNext(FluxConcatMap.java:244)
+        at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:192)
+        at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:192)
+        at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:114)
+        at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:211)
+        at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:327)
+        at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:310)
+        at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:141)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1429)
+        at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1199)
+        at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1243)
+        at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:489)
+        at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:428)
+        at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+        at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+        at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+        at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+        at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:628)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:528)
+        at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:482)
+        at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+        at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+     | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | DEBUG	 | Released buffer memory after handling message stream
 
 
 
 The above log is printed when the message payload size is too big. **HV-VES** does not handle messages that exceed specified payload size. Default value is **1048576 bytes (1MiB)**, but it can be configured via cmd or by environment variables.
 
+====
+
+**Invalid GPB data**
+
+Messages with invalid Google Protocol Buffers data encoded will be omitted. **HV-VES** will respond as follows:
+
+::
+
+    | p.dcae.collectors.veshv.impl.socket.NettyTcpServer	 | DEBUG	 | Client connection request received
+    | p.dcae.collectors.veshv.impl.socket.NettyTcpServer	 | INFO 	 | Handling new connection
+    | p.dcae.collectors.veshv.impl.wire.WireChunkDecoder	 | TRACE	 | Got message with total size of 28 B
+    | p.dcae.collectors.veshv.impl.wire.WireChunkDecoder	 | TRACE	 | Wire payload size: 16 B
+    | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | TRACE	 | Wire frame header is valid
+    | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | WARN 	 | Failed to decode ves event header, reason: Protocol message tag had invalid wire type.
+    | p.dcae.collectors.veshv.impl.wire.WireChunkDecoder	 | TRACE	 | End of data in current TCP buffer
+
+====
+
+**Invalid Wire Frame**
+
+Messages with invalid Wire Frame, just like those containing invalid GPB data, will be dropped. The exact reason can be found in logs.
+
+::
+
+    | p.dcae.collectors.veshv.impl.socket.NettyTcpServer	 | DEBUG	 | Client connection request received
+    | p.dcae.collectors.veshv.impl.socket.NettyTcpServer	 | INFO 	 | Handling new connection
+    | p.dcae.collectors.veshv.impl.wire.WireChunkDecoder	 | TRACE	 | Got message with total size of 322 B
+    | p.dcae.collectors.veshv.impl.wire.WireChunkDecoder	 | TRACE	 | Wire payload size: 310 B
+    | org.onap.dcae.collectors.veshv.impl.VesHvCollector	 | WARN 	 | Invalid wire frame header, reason: Invalid major version in wire frame header. Expected 1 but was 2
+    | p.dcae.collectors.veshv.impl.wire.WireChunkDecoder	 | TRACE	 | End of data in current TCP buffer
 
 
 ====
 
-**Other invalid messages**
-
-
-Messages with **invalid wire frame** or **invalid gpb** data are ommitted and **HV-VES** only logs the connection-related logs as follows:
-
-::
-
-    p.dcae.collectors.veshv.impl.socket.NettyTcpServer | 2018-10-19T09:03:03.345Z | INFO  | Handling connection from /172.26.0.6:57432 |  | reactor-tcp-server-epoll-5
-    p.dcae.collectors.veshv.impl.socket.NettyTcpServer | 2018-10-19T09:04:03.351Z | INFO  | Idle timeout of 60 s reached. Closing connection from /172.26.0.6:57432... |  | reactor-tcp-server-epoll-5
-    p.dcae.collectors.veshv.impl.socket.NettyTcpServer | 2018-10-19T09:04:03.353Z | INFO  | Connection from /172.26.0.6:57432 has been closed |  | reactor-tcp-server-epoll-5
-    p.dcae.collectors.veshv.impl.socket.NettyTcpServer | 2018-10-19T09:04:03.354Z | DEBUG | Channel (/172.26.0.6:57432) closed successfully. |  | reactor-tcp-server-epoll-5
-
 
 For more information, see the :ref:`hv_ves_behaviors` section.
+
 
 Authorization related errors
 ----------------------------
@@ -394,7 +680,7 @@ Authorization related errors
 
 ::
 
-    org.onap.dcae.collectors.veshv.main | 2018-10-22T06:51:54.191Z | ERROR | Failed to start a server | java.io.FileNotFoundException: /etc/ves-hv/server.p12 (No such file or directory)
+    | org.onap.dcae.collectors.veshv.main | ERROR | Failed to start a server | java.io.FileNotFoundException: /etc/ves-hv/server.p12 (No such file or directory)
         at java.io.FileInputStream.open0(Native Method)
         at java.io.FileInputStream.open(FileInputStream.java:195)
         at java.io.FileInputStream.<init>(FileInputStream.java:138)
@@ -421,7 +707,6 @@ Authorization related errors
         at arrow.effects.IO.unsafeRunSync(IO.kt:106)
         at org.onap.dcae.collectors.veshv.utils.arrow.EffectsKt.unsafeRunEitherSync(effects.kt:50)
         at org.onap.dcae.collectors.veshv.main.MainKt.main(main.kt:41)
-    | main
 
 
 The above error is logged when key store is not provided. Similarly, when trust store is not provided, **/etc/ves-hv/trust.p12** file missing is logged.
@@ -433,7 +718,7 @@ The above error is logged when key store is not provided. Similarly, when trust 
 
 ::
 
-    org.onap.dcae.collectors.veshv.main | 2018-10-22T06:59:24.039Z | ERROR | Failed to start a server | java.security.UnrecoverableKeyException: failed to decrypt safe contents entry: javax.crypto.BadPaddingException: Given final block not properly padded. Such issues can arise if a bad key is used during decryption.
+    | org.onap.dcae.collectors.veshv.main | ERROR | Failed to start a server | java.security.UnrecoverableKeyException: failed to decrypt safe contents entry: javax.crypto.BadPaddingException: Given final block not properly padded. Such issues can arise if a bad key is used during decryption.
         ... 23 common frames omitted
         Wrapped by: java.io.IOException: keystore password was incorrect
         at sun.security.pkcs12.PKCS12KeyStore.engineLoad(PKCS12KeyStore.java:2059)
@@ -459,7 +744,6 @@ The above error is logged when key store is not provided. Similarly, when trust 
         at arrow.effects.IO.unsafeRunSync(IO.kt:106)
         at org.onap.dcae.collectors.veshv.utils.arrow.EffectsKt.unsafeRunEitherSync(effects.kt:50)
         at org.onap.dcae.collectors.veshv.main.MainKt.main(main.kt:41)
-    | main
 
 
 Key or trust store password provided in configuration is invalid.
@@ -470,7 +754,7 @@ Key or trust store password provided in configuration is invalid.
 
 ::
 
-    org.onap.dcae.collectors.veshv.main | 2018-10-22T09:11:38.200Z | ERROR | Failed to start a server | java.io.IOException: DerInputStream.getLength(): lengthTag=111, too big.
+    | org.onap.dcae.collectors.veshv.main | ERROR | Failed to start a server | java.io.IOException: DerInputStream.getLength(): lengthTag=111, too big.
         at sun.security.util.DerInputStream.getLength(DerInputStream.java:599)
         at sun.security.util.DerValue.init(DerValue.java:391)
         at sun.security.util.DerValue.<init>(DerValue.java:332)
@@ -498,7 +782,6 @@ Key or trust store password provided in configuration is invalid.
         at arrow.effects.IO.unsafeRunSync(IO.kt:106)
         at org.onap.dcae.collectors.veshv.utils.arrow.EffectsKt.unsafeRunEitherSync(effects.kt:50)
         at org.onap.dcae.collectors.veshv.main.MainKt.main(main.kt:41)
-    | main
 
 The above is logged when provided keystore has invalid or corrupted content.
 This log also appears when you try to use key store/trust store in archive format other than **PKCS12** (the only supported by **HV-VES** store type).
