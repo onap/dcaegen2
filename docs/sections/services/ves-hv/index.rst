@@ -36,3 +36,4 @@ High Volume VES Collector overview and functions
     HV-VES Offered APIs <../../apis/ves-hv/index>
     authorization
     example-event
+    healthcheck
