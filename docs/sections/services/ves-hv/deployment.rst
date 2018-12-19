@@ -117,12 +117,3 @@ Result:
 .. code-block:: bash
 
     kubectl get pods --namespace ${ONAP_NAMESPACE} --selector app=dcae-hv-ves-collector
-
-Healthcheck
-===========
-
-Inside HV-VES docker container runs small http service for healthcheck - exact port for this service can be configured
-at deployment using `--health-check-api-port` command line option.
-
-This service exposes single endpoint **GET /health/ready** which returns **HTTP 200 OK** in case HV-VES is healthy
-and ready for connections. Otherwise it returns **HTTP 503 Service Unavailable** with short reason of unhealthiness.

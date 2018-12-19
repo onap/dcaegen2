@@ -1,0 +1,67 @@
+jvm_threads_live 26.0
+system_cpu_count 4.0
+jvm_gc_memory_promoted_bytes_total 6740576.0
+process_cpu_usage 5.485463521667581E-4
+jvm_buffer_count{id="mapped",} 0.0
+jvm_buffer_count{id="direct",} 14.0
+jvm_threads_peak 26.0
+jvm_classes_unloaded_total 0.0
+hvves_clients_rejected_cause_total{cause="too_big_payload",} 7.0
+hvves_messages_sent_topic_total{topic="HV_VES_PERF3GPP",} 20000.0
+jvm_threads_daemon 25.0
+jvm_buffer_memory_used_bytes{id="mapped",} 0.0
+jvm_buffer_memory_used_bytes{id="direct",} 1.34242446E8
+jvm_gc_max_data_size_bytes 4.175429632E9
+hvves_messages_received_total 32000.0
+hvves_messages_dropped_total 12000.0
+hvves_clients_rejected_total 7.0
+system_cpu_usage 0.36204059243006037
+jvm_memory_max_bytes{area="nonheap",id="CodeHeap 'non-nmethods'",} 5832704.0
+jvm_memory_max_bytes{area="nonheap",id="Metaspace",} -1.0
+jvm_memory_max_bytes{area="nonheap",id="CodeHeap 'profiled nmethods'",} 1.22912768E8
+jvm_memory_max_bytes{area="nonheap",id="Compressed Class Space",} 1.073741824E9
+jvm_memory_max_bytes{area="heap",id="G1 Eden Space",} -1.0
+jvm_memory_max_bytes{area="heap",id="G1 Old Gen",} 4.175429632E9
+jvm_memory_max_bytes{area="heap",id="G1 Survivor Space",} -1.0
+jvm_memory_max_bytes{area="nonheap",id="CodeHeap 'non-profiled nmethods'",} 1.22912768E8
+hvves_messages_dropped_cause_total{cause="invalid",} 12000.0
+hvves_messages_received_payload_bytes_total 1.0023702E7
+jvm_buffer_total_capacity_bytes{id="mapped",} 0.0
+jvm_buffer_total_capacity_bytes{id="direct",} 1.34242445E8
+system_load_average_1m 2.77
+hvves_data_received_bytes_total 1.052239E7
+jvm_gc_pause_seconds_count{action="end of minor GC",cause="Metadata GC Threshold",} 2.0
+jvm_gc_pause_seconds_sum{action="end of minor GC",cause="Metadata GC Threshold",} 0.087
+jvm_gc_pause_seconds_count{action="end of minor GC",cause="G1 Evacuation Pause",} 8.0
+jvm_gc_pause_seconds_sum{action="end of minor GC",cause="G1 Evacuation Pause",} 0.218
+jvm_gc_pause_seconds_max{action="end of minor GC",cause="Metadata GC Threshold",} 0.03
+jvm_gc_pause_seconds_max{action="end of minor GC",cause="G1 Evacuation Pause",} 0.031
+hvves_messages_processing_time_seconds_max 0.114395
+hvves_messages_processing_time_seconds_count 20000.0
+hvves_messages_processing_time_seconds_sum 280.282544
+hvves_disconnections_total 11.0
+jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'non-nmethods'",} 1312640.0
+jvm_memory_used_bytes{area="nonheap",id="Metaspace",} 3.624124E7
+jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'profiled nmethods'",} 1.1602304E7
+jvm_memory_used_bytes{area="nonheap",id="Compressed Class Space",} 4273752.0
+jvm_memory_used_bytes{area="heap",id="G1 Eden Space",} 1.38412032E8
+jvm_memory_used_bytes{area="heap",id="G1 Old Gen",} 7638112.0
+jvm_memory_used_bytes{area="heap",id="G1 Survivor Space",} 7340032.0
+jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'non-profiled nmethods'",} 4083712.0
+jvm_memory_committed_bytes{area="nonheap",id="CodeHeap 'non-nmethods'",} 2555904.0
+jvm_memory_committed_bytes{area="nonheap",id="Metaspace",} 3.7486592E7
+jvm_memory_committed_bytes{area="nonheap",id="CodeHeap 'profiled nmethods'",} 1.1730944E7
+jvm_memory_committed_bytes{area="nonheap",id="Compressed Class Space",} 4587520.0
+jvm_memory_committed_bytes{area="heap",id="G1 Eden Space",} 1.58334976E8
+jvm_memory_committed_bytes{area="heap",id="G1 Old Gen",} 9.8566144E7
+jvm_memory_committed_bytes{area="heap",id="G1 Survivor Space",} 7340032.0
+jvm_memory_committed_bytes{area="nonheap",id="CodeHeap 'non-profiled nmethods'",} 4128768.0
+jvm_gc_memory_allocated_bytes_total 1.235222528E9
+hvves_connections_total 12.0
+jvm_classes_loaded 7120.0
+hvves_messages_sent_total 20000.0
+hvves_connections_active 1.0
+jvm_gc_live_data_size_bytes 7634496.0
+hvves_messages_latency_seconds_max 1.5459828692292638E9
+hvves_messages_latency_seconds_count 20000.0
+hvves_messages_latency_seconds_sum 2.91400110035487E9
