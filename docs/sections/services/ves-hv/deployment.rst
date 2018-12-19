@@ -81,12 +81,3 @@ Passwords are mandatory without ssl-disable flag. If key-store or trust-store lo
 These parameters can be configured either by passing command line option during `docker run` call or
 by specifying environment variables named after command line option name
 rewritten using `UPPER_SNAKE_CASE` and prepended with `VESHV_` prefix e.g. `VESHV_LISTEN_PORT`.
-
-Healthcheck
-===========
-
-Inside HV-VES docker container runs small http service for healthcheck - exact port for this service can be configured
-at deployment using `--health-check-api-port` command line option.
-
-This service exposes single endpoint **GET /health/ready** which returns **HTTP 200 OK** in case HV-VES is healthy
-and ready for connections. Otherwise it returns **HTTP 503 Service Unavailable** with short reason of unhealthiness.
