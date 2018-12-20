@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_a060b601",
+        "filename": ".idea/workspace.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2018-12-20T06:56:16Z",
+      "side": 1,
+      "message": "remove these files",
+      "revId": "8d01c82ab0f8aacc21519bc7f039a3a16a3df47c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_204da69a",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2018-12-20T06:56:16Z",
+      "side": 1,
+      "message": "1. \"For simplicity\" instead of \"In case of simplicity\"\n2. warnings (plural)\n3. Maybe we could be there technical and give logback pattern used (for simplicity :)) ?",
+      "revId": "8d01c82ab0f8aacc21519bc7f039a3a16a3df47c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_e0423e67",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2018-12-20T06:56:16Z",
+      "side": 1,
+      "message": "We could add a note that no one should rely on exact log messages or their presence as they are often subject to change.",
+      "revId": "8d01c82ab0f8aacc21519bc7f039a3a16a3df47c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
