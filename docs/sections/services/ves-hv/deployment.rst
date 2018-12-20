@@ -56,6 +56,8 @@ Optional configuration parameters:
 +-----------------------+------------+----------------------------+----------+-----+-----------------+-------------------------------------------------------+
 | max-payload-size      | m          | VESHV_MAX_PAYLOAD_SIZE     | no       | yes | 1048576 (1 MiB) | Maximum supported payload size in bytes               |
 +-----------------------+------------+----------------------------+----------+-----+-----------------+-------------------------------------------------------+
+| log-level             | ll         | VESHV_LOG_LEVEL            | no       | yes | INFO            | Log level on which HV-VES published all log messages  |
++-----------------------+------------+----------------------------+----------+-----+-----------------+-------------------------------------------------------+
 
 As part of experimental API if you do not specify `ssl-disable` flag, there is need to specify additional
 parameters for security configuration.
