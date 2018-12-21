@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_5a2e92fc",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-21T07:59:04Z",
+      "side": 1,
+      "message": "It\u0027s rather \"veshv-config1\"",
+      "range": {
+        "startLine": 252,
+        "startChar": 138,
+        "endLine": 252,
+        "endChar": 150
+      },
+      "revId": "c02ef4817f4ad4f809950a5f3888472e2f30eb7e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_baed3eb9",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-21T07:59:04Z",
+      "side": 1,
+      "message": "JSON (upper case)",
+      "range": {
+        "startLine": 252,
+        "startChar": 79,
+        "endLine": 252,
+        "endChar": 83
+      },
+      "revId": "c02ef4817f4ad4f809950a5f3888472e2f30eb7e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_1a348a48",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-21T07:59:04Z",
+      "side": 1,
+      "message": "Can we change it to reflect my latest change, ie. Kafka endpoint is passed via cmd-line argument instead of Consul. If you\u0027d rather not mix these changes feel free to decline my request ;)",
+      "revId": "c02ef4817f4ad4f809950a5f3888472e2f30eb7e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
