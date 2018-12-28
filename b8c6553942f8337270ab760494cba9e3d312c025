@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9adffdf1_a95dfa16",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2018-12-28T13:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9adffdf1_09568606",
+      "range": {
+        "startLine": 11,
+        "startChar": 42,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9adffdf1_c9439e40",
         "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
         "patchSetId": 16
@@ -82,6 +106,30 @@
       "writtenOn": "2018-12-28T13:06:03Z",
       "side": 1,
       "message": "Shouldn\u0027t it be reversed (number per cause)?",
+      "range": {
+        "startLine": 31,
+        "startChar": 65,
+        "endLine": 31,
+        "endChar": 116
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_69a39201",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2018-12-28T13:17:38Z",
+      "side": 1,
+      "message": "output from endpoint is like that:\n```\nhvves_clients_rejected_cause_total{cause\u003d\"too_big_payload\",} 7.0\n```\nin code we have:\n```\nprivate val clientsRejectedByCause \u003d { cause: String -\u003e\n        registry.counter(name(CLIENTS, REJECTED, CAUSE), CAUSE, cause)\n    }.memoize\u003cString, Counter\u003e()\n```",
+      "parentUuid": "9adffdf1_89491662",
       "range": {
         "startLine": 31,
         "startChar": 65,
