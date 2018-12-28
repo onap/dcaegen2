@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_09568606",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "upper case HTTP",
+      "range": {
+        "startLine": 11,
+        "startChar": 42,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_c9439e40",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "We are not utilizing Prometheus in any way. We are merely exposing the data in a format readable by Prometheus service.",
+      "range": {
+        "startLine": 20,
+        "startChar": 60,
+        "endLine": 20,
+        "endChar": 103
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_e940e235",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "Use same notation as in case of healthchecks (GET, bold, prepend with slash)",
+      "range": {
+        "startLine": 21,
+        "startChar": 36,
+        "endLine": 21,
+        "endChar": 57
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_89491662",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "Shouldn\u0027t it be reversed (number per cause)?",
+      "range": {
+        "startLine": 31,
+        "startChar": 65,
+        "endLine": 31,
+        "endChar": 116
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_a9465a4d",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "plural",
+      "range": {
+        "startLine": 33,
+        "startChar": 90,
+        "endLine": 33,
+        "endChar": 96
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_4977aea0",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 43,
+        "startChar": 65,
+        "endLine": 43,
+        "endChar": 104
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_697cf283",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "What does it mean?",
+      "range": {
+        "startLine": 47,
+        "startChar": 65,
+        "endLine": 47,
+        "endChar": 105
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_096d26cc",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "I believe we should also explain what does it mean in particular, that is time between vesHeader.lastEpoch (check) and instant when message has been sent to Kafka.",
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_29726aad",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "? maybe occurence?",
+      "range": {
+        "startLine": 53,
+        "startChar": 103,
+        "endLine": 53,
+        "endChar": 113
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_c96abeb2",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "should be reversed, as above",
+      "range": {
+        "startLine": 63,
+        "startChar": 65,
+        "endLine": 63,
+        "endChar": 98
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_e96782e7",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2018-12-28T13:06:03Z",
+      "side": 1,
+      "message": "use same format as in healthchecks",
+      "range": {
+        "startLine": 89,
+        "startChar": 29,
+        "endLine": 89,
+        "endChar": 50
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
