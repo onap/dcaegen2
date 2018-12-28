@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9adffdf1_e9954287",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2018-12-28T14:01:45Z",
+      "side": 1,
+      "message": "Maybe mention that it can be also done via env variable + you can add reference to \"deployment\" section",
+      "parentUuid": "9adffdf1_a95dfa16",
+      "range": {
+        "startLine": 11,
+        "startChar": 42,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "b8c6553942f8337270ab760494cba9e3d312c025",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9adffdf1_c9439e40",
         "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
         "patchSetId": 16
