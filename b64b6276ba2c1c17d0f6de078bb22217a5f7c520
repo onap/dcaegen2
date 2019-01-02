@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_2987cad8",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-02T09:54:05Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 11,
+        "startChar": 35,
+        "endLine": 11,
+        "endChar": 36
+      },
+      "revId": "b64b6276ba2c1c17d0f6de078bb22217a5f7c520",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_897596fb",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-02T09:54:05Z",
+      "side": 1,
+      "message": "maybe \"when\" or \"if\" would be better here",
+      "range": {
+        "startLine": 14,
+        "startChar": 89,
+        "endLine": 14,
+        "endChar": 96
+      },
+      "revId": "b64b6276ba2c1c17d0f6de078bb22217a5f7c520",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_e96c6237",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-02T09:54:05Z",
+      "side": 1,
+      "message": "a HTTP 200 OK message",
+      "range": {
+        "startLine": 14,
+        "startChar": 72,
+        "endLine": 14,
+        "endChar": 73
+      },
+      "revId": "b64b6276ba2c1c17d0f6de078bb22217a5f7c520",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_c96f1e2a",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-02T09:54:05Z",
+      "side": 1,
+      "message": "shows a single endpoint command/message?",
+      "range": {
+        "startLine": 14,
+        "startChar": 13,
+        "endLine": 14,
+        "endChar": 20
+      },
+      "revId": "b64b6276ba2c1c17d0f6de078bb22217a5f7c520",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_a972da0e",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-02T09:54:05Z",
+      "side": 1,
+      "message": "a HTTP... message",
+      "range": {
+        "startLine": 15,
+        "startChar": 48,
+        "endLine": 15,
+        "endChar": 80
+      },
+      "revId": "b64b6276ba2c1c17d0f6de078bb22217a5f7c520",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_49632e42",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-02T09:54:05Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 15,
+        "startChar": 85,
+        "endLine": 15,
+        "endChar": 86
+      },
+      "revId": "b64b6276ba2c1c17d0f6de078bb22217a5f7c520",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_6968721d",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-02T09:54:05Z",
+      "side": 1,
+      "message": "same as in line 14",
+      "range": {
+        "startLine": 20,
+        "startChar": 89,
+        "endLine": 20,
+        "endChar": 148
+      },
+      "revId": "b64b6276ba2c1c17d0f6de078bb22217a5f7c520",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_0959a68d",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-02T09:54:05Z",
+      "side": 1,
+      "message": "a HTTP 200 OK message\nspecific data in the body of what?",
+      "range": {
+        "startLine": 21,
+        "startChar": 13,
+        "endLine": 21,
+        "endChar": 55
+      },
+      "revId": "b64b6276ba2c1c17d0f6de078bb22217a5f7c520",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_295eea76",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-02T09:54:05Z",
+      "side": 1,
+      "message": "for?",
+      "range": {
+        "startLine": 22,
+        "startChar": 40,
+        "endLine": 22,
+        "endChar": 42
+      },
+      "revId": "b64b6276ba2c1c17d0f6de078bb22217a5f7c520",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_c9563e5c",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-02T09:54:05Z",
+      "side": 1,
+      "message": "This sentence is missing something, could be for example:\nInformation provided by...",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 26
+      },
+      "revId": "b64b6276ba2c1c17d0f6de078bb22217a5f7c520",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
