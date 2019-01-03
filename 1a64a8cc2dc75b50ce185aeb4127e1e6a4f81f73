@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_dbb83f13",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-03T10:05:49Z",
+      "side": 1,
+      "message": "It would be good to explain what it means:\nM... D... C... (MDCs)",
+      "range": {
+        "startLine": 11,
+        "startChar": 122,
+        "endLine": 11,
+        "endChar": 127
+      },
+      "revId": "1a64a8cc2dc75b50ce185aeb4127e1e6a4f81f73",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_7b3913a3",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-03T10:05:49Z",
+      "side": 1,
+      "message": "not needed, just add \":\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 27,
+        "endLine": 13,
+        "endChar": 44
+      },
+      "revId": "1a64a8cc2dc75b50ce185aeb4127e1e6a4f81f73",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_9b3e378b",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-03T10:05:49Z",
+      "side": 1,
+      "message": "A",
+      "revId": "1a64a8cc2dc75b50ce185aeb4127e1e6a4f81f73",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_3b3f0b89",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-03T10:05:49Z",
+      "side": 1,
+      "message": "maybe make it an unordered list? for example:\n...to contain only:\n- Logger name\n- Log level\n- Message\nFor errors and warnings, they contain also:\n- Exeption message\n- Stack trace",
+      "range": {
+        "startLine": 26,
+        "startChar": 79,
+        "endLine": 26,
+        "endChar": 187
+      },
+      "revId": "1a64a8cc2dc75b50ce185aeb4127e1e6a4f81f73",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_fb4c2344",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-03T10:05:49Z",
+      "side": 1,
+      "message": "Maybe replace with:\nNote:\nDo not rely on exact log messages or their presence as they are often subject to change.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 132
+      },
+      "revId": "1a64a8cc2dc75b50ce185aeb4127e1e6a4f81f73",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
