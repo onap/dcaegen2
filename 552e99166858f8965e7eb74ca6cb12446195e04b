@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_d6332412",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2019-01-11T06:53:55Z",
+      "side": 1,
+      "message": "Maybe its worth to at least make it bold.\nOther options: \n```\n.. warning:: Bla bla bla\n\n.. note:: Bla bla bla\n```",
+      "revId": "552e99166858f8965e7eb74ca6cb12446195e04b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_3653903a",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2019-01-11T06:53:55Z",
+      "side": 1,
+      "message": "same like others",
+      "revId": "552e99166858f8965e7eb74ca6cb12446195e04b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_96427c66",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2019-01-11T06:53:55Z",
+      "side": 1,
+      "message": "minor issue: \"--\" here RTD displayes as a one - \nSo instead of --kafka-bootstrap-servers there is -kafka...\n\nhttps://logs.onap.org/production/vex-yul-ecomp-jenkins-1/doc-master-verify-rtd/3698/html/submodules/dcaegen2.git/docs/sections/services/ves-hv/troubleshooting.html?highlight\u003dtroubleshoot#message-handling-errors",
+      "revId": "552e99166858f8965e7eb74ca6cb12446195e04b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_56609400",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2019-01-11T06:53:55Z",
+      "side": 1,
+      "message": "same like above",
+      "revId": "552e99166858f8965e7eb74ca6cb12446195e04b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_16568c2a",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2019-01-11T06:53:55Z",
+      "side": 1,
+      "message": "same like above",
+      "revId": "552e99166858f8965e7eb74ca6cb12446195e04b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
