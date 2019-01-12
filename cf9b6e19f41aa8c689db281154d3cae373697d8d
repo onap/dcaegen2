@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_27c35c58",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-12T15:47:59Z",
+      "side": 1,
+      "message": "This structure doesn\u0027t align to what is specified by logging project under - https://wiki.onap.org/pages/viewpage.action?pageId\u003d28378955#ONAPApplicationLoggingSpecificationv1.2(Casablanca)-MDCs - corresponding example is below on same page. \n\nPls check/confirm if the logging implementation aligns to ONAP spec.",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 153
+      },
+      "revId": "cf9b6e19f41aa8c689db281154d3cae373697d8d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
