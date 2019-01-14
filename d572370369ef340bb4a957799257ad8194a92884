@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_c24fde69",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-14T07:48:20Z",
+      "side": 1,
+      "message": "shares a",
+      "range": {
+        "startLine": 22,
+        "startChar": 20,
+        "endLine": 22,
+        "endChar": 34
+      },
+      "revId": "d572370369ef340bb4a957799257ad8194a92884",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
