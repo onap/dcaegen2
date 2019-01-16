@@ -46,6 +46,30 @@
       "revId": "cf9b6e19f41aa8c689db281154d3cae373697d8d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_0a717843",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2019-01-16T09:06:23Z",
+      "side": 1,
+      "message": "Ok. So for now we will leave console log pattern unchanged. If it changes, we shall update the documentation, too. \n\n@Jakub please, however, include the following information:\n* default file pattern (compatible with ONAP logging guideline; see e-mail for example)\n* default log files location",
+      "parentUuid": "9adffdf1_6212b258",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 153
+      },
+      "revId": "cf9b6e19f41aa8c689db281154d3cae373697d8d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
