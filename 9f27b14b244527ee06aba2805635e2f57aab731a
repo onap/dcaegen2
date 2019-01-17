@@ -1,0 +1,268 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_7a148de8",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "is\n\nIt is better to use present tense as often as possible.",
+      "range": {
+        "startLine": 90,
+        "startChar": 84,
+        "endLine": 90,
+        "endChar": 87
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_5af0a9c8",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "is it necessary here?",
+      "range": {
+        "startLine": 91,
+        "startChar": 100,
+        "endLine": 91,
+        "endChar": 106
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_9aea91d9",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": ",",
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_9a985179",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "maybe make the lines 93-114 a numbered list - procedure with steps",
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_1a8c6135",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "1st step",
+      "range": {
+        "startLine": 93,
+        "startChar": 29,
+        "endLine": 93,
+        "endChar": 32
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_5ac74964",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "the following",
+      "range": {
+        "startLine": 93,
+        "startChar": 37,
+        "endLine": 93,
+        "endChar": 46
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_5a9e6964",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "This could be the reason and purpose of the procedure.",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 27
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_9ad13125",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "what are \u0027these values\u0027? It should be clarified here.",
+      "range": {
+        "startLine": 93,
+        "startChar": 3,
+        "endLine": 93,
+        "endChar": 15
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_9a7ff114",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "2nd step",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 4
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_fa84fd0b",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "a corresponding",
+      "range": {
+        "startLine": 100,
+        "startChar": 47,
+        "endLine": 100,
+        "endChar": 49
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_5a750930",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "3rd step",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 8
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_3a960540",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-17T14:12:11Z",
+      "side": 1,
+      "message": "Result:",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 1
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
