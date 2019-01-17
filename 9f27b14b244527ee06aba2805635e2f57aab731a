@@ -65,6 +65,47 @@
     },
     {
       "key": {
+        "uuid": "9adffdf1_fd7077a5",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-01-17T17:05:47Z",
+      "side": 1,
+      "message": "Actually, you can get rid of the whole \"and it is being\" phrase here. Anna, what do you think?",
+      "parentUuid": "9adffdf1_9aea91d9",
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_9d6b6bb6",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-01-17T17:05:47Z",
+      "side": 1,
+      "message": "Somewhere below u used \"deployment/dep-dcae-hv-ves-collector\". Both are valid, but it would be good to stick to one version.",
+      "range": {
+        "startLine": 91,
+        "startChar": 52,
+        "endLine": 91,
+        "endChar": 63
+      },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9adffdf1_9a985179",
         "filename": "docs/sections/services/ves-hv/deployment.rst",
         "patchSetId": 2
@@ -220,6 +261,23 @@
     },
     {
       "key": {
+        "uuid": "9adffdf1_5d4ae355",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-01-17T17:05:47Z",
+      "side": 1,
+      "message": "Maybe ONAP_NAMESPACE? All namespaces in this context are actually kubernetes\u0027 namespaces, so this name doesn\u0027t tell much. Applies also to succeeding code-block",
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9adffdf1_5a750930",
         "filename": "docs/sections/services/ves-hv/deployment.rst",
         "patchSetId": 2
@@ -260,6 +318,23 @@
         "endLine": 116,
         "endChar": 1
       },
+      "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_7d456741",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-01-17T17:05:47Z",
+      "side": 1,
+      "message": "In previous code blocks you extracted onap to a variable. Either inline or extract it everywhere to be consistent.",
       "revId": "9f27b14b244527ee06aba2805635e2f57aab731a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
