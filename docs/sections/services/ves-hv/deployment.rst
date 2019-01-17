@@ -82,6 +82,43 @@ These parameters can be configured either by passing command line option during 
 by specifying environment variables named after command line option name
 rewritten using `UPPER_SNAKE_CASE` and prepended with `VESHV_` prefix e.g. `VESHV_LISTEN_PORT`.
 
+Horizontal Scaling
+==================
+
+Kubernetes command line tool (`kubectl`) is recommended for manual horizontal scaling of HV-VES Collector.
+
+To scale HV-VES deployment you need to determine its name and namespace in which it is deployed.
+For default OOM deployment, HV-VES full deployment name is `deployment/dep-dcae-hv-ves-collector` and it is installed under `onap` namespace.
+
+1. If the namespace is unknown, execute the following command to determine possible namespaces.
+
+.. code-block:: bash
+
+    kubectl get namespaces
+
+2. Find desired deployment (in case of huge output you can try final call in combination with `grep hv-ves` command).
+You can also see current replicas amount under a corresponding column.
+
+.. code-block:: bash
+
+    ONAP_NAMESPACE=onap
+    kubectl get --namespace ${ONAP_NAMESPACE} deployment
+
+3. To scale deployment execute:
+
+.. code-block:: bash
+
+    DEPLOYMENT_NAME=deployment/dep-dcae-hv-ves-collector
+    ONAP_NAMESPACE=onap
+    DESIRED_REPLICAS_AMOUNT=5
+    kubectl scale --namespace ${ONAP_NAMESPACE} ${DEPLOYMENT_NAME} --replicas=${DESIRED_REPLICAS_AMOUNT}
+
+Result:
+
+.. code-block:: bash
+
+    kubectl get pods --namespace ${ONAP_NAMESPACE} --selector app=dcae-hv-ves-collector
+
 Healthcheck
 ===========
 
