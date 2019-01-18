@@ -60,7 +60,7 @@ message MeasValue
 {
     oneof MeasObjInstId {                   // monitored object LDN as per 3GPP TS 32.300 and 3GPP TS 32.432
         string sMeasObjInstId = 1;          // LDN itself
-        uint32 measObjInstIdListIdx = 2;    // %%: index into measObjInstIdList (zero-based)
+        uint32 measObjInstIdListIdx = 2;    // %%: index into measObjInstIdList (1-based)
     }
     repeated MeasResult measResults = 3;
     bool suspectFlag = 4;
@@ -69,7 +69,7 @@ message MeasValue
 
 message MeasResult
 {
-    uint32 p = 1;                           // Index in the MeasTypes array (zero-based), needed only if measResults has fewer elements than MeasTypes
+    uint32 p = 1;                           // Index in the MeasTypes array (1-based), needed only if measResults has fewer elements than MeasTypes
     oneof xValue {
         sint64 iValue = 2;
         double rValue = 3;
