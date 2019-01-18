@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_6b8fe175",
+        "filename": "docs/sections/services/ves-hv/healthcheck-and-monitoring.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4941
+      },
+      "writtenOn": "2019-01-18T11:10:55Z",
+      "side": 1,
+      "message": "\"shares the port with healthchecks\" or \"uses the same port as healthchecks\"",
+      "range": {
+        "startLine": 20,
+        "startChar": 20,
+        "endLine": 20,
+        "endChar": 55
+      },
+      "revId": "83a44f2ab3ffbdf1daded634ab06e5f9d3b363cd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
