@@ -3,6 +3,47 @@
 Release Notes
 =============
 
+
+Version: 3.0.1
+--------------
+
+:Release Date: 2019-01-31
+
+DCAE R3 Maintenance release includes following fixes
+
+**Bug Fixes**
+
+- DataFileCollector
+     - DCAEGEN2-940   
+       Larger files of size 100Kb publish to DR
+     - DCAEGEN2-941   
+       DFC error after running over 12 hours
+     - DCAEGEN2-1001 
+       Multiple Fileready notification not handled
+
+- HighVolume VES Collector (protobuf/tcp)
+     - DCAEGEN2-976
+       HV-VES not fully complaint to RTPM protocol (issue with CommonEventHeader.sequence)
+
+- VESCollector (http)
+     - DCAEGEN2-1035
+       Issue with VES batch event publish 
+       
+- Heat deployment 
+     - DCAEGEN2-1007
+       Removing obsolete services configuration
+
+
+The following containers are updated in R3.0.1
+
+    - DataFile Collector
+       - Docker container tag: onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.0.5
+    - HV-VES Collector
+       - Docker container tag: onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main:1.0.2
+    - VES Collector
+       - Docker container tag: onap/org.onap.dcaegen2.collectors.ves.vescollector:1.3.2
+
+
 Version: 3.0.0
 --------------
 
@@ -131,6 +172,7 @@ The following components are upgraded from R2:
        - Description: Refactoring.
     - VES Collector
        - Docker container image tag: onap/org.onap.dcaegen2.collectors.ves.vescollector:1.3.1
+       - Description : Refactoring
     - Threshold Crossing Analytics
        - Docker container image tag: onap/org.onap.dcaegen2.deployments.tca-cdap-container:1.1.0
        - Description: Replaced Hadoop VM Cluster based file system with regular host file system; repackaged full TCA-CDAP stack into Docker container; transactional state separation from TCA in-memory to off-node Redis cluster for supporting horizontal scaling.
