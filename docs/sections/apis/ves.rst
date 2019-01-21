@@ -2041,23 +2041,6 @@ number of times an identified codec was used over the measurementInterval
 
 .. _d_a68e1b21fdcef792db73f711201c56ad:
 
-command Model Structure
------------------------
-
-command from an event collector toward an event source
-
-.. csv-table::
-    :delim: |
-    :header: "Name", "Required", "Type", "Format", "Properties", "Description"
-    :widths: 20, 10, 15, 15, 30, 25
-
-        commandType | Yes | string |  | {'enum': ['heartbeatIntervalChange', 'measurementIntervalChange', 'provideThrottlingState', 'throttlingSpecification']} | 
-        eventDomainThrottleSpecification | No | :ref:`eventDomainThrottleSpecification <d_4089a4a9ee684770c6f37a588a577589>` |  |  | 
-        heartbeatInterval | No | integer |  |  | 
-        measurementInterval | No | integer |  |  | 
-
-.. _d_2dc9a27be1410f60241c5f63c636bb7e:
-
 commonEventHeader Model Structure
 ---------------------------------
 
