@@ -257,9 +257,9 @@ Run a component in attached mode:
 
     DCAE.Docker.user1.b7287639-37f5-4f25-8d54-8a2087f4c8da.0-5-0.sandbox-platform-yourapp | INFO |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 
-    DCAE.Docker.user1.b7287639-37f5-4f25-8d54-8a2087f4c8da.0-5-0.sandbox-platform-yourapp | INFO | 135.205.226.140 - - [24/May/2017 03:37:57] "GET /health HTTP/1.1" 200 -
+    DCAE.Docker.user1.b7287639-37f5-4f25-8d54-8a2087f4c8da.0-5-0.sandbox-platform-yourapp | INFO | 127.0.0.1 - - [24/May/2017 03:37:57] "GET /health HTTP/1.1" 200 -
 
-    DCAE.Docker.user1.b7287639-37f5-4f25-8d54-8a2087f4c8da.0-5-0.sandbox-platform-yourapp | INFO | 135.205.226.140 - - [24/May/2017 03:38:12] "GET /health HTTP/1.1" 200 -
+    DCAE.Docker.user1.b7287639-37f5-4f25-8d54-8a2087f4c8da.0-5-0.sandbox-platform-yourapp | INFO | 127.0.0.1 - - [24/May/2017 03:38:12] "GET /health HTTP/1.1" 200 -
 
 Hit Ctrl-C to terminate session.
 

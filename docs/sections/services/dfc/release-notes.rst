@@ -4,6 +4,19 @@
 Release Notes
 =============
 
+Version: 1.0.5
+--------------
+
+:Release Date: 2019-01-30 (Casablanca Maintenance fixes)
+
+
+**Bug Fixes**
+
+DCAEGEN2-940  - Larger files of size 100Kb publish to DR
+DCAEGEN2-941  - DFC error after running over 12 hours
+DCAEGEN2-1001 - Multiple Fileready notification not handled
+
+
 Version: 1.0.4
 --------------
 

@@ -133,17 +133,17 @@ Query CONSUL to get the IP/PORT of CONFIG BINDING SERVICE
       {
         "ID": "bfbc220d-4603-7f90-ec2e-611d3c330f20",
         "Node":"docker00",
-        "Address": "10.226.1.15",
-        "Datacenter":"solutioning-central",
+        "Address": "127.0.0.1",
+        "Datacenter":"dcae-central",
         "TaggedAddresses": {
-          "lan":"10.226.1.15",
-          "wan":"10.226.1.15"
+          "lan":"127.0.0.1",
+          "wan":"127.0.0.1"
         },
         "NodeMeta": {},
         "ServiceID": "472b116f9035:config_binding_service:10000",
         "ServiceName": "config_binding_service",
         "ServiceTags": [],
-        "ServiceAddress":"135.205.226.126",
+        "ServiceAddress":"127.0.0.1",
         "ServicePort":10000,
         "ServiceEnableTagOverride": false,
         "CreateIndex":1078990,
@@ -295,7 +295,7 @@ Run a component in attached mode:
 
     DCAE.Docker.user12.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-yourapp | INFO |  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 
-    DCAE.Docker.user12.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-yourapp | INFO | 135.205.226.156 - - [08/Nov/2017 23:27:30] "GET /health HTTP/1.1" 200 -
+    DCAE.Docker.user12.dbb13a3c-d870-487e-b584-89929b856b5c.0-7-0.sandbox-platform-yourapp | INFO | 127.0.0.1 - - [08/Nov/2017 23:27:30] "GET /health HTTP/1.1" 200 -
 
 
     Hit Ctrl-C to terminate session.
