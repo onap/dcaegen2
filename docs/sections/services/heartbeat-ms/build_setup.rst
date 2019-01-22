@@ -1,9 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-.. _build_setup:
-
-
 Build and Setup procedure
 =========================
 
@@ -26,13 +23,14 @@ Docker build procedure
 ----------------------
 
 Clone the code using below command
-   .. code-block:: bash
+
+::
       git clone https://gerrit.onap.org/r/dcaegen2/services/heartbeat 
 
 give executable permission to mvn-phase-script.sh if not there
 already
-   .. code-block:: bash
 
+::
       chmod +x mvn-phase-script.sh
 
 **Setting up the postgres DB, group/consumer IDs, CBS download and
@@ -62,7 +60,8 @@ CBS polling. The following environment variables are to be set.**
    
    Run below netstat command to check postgres port number and IP address are fine.
 
-   .. code-block:: bash
+::
+
       netstat -ant
 
    If CBS parameters are not there in the environment setting file, then
@@ -74,7 +73,8 @@ CBS polling. The following environment variables are to be set.**
 
    The sample values in miss_htbt_service/config/hbproperties.yaml file
    are as follows
-    .. code-block:: YAML
+
+::
 	
 	   pg_ipAddress: 10.0.4.1
 	   pg_portNum: 5432
@@ -156,39 +156,39 @@ CBS polling. The following environment variables are to be set.**
 
 **Build the Docker using below command with a image name**
 
-   .. code-block:: bash
+::
 
      sudo Docker build --no-cache --network=host -f ./Dockerfile -t
      heartbeat.test1:latest .
 
  To check whether image is built or not, run below command
 
-   .. code-block:: bash
+::
       sudo Docker images |grep heartbeat.test1
 
 **Run the Docker using below command which uses the environment file
 mentioned in the above section.**
 
-   .. code-block:: bash
+::
       sudo Docker run -d --name hb1 --env-file env.list
       heartbeat.test1:latest
 
  To check the logs, run below command
  
-   .. code-block:: bash
+::
       sudo Docker logs -f hb1
 
 **To stop the Docker run**
 
    Get the Docker container ID from below command
 
-   .. code-block:: bash
+::
 
        sudo Docker ps -a \| grep heartbeat.test1
 
    Run below commands to stop the Docker run
    
-   .. code-block:: bash
+::
    
        sudo Docker stop <Docker container ID)
        sudo Docker rm -f hb1
@@ -197,7 +197,7 @@ mentioned in the above section.**
 
    To run the maven build, execute any one of them.
    
-   .. code-block:: bash
+:: 
       sudo mvn -s settings.xml deploy
       OR
       sudo mvn -s settings.xml -X deploy
@@ -205,6 +205,6 @@ mentioned in the above section.**
    If there is a libxml-xpath related issue, then install the
    libxml-xpath as below. If the issue is something else, follow the
    link given as part of the build failure.
-  
-   .. code-block:: bash
+
+:: 
       sudo apt install libxml-xpath-perl

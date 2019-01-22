@@ -1,8 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-.. _testprocedure:
-
 Test procedures and Postgres Database access
 ============================================
 
@@ -16,7 +14,7 @@ Run below commands to login into postgres DB and connect to HB Micro service DB.
 ::
      sudo su postgres
      psql
-	 \l hb_vnf
+     \l hb_vnf
 
 Sample output is as below
 

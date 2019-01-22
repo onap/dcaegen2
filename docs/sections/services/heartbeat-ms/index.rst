@@ -13,12 +13,9 @@ Heartbeat Microservice overview and functions
 ---------------------------------------------
 
 .. toctree::
-    :maxdepth: 1
+   :maxdepth: 1
 	
-	architecture
-	design
-	build_setup
-	testprocedure
-	
-
- 
+   ./architecture.rst
+   ./design.rst
+   ./build_setup.rst
+   ./testprocedure.rst
