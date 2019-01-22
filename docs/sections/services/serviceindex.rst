@@ -16,3 +16,4 @@ Service components under DCAE
    ./mapper/index.rst
    ./prh/index.rst
    ./dfc/index.rst
+   ./heartbeat-ms/index.rst
