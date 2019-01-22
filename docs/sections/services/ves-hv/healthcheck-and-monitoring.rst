@@ -42,16 +42,20 @@ Metrics provided by HV-VES metrics:
 +-----------------------------------------------+--------------+------------------------------------------------------------------------------------------+
 | hvves_messages_dropped_total                  |     piece    | total number of dropped messages                                                         |
 +-----------------------------------------------+--------------+-----------------------------------+------------------------------------------------------+
-| hvves_messages_latency_seconds_count          |     piece    | latency is a time between         |  counter for number of latency occurance             |
+| hvves_messages_latency_seconds_bucket         |     seconds  | latency is a time between         |  cumulative counters for the latency occurance       |
 +-----------------------------------------------+--------------+ message.header.lastEpochMicrosec  +------------------------------------------------------+
-| hvves_messages_latency_seconds_max            |    seconds   | and time when data has been sent  |  maximal observed latency                            |
+| hvves_messages_latency_seconds_count          |     piece    | and time when data has been sent  |  counter for number of latency occurance             |
 +-----------------------------------------------+--------------+ from HV-VES to Kafka              +------------------------------------------------------+
+| hvves_messages_latency_seconds_max            |    seconds   |                                   |  maximal observed latency                            |
++-----------------------------------------------+--------------+                                   +------------------------------------------------------+
 | hvves_messages_latency_seconds_sum            |    seconds   |                                   |  sum of latency parameter from each message          |
 +-----------------------------------------------+--------------+-----------------------------------+------------------------------------------------------+
-| hvves_messages_processing_time_seconds_count  |     piece    | processing time is time meassured |  counter for number of processing time occurance     |
+| hvves_messages_processing_time_seconds_bucket |    seconds   | processing time is time meassured |  cumulative counters for processing time occurance   |
 +-----------------------------------------------+--------------+ between decoding of WTP message   +------------------------------------------------------+
-| hvves_messages_processing_time_seconds_max    |    seconds   | and time when data has been sent  |  maximal processing time                             |
+| hvves_messages_processing_time_seconds_count  |     piece    | and time when data has been sent  |  counter for number of processing time occurance     |
 +-----------------------------------------------+--------------+ From HV-VES to Kafka              +------------------------------------------------------+
+| hvves_messages_processing_time_seconds_max    |    seconds   |                                   |  maximal processing time                             |
++-----------------------------------------------+--------------+                                   +------------------------------------------------------+
 | hvves_messages_processing_time_seconds_sum    |    seconds   |                                   |  sum of processing time from each message            |
 +-----------------------------------------------+--------------+-----------------------------------+------------------------------------------------------+
 | hvves_messages_received_payload_bytes_total   |     bytes    | total number of received payload bytes                                                   |
