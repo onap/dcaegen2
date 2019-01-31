@@ -43,6 +43,11 @@ The following containers are updated in R3.0.1
     - VES Collector
        - Docker container tag: onap/org.onap.dcaegen2.collectors.ves.vescollector:1.3.2
 
+**Known Issues**
+
+- An issue related to VESCollector basic authentication was noted and tracked under DCAEGEN2-1130. This configuration is not enabled by default for R3.0.1; and fix will be handled in Dublin
+
+
 
 Version: 3.0.0
 --------------
