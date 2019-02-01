@@ -117,19 +117,13 @@ We have two keystore files, one for TrustManager, one for KeyManager.
 
 **For TrustManager:**
 
-1. First, create a jks keystore for TrustManager:
-
- .. code:: bash
-
-   keytool -keystore ftp.jks -genkey -alias ftp
-
-2. Second, convert your certificate in a DER format :
+1. Second, convert your certificate in a DER format :
 
  .. code:: bash
 
    openssl x509 -outform der -in ftp.crt -out ftp.der
 
-3. And after, import it in the keystore :
+2. And after, import it in the keystore :
 
  .. code:: bash
 
