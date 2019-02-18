@@ -14,3 +14,4 @@ DCAEGEN2 Components Offered APIs
    apis/PRH.rst
    apis/DFC.rst
    apis/PNDA.rst
+   apis/pmmapper.rst
