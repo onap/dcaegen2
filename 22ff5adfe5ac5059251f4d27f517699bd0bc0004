@@ -529,6 +529,30 @@
     },
     {
       "key": {
+        "uuid": "8fa1e618_823a90f0",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T14:20:24Z",
+      "side": 1,
+      "message": "https://jira.onap.org/browse/DCAEGEN2-1252",
+      "parentUuid": "22c2f647_297a7c82",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0218cf08_623abe2a",
         "filename": "docs/sections/services/pm-mapper/repositories.rst",
         "patchSetId": 1
