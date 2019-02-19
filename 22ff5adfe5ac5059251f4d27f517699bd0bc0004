@@ -1,0 +1,348 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f38571fc_1adcbc04",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "Why link the bulk pm page, is there no wiki page on the PM Mapper specifically?",
+      "range": {
+        "startLine": 9,
+        "startChar": 90,
+        "endLine": 9,
+        "endChar": 113
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "01a86487_b822d850",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "Is there a Dublin equivalent to this page?",
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6ce699c_4e5ce286",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "perf3gpp VES events",
+      "range": {
+        "startLine": 13,
+        "startChar": 63,
+        "endLine": 13,
+        "endChar": 76
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "955068d9_65477454",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "This paragraph could do with some rewording.",
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "41c1ac92_6def3517",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "should config binding service be mentioned here?",
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "154c14cf_aac47c45",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "Can you open a task to implement this section when we have a final or closer to final version of the runtime configuration.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe2ca1c8_b440d3d5",
+        "filename": "docs/sections/services/pm-mapper/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "image",
+      "range": {
+        "startLine": 10,
+        "startChar": 38,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eaf196dd_d9d6b4f0",
+        "filename": "docs/sections/services/pm-mapper/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "ONAP\u0027s docker registry",
+      "range": {
+        "startLine": 10,
+        "startChar": 76,
+        "endLine": 10,
+        "endChar": 80
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d26c9469_b86bd520",
+        "filename": "docs/sections/services/pm-mapper/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "PM Mapper",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 10
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0a0c745_60d70c8e",
+        "filename": "docs/sections/services/pm-mapper/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "Its probably not a good idea to put an IP here, maybe better to indicate an IP is required or just provide the run command and indicate the required environment variables above it.",
+      "range": {
+        "startLine": 12,
+        "startChar": 75,
+        "endLine": 12,
+        "endChar": 85
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3762bf67_6c91e40f",
+        "filename": "docs/sections/services/pm-mapper/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "same for hostname",
+      "range": {
+        "startLine": 12,
+        "startChar": 143,
+        "endLine": 12,
+        "endChar": 151
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f804a10e_6712394d",
+        "filename": "docs/sections/services/pm-mapper/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "Same for port",
+      "range": {
+        "startLine": 12,
+        "startChar": 125,
+        "endLine": 12,
+        "endChar": 130
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "22c2f647_297a7c82",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "Can you open a task to complete this section when we have a better understanding of the installation process?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0218cf08_623abe2a",
+        "filename": "docs/sections/services/pm-mapper/repositories.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "This file looks very similar to delivery, are both of these required?",
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ad335b8_206fa5b7",
+        "filename": "docs/sections/services/pm-mapper/repositories.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "image",
+      "range": {
+        "startLine": 9,
+        "startChar": 39,
+        "endLine": 9,
+        "endChar": 48
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "35593364_1e1ebe2c",
+        "filename": "docs/sections/services/pm-mapper/repositories.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-02-19T08:13:53Z",
+      "side": 1,
+      "message": "into ONAP\u0027s docker registry\n\n\nsidenote: better to stay stack agnostic here especially since it would appear there are discussions about a potential migration to dockerhub\n\nhttps://lists.onap.org/g/onap-discuss/message/15481?p\u003d,,,20,0,0,0::Created,,dockerhub,20,2,0,29745846",
+      "range": {
+        "startLine": 9,
+        "startChar": 63,
+        "endLine": 9,
+        "endChar": 87
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
