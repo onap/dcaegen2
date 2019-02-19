@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1f836df7_e514479b",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "we have only one page for bulk pm. No specific page for PM Mapper.",
+      "parentUuid": "f38571fc_1adcbc04",
+      "range": {
+        "startLine": 9,
+        "startChar": 90,
+        "endLine": 9,
+        "endChar": 113
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "01a86487_b822d850",
         "filename": "docs/sections/services/pm-mapper/architecture.rst",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2019-02-19T08:13:53Z",
       "side": 1,
       "message": "Is there a Dublin equivalent to this page?",
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b9d988b9_d9f83160",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "No..",
+      "parentUuid": "01a86487_b822d850",
       "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "7bc16aa1_f36a2ca7",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "i will update it.",
+      "parentUuid": "b6ce699c_4e5ce286",
+      "range": {
+        "startLine": 13,
+        "startChar": 63,
+        "endLine": 13,
+        "endChar": 76
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "955068d9_65477454",
         "filename": "docs/sections/services/pm-mapper/architecture.rst",
         "patchSetId": 1
@@ -76,6 +142,24 @@
       "writtenOn": "2019-02-19T08:13:53Z",
       "side": 1,
       "message": "This paragraph could do with some rewording.",
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "efe7d29c_bc75f19a",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "poor in english ..someone can do better job..not me",
+      "parentUuid": "955068d9_65477454",
       "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "cc82b599_c4a27475",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "I will update doc.",
+      "parentUuid": "41c1ac92_6def3517",
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "154c14cf_aac47c45",
         "filename": "docs/sections/services/pm-mapper/configuration.rst",
         "patchSetId": 1
@@ -110,6 +212,30 @@
       "writtenOn": "2019-02-19T08:13:53Z",
       "side": 1,
       "message": "Can you open a task to implement this section when we have a final or closer to final version of the runtime configuration.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e00351e_b299e04b",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "Ok.",
+      "parentUuid": "154c14cf_aac47c45",
       "range": {
         "startLine": 7,
         "startChar": 0,
@@ -191,6 +317,78 @@
     },
     {
       "key": {
+        "uuid": "5a089ecc_1e70a560",
+        "filename": "docs/sections/services/pm-mapper/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d26c9469_b86bd520",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 10
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de40e7f4_9f661454",
+        "filename": "docs/sections/services/pm-mapper/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eaf196dd_d9d6b4f0",
+      "range": {
+        "startLine": 10,
+        "startChar": 76,
+        "endLine": 10,
+        "endChar": 80
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "45f8463c_ee6cdf88",
+        "filename": "docs/sections/services/pm-mapper/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe2ca1c8_b440d3d5",
+      "range": {
+        "startLine": 10,
+        "startChar": 38,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e0a0c745_60d70c8e",
         "filename": "docs/sections/services/pm-mapper/delivery.rst",
         "patchSetId": 1
@@ -260,6 +458,30 @@
     },
     {
       "key": {
+        "uuid": "103410db_ec14f332",
+        "filename": "docs/sections/services/pm-mapper/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0a0c745_60d70c8e",
+      "range": {
+        "startLine": 12,
+        "startChar": 75,
+        "endLine": 12,
+        "endChar": 85
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "22c2f647_297a7c82",
         "filename": "docs/sections/services/pm-mapper/installation.rst",
         "patchSetId": 1
@@ -283,6 +505,30 @@
     },
     {
       "key": {
+        "uuid": "21442629_c516cf6c",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22c2f647_297a7c82",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0218cf08_623abe2a",
         "filename": "docs/sections/services/pm-mapper/repositories.rst",
         "patchSetId": 1
@@ -294,6 +540,24 @@
       "writtenOn": "2019-02-19T08:13:53Z",
       "side": 1,
       "message": "This file looks very similar to delivery, are both of these required?",
+      "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5133f18c_30611d15",
+        "filename": "docs/sections/services/pm-mapper/repositories.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-19T10:40:12Z",
+      "side": 1,
+      "message": "removing this file.",
+      "parentUuid": "0218cf08_623abe2a",
       "revId": "22ff5adfe5ac5059251f4d27f517699bd0bc0004",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
