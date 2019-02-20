@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "36d28afb_7f6a2e18",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-20T16:07:24Z",
+      "side": 1,
+      "message": "We will update configuration section later. I have jira task to do . configuration is not yet finalized.",
+      "parentUuid": "4e40badb_3ace25f5",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cc000b7d_51e85770",
         "filename": "docs/sections/services/pm-mapper/installation.rst",
         "patchSetId": 8
@@ -115,6 +133,24 @@
       "writtenOn": "2019-02-20T15:16:32Z",
       "side": 1,
       "message": "can this be filled in yet?",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ec53757c_a113fced",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-20T16:07:24Z",
+      "side": 1,
+      "message": "We will update installation section later. I have jira task to do .",
+      "parentUuid": "cc000b7d_51e85770",
       "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
