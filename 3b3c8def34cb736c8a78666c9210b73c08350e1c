@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "75b0e794_97ace913",
+        "filename": "docs/sections/apis/pmmapper.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-20T16:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e891a38e_a0a1171e",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "46b588c2_1ba730b2",
         "filename": "docs/sections/apis/pmmapper.rst",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2019-02-20T15:16:32Z",
       "side": 1,
       "message": "the last sentence might be better worded as:\n\nIf anything other than a 200 is returned, the pm mapper is either dead or there is no connection to the pm mapper.",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "36826949_40cbd685",
+        "filename": "docs/sections/apis/pmmapper.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-20T16:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46b588c2_1ba730b2",
       "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5824b65b_d18e8601",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-20T16:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c25d61b9_6fee3d31",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c44654b5_41593187",
         "filename": "docs/sections/services/pm-mapper/architecture.rst",
         "patchSetId": 8
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "26f4b0d7_248ea59b",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-20T16:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c44654b5_41593187",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "83e6c8f3_e6a745cb",
         "filename": "docs/sections/services/pm-mapper/architecture.rst",
         "patchSetId": 8
@@ -81,6 +153,24 @@
       "writtenOn": "2019-02-20T15:16:32Z",
       "side": 1,
       "message": "\"will interact\"\n\n\"also interacts with the\"\n\n\"get configuration information.\"",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a32bd4ce_349e10e8",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-20T16:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83e6c8f3_e6a745cb",
       "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -174,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "b3e3e971_f6f2ebbf",
+        "filename": "docs/sections/services/pm-mapper/troubleshooting.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-20T16:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d90db0c1_9f0d21a8",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef07a1ff_eeacd049",
         "filename": "docs/sections/services/pm-mapper/troubleshooting.rst",
         "patchSetId": 8
@@ -185,6 +293,24 @@
       "writtenOn": "2019-02-20T15:16:32Z",
       "side": 1,
       "message": "\"to the data\"",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef470176_16364d5e",
+        "filename": "docs/sections/services/pm-mapper/troubleshooting.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-02-20T16:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef07a1ff_eeacd049",
       "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
