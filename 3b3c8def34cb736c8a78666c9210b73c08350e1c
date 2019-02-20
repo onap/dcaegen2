@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e891a38e_a0a1171e",
+        "filename": "docs/sections/apis/pmmapper.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-02-20T15:16:32Z",
+      "side": 1,
+      "message": "there is no license information",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "46b588c2_1ba730b2",
+        "filename": "docs/sections/apis/pmmapper.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-02-20T15:16:32Z",
+      "side": 1,
+      "message": "the last sentence might be better worded as:\n\nIf anything other than a 200 is returned, the pm mapper is either dead or there is no connection to the pm mapper.",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c25d61b9_6fee3d31",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-02-20T15:16:32Z",
+      "side": 1,
+      "message": "remove the word \"which\"",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c44654b5_41593187",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-02-20T15:16:32Z",
+      "side": 1,
+      "message": "\"The 3GPP PM Mapper ...\"",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83e6c8f3_e6a745cb",
+        "filename": "docs/sections/services/pm-mapper/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-02-20T15:16:32Z",
+      "side": 1,
+      "message": "\"will interact\"\n\n\"also interacts with the\"\n\n\"get configuration information.\"",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e40badb_3ace25f5",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-02-20T15:16:32Z",
+      "side": 1,
+      "message": "can thiis be filled in yet?",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc000b7d_51e85770",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-02-20T15:16:32Z",
+      "side": 1,
+      "message": "can this be filled in yet?",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d90db0c1_9f0d21a8",
+        "filename": "docs/sections/services/pm-mapper/troubleshooting.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-02-20T15:16:32Z",
+      "side": 1,
+      "message": "\"find a valid\"",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef07a1ff_eeacd049",
+        "filename": "docs/sections/services/pm-mapper/troubleshooting.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-02-20T15:16:32Z",
+      "side": 1,
+      "message": "\"to the data\"",
+      "revId": "3b3c8def34cb736c8a78666c9210b73c08350e1c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
