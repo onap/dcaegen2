@@ -4,4 +4,6 @@
 Installation
 ============
 
-< To - Do >
+PM mapper is a microservice that will be instantiated by Cloudify manager. PM Mapper blueprint is uploaded into cloudify manager and properly configured before instantiation.
+Cloudify Manager will then proceed to instantiate the pm mapper service within DCAE Services. During instantiation, the PM mapper will query configuration information form the Config Binding Service.
+
