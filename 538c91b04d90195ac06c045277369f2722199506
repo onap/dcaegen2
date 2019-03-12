@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a4015ab_70006751",
+        "filename": "docs/sections/apis/pmmapper.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4745
+      },
+      "writtenOn": "2019-03-12T14:38:44Z",
+      "side": 1,
+      "message": "the server is either dead or there is no connection",
+      "range": {
+        "startLine": 47,
+        "startChar": 109,
+        "endLine": 47,
+        "endChar": 138
+      },
+      "revId": "538c91b04d90195ac06c045277369f2722199506",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f97db78a_f1d07496",
+        "filename": "docs/sections/apis/pmmapper.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4745
+      },
+      "writtenOn": "2019-03-12T14:38:44Z",
+      "side": 1,
+      "message": "probably don\u0027t need this word",
+      "range": {
+        "startLine": 66,
+        "startChar": 48,
+        "endLine": 66,
+        "endChar": 54
+      },
+      "revId": "538c91b04d90195ac06c045277369f2722199506",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab523219_d47c0de7",
+        "filename": "docs/sections/apis/pmmapper.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4745
+      },
+      "writtenOn": "2019-03-12T14:38:44Z",
+      "side": 1,
+      "message": "service",
+      "range": {
+        "startLine": 66,
+        "startChar": 94,
+        "endLine": 66,
+        "endChar": 95
+      },
+      "revId": "538c91b04d90195ac06c045277369f2722199506",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6b0e7d6c_7222bc8f",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4745
+      },
+      "writtenOn": "2019-03-12T14:38:44Z",
+      "side": 1,
+      "message": "PM mapper expects the filter in the following JSON format:",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 49
+      },
+      "revId": "538c91b04d90195ac06c045277369f2722199506",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "91db7cfb_fc9d837d",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4745
+      },
+      "writtenOn": "2019-03-12T14:38:44Z",
+      "side": 1,
+      "message": "but the",
+      "range": {
+        "startLine": 54,
+        "startChar": 72,
+        "endLine": 54,
+        "endChar": 76
+      },
+      "revId": "538c91b04d90195ac06c045277369f2722199506",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d169b213_7b6c8034",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4745
+      },
+      "writtenOn": "2019-03-12T14:38:44Z",
+      "side": 1,
+      "message": "to be",
+      "range": {
+        "startLine": 54,
+        "startChar": 104,
+        "endLine": 54,
+        "endChar": 107
+      },
+      "revId": "538c91b04d90195ac06c045277369f2722199506",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a233b587_729d94b4",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4745
+      },
+      "writtenOn": "2019-03-12T14:38:44Z",
+      "side": 1,
+      "message": "from the",
+      "range": {
+        "startLine": 8,
+        "startChar": 167,
+        "endLine": 8,
+        "endChar": 171
+      },
+      "revId": "538c91b04d90195ac06c045277369f2722199506",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
