@@ -44,7 +44,26 @@ GET ``/healthcheck``
 
 Description
 ~~~~~~~~~~~
-This is the  health check endpoint. If this returns a 200, the server is alive. If anything other than a 200, either dead, or no connection to pm mapper.
+This is the health check endpoint. If this returns a 200, the server is alive. If anything other than a 200, the server is either dead or no connection to pm mapper.
+
+Responses
+~~~~~~~~~
+
++-----------+---------------------+
+| HTTP Code | Description         |
++===========+=====================+
+| **200**   | successful response |
++-----------+---------------------+
+
+
+GET ``/reconfigure``
+--------------------
+
+
+
+Description
+~~~~~~~~~~~
+This is the reconfigure endpoint to fetch updated config information using config binding service.
 
 Responses
 ~~~~~~~~~
