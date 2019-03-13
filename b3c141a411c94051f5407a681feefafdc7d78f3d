@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c84d1596_084edbe1",
+        "filename": "docs/sections/apis/pmmapper.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-03-13T11:38:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b5c0457_6e92f30e",
+      "range": {
+        "startLine": 66,
+        "startChar": 36,
+        "endLine": 66,
+        "endChar": 87
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5451f3f5_d65ec79e",
         "filename": "docs/sections/services/pm-mapper/configuration.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-03-13T08:12:43Z",
       "side": 1,
       "message": "applying the mapper filtering information.",
+      "range": {
+        "startLine": 9,
+        "startChar": 52,
+        "endLine": 9,
+        "endChar": 78
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "25401948_86b0273d",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-03-13T11:38:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5451f3f5_d65ec79e",
       "range": {
         "startLine": 9,
         "startChar": 52,
@@ -140,6 +188,30 @@
     },
     {
       "key": {
+        "uuid": "5a74628c_5ea76415",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-03-13T11:38:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2201bc4_7e01aaca",
+      "range": {
+        "startLine": 37,
+        "startChar": 22,
+        "endLine": 48,
+        "endChar": 73
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea5c8da_22b32689",
         "filename": "docs/sections/services/pm-mapper/installation.rst",
         "patchSetId": 2
@@ -163,6 +235,30 @@
     },
     {
       "key": {
+        "uuid": "79304299_95cea754",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-03-13T11:38:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ea5c8da_22b32689",
+      "range": {
+        "startLine": 7,
+        "startChar": 129,
+        "endLine": 7,
+        "endChar": 141
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e64b7782_2707bf48",
         "filename": "docs/sections/services/pm-mapper/installation.rst",
         "patchSetId": 2
@@ -174,6 +270,30 @@
       "writtenOn": "2019-03-13T08:12:43Z",
       "side": 1,
       "message": "using",
+      "range": {
+        "startLine": 8,
+        "startChar": 167,
+        "endLine": 8,
+        "endChar": 171
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2867cddc_8884e153",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4719
+      },
+      "writtenOn": "2019-03-13T11:38:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e64b7782_2707bf48",
       "range": {
         "startLine": 8,
         "startChar": 167,
