@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e9ec7dc7_5a40124f",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-03-13T20:37:55Z",
+      "side": 1,
+      "message": "can be configured to user defined \n\u003d\u003e\ncan be changed to a user defined value",
+      "revId": "8ca0534fe5d97660c0e508dd14729fb7eaca2137",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
