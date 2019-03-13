@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b5c0457_6e92f30e",
+        "filename": "docs/sections/apis/pmmapper.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5064
+      },
+      "writtenOn": "2019-03-13T08:12:43Z",
+      "side": 1,
+      "message": "which is called to fetch updated information from CONSUL via config binding service.",
+      "range": {
+        "startLine": 66,
+        "startChar": 36,
+        "endLine": 66,
+        "endChar": 87
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5451f3f5_d65ec79e",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5064
+      },
+      "writtenOn": "2019-03-13T08:12:43Z",
+      "side": 1,
+      "message": "applying the mapper filtering information.",
+      "range": {
+        "startLine": 9,
+        "startChar": 52,
+        "endLine": 9,
+        "endChar": 78
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cabd2721_b0632af5",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5064
+      },
+      "writtenOn": "2019-03-13T08:12:43Z",
+      "side": 1,
+      "message": "change to vendor",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 6
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31468864_ead1ca73",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5064
+      },
+      "writtenOn": "2019-03-13T08:12:43Z",
+      "side": 1,
+      "message": "do we need this statement",
+      "range": {
+        "startLine": 30,
+        "startChar": 22,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5673dacf_873fc080",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5064
+      },
+      "writtenOn": "2019-03-13T08:12:43Z",
+      "side": 1,
+      "message": "Do we need this statement",
+      "range": {
+        "startLine": 32,
+        "startChar": 31,
+        "endLine": 33,
+        "endChar": 44
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e2201bc4_7e01aaca",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5064
+      },
+      "writtenOn": "2019-03-13T08:12:43Z",
+      "side": 1,
+      "message": "Can we discuss this.",
+      "range": {
+        "startLine": 37,
+        "startChar": 22,
+        "endLine": 48,
+        "endChar": 73
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ea5c8da_22b32689",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5064
+      },
+      "writtenOn": "2019-03-13T08:12:43Z",
+      "side": 1,
+      "message": "using the cloudify manager the the service designer will configure.  Should we mentioned what we are configuring, like filtering info and feed id.....",
+      "range": {
+        "startLine": 7,
+        "startChar": 129,
+        "endLine": 7,
+        "endChar": 141
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e64b7782_2707bf48",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5064
+      },
+      "writtenOn": "2019-03-13T08:12:43Z",
+      "side": 1,
+      "message": "using",
+      "range": {
+        "startLine": 8,
+        "startChar": 167,
+        "endLine": 8,
+        "endChar": 171
+      },
+      "revId": "b3c141a411c94051f5407a681feefafdc7d78f3d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
