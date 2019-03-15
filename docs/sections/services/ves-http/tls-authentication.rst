@@ -15,6 +15,10 @@ Of course, mutual TLS authentication requires also server certificates, so follo
 
     * *collector.keystore.file.location* - a path to jks key store containing certificates which can be used for TLS handshake
     * *collector.keystore.passwordfile* - a path to file containing a password for the key store
-    * *collector.keystore.alias* - a name of a certificate from a key store which VES will use during TLS handshake
 
-Property *header.authflag=1* may by used along *collector.service.secure.clientauth=1* in order to enable mutual TLS authentication and basic HTTP authentication.
+Property *auth.method* is used to manage security mode, possible configuration: noAuth, basicAuth, certOnly, certBasicAuth
+
+    * *auth.method=noAuth* is used to disable https mode
+    * *auth.method=certOnly* is used to enable mutual TLS authentication
+    * *auth.method=certBasicAuth* is used to enable mutual TLS authentication or/and basic HTTPs authentication
+    * *auth.method=basicAuth* is used to enable basic HTTPs authentication

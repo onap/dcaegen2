@@ -56,11 +56,10 @@ VES expects to be able to fetch configuration directly from consul service in fo
             }
         },
         "collector.service.secure.port": "8443",
-        "header.authflag": "0",
+        "auth.method": "noAuth",
         "collector.keystore.file.location": "/opt/app/VESCollector/etc/keystore",
-        "collector.keystore.alias": "dynamically generated",
         "services_calls": [],
-        "header.authlist": "sample1,c2FtcGxlMQ=="
+        "header.authlist": "sample1,$2a$10$0buh.2WeYwN868YMwnNNEuNEAMNYVU9.FSMJGyIKV3dGET/7oGOi6"
     }
 
 
