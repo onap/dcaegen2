@@ -29,11 +29,11 @@ High Volume VES Collector overview and functions
 
     architecture
     design
-    run-time-configuration
     repositories
     deployment
-    troubleshooting
+    run-time-configuration
     HV-VES Offered APIs <../../apis/ves-hv/index>
     authorization
     example-event
     healthcheck-and-monitoring
+    troubleshooting

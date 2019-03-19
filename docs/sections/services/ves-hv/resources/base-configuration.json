@@ -1,0 +1,12 @@
+{
+  "logLevel": "INFO",
+  "server.listenPort": 6061,
+  "server.idleTimeoutSec": 60,
+  "cbs.firstRequestDelaySec": 10,
+  "cbs.requestIntervalSec": 5,
+  "security.sslDisable": false,
+  "security.keys.keyStoreFile": "/etc/ves-hv/ssl/server.p12",
+  "security.keys.keyStorePassword": "onaponap",
+  "security.keys.trustStoreFile": "/etc/ves-hv/ssl/trust.p12",
+  "security.keys.trustStorePassword": "onaponap"
+}

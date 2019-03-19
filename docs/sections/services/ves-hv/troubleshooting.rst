@@ -43,37 +43,14 @@ Deployment/Installation errors
 
     Unexpected error when parsing command line arguments
     usage: java org.onap.dcae.collectors.veshv.main.MainKt
-    Required parameters: s, p, c
-     -c,--config-url <arg>                URL of ves configuration on consul
-     -d,--first-request-delay <arg>       Delay of first request to consul in
-                                          seconds
-     -H,--health-check-api-port <arg>     Health check rest api listen port
-     -I,--request-interval <arg>          Interval of consul configuration
-                                          requests in seconds
-     -i,--idle-timeout-sec <arg>          Idle timeout for remote hosts. After
-                                          given time without any data exchange
-                                          the
-                                          connection might be closed.
-     -k,--key-store <arg>                 Key store in PKCS12 format
-     -kp,--key-store-password <arg>       Key store password
-     -l,--ssl-disable                     Disable SSL encryption
-     -m,--max-payload-size <arg>          Maximum supported payload size in
-                                          bytes
-     -p,--listen-port <arg>               Listen port
-     -s,--kafka-bootstrap-servers <arg>   Comma-separated Kafka bootstrap
-                                          servers in <host>:<port> format
-     -t,--trust-store <arg>               File with trusted certificate bundle
-                                          in PKCS12 format
-     -tp,--trust-store-password <arg>     Trust store password
-     -u,--dummy                           If present will start in dummy mode
-                                          (dummy external services)
+    Required parameters: c
+     -c,--configuration-file <arg>                Path to JSON file containing HV-VES configuration
     All parameters can be specified as environment variables using
     upper-snake-case full name with prefix `VESHV_`.
 
 
 This log message is printed when you do not specify the required parameters (via command line, or in environment variables).
-As described in the above log message, there are a few required parameters:
-**listen port**, **config url**, **kafka-bootstrap-servers** and either **trust store password** and **key store password** if you want to use SSL, or only **ssl disable** if not.
+As described in the above log message, there is single required parameter - **configuration-file**.
 
 To get rid of this error, specify the required parameters. For example:
 
@@ -81,17 +58,13 @@ To get rid of this error, specify the required parameters. For example:
 
 ::
 
-    <hv-ves run command> --listen-port 6061 --config-url http://consul-url/key-path --kafka-bootstrap-servers message-router-kafka:9092 --key-store-password password --trust-store-password password
+    <hv-ves run command> --configuration-file /etc/ves-hv/config.json
 
 - By defining environment variables:
 
 ::
 
-    export VESHV_LISTEN_PORT=6061
-    export VESHV_CONFIG_URL=http://consul-url/key-path
-    export VESHV_KAFKA_BOOTSTRAP_SERVERS=message-router-kafka:9092
-    export VESHV_KEY_STORE_PASSWORD=password
-    export VESHV_TRUST_STORE_PASSWORD=password
+    export VESHV_CONFIGURATION_FILE=/etc/ves-hv/config.json
 
 **NOTE**
 
@@ -673,7 +646,7 @@ For more information, see the :ref:`hv_ves_behaviors` section.
 Authorization related errors
 ----------------------------
 
-**WARNING: SSL/TLS authorization is a part of an experimental feature for ONAP Casablanca release and should be treated as unstable and subject to change in future releases.**
+**WARNING: SSL/TLS authorization is a part of an experimental feature for ONAP Dublin release and should be treated as unstable and subject to change in future releases.**
 **For more information, see** :ref:`ssl_tls_authorization`.
 
 **Key or trust store missing**
@@ -710,7 +683,7 @@ Authorization related errors
 
 
 The above error is logged when key store is not provided. Similarly, when trust store is not provided, **/etc/ves-hv/trust.p12** file missing is logged.
-**server.p12** and **trust.p12** are default names of key and trust stores. They can be changed by specifying ``--trust-store`` or ``--key-store`` command line arguments on deployment.
+**server.p12** and **trust.p12** are default names of key and trust stores. They can be changed by specifying ``trustStore`` or ``keySstore`` file configuration entries.
 
 ====
 
@@ -784,6 +757,6 @@ Key or trust store password provided in configuration is invalid.
         at org.onap.dcae.collectors.veshv.main.MainKt.main(main.kt:41)
 
 The above is logged when provided keystore has invalid or corrupted content.
-This log also appears when you try to use key store/trust store in archive format other than **PKCS12** (the only supported by **HV-VES** store type).
+This log also appears when you try to use key store/trust store in archive format other than specified or inferred from file extension.
 
 
