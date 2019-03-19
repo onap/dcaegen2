@@ -11,5 +11,5 @@ The message consists of several parts. Each part is encoded in a different way. 
 
 Values of fields can be changed according to types specified in noted definition files.
 
-.. literalinclude:: WTP.yaml
+.. literalinclude:: resources/WTP.yaml
     :language: yaml

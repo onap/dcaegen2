@@ -12,7 +12,7 @@ High Volume Collector is deployed with DCAEGEN2 via OOM Helm charts and Cloudify
 Input messages come from TCP interface and Wire Transfer Protocol. Each frame includes Google Protocol Buffers (GPB) encoded payload.
 Based on information provided in CommonEventHeader, domain messages are validated and published to specific Kafka topic in DMaaP.
 
-.. image:: ONAP_VES_HV_Architecture.png
+.. image:: resources/ONAP_VES_HV_Architecture.png
 
 Messages published in DMaaP's Kafka topic will be consumed by DCAE analytics application or other ONAP component that consumes messages from DMaaP/Kafka.
 DMaaP serves direct access to Kafka allowing other analytics applications to utilize its data.

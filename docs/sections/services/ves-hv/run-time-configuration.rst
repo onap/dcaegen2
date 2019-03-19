@@ -8,7 +8,7 @@ Run-Time configuration
 
 (see :ref:`deployment`)
 
-HV-VES can fetch configuration directly from Consul service in the following JSON format:
+HV-VES fetches configuration from Config Binding Service in the following JSON format:
 
 .. code-block:: json
 
@@ -50,10 +50,8 @@ The configuration is created from HV-VES Cloudify blueprint by specifying **appl
               fromDomain: perf3gpp
               toTopic: HV_VES_PERF3GPP
 
-Endpoint on which HV-VES seeks configuration can be set during deployment as described in :ref:`deployment`.
+HV-VES waits 10 seconds (default, configurable during deplyoment with **firstRequestDelay** option, see :ref:`configuration_file`) before the first attempt to retrieve configuration from Consul. This is to prevent possible synchronization issues. During that time HV-VES declines any connection attempts from xNF (VNF/PNF).
 
-HV-VES waits 10 seconds (default, configurable during deplyoment with **first-request-delay** option, see :ref:`deployment`) before the first attempt to retrieve configuration from Consul. This is to prevent possible synchronization issues. During that time HV-VES declines any connection attempts from xNF (VNF/PNF).
+After first request, HV-VES asks for configuration in fixed intervals, configurable from command line (**requestInterval**). By defualt interval is set to 5 seconds.
 
-After first request, HV-VES asks for configuration in fixed intervals, configurable from command line (**request-interval**). By defualt interval is set to 5 seconds.
-
-In case of failing to retrieve configuration, collector temporarily extends this interval and retries. After five unsuccessfull attempts, container becomes unhealthy and cannot recover. HV-VES in this state is unusable and the container should be restarted.
+In case of failing to retrieve configuration, collector retries the action. After five unsuccessful attempts, container becomes unhealthy and cannot recover. HV-VES in this state is unusable and the container should be restarted.
