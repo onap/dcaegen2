@@ -1,0 +1,35 @@
+{
+  "server": {
+    "healthCheckApiPort": 5000,
+    "listenPort": 6000,
+    "idleTimeoutSec": 1200,
+    "maxPayloadSizeBytes": 512000
+  },
+  "cbs": {
+    "firstRequestDelaySec": 7,
+    "requestIntervalSec": 900
+  },
+  "security": {
+    "sslDisable": false,
+    "keys": {
+      "keyStoreFile": "test.ks.pkcs12",
+      "keyStorePassword": "changeMe",
+      "trustStoreFile": "trust.ks.pkcs12",
+      "trustStorePassword": "changeMeToo"
+    }
+  },
+  "collector": {
+    "maxRequestSizeBytes": 512000,
+    "kafkaServers": [
+      "192.168.255.1:5005",
+      "192.168.255.1:5006"
+    ],
+    "routing": [
+      {
+        "fromDomain": "perf3gpp",
+        "toTopic": "HV_VES_PERF3GPP"
+      }
+    ]
+  },
+  "logLevel": "ERROR"
+}

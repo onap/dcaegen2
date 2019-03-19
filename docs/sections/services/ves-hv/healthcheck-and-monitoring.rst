@@ -9,7 +9,7 @@ Healthcheck and Monitoring
 Healthcheck
 -----------
 Inside HV-VES docker container runs a small HTTP service for healthcheck. Port for healthchecks can be configured
-at deployment using ``--health-check-api-port`` command line option or via `VESHV_HEALTHCHECK_API_PORT` environment variable (for details see :ref:`deployment`).
+at deployment using base configuration file (for details see :ref:`configuration_file`).
 
 This service exposes endpoint **GET /health/ready** which returns a **HTTP 200 OK** when HV-VES is healthy
 and ready for connections. Otherwise it returns a **HTTP 503 Service Unavailable** message with a short reason of unhealthiness.
@@ -90,4 +90,4 @@ JVM metrics:
 
 Sample response for **GET monitoring/prometheus**:
 
-.. literalinclude:: metrics_sample_response.txt
+.. literalinclude:: resources/metrics_sample_response.txt
