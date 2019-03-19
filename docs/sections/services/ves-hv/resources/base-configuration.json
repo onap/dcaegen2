@@ -1,0 +1,21 @@
+{
+  "server": {
+    "listenPort": 6061,
+    "idleTimeoutSec": 60,
+    "maxPayloadSizeBytes": 1048576
+  },
+  "cbs": {
+    "firstRequestDelaySec": 10,
+    "requestIntervalSec": 5
+  },
+  "security": {
+    "sslDisable": false,
+    "keys": {
+      "keyStoreFile": "test.pkcs12",
+      "keyStorePassword": "onaponap",
+      "trustStoreFile": "trust.pkcs12",
+      "trustStorePassword": "onaponap"
+    }
+  },
+  "logLevel": "INFO"
+}
