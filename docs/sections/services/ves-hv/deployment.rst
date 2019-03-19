@@ -7,83 +7,117 @@
 Deployment
 ============
 
-To run HV-VES Collector container, you need to specify required parameters by passing them as command
-line arguments either by using long form (--long-form) or short form (-s) followed by argument if needed.
+To run HV-VES Collector container you need to specify required command line options and environment variables.
 
-All parameters can also be configured by specifying environment variables. These variables have to be named after command line option name
-rewritten using `UPPER_SNAKE_CASE` and prepended with `VESHV_` prefix, for example `VESHV_LISTEN_PORT`.
+Command line parameters can be specified either by using long form (--long-form) or short form (-s) followed by argument if needed (see `Arg` column in table below). These parameters can be omitted if corresponding environment variables are set. These variables are named after command line option name rewritten using `UPPER_SNAKE_CASE` and prepended with `VESHV_` prefix, for example `VESHV_CONFIGURATION_FILE`.
 
-Command line options have precedence over environment variables.
+Command line options have precedence over environment variables in cases when both are present.
 
-+-------------+------------+-------------------+----------+-----+-------------------------------------------------+
-| Long form   | Short form | Env form          | Required | Arg | Description                                     |
-+=============+============+===================+==========+=====+=================================================+
-| listen-port | p          | VESHV_LISTEN_PORT | yes      | yes | Port on which HV-VES listens internally         |
-+-------------+------------+-------------------+----------+-----+-------------------------------------------------+
-| config-url  | c          | VESHV_CONFIG_URL  | yes      | yes | URL of HV-VES configuration on Consul service   |
-+-------------+------------+-------------------+----------+-----+-------------------------------------------------+
+Currently HV-VES requires single command line parameter which points to base configuration file.
 
-HV-VES requires also to specify if SSL should be used when handling incoming TCP connections.
-This can be done by passing the flag below to the command line.
+.. csv-table::
+    :widths: auto
+    :delim: ;
+    :header: Long form , Short form , Arg , Env form , Description
 
-+-------------+------------+-------------------+----------+-----+-------------------------------------------------+
-| Long form   | Short form | Env form          | Required | Arg | Description                                     |
-+=============+============+===================+==========+=====+=================================================+
-| ssl-disable | l          | VESHV_SSL_DISABLE | no       | no  | Disables SSL encryption                         |
-+-------------+------------+-------------------+----------+-----+-------------------------------------------------+
+    configuration-file ; c ; yes ; VESHV_CONFIGURATION_FILE  ; Path to JSON file containing HV-VES configuration
+
+Environment variables that are required by HV-VES are used by collector for provisioning of run-time configuration and are usually provided by DCAE platform.
+
+.. csv-table::
+    :widths: auto
+    :delim: ;
+    :header: Environment variable name , Description
+
+    CONSUL_HOST            ; Hostname under which Consul service is available
+    CONFIG_BINDING_SERVICE ; Hostname under which Config Binding Service is available
+    HOSTNAME               ; Configuration key of HV-VES as seen by CBS, usually *dcae-hv-ves-collector*
+
+There is also optional command line parameter which configures container-internal port for Healthcheck Server API (see :ref:`healthcheck_and_monitoring`).
+
+.. csv-table::
+    :widths: auto
+    :delim: ;
+    :header: Long form , Short form , Arg , Env form , Description
+
+    health-check-api-port ; H ; yes ; VESHV_HEALTH_CHECK_API_PORT  ; Health check rest api listen port
+
+.. _configuration_file:
+
+Configuration file
+------------------
+
+File must provide base configuration for HV-VES Collector in JSON format.
+
+Some entries in configuration can also be obtained from Config Binding Service (see :ref:`run_time_configuration`). **Every entry defined in configuration file will be OVERRIDEN if it is also present in run-time configuration.** Moreover, placement of entries in configuration or entry naming are not guaranteed to directly correspond to run-time configuration.
+
+Following JSON shows every possible configuration option. Default file shipped with HV-VES container can be found in the collector's repository (see :ref:`repositories`).
+
+.. literalinclude:: resources/base-configuration.json
+    :language: json
 
 
-Minimal command for running the container:
+The configuration is split into smaller sections, please note again that sectioning or naming of entries does not need to conform with run-time configuration.
 
-.. code-block:: bash
+Tables show restrictions on fields in file configuration and short description.
 
-    docker run nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main --listen-port 6061 --config-url http://consul:8500/v1/kv/dcae-hv-ves-collector --ssl-disable
+.. csv-table::
+    :widths: auto
+    :delim: ;
+    :header-rows: 2
 
-Optional configuration parameters:
+    Server
+    Key                  ; Value type ; Description
+    listenPort           ; number     ; Port on which HV-VES listens internally
+    idleTimeoutSec       ; number     ; Idle timeout for remote hosts. After given time without any data exchange, the connection might be closed.
+    maxPayloadSizeBytes  ; number     ; Maximum supported payload size in bytes
 
-+-----------------------+------------+----------------------------+----------+-----+-----------------+-------------------------------------------------------+
-| Long form             | Short form | Env form                   | Required | Arg | Default         | Description                                           |
-+=======================+============+============================+==========+=====+=================+=======================================================+
-| health-check-api-port | H          | VESHV_HEALTHCHECK_API_PORT | no       | yes | 6060            | Health check REST API listen port                     |
-+-----------------------+------------+----------------------------+----------+-----+-----------------+-------------------------------------------------------+
-| first-request-delay   | d          | VESHV_FIRST_REQUEST_DELAY  | no       | yes | 10              | Delay of first request to Consul service in seconds   |
-+-----------------------+------------+----------------------------+----------+-----+-----------------+-------------------------------------------------------+
-| request-interval      | I          | VESHV_REQUEST_INTERVAL     | no       | yes | 5               | Interval of Consul configuration requests in seconds  |
-+-----------------------+------------+----------------------------+----------+-----+-----------------+-------------------------------------------------------+
-| idle-timeout-sec      | i          | VESHV_IDLE_TIMEOUT_SEC     | no       | yes | 60              | Idle timeout for remote hosts. After given time       |
-|                       |            |                            |          |     |                 | without any data exchange, the connection             |
-|                       |            |                            |          |     |                 | might be closed.                                      |
-+-----------------------+------------+----------------------------+----------+-----+-----------------+-------------------------------------------------------+
-| max-payload-size      | m          | VESHV_MAX_PAYLOAD_SIZE     | no       | yes | 1048576 (1 MiB) | Maximum supported payload size in bytes               |
-+-----------------------+------------+----------------------------+----------+-----+-----------------+-------------------------------------------------------+
-| log-level             | ll         | VESHV_LOG_LEVEL            | no       | yes | INFO            | Log level on which HV-VES publishes all log messages  |
-|                       |            |                            |          |     |                 | Valid argument values are (case insensitive): ERROR,  |
-|                       |            |                            |          |     |                 | WARN, INFO, DEBUG, TRACE.                             |
-+-----------------------+------------+----------------------------+----------+-----+-----------------+-------------------------------------------------------+
+.. csv-table::
+    :widths: auto
+    :delim: ;
+    :header-rows: 2
 
-As part of experimental API if you do not specify `ssl-disable` flag, there is need to specify additional
-parameters for security configuration.
+    Config Binding Service
+    Key                  ; Value type ; Description
+    firstRequestDelaySec ; number     ; Delay of first request to Config Binding Service in seconds
+    requestIntervalSec   ; number     ; Interval of configuration requests in seconds
 
-+-----------------------+------------+----------------------------+----------+-----+------------------------+--------------------------------------------------------------+
-| Long form             | Short form | Env form                   | Required | Arg | Default                | Description                                                  |
-+=======================+============+============================+==========+=====+========================+==============================================================+
-| key-store             | k          | VESHV_KEY_STORE            | no       | yes | /etc/ves-hv/server.p12 | Key store in PKCS12 format path                              |
-+-----------------------+------------+----------------------------+----------+-----+------------------------+--------------------------------------------------------------+
-| key-store-password    | kp         | VESHV_KEY_STORE_PASSWORD   | no       | yes |                        | Key store password                                           |
-+-----------------------+------------+----------------------------+----------+-----+------------------------+--------------------------------------------------------------+
-| trust-store           | t          | VESHV_TRUST_STORE          | no       | yes | /etc/ves-hv/trust.p12  | File with trusted certificate bundle in PKCS12 format path   |
-+-----------------------+------------+----------------------------+----------+-----+------------------------+--------------------------------------------------------------+
-| trust-store-password  | tp         | VESHV_TRUST_STORE_PASSWORD | no       | yes |                        | Trust store password                                         |
-+-----------------------+------------+----------------------------+----------+-----+------------------------+--------------------------------------------------------------+
+.. csv-table::
+    :widths: auto
+    :delim: ;
+    :header-rows: 2
 
-Passwords are mandatory without ssl-disable flag. If key-store or trust-store location is not specified, HV-VES will try to read them from default locations.
+    Security
+    Key                  ; Value type ; Description
+    sslDisable           ; boolean    ; Disables SSL encryption
+    keyStoreFile         ; String     ; Key store in PKCS12 format path used in HV-VES incoming connections
+    keyStorePassword     ; String     ; Key store password used in HV-VES incoming connections
+    trustStoreFile       ; String     ; File with trusted certificate bundle in PKCS12 format path used in HV-VES incoming connections
+    trustStorePassword   ; String     ; Trust store password used in HV-VES incoming connections
 
-These parameters can be configured either by passing command line option during `docker run` call or
-by specifying environment variables named after command line option name
-rewritten using `UPPER_SNAKE_CASE` and prepended with `VESHV_` prefix e.g. `VESHV_LISTEN_PORT`.
+All security entries are mandatory with `sslDisable` set to `false`. Otherwise only `sslDisable` needs to be specified.
+
+.. csv-table::
+    :widths: auto
+    :delim: ;
+    :header-rows: 2
+
+    VES Collector
+    Key                  ; Value type ; Description
+    maxRequestSizeBytes  ; number     ; Max Request Size property of Kafka Producer configuration in bytes
+
+.. csv-table::
+    :widths: auto
+    :delim: ;
+    :header-rows: 2
+
+    Uncategorized
+    Key                  ; Value type ; Description
+    logLevel             ; String     ; Log level on which HV-VES publishes all log messages. Valid argument values are (case insensitive): ERROR, WARN, INFO, DEBUG, TRACE.
+
 
 Horizontal Scaling
-==================
+------------------
 
 Kubernetes command line tool (`kubectl`) is recommended for manual horizontal scaling of HV-VES Collector.
 
