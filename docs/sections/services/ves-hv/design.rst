@@ -33,13 +33,13 @@ The proto file (with the VES CommonHeader) comes with a binary-type **Payload** 
 Domain-specific data are encoded as well with GPB. A domain-specific proto file is required to decode the data.
 This domain-specific proto has to be shared with analytics applications - HV-VES does not analyze domain-specific data.
 
-In order to support the RT-PM use-case, HV-VES includes a **perf3gpp** domain proto file. Within this domain, high volume data are expected to be reported to HV-VES collector.
+In order to support the RT-PM use-case, HV-VES uses a **perf3gpp** domain proto file. Within this domain, high volume data are expected to be reported to HV-VES collector.
 Additional domains can be defined based on existing VES domains (like Fault, Heartbeat) or completely new domains. New domains can be added when needed.
 
 GPB proto files are backwards compatible, and a new domain can be added without affecting existing systems.
 
 Analytics applications have to be equipped with the new domain-specific proto file as well.
-Currently, these additional, domain specific proto files can be added to respective repos of HV-VES collector.
+Currently, these additional, domain specific proto files can be added to hv-ves-client protobuf library repository (artifactId: hvvesclient-protobuf).
 
 Implementation details
 ----------------------
