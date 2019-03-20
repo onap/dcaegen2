@@ -1,0 +1,141 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2288ea22_20ea2b95",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-03-20T14:48:32Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be better to list all cmd options in one table with additional row specifying if they are mandatory or not?",
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4750289_d28a9880",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-03-20T14:48:32Z",
+      "side": 1,
+      "message": "Is this sentence necessary?\nRight now we can keep any configuration variable we want in the file (not to mention that all of them are mandatory for now) and each one can be overriden via cbs.",
+      "range": {
+        "startLine": 50,
+        "startChar": 70,
+        "endLine": 50,
+        "endChar": 232
+      },
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cdb3079d_da7fdb0d",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-03-20T14:48:32Z",
+      "side": 1,
+      "message": "It has been removed from configuration file",
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4fec49ae_04f874c1",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-03-20T14:48:32Z",
+      "side": 1,
+      "message": "What about other collector options?",
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3706e0e2_aa15b00f",
+        "filename": "docs/sections/services/ves-hv/resources/base-configuration.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-03-20T14:48:32Z",
+      "side": 1,
+      "message": "It has been removed from here",
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0645209f_656899b1",
+        "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-03-20T14:48:32Z",
+      "side": 1,
+      "message": "CBS",
+      "range": {
+        "startLine": 53,
+        "startChar": 187,
+        "endLine": 53,
+        "endChar": 193
+      },
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3bb51979_e963b84a",
+        "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-03-20T14:48:32Z",
+      "side": 1,
+      "message": "From file",
+      "range": {
+        "startLine": 55,
+        "startChar": 71,
+        "endLine": 55,
+        "endChar": 101
+      },
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
