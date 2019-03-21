@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b11df97f_00fe523e",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-03-21T09:32:10Z",
+      "side": 1,
+      "message": "I find it easier to first read about what is necessary to run container and later about optionals (that way I can skip them if I\u0027m not interested)",
+      "parentUuid": "2288ea22_20ea2b95",
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e4750289_d28a9880",
         "filename": "docs/sections/services/ves-hv/deployment.rst",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2019-03-20T14:48:32Z",
       "side": 1,
       "message": "Is this sentence necessary?\nRight now we can keep any configuration variable we want in the file (not to mention that all of them are mandatory for now) and each one can be overriden via cbs.",
+      "range": {
+        "startLine": 50,
+        "startChar": 70,
+        "endLine": 50,
+        "endChar": 232
+      },
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "663e4bdd_59804c2e",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-03-21T09:32:10Z",
+      "side": 1,
+      "message": "Yes it can be removed now",
+      "parentUuid": "e4750289_d28a9880",
       "range": {
         "startLine": 50,
         "startChar": 70,
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "d4c34964_230f8197",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-03-21T09:32:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cdb3079d_da7fdb0d",
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4fec49ae_04f874c1",
         "filename": "docs/sections/services/ves-hv/deployment.rst",
         "patchSetId": 2
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "5d91ffb8_799852fc",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-03-21T09:32:10Z",
+      "side": 1,
+      "message": "Other fields might get replaced with dmaap_streams definitions very soon.\nDid not wanted to \"run into future\" ;)",
+      "parentUuid": "4fec49ae_04f874c1",
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3706e0e2_aa15b00f",
         "filename": "docs/sections/services/ves-hv/resources/base-configuration.json",
         "patchSetId": 2
@@ -87,6 +165,24 @@
       "writtenOn": "2019-03-20T14:48:32Z",
       "side": 1,
       "message": "It has been removed from here",
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eba5c4c7_11da55be",
+        "filename": "docs/sections/services/ves-hv/resources/base-configuration.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-03-21T09:32:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3706e0e2_aa15b00f",
       "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -116,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "ba687381_63587e79",
+        "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-03-21T09:32:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0645209f_656899b1",
+      "range": {
+        "startLine": 53,
+        "startChar": 187,
+        "endLine": 53,
+        "endChar": 193
+      },
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3bb51979_e963b84a",
         "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
         "patchSetId": 2
@@ -127,6 +247,30 @@
       "writtenOn": "2019-03-20T14:48:32Z",
       "side": 1,
       "message": "From file",
+      "range": {
+        "startLine": 55,
+        "startChar": 71,
+        "endLine": 55,
+        "endChar": 101
+      },
+      "revId": "06f044c21cbc4b79bd8fe227663fdf1f4760572c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4af4e65b_c8409efd",
+        "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-03-21T09:32:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bb51979_e963b84a",
       "range": {
         "startLine": 55,
         "startChar": 71,
