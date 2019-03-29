@@ -1,0 +1,29 @@
+{
+  "logLevel": "INFO",
+  "server.listenPort": 6061,
+  "server.idleTimeoutSec": 60,
+  "cbs.firstRequestDelaySec": 10,
+  "cbs.requestIntervalSec": 5,
+  "security.sslDisable": false,
+  "security.keys.keyStoreFile": "/etc/ves-hv/ssl/server.p12",
+  "security.keys.keyStorePassword": "onaponap",
+  "security.keys.trustStoreFile": "/etc/ves-hv/ssl/trust.p12",
+  "security.keys.trustStorePassword": "onaponap",
+  "streams_publishes": {
+    "perf3gpp": {
+      "type": "kafka",
+      "kafka_info": {
+        "bootstrap_servers": "message-router-kafka:9092",
+        "topic_name": "HV_VES_PERF3GPP"
+      }
+    },
+    "heartbeat": {
+      "type": "kafka",
+      "kafka_info": {
+        "bootstrap_servers": "message-router-kafka:9092",
+        "topic_name": "HV_VES_HEARTBEAT"
+      }
+    }
+  }
+}
+
