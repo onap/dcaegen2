@@ -58,6 +58,9 @@ By default, **HV-VES** will use routing defined in **k8s-hv-ves.yaml-template** 
 
 - perf3gpp -> HV_VES_PERF3GPP
 
+
+.. _supported_domains:
+
 Supported domains
 =================
 
@@ -65,7 +68,7 @@ Domains supported by **HV-VES**:
 
 - perf3gpp
 
-For domains descriptions, see :ref:`supported_domains`
+For domains descriptions, see :ref:`domains_supported_by_hvves`
 
 .. _hv_ves_behaviors:
 

@@ -6,52 +6,42 @@
 Run-Time configuration
 ======================
 
-(see :ref:`deployment`)
+HV-VES dynamic configuration is primarily meant to provide DMaaP Connection Objects (see :ref:`dmaap-connection-objects`).
+These objects contain information necessary to route received VES Events to correct Kafka topic. This metadata will be later referred to as Routing definition.
 
-HV-VES fetches configuration from Config Binding Service in the following JSON format:
-
-.. code-block:: json
-
-    {
-        "dmaap.kafkaBootstrapServers": "message-router-kafka:9093",
-        "collector.routing": [
-                {
-                    "fromDomain": "perf3gpp",
-                    "toTopic": "HV_VES_PERF3GPP"
-                },
-                {
-                    "fromDomain": "heartbeat",
-                    "toTopic": "HV_VES_HEARTBEAT"
-                },
-                ...
-        ]
-    }
-
-HV-VES does not verify the correctness of configuration data and uses them as is, in particular:
-
-- **KafkaBootstrapServers** is used as host name and port for publishing events to Kafka service.
-- Every **routing** array object specifies one event publishing route.
-
-  - **fromDomain** node should be a case-sensitive string of single domain taken from VES Common Event Header specification.
-  - **toTopic** should be a case-sensitive string of Kafka topic.
-  - When HV-VES receives VES Event, it checks the domain contained in it. If the route from that domain to any topic exists in configuration, then HV-VES publishes that event to topic in that route.
-  - If there are two routes from the same domain to different topics, then it is undefined which route will be used.
-
-The configuration is created from HV-VES Cloudify blueprint by specifying **application_config** node during ONAP OOM/Kubernetes deployment. Example of the node specification:
-
-.. code-block:: YAML
-
-    node_templates:
-      hv-ves:
-        properties:
-          application_config:
-            dmaap.kafkaBootstrapServers: message-router-kafka:9092
-            collector.routing:
-              fromDomain: perf3gpp
-              toTopic: HV_VES_PERF3GPP
+Collector internally uses DCAE-SDK to fetch configuration from Config Binding Service.
 
 HV-VES waits 10 seconds (default, configurable during deployment with **firstRequestDelay** option, see :ref:`configuration_file`) before the first attempt to retrieve configuration from CBS. This is to prevent possible synchronization issues. During that time HV-VES declines any connection attempts from xNF (VNF/PNF).
 
 After first request, HV-VES asks for configuration in fixed intervals, configurable from file configuration (**requestInterval**). By default interval is set to 5 seconds.
 
 In case of failing to retrieve configuration, collector retries the action. After five unsuccessful attempts, container becomes unhealthy and cannot recover. HV-VES in this state is unusable and the container should be restarted.
+
+
+Configuration format
+--------------------
+
+Following JSON format presents dynamic configuration options recognized by HV-VES Collector.
+Note that there is no verification of the data correctness (e.g. if specified security files are present on machine) and thus invalid data can result in service malfunctioning or even container shutdown.
+
+.. literalinclude:: resources/dynamic-configuration.json
+    :language: json
+
+Fields have same meaning as in file configuration with only difference being Routing definition.
+
+Routing
+-------
+
+For every JSON key-object pair defined in **"stream_publishes"**, the key is used as domain and related object is used to setup Kafka's bootstrap servers and Kafka topic **for this domain**.
+
+Collector when receiving VES Event from client checks if domain from the event corresponds to any from Routing and publishes this event onto related topic. If there is no match the event is dropped. If there are two routes from the same domain to different topics, then it is undefined which route will be used.
+
+For more informations see :ref:`supported_domains`
+
+Providing configuration during OOM deployment
+---------------------------------------------
+
+The configuration is created from HV-VES Cloudify blueprint by specifying **application_config** node during ONAP OOM/Kubernetes deployment. Example of the node specification:
+
+.. literalinclude:: resources/blueprint-snippet.yaml
+    :language: yaml
