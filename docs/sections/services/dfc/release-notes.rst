@@ -4,7 +4,19 @@
 Release Notes
 =============
 
-Version: 1.0.5
+Version 1.2.0
+-------------
+
+:Release Date: 2019-04-11 (Dublin, M4)
+
+Messages are now handled in parallel
+
+Retry mechanism implemented
+
+Adapting to ONAP logging standard
+
+
+Version: 1.1.1
 --------------
 
 :Release Date: 2019-01-30 (Casablanca Maintenance fixes)
@@ -13,7 +25,9 @@ Version: 1.0.5
 **Bug Fixes**
 
 DCAEGEN2-940  - Larger files of size 100Kb publish to DR
+
 DCAEGEN2-941  - DFC error after running over 12 hours
+
 DCAEGEN2-1001 - Multiple Fileready notification not handled
 
 

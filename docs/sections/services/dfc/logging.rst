@@ -10,4 +10,4 @@ file located in datafile-app-server/config folder.
 
 **Where is the log file?**
 
-The log file is located under /opt/log and called application.log.
+The log file is located under /var/log/ONAP/ and called application.log.
