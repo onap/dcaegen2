@@ -1,0 +1,164 @@
+---
+swagger: '2.0'
+info:
+  description: This page lists bbs-event-processor REST API details
+  version: '1.0'
+  title: BBS Event Processor
+host: localhost:32100
+basePath: "/"
+tags:
+- name: bbs-event-processor-controller
+  description: Manage bbs-event-processor microService
+paths:
+  "/cancel-tasks":
+    post:
+      tags:
+      - bbs-event-processor-controller
+      summary: Returns result of request to cancel running microservice tasks
+      operationId: cancelTasksUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - "*/*"
+      responses:
+        '200':
+          description: Tasks were successfully cancelled
+          schema:
+            "$ref": "#/definitions/Mono«ResponseEntity«string»»"
+        '201':
+          description: Created
+        '401':
+          description: Not authorized to view the resource
+        '403':
+          description: Resource access is forbidden
+        '404':
+          description: Resource is not found
+        '406':
+          description: Cancellation failed. Check logs
+  "/heartbeat":
+    get:
+      tags:
+      - bbs-event-processor-controller
+      summary: Returns liveness of bbs-event-processor microService
+      operationId: handleHeartBeatUsingGET
+      produces:
+      - "*/*"
+      responses:
+        '200':
+          description: bbs-event-processor microService is alive
+          schema:
+            "$ref": "#/definitions/Mono«ResponseEntity«string»»"
+        '401':
+          description: Not authorized to view the resource
+        '403':
+          description: Resource access is forbidden
+        '404':
+          description: Resource is not found
+  "/logging/{level}":
+    post:
+      tags:
+      - bbs-event-processor-controller
+      summary: Returns result of request to change application logging level
+      operationId: changeLoggingLevelUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - "*/*"
+      parameters:
+      - name: level
+        in: path
+        description: level
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Application logging level was successfully changed
+          schema:
+            "$ref": "#/definitions/Mono«ResponseEntity«string»»"
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '406':
+          description: Application logging level change failure. Check logs
+  "/poll-cpe-authentication-events":
+    post:
+      tags:
+      - bbs-event-processor-controller
+      summary: Returns result of request submission. CPE authentication polling will
+        occur asynchronously
+      operationId: handleCpeAuthenticationRestCallUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - "*/*"
+      responses:
+        '200':
+          description: CPE authentication task submitted successfully
+          schema:
+            "$ref": "#/definitions/Mono«ResponseEntity«string»»"
+        '201':
+          description: Created
+        '401':
+          description: Not authorized to view the resource
+        '403':
+          description: Resource access is forbidden
+        '404':
+          description: Resource is not found
+  "/poll-reregistration-events":
+    post:
+      tags:
+      - bbs-event-processor-controller
+      summary: Returns result of request submission. PNF re-registration polling will
+        occur asynchronously
+      operationId: handleReRegistrationRestCallUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - "*/*"
+      responses:
+        '200':
+          description: Polling Re-registration events task submitted successfully
+          schema:
+            "$ref": "#/definitions/Mono«ResponseEntity«string»»"
+        '201':
+          description: Created
+        '401':
+          description: Not authorized to view the resource
+        '403':
+          description: Resource access is forbidden
+        '404':
+          description: Resource is not found
+  "/start-tasks":
+    post:
+      tags:
+      - bbs-event-processor-controller
+      summary: Returns result of request to start microservice tasks
+      operationId: reScheduleTasksUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - "*/*"
+      responses:
+        '200':
+          description: Tasks were successfully started
+          schema:
+            "$ref": "#/definitions/Mono«ResponseEntity«string»»"
+        '201':
+          description: Created
+        '401':
+          description: Not authorized to view the resource
+        '403':
+          description: Resource access is forbidden
+        '404':
+          description: Resource is not found
+        '406':
+          description: Task initiation failed. Check logs
+definitions:
+  Mono«ResponseEntity«string»»:
+    type: object
+    title: Mono«ResponseEntity«string»»
