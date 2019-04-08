@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "14921e39_fc685d1c",
+        "filename": "docs/sections/services/bbs-event-processor/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-08T17:00:23Z",
+      "side": 1,
+      "message": "could be broken into separate rst file",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 12
+      },
+      "revId": "5c26488e2c28e22c3c0a55a9a36e768426048579",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ae40839_d71266c1",
+        "filename": "docs/sections/services/bbs-event-processor/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-08T17:00:23Z",
+      "side": 1,
+      "message": "could be candidate for separate file (and linkage here)",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 13
+      },
+      "revId": "5c26488e2c28e22c3c0a55a9a36e768426048579",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
