@@ -127,33 +127,4 @@ Make sure Config Binding Service is up and running and the **ip + port** combina
 
 **PM Mapper** logs this information when connected to Consul, but cannot find a valid JSON configuration.
 
-====
-
-**Unable to Subscriber to Data Router Feed**
-
-::
-
-        2019-02-11T16:44:37.012Z	main	DEBUG	org.onap.dcaegen2.services.pmmapper.config.ConfigHandler		Mapper configuration:\nMapperConfig(messageRouterTopicName=unauthenticated.PM_VES_OUTPUT, busControllerConfig=BusControllerConfig(dcaeLocation=dcaeLocation, deliveryURL=deliveryURL, feedId=2, lastMod=lastMod, username=username, password=password, dataRouterSubscribeEndpoint=null), streamsSubscribes=MapperConfig.StreamsSubscribes(dmaapSubscriber=MapperConfig.DmaapSubscriber(dmaapInfo=MapperConfig.DmaapInfo(location=location, username=username, password=password, deliveryUrl=delivery_url, subscriberId=subsriber_id))))
-        2019-02-11T16:44:37.013Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		Starting subscription to DataRouter		ENTRY
-        2019-02-11T16:44:37.013Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		e04d9fb4-5bc3-405b-89ea-6b824de8f137		INVOKE [ SYNCHRONOUS ]
-        2019-02-11T16:44:37.061Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		Request to bus controller executed with Response Code: '404' and Response Event: 'Not Found'.
-        2019-02-11T16:44:39.062Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		d4982d98-574d-42e4-9922-640610ffa34d		INVOKE [ SYNCHRONOUS ]
-        2019-02-11T16:44:39.071Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		Request to bus controller executed with Response Code: '404' and Response Event: 'Not Found'.
-        2019-02-11T16:44:43.079Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		05c73228-d04c-47c2-b897-8e936de5c8fd		INVOKE [ SYNCHRONOUS ]
-        2019-02-11T16:44:43.089Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		Request to bus controller executed with Response Code: '404' and Response Event: 'Not Found'.
-        2019-02-11T16:44:51.129Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		c898b5c7-a347-496a-af3b-aeac661d4f1b		INVOKE [ SYNCHRONOUS ]
-        2019-02-11T16:44:51.138Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		Request to bus controller executed with Response Code: '404' and Response Event: 'Not Found'.
-        2019-02-11T16:45:07.220Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		b190fbc1-ab91-44da-b393-727810925374		INVOKE [ SYNCHRONOUS ]
-        2019-02-11T16:45:07.234Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber		Request to bus controller executed with Response Code: '404' and Response Event: 'Not Found'.
-        2019-02-11T16:45:07.235Z	main	INFO	org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber				EXIT
-        Exception in thread "main" org.onap.dcaegen2.services.pmmapper.exceptions.TooManyTriesException: Failed to subscribe within appropriate amount of attempts
-        at org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber.subscribe(DataRouterSubscriber.java:152)
-        at org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber.subscribe(DataRouterSubscriber.java:150)
-        at org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber.subscribe(DataRouterSubscriber.java:150)
-        at org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber.subscribe(DataRouterSubscriber.java:150)
-        at org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber.subscribe(DataRouterSubscriber.java:150)
-        at org.onap.dcaegen2.services.pmmapper.datarouter.DataRouterSubscriber.start(DataRouterSubscriber.java:97)
-        at org.onap.dcaegen2.services.pmmapper.App.main(App.java:53)
-
-This log is printed when pm mapper couldn't subscribe to the data router.
 

@@ -37,6 +37,10 @@ measTypes              Measurement name used in PM       Array of String
                        defined.
 ====================   ============================      ================================
 
-Feed Name
+Message Router Topic Name
 """""""""
-A default feed name "bulk_pm_feed" is configured in PM Mapper blueprint but the feed name can be changed to a user defined value through cloudify manager.
+PM Mapper publishes the perf3gpp VES PM Events to the following authenticated MR topic;
+
+::
+
+        topic.org.onap.dmaap.mr.PM_MAPPER
