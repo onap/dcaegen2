@@ -26,4 +26,4 @@ The mapper receives the files by subscribing to a Data Router feed.
 
 Interaction
 """""""""""
-PM Mapper will interact with the DMaaP Bus Controller for Subscribing to Data Router feeds and publishing to Message Router. PM Mapper also intracts with the Config Binding Service to get configuration information.
+PM Mapper interacts with the Config Binding Service to get configuration information.
