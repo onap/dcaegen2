@@ -20,3 +20,4 @@ Service components under DCAE
    ./pm-mapper/index.rst
    ./bbs-event-processor/index.rst
    ./sdk/index.rst
+   ./son-handler/index.rst
