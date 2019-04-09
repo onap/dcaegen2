@@ -22,4 +22,5 @@ Installation
 The following command will download the latest datafile container from
 nexus and launch it in the container named "datafile":
 
-    ``docker run -d -p 8100:8100 -p 8433:8433  nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.datafile``
+    ``docker run -d -p 8100:8100 -p 8433:8433
+    nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:latest``
