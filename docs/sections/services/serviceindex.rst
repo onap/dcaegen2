@@ -18,3 +18,4 @@ Service components under DCAE
    ./dfc/index.rst
    ./heartbeat-ms/index.rst
    ./pm-mapper/index.rst
+   ./son-handler/index.rst
