@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "8f7cba74_4befdad0",
+        "filename": "docs/sections/services/ves-hv/resources/base-configuration.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-04-10T12:27:59Z",
+      "side": 1,
+      "message": "Align to new @pjaszczyk changes regarding password files.",
+      "revId": "04b4b806c7e32388467f132fef71ef7e0bab0ac9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c9c1d619_92199f59",
         "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
         "patchSetId": 5
