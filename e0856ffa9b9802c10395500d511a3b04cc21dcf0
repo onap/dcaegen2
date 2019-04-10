@@ -39,6 +39,29 @@
       "revId": "e0856ffa9b9802c10395500d511a3b04cc21dcf0",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "218d9fac_c4ef9541",
+        "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2019-04-10T12:12:35Z",
+      "side": 1,
+      "message": "Add that comma please :)",
+      "range": {
+        "startLine": 37,
+        "startChar": 156,
+        "endLine": 37,
+        "endChar": 197
+      },
+      "revId": "e0856ffa9b9802c10395500d511a3b04cc21dcf0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
