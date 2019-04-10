@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4d41de14_633ca2d2",
+        "filename": "docs/sections/services/ves-hv/design.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-04-10T12:40:10Z",
+      "side": 1,
+      "message": "That\u0027s the name of module",
+      "parentUuid": "64394725_65db4b58",
+      "range": {
+        "startLine": 42,
+        "startChar": 128,
+        "endLine": 42,
+        "endChar": 148
+      },
+      "revId": "04b4b806c7e32388467f132fef71ef7e0bab0ac9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8f7cba74_4befdad0",
         "filename": "docs/sections/services/ves-hv/resources/base-configuration.json",
         "patchSetId": 5
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "ee770f61_c298a15a",
+        "filename": "docs/sections/services/ves-hv/resources/base-configuration.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-04-10T12:40:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f7cba74_4befdad0",
+      "revId": "04b4b806c7e32388467f132fef71ef7e0bab0ac9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c9c1d619_92199f59",
         "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
         "patchSetId": 5
@@ -53,6 +95,30 @@
       "writtenOn": "2019-04-10T12:09:17Z",
       "side": 1,
       "message": "It has changed",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 5
+      },
+      "revId": "04b4b806c7e32388467f132fef71ef7e0bab0ac9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4e22a42_e6328039",
+        "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-04-10T12:40:10Z",
+      "side": 1,
+      "message": "Changed it in the other commit",
+      "parentUuid": "c9c1d619_92199f59",
       "range": {
         "startLine": 15,
         "startChar": 0,
