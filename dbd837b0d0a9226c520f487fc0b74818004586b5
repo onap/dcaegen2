@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "615bc6e7_1d2d458c",
+        "filename": "docs/sections/services/ves-hv/resources/blueprint-snippet.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-04-11T09:38:39Z",
+      "side": 1,
+      "message": "Done + updated runtime file with PassFILEs instead of plaintext passwords",
+      "parentUuid": "c5ceced9_5b0f09e3",
+      "revId": "dbd837b0d0a9226c520f487fc0b74818004586b5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1b2f9710_f8bc4727",
         "filename": "docs/sections/services/ves-hv/resources/dynamic-configuration.json",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2019-04-11T09:05:56Z",
       "side": 1,
       "message": "this can be left undocummented as will not have any impact on running collector",
+      "range": {
+        "startLine": 5,
+        "startChar": 7,
+        "endLine": 5,
+        "endChar": 27
+      },
+      "revId": "dbd837b0d0a9226c520f487fc0b74818004586b5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ecb6b4b_605e3b4f",
+        "filename": "docs/sections/services/ves-hv/resources/dynamic-configuration.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 3701
+      },
+      "writtenOn": "2019-04-11T09:38:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b2f9710_f8bc4727",
       "range": {
         "startLine": 5,
         "startChar": 7,
