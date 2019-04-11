@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b243310_d0b74b59",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2019-04-11T09:02:04Z",
+      "side": 1,
+      "message": "Add full configuration keys",
+      "range": {
+        "startLine": 90,
+        "startChar": 4,
+        "endLine": 90,
+        "endChar": 14
+      },
+      "revId": "6b7bf5a3d7014a9f84f501d0548954f3300760fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a9518405_f7baf1e5",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2019-04-11T09:02:04Z",
+      "side": 1,
+      "message": "It can be in pkcs12 or jks formats - DCAE SDK infers this from the file name extension.",
+      "range": {
+        "startLine": 91,
+        "startChar": 56,
+        "endLine": 91,
+        "endChar": 63
+      },
+      "revId": "6b7bf5a3d7014a9f84f501d0548954f3300760fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87fe6b29_141820d2",
+        "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2019-04-11T09:02:04Z",
+      "side": 1,
+      "message": "Update sample configuration.",
+      "revId": "6b7bf5a3d7014a9f84f501d0548954f3300760fd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
