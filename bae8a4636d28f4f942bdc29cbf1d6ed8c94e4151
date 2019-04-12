@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "83fb6baf_5064ef1d",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2019-04-12T05:35:34Z",
+      "side": 1,
+      "message": "Remove this note. Or if you think it\u0027s necessary fix typo in \u0027type\u0027 ;)",
+      "range": {
+        "startLine": 125,
+        "startChar": 73,
+        "endLine": 125,
+        "endChar": 120
+      },
+      "revId": "bae8a4636d28f4f942bdc29cbf1d6ed8c94e4151",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed1330e8_8b4284f6",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2019-04-12T05:35:34Z",
+      "side": 1,
+      "message": "I believe we can add a case for bug in other part of the configuration.",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 51
+      },
+      "revId": "bae8a4636d28f4f942bdc29cbf1d6ed8c94e4151",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8182e6ab_6b190e37",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2019-04-12T05:35:34Z",
+      "side": 1,
+      "message": "Omit this sentence. From the DCAE platform PoV these defaults are different.",
+      "range": {
+        "startLine": 229,
+        "startChar": 0,
+        "endLine": 229,
+        "endChar": 74
+      },
+      "revId": "bae8a4636d28f4f942bdc29cbf1d6ed8c94e4151",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2003622f_8807c26f",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2019-04-12T05:35:34Z",
+      "side": 1,
+      "message": "Can you add another case for invalid credentials?\n\nENDL after the password in the file (`wc -l server.pass` prints 1):\n\nves-hv-collector_1          |  | 2019-04-12T05:29:35.511Z\t |                org.onap.dcae.collectors.veshv.main\t | ERROR\t | Failed to start a server\t | \t | java.security.UnrecoverableKeyException: failed to decrypt safe contents entry: java.io.IOException: getSecretKey failed: Password is not ASCII",
+      "revId": "bae8a4636d28f4f942bdc29cbf1d6ed8c94e4151",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "48d81cab_ec67a99d",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 2683
+      },
+      "writtenOn": "2019-04-12T05:35:34Z",
+      "side": 1,
+      "message": "User cannot specify the type of store.",
+      "range": {
+        "startLine": 252,
+        "startChar": 92,
+        "endLine": 252,
+        "endChar": 105
+      },
+      "revId": "bae8a4636d28f4f942bdc29cbf1d6ed8c94e4151",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
