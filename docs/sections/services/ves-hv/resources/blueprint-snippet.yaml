@@ -1,0 +1,24 @@
+node_templates:
+  hv-ves:
+    properties:
+      application_config:
+        logLevel: "INFO"
+        server.listenPort: 6061
+        server.idleTimeoutSec: 60
+        cbs.requestIntervalSec: 5
+        security.sslDisable: false
+        security.keys.keyStoreFile: "/etc/ves-hv/ssl/cert.jks"
+        security.keys.keyStorePasswordFile: "/etc/ves-hv/ssl/jks.pass"
+        security.keys.trustStoreFile: "/etc/ves-hv/ssl/trust.jks"
+        security.keys.trustStorePasswordFile: "/etc/ves-hv/ssl/trust.pass"
+        stream_publishes:
+          perf3gpp:
+            type: "kafka"
+            kafka_info:
+              bootstrap_servers: "message-router-kafka:9092"
+              topic_name: "HV_VES_PERF3GPP"
+          heartbeat:
+            type: "kafka"
+            kafka_info:
+              bootstrap_servers: "message-router-kafka:9092"
+              topic_name: "HV_VES_HEARTBEAT"
