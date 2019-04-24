@@ -1,0 +1,243 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0d5f51c6_0a996433",
+        "filename": "docs/sections/apis/SDK.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "swap: when gettting -\u003e for fetching",
+      "range": {
+        "startLine": 16,
+        "startChar": 58,
+        "endLine": 16,
+        "endChar": 71
+      },
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59fc1867_bb96286e",
+        "filename": "docs/sections/apis/SDK.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "PRH -\u003e SDK\nMaven dependenies (modules)",
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "004ef3de_a593627d",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "Remove: because\nIntro: As\n\nremove: when\nintro: for",
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6d822d_641015d8",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "as a separate\n\nwas created in Dublin release",
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2e1055_63f07674",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "remove: this way\nintro: Due to this fact SDK supports\n\nremove: We believee that\nremove: for us",
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10095caf_b91f7f8d",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "Remove this line",
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0c9397a_9c750aef",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "Supports",
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4bd57174_3466579d",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "Check standardize\nswap:fetching from Consul",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 17
+      },
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9db5a2c6_0ecb1523",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "check spelling :)",
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aa178a91_a24c4085",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "remove: the\n\nswap: if any should be returned\n\nremove: this should also\nswasp: provide with provides",
+      "range": {
+        "startLine": 35,
+        "startChar": 34,
+        "endLine": 35,
+        "endChar": 37
+      },
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d188ed77_5f4744d1",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "spelling",
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "586ee4c7_08594e7c",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "Provides",
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4cf6df14_487d7579",
+        "filename": "docs/sections/services/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 3395
+      },
+      "writtenOn": "2019-04-24T13:43:05Z",
+      "side": 1,
+      "message": "swap: libs with libraries\nremove: in it",
+      "revId": "42df254d57183cc0adf295b9c3947010cf79a04e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
