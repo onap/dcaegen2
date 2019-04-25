@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b18ff085_336668b0",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4011
+      },
+      "writtenOn": "2019-04-25T13:04:44Z",
+      "side": 1,
+      "message": "I don\u0027t think those are used anymore.",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 54
+      },
+      "revId": "75c578b726ebc553c79d6bfe0ad5e8919cce0041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f452d3b_ef15d4ac",
+        "filename": "docs/sections/services/dfc/certificates.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4011
+      },
+      "writtenOn": "2019-04-25T13:04:44Z",
+      "side": 1,
+      "message": "acronym?",
+      "range": {
+        "startLine": 64,
+        "startChar": 107,
+        "endLine": 64,
+        "endChar": 109
+      },
+      "revId": "75c578b726ebc553c79d6bfe0ad5e8919cce0041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
