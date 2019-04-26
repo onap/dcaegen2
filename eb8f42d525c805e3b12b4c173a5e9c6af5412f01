@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b6366c1c_bba965a5",
+        "filename": "platformdoc/docs/components/dcae-cli/blueprint-generator/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-26T19:30:23Z",
+      "side": 1,
+      "message": "This file should not be part of RTD",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 196
+      },
+      "revId": "eb8f42d525c805e3b12b4c173a5e9c6af5412f01",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
