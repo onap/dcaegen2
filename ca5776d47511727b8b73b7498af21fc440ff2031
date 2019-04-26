@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38fe030b_6b270782",
+        "filename": "docs/sections/services/dfc/consumedapis.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 3763
+      },
+      "writtenOn": "2019-04-26T11:02:29Z",
+      "side": 1,
+      "message": "location is not part of the info that we send",
+      "range": {
+        "startLine": 57,
+        "startChar": 6,
+        "endLine": 57,
+        "endChar": 14
+      },
+      "revId": "ca5776d47511727b8b73b7498af21fc440ff2031",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
