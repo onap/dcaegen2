@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "cb6668ca_83180a2b",
+        "filename": "docs/sections/services/dfc/consumedapis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5059
+      },
+      "writtenOn": "2019-04-26T13:06:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "339505a1_a053c724",
+      "revId": "a97a2780e9553b790488af7c6f420ce76fdb87ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5e7110f7_ef4a45a9",
         "filename": "docs/sections/services/dfc/consumedapis.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2019-04-26T08:34:26Z",
       "side": 1,
       "message": "We actually also publish the following info:\nproductName\nvendorName\nlastEpochMicrosec\nsourceName\nstartEpochMicrosec\ntimeZoneOffset",
+      "revId": "a97a2780e9553b790488af7c6f420ce76fdb87ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee5f3954_759555a0",
+        "filename": "docs/sections/services/dfc/consumedapis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5059
+      },
+      "writtenOn": "2019-04-26T13:06:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e7110f7_ef4a45a9",
       "revId": "a97a2780e9553b790488af7c6f420ce76fdb87ed",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
