@@ -7,6 +7,16 @@ Configuration
 **datafile** configuration is controlled via a single JSON file called datafile_endpoints.json.
 This is located under datafile-app-server/config.
 
+Compiling DFC
+=============
+
+Whole project (top level of DFC directory) and each module (sub module directory) can be compiled using
+`mvn clean install` command.
+
+Configuration file: Config/datafile_endpoints.json
+
+
+
 JSON CONFIGURATION EXPLAINED
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

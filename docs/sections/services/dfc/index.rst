@@ -14,6 +14,8 @@ DATAFILE COLLECTOR MS (DFC)
    ./delivery.rst
    ./logging.rst
    ./installation.rst
+   ./certificates.rst
    ./configuration.rst
+   ./consumedapis.rst
    ./administration.rst
    ./release-notes.rst
