@@ -40,3 +40,19 @@ The event is received from the Message Router (MR), the files are fetched from a
 Both fetching of a file and publishing is retried a number of times with an increasing delay between each attempt.
 After a number of attempts, the DFC will log an error message and give up. Failing of processing of one file does not
 affect the handling of others.
+
+Maven GroupId:
+==============
+
+org.onap.dcaegen2.collectors
+
+Maven Parent ArtifactId:
+========================
+
+dcae-collectors
+
+Maven Children Artifacts:
+=========================
+
+1. datafile-app-server: DFC server
+
