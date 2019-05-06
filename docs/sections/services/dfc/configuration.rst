@@ -37,7 +37,7 @@ dmaapProducerConfiguration
   "dmaapHostName": <name of DMaaP/DR host>
   "dmaapPortNumber": <DMaaP/DR host port>
   "dmaapTopicName": "publish"
-  "dmaapProtocol": "httpa"
+  "dmaapProtocol": "https"
   "dmaapUserName": "dradmin"
   "dmaapUserPassword": "dradmin"
   "dmaapContentType": "application/octet-stream"
@@ -48,9 +48,21 @@ ftpesConfiguration
 .. code-block:: json
 
   "keyCert": <path to DFC certificate>
-  "keyPassword": <pssword for DFC certificate>
-  "trustedCA": <path to xNF certificate>
-  "trustedCAPassword": <password for xNF certificate>
+  "keyPassword": <password for DFC certificate>
+  "trustedCa": <path to xNF certificate>
+  "trustedCaPassword": <password for xNF certificate>
+
+securityConfiguration
+"""""""""""""""""""""
+
+.. code-block:: json
+
+  "trustStorePath": <path to trust store>
+  "trustStorePasswordPath": <path to trust store password>
+  "keyStorePath": <path to key store>
+  "keyStorePasswordPath": <path to key store password>
+  "enableDmaapCertAuth": <boolean>. If false, all information above are ignored.
+
 
 
 Sample JSON configuration
@@ -87,12 +99,19 @@ The format of the JSON configuration that drives all behavior of DFC is probably
         }
       },
       "ftp": {
-        "ftpesConfiguration": {
-          "keyCert": "config/ftpKey.jks",
-          "keyPassword": "secret",
-          "trustedCA": "config/cacerts",
-          "trustedCAPassword": "secret"
+            "ftpesConfiguration": {
+                "keyCert": "config/dfc.jks",
+                "keyPassword": "secret",
+                "trustedCa": "config/ftp.jks",
+                "trustedCaPassword": "secret"
+            }
+      },
+        "security": {
+            "trustStorePath" : "change it",
+            "trustStorePasswordPath" : "change it",
+            "keyStorePath" : "change it",
+            "keyStorePasswordPath" : "change it",
+            "enableDmaapCertAuth" : "false"
         }
-      }
     }
   }
