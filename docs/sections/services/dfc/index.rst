@@ -16,4 +16,5 @@ DATAFILE COLLECTOR MS (DFC)
    ./installation.rst
    ./configuration.rst
    ./administration.rst
+   ./troubleshooting.rst
    ./release-notes.rst
