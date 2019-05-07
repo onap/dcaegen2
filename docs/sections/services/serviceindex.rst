@@ -19,3 +19,4 @@ Service components under DCAE
    ./heartbeat-ms/index.rst
    ./pm-mapper/index.rst
    ./bbs-event-processor/index.rst
+   ./sdk/index.rst
