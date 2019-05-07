@@ -4,7 +4,13 @@
 DCAE SDK
 ========
 
-.. toctree::
-:maxdepth: 1
+**SDK** is a common software development kit written in Java. It contains various utilities and clients which may be used for getting configuration from CBS, consuming messages from DMaaP, interacting with A&AI, etc.
 
-       ./architecture.rst
+
+SDK Overview
+------------
+
+.. toctree::
+  :maxdepth: 1
+
+  ./architecture.rst
