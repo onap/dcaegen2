@@ -11,4 +11,4 @@ Docker Container
 
 ::
 
-    ``docker run -d --name pmmapper -e CONFIG_BINDING_SERVICE_SERVICE_HOST=<IP Required> -e CONFIG_BINDING_SERVICE_SERVICE_PORT=<Port Required> -e HOSTNAME=<HOSTNAME>  nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.pm-mapper:1.0-SNAPSHOT``
+    ``docker run -d --name pmmapper -e CONFIG_BINDING_SERVICE_SERVICE_HOST=<IP Required> -e CONFIG_BINDING_SERVICE_SERVICE_PORT=<Port Required> -e HOSTNAME=<HOSTNAME>  nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.pm-mapper:1.0.1``
