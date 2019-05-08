@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "c0d6cce8_672d2051",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-08T17:31:21Z",
+      "side": 1,
+      "message": "should be updated to 1.0.0 released version",
+      "range": {
+        "startLine": 14,
+        "startChar": 130,
+        "endLine": 14,
+        "endChar": 136
+      },
+      "revId": "913fd5597bbf15dfaac769f3473c2b450aff8b00",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c0d335d_7c9b14aa",
         "filename": "docs/sections/services/mapper/installation.rst",
         "patchSetId": 1
@@ -39,6 +62,29 @@
       "range": {
         "startLine": 17,
         "startChar": 1,
+        "endLine": 19,
+        "endChar": 24
+      },
+      "revId": "913fd5597bbf15dfaac769f3473c2b450aff8b00",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d642665d_5348be9c",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-08T17:31:21Z",
+      "side": 1,
+      "message": "This should be specified as first option. The instruction for deployment should include blueprint (gerrit path) + cfy commands for install + validation + pre-requisites (steps added under https://wiki.onap.org/pages/viewpage.action?pageId\u003d60891188 can be used here)",
+      "range": {
+        "startLine": 16,
+        "startChar": 3,
         "endLine": 19,
         "endChar": 24
       },
