@@ -16,6 +16,24 @@
       "revId": "21aaf798e2cf50cc6899e11c434439c1398001fb",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe252eef_d10f254a",
+        "filename": "docs/sections/services/dfc/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4011
+      },
+      "writtenOn": "2019-05-08T14:20:58Z",
+      "side": 1,
+      "message": "There is no 1.1 in Nexus, so let\u0027s go for 1.1.2, thanks for the heads up.",
+      "parentUuid": "a9cbf6d8_5c9ffca5",
+      "revId": "21aaf798e2cf50cc6899e11c434439c1398001fb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
