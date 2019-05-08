@@ -15,3 +15,4 @@ DCAEGEN2 Components Offered APIs
    apis/DFC.rst
    apis/PNDA.rst
    apis/pmmapper.rst
+   apis/SDK.rst
