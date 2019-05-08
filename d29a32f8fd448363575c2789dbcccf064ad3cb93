@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0140b21e_2cea0f7c",
+        "filename": "docs/sections/services/dfc/delivery.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-08T17:18:07Z",
+      "side": 1,
+      "message": "default tag should point to 1.1.2.\n\nlatest tag can be specified as note if newer/unreleased version is required.",
+      "range": {
+        "startLine": 13,
+        "startChar": 89,
+        "endLine": 13,
+        "endChar": 95
+      },
+      "revId": "d29a32f8fd448363575c2789dbcccf064ad3cb93",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f50ed954_f0980f30",
+        "filename": "docs/sections/services/dfc/delivery.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-08T17:18:07Z",
+      "side": 1,
+      "message": "This should be part of installation steps",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 58
+      },
+      "revId": "d29a32f8fd448363575c2789dbcccf064ad3cb93",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e5bc64e_578cee44",
+        "filename": "docs/sections/services/dfc/delivery.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-08T17:18:07Z",
+      "side": 1,
+      "message": "Dublin delivery should also specify blueprint artifact (path in gerrit)",
+      "revId": "d29a32f8fd448363575c2789dbcccf064ad3cb93",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1792aa0a_01c0be38",
+        "filename": "docs/sections/services/dfc/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-08T17:18:07Z",
+      "side": 1,
+      "message": "Installation should be split under two section - 1) Cloudify deployment (using blueprints and cfy commands) and validation + pre-requisite. 2) Standalone deployment of container (where the current steps would fit under).",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 96
+      },
+      "revId": "d29a32f8fd448363575c2789dbcccf064ad3cb93",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2abb8e28_3f1d4251",
+        "filename": "docs/sections/services/dfc/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-08T17:18:07Z",
+      "side": 1,
+      "message": "should be ONAP release date (2019-05-30)",
+      "range": {
+        "startLine": 10,
+        "startChar": 15,
+        "endLine": 10,
+        "endChar": 25
+      },
+      "revId": "d29a32f8fd448363575c2789dbcccf064ad3cb93",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
