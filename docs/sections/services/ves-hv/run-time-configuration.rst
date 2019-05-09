@@ -9,7 +9,7 @@ Run-Time configuration
 HV-VES dynamic configuration is primarily meant to provide DMaaP Connection Objects (see :ref:`dmaap-connection-objects`).
 These objects contain information necessary to route received VES Events to correct Kafka topic. This metadata will be later referred to as Routing definition.
 
-Collector internally uses DCAE-SDK to fetch configuration from Config Binding Service.
+Collector uses DCAE-SDK internally, to fetch configuration from Config Binding Service.
 
 HV-VES waits 10 seconds (default, configurable during deployment with **firstRequestDelay** option, see :ref:`configuration_file`) before the first attempt to retrieve configuration from CBS. This is to prevent possible synchronization issues. During that time HV-VES declines any connection attempts from xNF (VNF/PNF).
 
@@ -22,21 +22,22 @@ Configuration format
 --------------------
 
 Following JSON format presents dynamic configuration options recognized by HV-VES Collector.
-Note that there is no verification of the data correctness (e.g. if specified security files are present on machine) and thus invalid data can result in service malfunctioning or even container shutdown.
 
 .. literalinclude:: resources/dynamic-configuration.json
     :language: json
 
-Fields have same meaning as in file configuration with only difference being Routing definition.
+Fields have the same meaning as in the configuration file with only difference being Routing definition.
+
+.. note:: There is no verification of the data correctness (e.g. if specified security files are present on machine) and thus invalid data can result in service malfunctioning or even container shutdown.
 
 Routing
 -------
 
 For every JSON key-object pair defined in **"stream_publishes"**, the key is used as domain and related object is used to setup Kafka's bootstrap servers and Kafka topic **for this domain**.
 
-Collector when receiving VES Event from client checks if domain from the event corresponds to any from Routing and publishes this event onto related topic. If there is no match, the event is dropped. If there are two routes from the same domain to different topics, then it is undefined which route will be used.
+When receiving a VES Event from client, collector checks if domain from the event corresponds to any domain from Routing and publishes this event into related topic. If there is no match, the event is dropped. If there are two routes from the same domain to different topics, then it is undefined which route is used.
 
-For more informations see :ref:`supported_domains`
+For more information, see :ref:`supported_domains`.
 
 Providing configuration during OOM deployment
 ---------------------------------------------

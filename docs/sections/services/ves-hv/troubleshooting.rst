@@ -28,6 +28,7 @@ For simplicity, all log messages in this section are shortened to contain only:
     * log level
     * message
 
+
 Error and warning logs contain also:
     * exception message
     * stack trace
@@ -96,6 +97,7 @@ For more information, see :ref:`run_time_configuration`
 **Invalid configuration format**
 
 ::
+
     | org.onap.dcae.services.sdk.rest.services.cbs.client.impl.CbsLookup    | INFO  | Config Binding Service address: config-binding-service:10000
     | org.onap.dcae.collectors.veshv.config.impl.CbsConfigurationProvider   | INFO  | CBS client successfully created
     | org.onap.dcae.collectors.veshv.config.impl.CbsConfigurationProvider   | INFO  | Received new configuration:
@@ -123,8 +125,8 @@ Message handling errors
     | org.onap.dcae.collectors.veshv.impl.socket.NettyTcpServer	| INFO | Connection has been close0d
 
 
-**HV-VES** responds with the above when it handles message with domain that has invalid bootstrap_servers specified in **streams_publishes** configuration.
-To fix this problem you have to correct **streams_publishes** configuration stored in Consul.
+**HV-VES** responds with the above when it handles a message with domain that has invalid bootstrap_servers specified in **streams_publishes** configuration.
+To fix this problem, you have to correct **streams_publishes** configuration stored in Consul.
 For more information, see: :ref:`run_time_configuration`.
 
 ====
@@ -132,7 +134,7 @@ For more information, see: :ref:`run_time_configuration`.
 **Kafka service became unavailable after producer has been created**
 
 **HV-VES** lazily creates Kafka producer for each domain.
-If Kafka service becomes unreachable after producer initialization, appropriate logs will be shown and **HV-VES** will fail to deliver future messages to that Kafka service.
+If Kafka service becomes unreachable after producer initialization, appropriate logs are shown and **HV-VES** fails to deliver future messages to that Kafka service.
 
 ::
 
@@ -226,10 +228,11 @@ Key or trust store password provided in configuration is invalid.
 **Empty line at the end of password file**
 
 ::
+
     | org.onap.dcae.collectors.veshv.main | ERROR | Failed to start a server | java.security.UnrecoverableKeyException: failed to decrypt safe contents entry: java.io.IOException: getSecretKey failed: Password is not ASCII
 
 
-Password file should not contain empty line at the end of the file, otherwise server startup will fail.
+Password file should not contain empty line at the end, otherwise server startup fails.
 
 ====
 
