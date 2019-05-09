@@ -7,7 +7,7 @@ Release Notes
 Version 1.2.0
 -------------
 
-:Release Date: 2019-04-11 (Dublin, M4)
+:Release Date: 2019-04-30 (Dublin, M4)
 
 Messages are now handled in parallel
 
@@ -54,7 +54,7 @@ No known issues.
 
 **Known limitations**
 
- - DFC has only be tested successfully with one node.
+ - DFC has only been tested successfully with one node.
  - The certificates are distributed hand to hand, no automated process.
 
 
