@@ -14,7 +14,7 @@ HV-VES Collector is a high-volume variant of the existing VES (JSON) collector, 
 HV-VES follows the VES-JSON schema as much as possible.
 
 - HV-VES uses a Google Protocol Buffers (GPB, proto files) representation of the VES Common Header.
-- The proto files use most encoding effective types defined by GPB to cover Common Header fields.
+- The proto files use most encoding-effective types defined by GPB to cover Common Header fields.
 - HV-VES makes routing decisions based mostly on the content of the **Domain** parameter.
 - HV-VES allows to embed Payload of different types (by default perf3gpp domain is included).
 

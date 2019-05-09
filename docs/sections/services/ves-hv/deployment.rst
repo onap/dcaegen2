@@ -22,7 +22,7 @@ Currently HV-VES requires single command line parameter which points to base con
 
     configuration-file ; c ; yes ; VESHV_CONFIGURATION_FILE  ; Path to JSON file containing HV-VES configuration
 
-Environment variables that are required by HV-VES are used by collector for provisioning of run-time configuration and are usually provided by DCAE platform.
+Environment variables that are required by HV-VES are used by collector for provisioning of run-time configuration and are provided by DCAE platform.
 
 .. csv-table::
     :widths: auto
@@ -68,7 +68,7 @@ Tables show restrictions on fields in file configuration and short description.
     Server
     Key                         ; Value type ; Description
     server.listenPort           ; number     ; Port on which HV-VES listens internally
-    server.idleTimeoutSec       ; number     ; Idle timeout for remote hosts. After given time without any data exchange, the connection might be closed
+    server.idleTimeoutSec       ; number     ; Idle timeout for remote hosts. After given time without any data exchange, the connection is closed
 
 .. csv-table::
     :widths: auto
@@ -93,7 +93,7 @@ Tables show restrictions on fields in file configuration and short description.
     security.keys.trustStoreFile          ; String     ; Path to file with trusted certificates bundle used in HV-VES incoming connections
     security.keys.trustStorePasswordFile  ; String     ; Trust store password file used in HV-VES incoming connections
 
-All security entries are mandatory with `security.sslDisable` set to `false`. Otherwise only `security.sslDisable` needs to be specified. If `security.sslDisable` flag is missing, then it is  interpreted same as it would be set to `false`.
+All security entries are mandatory with `security.sslDisable` set to `false`. Otherwise only `security.sslDisable` needs to be specified. If `security.sslDisable` flag is missing, then it is  interpreted as it was set to `false`.
 
 .. csv-table::
     :widths: auto
@@ -127,7 +127,7 @@ You can also see current replicas amount under a corresponding column.
     ONAP_NAMESPACE=onap
     kubectl get --namespace ${ONAP_NAMESPACE} deployment
 
-3. To scale deployment execute:
+3. To scale deployment, execute the following commands:
 
 .. code-block:: bash
 

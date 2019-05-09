@@ -12,7 +12,7 @@ Full image name is `onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main`_
 
 .. _`onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main`: https://nexus3.onap.org/#browse/search=keyword%3Dmain:7f6379d32f8dd78f1ec5ed038decc99e
 
-There are also simulators published as docker images. Those simulators are used internally during CSIT tests.
+There are also simulators published as docker images. Those simulators are used internally during **Continuous System and Integration Testing**
 
 Full simulators' names are `onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-dcae-app-simulator`_ and `onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-xnf-simulator`_.
 

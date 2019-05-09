@@ -25,7 +25,8 @@ TCP Endpoint
 ============
 
 HV-VES is exposed as NodePort service on Kubernetes cluster on port 30222/tcp.
-It uses plain, insecure TCP connection without socket data encryption. In Casablanca release, there is an experimental option to enable SSL/TLS (see :ref:`ssl_tls_authorization`).
+It uses plain, insecure TCP connection without socket data encryption. In Dublin release,
+there is an experimental option to enable SSL/TLS (see SSL/TLS authorization).
 Without TLS client authentication/authorization is not possible.
 Connections are stream-based (as opposed to request-based) and long-running.
 
@@ -54,9 +55,8 @@ HV-VES Collector forwards incoming messages to a particular DMaaP Kafka topic ba
 
 In both cases raw bytes might be extracted using ``org.apache.kafka.common.serialization.ByteArrayDeserializer``. The resulting bytes might be further passed to ``parseFrom`` methods included in classes generated from GPB definitions. WTP is not used here - it is only used in communication between PNF/VNF and the collector.
 
-By default, **HV-VES** will use routing defined in **k8s-hv-ves.yaml-template** in **dcaegen2/platform/blueprints project**. Currently defined domain->topic mapping looks as follows:
-
-- perf3gpp -> HV_VES_PERF3GPP
+By default, **HV-VES** will use routing defined in **k8s-hv-ves.yaml-template** in **dcaegen2/platform/blueprints project**.
+Currently there is one domain->topic mapping defined: perf3gpp->HV_VES_PERF3GG
 
 
 .. _supported_domains:
@@ -64,9 +64,7 @@ By default, **HV-VES** will use routing defined in **k8s-hv-ves.yaml-template** 
 Supported domains
 =================
 
-Domains supported by **HV-VES**:
-
-- perf3gpp
+As for now **HV-VES** supports only **perf3gpp** domain
 
 For domains descriptions, see :ref:`domains_supported_by_hvves`
 
