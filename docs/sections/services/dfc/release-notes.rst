@@ -4,16 +4,18 @@
 Release Notes
 =============
 
-Version 1.2.0
+Version 1.1.2
 -------------
 
-:Release Date: 2019-04-11 (Dublin, M4)
+:Release Date: 2019-05-30 (Dublin, M4)
 
 Messages are now handled in parallel
 
 Retry mechanism implemented
 
 Adapting to ONAP logging standard
+
+Deployment using Cloudify made available
 
 
 Version: 1.1.1
@@ -54,7 +56,7 @@ No known issues.
 
 **Known limitations**
 
- - DFC has only be tested successfully with one node.
+ - DFC has only been tested successfully with one node.
  - The certificates are distributed hand to hand, no automated process.
 
 
