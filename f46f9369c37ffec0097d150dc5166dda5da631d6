@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f2b62418_03577538",
+        "filename": "docs/sections/services/son-handler/son_handler_ms.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-13T15:26:06Z",
+      "side": 1,
+      "message": "Rename this file as son_handler_overview.rst",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 3
+      },
+      "revId": "f46f9369c37ffec0097d150dc5166dda5da631d6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0bc7f939_d3c12ab2",
+        "filename": "docs/sections/services/son-handler/son_handler_ms_addl.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-13T15:26:06Z",
+      "side": 1,
+      "message": "rename this file as son_handler_installation.rst or just installation.rst",
+      "revId": "f46f9369c37ffec0097d150dc5166dda5da631d6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad65e13_78bc6c97",
+        "filename": "docs/sections/services/son-handler/son_handler_ms_addl.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-13T15:26:06Z",
+      "side": 1,
+      "message": "Include pre-requisite/dependencies (similar to https://git.onap.org/dcaegen2/tree/docs/sections/services/dfc/installation.rst).",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 23
+      },
+      "revId": "f46f9369c37ffec0097d150dc5166dda5da631d6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca9c445a_a0b9314c",
+        "filename": "docs/sections/services/son-handler/son_handler_ms_addl.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-13T15:26:06Z",
+      "side": 1,
+      "message": "For SON-handler, as policyid is one of the input - pre-deployment step should specify step to configure required policy in ONAP-Policy.",
+      "revId": "f46f9369c37ffec0097d150dc5166dda5da631d6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a6dddaed_aa8f2de9",
+        "filename": "docs/sections/services/son-handler/son_handler_ms_addl.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-13T15:26:06Z",
+      "side": 1,
+      "message": "Can be separated under different file",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 48
+      },
+      "revId": "f46f9369c37ffec0097d150dc5166dda5da631d6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
