@@ -16,6 +16,24 @@
       "revId": "61c47e078ca4dff47ed651f959cd14e6481a3e4f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9c7e24a_0d67b28e",
+        "filename": "docs/sections/services/pm-mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-05-13T15:29:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af80fbb6_5773f6c6",
+      "revId": "61c47e078ca4dff47ed651f959cd14e6481a3e4f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
