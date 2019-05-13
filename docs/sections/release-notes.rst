@@ -47,6 +47,12 @@ The following containers are updated in R3.0.1
 
 - An issue related to VESCollector basic authentication was noted and tracked under DCAEGEN2-1130. This configuration is not enabled by default for R3.0.1; and fix will be handled in Dublin
 
+- Certificates under onap/org.onap.dcaegen2.deployments.tls-init-container:1.0.0 has expired March'2019 and impacting CL deployment from CLAMP. Follow below workaround to update the certificate 
+	kubectl get deployments -n onap | grep deployment-handler
+	kubectl edit deployment -n onap dev-dcaegen2-dcae-deployment-handler
+	Search and change tag onap/org.onap.dcaegen2.deployments.tls-init-container:1.0.0 to onap/org.onap.dcaegen2.deployments.tls-init-container:1.0.3
+
+
 
 
 Version: 3.0.0
