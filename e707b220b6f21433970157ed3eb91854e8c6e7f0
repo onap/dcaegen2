@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb54744c_04d57283",
+        "filename": "docs/sections/services/dfc/release-notes.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-13T14:54:14Z",
+      "side": 1,
+      "message": "This should be removed",
+      "range": {
+        "startLine": 10,
+        "startChar": 26,
+        "endLine": 10,
+        "endChar": 38
+      },
+      "revId": "e707b220b6f21433970157ed3eb91854e8c6e7f0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
