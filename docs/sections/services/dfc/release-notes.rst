@@ -7,7 +7,7 @@ Release Notes
 Version 1.1.2
 -------------
 
-:Release Date: 2019-05-30 (Dublin, M4)
+:Release Date: 2019-05-30
 
 Messages are now handled in parallel
 
