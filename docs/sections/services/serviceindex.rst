@@ -21,3 +21,4 @@ Service components under DCAE
    ./bbs-event-processor/index.rst
    ./sdk/index.rst
    ./son-handler/index.rst
+   ./restconf/index.rst
