@@ -1,0 +1,118 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2.2.3",
+    "title": "Config Binding Service"
+  },
+  "paths": {
+    "/service_component/{service_component_name}": {
+      "parameters": [
+        {
+          "name": "service_component_name",
+          "in": "path",
+          "description": "Service Component Name. service_component_name must be a key in consul.",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "description": "Binds the configuration for service_component_name and returns the bound configuration as a JSON",
+        "operationId": "config_binding_service.controller.bind_config_for_scn",
+        "responses": {
+          "200": {
+            "description": "OK; the bound config is returned as an object",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "404": {
+            "description": "there is no configuration in Consul for this component"
+          }
+        }
+      }
+    },
+    "/service_component_all/{service_component_name}": {
+      "parameters": [
+        {
+          "name": "service_component_name",
+          "in": "path",
+          "description": "Service Component Name. service_component_name must be a key in consul.",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "description": "Binds the configuration for service_component_name and returns the bound configuration, policies, and any other keys that are in Consul",
+        "operationId": "config_binding_service.controller.bind_all",
+        "responses": {
+          "200": {
+            "description": "OK; returns {config : ..., policies : ....., k : ...} for all other k in Consul",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "404": {
+            "description": "there is no configuration in Consul for this component"
+          }
+        }
+      }
+    },
+    "/{key}/{service_component_name}": {
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "description": "this endpoint tries to pull service_component_name:key; key is the key after the colon",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "service_component_name",
+          "in": "path",
+          "description": "Service Component Name.",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "description": "this is an endpoint that fetches a generic service_component_name:key out of Consul. The idea is that we don't want to tie components to Consul directly in case we swap out the backend some day, so the CBS abstracts Consul from clients. The structuring and weird collision of this new API with the above is unfortunate but due to legacy concerns.",
+        "operationId": "config_binding_service.controller.get_key",
+        "responses": {
+          "200": {
+            "description": "OK; returns service_component_name:key",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "bad request. Currently this is only returned on :policies, which is a complex object, and should be gotten through service_component_all",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "key does not exist",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/healthcheck": {
+      "get": {
+        "description": "This is the  health check endpoint. If this returns a 200, the server is alive and consul can be reached. If not a 200, either dead, or no connection to consul",
+        "operationId": "config_binding_service.controller.healthcheck",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "503": {
+            "description": "the config binding service cannot reach Consul"
+          }
+        }
+      }
+    }
+  }
+}

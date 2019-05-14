@@ -1,23 +1,17 @@
-Config Binding Service 2.1.0
+Config Binding Service 2.2.3
 ============================
 
 .. toctree::
     :maxdepth: 3
 
+.. csv-table::
+   :header: "API name", "Swagger JSON", "Swagger YAML"
+   :widths: 10,5,5
 
-
-
-
-DEFAULT
-~~~~~~~
-
-
-
+   "Config Binding Service", ":download:`link <configbinding.json>`", ":download:`link <configbinding.yaml>`"
 
 GET ``/service_component_all/{service_component_name}``
 -------------------------------------------------------
-
-
 
 Description
 +++++++++++
@@ -34,12 +28,10 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        service_component_name | path | Yes | string |  |  | Service Component Name. service_component_name must be a key in consul.
-
+    service_component_name | path | Yes | string |  |  | Service Component Name. service_component_name must be a key in consul.
 
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -49,13 +41,9 @@ Responses
 
 OK; returns {config : ..., policies : ....., k : ...} for all other k in Consul
 
-
 .. _i_4d863967ef9a9d9efdadd1b250c76bd6:
 
 **Response Schema:**
-
-
-
 
 **Example:**
 
@@ -68,15 +56,8 @@ OK; returns {config : ..., policies : ....., k : ...} for all other k in Consul
 
 there is no configuration in Consul for this component
 
-
-
-
-
-
 GET ``/service_component/{service_component_name}``
 ---------------------------------------------------
-
-
 
 Description
 +++++++++++
@@ -93,12 +74,10 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        service_component_name | path | Yes | string |  |  | Service Component Name. service_component_name must be a key in consul.
-
+    service_component_name | path | Yes | string |  |  | Service Component Name. service_component_name must be a key in consul.
 
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -108,11 +87,7 @@ Responses
 
 OK; the bound config is returned as an object
 
-
 **Response Schema:**
-
-
-
 
 **Example:**
 
@@ -125,15 +100,8 @@ OK; the bound config is returned as an object
 
 there is no configuration in Consul for this component
 
-
-
-
-
-
 GET ``/{key}/{service_component_name}``
 ---------------------------------------
-
-
 
 Description
 +++++++++++
@@ -150,13 +118,11 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        key | path | Yes | string |  |  | this endpoint tries to pull service_component_name:key; key is the key after the colon
-        service_component_name | path | Yes | string |  |  | Service Component Name.
-
+    key | path | Yes | string |  |  | this endpoint tries to pull service_component_name:key; key is the key after the colon
+    service_component_name | path | Yes | string |  |  | Service Component Name.
 
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -166,12 +132,7 @@ Responses
 
 OK; returns service_component_name:key
 
-
-
 **Response Schema:**
-
-
-
 
 **Example:**
 
@@ -182,23 +143,16 @@ OK; returns service_component_name:key
 **400**
 ^^^^^^^
 
-bad request. Currently this is only returned on :policies, which is a complex object, and should be gotten through service_component_all
-
+bad request. Currently this is only returned on :policies, which is a complex
+object, and should be gotten through service_component_all
 
 **404**
 ^^^^^^^
 
 key does not exist
 
-
-
-
-
-
 GET ``/healthcheck``
 --------------------
-
-
 
 Description
 +++++++++++
@@ -207,10 +161,8 @@ Description
 
     This is the  health check endpoint. If this returns a 200, the server is alive and consul can be reached. If not a 200, either dead, or no connection to consul
 
-
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -220,16 +172,8 @@ Responses
 
 Successful response
 
-
 **503**
 ^^^^^^^
 
 the config binding service cannot reach Consul
-
-
-
-
-  
-Data Structures
-~~~~~~~~~~~~~~~
 
