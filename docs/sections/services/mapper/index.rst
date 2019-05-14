@@ -10,9 +10,7 @@ Mapper
 | **Solution**: A generic adapter which can convert different formats of event and telemetry data to VES format can be of use here. 
 | *Note*: Currently mapping files are available for SNMP collector and RESTConf collector.
 
-There is 1 micro service in the mapper functionality.
-
-**Universal VES Adapter** - It converts the telemetry data into the required VES format and publishes to the DMaaP for further action to be taken by the DCAE analytics applications. 
+**VES-Mapper** converts the telemetry data into the required VES format and publishes to the DMaaP for further action to be taken by the DCAE analytics applications. 
 
 
 .. toctree::
@@ -23,3 +21,4 @@ There is 1 micro service in the mapper functionality.
   ./installation.rst
   ./mappingfile.rst
   ./SampleSnmpTrapConversion
+  ./troubleshooting.rst
