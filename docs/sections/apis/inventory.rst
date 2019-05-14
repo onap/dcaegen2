@@ -1,9 +1,11 @@
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+
 DCAE Inventory API 3.0.4
 ========================
 
 .. toctree::
     :maxdepth: 3
-
 
 Description
 ~~~~~~~~~~~
@@ -13,31 +15,23 @@ DCAE Inventory is a web service that provides the following:
 1. Real-time data on all DCAE services and their components
 2. Comprehensive details on available DCAE service types
 
+.. csv-table::
+   :header: "API name", "Swagger YAML"
+   :widths: 10,5
 
-
+   "Inventory", ":download:`link <swagger_inventory.yaml>`"
 
 Contact Information
 ~~~~~~~~~~~~~~~~~~~
 
-
-
 dcae@lists.openecomp.org
-
-
-
-
 
 
 DEFAULT
 ~~~~~~~
 
-
-
-
 GET ``/dcae-service-types``
 ---------------------------
-
-
 
 Description
 +++++++++++
@@ -64,10 +58,8 @@ Parameters
         asdcResourceId | query | No | string |  |  | Filter by associated asdc design resource id. Setting this to `NONE` will return instances that have asdc resource id set to null
         offset | query | No | integer | int32 |  | Query resultset offset used for pagination (zero-based)
 
-
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -76,7 +68,6 @@ Responses
 ^^^^^^^
 
 List of `DCAEServiceType` objects
-
 
 Type: :ref:`InlineResponse200 <d_b1ccd4187d31690b8e704c0aa01b2c59>`
 
@@ -188,14 +179,8 @@ Type: :ref:`InlineResponse200 <d_b1ccd4187d31690b8e704c0aa01b2c59>`
         "totalCount": 1
     }
 
-
-
-
-
 DELETE ``/dcae-service-types/{typeId}``
 ---------------------------------------
-
-
 
 Description
 +++++++++++
@@ -212,12 +197,10 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        typeId | path | Yes | string |  |  | 
-
+        typeId | path | Yes | string |  |  |
 
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -226,7 +209,6 @@ Responses
 ^^^^^^^
 
 `DCAEServiceType` has been deactivated
-
 
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
@@ -245,7 +227,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 `DCAEServiceType` not found
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -263,7 +244,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 `DCAEServiceType` already gone
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -276,14 +256,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
         "type": "somestring"
     }
 
-
-
-
-
 GET ``/dcae-service-types/{typeId}``
 ------------------------------------
-
-
 
 Description
 +++++++++++
@@ -300,12 +274,10 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        typeId | path | Yes | string |  |  | 
-
+        typeId | path | Yes | string |  |  |
 
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -314,7 +286,6 @@ Responses
 ^^^^^^^
 
 Single `DCAEServiceType` object
-
 
 Type: :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>`
 
@@ -364,7 +335,6 @@ Type: :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>`
 
 Resource not found
 
-
 Type: :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>`
 
 **Example:**
@@ -408,14 +378,8 @@ Type: :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>`
         ]
     }
 
-
-
-
-
 POST ``/dcae-service-types``
 ----------------------------
-
-
 
 Description
 +++++++++++
@@ -424,11 +388,8 @@ Description
 
     Inserts a new `DCAEServiceType` or updates an existing instance. Updates are only allowed iff there are no running DCAE services of the requested type,
 
-
 Request
 +++++++
-
-
 
 .. _d_57dc24aa38507ded2f27eec90206336e:
 
@@ -444,12 +405,12 @@ Body
         asdcServiceId | No | string |  |  | Id of service this DCAE service type is associated with. Value source is from ASDC's notification event's field `serviceInvariantUUID`.
         asdcServiceURL | No | string |  |  | URL to the ASDC service model
         blueprintTemplate | Yes | string |  |  | String representation of a Cloudify blueprint with unbound variables
-        owner | Yes | string |  |  | 
+        owner | Yes | string |  |  |
         serviceIds | No | array of string |  |  | List of service ids that are used to associate with DCAE service type. DCAE service types with this propery as null or empty means them apply for every service id.
         serviceLocations | No | array of string |  |  | List of service locations that are used to associate with DCAE service type. DCAE service types with this propery as null or empty means them apply for every service location.
         typeName | Yes | string |  |  | Descriptive name for this DCAE service type
         typeVersion | Yes | integer | int32 |  | Version number for this DCAE service type
-        vnfTypes | No | array of string |  |  | 
+        vnfTypes | No | array of string |  |  |
 
 .. code-block:: javascript
 
@@ -482,7 +443,6 @@ Responses
 ^^^^^^^
 
 Single `DCAEServiceType` object.
-
 
 Type: :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>`
 
@@ -532,7 +492,6 @@ Type: :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>`
 
 Bad request provided.
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -548,8 +507,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 **409**
 ^^^^^^^
 
-Failed to update because there are still DCAE services of the requested type running.
-
+Failed to update because there are still DCAE services of the requested type
+running.
 
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
@@ -563,14 +522,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
         "type": "somestring"
     }
 
-
-
-
-
 GET ``/dcae-services``
 ----------------------
-
-
 
 Description
 +++++++++++
@@ -588,18 +541,16 @@ Parameters
     :widths: 20, 15, 10, 10, 10, 20, 30
 
         typeId | query | No | string |  |  | DCAE service type name
-        vnfId | query | No | string |  |  | 
+        vnfId | query | No | string |  |  |
         vnfType | query | No | string |  |  | Filter by associated vnf type. This field is treated case insensitive.
-        vnfLocation | query | No | string |  |  | 
+        vnfLocation | query | No | string |  |  |
         componentType | query | No | string |  |  | Use to filter by a specific DCAE service component type
         shareable | query | No | boolean |  |  | Use to filter by DCAE services that have shareable components or not
         created | query | No | string |  |  | Use to filter by created time
         offset | query | No | integer | int32 |  | Query resultset offset used for pagination (zero-based)
 
-
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -608,7 +559,6 @@ Responses
 ^^^^^^^
 
 List of `DCAEService` objects
-
 
 Type: :ref:`InlineResponse2001 <d_31bb361a8900a0bed20df49b94f1e33b>`
 
@@ -835,7 +785,6 @@ Type: :ref:`InlineResponse2001 <d_31bb361a8900a0bed20df49b94f1e33b>`
 
 Bad response from DCAE controller
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -853,7 +802,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 Failed to connect with DCAE controller
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -866,14 +814,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
         "type": "somestring"
     }
 
-
-
-
-
 GET ``/dcae-services-groupby/{propertyName}``
 ---------------------------------------------
-
-
 
 Description
 +++++++++++
@@ -892,10 +834,8 @@ Parameters
 
         propertyName | path | Yes | string |  |  | Property to find unique values. Restricted to `type`, `vnfType`, `vnfLocation`
 
-
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -904,7 +844,6 @@ Responses
 ^^^^^^^
 
 List of unique property values
-
 
 Type: :ref:`DCAEServiceGroupByResults <d_a6dc4f986873bc126fc916189ffa5e91>`
 
@@ -950,14 +889,8 @@ Type: :ref:`DCAEServiceGroupByResults <d_a6dc4f986873bc126fc916189ffa5e91>`
         ]
     }
 
-
-
-
-
 DELETE ``/dcae-services/{serviceId}``
 -------------------------------------
-
-
 
 Description
 +++++++++++
@@ -974,12 +907,10 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        serviceId | path | Yes | string |  |  | 
-
+        serviceId | path | Yes | string |  |  |
 
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -989,12 +920,10 @@ Responses
 
 DCAE service has been removed
 
-
 **404**
 ^^^^^^^
 
 Unknown DCAE service
-
 
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
@@ -1008,14 +937,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
         "type": "somestring"
     }
 
-
-
-
-
 GET ``/dcae-services/{serviceId}``
 ----------------------------------
-
-
 
 Description
 +++++++++++
@@ -1032,12 +955,10 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        serviceId | path | Yes | string |  |  | 
-
+        serviceId | path | Yes | string |  |  |
 
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -1046,7 +967,6 @@ Responses
 ^^^^^^^
 
 Single `DCAEService` object
-
 
 Type: :ref:`DCAEService <d_ae85cd292c2b4046e1ea1bbb02c7ea63>`
 
@@ -1151,7 +1071,6 @@ Type: :ref:`DCAEService <d_ae85cd292c2b4046e1ea1bbb02c7ea63>`
 
 DCAE service not found
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -1168,7 +1087,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 ^^^^^^^
 
 Bad response from DCAE controller
-
 
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
@@ -1187,7 +1105,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 Failed to connect with DCAE controller
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -1200,14 +1117,8 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
         "type": "somestring"
     }
 
-
-
-
-
 PUT ``/dcae-services/{serviceId}``
 ----------------------------------
-
-
 
 Description
 +++++++++++
@@ -1224,13 +1135,10 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        serviceId | path | Yes | string |  |  | 
-
+        serviceId | path | Yes | string |  |  |
 
 Request
 +++++++
-
-
 
 .. _d_81c18e0dd7a3af8fb1ba658e72907e7b:
 
@@ -1280,7 +1188,6 @@ Responses
 ^^^^^^^
 
 Single `DCAEService` object
-
 
 Type: :ref:`DCAEService <d_ae85cd292c2b4046e1ea1bbb02c7ea63>`
 
@@ -1385,7 +1292,6 @@ Type: :ref:`DCAEService <d_ae85cd292c2b4046e1ea1bbb02c7ea63>`
 
 Bad request provided
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -1398,9 +1304,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
         "type": "somestring"
     }
 
-
-
-  
 Data Structures
 ~~~~~~~~~~~~~~~
 
@@ -1414,9 +1317,9 @@ ApiResponseMessage Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        code | No | integer | int32 |  | 
-        message | No | string |  |  | 
-        type | No | string |  |  | 
+        code | No | integer | int32 |  |
+        message | No | string |  |  |
+        type | No | string |  |  |
 
 .. _d_ae85cd292c2b4046e1ea1bbb02c7ea63:
 
@@ -1428,17 +1331,17 @@ DCAEService Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        components | No | array of :ref:`DCAEServiceComponent <d_51674dafcc623be79f21ecea545c345d>` |  |  | 
-        created | No | string | date-time |  | 
+        components | No | array of :ref:`DCAEServiceComponent <d_51674dafcc623be79f21ecea545c345d>` |  |  |
+        created | No | string | date-time |  |
         deploymentRef | No | string |  |  | Reference to a Cloudify deployment
-        modified | No | string | date-time |  | 
+        modified | No | string | date-time |  |
         selfLink | No | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  | Link.title is serviceId
-        serviceId | No | string |  |  | 
+        serviceId | No | string |  |  |
         typeLink | No | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  | Link.title is typeId
-        vnfId | No | string |  |  | 
+        vnfId | No | string |  |  |
         vnfLink | No | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  | Link.title is vnfId
         vnfLocation | No | string |  |  | Location information of the associated VNF
-        vnfType | No | string |  |  | 
+        vnfType | No | string |  |  |
 
 .. _d_51674dafcc623be79f21ecea545c345d:
 
@@ -1453,12 +1356,12 @@ DCAEServiceComponent Model Structure
         componentId | Yes | string |  |  | The id format is unique to the source
         componentLink | Yes | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  | Link to the underlying resource of this component
         componentSource | Yes | string |  | {'enum': ['DCAEController', 'DMaaPController']} | Specifies the name of the underying source service that is responsible for this components
-        componentType | Yes | string |  |  | 
-        created | Yes | string | date-time |  | 
+        componentType | Yes | string |  |  |
+        created | Yes | string | date-time |  |
         location | No | string |  |  | Location information of the component
-        modified | Yes | string | date-time |  | 
+        modified | Yes | string | date-time |  |
         shareable | Yes | integer | int32 |  | Used to determine if this component can be shared amongst different DCAE services
-        status | No | string |  |  | 
+        status | No | string |  |  |
 
 .. _d_55af22c43245c290d643f75be1f4f254:
 
@@ -1472,7 +1375,7 @@ DCAEServiceComponentRequest Model Structure
 
         componentId | Yes | string |  |  | The id format is unique to the source
         componentSource | Yes | string |  | {'enum': ['DCAEController', 'DMaaPController']} | Specifies the name of the underying source service that is responsible for this components
-        componentType | Yes | string |  |  | 
+        componentType | Yes | string |  |  |
         shareable | Yes | integer | int32 |  | Used to determine if this component can be shared amongst different DCAE services
 
 .. _d_a6dc4f986873bc126fc916189ffa5e91:
@@ -1486,7 +1389,7 @@ DCAEServiceGroupByResults Model Structure
     :widths: 20, 10, 15, 15, 30, 25
 
         propertyName | No | string |  |  | Property name of DCAE service that the group by operation was performed on
-        propertyValues | No | array of :ref:`DCAEServiceGroupByResultsPropertyValues <d_0119caa52e274e5e2311b367df38d686>` |  |  | 
+        propertyValues | No | array of :ref:`DCAEServiceGroupByResultsPropertyValues <d_0119caa52e274e5e2311b367df38d686>` |  |  |
 
 .. _d_0119caa52e274e5e2311b367df38d686:
 
@@ -1498,10 +1401,9 @@ DCAEServiceGroupByResultsPropertyValues Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        count | No | integer | int32 |  | 
+        count | No | integer | int32 |  |
         dcaeServiceQueryLink | No | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  | Link.title is the DCAE service property value. Following this link will provide a list of DCAE services that all have this property value.
-        propertyValue | No | string |  |  | 
-
+        propertyValue | No | string |  |  |
 
 DCAEServiceRequest Model Structure
 ----------------------------------
@@ -1534,15 +1436,14 @@ DCAEServiceType Model Structure
         blueprintTemplate | Yes | string |  |  | String representation of a Cloudify blueprint with unbound variables
         created | Yes | string | date-time |  | Created timestamp for this DCAE service type in epoch time
         deactivated | No | string | date-time |  | Deactivated timestamp for this DCAE service type in epoch time
-        owner | Yes | string |  |  | 
+        owner | Yes | string |  |  |
         selfLink | Yes | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  | Link to self where the Link.title is typeName
         serviceIds | No | array of string |  |  | List of service ids that are used to associate with DCAE service type. DCAE service types with this propery as null or empty means them apply for every service id.
         serviceLocations | No | array of string |  |  | List of service locations that are used to associate with DCAE service type. DCAE service types with this propery as null or empty means them apply for every service location.
         typeId | Yes | string |  |  | Unique identifier for this DCAE service type
         typeName | Yes | string |  |  | Descriptive name for this DCAE service type
         typeVersion | Yes | integer | int32 |  | Version number for this DCAE service type
-        vnfTypes | No | array of string |  |  | 
-
+        vnfTypes | No | array of string |  |  |
 
 DCAEServiceTypeRequest Model Structure
 --------------------------------------
@@ -1556,12 +1457,12 @@ DCAEServiceTypeRequest Model Structure
         asdcServiceId | No | string |  |  | Id of service this DCAE service type is associated with. Value source is from ASDC's notification event's field `serviceInvariantUUID`.
         asdcServiceURL | No | string |  |  | URL to the ASDC service model
         blueprintTemplate | Yes | string |  |  | String representation of a Cloudify blueprint with unbound variables
-        owner | Yes | string |  |  | 
+        owner | Yes | string |  |  |
         serviceIds | No | array of string |  |  | List of service ids that are used to associate with DCAE service type. DCAE service types with this propery as null or empty means them apply for every service id.
         serviceLocations | No | array of string |  |  | List of service locations that are used to associate with DCAE service type. DCAE service types with this propery as null or empty means them apply for every service location.
         typeName | Yes | string |  |  | Descriptive name for this DCAE service type
         typeVersion | Yes | integer | int32 |  | Version number for this DCAE service type
-        vnfTypes | No | array of string |  |  | 
+        vnfTypes | No | array of string |  |  |
 
 .. _d_b1ccd4187d31690b8e704c0aa01b2c59:
 
@@ -1573,9 +1474,9 @@ InlineResponse200 Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        items | No | array of :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>` |  |  | 
-        links | No | :ref:`InlineResponse200Links <d_e52a59e574408d4d622b3f1f61619b1c>` |  |  | 
-        totalCount | No | integer | int32 |  | 
+        items | No | array of :ref:`DCAEServiceType <d_b0cb5f12dbde8c0c42487c089983687e>` |  |  |
+        links | No | :ref:`InlineResponse200Links <d_e52a59e574408d4d622b3f1f61619b1c>` |  |  |
+        totalCount | No | integer | int32 |  |
 
 .. _d_31bb361a8900a0bed20df49b94f1e33b:
 
@@ -1587,9 +1488,9 @@ InlineResponse2001 Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        items | No | array of :ref:`DCAEService <d_ae85cd292c2b4046e1ea1bbb02c7ea63>` |  |  | 
-        links | No | :ref:`InlineResponse200Links <d_e52a59e574408d4d622b3f1f61619b1c>` |  |  | 
-        totalCount | No | integer | int32 |  | 
+        items | No | array of :ref:`DCAEService <d_ae85cd292c2b4046e1ea1bbb02c7ea63>` |  |  |
+        links | No | :ref:`InlineResponse200Links <d_e52a59e574408d4d622b3f1f61619b1c>` |  |  |
+        totalCount | No | integer | int32 |  |
 
 .. _d_e52a59e574408d4d622b3f1f61619b1c:
 
@@ -1603,8 +1504,8 @@ Pagination links
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        nextLink | No | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  | 
-        previousLink | No | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  | 
+        nextLink | No | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  |
+        previousLink | No | :ref:`Link <d_add3c3fd2e145f9e5a78be6e7b208ebb>` |  |  |
 
 .. _d_add3c3fd2e145f9e5a78be6e7b208ebb:
 
@@ -1616,18 +1517,17 @@ Link Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        params | No | :ref:`params <i_f76783e4d75c137d1fc68696fcfdb72c>` |  |  | 
-        rel | No | string |  |  | 
-        rels | No | array of string |  |  | 
-        title | No | string |  |  | 
-        type | No | string |  |  | 
-        uri | No | string | uri |  | 
-        uriBuilder | No | :ref:`UriBuilder <d_a7b6b5c694147ea9dcfb5a5a6cbef017>` |  |  | 
+        params | No | :ref:`params <i_f76783e4d75c137d1fc68696fcfdb72c>` |  |  |
+        rel | No | string |  |  |
+        rels | No | array of string |  |  |
+        title | No | string |  |  |
+        type | No | string |  |  |
+        uri | No | string | uri |  |
+        uriBuilder | No | :ref:`UriBuilder <d_a7b6b5c694147ea9dcfb5a5a6cbef017>` |  |  |
 
 .. _i_f76783e4d75c137d1fc68696fcfdb72c:
 
 **Params schema:**
-
 
 Map of {"key":"string"}
 
@@ -1635,6 +1535,4 @@ Map of {"key":"string"}
 
 UriBuilder Model Structure
 --------------------------
-
-
 

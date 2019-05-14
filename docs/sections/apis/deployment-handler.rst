@@ -1,42 +1,36 @@
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+
 deployment-handler API 3.0.3
 ============================
 
 .. toctree::
     :maxdepth: 3
 
+.. csv-table::
+   :header: "API name", "Swagger JSON", "Swagger YAML"
+   :widths: 10,5,5
+
+   "deployment-handler", ":download:`link <deployment-handler-API.yaml>`", ":download:`link <deployment-handler-API.yaml>`"
 
 Description
 ~~~~~~~~~~~
 
-High-level API for deploying/undeploying composed DCAE services using Cloudify Manager.
-
-
-
-
+High-level API for deploying/undeploying composed DCAE services using
+Cloudify Manager.
 
 License
 ~~~~~~~
 
-
 `Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>`_
-
-
-
 
 DCAE-DEPLOYMENTS
 ~~~~~~~~~~~~~~~~
 
-
 operations on dcae-deployments
-
-
-
-
 
 DELETE ``/dcae-deployments/{deploymentId}``
 -------------------------------------------
-
-
 
 Description
 +++++++++++
@@ -44,7 +38,6 @@ Description
 .. raw:: html
 
     Uninstall the DCAE service and remove all associated data from the orchestrator.
-
 
 Parameters
 ++++++++++
@@ -54,12 +47,10 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        deploymentId | path | Yes | string |  |  | Deployment identifier for the service to be uninstalled. 
-
+        deploymentId | path | Yes | string |  |  | Deployment identifier for the service to be uninstalled.
 
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -68,8 +59,6 @@ Responses
 ^^^^^^^
 
 Success:  The dispatcher has initiated the uninstall operation.
-
-
 
 Type: :ref:`DCAEDeploymentResponse <d_6157bd3de5c8c7de78f2ab86397667e0>`
 
@@ -90,8 +79,6 @@ Type: :ref:`DCAEDeploymentResponse <d_6157bd3de5c8c7de78f2ab86397667e0>`
 
 Bad request: See the message in the response for details.
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -108,8 +95,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 Problem on the server side.  See the message
 in the response for more details.
-
-
 
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
@@ -128,8 +113,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 Error reported to the dispatcher by a downstream system.  See the message
 in the response for more details.
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -147,8 +130,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 Error communicating with a downstream system.  See the message
 in the response for more details.
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -160,14 +141,8 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
         "status": 1
     }
 
-
-
-
-
 GET ``/dcae-deployments``
 -------------------------
-
-
 
 Description
 +++++++++++
@@ -175,7 +150,6 @@ Description
 .. raw:: html
 
     List service deployments known to the orchestrator, optionally restricted to a single service type
-
 
 Parameters
 ++++++++++
@@ -185,12 +159,10 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        serviceTypeId | query | No | string |  |  | Service type identifier for the type whose deployments are to be listed 
-
+        serviceTypeId | query | No | string |  |  | Service type identifier for the type whose deployments are to be listed
 
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -198,10 +170,8 @@ Responses
 **200**
 ^^^^^^^
 
-Success. (Note that if no matching deployments are found, the request is still a success; the
-deployments array is empty in that case.)
-
-
+Success. (Note that if no matching deployments are found, the request is still
+a success; the deployments array is empty in that case.)
 
 Type: :ref:`DCAEDeploymentsListResponse <d_c51e57d9583f6119caf83dd017cf214c>`
 
@@ -227,8 +197,6 @@ Type: :ref:`DCAEDeploymentsListResponse <d_c51e57d9583f6119caf83dd017cf214c>`
 Problem on the server side.  See the message
 in the response for more details.
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -245,8 +213,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 Error reported to the dispatcher by a downstream system.  See the message
 in the response for more details.
-
-
 
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
@@ -265,8 +231,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 Error communicating with a downstream system.  See the message
 in the response for more details.
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -278,14 +242,8 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
         "status": 1
     }
 
-
-
-
-
 GET ``/dcae-deployments/{deploymentId}/operation/{operationId}``
 ----------------------------------------------------------------
-
-
 
 Description
 +++++++++++
@@ -293,7 +251,6 @@ Description
 .. raw:: html
 
     Get status of a deployment operation
-
 
 Parameters
 ++++++++++
@@ -303,13 +260,11 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        deploymentId | path | Yes | string |  |  | 
-        operationId | path | Yes | string |  |  | 
-
+        deploymentId | path | Yes | string |  |  |
+        operationId | path | Yes | string |  |  |
 
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -318,7 +273,6 @@ Responses
 ^^^^^^^
 
 Status information retrieved successfully
-
 
 Type: :ref:`DCAEOperationStatusResponse <d_f0103f05736b04468a4f85fe90da2e16>`
 
@@ -340,8 +294,8 @@ Type: :ref:`DCAEOperationStatusResponse <d_f0103f05736b04468a4f85fe90da2e16>`
 **404**
 ^^^^^^^
 
-The operation information does not exist (possibly because the service has been uninstalled and deleted).
-
+The operation information does not exist (possibly because the service has been
+uninstalled and deleted).
 
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
@@ -360,8 +314,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 Problem on the server side.  See the message
 in the response for more details.
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -378,8 +330,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 Error reported to the dispatcher by a downstream system.  See the message
 in the response for more details.
-
-
 
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
@@ -398,8 +348,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 Error communicating with a downstream system.  See the message
 in the response for more details.
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -411,14 +359,8 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
         "status": 1
     }
 
-
-
-
-
 PUT ``/dcae-deployments/{deploymentId}``
 ----------------------------------------
-
-
 
 Description
 +++++++++++
@@ -426,7 +368,6 @@ Description
 .. raw:: html
 
     Request deployment of a DCAE service
-
 
 Parameters
 ++++++++++
@@ -436,13 +377,10 @@ Parameters
     :header: "Name", "Located in", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 15, 10, 10, 10, 20, 30
 
-        deploymentId | path | Yes | string |  |  | Unique deployment identifier assigned by the API client. 
-
+        deploymentId | path | Yes | string |  |  | Unique deployment identifier assigned by the API client.
 
 Request
 +++++++
-
-
 
 .. _d_eea14e4929853a5aa415f44cd4868302:
 
@@ -451,29 +389,20 @@ Body
 
 Request for deploying a DCAE service.
 
-
 .. csv-table::
     :delim: |
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        inputs | No |  |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
-
-Content of the object depends on the service being deployed.
-
+        inputs | No |  |  |  | Object containing inputs needed by the service blueprint to create an instance of the service. Content of the object depends on the service being deployed.
         serviceTypeId | Yes | string |  |  | The service type identifier (a unique ID assigned by DCAE inventory) for the service to be deployed.
-
 
 .. _i_08ada55a389e24cd45beef83306fd08e:
 
 **Inputs schema:**
 
-
-Object containing inputs needed by the service blueprint to create an instance of the service.
-Content of the object depends on the service being deployed.
-
-
-
+Object containing inputs needed by the service blueprint to create an instance
+of the service. Content of the object depends on the service being deployed.
 
 .. code-block:: javascript
 
@@ -489,10 +418,8 @@ Responses
 ^^^^^^^
 
 Success:  The content that was posted is valid, the dispatcher has
-  found the needed blueprint, created an instance of the topology in the orchestrator,
-  and started an installation workflow.
-
-
+  found the needed blueprint, created an instance of the topology in the
+  orchestrator, and started an installation workflow.
 
 Type: :ref:`DCAEDeploymentResponse <d_6157bd3de5c8c7de78f2ab86397667e0>`
 
@@ -513,8 +440,6 @@ Type: :ref:`DCAEDeploymentResponse <d_6157bd3de5c8c7de78f2ab86397667e0>`
 
 Bad request: See the message in the response for details.
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -529,9 +454,8 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 **409**
 ^^^^^^^
 
-A service with the specified deployment Id already exists.  Using PUT to update the service is not a supported operation.
-
-
+A service with the specified deployment Id already exists.  Using PUT to update
+the service is not a supported operation.
 
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
@@ -550,8 +474,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 Bad request: The Content-Type header does not indicate that the content is
 'application/json'
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -568,8 +490,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 Problem on the server side.  See the message
 in the response for more details.
-
-
 
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
@@ -588,8 +508,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 Error reported to the dispatcher by a downstream system.  See the message
 in the response for more details.
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -607,8 +525,6 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 Error communicating with a downstream system.  See the message
 in the response for more details.
 
-
-
 Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
 
 **Example:**
@@ -621,22 +537,13 @@ Type: :ref:`DCAEErrorResponse <d_74f3f4f847dfb6bd181fcae06ad880b4>`
     }
 
 
-
-  
 INFO
 ~~~~
 
-
 version and links
-
-
-
-
 
 GET ``/``
 ---------
-
-
 
 Description
 +++++++++++
@@ -645,10 +552,8 @@ Description
 
     Returns version information and links to API operations
 
-
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -657,7 +562,6 @@ Responses
 ^^^^^^^
 
 Success
-
 
 .. _i_2e7b26d45eaa7203222963d454a86a88:
 
@@ -674,14 +578,11 @@ Success
 
         serverVersion | No | string |  |  | version of software running on this server
 
-
 .. _i_bcea41e897f5de95cd50fa873acb5f65:
 
 **Links schema:**
 
-
 Links to API resources
-
 
 .. csv-table::
     :delim: |
@@ -691,8 +592,6 @@ Links to API resources
         events | No | string |  |  | path for the events endpoint
 
         info | No | string |  |  | path for the server information endpoint
-
-
 
 **Example:**
 
@@ -708,22 +607,14 @@ Links to API resources
     }
 
 
-
-  
 POLICY
 ~~~~~~
 
-
-policy update API consumed by policy-handler and debug API to find policies on components
-
-
-
-
+policy update API consumed by policy-handler and debug API to find policies
+on components
 
 GET ``/policy/components``
 --------------------------
-
-
 
 Description
 +++++++++++
@@ -732,10 +623,8 @@ Description
 
     debug API to find policies on components
 
-
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -746,14 +635,8 @@ Responses
 deployment-handler found components with or without policies in cloudify
 
 
-
-
-
-
 POST ``/policy``
 ----------------
-
-
 
 Description
 +++++++++++
@@ -762,11 +645,8 @@ Description
 
     policy update API consumed by policy-handler
 
-
 Request
 +++++++
-
-
 
 .. _d_6ea6e6f48a0302e963a67833bbd0ff4a:
 
@@ -787,16 +667,13 @@ request to update policies on DCAE components.
         removed_policies | Yes | |  |  | whether policy was removed from policy-engine.
         scope_prefixes | No | array of string |  |  | on catchup - list of all scope_prefixes used by the policy-handler to retrieve the policies from policy-engine.
 
-
 .. _i_0e88fa72c5312eaae3990753181ce5fe:
 
 **Errored_policies schema:**
 
-
 whether policy-engine returned an error on the policy.
 dictionary of (policy_id -> true).
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
-
 
 Map of {"key":"boolean"}
 
@@ -804,24 +681,18 @@ Map of {"key":"boolean"}
 
 **Latest_policies schema:**
 
-
 dictionary of (policy_id -> DCAEPolicy object).
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
-
 Map of {"key":":ref:`DCAEPolicy <d_1e3e880a733b457b648bd8c99e6c859c>`"}
-
-
 
 .. _i_0ce52a29e44aa0cc7929fe7b555551bc:
 
 **Removed_policies schema:**
 
-
 whether policy was removed from policy-engine.
 dictionary of (policy_id -> true).
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
-
 
 Map of {"key":"boolean"}
 
@@ -857,21 +728,17 @@ Responses
 **200**
 ^^^^^^^
 
-deployment-handler always responds with ok to /policy before processing the request
+deployment-handler always responds with ok to /policy before processing
+the request
 
 
-
-
-  
 Data Structures
 ~~~~~~~~~~~~~~~
-
 
 DCAEDeploymentRequest Model Structure
 -------------------------------------
 
 Request for deploying a DCAE service.
-
 
 .. csv-table::
     :delim: |
@@ -881,16 +748,10 @@ Request for deploying a DCAE service.
         inputs | No | |  |  | Object containing inputs needed by the service blueprint to create an instance of the service.
         serviceTypeId | Yes | string |  |  | The service type identifier (a unique ID assigned by DCAE inventory) for the service to be deployed.
 
-
-
 **Inputs schema:**
 
-
-Object containing inputs needed by the service blueprint to create an instance of the service.
-Content of the object depends on the service being deployed.
-
-
-
+Object containing inputs needed by the service blueprint to create an instance
+of the service. Content of the object depends on the service being deployed.
 
 .. _d_6157bd3de5c8c7de78f2ab86397667e0:
 
@@ -898,7 +759,6 @@ DCAEDeploymentResponse Model Structure
 --------------------------------------
 
 Response body for a PUT or DELETE to /dcae-deployments/{deploymentId}
-
 
 .. csv-table::
     :delim: |
@@ -909,14 +769,11 @@ Response body for a PUT or DELETE to /dcae-deployments/{deploymentId}
 
         requestId | Yes | string |  |  | Unique identifier for the request
 
-
 .. _i_4a894329f99280d2268e250444b59376:
 
 **Links schema:**
 
-
 Links that the API client can access.
-
 
 .. csv-table::
     :delim: |
@@ -934,20 +791,17 @@ DCAEDeploymentsListResponse Model Structure
 
 Object providing a list of deployments
 
-
 .. csv-table::
     :delim: |
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        deployments | Yes | array of :ref:`deployments <i_98a80d81e7d1973d54db7713913d37e8>` |  |  | 
+        deployments | Yes | array of :ref:`deployments <i_98a80d81e7d1973d54db7713913d37e8>` |  |  |
         requestId | Yes | string |  |  | Unique identifier for the request
-
 
 .. _i_98a80d81e7d1973d54db7713913d37e8:
 
 **Deployments schema:**
-
 
 .. csv-table::
     :delim: |
@@ -956,14 +810,12 @@ Object providing a list of deployments
 
         href | No | string |  |  | URL for the service deployment
 
-
 .. _d_74f3f4f847dfb6bd181fcae06ad880b4:
 
 DCAEErrorResponse Model Structure
 ---------------------------------
 
 Object reporting an error.
-
 
 .. csv-table::
     :delim: |
@@ -978,8 +830,8 @@ Object reporting an error.
 DCAEOperationStatusResponse Model Structure
 -------------------------------------------
 
-Response body for a request for status of an installation or uninstallation operation.
-
+Response body for a request for status of an installation or uninstallation
+operation.
 
 .. csv-table::
     :delim: |
@@ -996,14 +848,13 @@ Response body for a request for status of an installation or uninstallation oper
 
         status | Yes | string |  |  | Status of the installation or uninstallation operation.  Possible values are 'processing',
 
-
 .. _i_2feace8c1d3584ec637edc0eb1b92699:
 
 **Links schema:**
 
-
-If the operation succeeded, links that the client can follow to take further action.  Note that a successful 'uninstall' operation removes the DCAE service instance completely, so there are no possible further actions, and no links.
-
+If the operation succeeded, links that the client can follow to take further
+action. Note that a successful 'uninstall' operation removes the DCAE service
+instance completely, so there are no possible further actions, and no links.
 
 .. csv-table::
     :delim: |
@@ -1026,7 +877,7 @@ policy object
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        policy_body | Yes | :ref:`DCAEPolicyBody <d_7ffe00ee1aaae6811199d64ff3fea344>` |  |  | 
+        policy_body | Yes | :ref:`DCAEPolicyBody <d_7ffe00ee1aaae6811199d64ff3fea344>` |  |  |
         policy_id | Yes | string |  |  | unique identifier of policy regardless of its version
 
 .. _d_7ffe00ee1aaae6811199d64ff3fea344:
@@ -1049,10 +900,7 @@ policy_body - the whole object received from policy-engine
 
 **Config schema:**
 
-
 the policy-config - the config data provided by policy owner
-
-
 
 DCAEPolicyRequest Model Structure
 ---------------------------------
@@ -1071,35 +919,26 @@ request to update policies on DCAE components.
         removed_policies | Yes | |  |  | whether policy was removed from policy-engine.
         scope_prefixes | No | array of string |  |  | on catchup - list of all scope_prefixes used by the policy-handler to retrieve the policies from policy-engine.
 
-
 **Errored_policies schema:**
-
 
 whether policy-engine returned an error on the policy.
 dictionary of (policy_id -> true).
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
-
 Map of {"key":"boolean"}
 
 **Latest_policies schema:**
 
-
 dictionary of (policy_id -> DCAEPolicy object).
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
 
-
 Map of {"key":":ref:`DCAEPolicy <d_1e3e880a733b457b648bd8c99e6c859c>`"}
 
-
-
 **Removed_policies schema:**
-
 
 whether policy was removed from policy-engine.
 dictionary of (policy_id -> true).
 In example: replace additionalProp1,2,3 with policy_id1,2,3 values
-
 
 Map of {"key":"boolean"}
 

@@ -1,3 +1,6 @@
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+
 .. _prh_api:
 
 ==============================
@@ -8,23 +11,31 @@ PRH (PNF Registration Handler)
 
 .. contents::
     :depth: 3
-..
 
 Overview
 ========
 
-Physical Network Function Registration Handler is responsible for registration of PNF (Physical Network Function) to
-ONAP (Open Network Automation Platform) in plug and play manner. 
+Physical Network Function Registration Handler is responsible for registration
+of PNF (Physical Network Function) to ONAP (Open Network Automation Platform)
+in plug and play manner.
+
+.. csv-table::
+   :header: "API name", "Swagger JSON", "Swagger YAML"
+   :widths: 10,5,5
+
+   "PNF Registration Handler", ":download:`link <PRH.json>`", ":download:`link <PRH.yaml>`"
+
+.. swaggerv2doc:: PRH.json
 
 Introduction
 ============
 
-PRH is delivered as one **Docker container** which hosts application server and can be started by `docker-compose`.
+PRH is delivered as one **Docker container** which hosts application server and
+can be started by `docker-compose`.
 
 Functionality
 =============
 .. image:: ../images/prhAlgo.png
-
 
 Paths
 =====
@@ -37,7 +48,6 @@ Description
 
 Reads PNF registration fromD DMaaP (Data Movement as a Platform)
 
-
 Responses
 ~~~~~~~~~
 
@@ -46,7 +56,6 @@ Responses
 +===========+===========================================+
 | **200**   | successful response                       |
 +-----------+-------------------------------------------+
-
 
 PATCH /aai/v12/network/pnfs/{pnf-name}
 --------------------------------------
@@ -70,7 +79,6 @@ Parameters
 | **Body** | **patchbody** | Required patch body.            |                  |
 +----------+---------------+---------------------------------+------------------+
 
-
 Responses
 ~~~~~~~~~
 
@@ -79,7 +87,6 @@ Responses
 +===========+===========================================+
 | **200**   | successful response                       |
 +-----------+-------------------------------------------+
-
 
 POST /events/unauthenticated.PNF_READY
 --------------------------------------
@@ -103,7 +110,6 @@ Parameters
 |          |                |                                 | t>`__            |
 +----------+----------------+---------------------------------+------------------+
 
-
 Responses
 ~~~~~~~~~
 
@@ -116,8 +122,8 @@ Responses
 Compiling PRH
 =============
 
-Whole project (top level of PRH directory) and each module (sub module directory) can be compiled using 
-`mvn clean install` command.   
+Whole project (top level of PRH directory) and each module (sub module
+directory) can be compiled using `mvn clean install` command.   
 
 Main API Endpoints
 ==================
@@ -144,5 +150,4 @@ Maven Children Artifacts:
 2. prh-aai-client: Contains implementation of AAI client
 3. prh-dmaap-client: Contains implementation of DmaaP client
 4. prh-commons: Common code for whole prh modules
-
 

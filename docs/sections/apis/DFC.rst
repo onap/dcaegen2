@@ -1,3 +1,6 @@
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+
 ========================
 DFC (DataFile Collector)
 ========================
@@ -6,7 +9,6 @@ DFC (DataFile Collector)
 
 .. contents::
     :depth: 3
-..
 
 Overview
 ========
@@ -14,7 +16,6 @@ Overview
 Component description can be found under `DFC`_.
 
 .. _DFC: ../../sections/services/dfc/index.html
-
 
 Offered APIs
 ============
@@ -24,3 +25,4 @@ Offered APIs
   :widths: 10,5
 
    "Datafile Collector API", ":download:`link <DFC.json>`"
+
