@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe113316_5684b533",
+        "filename": "docs/sections/apis/configbinding.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T21:06:44Z",
+      "side": 1,
+      "message": "Looks correct, but there is error reported here - https://logs.onap.org/production/vex-yul-ecomp-jenkins-1/doc-master-verify-rtd/4699/html/submodules/dcaegen2.git/docs/sections/apis/configbinding.html",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 36
+      },
+      "revId": "bafa0d409031a17953a98dc7a395f79ca6c83eed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "92cdef3c_c5164140",
+        "filename": "docs/sections/apis/deployment-handler.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T21:06:44Z",
+      "side": 1,
+      "message": "deployment-handler-API.json",
+      "range": {
+        "startLine": 14,
+        "startChar": 43,
+        "endLine": 14,
+        "endChar": 70
+      },
+      "revId": "bafa0d409031a17953a98dc7a395f79ca6c83eed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
