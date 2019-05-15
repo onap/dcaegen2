@@ -1,4 +1,5 @@
-** Troubleshooting steps **
+Troubleshooting steps
+---------------------
 
 1. Microservice stops and restarts during startup
 
@@ -10,7 +11,8 @@
               List of topics can be queried from message router using the url "http://<host>:<port>/topics"
 
 
-** Logging **
+Logging
+-------
 
 1. Logs can be found either from kubernetes UI or from kubectl. Since, the MS is deployed as a pod in the kubernetes, you can check the logs by using the command
         kubectl logs <pod-name> --namespace onap
