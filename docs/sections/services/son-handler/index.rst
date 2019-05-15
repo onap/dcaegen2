@@ -20,7 +20,7 @@ SON-Handler MS overview and functions
 .. toctree::
     :maxdepth: 1
 
-    son_handler_ms
+    ./son_handler_overview.rst
 
 SON-Handler MS Installation Steps, Configurations, Troubleshooting Tips and Logging
 -----------------------------------------------------------------------------------
@@ -28,4 +28,5 @@ SON-Handler MS Installation Steps, Configurations, Troubleshooting Tips and Logg
 .. toctree::
     :maxdepth: 1
 
-    son_handler_ms_addl
+    ./son_handler_installation.rst
+    ./son_handler_troubleshooting.rst

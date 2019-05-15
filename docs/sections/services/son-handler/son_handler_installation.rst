@@ -1,15 +1,15 @@
-**** SON Handler ****
 
-** Instalation Steps **
+Instalation Steps
+-----------------
 
 SON handler microservice can be deployed using cloudify blueprint using bootstrap container of an existing DCAE deployment
 
-Deployment Prerequisites:
-=========================
+Deployment Prerequisites
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-	*SON-Handler service requires DMAAP and Policy components to be functional.
+- SON-Handler service requires DMAAP and Policy components to be functional.
 
-	*SON-hadler service requires  the following dmaap topics to be present in the running DMAAP instance :
+- SON-hadler service requires  the following dmaap topics to be present in the running DMAAP instance :
 
 		1.PCI-NOTIF-TOPIC-NGHBR-LIST-CHANGE-INFO
 
@@ -19,7 +19,7 @@ Deployment Prerequisites:
 
 		4.DCAE_CL_RSP
 
-	*Policy model required for SON-handler service should be created and pushed to policy component.Steps for creating and pushing the policy model:
+- Policy model required for SON-handler service should be created and pushed to policy component.Steps for creating and pushing the policy model:
 		1.Login to PDP container and execute
 			kubectl exec -ti --namespace onap policy-pdp-0 bash
 		2.Create policy model
@@ -27,7 +27,7 @@ Deployment Prerequisites:
   "policyName": "com.PCIMS_CONFIG_POLICY",
   "configBody": "{ \"PCI_NEIGHBOR_CHANGE_CLUSTER_TIMEOUT_IN_SECS\":60, \"PCI_MODCONFIG_POLICY_NAME\":\"ControlLoop-vPCI-fb41f388-a5f2-11e8-98d0-529269fb1459\", \"PCI_OPTMIZATION_ALGO_CATEGORY_IN_OOF\":\"OOF-PCI-OPTIMIZATION\", \"PCI_SDNR_TARGET_NAME\":\"SDNR\" }",
   "policyType": "Config",
-  "attributes" : { "matching" : { "key1" : "value1" } },
+   "attributes" : { "matching" : { "key1" : "value1" } },
   "policyConfigType": "Base",
   "onapName": "DCAE",
   "configName": "PCIMS_CONFIG_POLICY",
@@ -44,22 +44,23 @@ Deployment Prerequisites:
 
 			curl -k -v --silent -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'ClientAuth: cHl0aG9uOnRlc3Q=' --header 'Authorization: Basic dGVzdHBkcDphbHBoYTEyMw==' --header 'Environment: TEST' -d '{ "configName": "PCIMS_CONFIG_POLICY",    "policyName": "com.Config_PCIMS_CONFIG_POLICY1*",    "requestID":"e65cc45a-9efb-11e8-98d0-529269ffa459"  }' 'https://pdp:8081/pdp/api/getConfig'	
 
-Deployment steps:
-=================
-* Login to the bootstrap container
+Deployment steps
+~~~~~~~~~~~~~~~~
+- Login to the bootstrap container
         kubectl exec -ti --namespace onap <bootstrap pod name> bash
-* Copy the blueprints and inputs file to the bootstrap container. The blueprint and a sample input file can be found under dpo/blueprints directory of son-hanler project. (https://gerrit.onap.org/r/dcaegen2/services/son-handler)
-* Deploy the microservice into the cloudify using the following command
+- Copy the blueprints and inputs file to the bootstrap container. The blueprint and a sample input file can be found under dpo/blueprints directory of son-hanler project. (https://gerrit.onap.org/r/dcaegen2/services/son-handler)
+- Deploy the microservice into the cloudify using the following command
         cfy install -d sonhms -b sonhms -i <inputs file path> <blueprint file path>
-* Deployment status of the microservice can be found from kubernetes pods status (MS will be deployed as a k8s pod in the kubernetes environment under the same namespace as the DCAE environment).
+- Deployment status of the microservice can be found from kubernetes pods status (MS will be deployed as a k8s pod in the kubernetes environment under the same namespace as the DCAE environment).
         kubectl get pods --namespace onap
-* To uninstall the microservice
+- To uninstall the microservice
         cfy uninstall sonhms
-* To delete the blueprint from the cloudify instance
+- To delete the blueprint from the cloudify instance
         cfy blueprints delete sonhms
 
 
-** Application Configurations **
+Application Configurations
+--------------------------
 
 Streams_subscribes                Dmaap topics that the MS will consume messages
 
