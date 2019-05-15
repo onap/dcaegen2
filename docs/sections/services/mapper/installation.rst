@@ -1,48 +1,67 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
-.. Copyright 2018 Tech Mahindra Ltd.
+.. Copyright 2018-2019 Tech Mahindra Ltd.
 
 
 Installation
 ============
-Currently both Universal VES Adapter and SnmpMapper are not integrated with CONFIG_BINDING_SERVICE to get their configuration. All the required configuration needs to be passed as docker environment parameters.
 
-| **Universal Ves Adapter**
+**Deployment Prerequisite/dependencies**
 
- To run Universal Ves Adapter container on standalone mode, following docker environment parameters are required.
+VES-Mapper can be deployed individually though it will throw errors if it can't reach to DMaaP instance's APIs. To test it functionally, DMaaP is the only required prerequisite outside DCAE. As VES-Mapper is integrated with Consul / CBS, it fetches the initial configuration from Consul.
 
+**Note:** Currently VES-Mapper fetches configuration from Consul only during initialization. It does not periodically refresh the local configuration by getting updates from Consul. This is planned for E release.
 
-- DMAAPHOST  -  Should contain an address to DMaaP, so that event publishing can work
-- MR_PORT - DMaaP Exposed Port
-- URL_JDBC - JDBC URL where postgres db is installed 
-- JDBC_USERNAME - Username for postgres DB user
-- JDBC_PASSWORD - Password for postgres  DB user
-- CONSUL_HOST - a host address where Consul service lies
-- CONFIG_BINDING_SERVICE - name of CBS as it is registered in Consul
-- HOSTNAME - name of Universal Ves Adapter application as it is registered in CBS catalog
+**Blueprint/model/image**
 
-Sample docker run command could be -
+VES-Mapper blueprint is available @ 
+https://gerrit.onap.org/r/gitweb?p=dcaegen2/services/mapper.git;a=blob;f=UniversalVesAdapter/dpo/blueprints/k8s-vesmapper.yaml-template.yaml;h=refs/head/master
 
-    ``docker run -d -p 8085:8085/tcp -e URL_JDBC=jdbc:postgresql://10.53.172.138:5432/postgres -e JDBC_USERNAME=postgres -e JDBC_PASSWORD=root -e DMAAPHOST=10.53.172.156 -e CONSUL_HOST=10.53.172.109 -e HOSTNAME=static-dcaegen2-services-mua -e MR_DEFAULT_PORT_NUMBER=3904 -e CONFIG_BINDING_SERVICE=config_binding_service nexus3.onap.org:10003/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest``
-
-Note: you should have a postgresql  and DMaap  instance running in your system and provide their credentials and hostname to run in standalone mode.
+VES-Mapper docker image is available in Nexus repo @ `nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.0-SNAPSHOT <nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.0-SNAPSHOT>`_
 
 
 
 
-| **SnmpMapper**
+**1.To Run via blueprint**
 
-- To run SnmpMapper container on standalone mode, following docker environment parameters are required.
+*a. Verify DMaaP configurations in the blueprint as per setup*
 
-- DMAAPHOST-should contain an address to DMaaP, this will be used in future reference
-- MR_PORT - DMaaP Exposed Port
-- URL_JDBC- JDBC URL where postgres db is installed 
-- JDBC_USERNAME- Username for postgres DB user
-- JDBC_PASSWORD-Password for postgres  DB user
-- CONSUL_HOST - a host address where Consul service lies
-- CONFIG_BINDING_SERVICE - name of CBS as it is registered in Consul
-- HOSTNAME - name of Universal Ves Adapter application as it is registered in CBS catalog
+  Dmaap Configuration consists of subscribe url to fetch notifications from the respective collector and publish url to publish ves event.
 
-Sample docker run command could be -
 
-   ``docker run -d -p 8084:8080/tcp -e URL_JDBC=jdbc:postgresql://10.53.172.138:5432/postgres -e JDBC_USERNAME=postgres -e JDBC_PASSWORD=root -e DMAAPHOST=10.53.172.156 -e CONSUL_HOST=10.53.172.109 -e HOSTNAME=static-dcaegen2-services-msnmp -e MR_DEFAULT_PORT_NUMBER=3904 -e CONFIG_BINDING_SERVICE=config_binding_service nexus3.onap.org:10003/onap/org.onap.dcaegen2.services.mapper.snmpmapper:latest``
+``streams_publishes`` and ``streams_subscribes`` points to the publishing topic and subscribe topic respectively.
+
+update these ``urls`` as per your DMaaP configurations in the blueprint. 
+
+*b. Verify the Smooks mapping files in the blueprint as per the usecase. Blueprint contains default mapping file for each supported collector ( SNMP Collector and RESTConf collector currently) which may serve the purpose for the usecase.
+
+``mapping-files`` in ``collectors`` contains the contents of the mapping file.
+
+*c. Upload the blueprint in the DCAE's Cloudify instance*
+
+For this step, DCAE's Cloudify instance should be in running state. Transfer blueprint file in DCAE bootstrap POD under /blueprints directory. Log-in to the DCAE bootstrap POD's main container.
+
+Validate blueprint
+
+    ``cfy blueprints validate /blueprints/k8s-vesmapper.yaml-template.yaml``
+
+Use following command for validated blueprint to upload:
+
+	``cfy blueprints upload -b ves-mapper /blueprints/k8s-vesmapper.yaml-template.yaml``
+
+*d. Create the Deployment* 
+After VES-Mapper's validated blueprint is uploaded,  create Cloudify Deployment by following command
+
+  ``cfy deployments create -b ves-mapper ves-mapper``
+
+*e.  Deploy the component by using following command*
+
+  ``cfy executions start -d ves-mapper install``
+
+
+**2.To run on standalone mode**
+
+Though this is not a preferred way, to run VES-Mapper container on standalone mode using local configuration file carried in the docker image, following docker run command can be used.
+ 
+    ``docker run -d   nexus3.onap.org:10003/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.0-SNAPSHOT``
+
