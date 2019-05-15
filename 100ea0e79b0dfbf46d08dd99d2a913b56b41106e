@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e425630_50c4802a",
+        "filename": "docs/sections/services/son-handler/son_handler_troubleshooting.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-15T14:40:56Z",
+      "side": 1,
+      "message": "Adding application log error reference would help - https://git.onap.org/dcaegen2/tree/docs/sections/services/pm-mapper/troubleshooting.rst",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 107
+      },
+      "revId": "100ea0e79b0dfbf46d08dd99d2a913b56b41106e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
