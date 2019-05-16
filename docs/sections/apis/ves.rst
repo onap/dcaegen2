@@ -1,62 +1,48 @@
-VES Collector 1.3.1
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+
+VES Collector 1.3.2
 ===================
 
 .. toctree::
     :maxdepth: 3
 
-
 Description
 ~~~~~~~~~~~
 
-Virtual Event Streaming (VES) Collector is RESTful collector for processing JSON messages. The collector verifies the source and validates the events against VES schema before distributing to DMAAP MR topics
+Virtual Event Streaming (VES) Collector is RESTful collector for processing
+JSON messages. The collector verifies the source and validates the events
+against VES schema before distributing to DMAAP MR topics.
 
+.. csv-table::
+   :header: "API name", "Swagger JSON", "Swagger YAML"
+   :widths: 10,5,5
 
-
+   "VES Collector", ":download:`link <swagger_vescollector.json>`", ":download:`link <swagger_vescollector.yaml>`"
 
 Contact Information
 ~~~~~~~~~~~~~~~~~~~
 
-
-
 dcae@lists.openecomp.org
-
-
-
-
-
 
 Security
 ~~~~~~~~
-
 
 .. _securities_basicAuth:
 
 basicAuth (HTTP Basic Authentication)
 -------------------------------------
 
-
 *HTTP Basic Authentication. Works over `HTTP` and `HTTPS`*
-
-
-
-
 
 DEFAULT
 ~~~~~~~
 
-
-
-
 GET ``/healthcheck``
 --------------------
 
-
-
-
-
 Request
 +++++++
-
 
 Responses
 +++++++++
@@ -66,15 +52,8 @@ Responses
 
 healthcheck successful
 
-
-
-
-
-
 POST ``/eventListener/v5``
 --------------------------
-
-
 
 Description
 +++++++++++
@@ -83,11 +62,8 @@ Description
 
     uri for posting VES event objects
 
-
 Request
 +++++++
-
-
 
 .. _d_f598222d7a83ca9c3538556b263682d1:
 
@@ -99,7 +75,7 @@ Body
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  | 
+        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  |
 
 .. code-block:: javascript
 
@@ -956,7 +932,6 @@ Responses
 
 VES Event Accepted.
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -973,7 +948,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 ^^^^^^^
 
 Bad request provided
-
 
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
@@ -992,7 +966,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 Unauthorized request
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -1010,7 +983,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 Service Unavailable
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -1023,8 +995,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
         "type": "somestring"
     }
 
-
-
 Security
 ++++++++
 
@@ -1034,11 +1004,8 @@ Security
 
         :ref:`basicAuth <securities_basicAuth>`, ""
 
-
 POST ``/eventListener/v5/eventBatch``
 -------------------------------------
-
-
 
 Description
 +++++++++++
@@ -1047,12 +1014,8 @@ Description
 
     uri for posting VES batch event objects
 
-
 Request
 +++++++
-
-
-
 
 Body
 ^^^^
@@ -1062,7 +1025,7 @@ Body
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  | 
+        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  |
 
 .. code-block:: javascript
 
@@ -1919,7 +1882,6 @@ Responses
 
 VES Event Accepted.
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -1936,7 +1898,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 ^^^^^^^
 
 Bad request provided
-
 
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
@@ -1955,7 +1916,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 Unauthorized request
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -1973,7 +1933,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 Service Unavailable
 
-
 Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
 
 **Example:**
@@ -1986,8 +1945,6 @@ Type: :ref:`ApiResponseMessage <d_8a94f348f7df00259702f8d9b7d2ea84>`
         "type": "somestring"
     }
 
-
-
 Security
 ++++++++
 
@@ -1996,10 +1953,9 @@ Security
     :widths: 15, 45
 
         :ref:`basicAuth <securities_basicAuth>`, ""
-  
+
 Data Structures
 ~~~~~~~~~~~~~~~
-
 
 ApiResponseMessage Model Structure
 ----------------------------------
@@ -2009,10 +1965,9 @@ ApiResponseMessage Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        code | No | integer | int32 |  | 
-        message | No | string |  |  | 
-        type | No | string |  |  | 
-
+        code | No | integer | int32 |  |
+        message | No | string |  |  |
+        type | No | string |  |  |
 
 VES5Request Model Structure
 ---------------------------
@@ -2022,7 +1977,7 @@ VES5Request Model Structure
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  | 
+        event | No | :ref:`event <d_0eeffb3cd3e31135c2f3cf8ee4a2bdbb>` |  |  |
 
 .. _d_df249c51a416f54e5609f2ffffe059c0:
 
@@ -2036,8 +1991,8 @@ number of times an identified codec was used over the measurementInterval
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        codecIdentifier | Yes | string |  |  | 
-        numberInUse | Yes | integer |  |  | 
+        codecIdentifier | Yes | string |  |  |
+        numberInUse | Yes | integer |  |  |
 
 .. _d_a68e1b21fdcef792db73f711201c56ad:
 
@@ -2055,7 +2010,7 @@ fields common to all events
         eventId | Yes | string |  |  | event key that is unique to the event source
         eventName | Yes | string |  |  | unique event name
         eventType | No | string |  |  | for example - applicationVnf, guestOS, hostOS, platform
-        internalHeaderFields | No | :ref:`internalHeaderFields <d_2873d30f54c59ef635c1fc0cbbaa89f1>` |  |  | 
+        internalHeaderFields | No | :ref:`internalHeaderFields <d_2873d30f54c59ef635c1fc0cbbaa89f1>` |  |  |
         lastEpochMicrosec | Yes | number |  |  | the latest unix time aka epoch time associated with the event from any component--as microseconds elapsed since 1 Jan 1970 not including leap seconds
         nfNamingCode | No | string |  |  | 4 character network function type, aligned with vnf naming standards
         nfcNamingCode | No | string |  |  | 3 character network function component type, aligned with vfc naming standards
@@ -2080,10 +2035,10 @@ performance counter
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        criticality | Yes | string |  | {'enum': ['CRIT', 'MAJ']} | 
-        name | Yes | string |  |  | 
-        thresholdCrossed | Yes | string |  |  | 
-        value | Yes | string |  |  | 
+        criticality | Yes | string |  | {'enum': ['CRIT', 'MAJ']} |
+        name | Yes | string |  |  |
+        thresholdCrossed | Yes | string |  |  |
+        value | Yes | string |  |  |
 
 .. _d_6f081937f31c09078c8acf9212d6c449:
 
@@ -2176,23 +2131,23 @@ provides end of call voice quality metrics
 
         adjacencyName | Yes | string |  |  |  adjacency name
         endpointDescription | Yes | string |  | {'enum': ['Caller', 'Callee']} | Either Caller or Callee
-        endpointJitter | No | number |  |  | 
-        endpointRtpOctetsDiscarded | No | number |  |  | 
-        endpointRtpOctetsReceived | No | number |  |  | 
-        endpointRtpOctetsSent | No | number |  |  | 
-        endpointRtpPacketsDiscarded | No | number |  |  | 
-        endpointRtpPacketsReceived | No | number |  |  | 
-        endpointRtpPacketsSent | No | number |  |  | 
-        localJitter | No | number |  |  | 
-        localRtpOctetsDiscarded | No | number |  |  | 
-        localRtpOctetsReceived | No | number |  |  | 
-        localRtpOctetsSent | No | number |  |  | 
-        localRtpPacketsDiscarded | No | number |  |  | 
-        localRtpPacketsReceived | No | number |  |  | 
-        localRtpPacketsSent | No | number |  |  | 
+        endpointJitter | No | number |  |  |
+        endpointRtpOctetsDiscarded | No | number |  |  |
+        endpointRtpOctetsReceived | No | number |  |  |
+        endpointRtpOctetsSent | No | number |  |  |
+        endpointRtpPacketsDiscarded | No | number |  |  |
+        endpointRtpPacketsReceived | No | number |  |  |
+        endpointRtpPacketsSent | No | number |  |  |
+        localJitter | No | number |  |  |
+        localRtpOctetsDiscarded | No | number |  |  |
+        localRtpOctetsReceived | No | number |  |  |
+        localRtpOctetsSent | No | number |  |  |
+        localRtpPacketsDiscarded | No | number |  |  |
+        localRtpPacketsReceived | No | number |  |  |
+        localRtpPacketsSent | No | number |  |  |
         mosCqe | No | number |  |  | 1-5 1dp
         packetLossPercent | No | number |  |  | Calculated percentage packet loss based on Endpoint RTP packets lost (as reported in RTCP) and Local RTP packets sent. Direction is based on Endpoint description (Caller, Callee). Decimal (2 dp)
-        packetsLost | No | number |  |  | 
+        packetsLost | No | number |  |  |
         rFactor | No | number |  |  | 0-100
         roundTripDelay | No | number |  |  | millisecs
 
@@ -2208,17 +2163,17 @@ the root level of the common event format
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        commonEventHeader | Yes | :ref:`commonEventHeader <d_2dc9a27be1410f60241c5f63c636bb7e>` |  |  | 
-        faultFields | No | :ref:`faultFields <d_e7aa5254472f7823fdd6d5a090bfd0a4>` |  |  | 
-        heartbeatFields | No | :ref:`heartbeatFields <d_6ea626e11ce7887cddd39c36ff4f0926>` |  |  | 
-        measurementsForVfScalingFields | No | :ref:`measurementsForVfScalingFields <d_669cf98e276c9992abd27056c432bbb2>` |  |  | 
-        mobileFlowFields | No | :ref:`mobileFlowFields <d_dc18fe1d28fe3ef664c3f4ab777d8424>` |  |  | 
-        otherFields | No | :ref:`otherFields <d_5a79cd7ce784d60fd832d9c7c0a24322>` |  |  | 
-        sipSignalingFields | No | :ref:`sipSignalingFields <d_c3e191f0b26ddd68f927ac0c8b551c5e>` |  |  | 
-        stateChangeFields | No | :ref:`stateChangeFields <d_c5450f1a263d0a2b0c64c96119f7d759>` |  |  | 
-        syslogFields | No | :ref:`syslogFields <d_782271970af04a3b0e5a5da9b30996d2>` |  |  | 
-        thresholdCrossingAlertFields | No | :ref:`thresholdCrossingAlertFields <d_bd95ac8a5536a5bb5e6a0de7e64b9f20>` |  |  | 
-        voiceQualityFields | No | :ref:`voiceQualityFields <d_9551641bd1c775d9fcf4e45353de8e43>` |  |  | 
+        commonEventHeader | Yes | :ref:`commonEventHeader <d_2dc9a27be1410f60241c5f63c636bb7e>` |  |  |
+        faultFields | No | :ref:`faultFields <d_e7aa5254472f7823fdd6d5a090bfd0a4>` |  |  |
+        heartbeatFields | No | :ref:`heartbeatFields <d_6ea626e11ce7887cddd39c36ff4f0926>` |  |  |
+        measurementsForVfScalingFields | No | :ref:`measurementsForVfScalingFields <d_669cf98e276c9992abd27056c432bbb2>` |  |  |
+        mobileFlowFields | No | :ref:`mobileFlowFields <d_dc18fe1d28fe3ef664c3f4ab777d8424>` |  |  |
+        otherFields | No | :ref:`otherFields <d_5a79cd7ce784d60fd832d9c7c0a24322>` |  |  |
+        sipSignalingFields | No | :ref:`sipSignalingFields <d_c3e191f0b26ddd68f927ac0c8b551c5e>` |  |  |
+        stateChangeFields | No | :ref:`stateChangeFields <d_c5450f1a263d0a2b0c64c96119f7d759>` |  |  |
+        syslogFields | No | :ref:`syslogFields <d_782271970af04a3b0e5a5da9b30996d2>` |  |  |
+        thresholdCrossingAlertFields | No | :ref:`thresholdCrossingAlertFields <d_bd95ac8a5536a5bb5e6a0de7e64b9f20>` |  |  |
+        voiceQualityFields | No | :ref:`voiceQualityFields <d_9551641bd1c775d9fcf4e45353de8e43>` |  |  |
 
 .. _d_4089a4a9ee684770c6f37a588a577589:
 
@@ -2270,8 +2225,8 @@ number of times an identified feature was used over the measurementInterval
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        featureIdentifier | Yes | string |  |  | 
-        featureUtilization | Yes | integer |  |  | 
+        featureIdentifier | Yes | string |  |  |
+        featureUtilization | Yes | integer |  |  |
 
 .. _d_a9799335edbbc52c7f0c5191f7bd09ee:
 
@@ -2285,28 +2240,29 @@ name value pair
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        name | Yes | string |  |  | 
-        value | Yes | string |  |  | 
+        name | Yes | string |  |  |
+        value | Yes | string |  |  |
 
 .. _d_18e1fa5fd6774deefce826b075f8b6e7:
 
 filesystemUsage Model Structure
 -------------------------------
 
-disk usage of an identified virtual machine in gigabytes and/or gigabytes per second
+disk usage of an identified virtual machine in gigabytes and/or gigabytes per
+second
 
 .. csv-table::
     :delim: |
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        blockConfigured | Yes | number |  |  | 
-        blockIops | Yes | number |  |  | 
-        blockUsed | Yes | number |  |  | 
-        ephemeralConfigured | Yes | number |  |  | 
-        ephemeralIops | Yes | number |  |  | 
-        ephemeralUsed | Yes | number |  |  | 
-        filesystemName | Yes | string |  |  | 
+        blockConfigured | Yes | number |  |  |
+        blockIops | Yes | number |  |  |
+        blockUsed | Yes | number |  |  |
+        ephemeralConfigured | Yes | number |  |  |
+        ephemeralIops | Yes | number |  |  |
+        ephemeralUsed | Yes | number |  |  |
+        filesystemName | Yes | string |  |  |
 
 .. _d_bb1527d221e848e0896c78552979238b:
 
@@ -2392,16 +2348,16 @@ optional field block for fields specific to heartbeat events
 internalHeaderFields Model Structure
 ------------------------------------
 
-enrichment fields for internal VES Event Listener service use only, not supplied by event sources
-
-
+enrichment fields for internal VES Event Listener service use only, not
+supplied by event sources
 
 .. _d_d8868aee802ae8e2b1e7ea1c4ecc1f54:
 
 jsonObject Model Structure
 --------------------------
 
-json object schema, name and other meta-information along with one or more object instances
+json object schema, name and other meta-information along with one or more
+object instances
 
 .. csv-table::
     :delim: |
@@ -2420,7 +2376,8 @@ json object schema, name and other meta-information along with one or more objec
 jsonObjectInstance Model Structure
 ----------------------------------
 
-meta-information about an instance of a jsonObject along with the actual object instance
+meta-information about an instance of a jsonObject along with the actual
+object instance
 
 .. csv-table::
     :delim: |
@@ -2435,10 +2392,7 @@ meta-information about an instance of a jsonObject along with the actual object 
 
 **Objectinstance schema:**
 
-
 an instance conforming to the jsonObject schema
-
-
 
 .. _d_a217491e9c44487ec7bbd9ce3ac9dddb:
 
@@ -2468,9 +2422,9 @@ number of counts falling within a defined latency bucket
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        countsInTheBucket | Yes | number |  |  | 
-        highEndOfLatencyBucket | No | number |  |  | 
-        lowEndOfLatencyBucket | No | number |  |  | 
+        countsInTheBucket | Yes | number |  |  |
+        highEndOfLatencyBucket | No | number |  |  |
+        lowEndOfLatencyBucket | No | number |  |  |
 
 .. _d_669cf98e276c9992abd27056c432bbb2:
 
@@ -2545,7 +2499,7 @@ mobileFlow fields
         connectionType | No | string |  |  | Abbreviation referencing a 3GPP reference point e.g., S1-U, S11, etc
         ecgi | No | string |  |  | Evolved Cell Global Id
         flowDirection | Yes | string |  |  | Flow direction, indicating if the reporting node is the source of the flow or destination for the flow
-        gtpPerFlowMetrics | Yes | :ref:`gtpPerFlowMetrics <d_bb1527d221e848e0896c78552979238b>` |  |  | 
+        gtpPerFlowMetrics | Yes | :ref:`gtpPerFlowMetrics <d_bb1527d221e848e0896c78552979238b>` |  |  |
         gtpProtocolType | No | string |  |  | GTP protocol
         gtpVersion | No | string |  |  | GTP protocol version
         httpHeader | No | string |  |  | HTTP request header, if the flow connects to a node referenced by HTTP
@@ -2584,14 +2538,15 @@ an array of name value pairs along with a name for the array
     :widths: 20, 10, 15, 15, 30, 25
 
         arrayOfFields | Yes | array of :ref:`field <d_a9799335edbbc52c7f0c5191f7bd09ee>` |  |  | array of name value pairs
-        name | Yes | string |  |  | 
+        name | Yes | string |  |  |
 
 .. _d_5a79cd7ce784d60fd832d9c7c0a24322:
 
 otherFields Model Structure
 ---------------------------
 
-fields for events belonging to the 'other' domain of the commonEventHeader domain enumeration
+fields for events belonging to the 'other' domain of the commonEventHeader
+domain enumeration
 
 .. csv-table::
     :delim: |
@@ -2641,7 +2596,7 @@ sip signaling fields
         remotePort | Yes | string |  |  | port of peer endpoint
         sipSignalingFieldsVersion | Yes | number |  |  | version of the sipSignalingFields block
         summarySip | No | string |  |  | the SIP Method or Response (INVITE, 200 OK, BYE, etc)
-        vendorVnfNameFields | Yes | :ref:`vendorVnfNameFields <d_d694eebbbc0078612d2ba22e0cbf814c>` |  |  | 
+        vendorVnfNameFields | Yes | :ref:`vendorVnfNameFields <d_d694eebbbc0078612d2ba22e0cbf814c>` |  |  |
 
 .. _d_c5450f1a263d0a2b0c64c96119f7d759:
 
@@ -2666,7 +2621,8 @@ stateChange fields
 suppressedNvPairs Model Structure
 ---------------------------------
 
-List of specific NvPairsNames to suppress within a given Name-Value Field for event Throttling
+List of specific NvPairsNames to suppress within a given Name-Value Field
+for event Throttling
 
 .. csv-table::
     :delim: |
@@ -2688,7 +2644,7 @@ sysLog fields
     :header: "Name", "Required", "Type", "Format", "Properties", "Description"
     :widths: 20, 10, 15, 15, 30, 25
 
-        additionalFields | No | string |  |  | additional syslog fields if needed provided as name=value 
+        additionalFields | No | string |  |  | additional syslog fields if needed provided as name=value
         eventSourceHost | No | string |  |  | hostname of the device
         eventSourceType | Yes | string |  |  | type of event source; examples: other, router, switch, host, card, port, slotThreshold, portThreshold, virtualMachine, virtualNetworkFunction
         syslogFacility | No | integer |  |  | numeric code from 0 to 23 for facility--see table in documentation
@@ -2737,7 +2693,8 @@ fields specific to threshold crossing alert events
 vNicPerformance Model Structure
 -------------------------------
 
-describes the performance and errors of an identified virtual network interface card
+describes the performance and errors of an identified virtual network
+interface card
 
 .. csv-table::
     :delim: |
@@ -2807,9 +2764,9 @@ provides statistics related to customer facing voice products
         calleeSideCodec | Yes | string |  |  | callee codec for the call
         callerSideCodec | Yes | string |  |  | caller codec for the call
         correlator | Yes | string |  |  | this is the same for all events on this call
-        endOfCallVqmSummaries | No | :ref:`endOfCallVqmSummaries <d_c911a0a8abdb511d7cd6590f383d817b>` |  |  | 
+        endOfCallVqmSummaries | No | :ref:`endOfCallVqmSummaries <d_c911a0a8abdb511d7cd6590f383d817b>` |  |  |
         midCallRtcp | Yes | string |  |  | Base64 encoding of the binary RTCP data excluding Eth/IP/UDP headers
         phoneNumber | No | string |  |  | phone number associated with the correlator
-        vendorVnfNameFields | Yes | :ref:`vendorVnfNameFields <d_d694eebbbc0078612d2ba22e0cbf814c>` |  |  | 
+        vendorVnfNameFields | Yes | :ref:`vendorVnfNameFields <d_d694eebbbc0078612d2ba22e0cbf814c>` |  |  |
         voiceQualityFieldsVersion | Yes | number |  |  | version of the voiceQualityFields block
 

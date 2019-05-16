@@ -1,0 +1,561 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.3",
+    "title": "deployment-handler API",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "description": "High-level API for deploying/undeploying composed DCAE services using Cloudify Manager.\n"
+  },
+  "tags": [
+    {
+      "name": "info",
+      "description": "version and links"
+    },
+    {
+      "name": "dcae-deployments",
+      "description": "operations on dcae-deployments"
+    },
+    {
+      "name": "policy",
+      "description": "policy update API consumed by policy-handler and debug API to find policies on components"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "info"
+        ],
+        "description": "Returns version information and links to API operations",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "DispatcherInfo",
+              "type": "object",
+              "properties": {
+                "apiVersion": {
+                  "type": "string",
+                  "description": "version of API supported by this server\n"
+                },
+                "serverVersion": {
+                  "type": "string",
+                  "description": "version of software running on this server\n"
+                },
+                "links": {
+                  "type": "object",
+                  "description": "Links to API resources\n",
+                  "properties": {
+                    "info": {
+                      "type": "string",
+                      "description": "path for the server information endpoint\n"
+                    },
+                    "events": {
+                      "type": "string",
+                      "description": "path for the events endpoint\n"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dcae-deployments": {
+      "get": {
+        "tags": [
+          "dcae-deployments"
+        ],
+        "description": "List service deployments known to the orchestrator, optionally restricted to a single service type\n",
+        "parameters": [
+          {
+            "name": "serviceTypeId",
+            "description": "Service type identifier for the type whose deployments are to be listed\n",
+            "type": "string",
+            "in": "query",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. (Note that if no matching deployments are found, the request is still a success; the\ndeployments array is empty in that case.)\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEDeploymentsListResponse"
+            }
+          },
+          "500": {
+            "description": "Problem on the server side.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "502": {
+            "description": "Error reported to the dispatcher by a downstream system.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "504": {
+            "description": "Error communicating with a downstream system.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/dcae-deployments/{deploymentId}": {
+      "put": {
+        "tags": [
+          "dcae-deployments"
+        ],
+        "description": "Request deployment of a DCAE service\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "deploymentId",
+            "description": "Unique deployment identifier assigned by the API client.\n",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DCAEDeploymentRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Success:  The content that was posted is valid, the dispatcher has\n  found the needed blueprint, created an instance of the topology in the orchestrator,\n  and started an installation workflow.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEDeploymentResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request: See the message in the response for details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "409": {
+            "description": "A service with the specified deployment Id already exists.  Using PUT to update the service is not a supported operation.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "415": {
+            "description": "Bad request: The Content-Type header does not indicate that the content is\n'application/json'\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Problem on the server side.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "502": {
+            "description": "Error reported to the dispatcher by a downstream system.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "504": {
+            "description": "Error communicating with a downstream system.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "dcae-deployments"
+        ],
+        "description": "Uninstall the DCAE service and remove all associated data from the orchestrator.\n",
+        "parameters": [
+          {
+            "name": "deploymentId",
+            "description": "Deployment identifier for the service to be uninstalled.\n",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Success:  The dispatcher has initiated the uninstall operation.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEDeploymentResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request: See the message in the response for details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Problem on the server side.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "502": {
+            "description": "Error reported to the dispatcher by a downstream system.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "504": {
+            "description": "Error communicating with a downstream system.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/dcae-deployments/{deploymentId}/operation/{operationId}": {
+      "get": {
+        "tags": [
+          "dcae-deployments"
+        ],
+        "description": "Get status of a deployment operation\n",
+        "parameters": [
+          {
+            "name": "deploymentId",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "operationId",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status information retrieved successfully",
+            "schema": {
+              "$ref": "#/definitions/DCAEOperationStatusResponse"
+            }
+          },
+          "404": {
+            "description": "The operation information does not exist (possibly because the service has been uninstalled and deleted).",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Problem on the server side.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "502": {
+            "description": "Error reported to the dispatcher by a downstream system.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          },
+          "504": {
+            "description": "Error communicating with a downstream system.  See the message\nin the response for more details.\n",
+            "schema": {
+              "$ref": "#/definitions/DCAEErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/policy": {
+      "post": {
+        "tags": [
+          "policy"
+        ],
+        "description": "policy update API consumed by policy-handler",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DCAEPolicyRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "deployment-handler always responds with ok to /policy before processing the request"
+          }
+        }
+      }
+    },
+    "/policy/components": {
+      "get": {
+        "tags": [
+          "policy"
+        ],
+        "description": "debug API to find policies on components",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "deployment-handler found components with or without policies in cloudify"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "DCAEDeploymentRequest": {
+      "description": "Request for deploying a DCAE service.\n",
+      "type": "object",
+      "required": [
+        "serviceTypeId"
+      ],
+      "properties": {
+        "serviceTypeId": {
+          "description": "The service type identifier (a unique ID assigned by DCAE inventory) for the service to be deployed.\n",
+          "type": "string"
+        },
+        "inputs": {
+          "description": "Object containing inputs needed by the service blueprint to create an instance of the service.\nContent of the object depends on the service being deployed.\n",
+          "type": "object"
+        }
+      }
+    },
+    "DCAEDeploymentResponse": {
+      "description": "Response body for a PUT or DELETE to /dcae-deployments/{deploymentId}\n",
+      "type": "object",
+      "required": [
+        "requestId",
+        "links"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "string",
+          "description": "Unique identifier for the request\n"
+        },
+        "links": {
+          "description": "Links that the API client can access.\n",
+          "type": "object",
+          "properties": {
+            "self": {
+              "type": "string",
+              "description": "Link used to retrieve information about the service being deployed\n"
+            },
+            "status": {
+              "type": "string",
+              "description": "Link used to retrieve information about the status of the installation workflow"
+            }
+          }
+        }
+      }
+    },
+    "DCAEOperationStatusResponse": {
+      "description": "Response body for a request for status of an installation or uninstallation operation.\n",
+      "type": "object",
+      "required": [
+        "requestId",
+        "operationType",
+        "status"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "string",
+          "description": "A unique identifier assigned to the request.  Useful for tracing a request through logs.\n"
+        },
+        "operationType": {
+          "description": "Type of operation being reported on. (\"install\" or \"uninstall\")\n",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status of the installation or uninstallation operation.  Possible values are \"processing\",\n\"succeeded\", and \"failed\"\n",
+          "type": "string"
+        },
+        "error": {
+          "description": "If status is \"failed\", this field will be present and contain additional information about the reason the operation failed.\n",
+          "type": "string"
+        },
+        "links": {
+          "description": "If the operation succeeded, links that the client can follow to take further action.  Note that a successful \"uninstall\" operation removes the DCAE service instance completely, so there are no possible further actions, and no links.\n",
+          "type": "object",
+          "properties": {
+            "self": {
+              "type": "string",
+              "description": "Link used to retrieve information about the service.\n"
+            },
+            "uninstall": {
+              "type": "string",
+              "description": "Link used to trigger an \"uninstall\" operation for the service.  (Use the DELETE method.)"
+            }
+          }
+        }
+      }
+    },
+    "DCAEErrorResponse": {
+      "description": "Object reporting an error.\n",
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "description": "HTTP status code for the response",
+          "type": "integer"
+        },
+        "message": {
+          "description": "Human-readable description of the reason for the error",
+          "type": "string"
+        }
+      }
+    },
+    "DCAEDeploymentsListResponse": {
+      "description": "Object providing a list of deployments\n",
+      "type": "object",
+      "required": [
+        "requestId",
+        "deployments"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "string",
+          "description": "Unique identifier for the request\n"
+        },
+        "deployments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "description": "URL for the service deployment\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "DCAEPolicyBody": {
+      "description": "policy_body - the whole object received from policy-engine",
+      "type": "object",
+      "required": [
+        "policyName",
+        "policyVersion",
+        "config"
+      ],
+      "properties": {
+        "policyName": {
+          "description": "unique policy name that contains the version and extension",
+          "type": "string"
+        },
+        "policyVersion": {
+          "description": "stringified int that is autoincremented by policy-engine",
+          "type": "string"
+        },
+        "config": {
+          "description": "the policy-config - the config data provided by policy owner",
+          "type": "object"
+        }
+      }
+    },
+    "DCAEPolicy": {
+      "description": "policy object",
+      "type": "object",
+      "required": [
+        "policy_id",
+        "policy_body"
+      ],
+      "properties": {
+        "policy_id": {
+          "description": "unique identifier of policy regardless of its version",
+          "type": "string"
+        },
+        "policy_body": {
+          "$ref": "#/definitions/DCAEPolicyBody"
+        }
+      }
+    },
+    "DCAEPolicyRequest": {
+      "description": "request to update policies on DCAE components.",
+      "type": "object",
+      "required": [
+        "catch_up",
+        "latest_policies",
+        "removed_policies"
+      ],
+      "properties": {
+        "catch_up": {
+          "description": "flag to indicate whether the request contains all the policies in PDP or not",
+          "type": "boolean",
+          "default": false
+        },
+        "latest_policies": {
+          "description": "dictionary of (policy_id -> DCAEPolicy object).\nIn example: replace additionalProp1,2,3 with policy_id1,2,3 values\n",
+          "type": "object",
+          "default": {},
+          "additionalProperties": {
+            "$ref": "#/definitions/DCAEPolicy"
+          }
+        },
+        "removed_policies": {
+          "description": "whether policy was removed from policy-engine.\ndictionary of (policy_id -> true).\nIn example: replace additionalProp1,2,3 with policy_id1,2,3 values\n",
+          "type": "object",
+          "default": {},
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "errored_policies": {
+          "description": "whether policy-engine returned an error on the policy.\ndictionary of (policy_id -> true).\nIn example: replace additionalProp1,2,3 with policy_id1,2,3 values\n",
+          "type": "object",
+          "default": {},
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "errored_scopes": {
+          "description": "on cartchup - list of policy scope_prefix values on wchich the policy-engine experienced an error other than not-found data.\n",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scope_prefixes": {
+          "description": "on catchup - list of all scope_prefixes used by the policy-handler to retrieve the policies from policy-engine.\n",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,6 @@
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+
 ========
 DCAE SDK
 ========
@@ -11,7 +14,9 @@ DCAE SDK
 Overview
 ========
 
-DCAE SDK contains utilities and clients which may be used for fetching configuration from CBS, consuming messages from DMaaP, interacting with A&AI, etc. SDK is written in Java.
+DCAE SDK contains utilities and clients which may be used for fetching
+configuration from CBS, consuming messages from DMaaP, interacting with A&AI,
+etc. SDK is written in Java.
 
 Introduction
 ============
