@@ -1,11 +1,9 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
 
-========
+
 DCAE SDK
 ========
-
-:Date: 2019-04-29
 
 .. contents::
     :depth: 3
@@ -26,7 +24,7 @@ Introduction
     .. code-block:: XML
 
             <properties>
-                <sdk.version>1.1.4</sdk.version>
+                <sdk.version>1.1.6</sdk.version>
             </properties>
 
             <dependencies>

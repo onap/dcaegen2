@@ -8,7 +8,6 @@ DCAE Deployment (Installation)
    :maxdepth: 1
    :titlesonly:
 
-   ./installation_heat.rst
    ./installation_oom.rst
    ./installation_pnda.rst
    ./installation_test.rst

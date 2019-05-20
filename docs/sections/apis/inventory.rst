@@ -1,8 +1,8 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
 
-DCAE Inventory API 3.0.4
-========================
+Inventory API
+=============
 
 .. toctree::
     :maxdepth: 3
