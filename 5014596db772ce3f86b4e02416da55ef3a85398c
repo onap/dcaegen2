@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d84deb42_367fab58",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-05-20T20:39:49Z",
+      "side": 1,
+      "message": "R4 ?",
+      "revId": "5014596db772ce3f86b4e02416da55ef3a85398c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63ccbdb6_f7d2b695",
+        "filename": "docs/sections/sdk/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-05-20T20:39:49Z",
+      "side": 1,
+      "message": "couple of SDK \u003d\u003e couple of APIs in the SDK",
+      "revId": "5014596db772ce3f86b4e02416da55ef3a85398c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
