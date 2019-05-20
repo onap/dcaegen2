@@ -2,8 +2,8 @@
 .. http://creativecommons.org/licenses/by/4.0
 
 
-Service components under DCAE
-=============================
+DCAE Service components
+=======================
 
 .. Add or remove sections below as appropriate for the platform component.
 
@@ -19,6 +19,5 @@ Service components under DCAE
    ./heartbeat-ms/index.rst
    ./pm-mapper/index.rst
    ./bbs-event-processor/index.rst
-   ./sdk/index.rst
    ./son-handler/index.rst
    ./restconf/index.rst

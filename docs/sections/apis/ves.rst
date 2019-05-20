@@ -1,8 +1,8 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
 
-VES Collector 1.3.2
-===================
+VES Collector
+=============
 
 .. toctree::
     :maxdepth: 3
@@ -23,7 +23,7 @@ against VES schema before distributing to DMAAP MR topics.
 Contact Information
 ~~~~~~~~~~~~~~~~~~~
 
-dcae@lists.openecomp.org
+onap-discuss@lists.onap.org
 
 Security
 ~~~~~~~~

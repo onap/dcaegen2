@@ -2,7 +2,7 @@
 .. http://creativecommons.org/licenses/by/4.0
 
 VES Architecture
-===================
+================
 
 .. image:: ./ves-deployarch.png
 
@@ -32,8 +32,8 @@ Schema definition files are contained within VES collector gerrit repo - https:/
 Features Supported
 ==================
 - VES collector deployed as docker containers
-- Acknowledged the sender with appropriate response code  (both successful and failure)
-- Authentication of the events posted to collector
+- Acknowledgement to sender with appropriate response code  (both successful and failure)
+- Authentication of the events posted to collector (support 4 types of authentication setting)
 - Support single or batch JSON events input
 - Schema validation (against standard VES definition)
 - Multiple schema support and backward compatibility 

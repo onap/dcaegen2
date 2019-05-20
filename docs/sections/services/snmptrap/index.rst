@@ -2,8 +2,8 @@
 .. http://creativecommons.org/licenses/by/4.0
 
 
-SNMP TRAP COLLECTOR MS (DCAE)
-=============================
+SNMP Trap Collector
+===================
 
 .. Add or remove sections below as appropriate for the platform component.
 

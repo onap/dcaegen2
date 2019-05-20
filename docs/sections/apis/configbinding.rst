@@ -1,5 +1,5 @@
-Config Binding Service 2.2.3
-============================
+Config Binding Service
+======================
 
 .. toctree::
     :maxdepth: 3

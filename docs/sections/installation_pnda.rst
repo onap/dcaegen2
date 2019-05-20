@@ -1,13 +1,19 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-Installing PNDA During Helm Chart Based DCAE Deployment
-=======================================================
+Installing PNDA Platform through Helm Chart
+===========================================
 
 PNDA is integrated into ONAP as a component system of DCAE. It is possible to deploy PNDA as
 part of an ONAP OOM deployment on Openstack infrastructure. This is achieved by using a
 pnda-bootstrap container in kubernetes to deploy Openstack VMs and then install a PNDA cluster
 onto those VMs.
+
+Note: The docker images used for PNDA deployments are maintained in registry outside of ONAP currently under pndareg.ctao6.net.
+This will be moved to ONAP nexus3 repo part of future release work.
+
+* onap/org.onap.dcaegen2.deployments.pnda-bootstrap-container:5.0.0 
+* onap/org.onap.dcaegen2.deployments.pnda-mirror-container:5.0.0
 
 Requirements
 ------------

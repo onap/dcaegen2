@@ -1,8 +1,8 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
 
-deployment-handler API 3.0.3
-============================
+deployment-handler
+==================
 
 .. toctree::
     :maxdepth: 3

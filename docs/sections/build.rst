@@ -46,31 +46,33 @@ Below is a list of the repos and their sub-modules, and the language they are wr
  - dcaegen2.collectors.ves (Java)
  - dcaegen2.collectors.hv-ves (Kotlin)
  - dcaegen2.collectors.datafile (Java)
+ - dcaegen2.collectors.restconf (Java)
 
 * dcaegen2.services
 
  - dcaegen2.services.heartbeat (Python)
  - dcaegen2.services.prh (Java)
-
+ - dcaegen2.services.bbs-eventprocessor (Java)
+ - dcaegen2.services.pm-mapper (Java)
+ - dcaegen2.services.ves-mapper (Java)
+ - dcaegen2.services.son-handler (Java)
 
 * dcaegen2.deployments
 
- - bootstrap (bash)
- - cloud_init (bash)
  - scripts (bash, python)
  - tls-init-container (bash)
  - k8s-bootstrap-container (bash)
  - healthcheck-container (Node.js)
  - k8s-bootstrap-container (bash)
- - pnda-bootstrap-container (bash)
- - pnda-mirror-container (bash)
+ - tca-cdap-container (bash)
+ - multisite-init-container (python)
+ - dcae-remote-site (helm chart)
 
 * dcaegen2.platform
 
 * dcaegen2.platform.blueprints
 
  - blueprints (yaml)
- - check-blueprint-vs-input (yaml)
  - input-templates (yaml)
 
 * dcaegen2.platform.cli (Python)
@@ -90,6 +92,7 @@ Below is a list of the repos and their sub-modules, and the language they are wr
  - dcae-policy (Python)
  - docker (Python)
  - relationships (Python)
+ - k8splugin (Python)
 
 * dcaegen2.platform.policy-handler (Python)
 
@@ -102,7 +105,6 @@ Below is a list of the repos and their sub-modules, and the language they are wr
  - python-discovery-client (Python)
  - python-dockering (Python)
  - scripts (bash)
-
 
 
 Environment
