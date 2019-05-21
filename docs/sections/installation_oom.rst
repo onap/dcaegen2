@@ -4,83 +4,116 @@
 Helm Chart Based DCAE Deployment
 ================================
 
-This document describes the details of the Helm Chart based deployment process for R3 ONAP and how DCAE is deployed through this process.
+This document describes the details of the Helm chart based deployment process for R4 ONAP and how DCAE is deployed through this process.
 
 
 ONAP Deployment Overview
 ------------------------
 
-ONAP R3 is an extension of R2 Kubernetes deployment.  Kubernetes is a container orchestration technology that organizes containers into composites of various patterns for easy deployment, management, and scaling.  R2 ONAP utilized Kubernetes as the foundation for fulfilling its platform maturity promises and R3 contiunues to do so.
+ONAP R4 extends the Kubernetes deployment method introduced in R2 and continued in R3.
+Kubernetes is a container orchestration technology that organizes containers into composites of various patterns for easy deployment, management, and scaling.
+ONAP uses Kubernetes as the foundation for fulfilling its platform maturity promises.
 
-ONAP manages Kubernetes specifications using Helm Charts, under which all Kubernetes yaml-formatted resource specifications and additional files are organized into a hierarchy of charts, sub-charts, and resources.  These yaml files are further augmented with Helm's templating, which makes dependencies and cross-references of parameters and parameter derivatives among resources manageable for a large and complex Kubernetes system such as ONAP.
+ONAP manages Kubernetes specifications using Helm charts, under which all Kubernetes yaml-formatted resource specifications and additional files
+are organized into a hierarchy of charts, sub-charts, and resources.  These yaml files are further augmented with Helm's templating, which makes dependencies
+and cross-references of parameters and parameter derivatives among resources manageable for a large and complex Kubernetes system such as ONAP.
 
-At deployment time, with a single **helm install** command, Helm resolves all the templates and compiles the chart hierarchy into Kubernetes resource definitions, and invokes Kubernetes deployment operation for all the resources.
+At deployment time, with a single **helm deploy** command, Helm resolves all the templates and compiles the chart hierarchy into Kubernetes resource definitions,
+and invokes Kubernetes deployment operations for all the resources.
 
-All ONAP Helm Charts are organized under the **kubernetes** directory of the **OOM** project, where roughly each ONAP component occupied a subdirectory.  DCAE charts are placed under the **dcaegen2** directory.  DCAE Kubernetes deployment is based on the same set of Docker containers that the Heat based deployment uses, with the exception of bootstrap container and health check container are only used in Kubernetes deployment.
+All ONAP Helm charts are organized under the **kubernetes** directory of the **OOM** project, where roughly each ONAP component occupies a subdirectory.
+DCAE charts are placed under the **dcaegen2** directory.
 
 The PNDA data platform is an optional DCAE component that is placed under the **pnda**
 directory. Details for how to configure values to enable PNDA installation during Helm install
-are described in :doc:`Installing PNDA During Helm Chart Based DCAE Deployment
+are described in `Installing PNDA During Helm Chart Based DCAE Deployment
 <installation_pnda>`.
 
 DCAE Chart Organization
 -----------------------
 
-Following Helm conventions, each Helm chart directory usually consists of the following files and subdirectories:
+Following Helm conventions, the DCAE Helm chart directory (``oom/kubernetes/dcaegen2``) consists of the following files and subdirectories:
 
-* Chart.yaml: meta data;
-* requirements.yaml: dependency charts;
-* values.yaml: values for Helm templating engine to expand templates;
-* resources: subdirectory for additional resource definitions such as configuration, scripts, etc;
-* templates: subdirectory for Kubernetes resource definition templates;
-* charts: subdirectory for sub-charts.
+* ``Chart.yaml``: metadata.
+* ``requirements.yaml``: dependency charts.
+* ``values.yaml``: values for Helm templating engine to expand templates.
+* ``resources``: subdirectory for additional resource definitions such as configuration, scripts, etc.
+* ``templates``: subdirectory for Kubernetes resource definition templates.
+* ``charts``: subdirectory for sub-charts.
 
 The dcaegen2 chart has the following sub-charts:
 
-* dcae-bootstrap: a Kubernetes job that deploys additional DCAE components;
-* dcae-cloudify-manager: a Kubernetes deployment of a Cloudify Manager;
-* dcae-healthcheck: a Kubernetes deployment that provides a DCAE health check API;
-* dcae-redis: a Kubernetes deployment of a Redis cluster.
-
+* ``dcae-bootstrap``: deploys the DCAE bootstrap service that performs some DCAE initialization and deploys additional DCAE components.
+* ``dcae-cloudify-manager``: deploys the DCAE Cloudify Manager instance.
+* ``dcae-config-binding-service``: deploys the DCAE config binding service.
+* ``dcae-deployment-handler``: deploys the DCAE deployment handler service.
+* ``dcae-healthcheck``: deploys the DCAE healthcheck service that provides an API to check the health of all DCAE components.
+* ``dcae-policy-handler``: deploys the DCAE policy handler service.
+* ``dcae-redis``: deploys the DCAE Redis cluster.
+* ``dcae-servicechange-handler``: deploys the DCAE service change handler service.  A subchart (``dcae-inventory-api``) deploys the DCAE inventory API service.
 
 DCAE Deployment
 ---------------
 
-At deployment time, when the **helm install** command is executed, all DCAE resources defined within charts under the OOM Chart hierarchy are deployed.  They are the 1st order components, namely the Cloudify Manager deployment, the Health Check deployment, the Redis cluster deployment, and the Bootstrap job.  In addition, a Postgres database deployment is also launched, which is specified as a dependency of the DCAE Bootstrap job.  These resources will show up as the following, where the name before / indicates resource type and the term "dev" is a tag that **helm install** command uses as "release name":
+At deployment time, when the **helm deploy** command is executed,
+all DCAE resources defined within the subcharts above are deployed.
+These include:
 
-  * deploy/dev-dcae-cloudify-manager;
-  * deploy/dev-dcae-healthcheck;
-  * statefulsets/dev-dcae-redis;
-  * statefulsets/dev-dcae-db;
-  * job/dev-dcae-bootstrap.
+* the DCAE bootstrap service
+* the DCAE healthcheck service
+* the DCAE platform components:
 
-In addition, DCAE operations depends on a Consul server cluster.  For ONAP OOM deployment, since Consul cluster is provided as a shared resource, its charts are defined under the consul direcory, not part of DCAE charts.
+  * Cloudify Manager
+  * Config binding service
+  * Deployment handler
+  * Policy handler
+  * Service change handler
+  * Inventory API service (launched as a subchart of service change handler)
+  * Inventory postgres database service (launched as a dependency of the inventory API service)
+  * DCAE postgres database service (launched as a dependency of the bootstrap service)
+  * DCAE Redis cluster
 
-The dcae-bootstrap job has a number of prerequisites because the subsequently deployed DCAE components depends on a number of resources having entered their normal operation state.  DCAE bootstrap job will not start before these resources are ready.  They are:
+Some of the DCAE subcharts include an initContainer that checks to see if
+other services that they need in order to run have become ready.  The installation
+of these subcharts will pause until the needed services are available.
 
-  * dcae-cloudify-manager;
-  * consul-server;
-  * msb-discovery;
-  * kube2msb.
+In addition, DCAE operations depends on a Consul server cluster.
+For ONAP OOM deployment, the Consul cluster is provided as a shared
+resource. Its charts are defined under the ``oom/kubernetes/consul``
+directory, not as part of the DCAE chart hierarchy.
 
-Once started, the DCAE bootstrap job will call Cloudify Manager to deploy a series of Blueprints which specify the additional DCAE R3 components.  These Blueprints are almost identical to the Docker container Blueprints used by DACE R1 and Heat based R2 deployment, except that they are using the k8splugin instead of dockerplugin.  The k8splugin is a major contribution of DCAE R2.  It is a Cloudify Manager plugin that is capable of expanding a Docker container node definition into a Kubernetes deployment definition, with enhancements such as replica scaling, ONAP logging sidecar, MSB registration, etc.
+The dcae-bootstrap service has a number of prerequisites because the subsequently deployed DCAE components depends on a number of resources having entered their normal operation state.  DCAE bootstrap job will not start before these resources are ready.  They are:
 
-The additional DCAE components launched into ONAP deployment are:
+  * dcae-cloudify-manager
+  * consul-server
+  * msb-discovery
+  * kube2msb
+  * dcae-config-binding-service
+  * dcae-db
 
-  * deploy/dep-config-binding-service;
-  * deploy/dep-dcae-tca-analytics;
-  * deploy/dep-dcae-ves-collector;
-  * deploy/dep-deployment-handler;
-  * deploy/dep-holmes-engine-mgmt;
-  * deploy/dep-holmes-rule-mgmt;
-  * deploy/dep-inventory;
-  * deploy/dep-policy-handler;
-  * deploy/dep-pstg-write;
-  * deploy/dep-service-change-handler;
-  * deploy/dep-dcae-snmptrap-collector;
-  * deploy/dep-dcae-prh;
-  * deploy/dep-dcae-hv-ves-collector.
+Once started, the DCAE bootstrap service will call Cloudify Manager to deploy
+a series of blueprints which specify the additional DCAE R4 components.
+These blueprints use the DCAE Kubernetes plugin (``k8splugin``) to deploy
+Docker images into the ONAP Kubernetes cluster.  For each component, the plugin
+creates a Kubernetes deployment and other Kubernetes resources (services, volumes, logging sidecar, etc.)
+as needed.
 
+The DCAE bootstrap service creates the following Kubernetes deployments:
+
+* deploy/dep-dcae-dashboard
+* deploy/dep-dcae-hv-ves-collector
+* deploy/dep-dcae-prh
+* deploy/dep-dcae-snmptrap-collector
+* deploy/dep-dcae-tca-analytics
+* deploy/dep-dcae-ves-collector
+* deploy/dep-holmes-engine-mgmt
+* deploy/dep-holmes-rule-mgmt
+
+After deploying all of the blueprints, the DCAE bootstrap service
+continues to run.   The bootstrap container can be useful for
+troubleshooting or for launching additional components.  The bootstrap
+container logs (accessed using the ``kubectl logs`` command) show the
+details of all of the component deployments.
 
 DCAE Configuration
 ------------------
@@ -96,38 +129,50 @@ Deployment time configuration of DCAE components are defined in several places.
      * In a Helm chart hierarchy, values defined in values.yaml files in higher level supersedes values defined in values.yaml files in lower level;
      * Helm command line supplied values supersedes values defined in any values.yaml files.
 
-In addition, for DCAE components deployed through Cloudify Manager Blueprints, their configuration parameters are defined in the following places:
+In addition, for DCAE components deployed through Cloudify Manager blueprints, their configuration parameters are defined in the following places:
 
-     * The Blueprint files can contain static values for configuration parameters;
-        * The Blueprint files are defined under the blueprints directory of the dcaegen2/platform/blueprints repo, named with "k8s" prefix.
-     * The Blueprint files can specify input parameters and the values of these parameters will be used for configuring parameters in Blueprints.  The values for these input parameters can be supplied in several ways as listed below in the order of precedence (low to high):
-        * The Blueprint files can define default values for the input parameters;
-        * The Blueprint input files can contain static values for input parameters of Blueprints.  These input files are provided as config resources under the dcae-bootstrap chart;
-        * The Blueprint input files may contain Helm templates, which are resolved into actual deployment time values following the rules for Helm values.
+     * The blueprint files can contain static values for configuration parameters;
+        * The blueprint files are defined under the ``blueprints`` directory of the ``dcaegen2/platform/blueprints`` repo, named with "k8s" prefix.
+     * The blueprint files can specify input parameters and the values of these parameters will be used for configuring parameters in Blueprints.  The values for these input parameters can be supplied in several ways as listed below in the order of precedence (low to high):
+        * The blueprint files can define default values for the input parameters;
+        * The blueprint input files can contain static values for input parameters of blueprints.  These input files are provided as config resources under the dcae-bootstrap chart;
+        * The blueprint input files may contain Helm templates, which are resolved into actual deployment time values following the rules for Helm values.
 
 
-Now we walk through an example, how to configure the Docker image for the Policy Handler which is deployed by Cloudify Manager.  
+Now we walk through an example, how to configure the Docker image for the DCAE dashboard, which is deployed by Cloudify Manager.
 
-In the k8s-policy_handler.yaml Blueprint, the Docker image to use is defined as an input parameter with a default value:
-  **policy_handler_image**:
-    description: Docker image for policy_handler
-    default: 'nexus3.onap.org:10001/onap/org.onap.dcaegen2.platform.policy-handler:2.4.3'
+In the ``k8s-dashboard.yaml-template`` blueprint template, the Docker image to use is defined as an input parameter with a default value:
 
-Then in the input file, oom/kubernetes/dcaegen2/charts/dcae-bootstrap/resources/inputs/k8s-policy_handler-inputs.yaml, it is defined again as:
-  **policy_handler_image**: {{ include "common.repository" . }}/{{ .Values.componentImages.policy_handler }}
+.. code-block::
 
-Thus, when common.repository and componentImages.policy_handler are defined in the values.yaml files, their values will be plugged in here and the composition policy_handler_image will be passed to Policy Handler Blueprint as the Docker image tag to use instead of the default value in the Blueprint.
+  dashboard_docker_image:
+    description: 'Docker image for dashboard'
+    default: 'nexus3.onap.org:10001/onap/org.onap.ccsdk.dashboard.ccsdk-app-os:1.1.0-SNAPSHOT-latest'
 
-Indeed the componentImages.ves value is provided in the oom/kubernetes/dcaegen2/charts/dcae-bootstrap/values.yaml file:
+Then in the input file, ``oom/kubernetes/dcaegen2/charts/dcae-bootstrap/resources/inputs/k8s-dashboard-inputs.yaml``,
+it is defined again as:
+
+.. code-block::
+
+  dashboard_docker_image: {{ include "common.repository" . }}/{{ .Values.componentImages.dashboard }}
+
+Thus, when ``common.repository`` and ``componentImages.policy_handler`` are defined in the ``values.yaml`` files,
+their values will be plugged in here and the resulting ``policy_handler_image`` value
+will be passed to the Policy Handler blueprint as the Docker image tag to use instead of the default value in the blueprint.
+
+Indeed the ``componentImages.dashboard`` value is provided in the ``oom/kubernetes/dcaegen2/charts/dcae-bootstrap/values.yaml`` file:
+
+.. code-block::
+
   componentImages:
-    policy_handler: onap/org.onap.dcaegen2.platform.policy-handler:2.4.5
+    dashboard: onap/org.onap.ccsdk.dashboard.ccsdk-app-os:1.1.0
 
-The final result is that when DCAE bootstrap calls Cloudify Manager to deploy Policy Handler, the 2.4.5 image will be deployed.
+The final result is that when DCAE bootstrap calls Cloudify Manager to deploy the DCAE dashboard, the 1.1.0 image will be deployed.
 
 DCAE Service Endpoints
 ----------------------
 
-Below is a table of default hostnames and ports for DCAE component service endpoints in Kuubernetes deployment:
+Below is a table of default hostnames and ports for DCAE component service endpoints in Kubernetes deployment:
     ==================   =================================   ======================================================
     Component            Cluster Internal (host:port)        Cluster external (svc_name:port)
     ==================   =================================   ======================================================
@@ -135,14 +180,14 @@ Below is a table of default hostnames and ports for DCAE component service endpo
     HV-VES               dcae-hv-ves-collector:6061          xdcae-hv-ves-collector.onap:30222
     TCA                  dcae-tca-analytics:11011            xdcae-tca-analytics.onap:32010
     PRH                  dcae-prh:8100                       NA
-    DataFileCollector    dcae-datafile-collector:8443/8100   xdcae-datafile-collector:8433:30224/TCP,8100:30223/TCP
-    SNMPTrap             dcae-snmptrap-collector:6162/udp    NA
+    SNMPTrap             dcae-snmptrap-collector:6162/udp    xdcae-snmptrap-collector:30470/UDP
     Policy Handler       policy-handler:25577                NA
     Deployment Handler   deployment-handler:8443             NA
     Inventory            inventory:8080                      NA
-    Config binding       config-binding-service:10000        NA
+    Config binding       config-binding-service:10000        config-binding-servicee:30415
     DCAE Healthcheck     dcae-healthcheck:80                 NA
     Cloudify Manager     dcae-cloudify-manager:80            NA
+    DCAE Dashboard       dcae-dashboard:8080/8443            xdcae-dashboard:30418/30419
     ==================   =================================   ======================================================
 
 In addition, a number of ONAP service endpoints that are used by DCAE components are listed as follows
@@ -162,3 +207,38 @@ for reference by DCAE developers and testers:
     AAI                    aai:8443                          aai:30233
     ====================   ============================      ================================
 
+Uninstalling DCAE
+-----------------
+
+All of the DCAE components deployed using the OOM Helm charts will be
+deleted by the ``helm undeploy`` command.  This command can be used to
+uninstall all of ONAP by undeploying the top-level Helm release that was
+created by the ``helm deploy`` command.  The command can also be used to
+uninstall just DCAE, by having the command undeploy the `top_level_release_name`-``dcaegen2``
+Helm sub-release.
+
+Helm will undeploy only the components that were originally deployed using
+Helm charts.  Components deployed by Cloudify Manager are not deleted by
+the Helm operations.
+
+When uninstalling all of ONAP, it is sufficient to delete the namespace
+used for the deployment (typically ``onap``) after running the undeploy
+operation.  Deleting the namespace will get rid of any remaining resources
+in the namespace, including the components deployed by Cloudify Manager.
+
+When uninstalling DCAE alone, deleting the namespace would delete the
+rest of ONAP as well.  To delete DCAE alone, and to make sure all of the
+DCAE components deployed by Cloudify Manager are uninstalled:
+
+* Find the Cloudify Manager pod identifier, using a command like:
+
+  ``kubectl -n onap get pods | grep dcae-cloudify-manager``
+* Execute the DCAE cleanup script on the Cloudify Manager pod, using a command like:
+
+  ``kubectl -n onap exec`` `cloudify-manager-pod-id` ``-- /scripts/dcae-cleanup.sh``
+* Finally, run ``helm undeploy`` against the DCAE Helm subrelease
+
+The DCAE cleanup script uses Cloudify Manager and the DCAE Kubernetes
+plugin to instruct Kubernetes to delete the components deployed by Cloudify
+Manager.  This includes the components deployed when the DCAE bootstrap
+service ran and any components deployed after bootstrap.
