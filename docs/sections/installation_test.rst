@@ -1,5 +1,5 @@
-ONAP DCAE Deployment Validation
-===============================
+DCAE Deployment Validation
+==========================
 
 
 Check Deployment Status
@@ -8,7 +8,7 @@ Check Deployment Status
 The healthcheck service is exposed as a Kubernetes ClusterIP Service named
 `dcae-healthcheck`.   The service can be queried for status as shown below.
 
-.. code-block::
+.. code-block:: json
 
    $ curl dcae-healthcheck
    {

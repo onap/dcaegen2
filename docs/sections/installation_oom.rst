@@ -1,13 +1,13 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-Helm Chart Based DCAE Deployment
-================================
+DCAE Deployment (using Helm and Cloudify)
+=========================================
 
 This document describes the details of the Helm chart based deployment process for R4 ONAP and how DCAE is deployed through this process.
 
 
-ONAP Deployment Overview
+DCAE Deployment Overview
 ------------------------
 
 ONAP R4 extends the Kubernetes deployment method introduced in R2 and continued in R3.
@@ -24,10 +24,15 @@ and invokes Kubernetes deployment operations for all the resources.
 All ONAP Helm charts are organized under the **kubernetes** directory of the **OOM** project, where roughly each ONAP component occupies a subdirectory.
 DCAE charts are placed under the **dcaegen2** directory.
 
+All DCAE Services are deployed through Cloudify Blueprint. The default ONAP DCAE deployment includes small subset of DCAE services deployed through Bootstrap pod to meet
+ONAP Integration usecases. Optinally operators can deploy on-demand other MS required for their usecases as described in `On-demand MS Installation
+<installation_MS_ondemand.rst>`_.
+
 The PNDA data platform is an optional DCAE component that is placed under the **pnda**
 directory. Details for how to configure values to enable PNDA installation during Helm install
-are described in `Installing PNDA During Helm Chart Based DCAE Deployment
-<installation_pnda>`.
+are described in `Installing PNDA through Helm Chart
+<installation_pnda.rst>`_.
+
 
 DCAE Chart Organization
 -----------------------
@@ -143,7 +148,7 @@ Now we walk through an example, how to configure the Docker image for the DCAE d
 
 In the ``k8s-dashboard.yaml-template`` blueprint template, the Docker image to use is defined as an input parameter with a default value:
 
-.. code-block::
+.. code-block:: yaml
 
   dashboard_docker_image:
     description: 'Docker image for dashboard'
@@ -152,7 +157,7 @@ In the ``k8s-dashboard.yaml-template`` blueprint template, the Docker image to u
 Then in the input file, ``oom/kubernetes/dcaegen2/charts/dcae-bootstrap/resources/inputs/k8s-dashboard-inputs.yaml``,
 it is defined again as:
 
-.. code-block::
+.. code-block:: yaml
 
   dashboard_docker_image: {{ include "common.repository" . }}/{{ .Values.componentImages.dashboard }}
 
@@ -162,7 +167,7 @@ will be passed to the Policy Handler blueprint as the Docker image tag to use in
 
 Indeed the ``componentImages.dashboard`` value is provided in the ``oom/kubernetes/dcaegen2/charts/dcae-bootstrap/values.yaml`` file:
 
-.. code-block::
+.. code-block:: yaml
 
   componentImages:
     dashboard: onap/org.onap.ccsdk.dashboard.ccsdk-app-os:1.1.0
