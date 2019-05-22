@@ -21,3 +21,4 @@ DCAE Service components
    ./bbs-event-processor/index.rst
    ./son-handler/index.rst
    ./restconf/index.rst
+   ./tca-cdap/index.rst

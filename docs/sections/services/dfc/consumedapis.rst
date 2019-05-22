@@ -1,8 +1,8 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-Paths
-=====
+API
+===
 
 GET /events/unauthenticated.VES_NOTIFICATION_OUTPUT
 ---------------------------------------------------

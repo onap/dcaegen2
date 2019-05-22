@@ -5,11 +5,6 @@
 BBS-EventProcessor
 ==================
 
-:Date: 2019-06-06
-
-.. contents::
-    :depth: 3
-..
 
 Overview
 ========

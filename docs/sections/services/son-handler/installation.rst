@@ -1,6 +1,5 @@
-
-Instalation Steps
------------------
+Installation
+============
 
 SON handler microservice can be deployed using cloudify blueprint using bootstrap container of an existing DCAE deployment
 
