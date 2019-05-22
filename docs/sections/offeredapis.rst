@@ -1,5 +1,5 @@
-DCAEGEN2 Components Offered APIs
-================================
+Offered APIs
+============
 
 .. toctree::
    :maxdepth: 1
