@@ -1,13 +1,13 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-Helm Chart Based DCAE Deployment
-================================
+DCAE Deployment (using Helm and Cloudify)
+=========================================
 
 This document describes the details of the Helm chart based deployment process for R4 ONAP and how DCAE is deployed through this process.
 
 
-ONAP Deployment Overview
+DCAE Deployment Overview
 ------------------------
 
 ONAP R4 extends the Kubernetes deployment method introduced in R2 and continued in R3.
@@ -24,10 +24,15 @@ and invokes Kubernetes deployment operations for all the resources.
 All ONAP Helm charts are organized under the **kubernetes** directory of the **OOM** project, where roughly each ONAP component occupies a subdirectory.
 DCAE charts are placed under the **dcaegen2** directory.
 
+All DCAE Services are deployed through Cloudify Blueprint. The default ONAP DCAE deployment includes small subset of DCAE services deployed through Bootstrap pod to meet
+ONAP Integration usecases. Optinally operators can deploye on-deman other MS required for their usecases as described in `On-demand MS Installation
+<installation_MS_ondemand.rst>`.
+
 The PNDA data platform is an optional DCAE component that is placed under the **pnda**
 directory. Details for how to configure values to enable PNDA installation during Helm install
 are described in `Installing PNDA During Helm Chart Based DCAE Deployment
-<installation_pnda>`.
+<installation_pnda.rst>`.
+
 
 DCAE Chart Organization
 -----------------------
