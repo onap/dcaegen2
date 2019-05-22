@@ -26,7 +26,7 @@ DCAE R4 improves upon previous release with the following new features:
     - Collectors
         - RESTConf collector 
     - Event Processors
-        - VES/Universal Mapper
+        - VES Mapper
         - 3gpp PM-Mapper
         - BBS Event processor
     - Analytics/RCA
@@ -133,7 +133,7 @@ The following components are introduced in R4
        - Docker container tag: onap/org.onap.dcaegen2.services.components.bbs-event-processor:1.0.0
        - Description: Handles PNF-Reregistration and CPE authentication events and generate CL events     
     - SON-Handler
-       - Docker container tag: onap/org.onap.dcaegen2.services.son-handler:1.0.1
+       - Docker container tag: onap/org.onap.dcaegen2.services.son-handler:1.0.2
        - Description: Supports PC-ANR optimization analysis and generating CL events output     
     - Heartbeat MS
        - Docker container tag: onap/org.onap.dcaegen2.services.heartbeat:2.1.0
@@ -171,7 +171,7 @@ The following components are upgraded from R3
        - Docker container image tag: onap/org.onap.dcaegen2.deployments.tca-cdap-container:1.1.2
        - Description: Config updates. Replaced Hadoop VM Cluster based file system with regular host file system; repackaged full TCA-CDAP stack into Docker container; transactional state separation from TCA in-memory to off-node Redis cluster for supporting horizontal scaling.
     - DataFile Collector
-       - Docker container tag: onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.1.2
+       - Docker container tag: onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.1.3
        - Description : Code optimization, bug fixes, logging and performance improvement
     - PNF Registrator handler
        - Docker container tag: onap/org.onap.dcaegen2.services.prh.prh-app-server:1.2.3

@@ -26,7 +26,7 @@ blueprints after the initial DCAE installation.
 The healthcheck service is exposed as a Kubernetes ClusterIP Service named
 `dcae-healthcheck`.   The service can be queried for status as shown below.
 
-.. code-block::
+.. code-block::json
 
    $ curl dcae-healthcheck
    {

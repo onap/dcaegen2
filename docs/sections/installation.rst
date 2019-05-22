@@ -9,6 +9,6 @@ DCAE Deployment (Installation)
    :titlesonly:
 
    ./installation_oom.rst
+   ./installation_MS_ondemand.rst
    ./installation_pnda.rst
    ./installation_test.rst
-
