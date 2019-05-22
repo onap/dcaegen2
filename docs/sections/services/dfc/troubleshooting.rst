@@ -1,3 +1,6 @@
+Trobleshooting
+==============
+
 In order to find the origin of an error, we suggest to use the logs resulting from tracing, which needs to be activated.
 
 Activate tracing: Spring actuator
