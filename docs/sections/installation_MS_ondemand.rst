@@ -25,7 +25,7 @@ Following additional MS are available for on-demand deployment as necessary for 
 
    Mapper MS Installation <./services/mapper/installation>
    DFC MS Installation <./services/dfc/installation>
-   Heartbeat MS Installation <./services/heartbeat/installation>
+   Heartbeat MS Installation <./services/heartbeat-ms/installation>
    PM-Mapper MS Installation <./services/pm-mapper/installation>
    BBS EventProcessor MS Installation <./services/bbs-event-processor/installation>
    Son-Handler MS Installation <./services/son-handler/installation>

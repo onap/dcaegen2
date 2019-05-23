@@ -15,13 +15,8 @@ Consumed APIs
 
 DCAEGEN2 Components making following API calls into other ONAP components.
 
-DMaaP Message Router
-* https://docs.onap.org/en/latest/submodules/dmaap/messagerouter/messageservice.git/docs/offeredapis/offeredapis.html
-DMaaP Data Router
-* https://docs.onap.org/en/latest/submodules/dmaap/datarouter.git/docs/offeredapis.html
-Policy
-* https://docs.onap.org/en/latest/submodules/policy/engine.git/docs/platform/offeredapis.html
-SDC
-* https://docs.onap.org/en/latest/submodules/sdc.git/docs/offeredapis.html
-A&AI
-* https://docs.onap.org/en/latest/submodules/aai/aai-common.git/docs/platform/offeredapis.html
+* `DMaaP Message Router <https://docs.onap.org/en/latest/submodules/dmaap/messagerouter/messageservice.git/docs/offeredapis/offeredapis.html>`_
+* `DMaaP Data Router <https://docs.onap.org/en/latest/submodules/dmaap/datarouter.git/docs/offeredapis.html>`_
+* `Policy <https://docs.onap.org/en/latest/submodules/policy/engine.git/docs/platform/offeredapis.html>`_
+* `SDC <https://docs.onap.org/en/latest/submodules/sdc.git/docs/offeredapis.html>`_
+* `A&AI <https://docs.onap.org/en/latest/submodules/aai/aai-common.git/docs/platform/offeredapis.html>`_

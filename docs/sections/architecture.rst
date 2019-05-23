@@ -5,15 +5,30 @@
 Architecture
 ============
 
-Data Collection Analytics and Events (DCAE) is the primary data collection and analysis system of ONAP. DCAE architecture comprises of DCAE Platform and DCAE Service components making DCAE flexible, elastic, and expansive enough for supporting the potentially infinite number of ways of constructing intelligent and automated control loops on distributed and heterogeneous infrastructure. 
+Data Collection Analytics and Events (DCAE) is the primary data collection and analysis system of ONAP. DCAE architecture comprises of DCAE Platform and 
+DCAE Service components making DCAE flexible, elastic, and expansive enough for supporting the potentially infinite number of ways of constructing intelligent 
+and automated control loops on distributed and heterogeneous infrastructure. 
 
-DCAE Platform supports the functions to deploy, host and perform LCM applications of Service components. DCAE Platform components enable model driven deployment of service components and middleware infrastructures that service components depend upon, such as special storage and computation platforms.  When triggered by an invocation call (such as CLAMP or via DCAE Dashboard),  DCAE Platform follows the TOSCA model of the control loop that is specified by the triggering call, interacts with the underlying networking and computing infrastructure such as OpenSatck installations and Kubernetes clusters to deploy and configure the virtual apparatus (i.e. the collectors, the analytics, and auxiliary microservices) that are needed to form the control loop, at locations that requested.  DCAE Platform also provisions DMaaP topics and manages the distribution scopes of the topics following the prescription of the control loop model by interacting with controlling function of DMaaP.
+DCAE Platform supports the functions to deploy, host and perform LCM applications of Service components. DCAE Platform components enable model driven deployment of 
+service components and middleware infrastructures that service components depend upon, such as special storage and computation platforms.  When triggered by an 
+invocation call (such as CLAMP or via DCAE Dashboard),  DCAE Platform follows the TOSCA model of the control loop that is specified by the triggering call, 
+interacts with the underlying networking and computing infrastructure such as OpenSatck installations and Kubernetes clusters to deploy and configure the virtual 
+apparatus (i.e. the collectors, the analytics, and auxiliary microservices) that are needed to form the control loop, at locations that requested.  
+DCAE Platform also provisions DMaaP topics and manages the distribution scopes of the topics following the prescription of the control loop model by interacting 
+with controlling function of DMaaP.
 
-DCAE Service components are the  functional entities that realize the collection and analytics needs of ONAP control loops.  They include the collectors for various data collection needs, event processors for data standardization,  analytics that assess collected data, and various auxiliary microservices that assist data collection and analytics, and support other ONAP functions.  Service components and DMaaP buses form the "data plane" for DCAE, where DCAE collected data is transported among different DCAE service components.
+DCAE Service components are the  functional entities that realize the collection and analytics needs of ONAP control loops.  They include the collectors for various 
+data collection needs, event processors for data standardization,  analytics that assess collected data, and various auxiliary microservices that assist data 
+collection and analytics, and support other ONAP functions.  Service components and DMaaP buses form the "data plane" for DCAE, where DCAE collected data is 
+transported among different DCAE service components.
 
-DCAE service components configuration are stored under Key-Value store service, embodied by a Consul cluster. During deployment, DCAE platform (via Cloudify plugin) stores service component configuration under Consul for each deployment/instance (identified by ServiceComponentName). All DCAE components during startup will acess these configuration through ConfigBindingService api's to load deployment configuration and watch for any subsequent update.  
-
-DCAE components use Consul's distributed K-V store service to distribute and manage component configurations where each key is based on the unique identity of a DCAE component, and the value is the configuration for the corresponding component.  DCAE platform creates and updates the K-V pairs based on information provided as part of the control loop blueprint, or received from other ONAP components such as Policy Framework and CLAMP.  Either through periodically polling or proactive pushing, the DCAE components get the configuration updates in realtime and apply the configuration updates.  DCAE Platform also offers dynamic template resolution for configuration parameters that are dynamic and only known by the DCAE platform, such as dynamically provisioned DMaaP topics. This approach standardizes component deployment and configuration management for DCAE service components in multi-site deployment.  
+DCAE use Consul's distributed K-V store service to manage component configurations where each key is based on the unique identity of a 
+DCAE component (identified by ServiceComponentName), and the value is the configuration for the corresponding component. The K-V store for each service components is
+created during deployment. DCAE platform creates and updates the K-V pairs based on information provided as part of the control loop blueprint deployment, or through
+ a notification/trigger received from other ONAP components such as Policy Framework and CLAMP.  Either through periodically polling or proactive pushing, the DCAE
+ components get the configuration updates in realtime and apply the configuration updates.  DCAE Platform also offers dynamic template resolution for configuration 
+parameters that are dynamic and only known by the DCAE platform, such as dynamically provisioned DMaaP topics. This approach standardizes component deployment and
+configuration management for DCAE service components in multi-site deployment.
 
 
 DCAE R4 Components
@@ -24,7 +39,7 @@ The following list displays the details of what are included in ONAP DCAE R4.  A
 - DCAE Platform
     - Core Platform
         - Cloudify Manager: TOSCA model executor.  Materializes TOSCA models of control loop, or Blueprints, into properly configured and managed virtual DCAE functional components.
-        - Plugins (K8s, Dmaap, Policy, Clamp, Pg)
+        - Plugins (K8S, Dmaap, Policy, Clamp, Postgres)
     - Extended Platform
         - Configuration Binding Service: Agent for service component configuration fetching; providing configuration parameter resolution.
         - Deployment Handler: API for triggering control loop deployment based on control loop's TOSCA model.
@@ -56,7 +71,6 @@ The following list displays the details of what are included in ONAP DCAE R4.  A
         - BBS-EventProcessor Service
         
 
-
 The figure below shows the DCAE R4 architecture and how the components work with each other.  The components on the right constitute the Platform/controller components which are statically deployed. The components on the right represent the services which can be both deployed statically or dynamically (via CLAMP)
 
 .. image:: images/R4_architecture_diagram.png
@@ -69,7 +83,7 @@ Because DCAE service components are deployed on-demand following the control loo
 
 For R4, ONAP supports deployment via OOM Helm Chart method and Heat deployment support is discontinued. DCAE Platform components are deployed via Helm charts - this includes Cloudify Manager, ConfigBinding service, ServiceChange Handler, Policy Handler and Inventory.   Once DCAE platform components are up and running, rest of DCAE service components required for ONAP  flow are deployed via bootstrap POD, which invokes Cloudify Manager API with Blueprints for various DCAE components that are needed for the built-in collections and control loops flow support.  
 
-To keep the ONAP footprint minimal, only minmial set MS (required for ONAP Integration usecases) are deployed via bootstrap pod. Rest of service blueprints are available for operator to deploy on-demand as required. 
+To keep the ONAP footprint minimal, only minimal set of MS (required for ONAP Integration usecases) are deployed via bootstrap pod. Rest of service blueprints are available for operator to deploy on-demand as required. 
 
 The PNDA platform service is an optional component that can be installed when using the OOM Helm Chart installation method on Openstack based Kubernetes infrastructure.
 

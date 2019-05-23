@@ -1,18 +1,21 @@
 Installation
 ============
 
-Sample docker run command could be -
-.. code-block:: bash
-	docker run onap/org.onap.dcaegen2.collectors.restconfcollector
+Standalone  docker run command 
+   .. code-block:: bash
 
-For Dublin release, it will be a DCAE component that can dynamically be deployed via Cloudify blueprint installation.
+	    docker run onap/org.onap.dcaegen2.collectors.restconfcollector
+
+For Dublin release, RESTConf collector will be a DCAE component that can dynamically be deployed via Cloudify blueprint installation.
+
+
 Steps to deploy are shown below
 
+- Enter the Bootstrap POD using kubectl
+
 - Transfer blueprint component file in DCAE bootstrap POD under /blueprints directory. Blueprint can be found in
+     https://git.onap.org/dcaegen2/collectors/restconf/tree/dpo/blueprints/k8s-rcc-policy.yaml-template?h=dublin
 
-     https://git.onap.org/dcaegen2/collectors/restconf/tree/dpo/blueprints/k8s-rcc-policy.yaml-template?h=master
-
-- Enter the Bootstrap POD
 - Validate blueprint
     .. code-block:: bash
         

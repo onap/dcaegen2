@@ -6,16 +6,16 @@ To build just the TCA component, run the following maven command
 `mvn clean install`   
 
  
-Maven GroupId:
-==============
+Maven GroupId
+-------------
 
 org.onap.dcaegen2.analytics.tca
 
-Maven Parent ArtifactId:
-----------------
+Maven Parent ArtifactId
+-----------------------
 dcae-analytics
 
-Maven Children Artifacts:
+Maven Children Artifacts
 ------------------------
 1. dcae-analytics-test: Common test code for all DCAE Analytics Modules
 2. dcae-analytics-model: Contains models (e.g. Common Event Format) which are common to DCAE Analytics
@@ -29,7 +29,10 @@ Maven Children Artifacts:
 
 
 API Endpoints
-=============
+-------------
+
+For deployment into CDAP,  following API's can be used to deploy TCA application.
+
 # create namespace
 curl -X PUT http://<k8s-clusterIP>:11015/v3/namespaces/cdap_tca_hi_lo
 
@@ -60,8 +63,7 @@ curl http://<k8s-clusterIP>:11015/v3/namespaces/cdap_tca_hi_lo/apps/dcae-tca/flo
 
 
 TCA CDAP Container
-=================
-
+------------------
 If new jar is generated, corresponding version should be updated into https://git.onap.org/dcaegen2/deployments/tree/tca-cdap-container.
 
 Following files should be revised

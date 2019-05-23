@@ -15,7 +15,7 @@ VES-Mapper can be deployed individually though it will throw errors if it can't 
 **Blueprint/model/image**
 
 VES-Mapper blueprint is available @ 
-https://gerrit.onap.org/r/gitweb?p=dcaegen2/services/mapper.git;a=blob;f=UniversalVesAdapter/dpo/blueprints/k8s-vesmapper.yaml-template.yaml;h=refs/head/master
+https://git.onap.org/dcaegen2/services/mapper/tree/UniversalVesAdapter/dpo/blueprints/k8s-vesmapper.yaml-template.yaml?h=dublin
 
 VES-Mapper docker image is available in Nexus repo @ `nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.0-SNAPSHOT <nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.0-SNAPSHOT>`_
 
@@ -33,9 +33,7 @@ VES-Mapper docker image is available in Nexus repo @ `nexus3.onap.org:10001/onap
 
 update these ``urls`` as per your DMaaP configurations in the blueprint. 
 
-*b. Verify the Smooks mapping files in the blueprint as per the usecase. Blueprint contains default mapping file for each supported collector ( SNMP Collector and RESTConf collector currently) which may serve the purpose for the usecase.
-
-``mapping-files`` in ``collectors`` contains the contents of the mapping file.
+*b. Verify the Smooks mapping configuration in the blueprint as per the usecase. Blueprint contains default mapping  for each supported collector ( SNMP Collector and RESTConf collector currently) which may serve the purpose for the usecase. The ``mapping-files`` in ``collectors`` contains the contents of the mapping file.
 
 *c. Upload the blueprint in the DCAE's Cloudify instance*
 
