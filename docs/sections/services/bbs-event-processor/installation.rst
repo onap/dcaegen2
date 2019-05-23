@@ -40,6 +40,7 @@ The following docker-compose-yaml file shows a default configuration. The file c
         LOGGING_LEVEL_ORG_ONAP_BBS: TRACE
 
 For Dublin release, it will be a DCAE component that can dynamically be deployed via Cloudify blueprint installation.
+
 Steps to deploy are shown below
 
 - Transfer blueprint component file in DCAE bootstrap POD under /blueprints directory. Blueprint can be found in

@@ -4,27 +4,18 @@
 Logging
 =======
 
-DCAE logging is available in several levels.
+DCAE logging is available in several levels; most DCAE Components are complaint with EELF logging standard and generates debug, audit, metric logging.
 
-Platform VM Logging
--------------------
-1. DCAE bootstrap VM: 
-    * /var/log directory containing various system logs including cloud init logs.
-    * /tmp/dcae2_install.log file provided installation logs.
-    * **docker logs** command for DCAE bootstrap container logs.
-2. Cloudify Manager VM: 
-    * /var/log directory containing various system logs including cloud init logs.
-    * Cloudify Manager GUI provides viewing access to Cloudify's operation logs.
-3. Consul cluster: 
-    * /var/log directory containing various system logs including cloud init logs.
-    * Consul GUI provides viewing access to Consul registered platform and service components healthcheck logs.
-4. Docker hosts
-    * /var/log directory containing various system logs including cloud init logs.
-    * **docker logs** command for Docker container logs.
+
+Platform Components Logging
+---------------------------
+As all the platform components are containered and deployed under K8S as pod; corresponding log information can be accessed using ``kubectl get logs -n onap <pod_name>``
+
+More detailed audit/debug logs can be found within the pod. 
 
 
 Component Logging
 -----------------
 
-In general the logs of service component can be accessed under the /opt/log directory of the container, either the Docker container or the VM.  Their deployment logs can be found at the deployment engine and deployment location, e.g. Cloudify Manager, CDAP, and Docker hosts.  
+Please refer to individual service component webpage for more information. In general the logs of service component can be accessed using ``kubectl get logs -n onap <pod_name>``   
 

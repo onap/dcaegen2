@@ -7,13 +7,13 @@ VES Architecture
 .. image:: ./ves-deployarch.png
 
 VES Processing Flow
-===================
+-------------------
 
 .. image:: ./VES-processingFlow.png
 
 
 VES Schema Validation
-=====================
+---------------------
 
 VES Collector is configured to support below VES Version; the corresponding API uses VES schema definition for event validation.
 
@@ -30,7 +30,7 @@ Schema definition files are contained within VES collector gerrit repo - https:/
 
 
 Features Supported
-==================
+------------------
 - VES collector deployed as docker containers
 - Acknowledgement to sender with appropriate response code  (both successful and failure)
 - Authentication of the events posted to collector (support 4 types of authentication setting)
@@ -45,7 +45,7 @@ The collector can receive events via standard HTTP port (8080) or secure port (8
 
 
 Dynamic configuration fed into Collector via DCAEPlatform
-=========================================================
+---------------------------------------------------------
 
 - Outbound Dmaap/UEB topic 
 - Schema version to be validated against

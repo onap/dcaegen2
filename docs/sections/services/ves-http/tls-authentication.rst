@@ -1,8 +1,8 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-Certificates as authentication method for PNFs/VNFs
-===================================================
+Authentication Types
+====================
 
 VES supports mutual TLS authentication via X.509 certificates. If VES is deployed via docker image then VES configuration can be modified by editing */opt/app/VESCollector/etc/collector.properties* which is present on the docker container. VES detects changes made to the mentioned file automatically and restarts the application.
 
