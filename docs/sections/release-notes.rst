@@ -20,7 +20,7 @@ DCAE R4 improves upon previous release with the following new features:
     - Dashboard Integration (UI for deployment/verification)
     - PolicyHandler Enhancement to support new Policy Lifecycle API’s
     - Blueprint generator tool to simplify deployment artifact creation
-    - Cloudify Manager resiliency 
+    - Cloudify Manager resiliency
 
 - Following new services are delivered with Dublin
     - Collectors
@@ -33,7 +33,7 @@ DCAE R4 improves upon previous release with the following new features:
         - SON-Handler
         - Heartbeat MS
 
-Most platform components has been migrated to helm charts. Following is complete list of DCAE components available part of default ONAP/dcae installation. 
+Most platform components has been migrated to helm charts. Following is complete list of DCAE components available part of default ONAP/dcae installation.
     - Platform components
         - Cloudify Manager (helm chart)
         - Bootstrap container (helm chart)
@@ -60,7 +60,7 @@ Most platform components has been migrated to helm charts. Following is complete
         \*  These components are delivered by the Holmes project.
 
 
-Under OOM (Kubernetes) deployment all DCAE component containers are deployed as Kubernetes Pods/Deployments/Services into Kubernetes cluster. DCAE R3 includes enhancement to Cloudify Manager plugin (k8splugin) that is capable of expanding a Blueprint node specification written for Docker container to a full Kubernetes specification, with additional enhancements such as replica scaling, sidecar for logging to ONAP ELK stack, registering services to MSB, etc. 
+Under OOM (Kubernetes) deployment all DCAE component containers are deployed as Kubernetes Pods/Deployments/Services into Kubernetes cluster. DCAE R3 includes enhancement to Cloudify Manager plugin (k8splugin) that is capable of expanding a Blueprint node specification written for Docker container to a full Kubernetes specification, with additional enhancements such as replica scaling, sidecar for logging to ONAP ELK stack, registering services to MSB, etc.
 
 - All DCAE components are designed to support platform maturity requirements.
 
@@ -89,7 +89,7 @@ Source code of DCAE components are released under the following repositories on 
     - dcaegen2.services.pm-mapper
     - dcaegen2.services.prh
     - dcaegen2.services.son-handler
-    - dcaegen2.services 
+    - dcaegen2.services
     - dcaegen2.services.sdk
     - dcaegen2.utils
     - ccsdk.platform.plugins
@@ -100,6 +100,12 @@ Source code of DCAE components are released under the following repositories on 
 **Known Issues**
 
 **Security Notes**
+
+*Fixed Security Issues*
+
+*Known Security Issues*
+
+*Known Vulnerabilities in Used Modules*
 
 DCAE code has been formally scanned during build time using NexusIQ and all Critical vulnerabilities have been addressed, items that remain open have been assessed for risk and determined to be false positive. The DCAE open Critical security vulnerabilities and their risk assessment have been documented as part of the `project <https://wiki.onap.org/pages/viewpage.action?pageId=51282478>`_.
 
@@ -119,26 +125,26 @@ The following components are introduced in R4
        - Description: Dashboard provides an UI interface for users/operation to deploy and manage service components in DCAE
     - Blueprint generator
        - Java artifact : /org/onap/dcaegen2/platform/cli/blueprint-generator/1.0.0/blueprint-generator-1.0.0.jar
-       - Description: Tool to generate the deployment artifact (cloudify blueprints) based on component spec    
+       - Description: Tool to generate the deployment artifact (cloudify blueprints) based on component spec
     - RESTConf collector 
        - Docker container tag: onap/org.onap.dcaegen2.collectors.restconfcollector:1.1.1
        - Description: Provides RESTConf interfaces to events from external domain controllers
     - VES/Universal Mapper
        - Docker container tag: onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.0
-       - Description: Standardizes events recieved from SNMP and RESTConf collector into VES for further processing with DCAE analytics services    
+       - Description: Standardizes events recieved from SNMP and RESTConf collector into VES for further processing with DCAE analytics services
     - 3gpp PM-Mapper
        - Docker container tag: onap/org.onap.dcaegen2.services.pm-mapper:1.0.1
-       - Description: Transforms 3gpp data feed recieved from DMAAP-DR into VES events    
+       - Description: Transforms 3gpp data feed recieved from DMAAP-DR into VES events
     - BBS Event processor
        - Docker container tag: onap/org.onap.dcaegen2.services.components.bbs-event-processor:1.0.0
-       - Description: Handles PNF-Reregistration and CPE authentication events and generate CL events     
+       - Description: Handles PNF-Reregistration and CPE authentication events and generate CL events
     - SON-Handler
        - Docker container tag: onap/org.onap.dcaegen2.services.son-handler:1.0.2
-       - Description: Supports PC-ANR optimization analysis and generating CL events output     
+       - Description: Supports PC-ANR optimization analysis and generating CL events output
     - Heartbeat MS
        - Docker container tag: onap/org.onap.dcaegen2.services.heartbeat:2.1.0
        - Description: Generates missing heartbeat CL events based on configured threshold for VES heartbeats/VNF type.
-    
+
 
 **Upgrade Notes**
 
@@ -146,10 +152,10 @@ The following components are upgraded from R3
     - Cloudify Manager:
        - Docker container tag: onap/org.onap.dcaegen2.deployments.cm-container:1.6.2
        - Description: DCAE's Cloudify Manager container is based on Cloudify Manager Community Version 19.01.24, which is based on Cloudify Manager 4.5.
-    - K8S Bootstrap container: 
+    - K8S Bootstrap container:
        - Docker container tag: onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:1.4.18
-       - Description: K8s bootstrap container updated to include new plugin and remove DCAE Controller components which have been migrated to Helm chart. 
-    - Configuration Binding Service: 
+       - Description: K8s bootstrap container updated to include new plugin and remove DCAE Controller components which have been migrated to Helm chart.
+    - Configuration Binding Service:
        - Docker container tag: onap/org.onap.dcaegen2.platform.configbinding.app-app:2.3.0
        - Description: Code optimization and bug fixes
     - Deployment Handler
@@ -166,7 +172,7 @@ The following components are upgraded from R3
        - Description: Refactoring and updates for health and service endpoint check
     - VES Collector
        - Docker container image tag: onap/org.onap.dcaegen2.collectors.ves.vescollector:1.4.4
-       - Description : Authentication enhancement, refactoring and bug-fixes 
+       - Description : Authentication enhancement, refactoring and bug-fixes
     - Threshold Crossing Analytics
        - Docker container image tag: onap/org.onap.dcaegen2.deployments.tca-cdap-container:1.1.2
        - Description: Config updates. Replaced Hadoop VM Cluster based file system with regular host file system; repackaged full TCA-CDAP stack into Docker container; transactional state separation from TCA in-memory to off-node Redis cluster for supporting horizontal scaling.
@@ -175,13 +181,13 @@ The following components are upgraded from R3
        - Description : Code optimization, bug fixes, logging and performance improvement
     - PNF Registrator handler
        - Docker container tag: onap/org.onap.dcaegen2.services.prh.prh-app-server:1.2.3
-       - Description : Code optimization, SDK integration, PNF-UPDATE flow support 
+       - Description : Code optimization, SDK integration, PNF-UPDATE flow support
     - HV-VES Collector
        - Docker container tag: onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main:1.1.0
        - Description : Code optimization, bug fixes, and enables SASL for kafka interface
     - SNMP Trap Collector
        - Docker container tag: onap/org.onap.dcaegen2.collectors.snmptrap:1.4.0
-       - Description : Code coverage improvements 
+       - Description : Code coverage improvements
 
 
 
@@ -196,11 +202,11 @@ DCAE R3 Maintenance release includes following fixes
 **Bug Fixes**
 
 - DataFileCollector
-     - DCAEGEN2-940   
+     - DCAEGEN2-940
        Larger files of size 100Kb publish to DR
-     - DCAEGEN2-941   
+     - DCAEGEN2-941
        DFC error after running over 12 hours
-     - DCAEGEN2-1001 
+     - DCAEGEN2-1001
        Multiple Fileready notification not handled
 
 - HighVolume VES Collector (protobuf/tcp)
@@ -209,9 +215,9 @@ DCAE R3 Maintenance release includes following fixes
 
 - VESCollector (http)
      - DCAEGEN2-1035
-       Issue with VES batch event publish 
-       
-- Heat deployment 
+       Issue with VES batch event publish
+
+- Heat deployment
      - DCAEGEN2-1007
        Removing obsolete services configuration
 
@@ -229,7 +235,7 @@ The following containers are updated in R3.0.1
 
 - An issue related to VESCollector basic authentication was noted and tracked under DCAEGEN2-1130. This configuration is not enabled by default for R3.0.1; and fix will be handled in Dublin
 
-- Certificates under onap/org.onap.dcaegen2.deployments.tls-init-container:1.0.0 has expired March'2019 and impacting CL deployment from CLAMP. Follow below workaround to update the certificate 
+- Certificates under onap/org.onap.dcaegen2.deployments.tls-init-container:1.0.0 has expired March'2019 and impacting CL deployment from CLAMP. Follow below workaround to update the certificate
     kubectl get deployments -n onap | grep deployment-handler
     kubectl edit deployment -n onap dev-dcaegen2-dcae-deployment-handler
     Search and change tag onap/org.onap.dcaegen2.deployments.tls-init-container:1.0.0 to onap/org.onap.dcaegen2.deployments.tls-init-container:1.0.3
@@ -246,7 +252,7 @@ Version: 3.0.0
 
 DCAE R3 improves upon previous release with the following new features:
 
-- All DCAE R3 components are delivered as Docker container images.  The list of components is as follows. 
+- All DCAE R3 components are delivered as Docker container images.  The list of components is as follows.
     - Platform components
         - Cloudify Manager
         - Bootstrap container
@@ -269,12 +275,12 @@ DCAE R3 improves upon previous release with the following new features:
     Notes:
         \*  These components are delivered by the Holmes project.
 
-- DCAE R3 supports both OpenStack Heat Orchestration Template based deployment and OOM (Kubernetes) based deployment. 
+- DCAE R3 supports both OpenStack Heat Orchestration Template based deployment and OOM (Kubernetes) based deployment.
 
     - Under Heat based deployment all DCAE component containers are deployed onto a single Docker host VM that is launched from an OpenStack Heat Orchestration Template as part of "stack creation".
     - Under OOM (Kubernetes) deployment all DCAE component containers are deployed as Kubernetes Pods/Deployments/Services into Kubernetes cluster.
 
-- DCAE R3 includes a new Cloudify Manager plugin (k8splugin) that is capable of expanding a Blueprint node specification written for Docker container to a full Kubernetes specification, with additional enhancements such as replica scaling, sidecar for logging to ONAP ELK stack, registering services to MSB, etc. 
+- DCAE R3 includes a new Cloudify Manager plugin (k8splugin) that is capable of expanding a Blueprint node specification written for Docker container to a full Kubernetes specification, with additional enhancements such as replica scaling, sidecar for logging to ONAP ELK stack, registering services to MSB, etc.
 
 - All DCAE components are designed to support platform maturity requirements.
 
@@ -331,13 +337,13 @@ The following components are introduced in R3
        - Description : Bulk data file collector to fetch non-realtime PM data
     - PNF Registrator handler
        - Docker container tag: onap/org.onap.dcaegen2.services.prh.prh-app-server:1.1.1
-       - Description : Recieves VES registration event and updates AAI and SO 
+       - Description : Recieves VES registration event and updates AAI and SO
     - HV-VES Collector
        - Docker container tag: onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main:1.0.0
        - Description : High Volume VES Collector for fetching real-time PM measurement data
     - SNMP Trap Collector
        - Docker container tag: onap/org.onap.dcaegen2.collectors.snmptrap:1.4.0
-       - Description : Receives SNMP traps and publishes them to a  message router (DMAAP/MR) in json structure 
+       - Description : Receives SNMP traps and publishes them to a  message router (DMAAP/MR) in json structure
 
 
 **Upgrade Notes**
@@ -346,10 +352,10 @@ The following components are upgraded from R2:
     - Cloudify Manager:
        - Docker container tag: onap/org.onap.dcaegen2.deployments.cm-container:1.4.2
        - Description: R3 DCAE's Cloudify Manager container is based on Cloudify Manager Community Version 18.7.23, which is based on Cloudify Manager 4.3.
-    - Bootstrap container: 
+    - Bootstrap container:
        - Docker container tag: onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:1.4.5
        - Description: R3 DCAE no longer uses bootstrap container for Heat based deployment, -- deployment is done through cloud-init scripts and docker-compose specifications.  The bootstrap is for OOM (Kubernetes) based deployment.
-    - Configuration Binding Service: 
+    - Configuration Binding Service:
        - Docker container tag: onap/org.onap.dcaegen2.platform.configbinding.app-app:2.2.3
        - Description: Configuration Binding Sevice now supports the new configuration policy format and support for TLS
     - Deployment Handler
@@ -382,7 +388,7 @@ Version: 2.0.0
 
 DCAE R2 improves upon previous release with the following new features:
 
-- All DCAE R2 components are delivered as Docker container images.  The list of components is as follows. 
+- All DCAE R2 components are delivered as Docker container images.  The list of components is as follows.
     - Platform components
         - Cloudify Manager
         - Bootstrap container
@@ -405,12 +411,12 @@ DCAE R2 improves upon previous release with the following new features:
     Notes:
         \*  These components are delivered by the Holmes project and used as a DCAE analytics component in R2.
 
-- DCAE R2 supports both OpenStack Heat Orchestration Template based deployment and OOM (Kubernetes) based deployment. 
+- DCAE R2 supports both OpenStack Heat Orchestration Template based deployment and OOM (Kubernetes) based deployment.
 
     - Under Heat based deployment all DCAE component containers are deployed onto a single Docker host VM that is launched from an OpenStack Heat Orchestration Template as part of "stack creation".
     - Under OOM (Kubernetes) deployment all DCAE component containers are deployed as Kubernetes Pods/Deployments/Services into Kubernetes cluster.
 
-- DCAE R2 includes a new Cloudify Manager plugin (k8splugin) that is capable of expanding a Blueprint node specification written for Docker container to a full Kubernetes specification, with additional enhancements such as replica scaling, sidecar for logging to ONAP ELK stack, registering services to MSB, etc. 
+- DCAE R2 includes a new Cloudify Manager plugin (k8splugin) that is capable of expanding a Blueprint node specification written for Docker container to a full Kubernetes specification, with additional enhancements such as replica scaling, sidecar for logging to ONAP ELK stack, registering services to MSB, etc.
 
 - All DCAE components are designed to support platform maturity requirements.
 
@@ -464,10 +470,10 @@ The following components are upgraded from R1:
     - Cloudify Manager:
        - Docker container tag: onap/org.onap.dcaegen2.deployments.cm-container:1.3.0
        - Description: R2 DCAE's Cloudify Manager container is based on Cloudify Manager Community Version 18.2.28, which is based on Cloudify Manager 4.3.
-    - Bootstrap container: 
+    - Bootstrap container:
        - Docker container tag: onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:1.1.11
        - Description: R2 DCAE no longer uses bootstrap container for Heat based deployment, -- deployment is done through cloud-init scripts and docker-compose specifications.  The bootstrap is for OOM (Kubernetes) based deployment.
-    - Configuration Binding Service: 
+    - Configuration Binding Service:
        - Docker container tag: onap/org.onap.dcaegen2.platform.configbinding:2.1.5
        - Description: Configuration Binding Sevice now supports the new configuration policy format.
     - Deployment Handler
@@ -519,17 +525,17 @@ Specifically, DCAE R1 includes the following components:
     - Inventory
     - Policy handler
     - CDAP broker
-- Service components                            
+- Service components
     - Docker container components
         - VNF Event Streaming (VES) collector
         - Holmes (engine and rule management) **
     - CDAP analytics component
         - Threshold Crossing Analytics (TCA)
 
-(*) Note: This component is delivered under the CCSDK project, deployed by DCAE under a single 
-VM configuration as a shared PostgreSQL database for the R1 demos.  (CCSDK PostgreSQL supports 
+(*) Note: This component is delivered under the CCSDK project, deployed by DCAE under a single
+VM configuration as a shared PostgreSQL database for the R1 demos.  (CCSDK PostgreSQL supports
 other deployment configurations not used in the R1 demos.)
-(**) Note: This component is delivered under the Holmes project and used as a DCAE analytics component 
+(**) Note: This component is delivered under the Holmes project and used as a DCAE analytics component
 in R1.
 
 Source codes of DCAE are released under the following repositories on gerrit.onap.org:
