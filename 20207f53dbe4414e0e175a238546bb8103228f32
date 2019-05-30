@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "03848c30_e2edc1d0",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-30T21:42:46Z",
+      "side": 1,
+      "message": "dcae-datafile-collector (DCAE is platform with multiple services)",
+      "range": {
+        "startLine": 110,
+        "startChar": 39,
+        "endLine": 110,
+        "endChar": 42
+      },
+      "revId": "20207f53dbe4414e0e175a238546bb8103228f32",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
