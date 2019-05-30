@@ -45,10 +45,10 @@ Steps to deploy are shown below
 
 - Transfer blueprint component file in DCAE bootstrap POD under /blueprints directory. Blueprint can be found in
 
-    https://gerrit.onap.org/r/gitweb?p=dcaegen2/services.git;a=blob_plain;f=components/bbs-event-processor/dpo/blueprints/k8s-bbs-event-processor.yaml-template;hb=refs/heads/master
+    https://gerrit.onap.org/r/gitweb?p=dcaegen2/services.git;a=blob_plain;f=components/bbs-event-processor/dpo/blueprints/k8s-bbs-event-processor.yaml-template;hb=refs/heads/dublin
 - Transfer blueprint component inputs file in DCAE bootstrap POD under / directory. Blueprint inputs file can be found in
 
-    https://gerrit.onap.org/r/gitweb?p=dcaegen2/services.git;a=blob_plain;f=components/bbs-event-processor/dpo/blueprints/bbs-event-processor-input.yaml;hb=refs/heads/master
+    https://gerrit.onap.org/r/gitweb?p=dcaegen2/services.git;a=blob_plain;f=components/bbs-event-processor/dpo/blueprints/bbs-event-processor-input.yaml;hb=refs/heads/dublin
 - Enter the Bootstrap POD
 - Validate blueprint
     .. code-block:: bash
