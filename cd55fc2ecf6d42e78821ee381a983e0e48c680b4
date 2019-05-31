@@ -16,6 +16,24 @@
       "revId": "cd55fc2ecf6d42e78821ee381a983e0e48c680b4",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "079858ba_6b7bf152",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4965
+      },
+      "writtenOn": "2019-05-31T01:00:47Z",
+      "side": 1,
+      "message": "Please ignore. It just required a while to refresh",
+      "parentUuid": "d8264fa6_84ed40de",
+      "revId": "cd55fc2ecf6d42e78821ee381a983e0e48c680b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
