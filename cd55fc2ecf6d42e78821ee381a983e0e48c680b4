@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8264fa6_84ed40de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4965
+      },
+      "writtenOn": "2019-05-31T00:59:36Z",
+      "side": 1,
+      "message": "Unfortunately the patch is linked in jira only to the first Issue-ID:(",
+      "revId": "cd55fc2ecf6d42e78821ee381a983e0e48c680b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
