@@ -105,6 +105,17 @@ Source code of DCAE components are released under the following repositories on 
 
 *Known Security Issues*
 
+    * Unsecured Swagger UI Interface in xdcae-datafile-collector. [`OJSI-28 <https://jira.onap.org/browse/OJSI-28>`_]
+    * Unsecured Swagger UI Interface in xdcae-ves-collector. [`OJSI-30 <https://jira.onap.org/browse/OJSI-30>`_]
+    * In default deployment DCAEGEN2 (xdcae-datafile-collector) exposes HTTP port 30223 outside of cluster. [`OJSI-109 <https://jira.onap.org/browse/OJSI-109>`_]
+    * In default deployment DCAEGEN2 (xdcae-ves-collector) exposes HTTP port 30235 outside of cluster. [`OJSI-116 <https://jira.onap.org/browse/OJSI-116>`_]
+    * In default deployment DCAEGEN2 (dcae-datafile-collector) exposes HTTP port 30262 outside of cluster. [`OJSI-131 <https://jira.onap.org/browse/OJSI-131>`_]
+    * In default deployment DCAEGEN2 (xdcae-dashboard) exposes HTTP port 30418 outside of cluster. [`OJSI-159 <https://jira.onap.org/browse/OJSI-159>`_]
+    * In default deployment DCAEGEN2 (xdcae-tca-analytics) exposes HTTP port 32010 outside of cluster. [`OJSI-161 <https://jira.onap.org/browse/OJSI-161>`_]
+    * In default deployment DCAEGEN2 (dcae-redis) exposes redis port 30286 outside of cluster. [`OJSI-187 <https://jira.onap.org/browse/OJSI-187>`_]
+    * In default deployment DCAEGEN2 (config-binding-service) exposes HTTP port 30415 outside of cluster. [`OJSI-195 <https://jira.onap.org/browse/OJSI-195>`_]
+    * CVE-2019-12126 - DCAE TCA exposes unprotected APIs/UIs on port 32010. [`OJSI-201 <https://jira.onap.org/browse/OJSI-201>`_]
+
 *Known Vulnerabilities in Used Modules*
 
 DCAE code has been formally scanned during build time using NexusIQ and all Critical vulnerabilities have been addressed, items that remain open have been assessed for risk and determined to be false positive. The DCAE open Critical security vulnerabilities and their risk assessment have been documented as part of the `project <https://wiki.onap.org/pages/viewpage.action?pageId=51282478>`_.
