@@ -20,7 +20,7 @@ Configuration file: Config/datafile_endpoints.json
 JSON CONFIGURATION EXPLAINED
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Variables of interest (e.g. variables that should be inspected/modifed for a specific runtime environment) are listed below for convenience.  The entire file is provided later in this page for reference.
+Variables of interest (e.g. variables that should be inspected/modified for a specific runtime environment) are listed below for convenience.  The entire file is provided later in this page for reference.
 
 dmaapConsumerConfiguration
 """"""""""""""""""""""""""
@@ -47,7 +47,7 @@ dmaapProducerConfiguration
   "dmaapHostName": <name of DMaaP/DR host>
   "dmaapPortNumber": <DMaaP/DR host port>
   "dmaapTopicName": "publish"
-  "dmaapProtocol": "httpa"
+  "dmaapProtocol": "https"
   "dmaapUserName": "dradmin"
   "dmaapUserPassword": "dradmin"
   "dmaapContentType": "application/octet-stream"
@@ -68,7 +68,7 @@ securityConfiguration
 .. code-block:: json
 
   "trustStorePath": <path to trust store>
-  "trustStorePasswordPath": <path to trsust store password>
+  "trustStorePasswordPath": <path to trust store password>
   "keyStorePath": <path to key store>
   "keyStorePasswordPath": <path to key store password>
   "enableDmaapCertAuth": <boolean>. If false, all information above are ignored.
