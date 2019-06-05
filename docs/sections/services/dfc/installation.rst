@@ -21,25 +21,21 @@ Make sure the Message Router and Data Router are running.
 Deployment steps
 ^^^^^^^^^^^^^^^^
 
-1. Execute bash on the cloudify manager kubernetes pod. 
+1. Execute bash on the cloudify manager kubernetes pod.
 
-.. code-block:: json
-    kubectl -n onap exec -it <dev-dcaegen2-dcae-cloudify-manager> bash
+    ``kubectl -n onap exec -it <dev-dcaegen2-dcae-cloudify-manager> bash``
 
 2. Download the dfc `blueprint`_.
-.. _blueprint 
 
-    https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/blueprints.git;a=blob;f=blueprints/reference_templates/k8s-datafile-collector.yaml-template;h=17d2aedec131154b4f5f84a08a099b0364b1e627;hb=HEAD
+.. _blueprint: https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/blueprints.git;a=blob;f=blueprints/reference_templates/k8s-datafile-collector.yaml-template;h=17d2aedec131154b4f5f84a08a099b0364b1e627;hb=HEAD
 
 3. Run Cloudify Install command to install dfc.
 
-.. code-block:: json
-    cfy install <dfc-blueprint-path>
+    ``cfy install <dfc-blueprint-path>``
 
 Sample output:
 
-..code-block:: json
-    cfy install k8s-datafile.yaml
+    ``cfy install k8s-datafile.yaml``
 
 Run '*cfy events list -e 37da3f5f-a06b-4ce8-84d3-8b64ccd81c33'* to retrieve the execution's events/logs.
 
@@ -61,18 +57,17 @@ subscribes to DMAAP/MR fileReady event as JSON messages and publishes the downlo
 Installation
 ^^^^^^^^^^^^
 
-The following command will download the Dublin version of the datafile container from
+The following command will download the Dublin version of the datafile image from
 nexus and launch it in the container named "datafile":
 
-    ``docker run -d -p 8100:8100 -p 8433:8433
-    nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.1.2``
+    ``docker run -d -p 8100:8100 -p 8433:8433 nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.1.3``
 
-For another version, it is possible to replace the tag '1.1.2' with any version that seems suitable (including latest).
+For another version, it is possible to replace the tag '1.1.3' with any version that seems suitable (including latest).
 Available images are visible following this `link`_.
 
-.. _link https://nexus3.onap.org/#browse/search=keyword%3D*datafile*
+.. _link: https://nexus3.onap.org/#browse/search=keyword%3D*datafile*
 
-Another option is to pull the container first, and then run it with the image ID:
+Another option is to pull the image first, and then run the image's container with the image ID:
 
     ``docker pull nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:latest``
 

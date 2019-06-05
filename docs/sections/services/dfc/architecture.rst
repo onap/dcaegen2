@@ -13,8 +13,8 @@ found here: `5G bulk PM wiki page`_.
 
 DFC will handle the collection of bulk PM data flow:
     1. Subscribes to fileReady DMaaP topic
-    2. Collects the file from the xNF
-    3. Sends new file data to DataRouter.
+    2. Collects the files from the xNF
+    3. Sends the collected files and files' data to DataRouter.
 
 
 DFC is delivered as one **Docker container** which hosts application server.

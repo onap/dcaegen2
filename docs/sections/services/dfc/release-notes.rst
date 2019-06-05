@@ -4,10 +4,8 @@
 Release Notes
 =============
 
-Version 1.1.2
+Version 1.1.3
 -------------
-
-:Release Date: 2019-05-30
 
 Messages are now handled in parallel
 
@@ -16,6 +14,8 @@ Retry mechanism implemented
 Adapting to ONAP logging standard
 
 Deployment using Cloudify made available
+
+Bug fix: Too old files (thus not existing anymore) are ignored
 
 
 Version: 1.1.1
