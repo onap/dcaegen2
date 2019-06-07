@@ -82,9 +82,9 @@ Below is a list of the repos and their sub-modules, and the language they are wr
 
 * dcaegen2.platform.configbinding (Python)
 
-* dcaegen2.platform.deployment-handler (Python)
+* dcaegen2.platform.deployment-handler (NodeJS)
 
-* dcaegen2.platform.inventory-api (Clojure) 
+* dcaegen2.platform.inventory-api (Java) 
 
 * dcaegen2.platform.plugins
 
@@ -96,7 +96,7 @@ Below is a list of the repos and their sub-modules, and the language they are wr
 
 * dcaegen2.platform.policy-handler (Python)
 
-* dcaegen2.platform.servicechange-handler (Python)
+* dcaegen2.platform.servicechange-handler (Clojure)
 
 * dcaegen2.utils
 
