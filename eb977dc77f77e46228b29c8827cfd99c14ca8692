@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30cff3cc_d78d96c3",
+        "filename": "docs/sections/services/ves-http/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-06-07T12:28:24Z",
+      "side": 1,
+      "message": "this would actually fail since the blueprint was already uploaded.\n\nInstead you want a \ncfy deployments create -b ves-tls -d ves-tls\n\nThe \"cfy install\" command is actually a macros that combines the two commands \"cfy blueprints upload\" and \"cfy deployments create\"",
+      "revId": "eb977dc77f77e46228b29c8827cfd99c14ca8692",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ca67253_bc5ed9b8",
+        "filename": "docs/sections/services/ves-http/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-06-07T12:28:24Z",
+      "side": 1,
+      "message": "the \"cfy uninstall\" command is a macro that combines multiple commands together, including the \"cfy blueprint delete\" command shown here. That means that running it (again) will fail because it will have already been deleted.",
+      "revId": "eb977dc77f77e46228b29c8827cfd99c14ca8692",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
