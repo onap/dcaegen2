@@ -69,6 +69,24 @@
       "revId": "c6ef6bce6641eb6764f4760ce54240e60d3d346d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "041c4db4_a3757fa6",
+        "filename": "docs/sections/services/ves-http/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-06-07T13:28:22Z",
+      "side": 1,
+      "message": "yes, uninstall will occasionally fail to delete the blueprint. So change\n\n\"- Delete blueprint\"\n\nto\n\n\"- If uninstall fails to delete the blueprint, delete it with this:\"",
+      "parentUuid": "62e513ae_8337d4bc",
+      "revId": "c6ef6bce6641eb6764f4760ce54240e60d3d346d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
