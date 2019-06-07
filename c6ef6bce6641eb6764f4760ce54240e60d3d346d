@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "445484ea_6bfa9bf6",
+        "filename": "docs/sections/services/ves-http/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-07T12:52:12Z",
+      "side": 1,
+      "message": "The blueprint id for default bootstrap install is ves, the new bp/deploy will be a parallel instance to be setup. Hence there will not be a conflict.\n\nI\u0027ve validated these steps on SB04 and DCAE tenants. Instead of doing separate deployment create/execution steps, the single installation command will suffice.",
+      "parentUuid": "7eab9edd_75d57585",
+      "revId": "c6ef6bce6641eb6764f4760ce54240e60d3d346d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "51215004_770d45d4",
         "filename": "docs/sections/services/ves-http/installation.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-06-07T12:27:13Z",
       "side": 1,
       "message": "the \"cfy uninstall\" command is a macro that combines multiple commands together, including the \"cfy blueprint delete\" command shown here. That means that running it (again) will fail because it will have already been deleted.",
+      "revId": "c6ef6bce6641eb6764f4760ce54240e60d3d346d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62e513ae_8337d4bc",
+        "filename": "docs/sections/services/ves-http/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-07T12:52:12Z",
+      "side": 1,
+      "message": "Yes, there is timing issue though. When we try cfy uninstall - I\u0027ve seen blueprint delete failing (likely container CM thing) hence needing a separate step to delete.",
+      "parentUuid": "51215004_770d45d4",
       "revId": "c6ef6bce6641eb6764f4760ce54240e60d3d346d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
