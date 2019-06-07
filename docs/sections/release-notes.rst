@@ -98,6 +98,8 @@ Source code of DCAE components are released under the following repositories on 
 **Bug Fixes**
 
 **Known Issues**
+    * VES Collector basic authentication not working (DCAEGEN2-1541) 
+    This has no impact on the Dublin usecases; will be addressed for El-Alto if not sooner.
 
 **Security Notes**
 
