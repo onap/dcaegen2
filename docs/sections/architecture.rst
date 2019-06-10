@@ -22,11 +22,7 @@ data collection needs, event processors for data standardization,  analytics tha
 collection and analytics, and support other ONAP functions.  Service components and DMaaP buses form the "data plane" for DCAE, where DCAE collected data is 
 transported among different DCAE service components.
 
-DCAE use Consul's distributed K-V store service to manage component configurations where each key is based on the unique identity of a 
-DCAE component (identified by ServiceComponentName), and the value is the configuration for the corresponding component. The K-V store for each service components is
-created during deployment. DCAE platform creates and updates the K-V pairs based on information provided as part of the control loop blueprint deployment, or through a notification/trigger received from other ONAP components such as Policy Framework and CLAMP.  Either through periodically polling or proactive pushing, the DCAE
- components get the configuration updates in realtime and apply the configuration updates.  DCAE Platform also offers dynamic template resolution for configuration parameters that are dynamic and only known by the DCAE platform, such as dynamically provisioned DMaaP topics. This approach standardizes component deployment and
-configuration management for DCAE service components in multi-site deployment.
+DCAE use Consul's distributed K-V store service to manage component configurations where each key is based on the unique identity of a DCAE component (identified by ServiceComponentName), and the value is the configuration for the corresponding component. The K-V store for each service components is created during deployment. DCAE platform creates and updates the K-V pairs based on information provided as part of the control loop blueprint deployment, or through a notification/trigger received from other ONAP components such as Policy Framework and CLAMP.  Either through periodically polling or proactive pushing, the DCAE  components get the configuration updates in realtime and apply the configuration updates.  DCAE Platform also offers dynamic template resolution for configuration parameters that are dynamic and only known by the DCAE platform, such as dynamically provisioned DMaaP topics. This approach standardizes component deployment and configuration management for DCAE service components in multi-site deployment.
 
 
 DCAE R4 Components

@@ -16,7 +16,7 @@
 #
 swagger: '2.0'
 info:
-  version: 1.3.2
+  version: 1.4.5
   title: VES Collector
   description: >
     Virtual Event Streaming (VES) Collector is RESTful collector for processing

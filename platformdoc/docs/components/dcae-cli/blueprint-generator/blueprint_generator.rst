@@ -11,15 +11,15 @@ rin
 Steps to run the blueprint generator:
 +++++++++++++++++++++++++++++++++++++
 
-1. Download the zip file from maven by clicking `here <https://nexus.onap.org/content/repositories/snapshots/org/onap/dcaegen2/platform/cli/blueprint-generator/1.0.0-SNAPSHOT/blueprint-generator-1.0.0-20190410.212437-1-bundle.tar.gz/>`_ or by going to https://nexus.onap.org/content/repositories/snapshots/org/onap/dcaegen2/platform/cli/blueprint-generator/1.0.0-SNAPSHOT/ and clicking "blueprint-generator-1.0.0-20190410.212437-1-bundle.tar.gz"
+1. Download the zip file from Nexus by clicking `here <https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/cli/blueprint-generator/1.0.0/blueprint-generator-1.0.0-bundle.tar.gz` or "wget https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/cli/blueprint-generator/1.0.0/blueprint-generator-1.0.0-bundle.tar.gz"
 
 2. Unzip the the tar file
 
-3. cd into the folder that gets created. (You should see a lib folder in this directory)
+3. You should see blueprint-generator-1.0.0 directory created (also a lib folder in this directory)
 
-4. If you are in linux run the following command: java -cp blueprint-generator/lib/blueprint-generator-1.0.0-SNAPSHOT.jar:blueprint-generator/lib/* org.onap.blueprintgenerator.core.BlueprintGenerator
+4. If you are in linux run the following command: java -cp blueprint-generator/lib/blueprint-generator-1.0.0.jar:blueprint-generator/lib/* org.onap.blueprintgenerator.core.BlueprintGenerator
 
-5. If you are in wondows run this command java -cp "lib/blueprint-generator-1.0.0-SNAPSHOT.jar;lib/\*" org.onap.blueprintgenerator.core.BlueprintGenerator.
+5. If you are in windows run this command java -cp "lib/blueprint-generator-1.0.0-SNAPSHOT.jar;lib/\*" org.onap.blueprintgenerator.core.BlueprintGenerator.
 
 6. These commands mean that it will run java, find a path to the jar that we want to run along with all of the dependencies that we need, then you add the path to the main method. If done correctly you should see a list of all of the flags you can add. 
 
@@ -34,7 +34,7 @@ Steps to run the blueprint generator:
 
     -t: the path to the import yaml file (optional)
 
-9. An example running this program in windows would look like this java -cp "lib/blueprint-generator-onap-0.0.1-SNAPSHOT.jar;lib/\*" org.onap.blueprintgenerator.core.BlueprintGenerator -p Blueprints -i ComponentSpecs/TestComponentSpec.json -n HelloWorld
+9. An example running this program in windows would look like this java -cp "lib/blueprint-generator-1.0.0.jar;lib/\*" org.onap.blueprintgenerator.core.BlueprintGenerator -p blueprint_output -i ComponentSpecs/TestComponentSpec.json -n TestAppBlueprint
 
 
 Extra information
