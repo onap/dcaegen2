@@ -177,12 +177,12 @@ and remove following entry and save the changes; K8S will update the  service de
                       get_input: ves_other_publish_url
                   type: message_router
             collector.dynamic.config.update.frequency: "5"
-          docker_config:
-            healthcheck:
-              endpoint: /healthcheck
-              interval: 15s
-              timeout: 1s
-              type: https
+          #docker_config:
+          #  healthcheck:
+          #    endpoint: /healthcheck
+          #    interval: 15s
+          #    timeout: 1s
+          #    type: https
           image:
             get_input: tag_version
           replicas: {get_input: replicas}
@@ -211,20 +211,19 @@ To undeploy ves-tls, steps are noted below
 
         cfy uninstall ves-tls
 
-The deployment uninstall will also delete the blueprint. In somecase you might notice 400 error reported indicating active deployment exist such as below
+The deployment uninstall will also delete the blueprint. In some case you might notice 400 error reported indicating active deployment exist such as below
 ** An error occurred on the server: 400: Can't delete blueprint ves-tls - There exist deployments for this blueprint; Deployments ids: ves-tls**
 
-In this case bluepint can be deleted explicitly using this command.
+In this case blueprint can be deleted explicitly using this command.
 
     .. code-block:: bash
 
         cfy blueprint delete ves-tls
 
-Note: When VESCollector is required to be deployed under *auth.method=certOnly* the blueprint above should be modified
+Known Issue : When VESCollector is required to be deployed with authentication enabled *auth.method=certOnly* or *auth.method: certBasicAuth* or *auth.method: basicAuth* 
+the blueprint currently disables healthcheck parameters configuration (below). This causes no readiness probe to be deployed in K8S when VES Collector is deployed with authentication enabled.
 
-    * Change auth.method: certBasicAuth to auth.method: certOnly
-    * Comment out following lines in blueprint to disable readiness check (DCAEGEN2-1594)
-
+    
         .. code-block:: bash
 
             docker_config:
@@ -233,3 +232,6 @@ Note: When VESCollector is required to be deployed under *auth.method=certOnly* 
                   interval: 15s
                   timeout: 1s
                   type: https
+
+
+The healthcheck support when VESauthentication is enabled needs a different solution to be worked. This will be worked as future enhancement  (DCAEGEN2-1594)
