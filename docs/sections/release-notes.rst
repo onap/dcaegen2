@@ -98,8 +98,8 @@ Source code of DCAE components are released under the following repositories on 
 **Bug Fixes**
 
 **Known Issues**
-    * VES Collector basic authentication not working (DCAEGEN2-1541) 
-    This has no impact on the Dublin usecases; will be addressed for El-Alto if not sooner.
+    * Healthcheck/Readiness probe VES Collector when authentication is enabled (DCAEGEN2-1594) 
+    
 
 **Security Notes**
 
@@ -152,7 +152,7 @@ The following components are introduced in R4
        - Docker container tag: onap/org.onap.dcaegen2.services.components.bbs-event-processor:1.0.0
        - Description: Handles PNF-Reregistration and CPE authentication events and generate CL events
     - SON-Handler
-       - Docker container tag: onap/org.onap.dcaegen2.services.son-handler:1.0.2
+       - Docker container tag: onap/org.onap.dcaegen2.services.son-handler:1.0.3
        - Description: Supports PC-ANR optimization analysis and generating CL events output
     - Heartbeat MS
        - Docker container tag: onap/org.onap.dcaegen2.services.heartbeat:2.1.0
@@ -184,7 +184,7 @@ The following components are upgraded from R3
        - Docker container image tag: onap/org.onap.dcaegen2.platform.inventory-api:3.2.0
        - Description: Refactoring and updates for health and service endpoint check
     - VES Collector
-       - Docker container image tag: onap/org.onap.dcaegen2.collectors.ves.vescollector:1.4.4
+       - Docker container image tag: onap/org.onap.dcaegen2.collectors.ves.vescollector:1.4.5
        - Description : Authentication enhancement, refactoring and bug-fixes
     - Threshold Crossing Analytics
        - Docker container image tag: onap/org.onap.dcaegen2.deployments.tca-cdap-container:1.1.2
@@ -193,7 +193,7 @@ The following components are upgraded from R3
        - Docker container tag: onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.1.3
        - Description : Code optimization, bug fixes, logging and performance improvement
     - PNF Registrator handler
-       - Docker container tag: onap/org.onap.dcaegen2.services.prh.prh-app-server:1.2.3
+       - Docker container tag: onap/org.onap.dcaegen2.services.prh.prh-app-server:1.2.4
        - Description : Code optimization, SDK integration, PNF-UPDATE flow support
     - HV-VES Collector
        - Docker container tag: onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main:1.1.0
