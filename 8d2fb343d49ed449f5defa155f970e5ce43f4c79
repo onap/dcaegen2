@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8c1f4a17_577ef990",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5074
+      },
+      "writtenOn": "2019-06-19T11:19:26Z",
+      "side": 1,
+      "message": "In 2: Use \u0027files\u0027\nIn 3: Use \"collected files and file meta data\u0027 insteadof \"new file data\u0027",
+      "range": {
+        "startLine": 16,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 40
+      },
+      "revId": "8d2fb343d49ed449f5defa155f970e5ce43f4c79",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0984c493_87e81ded",
+        "filename": "docs/sections/services/dfc/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5074
+      },
+      "writtenOn": "2019-06-19T11:19:26Z",
+      "side": 1,
+      "message": "use \u0027image\u0027",
+      "range": {
+        "startLine": 60,
+        "startChar": 71,
+        "endLine": 60,
+        "endChar": 80
+      },
+      "revId": "8d2fb343d49ed449f5defa155f970e5ce43f4c79",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10ec0507_2a452356",
+        "filename": "docs/sections/services/dfc/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5074
+      },
+      "writtenOn": "2019-06-19T11:19:26Z",
+      "side": 1,
+      "message": "use \u0027image\u0027 or perhaps \u0027container image\u0027",
+      "range": {
+        "startLine": 70,
+        "startChar": 30,
+        "endLine": 70,
+        "endChar": 39
+      },
+      "revId": "8d2fb343d49ed449f5defa155f970e5ce43f4c79",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
