@@ -23,7 +23,7 @@ Responses
 +-----------+---------------------+
 
 GET /FEEDLOG_TOPIC/DEFAULT_FEED_ID?type=pub&filename=FILENAME
--------------
+-------------------------------------------------------------
 
 Description
 ~~~~~~~~~~~
