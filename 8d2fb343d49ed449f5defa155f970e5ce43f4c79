@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "110ed0af_7a394f71",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4011
+      },
+      "writtenOn": "2019-06-25T08:31:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c1f4a17_577ef990",
+      "range": {
+        "startLine": 16,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 40
+      },
+      "revId": "8d2fb343d49ed449f5defa155f970e5ce43f4c79",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0984c493_87e81ded",
         "filename": "docs/sections/services/dfc/installation.rst",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "8d2fb343d49ed449f5defa155f970e5ce43f4c79",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9f3a0d7_da32fee4",
+        "filename": "docs/sections/services/dfc/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4011
+      },
+      "writtenOn": "2019-06-25T08:31:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0984c493_87e81ded",
+      "range": {
+        "startLine": 60,
+        "startChar": 71,
+        "endLine": 60,
+        "endChar": 80
+      },
+      "revId": "8d2fb343d49ed449f5defa155f970e5ce43f4c79",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7a77ea1c_63e661ee",
+        "filename": "docs/sections/services/dfc/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4011
+      },
+      "writtenOn": "2019-06-25T08:31:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10ec0507_2a452356",
+      "range": {
+        "startLine": 70,
+        "startChar": 30,
+        "endLine": 70,
+        "endChar": 39
+      },
+      "revId": "8d2fb343d49ed449f5defa155f970e5ce43f4c79",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c927fd42_abe0ae38",
         "filename": "docs/sections/services/dfc/release-notes.rst",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2019-06-19T13:00:07Z",
       "side": 1,
       "message": "This release date can be removed; will be handled at project level rls notes",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 25
+      },
+      "revId": "8d2fb343d49ed449f5defa155f970e5ce43f4c79",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6680b66f_56c55a49",
+        "filename": "docs/sections/services/dfc/release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4011
+      },
+      "writtenOn": "2019-06-25T08:31:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c927fd42_abe0ae38",
       "range": {
         "startLine": 10,
         "startChar": 0,
