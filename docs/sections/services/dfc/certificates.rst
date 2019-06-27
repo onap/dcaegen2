@@ -71,9 +71,40 @@ We have two keystore files, one for TrustManager, one for KeyManager.
 
     keytool -importkeystore -deststorepass [changeit] -destkeypass [changeit] -destkeystore dfc.jks -srckeystore dfc.p12 -srcstoretype PKCS12 -srcstorepass [some-password] -alias [some-alias]
 
-3. Finished
+4. Update existing jks.b64 files
+---------------------------------
 
-4. Configure vsftpd:
+Copy the existing jks from the DFC container to a local environment.
+
+ .. code:: bash
+ 
+   docker cp <DFC container>:/opt/app/datafile/config/ftp.jks .
+   docker cp <DFC container>:/opt/app/datafile/config/dfc.jks .
+
+ .. code:: bash
+ 
+   openssl base64 -in ftp.jks -out ftp.jks.b64
+   openssl base64 -in dfc.jks -out dfc.jks.b64
+
+ .. code:: bash
+ 
+   chmod 755 ftp.jks.b64
+   chmod 755 ftp.jks.b64
+
+Copy the new jks.64 files from local environment to the DFC container.
+
+ .. code:: bash
+ 
+   docker cp ftp.jks.b64 <DFC container>:/opt/app/datafile/config/
+   docker cp dfc.jks.b64 <DFC container>:/opt/app/datafile/config/
+
+Finally
+
+ .. code:: bash
+ 
+   docker restart <DFC container>
+
+5. Configure vsftpd:
 --------------------
     update /etc/vsftpd/vsftpd.conf:
 
@@ -97,7 +128,7 @@ We have two keystore files, one for TrustManager, one for KeyManager.
       ssl_request_cert=YES
       ca_certs_file=/home/vsftpd/myuser/dfc.crt
 
-5. Configure config/datafile_endpoints.json:
+6. Configure config/datafile_endpoints.json:
 --------------------------------------------
    Update the file accordingly:
 
@@ -110,6 +141,7 @@ We have two keystore files, one for TrustManager, one for KeyManager.
                 "trustedCAPassword": "[yourpassword]"
             }
 
-6. This has been tested with vsftpd and dfc, with self-signed certificates.
+7. Other conditions
 ---------------------------------------------------------------------------
+   This has been tested with vsftpd and dfc, with self-signed certificates.
    In real deployment, we should use ONAP-CA signed certificate for DFC, and vendor-CA signed certificate for xNF
