@@ -71,9 +71,21 @@ We have two keystore files, one for TrustManager, one for KeyManager.
 
     keytool -importkeystore -deststorepass [changeit] -destkeypass [changeit] -destkeystore dfc.jks -srckeystore dfc.p12 -srcstoretype PKCS12 -srcstorepass [some-password] -alias [some-alias]
 
-3. Finished
 
-4. Configure vsftpd:
+3. Convert the keys into base64 format:
+    .. code:: bash
+    
+        openssl base64 -in ftp.jks -out ftp.jks.b64
+
+    .. code:: bash
+    
+        openssl base64 -in dfc.jks -out dfc.jks.b64
+
+    And copy these new files under datafile-app-server/config folder.
+
+4. Generate a new docker image (e.g. "mvn package"), which will hold these new certificates.
+
+5. Configure vsftpd:
 --------------------
     update /etc/vsftpd/vsftpd.conf:
 
@@ -97,7 +109,7 @@ We have two keystore files, one for TrustManager, one for KeyManager.
       ssl_request_cert=YES
       ca_certs_file=/home/vsftpd/myuser/dfc.crt
 
-5. Configure config/datafile_endpoints.json:
+6. Configure config/datafile_endpoints.json:
 --------------------------------------------
    Update the file accordingly:
 
@@ -110,6 +122,6 @@ We have two keystore files, one for TrustManager, one for KeyManager.
                 "trustedCAPassword": "[yourpassword]"
             }
 
-6. This has been tested with vsftpd and dfc, with self-signed certificates.
+7. This has been tested with vsftpd and dfc, with self-signed certificates.
 ---------------------------------------------------------------------------
    In real deployment, we should use ONAP-CA signed certificate for DFC, and vendor-CA signed certificate for xNF
