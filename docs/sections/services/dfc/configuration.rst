@@ -1,23 +1,13 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-Configuration
-=============
+Configuration and Performance
+=============================
 
 **datafile** configuration is controlled via a single JSON file called datafile_endpoints.json.
 This is located under datafile-app-server/config.
 
-Compiling DFC
-=============
-
-Whole project (top level of DFC directory) and each module (sub module directory) can be compiled using
-`mvn clean install` command.
-
-Configuration file: Config/datafile_endpoints.json
-
-
-
-JSON CONFIGURATION EXPLAINED
+Json Configuration Explained
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Variables of interest (e.g. variables that should be inspected/modified for a specific runtime environment) are listed below for convenience.  The entire file is provided later in this page for reference.
@@ -125,3 +115,10 @@ The format of the JSON configuration that drives all behavior of DFC is probably
         }
     }
   }
+
+Performance
+^^^^^^^^^^^
+
+To see the performance of DFC, see "`Datafile Collector (DFC) performance baseline results`_".
+
+.. _Datafile Collector (DFC) performance baseline results: https://wiki.onap.org/display/DW/Datafile+Collector+%28DFC%29+performance+baseline+results
