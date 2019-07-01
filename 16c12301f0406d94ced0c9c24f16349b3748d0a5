@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bdd0d355_28164bf6",
+        "filename": "docs/sections/services/dfc/certificates.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4011
+      },
+      "writtenOn": "2019-07-01T13:43:39Z",
+      "side": 1,
+      "message": "I believe it was dfc",
+      "range": {
+        "startLine": 92,
+        "startChar": 13,
+        "endLine": 92,
+        "endChar": 16
+      },
+      "revId": "16c12301f0406d94ced0c9c24f16349b3748d0a5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
