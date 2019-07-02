@@ -22,6 +22,30 @@
       "revId": "16c12301f0406d94ced0c9c24f16349b3748d0a5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "377fbdc6_04e759a7",
+        "filename": "docs/sections/services/dfc/certificates.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5059
+      },
+      "writtenOn": "2019-07-02T07:09:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdd0d355_28164bf6",
+      "range": {
+        "startLine": 92,
+        "startChar": 13,
+        "endLine": 92,
+        "endChar": 16
+      },
+      "revId": "16c12301f0406d94ced0c9c24f16349b3748d0a5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
