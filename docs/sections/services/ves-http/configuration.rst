@@ -16,7 +16,6 @@ VES expects to be able to fetch configuration directly from consul service in fo
         "collector.service.port": "8080",
         "collector.schema.file": "{\"v1\":\"./etc/CommonEventFormat_27.2.json\",\"v2\":\"./etc/CommonEventFormat_27.2.json\",\"v3\":\"./etc/CommonEventFormat_27.2.json\",\"v4\":\"./etc/CommonEventFormat_27.2.json\",\"v5\":\"./etc/CommonEventFormat_28.4.1.json\",\"v7\":\"./etc/CommonEventFormat_30.0.1.json\"}",
         "collector.keystore.passwordfile": "/opt/app/VESCollector/etc/passwordfile",
-        "collector.inputQueue.maxPending": "8096",
         "streams_publishes": {
             "ves-measurement": {
                 "type": "message_router",
@@ -58,7 +57,6 @@ VES expects to be able to fetch configuration directly from consul service in fo
         "collector.service.secure.port": "8443",
         "auth.method": "noAuth",
         "collector.keystore.file.location": "/opt/app/VESCollector/etc/keystore",
-        "services_calls": [],
         "header.authlist": "sample1,$2a$10$0buh.2WeYwN868YMwnNNEuNEAMNYVU9.FSMJGyIKV3dGET/7oGOi6"
     }
 
