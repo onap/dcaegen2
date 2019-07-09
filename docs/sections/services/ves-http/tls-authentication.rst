@@ -1,5 +1,11 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
+.. raw:: html
+
+    <style> .red {color:red} </style>
+    <style> .green {color:green} </style>
+.. role:: red
+.. role:: green
 
 Authentication Types
 ====================
@@ -19,6 +25,30 @@ Of course, mutual TLS authentication requires also server certificates, so follo
 Property *auth.method* is used to manage security mode, possible configuration: noAuth, basicAuth, certOnly, certBasicAuth
 
     * *auth.method=noAuth* default option - no security (http)
+
     * *auth.method=certOnly* is used to enable mutual TLS authentication (https)
+
+     * client without cert and without basic auth = :red:`Authentication failure`
+     * client without cert and wrong basic auth  = :red:`Authentication failure`
+     * client without cert and correct basic auth = :red:`Authentication failure`
+     * client with cert and without/wrong basic auth = :green:`Authentication successful`
+     * client with cert and correct basic auth = :green:`Authentication successful`
+
     * *auth.method=certBasicAuth* is used to enable mutual TLS authentication or/and basic HTTPs authentication
+
+     * client without cert and without basic auth = :red:`Authentication failure`
+     * client without cert and wrong basic auth = :red:`Authentication failure`
+     * client without cert and correct basic auth = :green:`Authentication successful`
+     * client with cert and without/wrong basic auth = :green:`Authentication successful`
+     * client with cert and correct basic auth = :green:`Authentication successful`
+
     * *auth.method=basicAuth* is used to enable basic HTTPs authentication
+
+     * client without cert and without basic auth = :red:`Authentication failure`
+     * client without cert and wrong basic auth = :red:`Authentication failure`
+     * client without cert and correct basic auth = :green:`Authentication successful`
+     * client with cert and without/wrong basic auth = :red:`Authentication failure`
+     * client with cert and correct basic auth = :green:`Authentication successful`
+
+When application is in certOnly or certBasicAuth mode then certificates are also validated by regexp in /etc/certSubjectMatcher.properties, only SubjectDn field in certificate description are checked.
+Default regexp value is .* means that we approve all SubjectDN values.
