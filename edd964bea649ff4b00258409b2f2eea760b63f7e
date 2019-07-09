@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38a406a1_88ec03c8",
+        "filename": "docs/sections/services/ves-http/tls-authentication.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-09T22:06:10Z",
+      "side": 1,
+      "message": "Change to \"Authentication failure\"",
+      "range": {
+        "startLine": 31,
+        "startChar": 58,
+        "endLine": 31,
+        "endChar": 64
+      },
+      "revId": "edd964bea649ff4b00258409b2f2eea760b63f7e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7cda6455_ea63813a",
+        "filename": "docs/sections/services/ves-http/tls-authentication.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-09T22:06:10Z",
+      "side": 1,
+      "message": "same as above; all \"failed\" can be updated",
+      "range": {
+        "startLine": 32,
+        "startChar": 57,
+        "endLine": 32,
+        "endChar": 63
+      },
+      "revId": "edd964bea649ff4b00258409b2f2eea760b63f7e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4f337731_520129ed",
+        "filename": "docs/sections/services/ves-http/tls-authentication.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-09T22:06:10Z",
+      "side": 1,
+      "message": "Change to \"Successful Authentication\"",
+      "range": {
+        "startLine": 35,
+        "startChar": 57,
+        "endLine": 35,
+        "endChar": 61
+      },
+      "revId": "edd964bea649ff4b00258409b2f2eea760b63f7e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
