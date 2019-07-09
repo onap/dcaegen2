@@ -134,7 +134,6 @@ and remove following entry and save the changes; K8S will update the  service de
         properties:
           application_config:
             collector.dmaap.streamid: fault=ves-fault|syslog=ves-syslog|heartbeat=ves-heartbeat|measurementsForVfScaling=ves-measurement|measurement=ves-measurement|mobileFlow=ves-mobileflow|other=ves-other|stateChange=ves-statechange|thresholdCrossingAlert=ves-thresholdCrossingAlert|voiceQuality=ves-voicequality|sipSignaling=ves-sipsignaling|notification=ves-notification|pnfRegistration=ves-pnfRegistration
-            collector.inputQueue.maxPending: "8096"
             collector.keystore.file.location: /opt/app/VESCollector/etc/keystore
             collector.keystore.passwordfile: /opt/app/VESCollector/etc/passwordfile
             collector.schema.checkflag: "1"
@@ -144,7 +143,6 @@ and remove following entry and save the changes; K8S will update the  service de
             event.transform.flag: "0"
             auth.method: certBasicAuth
             header.authlist: "sample1,$2a$10$0buh.2WeYwN868YMwnNNEuNEAMNYVU9.FSMJGyIKV3dGET/7oGOi6"
-            services_calls: []
             streams_publishes:
                 ves-fault:
                   dmaap_info:
