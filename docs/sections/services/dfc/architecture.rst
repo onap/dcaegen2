@@ -41,3 +41,9 @@ The event is received from the Message Router (MR), the files are fetched from a
 Both fetching of a file and publishing is retried a number of times with an increasing delay between each attempt.
 After a number of attempts, the DFC will log an error message and give up. Failing of processing of one file does not
 affect the handling of others.
+
+Generalized  DFC
+""""""""""""""""
+From version 1.2.1 and onwards, the DFC has more general use. Instead of only managing PM files, any kind of files
+are handled. The 'changeIdentifier' parameter in the file ready VES event (which is reported from the PNFs) is used
+to define the file type of file to be handled.
