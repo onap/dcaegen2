@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "42e2c0ec_6fa75ae2",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5072
+      },
+      "writtenOn": "2019-07-23T09:09:35Z",
+      "side": 1,
+      "message": "I think \"any kind of files are handled.\" would be better.",
+      "range": {
+        "startLine": 47,
+        "startChar": 97,
+        "endLine": 48,
+        "endChar": 11
+      },
+      "revId": "3c5a1287bdf0fb5d5adade194156eb8cbfe524ba",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22870872_facc4435",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5072
+      },
+      "writtenOn": "2019-07-23T09:09:35Z",
+      "side": 1,
+      "message": "I think it is not clear here what \"\u0027changeIdentifier\u0027 parameter\" is. And I think \"user\" is not the right term.\nSuggestion \n\"The \u0027changeIdentifier\u0027 parameter in the file ready VES event (which is reported from the PNFs) is used to define the file type of file to be handled\"",
+      "range": {
+        "startLine": 48,
+        "startChar": 13,
+        "endLine": 48,
+        "endChar": 118
+      },
+      "revId": "3c5a1287bdf0fb5d5adade194156eb8cbfe524ba",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
