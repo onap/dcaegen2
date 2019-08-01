@@ -22,6 +22,30 @@
       "revId": "5291f84c971ad400889c8df983c8e9fefc394361",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b80077f6_5b5e7794",
+        "filename": "docs/sections/services/pm-mapper/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-08-01T09:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5209e7ac_3d69bc59",
+      "range": {
+        "startLine": 7,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "5291f84c971ad400889c8df983c8e9fefc394361",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
