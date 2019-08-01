@@ -43,7 +43,7 @@ PM Mapper publishes the perf3gpp VES PM Events to the following authenticated MR
 
 ::
 
-        org.onap.dmaap.mr.PM_MAPPER
+        org.onap.dmaap.mr.PERFORMANCE_MEASUREMENTS
 
 Performance
 ^^^^^^^^^^^
