@@ -4,6 +4,12 @@
 Release Notes
 =============
 
+Version 1.2.1
+-------------
+
+The DFC is now generalized: it can handle any kind of files, not only PM files.
+
+
 Version 1.1.3
 -------------
 

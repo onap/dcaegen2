@@ -14,7 +14,7 @@ found here: `5G bulk PM wiki page`_.
 DFC will handle the collection of bulk PM data flow:
     1. Subscribes to fileReady DMaaP topic
     2. Collects the files from the xNF
-    3. Sends the collected files and files' data to DataRouter.
+    3. Sends the collected files and files' data to Data Router.
 
 
 DFC is delivered as one **Docker container** which hosts application server.
@@ -41,3 +41,9 @@ The event is received from the Message Router (MR), the files are fetched from a
 Both fetching of a file and publishing is retried a number of times with an increasing delay between each attempt.
 After a number of attempts, the DFC will log an error message and give up. Failing of processing of one file does not
 affect the handling of others.
+
+Generalized  DFC
+""""""""""""""""
+From version 1.2.1 and onwards, the DFC has more general use. Instead of only handling PM files, any kind of files
+are handled. The 'changeIdentifier' field in the FileReady VES event (which is reported from the PNFs) identifies the 
+file type. This is mapped to a publishing stream in the DR.
