@@ -44,6 +44,6 @@ affect the handling of others.
 
 Generalized  DFC
 """"""""""""""""
-From version 1.2.1 and onwards, the DFC has more general use. Instead of only managing PM files, any kind of files
-are handled. The 'changeIdentifier' parameter in the file ready VES event (which is reported from the PNFs) is used
-to define the file type of file to be handled.
+From version 1.2.1 and onwards, the DFC has more general use. Instead of only handling PM files, any kind of files
+are handled. The 'changeIdentifier' field in the FileReady VES event (which is reported from the PNFs) identifies the 
+file type. This is mapped to a publishing stream in the DR.

@@ -4,20 +4,27 @@
 =============================
 Configuration and Performance
 =============================
+The DataFile Collector (DFC) gets fileReady messages from the Message Router (MR) sent from xNFs, via the VES Collector.
+These messages contains data about files ready to get from the xNF. DFC then collects these files from the xNF and
+publishes them to the DataRouter (DR) on a feed. Consumers can subscribe to the feed from DR and process the file for
+its specific purpose. The connection between a file type and the feed it will be published to is the
+**changeIdentifier**. DFC can handle multiple **changeIdentifier**/feed combinations, see picture below.
+
+.. image:: ../../images/DFC_config.png
+
+
 
 Configuration
 ^^^^^^^^^^^^^
 By default, DFC handles the "PM_MEAS_FILES" change identifier and publishes these files on the "bulk_pm_feed" feed.
-But it can also be configured to handle other change identifiers and publish them to other feeds, see picture below.
-
-.. image:: ../../images/DFC_config.png
-
-The configuration of DFC is controlled via a blueprint.
+But it can also be configured to handle more/other change identifiers and publish them to more/other feeds. The
+configuration of DFC is controlled via a blueprint.
 
 Blueprint Configuration Explained
 """""""""""""""""""""""""""""""""
 
-For the communication with the Message Router, the user must provide the **host name**, **port**, and **protocol** of the DMaaP Message router.
+For the communication with the Message Router, the user must provide the **host name**, **port**, and **protocol** of
+the DMaaP Message router.
 
 .. code-block:: yaml
   :emphasize-lines: 2,6,10
@@ -58,67 +65,74 @@ The user can also enable secure communication with the DMaaP Message Router.
         description: enable certificate based connection with DMaap
         default: false
 
-DFC can handle multiple change identifiers. This will require to create manually a new block for each change identifier.
+DFC can handle multiple change identifiers. For each change identifier/feed combination the user must provide the
+**change identifier**, **feed name**, and **feed location**.
 
-.. code-block:: yaml
-  :emphasize-lines: 2
-  
-    streams_publishes:
-      dfcFeed00ChangeIdentifier:
-        dmaap_info: <<bulk_pm_feed>>
-        type: data_router
+**Note!** The **feed name** provided should be used by the consumer/s to set up the subscription to the feed.
 
-For each feed related to a change identifier the user must provide the **feed name**, and **feed description**.
+The **feed name** and **feed location** are defined as inputs for the user to provide.
 
 .. code-block:: yaml
   :emphasize-lines: 2,6
 
     inputs:
-      dfcFeed00Name:
+      feed0_name:
         type: string
         description: The name of the feed the files will be published to. Should be used by the subscriber.
         default: "bulk_pm_feed"
-      dfcFeed00Description:
+      feed0_location:
         type: string
-        description: A description of the feed the files will be published to.
-        default: "Feed for Bulk PM files"
+        description: The location of the feed.
+        default: "loc00"
 
-**Note!** The feed name provided should be used by the subscriber/s to set up the subscription to the feed.
-
-To dynamically create the feeds, DFC uses the DCAE DMaaP plugin. This means that for each feed the user must also add an
-item under the "**node_templates**" section of the blueprint. The feed is identified within the blueprint with a feed identifier, "**dfcFeed00**" in the example.
+The **feed name** shall be used in the definition of the feed for the DMaaP plugin under the "**node_templates**"
+section under a tag for the  internal "**feed identifier**" for the feed (feed0 in the example).
 
 .. code-block:: yaml
-  :emphasize-lines: 2
+  :emphasize-lines: 1,5
 
-    node_templates:
-      dfcFeed00:
-        type: ccsdk.nodes.Feed
-        properties:
-          feed_name: { get_input: dfcFeed00Name }
-          feed_description: { get_input: dfcFeed00Description }
+    feed0:
+      type: ccsdk.nodes.Feed
+      properties:
+        feed_name:
+          get_input: feed0_name
+        useExisting: true
 
-To configure DFC micro service itself, the user must also add the change identifier and the feed identifier to the "**application_config**" section
-under the tag "**dmaap.dmaapProducerConfiguration**" in the blueprint. **Note!** The identifier should be surrounded by **<<>>** for the feed's configuration to be bound to the DFC configuration in CBS.
-
-.. code-block:: yaml
-  :emphasize-lines: 4
-
-          application_config:
-            dmaap.dmaapProducerConfiguration:
-              - changeIdentifier: {get_input: dfcFeed00ChangeIdentifier}
-                feedInfo: <<dfcFeed00>>
-
-And, lastly, to set up the publication to the feed, the feed identifier must be added to the "**streams_publishes**" section
-of the blueprint.
+The **feed location** shall be used under the **streams_publishes** section under a tag for the internal
+"**feed identifier**" for the feed.
 
 .. code-block:: yaml
-  :emphasize-lines: 2
+  :emphasize-lines: 2,4
 
-          streams_publishes:
-            - name: dfcFeed00
-              type: data_router
-              location: "loc00"
+      streams_publishes:
+      - name: feed0
+        location:
+          get_input: feed0_location
+        type: data_router
+
+The **change identifier** shall be defined as an item under the **streams_publishes** tag in the "**application_config**"
+section. Under this tag the internal "**feed identifier**" for the feed shall also be added to get the
+info about the feed substituted in by CBS (that's what the <<>> tags are for).
+
+.. code-block:: yaml
+  :emphasize-lines: 4,5
+
+      application_config:
+        service_calls: []
+        streams_publishes:
+          PM_MEAS_FILES:
+            dmaap_info: <<feed0>>
+            type: data_router
+
+And, lastly, to set up the publication relationship for the feed, the "**feed identifier**" must be added to the
+"**relationships**" section of the blueprint.
+
+.. code-block:: yaml
+  :emphasize-lines: 3
+
+   relationships:
+    - type: ccsdk.relationships.publish_files
+      target: feed0
 
 Sample blueprint configuration
 """"""""""""""""""""""""""""""
@@ -153,78 +167,79 @@ The blueprint below configures DFC to handle the two feeds shown in the picture 
         type: boolean
         description: enable certificate based connection with DMaap
         default: false
-      dfcFeed00Name:
+      envs:
+        default: {}
+      feed0_name:
         type: string
         description: The name of the feed the files will be published to. Should be used by the subscriber.
         default: "bulk_pm_feed"
-      dfcFeed00Description:
+      feed0_location:
         type: string
-        description: A description of the feed the files will be published to.
-        default: "Feed for Bulk PM files"
-      dfcFeed01Name:
+        description: The location of the feed.
+        default: "loc00"
+      feed1_name:
         type: string
         description: The name of the feed the files will be published to. Should be used by the subscriber.
         default: "log_feed"
-      dfcFeed01Description:
+      feed1_location:
         type: string
-        description: A description of the feed the files will be published to.
-        default: "Feed for log files"
-
+        description: The location of the feed.
+        default: "loc00"
     node_templates:
-      dfcFeed00:
-        type: ccsdk.nodes.Feed
-        properties:
-          feed_name: { get_input: dfcFeed00Name }
-          feed_description: { get_input: dfcFeed00Description }
-      dfcFeed01:
-        type: ccsdk.nodes.Feed
-        properties:
-          feed_name: { get_input: dfcFeed01Name }
-          feed_description: { get_input: dfcFeed01Description }
-
       datafile-collector:
         type: dcae.nodes.ContainerizedServiceComponentUsingDmaap
-
-        relationships:
-          - type: ccsdk.relationships.publish_files
-            target: dfcFeed00
-          - type: ccsdk.relationships.publish_files
-            target: dfcFeed01
-
         interfaces:
           cloudify.interfaces.lifecycle:
             start:
               inputs:
-                ports:
-                  - concat: ["8100:0"]
-                  - concat: ["8433:0"]
-
+            envs:
+              get_input: envs
         properties:
-          service_component_type: 'dcae-datafile'
           application_config:
+            service_calls: []
             dmaap.security.enableDmaapCertAuth: { get_input: secureEnableCert }
-            streams_publishes:
-              dfcFeed00ChangeIdentifier:
-                dmaap_info: <<dfcFeed00>>
-                type: data_router
-              dfcFeed01ChangeIdentifier:
-                dmaap_info: <<dfcFeed01>>
-                type: data_router
             streams_subscribes:
               dmaap_subscriber:
-                type:
-                  "message_router"
                 dmaap_info:
                   topic_url:
                     { concat: [{ get_input: dmaap_mr_protocol },"://",{ get_input: dmaap_mr_host },
                                ":",{ get_input: dmaap_mr_port },"/events/unauthenticated.VES_NOTIFICATION_OUTPUT/OpenDcae-c12/C12"]}
+            streams_publishes:
+              PM_MEAS_FILES:
+                dmaap_info: <<feed0>>
+                type: data_router
+              LOG_FILES:
+                dmaap_info: <<feed1>>
+                type: data_router
+          image:
+            get_input: tag_version
+          service_component_type: datafile-collector
           streams_publishes:
-            - name: dfcFeed00
-              type: data_router
-              location: "loc00"
-            - name: dfcFeed01
-              type: data_router
-              location: "loc00"
+          - name: feed0
+            location:
+              get_input: feed0_location
+            type: data_router
+          - name: feed1
+            location:
+              get_input: feed1_location
+            type: data_router
+        relationships:
+          - type: ccsdk.relationships.publish_files
+            target: feed0
+          - type: ccsdk.relationships.publish_files
+            target: feed1
+      feed0:
+        type: ccsdk.nodes.Feed
+        properties:
+          feed_name:
+            get_input: feed0_name
+          useExisting: true
+      feed1:
+        type: ccsdk.nodes.Feed
+        properties:
+          feed_name:
+            get_input: feed1_name
+          useExisting: true
 
 Performance
 ^^^^^^^^^^^
