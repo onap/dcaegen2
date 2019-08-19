@@ -7,11 +7,11 @@ Delivery
 Docker Container
 ----------------
 
-DFC is delivered as a docker container. The latest released version (Dublin) can be downloaded from nexus:
+DFC is delivered as a docker container. The latest released version can be downloaded from nexus:
 
-    ``docker pull nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.1.3``
+    ``docker pull nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.2.2``
 
-For another version, it is possible to replace the tag '1.1.3' with any version that seems suitable. Available images
+For another version, it is possible to replace the tag '1.2.2' with any version that seems suitable. Available images
 are visible following this `link`_.
 
 .. _link: https://nexus3.onap.org/#browse/search=keyword%3D*collectors.datafile*
