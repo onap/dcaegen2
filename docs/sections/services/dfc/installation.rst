@@ -77,3 +77,9 @@ Another option is to pull the image first, and then run the image's container wi
 
 The grep command will display the images corresponding to DFC. There can be several due to remotely or locally built
 image, and also to different tags, i.e. different versions.
+
+Certifcates
+^^^^^^^^^^^
+Since DUBLIN - DCAE service components will use common certifcates generated from AAF/test instance and made available during deployment of DCAE TLS init container.
+
+The updated certificates should be loaded under https://git.onap.org/dcaegen2/deployments/tree/tls-init-container/tls
