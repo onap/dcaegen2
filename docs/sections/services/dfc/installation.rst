@@ -77,3 +77,7 @@ Another option is to pull the image first, and then run the image's container wi
 
 The grep command will display the images corresponding to DFC. There can be several due to remotely or locally built
 image, and also to different tags, i.e. different versions.
+
+Certifcates
+^^^^^^^^^^^
+.. _page: ./certifcates.rst
