@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12b83aec_e9b09529",
+        "filename": "docs/sections/services/dfc/certificates.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5072
+      },
+      "writtenOn": "2019-08-21T08:34:15Z",
+      "side": 1,
+      "message": "It is not in Dublin. This should say ElAlto or you can skip skip information about versions.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 12
+      },
+      "revId": "7dcdfd0e61deef28ef4c345ad2a58d4121d1a7b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c73198a8_bf7827e2",
+        "filename": "docs/sections/services/dfc/certificates.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5072
+      },
+      "writtenOn": "2019-08-21T08:34:15Z",
+      "side": 1,
+      "message": "I suggest moving this after the link to the generalized process. \n\"The updated certificates should be loaded under\" -\u003e \"The latest DCAE certificates are located in\"  ?",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 117
+      },
+      "revId": "7dcdfd0e61deef28ef4c345ad2a58d4121d1a7b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5c3eeb0_04b62557",
+        "filename": "docs/sections/services/dfc/certificates.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5072
+      },
+      "writtenOn": "2019-08-21T08:34:15Z",
+      "side": 1,
+      "message": "has a generalized",
+      "range": {
+        "startLine": 9,
+        "startChar": 5,
+        "endLine": 9,
+        "endChar": 21
+      },
+      "revId": "7dcdfd0e61deef28ef4c345ad2a58d4121d1a7b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
