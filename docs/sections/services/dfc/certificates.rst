@@ -1,8 +1,15 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
+Certificates (From AAF)
+=======================
+DCAE service components will use common certifcates generated from AAF/test instance and made available during deployment of DCAE TLS init container.
 
-Certificates
-============
+DCAE has a generalized process of certificate distribution as documented here - https://docs.onap.org/en/latest/submodules/dcaegen2.git/docs/sections/tls_enablement.html
+
+The updated certificates are located in https://git.onap.org/dcaegen2/deployments/tree/tls-init-container/tls
+
+Certificates (Manual configuration of self-signed certifcates)
+==============================================================
 
 Configuration of Certificates in test environment(For FTP over TLS):
 
@@ -77,31 +84,31 @@ We have two keystore files, one for TrustManager, one for KeyManager.
 Copy the existing jks from the DFC container to a local environment.
 
  .. code:: bash
- 
+
    docker cp <DFC container>:/opt/app/datafile/config/ftp.jks .
    docker cp <DFC container>:/opt/app/datafile/config/dfc.jks .
 
  .. code:: bash
- 
+
    openssl base64 -in ftp.jks -out ftp.jks.b64
    openssl base64 -in dfc.jks -out dfc.jks.b64
 
  .. code:: bash
- 
+
    chmod 755 ftp.jks.b64
    chmod 755 dfc.jks.b64
 
 Copy the new jks.64 files from local environment to the DFC container.
 
  .. code:: bash
- 
+
    docker cp ftp.jks.b64 <DFC container>:/opt/app/datafile/config/
    docker cp dfc.jks.b64 <DFC container>:/opt/app/datafile/config/
 
 Finally
 
  .. code:: bash
- 
+
    docker restart <DFC container>
 
 5. Configure vsftpd:
