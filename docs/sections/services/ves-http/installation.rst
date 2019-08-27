@@ -10,7 +10,7 @@ As the service is containerized, it can be started on stand-alone mode also.
 
 To run VES Collector container on standalone mode, following parameters are required
 
-    ``docker run -d -p 8080:8080/tcp -p 8443:8443/tcp -P -e DMAAPHOST='10.0.11.1' nexus.onap.org:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:1.3.2``
+    ``docker run -d -p 8080:8080/tcp -p 8443:8443/tcp -P -e DMAAPHOST='10.0.11.1' nexus.onap.org:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:1.4.5``
 
 
 DMAAPHOST is required for standalone; for normal platform installed instance the publish URL are obtained from Consul. Below parameters are exposed for DCAE platform (cloudify) deployed instance
@@ -110,7 +110,7 @@ and remove following entry and save the changes; K8S will update the  service de
         default: "http://message-router.onap.svc.cluster.local:3904/events/unauthenticated.VES_PNFREG_OUTPUT"
       tag_version:
         type: string
-        default: "nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:1.4.4"
+        default: "nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:1.4.5"
       external_port:
         type: string
         description: Kubernetes node port on which collector is exposed
