@@ -6,20 +6,20 @@ Blueprint Generator (DCAE)
 What is the Blueprint Generator?
 ++++++++++++++++++++++++++++++++
 The blueprint generator is a java rewrite of the tosca lab python tool. The point of this tool is to be able to take a component spec for a given micro-service and translate that component spec into a blueprint yaml file that can be used during deployment.
-rin
+
 
 Steps to run the blueprint generator:
 +++++++++++++++++++++++++++++++++++++
 
-1. Download the zip file from Nexus by clicking `here <https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/cli/blueprint-generator/1.0.0/blueprint-generator-1.0.0-bundle.tar.gz` or "wget https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/cli/blueprint-generator/1.0.0/blueprint-generator-1.0.0-bundle.tar.gz"
+1. Download the zip file from Nexus by clicking `here <https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/cli/blueprint-generator/1.2.0/blueprint-generator-1.2.0-bundle.tar.gz>`_ or "wget https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/cli/blueprint-generator/1.2.0/blueprint-generator-1.2.0-bundle.tar.gz"
 
 2. Unzip the the tar file
 
-3. You should see blueprint-generator-1.0.0 directory created (also a lib folder in this directory)
+3. You should see blueprint-generator-1.2.0 directory created (also a lib folder in this directory)
 
-4. If you are in linux run the following command: "java -cp blueprint-generator/lib/blueprint-generator-1.0.0.jar:blueprint-generator/lib/* org.onap.blueprintgenerator.core.BlueprintGenerator"
+4. If you are in linux run the following command: "java -cp blueprint-generator/lib/blueprint-generator-1.2.0.jar:blueprint-generator/lib/* org.onap.blueprintgenerator.core.BlueprintGenerator"
 
-5. If you are in windows run this command java -cp "lib/blueprint-generator-1.0.0.jar;lib/\*" org.onap.blueprintgenerator.core.BlueprintGenerator.
+5. If you are in windows run this command java -cp "lib/blueprint-generator-1.2.0.jar;lib/\*" org.onap.blueprintgenerator.core.BlueprintGenerator.
 
 6. These commands mean that it will run java, find a path to the jar that we want to run along with all of the dependencies that we need, then you add the path to the main method. If done correctly you should see a list of all of the flags you can add. 
 
@@ -33,8 +33,12 @@ Steps to run the blueprint generator:
     -n: Name of the blueprint (optional)
 
     -t: the path to the import yaml file (optional)
+    
+    -d: If this flag is present the bp generator will be created with dmaap plugin (optional)
 
-9. An example running this program in windows would look like this java -cp "lib/blueprint-generator-1.0.0.jar;lib/\*" org.onap.blueprintgenerator.core.BlueprintGenerator -p blueprint_output -i ComponentSpecs/TestComponentSpec.json -n TestAppBlueprint
+    -o: This flag will create a service component override for your deployment equal to the value you put (optional)
+
+9. An example running this program in windows would look like this java -cp "lib/blueprint-generator-1.2.0.jar;lib/\*" org.onap.blueprintgenerator.core.BlueprintGenerator -p blueprint_output -i ComponentSpecs/TestComponentSpec.json -n TestAppBlueprint
 
 
 Extra information
@@ -51,4 +55,26 @@ Extra information
 5. If the directory you specified in the -p tag does not already exist the directory will be created for you
 
 6. The -t flag will override the default imports set for the blueprints. To see an example of how the import yaml file should be structured see the testImports.yaml file under the folder TestCases
-l
+
+
+How to create policy models:
++++++++++++++++++++++++++++++++++++++
+
+1. The policy model creation is under the same zip file as the blueprint generator
+
+2. Run the same command as the blueprint generator except replace BlueprintGenerator with PolicyCreate
+
+3. Example command 'java -cp "lib/blueprint-generator-1.2.0.jar;lib/*" org.onap.blueprintgenerator.core.PolicyCreate'
+
+4. Options:
+
+   -i: The path to the JSON spec file (required)
+
+   -p: The Output path for all of the models (required)
+
+Extra information
+-----------------
+
+1. Not all component specs will be able to create policy models
+
+2. Multiple policy model files may be create from a single component spec
