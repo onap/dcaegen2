@@ -14,30 +14,31 @@ Solution overview
     Current SAN listing::
 
         bbs-event-processor, bbs-event-processor.onap, bbs-event-processor.onap.svc.cluster.local, config-binding-service, config-binding-service.onap, config-binding-service.onap.svc.cluster.local, dcae-cloudify-manager, dcae-cloudify-manager.onap, dcae-cloudify-manager.onap.svc.cluster.local, dcae-datafile-collector, dcae-datafile-collector.onap, dcae-datafile-collector.onap.svc.cluster.local, dcae-hv-ves-collector, dcae-hv-ves-collector.onap, dcae-hv-ves-collector.onap.svc.cluster.local, dcae-pm-mapper, dcae-pm-mapper.onap, dcae-pm-mapper.onap.svc.cluster.local, dcae-prh, dcae-prh.onap, dcae-prh.onap.svc.cluster.local, dcae-tca-analytics, dcae-tca-analytics.onap, dcae-tca-analytics.onap.svc.cluster.local, dcae-ves-collector, dcae-ves-collector.onap, dcae-ves-collector.onap.svc.cluster.local, deployment-handler, deployment-handler.onap, deployment-handler.onap.svc.cluster.local, holmes-engine-mgmt, holmes-engine-mgmt.onap, holmes-engine-mgmt.onap.svc.cluster.local, holmes-rule-mgmt, holmes-rules-mgmt.onap, holmes-rules-mgmt.onap.svc.cluster.local, inventory, inventory.onap, inventory.onap.svc.cluster.local, policy-handler, policy-handler.onap, policy-handler.onap.svc.cluster.local
- 
+
 2. Plugin and Blueprint:
     Update blueprint to include new (optional) node property (tls_info) to the type definitions for the Kubernetes component types. The property is a dictionary with two elements:
 
-        * A boolean (``use_tls``) that indicates whether the component uses TLS. 
+        * A boolean (``use_tls``) that indicates whether the component uses TLS.
         * A string (``cert_directory``) that indicates where the component expects to find certificate artifacts.
-    
+
         Example
 .. code-block:: yaml
 
         tls_info:
-           cert_directory: '/opt/app/dh/etc/cert/'
+           cert_directory: '/opt/app/dh/etc/cert'
            use_tls: true
+(Note that the ``cert_directory`` value does not include a trailing ``/``.)
 
 For this example the certificates are mounted into /opt/app/dh/etc/cert directory within the conainer.
-        
-    
+
+
     During deployment Kubernetes plugin (referenced in blueprint) will check if the ``tls_info`` property is set and ``use_tls`` is set to true, then the plugin will add some elements to the Kubernetes Deployment for the component:
           * A Kubernetes volume (``tls-info``) that will hold the certificate artifacts
           * A Kubernetes initContainer (``tls-init``)
           * A Kubernetes volumeMount for the initContainer that mounts the ``tls-info`` volume at ``/opt/tls/shared``.
           * A Kubernetes volumeMount for the main container that mounts the ``tls-info`` volume at the mount point specified in the ``cert_directory`` property.
-    
-3. Certificate Artifacts 
+
+3. Certificate Artifacts
 
     The certificate directory mounted on the container will include the following files:
         * ``cert.jks``: A Java keystore containing the DCAE certificate.
