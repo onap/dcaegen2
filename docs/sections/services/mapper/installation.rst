@@ -15,9 +15,9 @@ VES-Mapper can be deployed individually though it will throw errors if it can't 
 **Blueprint/model/image**
 
 VES-Mapper blueprint is available @ 
-https://git.onap.org/dcaegen2/services/mapper/tree/UniversalVesAdapter/dpo/blueprints/k8s-vesmapper.yaml-template.yaml?h=dublin
+https://git.onap.org/dcaegen2/services/mapper/tree/UniversalVesAdapter/dpo/blueprints/k8s-vesmapper.yaml-template.yaml?h=elalto
 
-VES-Mapper docker image is available in Nexus repo @ `nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.0-SNAPSHOT <nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.0-SNAPSHOT>`_
+VES-Mapper docker image is available in Nexus repo @ `nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.1 <nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.1>`_
 
 
 
@@ -61,5 +61,5 @@ After VES-Mapper's validated blueprint is uploaded,  create Cloudify Deployment 
 
 Though this is not a preferred way, to run VES-Mapper container on standalone mode using local configuration file carried in the docker image, following docker run command can be used.
  
-    ``docker run -d   nexus3.onap.org:10003/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.0-SNAPSHOT``
+    ``docker run -d   nexus3.onap.org:10003/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.1``
 
