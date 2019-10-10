@@ -96,7 +96,7 @@ Make sure Config Binding Service is up and running and the **ip + port** combina
 
 ====
 
-**Missing configuration on Consul**
+**Invalid configuration on Consul**
 
 ::
 
@@ -126,5 +126,7 @@ Make sure Config Binding Service is up and running and the **ip + port** combina
 
 
 **PM Mapper** logs this information when connected to Consul, but cannot find a valid JSON configuration.
+
+This can occur if the PM Mapper is deployed through Cloudify Manager or CLAMP when the default 'pm-mapper-filter' field is left unchanged as this default is configured to work with the DCAE Dashboard. If this is the cause for the invalid configuration then it can be resolved by removing the surrounding quotes on the object.
 
 

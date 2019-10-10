@@ -6,7 +6,7 @@ Configuration and Performance
 
 Filtering
 """""""""
-PM Mapper maps PM XML files to performance VES event by applying the mapper filtering information. Mapper filtering is configured during instantiation through cloudify manager.
+PM Mapper maps PM XML files to performance VES event by applying the mapper filtering information. Mapper filtering is configured during instantiation through the DCAE Dashboard.
 Mapper filtering is based on the PM dictionary fields.
 PM Mapper expects the filter in the following JSON format:
 
