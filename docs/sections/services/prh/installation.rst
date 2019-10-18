@@ -64,3 +64,23 @@ Heartbeat: http://<container_address>:8100/heartbeat or https://<container_addre
 Start prh: http://<container_address>:8100/start or https://<container_address>:8433/start
 
 Stop prh: http://<container_address>:8100/stopPrh or https://<container_address>:8433/stopPrh
+
+
+Fix for bug (INT-1181) *PRH CSITs use incorrect path for service-instance*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Undeploy PRH with current version (1.3.1) and manually deploy it with version 1.3.2. Steps to install the correction:**
+
+- Fetch the correct blueprint from nexus - k8s-prh.yaml: https://nexus.onap.org/content/sites/raw/org.onap.dcaegen2.platform.blueprints/R5/blueprints/ (It should contain *aai.aaiClientConfiguration.baseUrl* parameter and prh-app-server:**1.3.2**)
+- Undeploy existing PRH service (1.3.1) by going into k8s and bootstrap pod.
+
+  - Enter the bootstrap pod: ``kubectl exec -it [pod name] -n onap /bin/bash``
+  - Uninstall PRH: ``cfy executions start -d prh uninstall``
+  - Delete deployment: ``cfy deployments delete prh``
+  - Delete blueprint: ``cfy blueprints delete prh``
+  - Replace the old blueprint with the new one (blueprints/k8s-prh.yaml)
+  - Upload the blueprint to cfy: ``cfy blueprints upload -b prh /blueprints/k8s-prh.yaml``
+  - Create deployment: ``cfy deployments create -b prh -i /inputs/k8s-prh-inputs.yaml prh``
+  - Install PRH: ``cfy executions start -d prh install``
+
+- Verify that PRH pod is up and running.
