@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8b23a797_98d79da8",
+        "filename": "docs/sections/services/prh/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-10-21T16:58:23Z",
+      "side": 1,
+      "message": "This input will have 1.3.1 by default. We should either make a copy of this file and update as noted earlier or as the blueprint has this version default correct to 1.3.2, we can simply do a deployment without input override. So something like below should suffice\n\ncfy deployments create -b prh prh",
+      "range": {
+        "startLine": 83,
+        "startChar": 55,
+        "endLine": 83,
+        "endChar": 85
+      },
+      "revId": "bb9e6462c6ff9dea350c4275e5ac748821c3e7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
