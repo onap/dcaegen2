@@ -46,6 +46,30 @@
       "revId": "16a8b8e3a88a531d3768f0aeb806f678e11c86a7",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33412148_388d33bc",
+        "filename": "docs/sections/services/prh/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-10-21T13:50:16Z",
+      "side": 1,
+      "message": "The version is maintained in the k8s-prh-inputs.yaml which is created based on configmap when bootstrap pod is created. I\u0027m not sure if changing the configmap will refresh this file? If you have tested these steps, Im okay to merge; pls confirm\n\nAn alternate option will be to create a copy of the k8s-prh-inputs.yaml and use it when new deployment is created (this is something normally done)",
+      "parentUuid": "44c6c49e_672a80cc",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 95
+      },
+      "revId": "16a8b8e3a88a531d3768f0aeb806f678e11c86a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
