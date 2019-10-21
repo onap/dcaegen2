@@ -22,6 +22,30 @@
       "revId": "16a8b8e3a88a531d3768f0aeb806f678e11c86a7",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "44c6c49e_672a80cc",
+        "filename": "docs/sections/services/prh/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 3699
+      },
+      "writtenOn": "2019-10-21T13:29:00Z",
+      "side": 1,
+      "message": "I think we need those steps, as without them, PRH will be still in version 1.3.1. Only PRH with version 1.3.2 can properly interpret the new blueprint and the correction will be active. This is how I understand it. Please correct me if I miss something here.",
+      "parentUuid": "648f13e2_4c8e74dd",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 95
+      },
+      "revId": "16a8b8e3a88a531d3768f0aeb806f678e11c86a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
