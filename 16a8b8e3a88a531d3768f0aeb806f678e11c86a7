@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "648f13e2_4c8e74dd",
+        "filename": "docs/sections/services/prh/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-10-21T12:58:44Z",
+      "side": 1,
+      "message": "Is there any dependency for PRH on this configmap, if not this step is not required",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 95
+      },
+      "revId": "16a8b8e3a88a531d3768f0aeb806f678e11c86a7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
