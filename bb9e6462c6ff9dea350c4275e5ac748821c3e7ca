@@ -22,6 +22,30 @@
       "revId": "bb9e6462c6ff9dea350c4275e5ac748821c3e7ca",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e36bcbb_6a772285",
+        "filename": "docs/sections/services/prh/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 3699
+      },
+      "writtenOn": "2019-10-22T07:25:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b23a797_98d79da8",
+      "range": {
+        "startLine": 83,
+        "startChar": 55,
+        "endLine": 83,
+        "endChar": 85
+      },
+      "revId": "bb9e6462c6ff9dea350c4275e5ac748821c3e7ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
