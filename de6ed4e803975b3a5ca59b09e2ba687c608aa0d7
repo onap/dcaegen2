@@ -46,6 +46,30 @@
       "revId": "de6ed4e803975b3a5ca59b09e2ba687c608aa0d7",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "516a7049_5f0cc7fc",
+        "filename": "docs/sections/services/prh/installation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-10-22T15:22:16Z",
+      "side": 1,
+      "message": "For bootstrap pod /bin/bash is not an issue",
+      "parentUuid": "72cb2d78_7980e2e9",
+      "range": {
+        "startLine": 77,
+        "startChar": 67,
+        "endLine": 77,
+        "endChar": 76
+      },
+      "revId": "de6ed4e803975b3a5ca59b09e2ba687c608aa0d7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
