@@ -34,9 +34,7 @@ Authentication Support
 VES Collector support following authentication types
 
     * *auth.method=noAuth* default option - no security (http)
-    * *auth.method=certOnly* is used to enable mutual TLS authentication (https)
     * *auth.method=certBasicAuth* is used to enable mutual TLS authentication or/and basic HTTPs authentication
-    * *auth.method=basicAuth* is used to enable basic HTTPs authentication
 
 Default ONAP deployed VESCOllector is configured for "noAuth". If VESCollector instance need to be deployed with authentication enabled, follow below setup
 
@@ -218,7 +216,7 @@ In this case blueprint can be deleted explicitly using this command.
 
         cfy blueprint delete ves-tls
 
-Known Issue : When VESCollector is required to be deployed with authentication enabled *auth.method=certOnly* or *auth.method: certBasicAuth* or *auth.method: basicAuth* 
+Known Issue : When VESCollector is required to be deployed with authentication enabled *auth.method: certBasicAuth*
 the blueprint currently disables healthcheck parameters configuration (below). This causes no readiness probe to be deployed in K8S when VES Collector is deployed with authentication enabled.
 
     

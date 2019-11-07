@@ -33,7 +33,7 @@ Features Supported
 ------------------
 - VES collector deployed as docker containers
 - Acknowledgement to sender with appropriate response code  (both successful and failure)
-- Authentication of the events posted to collector (support 4 types of authentication setting)
+- Authentication of the events posted to collector (support 2 types of authentication setting)
 - Support single or batch JSON events input
 - Schema validation (against standard VES definition)
 - Multiple schema support and backward compatibility 
