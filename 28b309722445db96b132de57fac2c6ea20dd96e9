@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f9aa6781_b71facd2",
+        "filename": "platformdoc/docs/components/dcae-cli/blueprint-generator/blueprint_generator.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2019-11-11T16:55:07Z",
+      "side": 1,
+      "message": "Links need to be updated",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 176
+      },
+      "revId": "28b309722445db96b132de57fac2c6ea20dd96e9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
