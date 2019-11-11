@@ -11,22 +11,18 @@ The blueprint generator is a java rewrite of the tosca lab python tool. The poin
 Steps to run the blueprint generator:
 +++++++++++++++++++++++++++++++++++++
 
-1. Download the zip file from Nexus by clicking `here <https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/cli/blueprint-generator/1.2.0/blueprint-generator-1.2.0-bundle.tar.gz>`_ or "wget https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/cli/blueprint-generator/1.2.0/blueprint-generator-1.2.0-bundle.tar.gz"
+1. Download the jar file from Nexus by clicking `here <https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/cli/blueprint-generator/1.2.1/blueprint-generator-1.2.1-executable.jar>`_ or running
+    ``wget https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/cli/blueprint-generator/1.2.1/blueprint-generator-1.2.1-executable.jar``
 
-2. Unzip the the tar file
+2. To execute the application, run the following command: 
+    ``java -jar blueprint-generator-1.2.1-executable.jar blueprint``
 
-3. You should see blueprint-generator-1.2.0 directory created (also a lib folder in this directory)
+3. This execution will provide the help, as you have not provided the required flags.
 
-4. If you are in linux run the following command: "java -cp blueprint-generator/lib/blueprint-generator-1.2.0.jar:blueprint-generator/lib/* org.onap.blueprintgenerator.core.BlueprintGenerator"
+4. When ready you can run the program again except with the required flags.
 
-5. If you are in windows run this command java -cp "lib/blueprint-generator-1.2.0.jar;lib/\*" org.onap.blueprintgenerator.core.BlueprintGenerator.
-
-6. These commands mean that it will run java, find a path to the jar that we want to run along with all of the dependencies that we need, then you add the path to the main method. If done correctly you should see a list of all of the flags you can add. 
-
-7. When ready you can run the program again except with the required flags.
-
-8. OPTIONS:
-    -p: The path to where the final blueprint yaml file will be created (Required)
+5. OPTIONS:
+    -p: The path to where the final blueprint yaml file will be created (required)
 
     -i: The path to the JSON spec file (required)
 
@@ -38,7 +34,8 @@ Steps to run the blueprint generator:
 
     -o: This flag will create a service component override for your deployment equal to the value you put (optional)
 
-9. An example running this program in windows would look like this java -cp "lib/blueprint-generator-1.2.0.jar;lib/\*" org.onap.blueprintgenerator.core.BlueprintGenerator -p blueprint_output -i ComponentSpecs/TestComponentSpec.json -n TestAppBlueprint
+6. An example running this program would look like this:
+    ``java -jar blueprint-generator-1.2.1-executable.jar -p blueprint_output -i ComponentSpecs/TestComponentSpec.json -n TestAppBlueprint``
 
 
 Extra information
@@ -60,11 +57,12 @@ Extra information
 How to create policy models:
 +++++++++++++++++++++++++++++++++++++
 
-1. The policy model creation is under the same zip file as the blueprint generator
+1. Policy model creation can be done with the same jar as downloaded for the blueprint generation.
 
-2. Run the same command as the blueprint generator except replace BlueprintGenerator with PolicyCreate
+2. Run the same command as the blueprint generator except replace the ``blueprint`` positional with ``policy``
 
-3. Example command 'java -cp "lib/blueprint-generator-1.2.0.jar;lib/*" org.onap.blueprintgenerator.core.PolicyCreate'
+3. Example command:
+    ``java -jar blueprint-generator-1.2.1-executable.jar policy``
 
 4. Options:
 
