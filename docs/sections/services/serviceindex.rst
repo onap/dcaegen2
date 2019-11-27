@@ -18,6 +18,7 @@ DCAE Service components
    ./dfc/index.rst
    ./heartbeat-ms/index.rst
    ./pm-mapper/index.rst
+   ./pm-subscription-handler/index.rst
    ./bbs-event-processor/index.rst
    ./son-handler/index.rst
    ./restconf/index.rst
