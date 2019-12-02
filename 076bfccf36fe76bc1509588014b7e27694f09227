@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "669cdb0c_5feffc75",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f752e0a_8d1f7cb2",
+      "range": {
+        "startLine": 12,
+        "startChar": 111,
+        "endLine": 13,
+        "endChar": 87
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3d7b712d_f012f936",
         "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-12-02T10:27:49Z",
       "side": 1,
       "message": "Not detailed in the table below.",
+      "range": {
+        "startLine": 62,
+        "startChar": 16,
+        "endLine": 62,
+        "endChar": 24
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "550d7c21_c1ba787c",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d7b712d_f012f936",
       "range": {
         "startLine": 62,
         "startChar": 16,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "4d6bbed5_ec560853",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0c66fa1_066f550c",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 109
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7107b03d_04bfa53a",
         "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2019-12-02T10:27:49Z",
       "side": 1,
       "message": "Same as the above",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 81
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e45f147_5a7ecad5",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7107b03d_04bfa53a",
       "range": {
         "startLine": 74,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "44b7edeb_be4fda71",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2028e5e9_0d211159",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 12
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4e91b666_dad62e52",
         "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
         "patchSetId": 1
@@ -128,6 +248,30 @@
       "writtenOn": "2019-12-02T10:27:49Z",
       "side": 1,
       "message": "Maybe you should specify that these \"xNF names\" contained within the list are actually regexes.\n\nI don\u0027t think you have explicitly stated anywhere that the application is written in python, it might be worth doing so as there are some differences in the methods available between python and java for example.\n\nJava offers a method called matches which matches the entire string to the regex, python doesn\u0027t have that and to get the same result you need to change your regex, so you should probably indicate that the regex will be interpreted by python and which method (search, match, findall, finditer) will be used and how it will be used.\nI realise that may seem a bit extreme, but when you are designing a regex for something the more information you have about the environment the less likely you are to run into weird issues where it works locally but not in production.",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 81
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d307cbcb_a4ffa6d6",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e91b666_dad62e52",
       "range": {
         "startLine": 101,
         "startChar": 0,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "c16c371f_dc08afb5",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c92bb88_a0ff4fe5",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 82
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "63f1215f_c6775316",
         "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
         "patchSetId": 1
@@ -174,6 +342,30 @@
       "writtenOn": "2019-12-02T10:27:49Z",
       "side": 1,
       "message": "Is this needed?",
+      "range": {
+        "startLine": 9,
+        "startChar": 9,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ac51b877_60992290",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63f1215f_c6775316",
       "range": {
         "startLine": 9,
         "startChar": 9,
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "26ac8739_9560740e",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfaf7c00_7c98663b",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "88551db2_885c28e8",
         "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
         "patchSetId": 1
@@ -220,6 +436,30 @@
       "writtenOn": "2019-12-02T10:27:49Z",
       "side": 1,
       "message": "Bus Controller is part of DMaaP, so saying that DMaaP is required should be sufficient, however, I too have noticed the post installs fail sometimes, so maybe it is worth including a section in the troubleshooting.",
+      "range": {
+        "startLine": 23,
+        "startChar": 6,
+        "endLine": 23,
+        "endChar": 117
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4d25b58_3255e61d",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88551db2_885c28e8",
       "range": {
         "startLine": 23,
         "startChar": 6,
@@ -249,6 +489,24 @@
     },
     {
       "key": {
+        "uuid": "3a196b84_ae03ac87",
+        "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "efba6e7a_07330e47",
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9c4ccd6c_4ae2b3eb",
         "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
         "patchSetId": 1
@@ -260,6 +518,30 @@
       "writtenOn": "2019-12-02T10:27:49Z",
       "side": 1,
       "message": "Should it be more explicit what the default severity of the metrics and audit log files are?",
+      "range": {
+        "startLine": 15,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 38
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9dd4a44_f1201250",
+        "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c4ccd6c_4ae2b3eb",
       "range": {
         "startLine": 15,
         "startChar": 8,
@@ -318,6 +600,54 @@
     },
     {
       "key": {
+        "uuid": "7a87b83e_7993180f",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a09f92c9_8e7b2a1c",
+      "range": {
+        "startLine": 11,
+        "startChar": 28,
+        "endLine": 11,
+        "endChar": 50
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e82b4aef_48e0cee3",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99bfa662_82de76e0",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 27
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "44ff54a0_76056afa",
         "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
         "patchSetId": 1
@@ -329,6 +659,30 @@
       "writtenOn": "2019-12-02T10:27:49Z",
       "side": 1,
       "message": "Not sure about the reading flow. But if you are supposed to start in Overview maybe It\u0027s worth expanding this reference and in brackets put the acronym next to it.",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 15
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb2a30dd_ddbf4246",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44ff54a0_76056afa",
       "range": {
         "startLine": 12,
         "startChar": 12,
@@ -364,6 +718,30 @@
     },
     {
       "key": {
+        "uuid": "9376ea0a_8742f087",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d26244f9_20ea0352",
+      "range": {
+        "startLine": 33,
+        "startChar": 66,
+        "endLine": 33,
+        "endChar": 67
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "25fe4c7a_0715d184",
         "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
         "patchSetId": 1
@@ -375,6 +753,30 @@
       "writtenOn": "2019-12-02T10:27:49Z",
       "side": 1,
       "message": "This seems out of place, given that everywhere else you refer to them as xNF.",
+      "range": {
+        "startLine": 45,
+        "startChar": 88,
+        "endLine": 46,
+        "endChar": 9
+      },
+      "revId": "076bfccf36fe76bc1509588014b7e27694f09227",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b07e771_7277d0c0",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2019-12-02T15:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25fe4c7a_0715d184",
       "range": {
         "startLine": 45,
         "startChar": 88,
