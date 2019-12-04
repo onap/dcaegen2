@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "970e28e1_436d0ec9",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2019-12-04T11:14:06Z",
+      "side": 1,
+      "message": "Are we going with this design for now?",
+      "range": {
+        "startLine": 24,
+        "startChar": 2,
+        "endLine": 24,
+        "endChar": 18
+      },
+      "revId": "e7ac078518f99698b6fa0810b83c61c0d5478a83",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "601449fa_9906fecd",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2019-12-04T11:14:06Z",
+      "side": 1,
+      "message": "Does the ordering of these matter to the sdc models?",
+      "range": {
+        "startLine": 115,
+        "startChar": 13,
+        "endLine": 115,
+        "endChar": 24
+      },
+      "revId": "e7ac078518f99698b6fa0810b83c61c0d5478a83",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "352db933_e54fe3bc",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2019-12-04T11:14:06Z",
+      "side": 1,
+      "message": "can?",
+      "range": {
+        "startLine": 188,
+        "startChar": 36,
+        "endLine": 188,
+        "endChar": 38
+      },
+      "revId": "e7ac078518f99698b6fa0810b83c61c0d5478a83",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "663492ea_500b7415",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2019-12-04T11:14:06Z",
+      "side": 1,
+      "message": "Should this ref the adminState instead? LOCKED/UNLOCKED",
+      "range": {
+        "startLine": 195,
+        "startChar": 100,
+        "endLine": 195,
+        "endChar": 108
+      },
+      "revId": "e7ac078518f99698b6fa0810b83c61c0d5478a83",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "44c13aaa_6c785895",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2019-12-04T11:14:06Z",
+      "side": 1,
+      "message": "from",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 7
+      },
+      "revId": "e7ac078518f99698b6fa0810b83c61c0d5478a83",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8cd245a4_767f3b48",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2019-12-04T11:14:06Z",
+      "side": 1,
+      "message": "DMaaP Mess..",
+      "range": {
+        "startLine": 33,
+        "startChar": 44,
+        "endLine": 33,
+        "endChar": 45
+      },
+      "revId": "e7ac078518f99698b6fa0810b83c61c0d5478a83",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
