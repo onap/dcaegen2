@@ -16,6 +16,24 @@
       "revId": "0d6417a294cbbd9a59e3e1d64b007fe3d63da82d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f21b3cd_aca995b7",
+        "filename": "docs/sections/apis/mod-onboardingapi.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-01-16T22:09:01Z",
+      "side": 1,
+      "message": "There is no reference in the code - https://git.onap.org/dcaegen2/platform/tree/mod/onboardingapi/dcae_cli/http.py\n\nThe defaults are introduced by Flask which has swagger built into it and this provides partial object fetching.  Doc reference on syntax and default is here - https://flask-restplus.readthedocs.io/en/stable/mask.html",
+      "parentUuid": "c3c59214_be162942",
+      "revId": "0d6417a294cbbd9a59e3e1d64b007fe3d63da82d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
