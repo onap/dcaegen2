@@ -59,7 +59,7 @@ committers:
     - name: 'Jack Lucas'
       email: 'jflucas@research.att.com'
       company: 'ATT'
-      id: 'jflucas'
+      id: 'jackl'
       timezone: 'America/New_York'
     - name: 'Joseph O Leary'
       email: 'joseph.o.leary@est.tech'
