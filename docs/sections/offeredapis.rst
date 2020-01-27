@@ -15,3 +15,4 @@ Offered APIs
    apis/PNDA.rst
    apis/pmmapper.rst
    apis/SDK.rst
+   apis/mod-onboardingapi.rst
