@@ -6,54 +6,63 @@
 Configuration
 =============
 
-PRH fetches configuration directly from Consul service in the following JSON format:
+PRH fetches configuration directly from CBS service in the following JSON format:
 
 .. code-block:: json
 
   {
-    "aai": {
-      "aaiClientConfiguration": {
-        "aaiHost": "aai.onap.svc.cluster.local",
-        "aaiHostPortNumber": 8443,
-        "aaiIgnoreSslCertificateErrors": true,
-        "aaiProtocol": "https",
-        "aaiUserName": "AAI",
-        "aaiUserPassword": "AAI",
-        "aaiBasePath": "/aai/v12",
-        "aaiPnfPath": "/network/pnfs/pnf",
-      }
-    },
-    "dmaap": {
-      "dmaapConsumerConfiguration": {
-        "consumerGroup": "OpenDCAE-c12",
-        "consumerId": "c12",
-        "dmaapContentType": "application/json",
-        "dmaapHostName": "message-router.onap.svc.cluster.local",
-        "dmaapPortNumber": 3904,
-        "dmaapProtocol": "http",
-        "dmaapTopicName": "/events/unauthenticated.VES_PNFREG_OUTPUT",
-        "dmaapUserName": "admin",
-        "dmaapUserPassword": "admin",
-        "messageLimit": -1,
-        "timeoutMs": -1
+    "config":{
+      "dmaap.dmaapConsumerConfiguration.dmaapUserName":"admin",
+      "dmaap.dmaapConsumerConfiguration.dmaapUserPassword":"admin",
+      "dmaap.dmaapConsumerConfiguration.consumerId":"c12",
+      "dmaap.dmaapConsumerConfiguration.consumerGroup":"OpenDCAE-c12",
+      "dmaap.dmaapConsumerConfiguration.timeoutMs":-1,
+
+      "dmaap.dmaapProducerConfiguration.dmaapUserName":"admin",
+      "dmaap.dmaapProducerConfiguration.dmaapUserPassword":"admin",
+      "dmaap.dmaapUpdateProducerConfiguration.dmaapUserName":"admin",
+      "dmaap.dmaapUpdateProducerConfiguration.dmaapUserPassword":"admin",
+      "aai.aaiClientConfiguration.pnfUrl": "https://aai.onap.svc.cluster.local:8443/aai/v12/network/pnfs/pnf",
+      "aai.aaiClientConfiguration.baseUrl": "https://aai.onap.svc.cluster.local:8443/aai/v12",
+      "aai.aaiClientConfiguration.aaiUserName":"AAI",
+      "aai.aaiClientConfiguration.aaiUserPassword":"AAI",
+      "aai.aaiClientConfiguration.aaiIgnoreSslCertificateErrors":true,
+      "aai.aaiClientConfiguration.aaiServiceInstancePath":"/business/customers/customer/${customer}/service-subscriptions/service-subscription/${serviceType}/service-instances/service-instance/${serviceInstanceId}",
+      "aai.aaiClientConfiguration.aaiHeaders":{
+        "X-FromAppId":"prh",
+        "X-TransactionId":"9999",
+        "Accept":"application/json",
+        "Real-Time":"true",
+        "Authorization":"Basic QUFJOkFBSQ=="
       },
-      "dmaapProducerConfiguration": {
-        "dmaapContentType": "application/json",
-        "dmaapHostName": "message-router.onap.svc.cluster.local",
-        "dmaapPortNumber": 3904,
-        "dmaapProtocol": "http",
-        "dmaapTopicName": "/events/unauthenticated.PNF_READY",
-        "dmaapUserName": "admin",
-        "dmaapUserPassword": "admin"
+      "security.trustStorePath":"/opt/app/prh/local/org.onap.prh.trust.jks",
+      "security.trustStorePasswordPath":"change_it",
+      "security.keyStorePath":"/opt/app/prh/local/org.onap.prh.p12",
+      "security.keyStorePasswordPath":"change_it",
+      "security.enableAaiCertAuth":false,
+      "security.enableDmaapCertAuth":false,
+      "streams_publishes":{
+        "pnf-update":{
+          "type": "message_router",
+          "dmaap_info":{
+            "topic_url":"http://dmaap-mr:2222/events/unauthenticated.PNF_UPDATE"
+          }
+        },
+        "pnf-ready":{
+          "type": "message_router",
+          "dmaap_info":{
+            "topic_url":"http://dmaap-mr:2222/events/unauthenticated.PNF_READY"
+          }
+        }
+      },
+      "streams_subscribes":{
+        "ves-reg-output":{
+          "type": "message_router",
+          "dmaap_info":{
+            "topic_url":"http://dmaap-mr:2222/events/unauthenticated.VES_PNFREG_OUTPUT"
+          }
+        }
       }
-    },
-    "security": {
-      "trustStorePath": "/opt/app/prh/etc/cert/trust.jks",
-      "trustStorePasswordPath": "/opt/app/prh/etc/cert/trust.pass",
-      "keyStorePath": "/opt/app/prh/etc/cert/cert.jks",
-      "keyStorePasswordPath": "/opt/app/prh/etc/cert/jks.pass",
-      "enableAaiCertAuth": "false",
-      "enableDmaapCertAuth": "false"
     }
   }
 
