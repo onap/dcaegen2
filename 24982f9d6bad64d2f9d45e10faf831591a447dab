@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "003adae4_e85944af",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2020-02-11T11:32:23Z",
+      "side": 1,
+      "message": "Think this should not be configurable.",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 14
+      },
+      "revId": "24982f9d6bad64d2f9d45e10faf831591a447dab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9aeb683_8081ae0a",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2020-02-11T11:32:23Z",
+      "side": 1,
+      "message": "Think this should not be configurable.",
+      "range": {
+        "startLine": 60,
+        "startChar": 2,
+        "endLine": 60,
+        "endChar": 19
+      },
+      "revId": "24982f9d6bad64d2f9d45e10faf831591a447dab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9e37e67d_f090da2e",
         "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
         "patchSetId": 1
@@ -18,6 +64,52 @@
         "startChar": 0,
         "endLine": 78,
         "endChar": 49
+      },
+      "revId": "24982f9d6bad64d2f9d45e10faf831591a447dab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "344a4586_c31f9798",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2020-02-11T11:32:23Z",
+      "side": 1,
+      "message": "To full stop or not to full stop. That is the question..",
+      "range": {
+        "startLine": 134,
+        "startChar": 58,
+        "endLine": 134,
+        "endChar": 59
+      },
+      "revId": "24982f9d6bad64d2f9d45e10faf831591a447dab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f11419a1_15f98956",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2020-02-11T11:32:23Z",
+      "side": 1,
+      "message": "Should this be \"Policy Framework\"?",
+      "range": {
+        "startLine": 232,
+        "startChar": 73,
+        "endLine": 232,
+        "endChar": 81
       },
       "revId": "24982f9d6bad64d2f9d45e10faf831591a447dab",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
