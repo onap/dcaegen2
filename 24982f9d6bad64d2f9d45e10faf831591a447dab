@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "78eedd2b_d6be878a",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-02-11T12:51:36Z",
+      "side": 1,
+      "message": "Won\u0027t we always be https?",
+      "range": {
+        "startLine": 40,
+        "startChar": 2,
+        "endLine": 40,
+        "endChar": 23
+      },
+      "revId": "24982f9d6bad64d2f9d45e10faf831591a447dab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "003adae4_e85944af",
         "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
         "patchSetId": 1
