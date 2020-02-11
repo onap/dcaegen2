@@ -9,12 +9,9 @@ configurable.
 Logging
 =======
 
-There are four log files within the PMSH container, they are located in /var/log/ONAP/pmsh/
+The PMSH application writes logs on the debug level to the following file:
 
 .. code-block:: bash
 
-        /var/log/ONAP/pmsh/error.log (Level: Error)
-        /var/log/ONAP/pmsh/debug.log (Level: Debug)
-        /var/log/ONAP/pmsh/audit.log (Level: Info)
-        /var/log/ONAP/pmsh/metrics.log (Level: Info)
+        /var/log/ONAP/dcaegen2/services/pmsh/debug.log
 
