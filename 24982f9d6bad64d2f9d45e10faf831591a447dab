@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5cda67e5_b8037f70",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-02-11T12:58:07Z",
+      "side": 1,
+      "message": "Need to update the bp here\n\nhttps://gerrit.onap.org/r/c/dcaegen2/services/+/100699/11/components/pm-subscription-handler/dpo/blueprints/k8s-pmsh.yaml#86",
+      "parentUuid": "003adae4_e85944af",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 14
+      },
+      "revId": "24982f9d6bad64d2f9d45e10faf831591a447dab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f9aeb683_8081ae0a",
         "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2020-02-11T11:32:23Z",
       "side": 1,
       "message": "Think this should not be configurable.",
+      "range": {
+        "startLine": 60,
+        "startChar": 2,
+        "endLine": 60,
+        "endChar": 19
+      },
+      "revId": "24982f9d6bad64d2f9d45e10faf831591a447dab",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b9f9665b_0343a7fe",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-02-11T12:58:07Z",
+      "side": 1,
+      "message": "This needs an update\nhttps://gerrit.onap.org/r/c/dcaegen2/services/+/100699/11/components/pm-subscription-handler/dpo/blueprints/k8s-pmsh.yaml#102",
+      "parentUuid": "f9aeb683_8081ae0a",
       "range": {
         "startLine": 60,
         "startChar": 2,
