@@ -24,7 +24,7 @@ The core logic is implemented as 3 threads - main thread, child thread(s) for ha
 (b) Autonomously taking actions for ANR updates
 (c) Preparing the message contents required by SDN-R to re-configure the RAN nodes with PCI/ANR updates
 
-The logic may not be 100% fool-proof (i.e., cover all possible scenarios and boundary-counditions as in real field deployments), as well as the most efficient one. An attempt has been made to balance the usefulness for a PoC versus the complexity of handling all possible scenarios. It is intended to provide a good base for the community/users to enhance it further as required.
+The logic may not be 100% fool-proof (i.e., cover all possible scenarios and boundary-conditions as in real field deployments), as well as the most efficient one. An attempt has been made to balance the usefulness for a PoC versus the complexity of handling all possible scenarios. It is intended to provide a good base for the community/users to enhance it further as required.
 
 The details of the state machines of all the threads in the core logic are available in https://wiki.onap.org/pages/viewpage.action?pageId=56131985.
 
