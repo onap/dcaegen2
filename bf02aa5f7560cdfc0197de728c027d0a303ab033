@@ -1,0 +1,337 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "918c088e_d22d120f",
+        "filename": "docs/sections/services/datalake-handler/DL-DES.PNG",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "following updates needed\n1) Remove DL-exposure service as it is not part of this release\n2) DL-Feeder, DL-ADmin are ONAP components hence should have similar color coding as other ONAP components. \n3) Big-data storage and Data-Analytics UI Tools are external to ONAP; should be notated or demarked appropriately",
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "877c4fc0_f5fb41ee",
+        "filename": "docs/sections/services/datalake-handler/arch.PNG",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "rename box (containing DL Admin, DL feeder, MariaDB) to DataLake Handlers (versus just Datalake).",
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a8ce933b_de7bba8b",
+        "filename": "docs/sections/services/datalake-handler/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "to be removed",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 74
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a7e97bb_5624877f",
+        "filename": "docs/sections/services/datalake-handler/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "from",
+      "range": {
+        "startLine": 11,
+        "startChar": 99,
+        "endLine": 11,
+        "endChar": 102
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a8b9e1b8_a517191d",
+        "filename": "docs/sections/services/datalake-handler/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "To be removed from Frankfurt official rls notes; R7 EDS plan need further discussion.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 64
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c5fcd14_bd3b0dac",
+        "filename": "docs/sections/services/datalake-handler/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "should match to number of char above",
+      "range": {
+        "startLine": 22,
+        "startChar": 32,
+        "endLine": 22,
+        "endChar": 37
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83df0533_2d264415",
+        "filename": "docs/sections/services/datalake-handler/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "to be removed",
+      "range": {
+        "startLine": 30,
+        "startChar": 57,
+        "endLine": 30,
+        "endChar": 83
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "281e89f1_99c0dc55",
+        "filename": "docs/sections/services/datalake-handler/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "to be removed",
+      "range": {
+        "startLine": 38,
+        "startChar": 40,
+        "endLine": 38,
+        "endChar": 83
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59fc06b8_691534ed",
+        "filename": "docs/sections/services/datalake-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "pls note we are 2 weeks from M4, all TODO\u0027s should be addressed soon",
+      "range": {
+        "startLine": 4,
+        "startChar": 52,
+        "endLine": 4,
+        "endChar": 62
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1981b652_7098c4db",
+        "filename": "docs/sections/services/datalake-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "events/feed",
+      "range": {
+        "startLine": 13,
+        "startChar": 17,
+        "endLine": 13,
+        "endChar": 29
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a5b5222_37c2ff73",
+        "filename": "docs/sections/services/datalake-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "replace as Datalake Handlers components",
+      "range": {
+        "startLine": 37,
+        "startChar": 79,
+        "endLine": 37,
+        "endChar": 87
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8c09db8b_095dacf1",
+        "filename": "docs/sections/services/datalake-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "Datalake Handlers components",
+      "range": {
+        "startLine": 37,
+        "startChar": 25,
+        "endLine": 37,
+        "endChar": 33
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d1c3bb8_bd138a6c",
+        "filename": "docs/sections/services/datalake-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "remove this",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 64
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7230c460_a3c87486",
+        "filename": "docs/sections/services/datalake-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "DataLake Handler\u0027s",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 9
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "622e1cea_00b536d1",
+        "filename": "docs/sections/services/datalake-handler/userguide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-18T22:04:31Z",
+      "side": 1,
+      "message": "Required to be documented by M4",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 13
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
