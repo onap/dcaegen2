@@ -15,7 +15,7 @@ Unable to connect to Config Binding Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The PMSH may not be able to reach the Config Binding Service. If this is the case you will be able to
-see an error connecting to Config Binding Service in Kibana.
+see an error connecting to Config Binding Service, by checking the logs in Kibana.
 
 Invalid Configuration
 ^^^^^^^^^^^^^^^^^^^^^
