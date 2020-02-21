@@ -197,6 +197,30 @@
     },
     {
       "key": {
+        "uuid": "78c3c686_a13daca1",
+        "filename": "docs/sections/services/datalake-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2349
+      },
+      "writtenOn": "2020-02-21T18:24:41Z",
+      "side": 1,
+      "message": "Kate will complete this part.",
+      "parentUuid": "59fc06b8_691534ed",
+      "range": {
+        "startLine": 4,
+        "startChar": 52,
+        "endLine": 4,
+        "endChar": 62
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1981b652_7098c4db",
         "filename": "docs/sections/services/datalake-handler/overview.rst",
         "patchSetId": 1
@@ -323,6 +347,30 @@
       "writtenOn": "2020-02-18T22:04:31Z",
       "side": 1,
       "message": "Required to be documented by M4",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 13
+      },
+      "revId": "bf02aa5f7560cdfc0197de728c027d0a303ab033",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee3e8048_2af293db",
+        "filename": "docs/sections/services/datalake-handler/userguide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2349
+      },
+      "writtenOn": "2020-02-21T18:24:41Z",
+      "side": 1,
+      "message": "Ekko will complete this part.",
+      "parentUuid": "622e1cea_00b536d1",
       "range": {
         "startLine": 4,
         "startChar": 0,
