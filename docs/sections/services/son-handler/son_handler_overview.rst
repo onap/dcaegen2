@@ -28,15 +28,30 @@ The logic may not be 100% fool-proof (i.e., cover all possible scenarios and bou
 
 The details of the state machines of all the threads in the core logic are available in https://wiki.onap.org/pages/viewpage.action?pageId=56131985.
 
+In Frankfurt release, adaptive SON functionality was introduced for PCI optimization. While determining the optimum PCI values to resolve PCI collision and confusion, the optimizer also takes into consideration a set of cells whose PCI values may not be changed during the optimization. Such situations could arise, for example, when the PCI value of a cell could not be updated in the past (due to whatever reason), or configuration policy specifies that certain cells’ PCI values should never be changed. So, the SON-Handler MS keeps track of cells whose PCI values cannot be changed. When triggering OOF for PCI optimization, the SON-Handler MS also provides the list of cells whose PCI values cannot be changed.
+ 
+
+Details of Frankfurt implementation are available in https://wiki.onap.org/display/DW/SON-Handler+MS+%28DCAE%29+Impacts.
+
+
 Database
 ~~~~~~~~
 This is a PostgreSQL DB, and is intended to persist information such as the following:
+
 - PCI-Handler MS Config information (e.g., thresholds, timer values, OOF algorithm name, etc.)
+
 - Pre-processing results and other related information (e.g., neighbor list)
+
 - Buffered notifications (i.e., notifications not yet processed at all)
+
 - State information
+
 - Association between PNF-name and CellId
-- PM/FM data
+
+- Aggregated PM/FM data
+
+- List of cells whose PCI values are fixed
+
 - Etc.
 
 DMaaP Client
@@ -45,8 +60,9 @@ This is responsible for registering with the DMaaP client for the DMaaP notifica
 
 Deployment aspects
 ------------------
-The SON-Handler MS will be deployed on DCAE using the mechanism described in "Option 3 - On-Demand deployment through DCAE-Controller cli" at https://wiki.onap.org/display/DW/Dublin+Deployment+Strategy.
+The SON-Handler MS will be deployed on DCAE using the mechanism described in "Option 3 - On-Demand deployment through DCAE-Controller cli" at https://wiki.onap.org/display/DW/Dublin+Deployment+Strategy.Details of the installation steps are available at ./installation.rst. Further details can be obtained from https://wiki.onap.org/pages/viewpage.action?pageId=76875778.
 
 Known Issues and Resolutions
 ----------------------------
 The scope and scenarios addressed are documented in the SON use case page for Dublin - https://wiki.onap.org/display/DW/OOF-PCI+Use+Case+-+Dublin+Release+-+ONAP+based+SON+for+PCI+and+ANR.
+The enhancements and limitations in Frankfurt release are documented in the SON use case page for Frankfurt - https://wiki.onap.org/display/DW/OOF+%28SON%29+in+R5+El+Alto%2C+OOF+%28SON%29+in+R6+Frankfurt.

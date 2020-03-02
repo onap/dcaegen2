@@ -57,7 +57,7 @@ Deployment steps
 ~~~~~~~~~~~~~~~~
 - Login to the bootstrap container
         kubectl exec -ti --namespace onap <bootstrap pod name> bash
-- Copy the blueprints and inputs file to the bootstrap container. The blueprint and a sample input file can be found under dpo/blueprints directory of son-hanler project. (https://gerrit.onap.org/r/dcaegen2/services/son-handler)
+- Copy the blueprints and inputs file to the bootstrap container. The blueprint and a sample input file can be found under dpo/blueprints directory of son-handler project. (https://gerrit.onap.org/r/dcaegen2/services/son-handler)
 - Deploy the microservice into the cloudify using the following command
         cfy install -d sonhms -b sonhms -i <inputs file path> <blueprint file path>
 - Deployment status of the microservice can be found from kubernetes pods status (MS will be deployed as a k8s pod in the kubernetes environment under the same namespace as the DCAE environment).

@@ -9,8 +9,9 @@ SON-Handler MS
 
 
 **SON-Handler MS** is introduced in ONAP for implementing the pre-processing and co-ordination actions of various RAN SON use cases.
-As of now PCI optimization and ANR updates are handled in Dublin release.
-OOF, SON Handler MS, DCAE, VES Collector, Policy, DMaaP and SDNR are involved in this use case implementation.
+PCI optimization and centralized ANR updates are handled in Frankfurt release.
+
+OOF, DCAE - SON Handler MS and VES Collector, Policy, DMaaP and SDN-C (SDN-R) are involved in the realization of this use case.
 
 .. image:: flowdiagram.jpg
 
