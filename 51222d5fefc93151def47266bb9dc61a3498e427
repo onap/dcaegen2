@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5acd6a07_5e56aaeb",
+        "filename": "docs/sections/services/son-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-03-03T00:44:20Z",
+      "side": 1,
+      "message": "based on new process, the blueprint will be available part of bootstrap container (once merged under \"blueprint\" repo)\n\nThe actual deployment can be done either via cfy or Dashboard; will be good to mention both steps. For deployment via dashboard - you can refer to the steps under pm-mapper if needed.",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 229
+      },
+      "revId": "51222d5fefc93151def47266bb9dc61a3498e427",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
