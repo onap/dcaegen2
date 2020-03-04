@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df9e9d03_a0326ceb",
+        "filename": "docs/sections/services/datalake-handler/userguide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2349
+      },
+      "writtenOn": "2020-03-04T00:58:31Z",
+      "side": 1,
+      "message": "monitor and manage DataLake configurations for the involved components, ONAP topics, databases, and 3rd-party tools.",
+      "range": {
+        "startLine": 6,
+        "startChar": 70,
+        "endLine": 7,
+        "endChar": 50
+      },
+      "revId": "d98abbd15d57d833a6d3d5268ae6808797ad623f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
