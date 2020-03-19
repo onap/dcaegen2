@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "57251850_016aa88a",
+        "filename": "docs/sections/services/datalake-handler/userguide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-03-19T02:41:08Z",
+      "side": 1,
+      "message": "From ONAP deployment/test standpoint, steps for setting up one the datastore (mongo or postgres) could be included",
+      "revId": "97d68942abd217b4f05b38b70df80230ac608873",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
