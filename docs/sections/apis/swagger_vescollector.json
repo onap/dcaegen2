@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.4.5",
-    "title": "VES Collector",
-    "description": "Virtual Event Streaming (VES) Collector is RESTful collector for processing JSON messages. The collector verifies the source and validates the events against VES schema before distributing to DMAAP MR topics\n",
+    "description": "Api Documentation",
+    "version": "1.5.3",
+    "title": "Api Documentation",
     "termsOfService": "urn:tos",
     "contact": {},
     "license": {
@@ -11,29 +11,22 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0"
     }
   },
-  "host": "localhost:8080",
+  "host": "localhost:8443",
   "basePath": "/",
-  "tags": [
-    {
-      "name": "basic-error-controller",
-      "description": "Basic Error Controller"
-    },
-    {
-      "name": "ves-rest-controller",
-      "description": "Ves Rest Controller"
-    }
-  ],
+  "tags": [{
+    "name": "basic-error-controller",
+    "description": "Basic Error Controller"
+  }, {
+    "name": "ves-rest-controller",
+    "description": "Ves Rest Controller"
+  }],
   "paths": {
     "/": {
       "get": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "mainPage",
         "operationId": "mainPageUsingGET",
-        "produces": [
-          "*/*"
-        ],
+        "produces": ["*/*"],
         "responses": {
           "200": {
             "description": "OK",
@@ -55,19 +48,18 @@
     },
     "/error": {
       "get": {
-        "tags": [
-          "basic-error-controller"
-        ],
-        "summary": "errorHtml",
-        "operationId": "errorHtmlUsingGET",
-        "produces": [
-          "text/html"
-        ],
+        "tags": ["basic-error-controller"],
+        "summary": "error",
+        "operationId": "errorUsingGET",
+        "produces": ["*/*"],
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ModelAndView"
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
             }
           },
           "401": {
@@ -82,22 +74,19 @@
         }
       },
       "head": {
-        "tags": [
-          "basic-error-controller"
-        ],
-        "summary": "errorHtml",
-        "operationId": "errorHtmlUsingHEAD",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "text/html"
-        ],
+        "tags": ["basic-error-controller"],
+        "summary": "error",
+        "operationId": "errorUsingHEAD",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ModelAndView"
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
             }
           },
           "204": {
@@ -112,26 +101,23 @@
         }
       },
       "post": {
-        "tags": [
-          "basic-error-controller"
-        ],
-        "summary": "errorHtml",
-        "operationId": "errorHtmlUsingPOST",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "text/html"
-        ],
+        "tags": ["basic-error-controller"],
+        "summary": "error",
+        "operationId": "errorUsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ModelAndView"
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -145,26 +131,23 @@
         }
       },
       "put": {
-        "tags": [
-          "basic-error-controller"
-        ],
-        "summary": "errorHtml",
-        "operationId": "errorHtmlUsingPUT",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "text/html"
-        ],
+        "tags": ["basic-error-controller"],
+        "summary": "error",
+        "operationId": "errorUsingPUT",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ModelAndView"
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -178,19 +161,18 @@
         }
       },
       "delete": {
-        "tags": [
-          "basic-error-controller"
-        ],
-        "summary": "errorHtml",
-        "operationId": "errorHtmlUsingDELETE",
-        "produces": [
-          "text/html"
-        ],
+        "tags": ["basic-error-controller"],
+        "summary": "error",
+        "operationId": "errorUsingDELETE",
+        "produces": ["*/*"],
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ModelAndView"
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
             }
           },
           "204": {
@@ -205,22 +187,19 @@
         }
       },
       "options": {
-        "tags": [
-          "basic-error-controller"
-        ],
-        "summary": "errorHtml",
-        "operationId": "errorHtmlUsingOPTIONS",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "text/html"
-        ],
+        "tags": ["basic-error-controller"],
+        "summary": "error",
+        "operationId": "errorUsingOPTIONS",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ModelAndView"
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
             }
           },
           "204": {
@@ -235,22 +214,19 @@
         }
       },
       "patch": {
-        "tags": [
-          "basic-error-controller"
-        ],
-        "summary": "errorHtml",
-        "operationId": "errorHtmlUsingPATCH",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "text/html"
-        ],
+        "tags": ["basic-error-controller"],
+        "summary": "error",
+        "operationId": "errorUsingPATCH",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ModelAndView"
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
             }
           },
           "204": {
@@ -267,28 +243,20 @@
     },
     "/eventListener/v1": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -296,8 +264,8 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -313,28 +281,20 @@
     },
     "/eventListener/v1/eventBatch": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_1",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -342,8 +302,8 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -359,28 +319,20 @@
     },
     "/eventListener/v2": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_2",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -388,8 +340,8 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -405,28 +357,20 @@
     },
     "/eventListener/v2/eventBatch": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_3",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -434,8 +378,8 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -451,28 +395,20 @@
     },
     "/eventListener/v3": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_4",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -480,8 +416,8 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -497,28 +433,20 @@
     },
     "/eventListener/v3/eventBatch": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_5",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -526,8 +454,8 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -543,28 +471,20 @@
     },
     "/eventListener/v4": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_6",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -572,8 +492,8 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -589,28 +509,20 @@
     },
     "/eventListener/v4/eventBatch": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_7",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -618,8 +530,8 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -635,28 +547,20 @@
     },
     "/eventListener/v5": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_8",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -664,8 +568,8 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -681,28 +585,20 @@
     },
     "/eventListener/v5/eventBatch": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_9",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -710,8 +606,8 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
           },
           "401": {
             "description": "Unauthorized"
@@ -727,28 +623,20 @@
     },
     "/eventListener/v7": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_10",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -756,8 +644,11 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
@@ -767,34 +658,29 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/eventListener/v7/eventBatch": {
       "post": {
-        "tags": [
-          "ves-rest-controller"
-        ],
+        "tags": ["ves-rest-controller"],
         "summary": "receiveEvent",
         "operationId": "receiveEventUsingPOST_11",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "*/*"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "jsonPayload",
-            "description": "jsonPayload",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "in": "body",
+          "name": "jsonPayload",
+          "description": "jsonPayload",
+          "required": true,
+          "schema": {
+            "type": "string"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -802,8 +688,11 @@
               "type": "string"
             }
           },
-          "201": {
-            "description": "Created"
+          "202": {
+            "description": "Accepted"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
@@ -813,6 +702,9 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -839,72 +731,7 @@
         },
         "status": {
           "type": "string",
-          "enum": [
-            "100",
-            "101",
-            "102",
-            "103",
-            "200",
-            "201",
-            "202",
-            "203",
-            "204",
-            "205",
-            "206",
-            "207",
-            "208",
-            "226",
-            "300",
-            "301",
-            "302",
-            "303",
-            "304",
-            "305",
-            "307",
-            "308",
-            "400",
-            "401",
-            "402",
-            "403",
-            "404",
-            "405",
-            "406",
-            "407",
-            "408",
-            "409",
-            "410",
-            "411",
-            "412",
-            "413",
-            "414",
-            "415",
-            "416",
-            "417",
-            "418",
-            "419",
-            "420",
-            "421",
-            "422",
-            "423",
-            "424",
-            "426",
-            "428",
-            "429",
-            "431",
-            "451",
-            "500",
-            "501",
-            "502",
-            "503",
-            "504",
-            "505",
-            "506",
-            "507",
-            "508",
-            "509",
-            "510",
-            "511"
-          ]
+          "enum": ["100", "101", "102", "103", "200", "201", "202", "203", "204", "205", "206", "207", "208", "226", "300", "301", "302", "303", "304", "305", "307", "308", "400", "401", "402", "403", "404", "405", "406", "407", "408", "409", "410", "411", "412", "413", "414", "415", "416", "417", "418", "419", "420", "421", "422", "423", "424", "426", "428", "429", "431", "451", "500", "501", "502", "503", "504", "505", "506", "507", "508", "509", "510", "511"]
         },
         "view": {
           "$ref": "#/definitions/View"
