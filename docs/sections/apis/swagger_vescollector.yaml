@@ -1,5 +1,6 @@
 # ================================================================================
 # Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+# Modifications Copyright (C) 2020 Nokia. All rights reserved.
 # ================================================================================
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,8 +17,8 @@
 #
 swagger: '2.0'
 info:
-  version: 1.4.5
-  title: VES Collector
+  version: '1.5.3'
+  title: Api Documentation
   description: >
     Virtual Event Streaming (VES) Collector is RESTful collector for processing
     JSON messages. The collector verifies the source and validates the events
@@ -27,7 +28,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0'
-host: 'localhost:8080'
+host: 'localhost:8443'
 basePath: /
 tags:
   - name: basic-error-controller
@@ -107,8 +108,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/ModelAndView'
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -129,8 +130,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/ModelAndView'
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -217,8 +218,8 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -247,8 +248,8 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -277,8 +278,8 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -307,8 +308,8 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -337,8 +338,8 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -367,8 +368,8 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -397,8 +398,8 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -427,8 +428,8 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -457,8 +458,8 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -487,8 +488,8 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
         '401':
           description: Unauthorized
         '403':
@@ -517,14 +518,18 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
+        '400':
+          description: Bad Request
         '401':
           description: Unauthorized
         '403':
           description: Forbidden
         '404':
           description: Not Found
+        '500':
+          description: Internal Server Error
   /eventListener/v7/eventBatch:
     post:
       tags:
@@ -547,14 +552,18 @@ paths:
           description: OK
           schema:
             type: string
-        '201':
-          description: Created
+        '202':
+          description: Accepted
+        '400':
+          description: Bad Request
         '401':
           description: Unauthorized
         '403':
           description: Forbidden
         '404':
           description: Not Found
+        '500':
+          description: Internal Server Error
 definitions:
   ModelAndView:
     type: object
