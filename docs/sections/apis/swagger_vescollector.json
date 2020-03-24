@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.5.3",
+    "version": "1.5.4",
     "title": "Api Documentation",
     "description": "Virtual Event Streaming (VES) Collector is RESTful collector for processing JSON messages. The collector verifies the source and validates the events against VES schema before distributing to DMAAP MR topics\n",
     "termsOfService": "urn:tos",
