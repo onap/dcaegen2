@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "c7616d68_9b4489d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-03-25T15:10:01Z",
+      "side": 1,
+      "message": "Update troubleshooting for consul tls disable procedure.",
+      "revId": "018b9dccfa7cf2b7294cbd50b554062fb0596258",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bbe2c2b5_c4484d8e",
         "filename": "docs/sections/services/ves-hv/resources/blueprint-snippet.yaml",
         "patchSetId": 1
