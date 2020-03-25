@@ -198,19 +198,19 @@ For more information, see the :ref:`hv_ves_behaviors` section.
 Authorization related errors
 ----------------------------
 
-**WARNING: SSL/TLS authorization is a part of an experimental feature for ONAP Dublin release and should be treated as unstable and subject to change in future releases.**
 **For more information, see** :ref:`ssl_tls_authorization`.
 
 **Key or trust store missing**
 
 ::
 
-    | org.onap.dcae.collectors.veshv.main | ERROR | Failed to start a server | java.io.FileNotFoundException: /etc/ves-hv/server.p12
+    | org.onap.dcae.collectors.veshv.main | ERROR | Failed to start a server | java.nio.file.NoSuchFileException: /etc/ves-hv/server.p12
 
 
 
 The above error is logged when key store is not provided. Similarly, when trust store is not provided, **/etc/ves-hv/trust.p12** file missing is logged.
 They can be changed by specifying ``security.keys.trustStore`` or ``security.keys.keyStore`` file configuration entries.
+If needed there is possibility to use HTTP protocol. To do this set ``security.sslDisable`` on true.
 
 ====
 
