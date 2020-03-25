@@ -1,11 +1,12 @@
-    **WARNING: SSL/TLS authorization is a part of an experimental feature for ONAP Casablanca release and thus should be treated as unstable and subject to change in future releases.**
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+.. http://creativecommons.org/licenses/by/4.0
 
 .. _ssl_tls_authorization:
 
 SSL/TLS authorization
 =====================
 
-HV-VES can be configured to require usage of SSL/TLS on every TCP connection. This can be done only during deployment of application container. For reference about exact commands, see :ref:`deployment`.
+HV-VES requires usage of SSL/TLS on every TCP connection. This can be done only during deployment of application container. For reference about exact commands, see :ref:`deployment`.
 
 General steps for configuring TLS for HV-VES collector:
 
@@ -19,7 +20,7 @@ General steps for configuring TLS for HV-VES collector:
 
 
 
-HV-VES uses OpenJDK (version 8u181) implementation of TLS ciphers. For reference, see https://docs.oracle.com/javase/8/docs/technotes/guides/security/overview/jsoverview.html.
+HV-VES uses OpenJDK (version 11.0.6) implementation of TLS ciphers. For reference, see https://docs.oracle.com/en/java/javase/11/security/java-security-overview1.html.
 
 If SSL/TLS is enabled for HV-VES container then service turns on also client authentication. HV-VES requires clients to provide their certificates on connection. In addition, HV-VES provides its certificate to every client during SSL/TLS-handshake to enable two-way authorization.
 
