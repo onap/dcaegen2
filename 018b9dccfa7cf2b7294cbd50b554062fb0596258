@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bbe2c2b5_c4484d8e",
+        "filename": "docs/sections/services/ves-hv/resources/blueprint-snippet.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-03-25T15:07:43Z",
+      "side": 1,
+      "message": "add this on proper level of file\n```\ntls_info:\n        cert_directory: \u0027/etc/ves-hv/ssl\u0027\n        use_tls: true\n```",
+      "revId": "018b9dccfa7cf2b7294cbd50b554062fb0596258",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc162885_df9997c3",
+        "filename": "docs/sections/services/ves-hv/resources/dynamic-configuration.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-03-25T15:07:43Z",
+      "side": 1,
+      "message": "remove it from here",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 17
+      },
+      "revId": "018b9dccfa7cf2b7294cbd50b554062fb0596258",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
