@@ -6,6 +6,7 @@ node_templates:
         server.listenPort: 6061
         server.idleTimeoutSec: 60
         cbs.requestIntervalSec: 5
+        useTls: true
         security.sslDisable: false
         security.keys.keyStoreFile: "/etc/ves-hv/ssl/cert.jks"
         security.keys.keyStorePasswordFile: "/etc/ves-hv/ssl/jks.pass"
