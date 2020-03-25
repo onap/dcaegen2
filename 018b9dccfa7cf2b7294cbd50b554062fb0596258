@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c618427e_e79f046d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6222
+      },
+      "writtenOn": "2020-03-25T17:12:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7616d68_9b4489d1",
+      "revId": "018b9dccfa7cf2b7294cbd50b554062fb0596258",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bbe2c2b5_c4484d8e",
         "filename": "docs/sections/services/ves-hv/resources/blueprint-snippet.yaml",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "44def692_45cc6737",
+        "filename": "docs/sections/services/ves-hv/resources/blueprint-snippet.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6222
+      },
+      "writtenOn": "2020-03-25T17:12:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbe2c2b5_c4484d8e",
+      "revId": "018b9dccfa7cf2b7294cbd50b554062fb0596258",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cc162885_df9997c3",
         "filename": "docs/sections/services/ves-hv/resources/dynamic-configuration.json",
         "patchSetId": 1
@@ -47,6 +83,30 @@
       "writtenOn": "2020-03-25T15:07:43Z",
       "side": 1,
       "message": "remove it from here",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 17
+      },
+      "revId": "018b9dccfa7cf2b7294cbd50b554062fb0596258",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83e33bf9_61a87cca",
+        "filename": "docs/sections/services/ves-hv/resources/dynamic-configuration.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6222
+      },
+      "writtenOn": "2020-03-25T17:12:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc162885_df9997c3",
       "range": {
         "startLine": 6,
         "startChar": 0,
