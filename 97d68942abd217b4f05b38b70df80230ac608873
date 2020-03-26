@@ -16,6 +16,24 @@
       "revId": "97d68942abd217b4f05b38b70df80230ac608873",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e0f8c64_0701ab6d",
+        "filename": "docs/sections/services/datalake-handler/userguide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5228
+      },
+      "writtenOn": "2020-03-26T01:22:18Z",
+      "side": 1,
+      "message": "Database management function focus on \"configure\" the database settings after the database was installed, not includes the setting up or install the database.",
+      "parentUuid": "57251850_016aa88a",
+      "revId": "97d68942abd217b4f05b38b70df80230ac608873",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
