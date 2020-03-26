@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad94e68f_2329a773",
+        "filename": "docs/sections/services/datalake-handler/images/blueprint-list.png",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-03-26T17:44:16Z",
+      "side": 1,
+      "message": "test version of blueprint can be removed from the image (instead can show only blueprint-id uploaded part of the instructions)",
+      "revId": "d0745a01ce5a676305c9ca96025d6d5f56f62936",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "567a71fb_5a81ff40",
+        "filename": "docs/sections/services/datalake-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-03-26T17:44:16Z",
+      "side": 1,
+      "message": "Deployment Pre-requisite need to be added (e.g mariadb-galera + mongo/postgres)",
+      "revId": "d0745a01ce5a676305c9ca96025d6d5f56f62936",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11a5dcae_29c7573e",
+        "filename": "docs/sections/services/datalake-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-03-26T17:44:16Z",
+      "side": 1,
+      "message": "Include steps  to validate the deployments/logs using kubectl",
+      "revId": "d0745a01ce5a676305c9ca96025d6d5f56f62936",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
