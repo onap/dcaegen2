@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0cf3afa9_e946ecb5",
+        "filename": "docs/sections/tls_enablement.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-03-26T18:12:12Z",
+      "side": 1,
+      "message": "Frankfurt SAN additions can be listed as well (being worked with AAF team)\n\ndashboard, dashboard.onap, dashboard.onap.svc.cluster.local, dcae-pmsh, dcae-pmsh.onap, dcae-pmsh.onap.svc.cluster.local",
+      "range": {
+        "startLine": 20,
+        "startChar": 3,
+        "endLine": 20,
+        "endChar": 1201
+      },
+      "revId": "b2807bc57f2075367948fdccade3f5dc5171b8be",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
