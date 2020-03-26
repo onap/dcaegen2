@@ -34,6 +34,24 @@
       "revId": "97d68942abd217b4f05b38b70df80230ac608873",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c2a3bcab_3df5f8b7",
+        "filename": "docs/sections/services/datalake-handler/userguide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-03-26T17:02:03Z",
+      "side": 1,
+      "message": "Okay. I recommend adding the DB setup steps for PG/Mongo on the WIKI (- https://wiki.onap.org/display/DW/DCAE+R6+DL-Handler+MicroService) as the component (DL-feeder) has dependency to external DB being available.",
+      "parentUuid": "3e0f8c64_0701ab6d",
+      "revId": "97d68942abd217b4f05b38b70df80230ac608873",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
