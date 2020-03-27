@@ -22,3 +22,6 @@ node_templates:
             kafka_info:
               bootstrap_servers: "message-router-kafka:9092"
               topic_name: "HV_VES_HEARTBEAT"
+      tls_info:
+        cert_directory: "/etc/ves-hv/ssl"
+        use_tls: true
