@@ -10,10 +10,11 @@ Onboarding Pre-requisite (Service Component)
    ./intro.rst
    ./architecture/pieces.rst
    ./architecture/service-discovery.rst
-   ./blueprint_generator.rst
+   ./architecture/blueprint_generator.rst
    ./requirements-guidelines.rst
    ./component-specification/component-specification.rst
    ./component-json-schema.rst
    ./data-formats.rst
    ./dcae-cli/dcae-cli-tool.rst
    ./glossary.rst
+   ../DCAE-MOD/mod-index.rst
