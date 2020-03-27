@@ -22,7 +22,12 @@ Data Collection, Analytics, and Events (DCAE)
    ./sections/sdk/index.rst
    ./sections/configuration.rst
    ./sections/components/component-development.rst
-   ./sections/services/serviceindex.rst
+   ./sections/services/serviceindex.rst  
+   ./sections/DCAE-MOD/DCAE-MOD-Intro.rst
+   ./sections/DCAE-MOD/DCAE-MOD-Architecture.rst
+   ./sections/DCAE-MOD/Roles.rst
+   ./sections/DCAE-MOD/DCAE-MOD-User-Guide.rst
+   ./sections/DCAE-MOD/Glossary.rst
    ./sections/release-notes.rst
 
 .. image:: https://bestpractices.coreinfrastructure.org/projects/1718/badge
