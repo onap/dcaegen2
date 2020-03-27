@@ -16,4 +16,5 @@ Onboarding Pre-requisite (Service Component)
    ./data-formats.rst
    ./dcae-cli/dcae-cli-tool.rst
    ./glossary.rst
+   ../DCAE-MOD/mod-index.rst
 
