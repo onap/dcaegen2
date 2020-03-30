@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7e75d2e7_d8ab61ee",
+        "filename": "docs/sections/DCAE-MOD-rst.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-03-30T15:32:50Z",
+      "side": 1,
+      "message": "new lines embedded on the spec to be removed; alternatively all the spec files and data-format can be provided as embedded file attachment",
+      "revId": "9a892d8872d3d79d4c13d89a100c040e2695af4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9d13a20_9754b580",
+        "filename": "docs/sections/DCAE-MOD-rst.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4012,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-03-30T15:32:50Z",
+      "side": 1,
+      "message": "images not being rendered",
+      "range": {
+        "startLine": 3936,
+        "startChar": 0,
+        "endLine": 4012,
+        "endChar": 15
+      },
+      "revId": "9a892d8872d3d79d4c13d89a100c040e2695af4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
