@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6b823b26_a1b1f6c7",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-02T19:44:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11791ce3_ea86e811",
+      "revId": "57dd5e1eff4723c211f55b746b88e278dbe0e54c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0d8772d5_ab107f6e",
         "filename": "docs/sections/release-notes.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2020-04-02T19:25:28Z",
       "side": 1,
       "message": "Maybe reword so it\u0027s no longer release-specific?\n\nUnder OOM (Kubernetes) deployment all DCAE component containers are deployed as Kubernetes Pods/Deployments/Services into Kubernetes cluster. DCAE platform components are deployed using\nHelm charts.  DCAE service components are deployed using Cloudify blueprints.  DCAE provides a Cloudify Manager plugin (k8splugin) that is capable of expanding a Cloudify blueprint node specification  for a service component to a full Kubernetes specification, with additional enhancements such as replica scaling, sidecar for logging to ONAP ELK stack, registering services to MSB, etc.",
+      "revId": "57dd5e1eff4723c211f55b746b88e278dbe0e54c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf809b02_2bad477c",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-02T19:44:21Z",
+      "side": 1,
+      "message": "Thanks.. Fixed this on latest patch",
+      "parentUuid": "0d8772d5_ab107f6e",
       "revId": "57dd5e1eff4723c211f55b746b88e278dbe0e54c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
