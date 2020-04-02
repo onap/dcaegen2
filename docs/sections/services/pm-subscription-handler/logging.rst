@@ -14,4 +14,3 @@ The PMSH application writes logs on the debug level to the following file:
 .. code-block:: bash
 
         /var/log/ONAP/dcaegen2/services/pmsh/debug.log
-

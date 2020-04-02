@@ -8,15 +8,18 @@ Overview
 
 Introduction
 """"""""""""
-The PM Subscription Handler (PMSH) is a micro service written in Python, which allows for the definition and unlocking
+The PM Subscription Handler (PMSH) is a micro service written in Python, which allows for the definition and activation
 of PM subscriptions on one or more network function (NF) instances.
 
 .. _Delivery: ./delivery.html
 
 Functionality
 """""""""""""
-The PMSH allows for the definition of subscriptions on a network level, which enables the
-configuration of PM data on a set of NF instances.
+The PMSH allows for the definition of subscriptions on a network level, which enables the configuration of PM data on a
+set of NF instances. During creation of a subscription, PM reporting configuration and a network function filter will
+be defined. This filter will then be used to produce a subset of NF's to which the subscription will be applied. If
+a NF matching the filter is registered in ONAP after the microservice has been deployed, the subscription will
+be applied to that NF.
 
 Interaction
 """""""""""
@@ -44,11 +47,3 @@ Policy and CDS
 
 The PMSH will indirectly interact with Policy and CDS in order to push subscriptions to NF's. A policy will be used to
 make a request to CDS, which will apply the subscription to the NF.
-
-
-
-
-
-
-
-

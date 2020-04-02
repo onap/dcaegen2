@@ -16,5 +16,6 @@ Offered APIs
    apis/DFC.rst
    apis/PNDA.rst
    apis/pmmapper.rst
+   apis/PMSH.rst
    apis/SDK.rst
    apis/mod-onboardingapi.rst

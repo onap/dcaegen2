@@ -34,19 +34,3 @@ Responses
 +===========+=====================+
 | **200**   | successful response |
 +-----------+---------------------+
-
-GET ``/subscriptions``
-----------------------
-
-Description
-~~~~~~~~~~~
-The subscriptions endpoint can be used to fetch all subscriptions which exist in the database.
-
-Responses
-~~~~~~~~~
-
-+-----------+---------------------+
-| HTTP Code | Description         |
-+===========+=====================+
-| **200**   | successful response |
-+-----------+---------------------+
