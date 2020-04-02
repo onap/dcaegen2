@@ -34,6 +34,7 @@ High Volume VES Collector overview and functions
     run-time-configuration
     HV-VES Offered APIs <../../apis/ves-hv/index>
     authorization
+    running-insecure
     example-event
     healthcheck-and-monitoring
     troubleshooting
