@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d7985155_da2a2a31",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-04-02T11:21:22Z",
+      "side": 1,
+      "message": "Shouldn\u0027t be merged until this image is actually released and blueprints updated.",
+      "range": {
+        "startLine": 20,
+        "startChar": 219,
+        "endLine": 20,
+        "endChar": 226
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eabf8ae7_185e1601",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-04-02T11:21:22Z",
+      "side": 1,
+      "message": "Wondering is it better to say due to this bug pointing to the Jira?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 37
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "acb32664_aa02aad1",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-04-02T11:21:22Z",
+      "side": 1,
+      "message": "can be found ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 62,
+        "endLine": 10,
+        "endChar": 76
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7133df64_58ef76f4",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-04-02T11:21:22Z",
+      "side": 1,
+      "message": "Should we add that access to administer the k8s cluster is a perquisite, since you will need to expose a service.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa48a050_d6e97993",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-04-02T11:21:22Z",
+      "side": 1,
+      "message": "The way the model is designed these two things are actually same the thing.\n\nDuring the creation of a subscription, PM (or telemetry) reporting configuration and a network function filter will be defined.",
+      "range": {
+        "startLine": 19,
+        "startChar": 55,
+        "endLine": 19,
+        "endChar": 110
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e66ee3a8_3b84a0bf",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-04-02T11:21:22Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 20,
+        "startChar": 99,
+        "endLine": 20,
+        "endChar": 101
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fdf9b1c8_90e49410",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-04-02T11:21:22Z",
+      "side": 1,
+      "message": "matching (opinion don\u0027t need to change)",
+      "range": {
+        "startLine": 20,
+        "startChar": 105,
+        "endLine": 20,
+        "endChar": 118
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "440a8546_9df7f3e8",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-04-02T11:21:22Z",
+      "side": 1,
+      "message": ",",
+      "range": {
+        "startLine": 21,
+        "startChar": 10,
+        "endLine": 21,
+        "endChar": 11
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9a2dfd5_2995b7fc",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-04-02T11:21:22Z",
+      "side": 1,
+      "message": "Don\u0027t know if this is necessary (opinion don\u0027t need to change)",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 4
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7152013f_144541fe",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-04-02T11:21:22Z",
+      "side": 1,
+      "message": "Should probably end on a single empty line.",
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
