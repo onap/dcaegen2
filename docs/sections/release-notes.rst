@@ -28,7 +28,7 @@ DCAE R6 improves upon previous release with the following new features:
         - DataLake Handlers 
     - Analytics/RCA
         - TCA-GEN2
-- Acumos Adapter (PoC)
+	- Acumos Adapter (PoC)
  
 Following is complete list of DCAE components available part of default ONAP/DCAE installation.
     - Platform components
@@ -54,6 +54,17 @@ Following is complete list of DCAE components available part of default ONAP/DCA
         - Redis Cluster Database
         - Consul Cluster 
 
+Following are service components (mS) which can be deployed on-demand
+ 	- SNMPTrap Collector
+ 	- RESTConf Collector
+ 	- DataFile Collector
+ 	- PM-Mapper 
+ 	- BBS-EventProcessor
+ 	- VES Mapper
+ 	- Heartbeat mS
+ 	- SON-Handler
+ 	- PM-Subscription Handler
+
     Notes:
         \*  These components are delivered by the Holmes project.
 
@@ -64,36 +75,6 @@ Under OOM (Kubernetes) deployment all DCAE component containers are deployed as 
 
 - All DCAE components are designed to support platform maturity requirements.
 
-
-**Source Code**
-
-Source code of DCAE components are released under the following repositories on gerrit.onap.org:
-    - dcaegen2
-    - dcaegen2.analytics.tca
-    - dcaegen2.collectors.snmptrap
-    - dcaegen2.collectors.ves
-    - dcaegen2.collectors.hv-ves
-    - dcaegen2.collectors.datafile
-    - dcaegen2.collectors.restconf
-    - dcaegen2.deployments
-    - dcaegen2.platform.blueprints
-    - dcaegen2.platform.cli
-    - dcaegen2.platform.configbinding
-    - dcaegen2.platform.deployment-handler
-    - dcaegen2.platform.inventory-api
-    - dcaegen2.platform.plugins
-    - dcaegen2.platform.policy-handler
-    - dcaegen2.platform.servicechange-handler
-    - dcaegen2.services.heartbeat
-    - dcaegen2.services.mapper
-    - dcaegen2.services.pm-mapper
-    - dcaegen2.services.prh
-    - dcaegen2.services.son-handler
-    - dcaegen2.services
-    - dcaegen2.services.sdk
-    - dcaegen2.utils
-    - ccsdk.platform.plugins
-    - ccsdk.dashboard
 
 **Bug Fixes**
 
