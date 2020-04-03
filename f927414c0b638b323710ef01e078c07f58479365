@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ab5ec7f8_195297cc",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-04-03T08:15:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d7985155_da2a2a31",
+      "range": {
+        "startLine": 20,
+        "startChar": 219,
+        "endLine": 20,
+        "endChar": 226
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eabf8ae7_185e1601",
         "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2020-04-02T11:21:22Z",
       "side": 1,
       "message": "Wondering is it better to say due to this bug pointing to the Jira?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 37
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41672b85_ca96d3f2",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-04-03T08:15:48Z",
+      "side": 1,
+      "message": "Have removed the reference to bug",
+      "parentUuid": "eabf8ae7_185e1601",
       "range": {
         "startLine": 9,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "c6a5ebba_d4097c1a",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-04-03T08:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "acb32664_aa02aad1",
+      "range": {
+        "startLine": 10,
+        "startChar": 62,
+        "endLine": 10,
+        "endChar": 76
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7133df64_58ef76f4",
         "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "d3b7c565_dd3709d6",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-04-03T08:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7133df64_58ef76f4",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa48a050_d6e97993",
         "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
         "patchSetId": 1
@@ -114,6 +210,30 @@
       "revId": "f927414c0b638b323710ef01e078c07f58479365",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b92f909_f96245e4",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-04-03T08:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa48a050_d6e97993",
+      "range": {
+        "startLine": 19,
+        "startChar": 55,
+        "endLine": 19,
+        "endChar": 110
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +283,54 @@
     },
     {
       "key": {
+        "uuid": "610e1fa7_4fe27d83",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-04-03T08:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e66ee3a8_3b84a0bf",
+      "range": {
+        "startLine": 20,
+        "startChar": 99,
+        "endLine": 20,
+        "endChar": 101
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5e9c5a34_64ba4e80",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-04-03T08:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fdf9b1c8_90e49410",
+      "range": {
+        "startLine": 20,
+        "startChar": 105,
+        "endLine": 20,
+        "endChar": 118
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "440a8546_9df7f3e8",
         "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
         "patchSetId": 1
@@ -174,6 +342,30 @@
       "writtenOn": "2020-04-02T11:21:22Z",
       "side": 1,
       "message": ",",
+      "range": {
+        "startLine": 21,
+        "startChar": 10,
+        "endLine": 21,
+        "endChar": 11
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "333470ca_9bb79f62",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-04-03T08:15:48Z",
+      "side": 1,
+      "message": "Don\u0027t think I need a comma here",
+      "parentUuid": "440a8546_9df7f3e8",
       "range": {
         "startLine": 21,
         "startChar": 10,
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "bf8bdbe5_fe37c69e",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-04-03T08:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9a2dfd5_2995b7fc",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 4
+      },
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7152013f_144541fe",
         "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
         "patchSetId": 1
@@ -223,6 +439,24 @@
       "revId": "f927414c0b638b323710ef01e078c07f58479365",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20e61dfb_778907c7",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5038
+      },
+      "writtenOn": "2020-04-03T08:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7152013f_144541fe",
+      "revId": "f927414c0b638b323710ef01e078c07f58479365",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
