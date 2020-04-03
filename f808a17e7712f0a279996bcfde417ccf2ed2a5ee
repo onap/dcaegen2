@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aabddf36_6af9c8db",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2020-04-03T13:58:36Z",
+      "side": 1,
+      "message": "Where shall these commands be executed? Which container?\nCan we add this information?",
+      "range": {
+        "startLine": 225,
+        "startChar": 4,
+        "endLine": 226,
+        "endChar": 34
+      },
+      "revId": "f808a17e7712f0a279996bcfde417ccf2ed2a5ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6fb648e_cc435c1d",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2020-04-03T13:58:36Z",
+      "side": 1,
+      "message": "Move this up please, before the commands are executed.",
+      "range": {
+        "startLine": 247,
+        "startChar": 0,
+        "endLine": 247,
+        "endChar": 30
+      },
+      "revId": "f808a17e7712f0a279996bcfde417ccf2ed2a5ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
