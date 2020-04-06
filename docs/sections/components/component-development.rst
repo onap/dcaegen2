@@ -10,6 +10,7 @@ Onboarding Pre-requisite (Service Component)
    ./intro.rst
    ./architecture/pieces.rst
    ./architecture/service-discovery.rst
+   ./architecture/blueprint_generator.rst
    ./requirements-guidelines.rst
    ./component-specification/component-specification.rst
    ./component-json-schema.rst

@@ -5,6 +5,38 @@
 Release Notes
 =============
 
+
+
+Version: 2.3.0
+--------------
+
+:Release Date: 2020-04-01
+
+
+**New Features**
+
+    - `https://jira.onap.org/browse/DCAEGEN2-2020`
+    Eliminate use of consul service discovery in snmptrap
+
+    - `https://jira.onap.org/browse/DCAEGEN2-2068`
+    Updated dependency library version; stormwatch support
+
+
+**Bug Fixes**
+  
+**Known Issues**
+
+**Security Issues**
+    - None 
+
+**Upgrade Notes**
+
+**Deprecation Notes**
+
+**Other**
+
+
+
 Version: 1.4.0
 --------------
 
