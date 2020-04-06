@@ -123,7 +123,7 @@ Artifacts released:
    "dcaegen2/deployments", "cm-container", "onap/org.onap.dcaegen2.deployments.cm-container:2.1.0"
    "dcaegen2/deployments", "consul-loader-container", "onap/org.onap.dcaegen2.deployments.consul-loader-container:1.0.0"
    "dcaegen2/deployments", "dcae-k8s-cleanup-container", "onap/org.onap.dcaegen2.deployments.dcae-k8s-cleanup-container:1.0.0"
-   "dcaegen2/deployments", "healthcheck-container", "onap/org.onap.dcaegen2.deployments.healthcheck-container:1.3.0"
+   "dcaegen2/deployments", "healthcheck-container", "onap/org.onap.dcaegen2.deployments.healthcheck-container:1.3.1"
    "dcaegen2/deployments", "multisite-init-container", "onap/org.onap.dcaegen2.deployments.multisite-init-container:1.0.0"
    "dcaegen2/deployments", "redis-cluster-container", "onap/org.onap.dcaegen2.deployments.redis-cluster-container:1.0.0"
    "dcaegen2/deployments", "tca-cdap-container", "onap/org.onap.dcaegen2.deployments.tca-cdap-container:1.2.2"
