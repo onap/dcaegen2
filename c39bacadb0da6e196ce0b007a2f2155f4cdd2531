@@ -25,6 +25,76 @@
     },
     {
       "key": {
+        "uuid": "69d7e4f6_05ee66f3",
+        "filename": "docs/sections/services/ves-hv/running-insecure.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-04-07T12:40:37Z",
+      "side": 1,
+      "message": "Be more verbose here. Keep formal language, end sentences with full stops.\n\" HV-VES application is configured by default to use TLS/SSL encryption on ... However it is possible ... \"",
+      "parentUuid": "b39b22b9_078877eb",
+      "range": {
+        "startLine": 9,
+        "startChar": 47,
+        "endLine": 9,
+        "endChar": 64
+      },
+      "revId": "c39bacadb0da6e196ce0b007a2f2155f4cdd2531",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb07c758_90556abf",
+        "filename": "docs/sections/services/ves-hv/running-insecure.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-04-07T12:40:37Z",
+      "side": 1,
+      "message": "Describe what commands in section does.\ne.g.\nAccessing bootstrap container with Kubernetes command line tool ...\nhttps://logs.onap.org/production/vex-yul-ecomp-jenkins-1/rtdv3-global-verify-master/668/docs/sections/services/ves-hv/deployment.html#horizontal-scaling\n\nBe more formal:\ne.g. Avoid usage of shortcuts like K8s",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 29
+      },
+      "revId": "c39bacadb0da6e196ce0b007a2f2155f4cdd2531",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40d1e31c_f29ec2b5",
+        "filename": "docs/sections/services/ves-hv/running-insecure.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-04-07T12:40:37Z",
+      "side": 1,
+      "message": "I would replace it with \u003cbootstrap-pod-name\u003e",
+      "range": {
+        "startLine": 25,
+        "startChar": 29,
+        "endLine": 25,
+        "endChar": 64
+      },
+      "revId": "c39bacadb0da6e196ce0b007a2f2155f4cdd2531",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "20a59ec2_d080fbd7",
         "filename": "docs/sections/services/ves-hv/running-insecure.rst",
         "patchSetId": 3
@@ -64,6 +134,29 @@
         "startChar": 3,
         "endLine": 31,
         "endChar": 23
+      },
+      "revId": "c39bacadb0da6e196ce0b007a2f2155f4cdd2531",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07a1e5cb_459c5534",
+        "filename": "docs/sections/services/ves-hv/running-insecure.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-04-07T12:40:37Z",
+      "side": 1,
+      "message": "1. If you are describing HV-VES as app use formal capital letters. Here and elsewhere.\n2. I would write here \"Install HV-VES deployment\"",
+      "range": {
+        "startLine": 50,
+        "startChar": 11,
+        "endLine": 50,
+        "endChar": 17
       },
       "revId": "c39bacadb0da6e196ce0b007a2f2155f4cdd2531",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
