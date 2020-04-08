@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a01ac33_15ddb58d",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2020-04-08T10:17:52Z",
+      "side": 1,
+      "message": "overriding Cloudify Blueprint inputs",
+      "range": {
+        "startLine": 216,
+        "startChar": 19,
+        "endLine": 216,
+        "endChar": 36
+      },
+      "revId": "cb2a08b291f216d4f37f2c85cb97d7942589e5cd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f4e1986_ba5f4251",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2020-04-08T10:17:52Z",
+      "side": 1,
+      "message": "In order to...",
+      "range": {
+        "startLine": 216,
+        "startChar": 0,
+        "endLine": 216,
+        "endChar": 4
+      },
+      "revId": "cb2a08b291f216d4f37f2c85cb97d7942589e5cd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
