@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "907f901f_9700a030",
+        "filename": "docs/sections/services/ves-hv/running-insecure.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-04-09T06:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c0b7789_c69caed4",
+      "range": {
+        "startLine": 25,
+        "startChar": 21,
+        "endLine": 25,
+        "endChar": 31
+      },
+      "revId": "ec9c6faaefd8f239510a1347747277493508b5fc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cfe57da2_1c0875c0",
         "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
         "patchSetId": 6
@@ -45,6 +69,30 @@
       "revId": "ec9c6faaefd8f239510a1347747277493508b5fc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e28d17e5_b69f1289",
+        "filename": "docs/sections/services/ves-hv/troubleshooting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-04-09T06:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfe57da2_1c0875c0",
+      "range": {
+        "startLine": 216,
+        "startChar": 51,
+        "endLine": 216,
+        "endChar": 60
+      },
+      "revId": "ec9c6faaefd8f239510a1347747277493508b5fc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
