@@ -26,10 +26,10 @@ transported among different DCAE service components.
 DCAE use Consul's distributed K-V store service to manage component configurations where each key is based on the unique identity of a DCAE component (identified by ServiceComponentName), and the value is the configuration for the corresponding component. The K-V store for each service components is created during deployment. DCAE platform creates and updates the K-V pairs based on information provided as part of the control loop blueprint deployment, or through a notification/trigger received from other ONAP components such as Policy Framework and CLAMP.  Either through periodically polling or proactive pushing, the DCAE  components get the configuration updates in realtime and apply the configuration updates.  DCAE Platform also offers dynamic template resolution for configuration parameters that are dynamic and only known by the DCAE platform, such as dynamically provisioned DMaaP topics. This approach standardizes component deployment and configuration management for DCAE service components in multi-site deployment.
 
 
-DCAE R4 Components
-------------------
+DCAE Components
+---------------
 
-The following list displays the details of what are included in ONAP DCAE R4.  All DCAE components are offered as Docker containers.  Following ONAP level deployment methods, these components can be deployed as Kubernetes Deployments and Services.  
+The following lists the components included in ONAP DCAE .  All DCAE components are offered as Docker containers.  Following ONAP level deployment methods, these components can be deployed as Kubernetes Deployments and Services.  
 
 - DCAE Platform
     - Core Platform
@@ -57,6 +57,7 @@ The following list displays the details of what are included in ONAP DCAE R4.  A
     - Analytics
         - Holmes correlation analytics
         - CDAP based Threshold Crosssing Analytics application (tca)
+        - Docker based Threshold Crosssing Analytics
         - Heartbeat Services
         - SON-Handler Service
     - Microservices
@@ -64,11 +65,12 @@ The following list displays the details of what are included in ONAP DCAE R4.  A
         - VES Mapper Service
         - PM-Mapper Service
         - BBS-EventProcessor Service
+        - PM Subcription Handler
         
 
-The figure below shows the DCAE R4 architecture and how the components work with each other.  The components on the right constitute the Platform/controller components which are statically deployed. The components on the right represent the services which can be both deployed statically or dynamically (via CLAMP)
+The figure below shows the DCAE architecture and how the components work with each other.  The components on the right constitute the Platform/controller components which are statically deployed. The components on the right represent the services which can be both deployed statically or dynamically (via CLAMP)
 
-.. image:: images/R4_architecture_diagram.png
+.. image:: images/R6_architecture_diagram.png
  
 
 Deployment Scenarios
@@ -76,7 +78,7 @@ Deployment Scenarios
 
 Because DCAE service components are deployed on-demand following the control loop needs for managing ONAP deployed services, DCAE must support dynamic and on-demand deployment of service components based on ONAP control loop demands.  This is why all other ONAP components are launched from the ONAP level method, DCAE only deploys a subset of its components during this ONAP deployment process and rest of DCAE components will be deployed on-demand based on usecase needs triggered by control loop request originated from CLAMP, or even by operator manually invoking DCAE's deployment API call.
 
-For R4, ONAP supports deployment via OOM Helm Chart method and Heat deployment support is discontinued. DCAE Platform components are deployed via Helm charts - this includes Cloudify Manager, ConfigBinding service, ServiceChange Handler, Policy Handler and Inventory.   Once DCAE platform components are up and running, rest of DCAE service components required for ONAP  flow are deployed via bootstrap POD, which invokes Cloudify Manager API with Blueprints for various DCAE components that are needed for the built-in collections and control loops flow support.  
+ONAP supports deployment through OOM Helm Chart currently (Heat deployment support is discontinued since R3). Hence all DCAE Platform components are deployed via Helm charts - this includes Cloudify Manager, ConfigBinding service, ServiceChange Handler, Policy Handler, Dashboard and Inventory, each with corresponding Helm charts under OOM (https://git.onap.org/oom/tree/kubernetes/dcaegen2/components).   Once DCAE platform components are up and running, rest of DCAE service components required for ONAP  flow are deployed via bootstrap POD, which invokes Cloudify Manager API with Blueprints for various DCAE components that are needed for the built-in collections and control loops flow support.  
 
 To keep the ONAP footprint minimal, only minimal set of MS (required for ONAP Integration usecases) are deployed via bootstrap pod. Rest of service blueprints are available for operator to deploy on-demand as required. 
 
@@ -88,7 +90,7 @@ More details of the DCAE deployment can be found under Installation section.
 Usage Scenarios
 ---------------
 
-For ONAP R4 DCAE participates in the following use cases.
+For ONAP  DCAE participates in the following use cases.
 
 - vDNS:  VES collector, TCA analytics
 
@@ -102,7 +104,7 @@ For ONAP R4 DCAE participates in the following use cases.
 
 - BBS : VES Collector, PRH, BBS-Event Processor, VES-Mapper, RESTConf Collector
 
-- 5g : DataFile Collector, PM-Mapper, HV-VES 
+- 5g Bulk PM : DataFile Collector, PM-Mapper, HV-VES 
  
 
 In addition, DCAE supports on-demand deployment and configuration of service components via CLAMP.  In such case CLAMP invokes the deployment and configuration of additional TCA instances.

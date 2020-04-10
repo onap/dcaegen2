@@ -9,7 +9,7 @@ Docker Container
 
 **trapd** is delivered as a docker container that can be downloaded from onap:
 
-    ``docker run --detach -t --rm -p 162:6162/udp -P --name=SNMPTRAP nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.snmptrap ./bin/snmptrapd.sh start``
+    ``docker run --detach -t --rm -p 162:6162/udp -P --name=SNMPTRAP nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.snmptrap:2.0.3 ./bin/snmptrapd.sh start``
 
 
 Standalone
