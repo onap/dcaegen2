@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b7774e43_4fa0dcd5",
+        "filename": "docs/sections/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-04-10T19:56:50Z",
+      "side": 1,
+      "message": "list \u003d\u003e lists",
+      "revId": "9249badc6fb943d812208e9a8b70312b2cf23f20",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf14953f_9cfffe83",
+        "filename": "docs/sections/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-04-10T19:56:50Z",
+      "side": 1,
+      "message": "Threshold",
+      "revId": "9249badc6fb943d812208e9a8b70312b2cf23f20",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "710bd428_0a3ab59f",
+        "filename": "docs/sections/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-04-10T19:56:50Z",
+      "side": 1,
+      "message": "For what?\n\nthe first sentence is odd. suggest changing \"and\" to \";\", as in:\n\nvia OOM Helm Chart method; Heat deployment support",
+      "revId": "9249badc6fb943d812208e9a8b70312b2cf23f20",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
