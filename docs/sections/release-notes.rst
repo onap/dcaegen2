@@ -3,16 +3,20 @@
 .. Copyright (c) 2017-2020 AT&T Intellectual Property. All rights reserved.
 .. _release_notes:
 
-Release Notes
-=============
+DCAE Release Notes
+==================
 
-Version: 6.0.0
---------------
+Abstract
+--------
+This document provides the release notes for the Frankfurt release (6.0.0)
 
+
+Summary
+-------
 
 **New Features**
 
-DCAE R6 improves upon previous release with the following new features:
+DCAE improves upon previous release with the following new features:
 
 - DCAE Platform Enhancement
     - Introduction of Microservice and Onboarding Design (MOD) platform 
@@ -81,6 +85,7 @@ Under OOM (Kubernetes) deployment all DCAE component containers are deployed as 
 
 **Known Issues**
     * Blueprint generator issue (DCAEGEN2-2140)
+    * TCAgen2 Policy configuration support (DCAEGEN2-2198)
 
 
 **Security Notes**
@@ -104,10 +109,6 @@ Under OOM (Kubernetes) deployment all DCAE component containers are deployed as 
 	
 DCAE code has been formally scanned during build time using NexusIQ and all Critical vulnerabilities have been addressed, items that remain open have been assessed for risk and determined to be false positive. The DCAE open Critical security vulnerabilities and their risk assessment have been documented as part of the `project <https://wiki.onap.org/pages/viewpage.action?pageId=51282478>`_.
 
-Quick Links:
-        - `DCAE project page <https://wiki.onap.org/display/DW/Data+Collection+Analytics+and+Events+Project>`_
-
-        - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
 
 Artifacts released:
 
@@ -156,7 +157,15 @@ Artifacts released:
    "dcaegen2/services/sdk", "", "DCAE SDK 1.3.5 (jar)"
    "ccsdk/dashboard", "", "onap/org.onap.ccsdk.dashboard.ccsdk-app-os:1.3.2"
    
+**Test Results**
 
+ - `DCAE Pairwise Test <https://wiki.onap.org/display/DW/DCAE+Pair+Wise+Testing+for+Frankfurt+Release>`_
+ - `DCAE MOD Test <https://wiki.onap.org/display/DW/DCAE+MOD+Test+Plan>`_
+
+
+**References**
+        - `DCAE project page <https://wiki.onap.org/display/DW/Data+Collection+Analytics+and+Events+Project>`_
+        - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
 
 Version: 5.0.1
 --------------

@@ -43,7 +43,6 @@ The following lists the components included in ONAP DCAE .  All DCAE components 
         - DCAE Inventory-API: API for DCAE's TOSCA model store.
     - Platform services
         - Consul: Distributed service discovery service and KV store.
-        - PNDA: Platform for Network Data Analytics.
         - Postgres Database: DCAE's TOSCA model store.
         - Redis Database: DCAE's transactional state store, used by TCA for supporting persistence and seamless scaling.
 
@@ -60,12 +59,13 @@ The following lists the components included in ONAP DCAE .  All DCAE components 
         - Docker based Threshold Crosssing Analytics
         - Heartbeat Services
         - SON-Handler Service
-    - Microservices
+    - Event processors
         - PNF Registration Handler
         - VES Mapper Service
         - PM-Mapper Service
         - BBS-EventProcessor Service
         - PM Subcription Handler
+        - DataLake Handlers
         
 
 The figure below shows the DCAE architecture and how the components work with each other.  The components on the right constitute the Platform/controller components which are statically deployed. The components on the right represent the services which can be both deployed statically or dynamically (via CLAMP)
