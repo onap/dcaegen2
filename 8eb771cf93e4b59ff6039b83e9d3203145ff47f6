@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "af2464c9_21481b8d",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4599
+      },
+      "writtenOn": "2020-04-22T09:49:29Z",
+      "side": 1,
+      "message": "commands/links on how to run the health checks? not necessary but nice to have",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 25
+      },
+      "revId": "8eb771cf93e4b59ff6039b83e9d3203145ff47f6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4578267_d74ea28e",
+        "filename": "docs/sections/services/pm-subscription-handler/overview.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4599
+      },
+      "writtenOn": "2020-04-22T09:49:29Z",
+      "side": 1,
+      "message": "not sure if PM reporting is used elsewhere, better to stay consistent with the terminology",
+      "range": {
+        "startLine": 19,
+        "startChar": 55,
+        "endLine": 19,
+        "endChar": 68
+      },
+      "revId": "8eb771cf93e4b59ff6039b83e9d3203145ff47f6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
