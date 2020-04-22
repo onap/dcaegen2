@@ -21,14 +21,13 @@ Enter the Cloudify Manager kuberenetes pod
     - Tca-gen2 blueprint directory (/blueprints/k8s-tcagen2.yaml). The blueprint is also maintained in gerrit and can be downloaded from
     https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-tcagen2.yaml
      
-    - Create input file required for deployment
+    - Create input file required for deployment 
     	
         Configuration of the service consists of generating an inputs file (YAML) which will be used as part of the
         Cloudify install. The tca-gen2 blueprints was designed with known defaults for the majority of the fields.
         
         Below you will find examples of fields which can be configured, and some of the fields
-        which must be configured. The full list of configurable parameters can be seen within the bootstrap container under 
-        /inputs/k8s-tcagen2-inputs.yaml
+        which must be configured.  An input file is loaded into bootstrap container (/inputs/k8s-tcagen2-inputs.yaml).
         
 
         .. csv-table::
@@ -52,7 +51,7 @@ Enter the Cloudify Manager kuberenetes pod
 
         .. code-block:: bash
 
-            cfy install --blueprint-id tca-gen2 --deployment-id tca-gen2 -i k8s-tcagen2-inputs.yaml /blueprints/k8s-tcagen2.yaml
+             cfy install --blueprint-id tcagen2 --deployment-id tcagen2 -i /inputs/k8s-tcagen2-inputs.yaml /blueprints/k8s-tcagen2.yaml
         
 
 
@@ -61,9 +60,9 @@ To undeploy TCA-gen2, steps are shown below
 - Uninstall running TCA-gen2 and delete deployment
     .. code-block:: bash
         
-        cfy uninstall tca-gen2
+        cfy uninstall tcagen2
 - Delete blueprint
     .. code-block:: bash
         
-        cfy blueprints delete tca-gen2
+        cfy blueprints delete tcagen2
         

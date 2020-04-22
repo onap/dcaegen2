@@ -18,8 +18,7 @@ request, the service checks Kubernetes to verify that all of the expected
 DCAE platform and service components are in a ready state.  The service
 has a fixed list of platform and service components that are normally deployed when DCAE is
 first installed, including components deployed with Helm charts and
-components deployed using Cloudify blueprints.   In addition, beginning with
-the Dublin release, the healthcheck
+components deployed using Cloudify blueprints.   In addition, the healthcheck
 service tracks and checks components that are deployed dynamically using Cloudify
 blueprints after the initial DCAE installation.
 
