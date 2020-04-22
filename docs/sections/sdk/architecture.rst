@@ -8,7 +8,7 @@ Introduction
 ------------
 As most services and collectors deployed on DCAE platform relies on similar microservices a common Software Development Kit has been created. It contains utilities and clients which may be used for getting configuration from CBS, consuming messages from DMaaP, interacting with A&AI, etc. SDK is written in Java.
 
-Some of common function across different services are targeted to build as separate library was created in Dublin release.
+Some of common function across different services are targeted to build as separate library.
 
 Reactive programming
 --------------------

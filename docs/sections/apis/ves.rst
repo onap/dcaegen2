@@ -33,7 +33,7 @@ Security
 basicAuth (HTTP Basic Authentication)
 -------------------------------------
 
-*HTTP Basic Authentication. Works over `HTTP` and `HTTPS`*
+*Basic Authentication. Works over `HTTPS`*
 
 DEFAULT
 ~~~~~~~
