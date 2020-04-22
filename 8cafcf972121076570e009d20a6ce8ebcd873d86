@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "09632b71_d4497b7e",
+        "filename": "docs/sections/services/bbs-event-processor/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-22T21:40:05Z",
+      "side": 1,
+      "message": "As file is already available under bootstrap pod, remove this",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 11
+      },
+      "revId": "8cafcf972121076570e009d20a6ce8ebcd873d86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73f2f4a2_e6ed10f6",
+        "filename": "docs/sections/services/bbs-event-processor/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-22T21:40:05Z",
+      "side": 1,
+      "message": "change is below - \nBlueprint can also retrieved from https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-bbs-event-processor.yaml",
+      "range": {
+        "startLine": 50,
+        "startChar": 87,
+        "endLine": 52,
+        "endChar": 147
+      },
+      "revId": "8cafcf972121076570e009d20a6ce8ebcd873d86",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
