@@ -24,7 +24,7 @@ and invokes Kubernetes deployment operations for all the resources.
 All ONAP Helm charts are organized under the **kubernetes** directory of the **OOM** project, where roughly each ONAP component occupies a subdirectory.
 DCAE charts are placed under the **dcaegen2** directory.
 
-In Dublin, all DCAE platform components (exception of Dashboard) have corresponding Helm chart which will be used to trigger the deployment. 
+All DCAE platform components  have corresponding Helm chart which will be used to trigger the deployment. 
 All DCAE Services are deployed through Cloudify Blueprint. The default ONAP DCAE deployment includes small subset of DCAE services deployed through Bootstrap pod to meet
 ONAP Integration usecases. Optionally operators can deploy on-demand other MS required for their usecases as described in `On-demand MS Installation
 <installation_MS_ondemand>`_.
@@ -44,8 +44,8 @@ Following Helm conventions, the DCAE Helm chart directory (``oom/kubernetes/dcae
 * ``requirements.yaml``: dependency charts.
 * ``values.yaml``: values for Helm templating engine to expand templates.
 * ``resources``: subdirectory for additional resource definitions such as configuration, scripts, etc.
-* ``templates``: subdirectory for Kubernetes resource definition templates.
-* ``charts``: subdirectory for sub-charts.
+* ``Makefile``: make file to build DCAE charts
+* ``components``: subdirectory for DCAE sub-charts.
 
 The dcaegen2 chart has the following sub-charts:
 
@@ -56,6 +56,7 @@ The dcaegen2 chart has the following sub-charts:
 * ``dcae-healthcheck``: deploys the DCAE healthcheck service that provides an API to check the health of all DCAE components.
 * ``dcae-policy-handler``: deploys the DCAE policy handler service.
 * ``dcae-redis``: deploys the DCAE Redis cluster.
+* ``dcae-dashboard``: deploys the DCAE Dashboard for managing DCAE microservices deployments
 * ``dcae-servicechange-handler``: deploys the DCAE service change handler service.  A subchart (``dcae-inventory-api``) deploys the DCAE inventory API service.
 
 DCAE Deployment
@@ -96,9 +97,10 @@ The dcae-bootstrap service has a number of prerequisites because the subsequentl
   * kube2msb
   * dcae-config-binding-service
   * dcae-db
+  * dcae-mongodb
 
 Once started, the DCAE bootstrap service will call Cloudify Manager to deploy
-a series of blueprints which specify the additional DCAE R4 components.
+a series of blueprints which specify the additional DCAE microservice components.
 These blueprints use the DCAE Kubernetes plugin (``k8splugin``) to deploy
 Docker images into the ONAP Kubernetes cluster.  For each component, the plugin
 creates a Kubernetes deployment and other Kubernetes resources (services, volumes, logging sidecar, etc.)
@@ -106,10 +108,8 @@ as needed.
 
 The DCAE bootstrap service creates the following Kubernetes deployments:
 
-* deploy/dep-dcae-dashboard
 * deploy/dep-dcae-hv-ves-collector
 * deploy/dep-dcae-prh
-* deploy/dep-dcae-snmptrap-collector
 * deploy/dep-dcae-tca-analytics
 * deploy/dep-dcae-ves-collector
 * deploy/dep-holmes-engine-mgmt
@@ -145,35 +145,38 @@ In addition, for DCAE components deployed through Cloudify Manager blueprints, t
         * The blueprint input files may contain Helm templates, which are resolved into actual deployment time values following the rules for Helm values.
 
 
-Now we walk through an example, how to configure the Docker image for the DCAE dashboard, which is deployed by Cloudify Manager.
+Now we walk through an example, how to configure the Docker image for the DCAE VESCollector, which is deployed by Cloudify Manager.
 
-In the ``k8s-dashboard.yaml-template`` blueprint template, the Docker image to use is defined as an input parameter with a default value:
+In the  `k8s-ves.yaml <https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-ves.yaml>`_ blueprint, the Docker image to use is defined as an input parameter with a default value:
 
 .. code-block:: yaml
 
-  dashboard_docker_image:
-    description: 'Docker image for dashboard'
-    default: 'nexus3.onap.org:10001/onap/org.onap.ccsdk.dashboard.ccsdk-app-os:1.1.0-SNAPSHOT-latest'
-
-Then in the input file, ``oom/kubernetes/dcaegen2/charts/dcae-bootstrap/resources/inputs/k8s-dashboard-inputs.yaml``,
+    tag_version:
+    type: string
+    default: "nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:1.5.4"
+    
+The corresponding input file, ``https://git.onap.org/oom/tree/kubernetes/dcaegen2/components/dcae-bootstrap/resources/inputs/k8s-ves-inputs-tls.yaml``,
 it is defined again as:
 
 .. code-block:: yaml
+  {{ if .Values.componentImages.ves }}
+  tag_version: {{ include "common.repository" . }}/{{ .Values.componentImages.ves }}
+  {{ end }}
+  
 
-  dashboard_docker_image: {{ include "common.repository" . }}/{{ .Values.componentImages.dashboard }}
+Thus, when ``common.repository`` and ``componentImages.ves`` are defined in the ``values.yaml`` files,
+their values will be plugged in here and the resulting ``tag_version`` value
+will be passed to the blueprint as the Docker image tag to use instead of the default value in the blueprint.
 
-Thus, when ``common.repository`` and ``componentImages.policy_handler`` are defined in the ``values.yaml`` files,
-their values will be plugged in here and the resulting ``policy_handler_image`` value
-will be passed to the Policy Handler blueprint as the Docker image tag to use instead of the default value in the blueprint.
-
-Indeed the ``componentImages.dashboard`` value is provided in the ``oom/kubernetes/dcaegen2/charts/dcae-bootstrap/values.yaml`` file:
+The ``componentImages.ves`` value is provided in the ``oom/kubernetes/dcaegen2/charts/dcae-bootstrap/values.yaml`` file:
 
 .. code-block:: yaml
 
   componentImages:
-    dashboard: onap/org.onap.ccsdk.dashboard.ccsdk-app-os:1.1.0
+    ves: onap/org.onap.dcaegen2.collectors.ves.vescollector:1.5.4
 
-The final result is that when DCAE bootstrap calls Cloudify Manager to deploy the DCAE dashboard, the 1.1.0 image will be deployed.
+
+The final result is that when DCAE bootstrap calls Cloudify Manager to deploy the DCAE VES collector, the 1.5.4 image will be deployed.
 
 DCAE Service Endpoints
 ----------------------
@@ -182,18 +185,18 @@ Below is a table of default hostnames and ports for DCAE component service endpo
     ==================   =================================   ======================================================
     Component            Cluster Internal (host:port)        Cluster external (svc_name:port)
     ==================   =================================   ======================================================
-    VES                  dcae-ves-collector:8080             xdcae-ves-collector.onap:30235
+    VES                  dcae-ves-collector:8443             xdcae-ves-collector.onap:30417
     HV-VES               dcae-hv-ves-collector:6061          xdcae-hv-ves-collector.onap:30222
     TCA                  dcae-tca-analytics:11011            xdcae-tca-analytics.onap:32010
+    TCA-Gen2             dcae-tcagen2:9091                   NA
     PRH                  dcae-prh:8100                       NA
-    SNMPTrap             dcae-snmptrap-collector:6162/udp    xdcae-snmptrap-collector:30470/UDP
     Policy Handler       policy-handler:25577                NA
     Deployment Handler   deployment-handler:8443             NA
     Inventory            inventory:8080                      NA
-    Config binding       config-binding-service:10000        config-binding-servicee:30415
+    Config binding       config-binding-service:10000/10001  config-binding-service:30415
     DCAE Healthcheck     dcae-healthcheck:80                 NA
     Cloudify Manager     dcae-cloudify-manager:80            NA
-    DCAE Dashboard       dcae-dashboard:8080/8443            xdcae-dashboard:30418/30419
+    DCAE Dashboard       dcae-dashboard:8443                 xdcae-dashboard:30419
     ==================   =================================   ======================================================
 
 In addition, a number of ONAP service endpoints that are used by DCAE components are listed as follows

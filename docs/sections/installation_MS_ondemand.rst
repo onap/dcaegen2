@@ -4,7 +4,7 @@
 DCAE MS Deployment
 ==================
 
-DCAE MS catalog includes number of collectors, analytics and event processor services. For Dublin, not all MS available on default ONAP/DCAE deployment. 
+DCAE MS catalog includes number of collectors, analytics and event processor services. Not all MS available on default ONAP/DCAE deployment. 
 
 Following Services are deployed via DCAE Bootstrap
 
@@ -12,11 +12,11 @@ Following Services are deployed via DCAE Bootstrap
 .. toctree::
    :maxdepth: 1
 
-   ./services/snmptrap/index.rst
    ./services/ves-http/index.rst
    ./services/ves-hv/index.rst
    ./services/prh/index.rst
    ./services/tca-cdap/index.rst
+   ./services/tcagen2-docker/index.rst
    
 Following additional MS are available for on-demand deployment as necessary for any usecases; instruction for deployment are provided under each MS. 
 
@@ -30,3 +30,6 @@ Following additional MS are available for on-demand deployment as necessary for 
    BBS EventProcessor MS Installation <./services/bbs-event-processor/installation>
    Son-Handler MS Installation <./services/son-handler/installation>
    RESTconf MS Installation <./services/restconf/installation>
+   SNMP Trap Collector MS Installation <./services/snmptrap/installation>
+   PM Subscription Handler MS Installation <./services/pm-subscription-handler/installation>
+   DataLake Handler Installation <./services/datalake-handler/installation>
