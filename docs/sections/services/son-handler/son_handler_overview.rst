@@ -60,9 +60,9 @@ This is responsible for registering with the DMaaP client for the DMaaP notifica
 
 Deployment aspects
 ------------------
-The SON-Handler MS will be deployed on DCAE using the mechanism described in "Option 3 - On-Demand deployment through DCAE-Controller cli" at https://wiki.onap.org/display/DW/Dublin+Deployment+Strategy.Details of the installation steps are available at ./installation.rst. Further details can be obtained from https://wiki.onap.org/pages/viewpage.action?pageId=76875778.
+The SON-Handler MS will be deployed on DCAE as an on-demand component. Details of the installation steps are available at ./installation.rst. Further details can be obtained from https://wiki.onap.org/pages/viewpage.action?pageId=76875778 
 
 Known Issues and Resolutions
 ----------------------------
-The scope and scenarios addressed are documented in the SON use case page for Dublin - https://wiki.onap.org/display/DW/OOF-PCI+Use+Case+-+Dublin+Release+-+ONAP+based+SON+for+PCI+and+ANR.
+The scope and scenarios addressed are documented in the SON use case page  - https://wiki.onap.org/display/DW/OOF-PCI+Use+Case+-+Dublin+Release+-+ONAP+based+SON+for+PCI+and+ANR.
 The enhancements and limitations in Frankfurt release are documented in the SON use case page for Frankfurt - https://wiki.onap.org/display/DW/OOF+%28SON%29+in+R5+El+Alto%2C+OOF+%28SON%29+in+R6+Frankfurt.

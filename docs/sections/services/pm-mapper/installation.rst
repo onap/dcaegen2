@@ -36,7 +36,7 @@ Enter the Cloudify Manager kuberenetes pod
             :delim: ;
             :header: Property , Sample Value , Description , Required
 
-            client_id ; dcae@dcae.onap.org ; In the Dublin release information about the AAF user must be provided to enable publishing to authenticated topics. ; Yes
+            client_id ; dcae@dcae.onap.org ; Information about the AAF user must be provided to enable publishing to authenticated topics. ; Yes
             client_password ; <dcae_password> ; This is the password for the given user e.g.  The <dcae_password> is dcae@dcae.onap.org's password. ; Yes
             enable_http ; true ; By default, the PM-Mapper will only allow inbound queries over HTTPS. However, it is possible to configure it to enable HTTP also. ; No
             tag_version ; nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.pm-mapper:1.0.1 ; The tag of the Docker image will be used when deploying the PM-Mapper. ; No
