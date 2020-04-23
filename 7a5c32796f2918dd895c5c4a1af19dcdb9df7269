@@ -59,6 +59,30 @@
     },
     {
       "key": {
+        "uuid": "3370e9f8_15b74436",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e026b4a6_332aea4d",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 64
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c48d60a4_f2cccede",
         "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
         "patchSetId": 8
@@ -79,6 +103,30 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83b070e0_6eaa3b67",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c48d60a4_f2cccede",
+      "range": {
+        "startLine": 34,
+        "startChar": 28,
+        "endLine": 34,
+        "endChar": 35
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -105,6 +153,30 @@
     },
     {
       "key": {
+        "uuid": "d97f08fe_049e2e9a",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30af1f1b_c4522051",
+      "range": {
+        "startLine": 40,
+        "startChar": 22,
+        "endLine": 40,
+        "endChar": 30
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a6e1608_14c13753",
         "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
         "patchSetId": 8
@@ -125,6 +197,30 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbbd54d1_2df4ebb4",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a6e1608_14c13753",
+      "range": {
+        "startLine": 96,
+        "startChar": 28,
+        "endLine": 96,
+        "endChar": 35
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -151,6 +247,30 @@
     },
     {
       "key": {
+        "uuid": "0e63f53f_7edc66c9",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57460509_4d400d46",
+      "range": {
+        "startLine": 115,
+        "startChar": 28,
+        "endLine": 115,
+        "endChar": 35
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "33c483c5_c27335c9",
         "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
         "patchSetId": 8
@@ -171,6 +291,30 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "816a0c2a_68f613e6",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33c483c5_c27335c9",
+      "range": {
+        "startLine": 127,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 18
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -197,6 +341,30 @@
     },
     {
       "key": {
+        "uuid": "a2170198_8e094538",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0f045d9_e19951b2",
+      "range": {
+        "startLine": 134,
+        "startChar": 34,
+        "endLine": 134,
+        "endChar": 41
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7818383d_ce32aa7d",
         "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
         "patchSetId": 8
@@ -217,6 +385,30 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06f21735_e3fe4212",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7818383d_ce32aa7d",
+      "range": {
+        "startLine": 29,
+        "startChar": 40,
+        "endLine": 29,
+        "endChar": 54
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -243,6 +435,30 @@
     },
     {
       "key": {
+        "uuid": "47c6c4f4_9bfabd71",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9dc43292_ea1b1e5e",
+      "range": {
+        "startLine": 32,
+        "startChar": 40,
+        "endLine": 32,
+        "endChar": 51
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e8d4f26a_70e2f79b",
         "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
         "patchSetId": 8
@@ -263,6 +479,30 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a1766ef_e03921c2",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8d4f26a_70e2f79b",
+      "range": {
+        "startLine": 45,
+        "startChar": 38,
+        "endLine": 45,
+        "endChar": 46
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -289,6 +529,30 @@
     },
     {
       "key": {
+        "uuid": "72fb9f6d_2fe9eb64",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3385d5c_ecc6e25e",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 19
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ec3401d3_652dc498",
         "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
         "patchSetId": 8
@@ -309,6 +573,30 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9e90d41_d0e62451",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec3401d3_652dc498",
+      "range": {
+        "startLine": 152,
+        "startChar": 2,
+        "endLine": 152,
+        "endChar": 4
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -358,6 +646,54 @@
     },
     {
       "key": {
+        "uuid": "691210cb_3411974a",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c316467_2ac124eb",
+      "range": {
+        "startLine": 154,
+        "startChar": 27,
+        "endLine": 154,
+        "endChar": 120
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5118d743_944ab11d",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aecb7a86_10149759",
+      "range": {
+        "startLine": 154,
+        "startChar": 1,
+        "endLine": 154,
+        "endChar": 4
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "39cd48d1_6a524f63",
         "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
         "patchSetId": 8
@@ -378,6 +714,30 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b396a77e_b23b2805",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39cd48d1_6a524f63",
+      "range": {
+        "startLine": 171,
+        "startChar": 32,
+        "endLine": 171,
+        "endChar": 77
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -404,6 +764,30 @@
     },
     {
       "key": {
+        "uuid": "350dfb52_43a57f0b",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2e203d4_997b1798",
+      "range": {
+        "startLine": 188,
+        "startChar": 1,
+        "endLine": 206,
+        "endChar": 0
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cbb2a83e_f12e62f3",
         "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
         "patchSetId": 8
@@ -424,6 +808,30 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad4f6a2e_469de21c",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbb2a83e_f12e62f3",
+      "range": {
+        "startLine": 210,
+        "startChar": 0,
+        "endLine": 214,
+        "endChar": 40
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -450,6 +858,30 @@
     },
     {
       "key": {
+        "uuid": "d4c1e745_a550ae41",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2547108b_e7d59d2e",
+      "range": {
+        "startLine": 230,
+        "startChar": 0,
+        "endLine": 252,
+        "endChar": 70
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "302e108d_45560788",
         "filename": "docs/sections/DCAE-MOD/Glossary.rst",
         "patchSetId": 8
@@ -473,6 +905,30 @@
     },
     {
       "key": {
+        "uuid": "7cf53ed5_b5625463",
+        "filename": "docs/sections/DCAE-MOD/Glossary.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "302e108d_45560788",
+      "range": {
+        "startLine": 108,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 14
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "71662488_72610f82",
         "filename": "docs/sections/DCAE-MOD/Glossary.rst",
         "patchSetId": 8
@@ -493,6 +949,30 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ea7e88b_79b0aa5a",
+        "filename": "docs/sections/DCAE-MOD/Glossary.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71662488_72610f82",
+      "range": {
+        "startLine": 169,
+        "startChar": 33,
+        "endLine": 169,
+        "endChar": 51
+      },
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -527,6 +1007,24 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2ba03dd_529ee325",
+        "filename": "docs/sections/images/10.png",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c98769cb_b2586345",
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -581,6 +1079,24 @@
     },
     {
       "key": {
+        "uuid": "59350d0e_07be57dc",
+        "filename": "docs/sections/images/DCAE-Mod-Architecture.png",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72c4f183_7abafe0f",
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2a1d7d44_c16b364f",
         "filename": "docs/sections/images/Onboarding-with-DCAE-MOD.png",
         "patchSetId": 8
@@ -595,6 +1111,24 @@
       "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78e4dc21_c1da674e",
+        "filename": "docs/sections/images/Onboarding-with-DCAE-MOD.png",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-23T15:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a1d7d44_c16b364f",
+      "revId": "7a5c32796f2918dd895c5c4a1af19dcdb9df7269",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
