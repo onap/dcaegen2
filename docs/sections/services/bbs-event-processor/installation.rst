@@ -12,7 +12,7 @@ The following docker-compose-yaml file shows a default configuration. The file c
     bbs-event-processor:
       image: onap/org.onap.dcaegen2.services.components.bbs-event-processor:latest
       container_name: bbs-event-processor
-      hostname: bbs-event-processor 
+      hostname: bbs-event-processor
       ports:
       - 32100:8100
       environment:
@@ -45,11 +45,16 @@ The following docker-compose-yaml file shows a default configuration. The file c
 
 BBS-ep can be dynamically deployed in DCAE’s Cloudify environment via its blueprint deployment artifact.
 
-Steps to deploy are shown below
-
-- Transfer blueprint component file in DCAE bootstrap POD under /blueprints directory. Blueprint can be found in
+- Blueprint can be found in
 
     https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/blueprints.git;a=blob_plain;f=blueprints/k8s-bbs-event-processor.yaml;hb=refs/heads/master
+
+- Blueprint can also be retrieved from
+
+    https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-bbs-event-processor.yaml
+
+Steps to deploy are shown below
+
 - Enter the Bootstrap POD
 - Validate blueprint
     .. code-block:: bash
