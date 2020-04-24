@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2980db51_8aedbba7",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T13:29:01Z",
+      "side": 1,
+      "message": "pls add jira reference here",
+      "range": {
+        "startLine": 9,
+        "startChar": 8,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "4e457425203cd42635eeea0bde044abf8b119946",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf05606b_be77b1f9",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T13:29:01Z",
+      "side": 1,
+      "message": "Pointer to this file/content should be addeded",
+      "range": {
+        "startLine": 47,
+        "startChar": 16,
+        "endLine": 47,
+        "endChar": 38
+      },
+      "revId": "4e457425203cd42635eeea0bde044abf8b119946",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
