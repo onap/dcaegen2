@@ -12,7 +12,7 @@ The following docker-compose-yaml file shows a default configuration. The file c
     bbs-event-processor:
       image: onap/org.onap.dcaegen2.services.components.bbs-event-processor:latest
       container_name: bbs-event-processor
-      hostname: bbs-event-processor 
+      hostname: bbs-event-processor
       ports:
       - 32100:8100
       environment:
@@ -34,36 +34,38 @@ The following docker-compose-yaml file shows a default configuration. The file c
         CONFIGS_APPLICATION_PIPELINESPOLLINGINTERVALSEC: 30
         CONFIGS_APPLICATION_PIPELINESTIMEOUTSEC: 15
         CONFIGS_APPLICATION_RE-REGISTRATION_POLICYSCOPE: policyScope
-        CONFIGS_APPLICATION_RE-REGISTRATION_CLCONTROLNAME: controName
+        CONFIGS_APPLICATION_RE-REGISTRATION_CLCONTROLNAME: controlName
         CONFIGS_APPLICATION_CPE-AUTHENTICATION_POLICYSCOPE: policyScope
         CONFIGS_APPLICATION_CPE-AUTHENTICATION_CLCONTROLNAME: controlName
+        CONFIGS_SECURITY_TRUSTSTOREPATH: KeyStore.jks
+        CONFIGS_SECURITY_TRUSTSTOREPASSWORDPATH: KeyStorePass.txt
+        CONFIGS_SECURITY_KEYSTOREPATH: KeyStore.jks
+        CONFIGS_SECURITY_KEYSTOREPASSWORDPATH: KeyStorePass.txt
         LOGGING_LEVEL_ORG_ONAP_BBS: TRACE
 
-For Dublin release, it will be a DCAE component that can dynamically be deployed via Cloudify blueprint installation.
+BBS-ep can be dynamically deployed in DCAE’s Cloudify environment via its blueprint deployment artifact.
+
+Blueprint can be found in
+
+    https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-bbs-event-processor.yaml
 
 Steps to deploy are shown below
 
-- Transfer blueprint component file in DCAE bootstrap POD under /blueprints directory. Blueprint can be found in
-
-    https://gerrit.onap.org/r/gitweb?p=dcaegen2/services.git;a=blob_plain;f=components/bbs-event-processor/dpo/blueprints/k8s-bbs-event-processor.yaml-template;hb=refs/heads/master
-- Transfer blueprint component inputs file in DCAE bootstrap POD under / directory. Blueprint inputs file can be found in
-
-    https://gerrit.onap.org/r/gitweb?p=dcaegen2/services.git;a=blob_plain;f=components/bbs-event-processor/dpo/blueprints/bbs-event-processor-input.yaml;hb=refs/heads/master
 - Enter the Bootstrap POD
 - Validate blueprint
     .. code-block:: bash
         
-        cfy blueprints validate /blueprints/k8s-bbs-event-processor.yaml-template
+        cfy blueprints validate /blueprints/k8s-bbs-event-processor.yaml
 - Upload validated blueprint
     .. code-block:: bash
         
 
-        cfy blueprints upload -b bbs-ep /blueprints/k8s-bbs-event-processor.yaml-template
+        cfy blueprints upload -b bbs-ep /blueprints/k8s-bbs-event-processor.yaml
 - Create deployment
     .. code-block:: bash
         
 
-        cfy deployments create -b bbs-ep -i /bbs-event-processor-input.yaml bbs-ep
+        cfy deployments create -b bbs-ep -i /blueprints/k8s-bbs-event-processor.yaml bbs-ep
 - Deploy blueprint
     .. code-block:: bash
         
