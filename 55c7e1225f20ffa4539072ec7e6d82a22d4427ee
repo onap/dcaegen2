@@ -1,0 +1,291 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c430e20_98db89eb",
+        "filename": "docs/index.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "create a separte index for mod rst file and link it under ./sections/components/component-development.rst",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 35
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd7597d8_3da89c16",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "uppercase G",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 2
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ebde92d2_c78d9bae",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "to be removed",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 10
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d3526dd_4e9833fd",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-Intro.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "remove it",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 11
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9485d3d_f248ae3d",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "missing newline",
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7b433ce_03d8716b",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "missing newline",
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e5ab7d3_21515994",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "This image includes the actual flow (VES-tcagen2) - will be better to remove it and also highlight the hamburger button and controller setting buttons",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 9
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12cd58e0_935971b7",
+        "filename": "docs/sections/DCAE-MOD/Glossary.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "remove this as cdap is no longer supported within dcae",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 56
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20a7b31c_017d336d",
+        "filename": "docs/sections/DCAE-MOD/Glossary.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "remove the note not yet implemented",
+      "range": {
+        "startLine": 115,
+        "startChar": 6,
+        "endLine": 115,
+        "endChar": 28
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd9fa2d7_0ba4285f",
+        "filename": "docs/sections/DCAE-MOD/Glossary.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "remove this as Policy Handler is part of ONAP/DCAE runtime",
+      "range": {
+        "startLine": 121,
+        "startChar": 14,
+        "endLine": 121,
+        "endChar": 36
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa01ccd0_2afd1765",
+        "filename": "docs/sections/DCAE-MOD/Glossary.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "remove it",
+      "range": {
+        "startLine": 126,
+        "startChar": 10,
+        "endLine": 126,
+        "endChar": 31
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ac5c17bb_a67119f2",
+        "filename": "docs/sections/DCAE-MOD/Roles.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "remove it",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 39
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27da9061_3d7bd3c3",
+        "filename": "docs/sections/DCAE-MOD/Roles.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-24T21:36:06Z",
+      "side": 1,
+      "message": "to be removed",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 27
+      },
+      "revId": "55c7e1225f20ffa4539072ec7e6d82a22d4427ee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
