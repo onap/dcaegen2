@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "57ac2a9d_23a5b9bc",
+        "filename": "docs/sections/apis/ves-hv/index.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-04-27T16:03:08Z",
+      "side": 1,
+      "message": "since you moved the \"(see ...) to the end , you can remove it from the middle of the sentence.",
+      "revId": "950b6e6b0efb2f114606acd3fb1da6ba70b49a0d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
