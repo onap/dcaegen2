@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "35436ffa_a85d963a",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-27T23:37:39Z",
+      "side": 1,
+      "message": "This can be removed or formatting corrected - see here https://logs.onap.org/production/vex-yul-ecomp-jenkins-1/doc-master-verify-rtd/7099/html/submodules/dcaegen2.git/docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.html",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 0
+      },
+      "revId": "8f3d8705036c43393f496e61d19e5442e015c7a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c943d3f_fe5c7851",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-27T23:37:39Z",
+      "side": 1,
+      "message": "This is shown is separate header; remove line #132",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 44
+      },
+      "revId": "8f3d8705036c43393f496e61d19e5442e015c7a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f92cc468_9235710e",
+        "filename": "docs/sections/components/component-development.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-27T23:37:39Z",
+      "side": 1,
+      "message": "pls add this at ln#11 after intro",
+      "range": {
+        "startLine": 20,
+        "startChar": 2,
+        "endLine": 20,
+        "endChar": 28
+      },
+      "revId": "8f3d8705036c43393f496e61d19e5442e015c7a2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
