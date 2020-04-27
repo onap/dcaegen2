@@ -1,6 +1,6 @@
 
 Blueprint Generator (DCAE)
-=============================================
+==========================
 
 What is the Blueprint Generator?
 ++++++++++++++++++++++++++++++++
@@ -34,7 +34,7 @@ Steps to run the blueprint generator:
     -o: This flag will create a service component override for your deployment equal to the value you put (optional)
 
 6. An example running this program would look like this:
-    ``java -jar blueprint-generator-1.2.1-executable.jar -p blueprint_output -i ComponentSpecs/TestComponentSpec.json -n TestAppBlueprint``
+    ``java -jar blueprint-generator-1.3.1-executable.jar -p blueprint_output -i ComponentSpecs/TestComponentSpec.json -n TestAppBlueprint``
 
 
 Extra information

@@ -5,7 +5,6 @@
 HV-VES (High Volume VES)
 ========================
 
-:Date: 2018-10-05
 
 .. contents::
     :depth: 4
@@ -25,9 +24,11 @@ TCP Endpoint
 ============
 
 HV-VES is exposed as NodePort service on Kubernetes cluster on port 30222/tcp.
-It uses plain, insecure TCP connection without socket data encryption. In Dublin release,
-there is an experimental option to enable SSL/TLS (see :ref:`ssl_tls_authorization`).
-Without TLS client authentication/authorization is not possible.
+By default, as of the Frankfurt release, all TCP communications are secured using
+SSL/TLS. Plain, insecure TCP connections without socket data encryption can be enabled if needed.
+ (see ref:`ssl_tls_authorization`).
+ 
+Without TLS, client authentication/authorization is not possible. 
 Connections are stream-based (as opposed to request-based) and long-running.
 
 Communication is wrapped with thin Wire Transfer Protocol, which mainly provides delimitation.

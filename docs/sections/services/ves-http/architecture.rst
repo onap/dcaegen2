@@ -9,6 +9,14 @@ VES Architecture
 VES Processing Flow
 -------------------
 
+1) Collector supports different URI based on single or batch event to be received
+2) Post authentication – events are validated for schema. At this point – appropriate return code is sent to client (success/failure)
+3) Event Processor check against transformation rules (if enabled) and handles VES output standardization (e.g. VES 7.x input to VES5.4 output)
+4) Based on domain, events are distributed to configurable topics
+5) Post to outbound topic(s). If DMaaP publish is unsuccessful, messages will be queued per topic within VESCollector
+
+Note: As the collector is deployed as micro-service, all configuration parameters (including DMaaP topics) are passed to the collector dynamically. VEScollector refreshes the configuration from CBS every 5 minutes
+
 .. image:: ./VES-processingFlow.png
 
 
@@ -20,13 +28,12 @@ VES Collector is configured to support below VES Version; the corresponding API 
 ===========     ================    ==================================
 VES Version     API version         Schema Definition
 ===========     ================    ==================================
-VES 1.2         eventListener/v1    CommonEventFormat_Vendors_v25.json   
-VES 4.1         eventListener/v4    CommonEventFormat_27.2.json
-VES 5.4         eventListener/v5    CommonEventFormat_28.4.1.json
-VES 7.0         eventListener/v7    CommonEventFormat_30.0.1.json
+VES 1.2         eventListener/v1    `CommonEventFormat_Vendors_v25.json <https://git.onap.org/dcaegen2/collectors/ves/tree/etc/CommonEventFormat_Vendors_v25.json>`_  
+VES 4.1         eventListener/v4    `CommonEventFormat_27.2.json <https://git.onap.org/dcaegen2/collectors/ves/tree/etc/CommonEventFormat_27.2.json>`_
+VES 5.4         eventListener/v5    `CommonEventFormat_28.4.1.json <https://git.onap.org/dcaegen2/collectors/ves/tree/etc/CommonEventFormat_28.4.1.json>`_
+VES 7.1.1       eventListener/v7    `CommonEventFormat_30.1.1.json <https://git.onap.org/vnfrqts/requirements/tree/docs/Chapter8/CommonEventFormat_30.1.1_ONAP.json>`_
 ===========     ================    ==================================
-
-Schema definition files are contained within VES collector gerrit repo - https://git.onap.org/dcaegen2/collectors/ves/tree/etc
+ 
 
 
 Features Supported
@@ -53,8 +60,8 @@ Dynamic configuration fed into Collector via DCAEPlatform
 
 POST requests result in standard HTTP status codes:
 
-200-299  Success
-400-499  Client request has a problem (data error)
-500-599  Collector service has a problem
+- 200-299  Success
+- 400-499  Client request has a problem (data error)
+- 500-599  Collector service has a problem
  
 
