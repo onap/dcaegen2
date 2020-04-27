@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f8d11211_1b0edd68",
+        "filename": "docs/sections/apis/ves-hv/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-04-27T15:33:01Z",
+      "side": 1,
+      "message": "how about something like this:\n\nBy default, as of the Frankfurt release, all TCP communications are secured using\nSSL/TLS (see ...). Plain, insecure TCP connections without socket data encryption can be enabled if needed.",
+      "revId": "59905e0344eb0b576ef5375920d5a1c9c3a002cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
