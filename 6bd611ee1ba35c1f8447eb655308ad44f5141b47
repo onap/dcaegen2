@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc232c20_c1ae4928",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-27T19:57:44Z",
+      "side": 1,
+      "message": "Tca-gen2",
+      "range": {
+        "startLine": 361,
+        "startChar": 15,
+        "endLine": 361,
+        "endChar": 28
+      },
+      "revId": "6bd611ee1ba35c1f8447eb655308ad44f5141b47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e07bfa0d_4a07937b",
+        "filename": "docs/sections/components/component-development.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-04-27T19:57:44Z",
+      "side": 1,
+      "message": "missing   ./architecture/blueprint_generator.rst",
+      "revId": "6bd611ee1ba35c1f8447eb655308ad44f5141b47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
