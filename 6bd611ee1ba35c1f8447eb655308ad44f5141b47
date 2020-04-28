@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "952f7e9c_f30bfbae",
+        "filename": "docs/sections/DCAE-MOD/DCAE-MOD-User-Guide.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-28T13:04:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc232c20_c1ae4928",
+      "range": {
+        "startLine": 361,
+        "startChar": 15,
+        "endLine": 361,
+        "endChar": 28
+      },
+      "revId": "6bd611ee1ba35c1f8447eb655308ad44f5141b47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e07bfa0d_4a07937b",
         "filename": "docs/sections/components/component-development.rst",
         "patchSetId": 14
@@ -39,6 +63,24 @@
       "revId": "6bd611ee1ba35c1f8447eb655308ad44f5141b47",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f801ecd3_ad530573",
+        "filename": "docs/sections/components/component-development.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 987
+      },
+      "writtenOn": "2020-04-28T13:04:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e07bfa0d_4a07937b",
+      "revId": "6bd611ee1ba35c1f8447eb655308ad44f5141b47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
