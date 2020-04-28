@@ -6,8 +6,8 @@
 Installation
 ============
 
-Due to a bug in the Frankfurt release, the PMSH cannot be deployed through CLAMP. The PMSH can instead be deployed
-using the DCAE Dashboard or via CLI. Steps to deploy using CLI will be shown below.
+In Frankfurt, the PMSH can be deployed using the DCAE Dashboard or via CLI. Steps to deploy using CLI will be shown
+below.
 
 Deployment Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -45,6 +45,11 @@ See :ref:`Subscription configuration<Subscription>`
         curl -X PUT http://<k8s-node-ip>:<consul-port>/v1/kv/dcae-pmsh:policy \
             -H 'Content-Type: application/json' \
             -d @monitoring-policy.json
+
+The following JSON is an example monitoring policy.
+
+.. literalinclude:: resources/monitoring-policy.json
+    :language: json
 
 To deploy the PMSH microservice using the deployment handler API, the ``serviceTypeId`` is needed, this can be retrieved
 using the inventory API
