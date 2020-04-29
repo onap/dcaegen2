@@ -3,8 +3,12 @@
 
 .. _dcae-component-schema:
 
-DCAE Component JSON Schema
-==========================
+Component JSON Schema Definition
+================================
+
+The schema file used for DCAE onboarding is maintained in `gerrit <https://git.onap.org/dcaegen2/platform/plain/mod/component-json-schemas/component-specification/dcae-cli-v2/component-spec-schema.json>`__
+The same is provided below for documentation reference.
+
 
 ::
 
@@ -112,6 +116,36 @@ DCAE Component JSON Schema
       "items": {
         "$ref": "#/definitions/artifact"
       }
+    },
+    "policy_info": {
+      "type": "object",
+      "properties": {
+        "policy": 
+        {
+          "type": "array",
+          "items": 
+          {
+            "type": "object",
+            "properties": 
+            {
+              "node_label": 
+              {
+                "type": "string"
+              },
+              "policy_id": 
+              {
+              "type": "string"
+              },
+              "policy_model_id": 
+              {
+              "type": "string"
+              }
+            },
+            "required": ["node_label", "policy_model_id"]
+          }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "required": [
@@ -186,7 +220,83 @@ DCAE Component JSON Schema
       }
     },
     "parameter": {
-      "type": "object",
+      "oneOf": [
+         {"$ref": "#/definitions/parameter-list"},
+         {"$ref": "#/definitions/parameter-other"}
+      ]
+    },
+    "parameter-list": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "description": "Default value for the parameter"
+        },
+        "description": {
+          "description": "Description for the parameter.",
+          "type": "string"
+        },
+        "type": {
+          "description": "Only valid type is list, the entry_schema is required - which contains the type of the list element. All properties set for the parameter apply to all elements in the list at this time",
+          "type": "string",
+          "enum": ["list"]
+        },
+        "required": {
+          "description": "An optional key that declares a parameter as required (true) or not (false). Default is true.",
+          "type": "boolean",
+          "default": true
+        },
+        "constraints": {
+          "description": "The optional list of sequenced constraint clauses for the parameter.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/parameter-constraints"
+          }
+        },
+        "entry_schema": {
+            "description": "The optional property used to declare the name of the Datatype definition for entries of certain types. entry_schema must be defined when the type is list.  This is the only type it is currently supported for.",
+                "type": "object",
+                "uniqueItems": true,
+                "items": {"$ref": "#/definitions/list-parameter"}
+        },
+        "designer_editable": {
+          "description": "A required property that declares a parameter as editable by designer in SDC Tool (true) or not (false).",
+          "type": "boolean"
+        },
+        "sourced_at_deployment": {
+          "description": "A required property that declares that a parameter is assigned at deployment time (true) or not (false).",
+          "type": "boolean"
+        },
+        "policy_editable": {
+          "description": "A required property that declares a parameter as editable by DevOps in Policy UI (true) or not (false).",
+          "type": "boolean"
+        },
+        "policy_group": {
+          "description": "An optional property used to group policy_editable parameters into groups. Each group will become it's own policy model. Any parameters without this property will be grouped together to form their own policy model",
+          "type": "string"
+        },
+        "policy_schema" :{
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/definitions/policy_schema_parameter"}
+        }
+      },
+      "required": [
+        "name",
+        "value",
+        "description",
+        "designer_editable",
+        "policy_editable",
+        "sourced_at_deployment",
+        "entry_schema"
+      ],
+      "additionalProperties": false,
+      "dependencies": {
+        "policy_schema": ["policy_editable"]
+      }
+    },
+    "parameter-other": {
       "properties": {
         "name": {
           "type": "string"
@@ -215,23 +325,24 @@ DCAE Component JSON Schema
             "$ref": "#/definitions/parameter-constraints"
           }
         },
-        "entry_schema": {
-            "description": "used for complex data type in the future. 'type' must be map or array for entry_schema to kick_in. ",
-            "type": "string"
-        },
         "designer_editable": {
           "description": "A required property that declares a parameter as editable by designer in SDC Tool (true) or not (false).",
-          "type": "boolean"
-        },
-        "policy_editable": {
-          "description": "A required property that declares a parameter as editable by DevOps in Policy UI (true) or not (false).",
           "type": "boolean"
         },
         "sourced_at_deployment": {
           "description": "A required property that declares that a parameter is assigned at deployment time (true) or not (false).",
           "type": "boolean"
         },
+        "policy_editable": {
+          "description": "A required property that declares a parameter as editable in Policy UI (true) or not (false).",
+          "type": "boolean"
+        },
+        "policy_group": {
+          "description": "An optional property used to group policy_editable parameters into groups. Each group will become it's own policy model. Any parameters without this property will be grouped together to form their own policy model",
+          "type": "string"
+        },
         "policy_schema" :{
+          "description": "An optional property used to define policy_editable parameters as lists or maps",
           "type": "array",
           "uniqueItems": true,
           "items": {"$ref": "#/definitions/policy_schema_parameter"}
@@ -242,11 +353,27 @@ DCAE Component JSON Schema
         "value",
         "description",
         "designer_editable",
-        "policy_editable",
-        "sourced_at_deployment"
+        "sourced_at_deployment",
+        "policy_editable"
       ],
       "additionalProperties": false,
-      "dependencies": { "policy_schema": ["policy_editable"]}
+      "dependencies": {
+        "policy_schema": ["policy_editable"]
+      }
+    },
+    "list-parameter": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "The required data type for each parameter in the list.",
+          "type": "string",
+          "enum": ["string", "number"]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false
     },
     "policy_schema_parameter": {
         "type": "object",
@@ -294,22 +421,22 @@ DCAE Component JSON Schema
       "additionalProperties": false,
       "properties": {
         "equal": {
-          "description": "Constrains a property or parameter to a value equal to ('=') the value declared."
+          "description": "Constrains a property or parameter to a value equal to (‘=’) the value declared."
         },
         "greater_than": {
-          "description": "Constrains a property or parameter to a value greater than ('>') the value declared.",
+          "description": "Constrains a property or parameter to a value greater than (‘>’) the value declared.",
           "type": "number"
         },
         "greater_or_equal": {
-          "description": "Constrains a property or parameter to a value greater than or equal to ('>=') the value declared.",
+          "description": "Constrains a property or parameter to a value greater than or equal to (‘>=’) the value declared.",
           "type": "number"
         },
         "less_than": {
-          "description": "Constrains a property or parameter to a value less than '<') the value declared.",
+          "description": "Constrains a property or parameter to a value less than (‘<’) the value declared.",
           "type": "number"
         },
         "less_or_equal": {
-          "description": "Constrains a property or parameter to a value less than or equal to ('<=') the value declared.",
+          "description": "Constrains a property or parameter to a value less than or equal to (‘<=’) the value declared.",
           "type": "number"
         },
         "valid_values": {
@@ -505,7 +632,7 @@ DCAE Component JSON Schema
         }
       },
       "required" : [
-        "request", 
+        "request",
         "response",
         "service_name",
         "service_endpoint",
@@ -657,14 +784,66 @@ DCAE Component JSON Schema
             "type": "string"
           }
         },
-        "reconfigs": {
-           "properties": {  
-             "dti": {
-                "description": "Script command that will be executed for reconfiguration",
+        "log_info": {
+          "description": "Component specific details for logging",
+          "type": "object",
+          "properties": {
+            "log_directory": {
+              "description": "The path in the container where the component writes its logs. If the component is following the EELF requirements, this would be the directory where the four EELF files are being written. (Other logs can be placed in the directory--if their names in '.log', they'll also be sent into ELK.)",
+              "type": "string"
+            },
+            "alternate_fb_path": {
+              "description": "By default, the log volume is mounted at /var/log/onap/<component_type> in the sidecar container's file system. 'alternate_fb_path' allows overriding the default.  Will affect how the log data can be found in the ELK system.",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "tls_info": {
+          "description": "Component information to use tls certificates",
+          "type": "object",
+          "properties": {
+            "cert_directory": {
+              "description": "The path in the container where the component certificates will be placed by the init container",
+              "type": "string"
+            },
+            "use_tls": {
+              "description": "Boolean flag to determine if the application is using tls certificates",
+              "type": "boolean"
+            }
+          },
+          "required": [
+              "cert_directory","use_tls"
+             ],
+          "additionalProperties": false
+        },
+        "databases": {
+          "description": "The databases the application is connecting to using the pgaas",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "postgres"
+            ]
+          }
+        },
+        "policy": {
+           "properties": {
+             "trigger_type": {
+                "description": "Only value of docker is supported at this time.",
+                "type": "string",
+                "enum": ["docker"]
+             },
+             "script_path": {
+                "description": "Script command that will be executed for policy reconfiguration",
                 "type": "string"
              }
-           } 
-        }, 
+            },
+            "required": [
+              "trigger_type","script_path"
+             ],
+            "additionalProperties": false
+        },
         "volumes": {
           "description": "Volume mapping to be used for Docker containers. Each entry is of the format below",
           "type": "array",
@@ -748,6 +927,7 @@ DCAE Component JSON Schema
         "type",
         "script"
         ]
-      }
     }
   }
+ }
+
