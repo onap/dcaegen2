@@ -16,20 +16,17 @@ Overridden/Entered Values
 
 Depending on the other properties set for the parameter, the default
 value can be overridden at ‘design-time’, ‘deploy-time’ or once the
-microservice is running (‘run-time’). (*In the future, when Policy is
-supported, configuration will also be able to be provided/changed in the
-Policy UI at any time).*
-
+microservice is running (‘run-time’). 
 
 +--------+--------+--------+--------+------------+
 |        | Design\| CLAMP  | Policy | Deploy-Time|
 |        | -Time  | Input  | Input  | Input      |
-|        | Input  |        | (futur\|            |
-|        |        |        | e)     |            |
+|        | Input  |        |        |            |
+|        |        |        |        |            |
 +========+========+========+========+============+
 | Descri\| Applie\| Applie\| (not   | Applies to |
 | ption  | s      | s      | yet    | manually   |
-|        | to SDC | to     | suppor\| deployed   |
+|        | to     | to     | suppor\| deployed   |
 |        | self-s\| compon\| ted)   | services   |
 |        | ervice | ents   |        |            |
 |        | compon\| deploy\|        |            |
@@ -39,12 +36,12 @@ Policy UI at any time).*
 +--------+--------+--------+--------+------------+
 | Input  | Servic\| CLAMP  | Operat\| DevOps     |
 | provid\| e      |        | ions   |            |
-| ed     | Design |        |        |            |
-| by     | er     |        |        |            |
+| ed     | Designe|        |        |            |
+| by     | r      |        |        |            |
 +--------+--------+--------+--------+------------+
 | How it | In the | In the | In the | In the DCAE|
-| is     | SDC UI | CLAMP  | POLICY | Dashboard  |
-| provid\|        | UI     | GUI    | (or Jenkins|
+| is     | SDC/MOD| CLAMP  | POLICY | Dashboard  |
+| provid\| UI     | UI     | GUI    | (or Jenkins|
 | ed     |        |        |        | job)       |
 +--------+--------+--------+--------+------------+
 | Compon\| ‘desig\| None.  | ‘polic\| ‘sourced\  |
