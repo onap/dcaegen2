@@ -1,19 +1,18 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-.. _docker-specification:
+.. _docker-requirements:
 
-Component specification (Docker)
-================================
+Docker Component Requirements
+=============================
 
 The Docker component specification contains the following groups of
-information. Many of these are common to both Docker and CDAP components
-and are therefore described in the common specification.
+information. 
 
 -  :any:`Metadata <metadata>`
 -  :any:`Interfaces <interfaces>` including the
    associated :any:`Data Formats <data-formats>`
--  :any:`Parameters <parameters>`
+-  :any:`Parameters <common-specification-parameters>`
 -  :any:`Auxiliary Details <docker-auxiliary-details>`
 -  :any:`List of Artifacts <artifacts>`
 
@@ -42,8 +41,6 @@ mapping, volume mapping and policy reconfiguration script details.
 |                                |         | object. See example       |
 |                                |         | below.                    |
 +--------------------------------+---------+---------------------------+
-| *Planned for 1806*             |         |                           |
-+--------------------------------+---------+---------------------------+
 | policy                         | JSON    | *Required*. Policy        |
 |                                | array   | reconfiguration script    |
 |                                |         | details                   |
@@ -52,13 +49,10 @@ mapping, volume mapping and policy reconfiguration script details.
 Health Check Definition
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The platform uses Consul to perform periodic health check calls. Consul
-provides different types of `check
-definitions <https://www.consul.io/docs/agent/checks.html>`__. The
-platform currently supports http and docker health checks.
+The platform currently supports http and docker health checks. 
 
 When choosing a value for interval, consider that too frequent
-healthchecks will put unnecessary load on Consul and DCAE. If there is a
+healthchecks will put unnecessary load platform. If there is a
 problematic resource, then more frequent healthchecks are warranted (eg
 15s or 60s), but as stability increases, so can these values, (eg
 300s).
@@ -84,8 +78,7 @@ http
 +--------------------------------+---------+---------------------------+
 | endpoint                       | string  | *Required*. GET endpoint  |
 |                                |         | provided by the component |
-|                                |         | for Consul to call to     |
-|                                |         | check health              |
+|                                |         | for check health          |
 +--------------------------------+---------+---------------------------+
 
 Example:
@@ -121,7 +114,7 @@ docker script example
 |                                |         | executed                  |
 +--------------------------------+---------+---------------------------+
 
-Consul will use the `Docker exec
+Platform will use the `Docker exec
 API <https://docs.docker.com/engine/api/v1.29/#tag/Exec>`__ to
 periodically call your script in your container. It will examine the
 script result to identify whether your component is healthy. Your
@@ -232,8 +225,8 @@ In the example above, the container volume “/tmp/docker.sock” maps to
 host volume “/var/run/docker.sock”.
 
 
-Policy (not yet supported)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Policy 
+~~~~~~~
 
 Policy changes made in the Policy UI will be provided to the Docker
 component by triggering a script that is defined here.

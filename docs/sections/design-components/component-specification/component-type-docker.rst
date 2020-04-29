@@ -1,25 +1,19 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-.. _common-specification:
 
-Common Elements of the Component Specification
-==============================================
+.. _component_specification:
 
-This page describes the component specification (JSON) sections that are
-common to both Docker and CDAP components. Differences for each are
-pointed out below. Elements that are very different, and described in
-the CDAP or Docker specific pages.
+Component Specification
+=======================
 
-.. _metaschema: 
+This page will discuss categories defined in :doc:`component specification schema <./component-json-schema>` 
+ and their usage
+
 
 Meta Schema Definition
 ----------------------
 
-The component specification is represented (and validated) against this
-`Component Spec json
-schema <https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/cli.git;a=blob;f=component-json-schemas/component-specification/dcae-cli-v1/component-spec-schema.json;h=27d0403af67eac00e03ab89437d5f07aa06fbee3;hb=HEAD>`__
-and described below:
 
 The “Meta Schema” implementation defines how component specification
 JSON schemas can be written to define user input. It is itself a JSON
@@ -1401,11 +1395,6 @@ policy_schema object:
 |             | p  |          |      |
 +-------------+----+----------+------+
 
-Generated Application Configuration
------------------------------------
-
-The Platform generates configuration for the component (based on the component spec) at deployment time. The generated application configuration will be made up of the Parameters, Streams, and Services sections, after any provisioning for streams and services. The component developer can see what this configuration will look like by reviewing the :any:`component dev command <dcae-cli-run-the-dev-command>`.
-
 
 .. _artifacts:
 
@@ -1432,11 +1421,18 @@ the Docker image. For CDAP, this is the full path to the CDAP jar.
 | type          | string | *Required*. ``docker image`` or ``jar``    |
 +---------------+--------+--------------------------------------------+
 
-.. _component_spec:
+.. _auxilary:
 
-Working with Component Specs
-============================
- 
-Components can be added to the onboarding catalog (which first validates the component spec) by using the :doc:`dcae_cli Tool <../dcae-cli/quickstart/>` 
-Here you can also list the components, show the contents of a component, publish the component, validate the generated configuration for the component, deploy (run) and undeploy the component. For a list of these capabilities, see :any:`Component Commands <dcae_cli_component_commands>`
+Auxilary
+--------
+
+
+Health check
+~~~~~~~~~~~~
+
+Component developers are required to provide a way for the platform to
+periodically check the health of their running components. The
+details of the definition used by your component is to be provided
+through the :any:`Docker auxiliary specification <docker-auxiliary-details>`.
+
 

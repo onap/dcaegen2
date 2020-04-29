@@ -1,6 +1,6 @@
-============
-Introduction
-============
+==============
+MOD Objectives
+==============
 
 MOD stands for "micro-service onboarding and design" and the project is
 an effort to reboot the onboarding and design experience in DCAE.
@@ -40,6 +40,4 @@ an effort to reboot the onboarding and design experience in DCAE.
 - DCAE-MOD is developed by the DCAE team to ensure consistency across all DCAE implementation, with the long term objective to integrate with SDC as part of the Design Platform.
 
 - Integrate with ONAP User Experience portals (initially ONAP portal, later SDC portal).
-
-
 
