@@ -7,16 +7,19 @@ DCAE MOD is composed of a mix of components developed in ONAP and other
 components taken from the Apache Nifi project and modified for
 appropriate use.
 
-The goal of the project is to stream line the construction, management,
-and evolution of DCAE flows from role to role, from environment to
-environment, and from release to release.
+MOD architecture and design intends was intended to simply the onboarding
+and design experience in ONAP. The drivers for introduction for MOD are documented `here <./DCAE-MOD-goals>`__
 
-DCAE MOD is composed of three functional areas: onboarding, design, and
-distribution.
+MOD aims to stream line the construction, management,
+and evolution of DCAE flows from role to role, from environment to
+environment, and from release to release.   
+
+MOD is composed of three functional areas: onboarding, design, and
+distribution and caters different `user group <./Roles>`__
 
 
 Below illustrations describe the architecture of DCAE-MOD and show the
-usage flow in DCAE MOD-
+usage flow in DCAE MOD
 
 |image0|
 

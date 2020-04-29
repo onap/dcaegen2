@@ -3,11 +3,23 @@
 .. Copyright (c) 2017-2020 AT&T Intellectual Property. All rights reserved.
 .. _release_notes:
 
+
+
+==================
 DCAE Release Notes
 ==================
 
+.. contents::
+    :depth: 1
+..
+
+
+Version: 6.0.0
+==============
+
 Abstract
 --------
+
 This document provides the release notes for the Frankfurt release (6.0.0)
 
 
@@ -152,8 +164,8 @@ Artifacts released:
    "dcaegen2/services/mapper", "", "onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.1"
    "dcaegen2/services/pm-mapper", "", "onap/org.onap.dcaegen2.services.pm-mapper:1.3.1"
    "dcaegen2/services/prh", "", "onap/org.onap.dcaegen2.services.prh.prh-app-server:1.5.2"
-   "dcaegen2/services/son-handler", "", "onap/org.onap.dcaegen2.services.son-handler:2.0.0"
-   "dcaegen2/platform", "adapter/acumos", "onap/org.onap.dcaegen2.platform.adapter.acumos:1.0.1"
+   "dcaegen2/services/son-handler", "", "onap/org.onap.dcaegen2.services.son-handler:2.0.2"
+   "dcaegen2/platform", "adapter/acumos", "onap/org.onap.dcaegen2.platform.adapter.acumos:1.0.2"
    "dcaegen2/platform", "mod/bpgenerator", "Blueprint Generator 1.3.1 (jar)"
    "dcaegen2/services/sdk", "", "DCAE SDK 1.3.5 (jar)"
    "ccsdk/dashboard", "", "onap/org.onap.ccsdk.dashboard.ccsdk-app-os:1.3.2"
@@ -169,7 +181,7 @@ Artifacts released:
         - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
 
 Version: 5.0.1
---------------
+==============
 
 The offical El-Alto release (rolls up all 5.0.0 early drop deliverables) focused on technical debts and SECCOM priority work-items.
 
@@ -332,7 +344,7 @@ The following components are upgraded from Dublin/R4 and El-Alto EarlyDrop deliv
        - Description : Code optimization, bug fixes and SDK alignment
 
 Version: 5.0.0
---------------
+==============
 
 El-Alto Early-drop focused on technical debts and SECCOM priority work-items.
 
@@ -425,7 +437,7 @@ The following components are upgraded from Dublin/R4.
 
 
 Version: 4.0.0
---------------
+==============
 
 :Release Date: 2019-06-06
 
@@ -627,7 +639,7 @@ The following components are upgraded from R3
 
 
 Version: 3.0.1
---------------
+==============
 
 :Release Date: 2019-01-31
 
@@ -814,7 +826,7 @@ The following components are upgraded from R2:
 
 
 Version: 2.0.0
---------------
+==============
 
 :Release Date: 2018-06-07
 
@@ -930,7 +942,7 @@ The following components are upgraded from R1:
 
 
 Version: 1.0.0
---------------
+==============
 
 :Release Date: 2017-11-16
 
