@@ -3,11 +3,23 @@
 .. Copyright (c) 2017-2020 AT&T Intellectual Property. All rights reserved.
 .. _release_notes:
 
+
+
+==================
 DCAE Release Notes
 ==================
 
+.. contents::
+    :depth: 2
+..
+
+
+Version: 6.0.0
+==============
+
 Abstract
 --------
+
 This document provides the release notes for the Frankfurt release (6.0.0)
 
 
@@ -16,9 +28,10 @@ Summary
 
 **New Features**
 
-DCAE improves upon previous release with the following new features:
+DCAE improves upon previous release with the following new features
 
 - DCAE Platform Enhancement
+
     - Introduction of Microservice and Onboarding Design (MOD) platform 
     - Policy Notification support for DCAE components
     - Dynamic AAF certificate creation during component instantiation
@@ -27,16 +40,22 @@ DCAE improves upon previous release with the following new features:
     - Blueprint generator tool to simplify deployment artifact creation
    
 
-- Following new services are delivered with Frankfurt
+- Following new services are delivered this release
+
     - Event Processors
+    
         - PM Subscription Handler
         - DataLake Handlers 
     - Analytics/RCA
+    
         - TCA-GEN2
+	
 	- Acumos Adapter (PoC)
  
-Following is complete list of DCAE components available part of default ONAP/DCAE installation.
+Below is complete list of DCAE components available part of default ONAP/DCAE installation.
+
     - Platform components
+
         - Cloudify Manager (helm chart)
         - Bootstrap container (helm chart)
         - Configuration Binding Service (helm chart)
@@ -45,7 +64,9 @@ Following is complete list of DCAE components available part of default ONAP/DCA
         - Service Change Handler (helm chart)
         - Inventory API (helm chart)
         - Dashboard (helm chart)
+
     - Service components
+
         - VES Collector
         - Threshold Crossing Analytics (TCA/CDAP)
         - HV-VES Collector
@@ -53,13 +74,16 @@ Following is complete list of DCAE components available part of default ONAP/DCA
         - Docker based Threshold Crossing Analytics (TCA-Gen2)
         - Holmes Rule Management *
         - Holmes Engine Management *
+
     - Additional resources that DCAE utilizes deployed using ONAP common charts:
+    
         - Postgres Database
         - Mongo Database
         - Redis Cluster Database
         - Consul Cluster 
 
-Following are service components (mS) which can be deployed on-demand
+Following service components (mS) can be deployed on-demand
+
  	- SNMPTrap Collector
  	- RESTConf Collector
  	- DataFile Collector
@@ -71,6 +95,7 @@ Following are service components (mS) which can be deployed on-demand
  	- PM-Subscription Handler
 
     Notes:
+
         \*  These components are delivered by the Holmes project.
 
 
@@ -84,6 +109,7 @@ Under OOM (Kubernetes) deployment all DCAE component containers are deployed as 
 **Bug Fixes**
 
 **Known Issues**
+
     * Blueprint generator issue (DCAEGEN2-2140)
     * TCAgen2 Policy configuration support (DCAEGEN2-2198)
 
@@ -152,8 +178,8 @@ Artifacts released:
    "dcaegen2/services/mapper", "", "onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.1"
    "dcaegen2/services/pm-mapper", "", "onap/org.onap.dcaegen2.services.pm-mapper:1.3.1"
    "dcaegen2/services/prh", "", "onap/org.onap.dcaegen2.services.prh.prh-app-server:1.5.2"
-   "dcaegen2/services/son-handler", "", "onap/org.onap.dcaegen2.services.son-handler:2.0.0"
-   "dcaegen2/platform", "adapter/acumos", "onap/org.onap.dcaegen2.platform.adapter.acumos:1.0.1"
+   "dcaegen2/services/son-handler", "", "onap/org.onap.dcaegen2.services.son-handler:2.0.2"
+   "dcaegen2/platform", "adapter/acumos", "onap/org.onap.dcaegen2.platform.adapter.acumos:1.0.2"
    "dcaegen2/platform", "mod/bpgenerator", "Blueprint Generator 1.3.1 (jar)"
    "dcaegen2/services/sdk", "", "DCAE SDK 1.3.5 (jar)"
    "ccsdk/dashboard", "", "onap/org.onap.ccsdk.dashboard.ccsdk-app-os:1.3.2"
@@ -165,11 +191,12 @@ Artifacts released:
 
 
 **References**
+
         - `DCAE project page <https://wiki.onap.org/display/DW/Data+Collection+Analytics+and+Events+Project>`_
         - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
 
 Version: 5.0.1
---------------
+==============
 
 The offical El-Alto release (rolls up all 5.0.0 early drop deliverables) focused on technical debts and SECCOM priority work-items.
 
@@ -332,7 +359,7 @@ The following components are upgraded from Dublin/R4 and El-Alto EarlyDrop deliv
        - Description : Code optimization, bug fixes and SDK alignment
 
 Version: 5.0.0
---------------
+==============
 
 El-Alto Early-drop focused on technical debts and SECCOM priority work-items.
 
@@ -425,7 +452,7 @@ The following components are upgraded from Dublin/R4.
 
 
 Version: 4.0.0
---------------
+==============
 
 :Release Date: 2019-06-06
 
@@ -627,7 +654,7 @@ The following components are upgraded from R3
 
 
 Version: 3.0.1
---------------
+==============
 
 :Release Date: 2019-01-31
 
@@ -814,7 +841,7 @@ The following components are upgraded from R2:
 
 
 Version: 2.0.0
---------------
+==============
 
 :Release Date: 2018-06-07
 
@@ -930,7 +957,7 @@ The following components are upgraded from R1:
 
 
 Version: 1.0.0
---------------
+==============
 
 :Release Date: 2017-11-16
 

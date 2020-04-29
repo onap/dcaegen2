@@ -12,11 +12,34 @@ are generally written to be composable with other DCAE components,
 although a component can run independently as well. The DCAE platform is
 responsible for running and managing DCAE service components reliably.
 
-Currently, the DCAE platform supports two types of components, CDAP
-applications and Docker containers. For each, there are requirements
-that must be met for the component to integrate into the DCAE platform
-(see :doc:`CDAP <component-type-cdap>` and
-:doc:`Docker <component-type-docker>`).
+DCAE Design platform aims to provide a common catalog of available DCAE 
+Service components, enabling designers to select required 
+components to construct and deploy composite flows into DCAE Runtime platform.
+
+Service component/MS to be onboarded and deployed into DCAE platform would 
+typically go through below phases.
+
+ - Onboarding 
+ - Design 
+ - Runtime
+
+DCAE Design Platform supports onboarding and service design through MOD. 
+
+
+Onboarding is a process that ensures that the component is compliant
+with the DCAE platform rules. The high level summary of the onboarding process
+is:
+
+1. Defining the :doc:`data formats <data-formats>` if they don’t already
+   exist. 
+2. Defining the :doc:`component specification <./component-specification/component-specification>`
+3. Validate the component spec schema against
+   `Component Spec json schema <https://git.onap.org/dcaegen2/platform/plain/mod/component-json-schemas/component-specification/dcae-cli-v2/component-spec-schema.json>`__
+4. Use  :doc:`blueprint-generator tool <./blueprint_generator>` to generate Cloudify blueprint
+5. Test the blueprint generated in DCAE Runtime Environment (using either Dashboard UI or Cloudify cli from bootstrap)
+6. Using :doc:`DCAE-MOD <../DCAE-MOD/DCAE-MOD-User-Guide>` , publish the component and data formats into DCAE-MOD catalog. 
+   (This step is required if Microservice needs to be deployed part of flow/usecase)
+
 
 A Component requires one or more data formats.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,7 +66,8 @@ Each Component requires a component specification.
 
 The component specification is a JSON artifact that fully specifies the
 component, it’s interfaces, and configuration. It’s standardized for
-CDAP and Docker applications and is validated using a :doc:`JSON schema <./component-json-schema>`.
+CDAP (deprecated) and Docker applications and is validated using a 
+:doc:`JSON schema <./component-specification/component-json-schema>`.
 
 The component specification fully specifies all the configuration
 parameters of the component. This is used by the designer and by policy
@@ -65,41 +89,19 @@ blueprints.
 
 The component specification is used by:
 
--  dcae_cli tool - to validate it
--  Design Tools - TOSCA models are generated from the component
-   specification so that the component can be used by designers to
-   compose new DCAE services in SDC.
+
+-  Blueprint Generator - Tool to generate standalone cloudify blueprint
+   using component spec. The blueprints can be uploaded into inventory 
+   using Dashboard and triggerred for deployment.
+-  MOD Platform - To onboard the microservice and maintain in catalog
+   enabling designer to compone new DCAE service flows and distribute
+   to DCAE Runtime platform.
 -  Policy (future) - TOSCA models are generated from the component
    specification so that operations can create policy models used to
    dynamically configure the component.
--  the runtime platform - The component’s application configuration
+-  Runtime platform - The component’s application configuration
    (JSON) is generated from the component specification and will be
-   provided to the component at runtime.
+   provided to the component at runtime (through ConfigBindingService
+   or Consul).
 
-Onboarding
-----------
-
-Onboarding is a process that ensures that the component is compliant
-with the DCAE platform rules. A command-line tool called
-:doc:`dcae-cli <./dcae-cli/quickstart>` is provided to
-help with onboarding. The high level summary of the onboarding process
-is:
-
-1. Defining the :doc:`data formats <data-formats>` if they don’t already
-   exist.
-2. Defining the :doc:`component specification <./component-specification/common-specification>`.
-   See :doc:`docker <./component-specification/docker-specification>` and
-   :doc:`CDAP <./component-specification/cdap-specification>`.
-3. Use the dcae_cli tool to :any:`add the data formats <dcae_cli_add_a_data_format>` and
-   :any:`add the component <dcae_cli_add_a_component>` to the
-   onboarding catalog. This process will validate them as well.
-4. Use the dcae_cli tool to
-   :any:`deploy <dcae_cli_run_a_component>` the
-   component. (The component is deployed to the environment indicated in
-   the :any:`profile <dcae_cli_activate_profile>`
-   section).
-5. Test the component. Also do pairwise-test the component with any
-   other components it connects with.
-6. Publish the component and data formats into the Service Design and
-   Creation (SDC) ‘catalog’. (Currently, this is a manual step, not done
-   via the dcae_cli tool).
+   
