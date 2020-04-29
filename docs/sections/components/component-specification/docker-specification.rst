@@ -3,8 +3,10 @@
 
 .. _docker-specification:
 
-Component specification (Docker)
-================================
+Component specification
+=======================
+
+
 
 The Docker component specification contains the following groups of
 information. Many of these are common to both Docker and CDAP components
@@ -41,8 +43,6 @@ mapping, volume mapping and policy reconfiguration script details.
 |                                | array   | a host and container      |
 |                                |         | object. See example       |
 |                                |         | below.                    |
-+--------------------------------+---------+---------------------------+
-| *Planned for 1806*             |         |                           |
 +--------------------------------+---------+---------------------------+
 | policy                         | JSON    | *Required*. Policy        |
 |                                | array   | reconfiguration script    |

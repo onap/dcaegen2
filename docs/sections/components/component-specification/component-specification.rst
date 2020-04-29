@@ -7,8 +7,8 @@ Component Specification
 .. toctree::
    :maxdepth: 1
 
+   ../component-json-schema.rst
    ./common-specification.rst
-   ./cdap-specification.rst
    ./docker-specification.rst
    ./dmaap-connection-objects.rst
    ./streams-grid.rst

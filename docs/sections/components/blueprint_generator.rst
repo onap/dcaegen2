@@ -1,6 +1,6 @@
 
-Blueprint Generator (DCAE)
-==========================
+Blueprint Generator
+===================
 
 What is the Blueprint Generator?
 ++++++++++++++++++++++++++++++++

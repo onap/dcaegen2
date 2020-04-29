@@ -3,19 +3,19 @@ DCAE MOD User Guide
 ===================
 
 
--  `Types of Users and Usage
+`Types of Users and Usage
    Instructions: <#DCAEMODUserGuide(draft)-TypesofUsersand>`__
 
--  `1.    Deployment of DCAE MOD components via Helm
+`1.    Deployment of DCAE MOD components via Helm
    charts <#DCAEMODUserGuide(draft)-1.DeploymentofD>`__
 
    -  `Using DCAE MOD without an Ingress
       Controller <#DCAEMODUserGuide(draft)-UsingDCAEMODwit>`__
 
--  `2.    Configuring DCAE
+`2.    Configuring DCAE
    mod <#DCAEMODUserGuide(draft)-2.ConfiguringDC>`__
 
--  `3.    Design & Distribution
+`3.    Design & Distribution
    Flow <#DCAEMODUserGuide(draft)-3.Design&Distri>`__
 
 Types of Users and Usage Instructions:

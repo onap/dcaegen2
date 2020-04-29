@@ -28,7 +28,7 @@ JSON schema
 -----------
 
   The data format specification is represented (and validated) against
-  this `Data Format json schema <https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/cli.git;a=blob;f=component-json-schemas/data-format/dcae-cli-v1/data-format-schema.json;h=66aa2ab77449e3cafc6afb5c959c5eb793ad86c1;hb=HEAD>`__
+  this `Data Format json schema <https://git.onap.org/dcaegen2/platform/plain/mod/component-json-schemas/data-format/dcae-cli-v1/data-format-schema.json>`__
   and described below:
 
 Meta Schema Definition
@@ -231,8 +231,5 @@ onboarding catalog.
 Working with Data Formats
 -------------------------
 
-Data Formats can be added to the onboarding catalog (which first
-validates them) by using the :doc:`dcae_cli Tool <dcae-cli/quickstart/>`.
-Here you can also list all of your data formats, show the contents of a
-data format, publish your data format, and even generate a data format
-from a input sample file. For a list of these capabilities, see :any:`Data Format Commands <dcae_cli_data_format>`.
+Data Formats can be validated using `schema <https://git.onap.org/dcaegen2/platform/plain/mod/component-json-schemas/data-format/dcae-cli-v1/data-format-schema.json>`__
+Once validated, the dataformat can be onboarded using :doc:`DCAE-MOD <../DCAE-MOD/DCAE-MOD-User-Guide>`
