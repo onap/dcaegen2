@@ -18,7 +18,7 @@ Meta Schema Definition
 
 The component specification is represented (and validated) against this
 `Component Spec json
-schema <https://gerrit.onap.org/r/gitweb?p=dcaegen2/platform/cli.git;a=blob;f=component-json-schemas/component-specification/dcae-cli-v1/component-spec-schema.json;h=27d0403af67eac00e03ab89437d5f07aa06fbee3;hb=HEAD>`__
+schema <https://git.onap.org/dcaegen2/platform/plain/mod/component-json-schemas/component-specification/dcae-cli-v2/component-spec-schema.json>`__
 and described below:
 
 The “Meta Schema” implementation defines how component specification
@@ -1437,6 +1437,7 @@ the Docker image. For CDAP, this is the full path to the CDAP jar.
 Working with Component Specs
 ============================
  
-Components can be added to the onboarding catalog (which first validates the component spec) by using the :doc:`dcae_cli Tool <../dcae-cli/quickstart/>` 
-Here you can also list the components, show the contents of a component, publish the component, validate the generated configuration for the component, deploy (run) and undeploy the component. For a list of these capabilities, see :any:`Component Commands <dcae_cli_component_commands>`
+Validate the component spec created against the current `Component Spec json schema <https://git.onap.org/dcaegen2/platform/plain/mod/component-json-schemas/component-specification/dcae-cli-v2/component-spec-schema.json>`__
+
+Use  :doc:`blueprint-generator tool <./blueprint_generator>`to generate Cloudify blueprint 
 
