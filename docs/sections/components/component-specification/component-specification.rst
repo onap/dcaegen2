@@ -8,7 +8,6 @@ Component Specification
    :maxdepth: 1
 
    ./common-specification.rst
-   ./cdap-specification.rst
    ./docker-specification.rst
    ./dmaap-connection-objects.rst
    ./streams-grid.rst

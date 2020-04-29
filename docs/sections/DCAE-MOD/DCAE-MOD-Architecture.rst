@@ -9,10 +9,13 @@ appropriate use.
 
 The goal of the project is to stream line the construction, management,
 and evolution of DCAE flows from role to role, from environment to
-environment, and from release to release.
+environment, and from release to release.  
 
-DCAE MOD is composed of three functional areas: onboarding, design, and
-distribution.
+- `MOD drivers and goals <../DCAE-MOD/DCAE-MOD-goals>`
+
+
+MOD is composed of three functional areas: onboarding, design, and
+distribution and caters different :doc:`user group <./Roles.rst>`
 
 
 Below illustrations describe the architecture of DCAE-MOD and show the

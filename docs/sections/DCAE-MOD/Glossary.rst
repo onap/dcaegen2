@@ -138,18 +138,8 @@ Inventory
 
 SDC - Service Design and Creation
 ---------------------------------
-Tool used by Service Designers to compose services from SDC catalog
-artifacts. Once services are created, Cloudify Blueprints can be
-generated to deployment and installation.
+ONAP design catalog for onboarding VNF/PNF packages
 
-
-SDC Catalog
------------
-Catalog of composable Components and Data Formats to be used in the SDC
-Tool to create services. Currently, there is no access to the SDC
-Catalog from the dcae\_cli tool. Artifacts are manually placed there
-after testing. Every catalog artifact has a ``UUID``, a globally unique
-identifier that identifies that artifact.
 
 Self-Service
 ------------
@@ -170,13 +160,6 @@ Service
 -------
 Generally composed of multiple service components, which is deployed to
 the DCAE platform.
-
-
-Tosca Model
------------
-Model generated from validated component specification, (stored in SDC
-catalog for Self-Service components), and used as input to generate
-Cloudify Blueprints
 
 
 VNF - Virtualized Network Function

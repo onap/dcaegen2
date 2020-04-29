@@ -8,15 +8,16 @@ Onboarding Pre-requisite (Service Component)
    :maxdepth: 1
 
    ./intro.rst
-   ../DCAE-MOD/mod-index.rst
-   ./architecture/pieces.rst
-   ./architecture/service-discovery.rst
-   ./architecture/blueprint_generator.rst
+   ../DCAE-MOD-Architecture.rst
+   ./blueprint_generator.rst
    ./requirements-guidelines.rst
    ./component-specification/component-specification.rst
    ./component-json-schema.rst
    ./data-formats.rst
-   ./dcae-cli/dcae-cli-tool.rst
+   ../DCAE-MOD-User-Guide.rst
    ./glossary.rst
    
+    
+ 
 
+   
