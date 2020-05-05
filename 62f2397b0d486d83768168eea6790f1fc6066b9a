@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "347bcb51_f54bf6bd",
+        "filename": "docs/sections/design-components/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "The MOD architecture...",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5419ebef_ea7dca7e",
+        "filename": "docs/sections/design-components/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "caters to ...",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab44ffe0_ab202488",
+        "filename": "docs/sections/design-components/DCAE-MOD/DCAE-MOD-Architecture.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "The below ...",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bc19a46_54990ba6",
+        "filename": "docs/sections/design-components/blueprint_generator.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "is a java-based tool",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b31857e8_ff44b510",
+        "filename": "docs/sections/design-components/blueprint_generator.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "microservices",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88a53c95_f3eba907",
+        "filename": "docs/sections/design-components/blueprint_generator.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "the blueprint-generator",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "924375af_df8e95b9",
+        "filename": "docs/sections/design-components/blueprint_generator.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "compliant with",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb38b325_cfc1db0f",
+        "filename": "docs/sections/design-components/glossary.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "uses a design tool",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "596e1601_9e9967ec",
+        "filename": "docs/sections/design-components/overview.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "The DCAE Design ...",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e36e41f9_3dade44b",
+        "filename": "docs/sections/design-components/overview.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "through the following phases.",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b6f57fc_5555bc56",
+        "filename": "docs/sections/design-components/overview.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "triggered",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f05ac993_96d4f8e1",
+        "filename": "docs/sections/design-components/overview.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-05-05T19:32:45Z",
+      "side": 1,
+      "message": "compone ??\ncompose perhaps?",
+      "revId": "62f2397b0d486d83768168eea6790f1fc6066b9a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
