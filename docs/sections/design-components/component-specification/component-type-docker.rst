@@ -1434,4 +1434,119 @@ periodically check the health of their running components. The
 details of the definition used by your component is to be provided
 through the :any:`Docker auxiliary specification <docker-auxiliary-details>`.
 
+The information contained in the auxilary_docker field is the Docker component specification schema. Some properties of the docker component specification include -
+
+healthcheck : Define the health check that Consul should perform for this component
+
+log_info : Component specific details for logging, includes the path in the container where logs are written that can also be used for logstash/kibana style reporting.
+
+ports : Port mapping to be used for Docker containers. Each entry is of the format <container port>:<host port>.
+
+Schema portion:
+
+.. code:: json
+
+   "auxilary_docker": {
+      "title": "Docker component specification schema",
+      "type": "object",
+      "properties": {
+        "healthcheck": {
+          "description": "Define the health check that Consul should perfom for this component",
+          "type": "object",
+          "oneOf": [
+            { "$ref": "#/definitions/docker_healthcheck_http" },
+            { "$ref": "#/definitions/docker_healthcheck_script" }
+          ]
+        },
+        "ports": {
+          "description": "Port mapping to be used for Docker containers. Each entry is of the format <container port>:<host port>.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "log_info": {
+          "description": "Component specific details for logging",
+          "type": "object",
+          "properties": {
+            "log_directory": {
+              "description": "The path in the container where the component writes its logs. If the component is following the EELF requirements, this would be the directory where the four EELF files are being written. (Other logs can be placed in the directory--if their names in '.log', they'll also be sent into ELK.)",
+              "type": "string"
+            },
+            "alternate_fb_path": {
+              "description": "By default, the log volume is mounted at /var/log/onap/<component_type> in the sidecar container's file system. 'alternate_fb_path' allows overriding the default.  Will affect how the log data can be found in the ELK system.",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "tls_info": {
+          "description": "Component information to use tls certificates",
+          "type": "object",
+          "properties": {
+            "cert_directory": {
+              "description": "The path in the container where the component certificates will be placed by the init container",
+              "type": "string"
+            },
+            "use_tls": {
+              "description": "Boolean flag to determine if the application is using tls certificates",
+              "type": "boolean"
+            }
+          },
+          "required": [
+              "cert_directory","use_tls"
+             ],
+          "additionalProperties": false
+        },
+        "databases": {
+          "description": "The databases the application is connecting to using the pgaas",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "postgres"
+            ]
+          }
+        },
+        "policy": {
+           "properties": {
+             "trigger_type": {
+                "description": "Only value of docker is supported at this time.",
+                "type": "string",
+                "enum": ["docker"]
+             },
+             "script_path": {
+                "description": "Script command that will be executed for policy reconfiguration",
+                "type": "string"
+             }
+            },
+            "required": [
+              "trigger_type","script_path"
+             ],
+            "additionalProperties": false
+        },
+        "volumes": {
+          "description": "Volume mapping to be used for Docker containers. Each entry is of the format below",
+          "type": "array",
+          "items": {
+          "type": "object",
+            "properties": {
+              "host":{
+              "type":"object",
+                "path": {"type": "string"}
+              },
+              "container":{
+              "type":"object",
+                "bind": { "type": "string"},
+                "mode": { "type": "string"}
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "healthcheck"
+      ],
+      "additionalProperties": false
+    }
 
