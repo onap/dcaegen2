@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8c1cc35c_547faa8b",
+        "filename": "docs/sections/design-components/component-specification/component-type-docker.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1444,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-05-06T20:05:45Z",
+      "side": 1,
+      "message": "add brief description on other properties - tls_info, database, policy and volumes",
+      "revId": "d1d291a18f7d748292dd0599dfd561fad35c9610",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
