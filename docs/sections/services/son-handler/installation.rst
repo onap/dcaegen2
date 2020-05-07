@@ -128,3 +128,23 @@ Application Configurations
 +-------------------------------+------------------------------------------------+
 |sonhandler.optimizers          | Optimizer to trigger in OOF                    |
 +-------------------------------+------------------------------------------------+
+|sonhandler.poorCountThreshold  | Threshold for number of times poorThreshold    |
+|                               | can be recorded for the cell                   |
++-------------------------------+------------------------------------------------+
+|sonhandler.badCountThreshold   | Threshold for number of times badThreshold can |
+|                               | be recorded for the cell                       |                                                                
++-------------------------------+------------------------------------------------+
+|sonhandler.                    | Timer for oof triggered count in minutes       |
+|oofTriggerCountTimer           |                                                |
++-------------------------------+------------------------------------------------+
+|sonhandler.policyRespTimer     | Timer to wait for notification from policy     |
++-------------------------------+------------------------------------------------+
+|sonhandler.                    | Maximum number of negative acknowledgements    |
+|policyNegativeAckThreshold     | from policy for a given cell                   |                                                                                                            
++-------------------------------+------------------------------------------------+
+|sonhandler.                    | Time interval to trigger OOF with fixed PCI    |                                               
+|policyFixedPciTimeInterval     | cells                                          |
++-------------------------------+------------------------------------------------+
+|sonhandler.nfNamingCode        | Parameter to filter FM and PM notifications    |
+|                               | coming from ves                                |
++-------------------------------+------------------------------------------------+
