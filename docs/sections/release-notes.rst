@@ -110,8 +110,9 @@ Under OOM (Kubernetes) deployment all DCAE component containers are deployed as 
 
 **Known Issues**
 
-    * Blueprint generator issue (DCAEGEN2-2140)
+    * Blueprint generator escape char issue (DCAEGEN2-2140)
     * TCAgen2 Policy configuration support (DCAEGEN2-2198)
+    * TCA/CDAP config refresh causes duplicate events (DCAEGEN2-2241)
 
 
 **Security Notes**
@@ -164,7 +165,7 @@ Artifacts released:
    "dcaegen2/platform", "mod/genprocessor", "onap/org.onap.dcaegen2.platform.mod.genprocessor-job:1.0.1"
    "dcaegen2/platform", "mod/designtool/mod-registry", "onap/org.onap.dcaegen2.platform.mod.mod-registry:1.0.0"
    "dcaegen2/platform", "mod/runtimeapi", "onap/org.onap.dcaegen2.platform.mod.runtime-web:1.0.3"
-   "dcaegen2/platform/blueprints", "", "onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:1.12.5" 
+   "dcaegen2/platform/blueprints", "", "onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:1.12.6" 
    "dcaegen2/platform/configbinding", "", "onap/org.onap.dcaegen2.platform.configbinding:2.5.2"
    "dcaegen2/platform/deployment-handler", "", "onap/org.onap.dcaegen2.platform.deployment-handler:4.3.0"
    "dcaegen2/platform/inventory-api", "", "onap/org.onap.dcaegen2.platform.inventory-api:3.4.1"  
