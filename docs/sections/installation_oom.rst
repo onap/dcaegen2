@@ -4,17 +4,16 @@
 DCAE Deployment (using Helm and Cloudify)
 =========================================
 
-This document describes the details of the Helm chart based deployment process for R4 ONAP and how DCAE is deployed through this process.
+This document describes the details of the Helm chart based deployment process for ONAP and how DCAE is deployed through this process.
 
 
 Deployment Overview
 -------------------
 
-ONAP R4 extends the Kubernetes deployment method introduced in R2 and continued in R3.
-Kubernetes is a container orchestration technology that organizes containers into composites of various patterns for easy deployment, management, and scaling.
+ONAP deployments are done on kubernetes through OOM/Helm charts. Kubernetes is a container orchestration technology that organizes containers into composites of various patterns for easy deployment, management, and scaling.
 ONAP uses Kubernetes as the foundation for fulfilling its platform maturity promises.
 
-ONAP manages Kubernetes specifications using Helm charts, under which all Kubernetes yaml-formatted resource specifications and additional files
+ONAP manages Kubernetes specifications using Helm charts (in OOM project), under which all Kubernetes yaml-formatted resource specifications and additional files
 are organized into a hierarchy of charts, sub-charts, and resources.  These yaml files are further augmented with Helm's templating, which makes dependencies
 and cross-references of parameters and parameter derivatives among resources manageable for a large and complex Kubernetes system such as ONAP.
 
@@ -91,6 +90,7 @@ directory, not as part of the DCAE chart hierarchy.
 
 The dcae-bootstrap service has a number of prerequisites because the subsequently deployed DCAE components depends on a number of resources having entered their normal operation state.  DCAE bootstrap job will not start before these resources are ready.  They are:
 
+ 
   * dcae-cloudify-manager
   * consul-server
   * msb-discovery
@@ -98,6 +98,10 @@ The dcae-bootstrap service has a number of prerequisites because the subsequentl
   * dcae-config-binding-service
   * dcae-db
   * dcae-mongodb
+  * dcae-inventory-api
+  
+Additionaly tls-init-container invoked during component deployment relies on AAF to generate the required certificate hence AAF
+must be enabled under OOM deployment configuration. 
 
 Once started, the DCAE bootstrap service will call Cloudify Manager to deploy
 a series of blueprints which specify the additional DCAE microservice components.
@@ -111,6 +115,7 @@ The DCAE bootstrap service creates the following Kubernetes deployments:
 * deploy/dep-dcae-hv-ves-collector
 * deploy/dep-dcae-prh
 * deploy/dep-dcae-tca-analytics
+* deploy/dep-dcae-tcagen2
 * deploy/dep-dcae-ves-collector
 * deploy/dep-holmes-engine-mgmt
 * deploy/dep-holmes-rule-mgmt

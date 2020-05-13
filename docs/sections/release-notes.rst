@@ -13,46 +13,24 @@ DCAE Release Notes
     :depth: 2
 ..
 
+..      ===========================
+..      * * *    FRANKFURT    * * *
+..      ===========================
+
 
 Version: 6.0.0
 ==============
 
+
 Abstract
 --------
 
-This document provides the release notes for the Frankfurt release (6.0.0)
-
+This document provides the release notes for the Frankfurt release.
 
 Summary
 -------
 
-**New Features**
-
-DCAE improves upon previous release with the following new features
-
-- DCAE Platform Enhancement
-
-    - Introduction of Microservice and Onboarding Design (MOD) platform 
-    - Policy Notification support for DCAE components
-    - Dynamic AAF certificate creation during component instantiation
-    - Helm chart optimization to control each platform component separate
-    - Dashboard Optimization 
-    - Blueprint generator tool to simplify deployment artifact creation
-   
-
-- Following new services are delivered this release
-
-    - Event Processors
-    
-        - PM Subscription Handler
-        - DataLake Handlers 
-    - Analytics/RCA
-    
-        - TCA-GEN2
-	
-	- Acumos Adapter (PoC)
- 
-Below is complete list of DCAE components available part of default ONAP/DCAE installation.
+Following DCAE components are available with default ONAP/DCAE installation.
 
     - Platform components
 
@@ -82,7 +60,7 @@ Below is complete list of DCAE components available part of default ONAP/DCAE in
         - Redis Cluster Database
         - Consul Cluster 
 
-Following service components (mS) can be deployed on-demand
+Below service components (mS) are available to be deployed on-demand.
 
  	- SNMPTrap Collector
  	- RESTConf Collector
@@ -103,42 +81,55 @@ Following service components (mS) can be deployed on-demand
 Under OOM (Kubernetes) deployment all DCAE component containers are deployed as Kubernetes Pods/Deployments/Services into Kubernetes cluster. DCAE platform components are deployed using Helm charts. DCAE service components are deployed using Cloudify blueprints. DCAE provides a Cloudify Manager plugin (k8splugin) that is capable of expanding a Cloudify blueprint node specification for a service component to a full Kubernetes specification, with additional enhancements such as replica scaling, sidecar for logging to ONAP ELK stack, registering services to MSB, etc.
 
 
-- All DCAE components are designed to support platform maturity requirements.
+Release Data
+------------
+
++--------------------------------------+--------------------------------------+
+| **DCAE Project**                     |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
+| **Docker images**                    |:any:`Refer Deliverable <frankfurt_deliverable>`        |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
+| **Release designation**              | 6.0.0 frankfurt                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
+| **Release date**                     | 2020-06-04                           |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
 
 
-**Bug Fixes**
+New features
+------------
 
-**Known Issues**
+- DCAE Platform Enhancement
 
-    * Blueprint generator escape char issue (DCAEGEN2-2140)
-    * TCAgen2 Policy configuration support (DCAEGEN2-2198)
-    * TCA/CDAP config refresh causes duplicate events (DCAEGEN2-2241)
+    - Introduction of Microservice and Onboarding Design (MOD) platform 
+    - Policy Notification support for DCAE components
+    - Dynamic AAF certificate creation during component instantiation
+    - Helm chart optimization to control each platform component separate
+    - Dashboard Optimization 
+    - Blueprint generator tool to simplify deployment artifact creation
+   
 
+- Following new services are delivered this release
 
-**Security Notes**
-
-*Fixed Security Issues*
-
-    * Unsecured Swagger UI Interface in xdcae-ves-collector. [`OJSI-30 <https://jira.onap.org/browse/OJSI-30>`_]
-    * In default deployment DCAEGEN2 (xdcae-ves-collector) exposes HTTP port 30235 outside of cluster. [`OJSI-116 <https://jira.onap.org/browse/OJSI-116>`_]
-    * In default deployment DCAEGEN2 (xdcae-dashboard) exposes HTTP port 30418 outside of cluster. [`OJSI-159 <https://jira.onap.org/browse/OJSI-159>`_]
-    * In default deployment DCAEGEN2 (dcae-redis) exposes redis port 30286 outside of cluster. [`OJSI-187 <https://jira.onap.org/browse/OJSI-187>`_]
-    * In default deployment DCAEGEN2 (config-binding-service) exposes HTTP port 30415 outside of cluster. [`OJSI-195 <https://jira.onap.org/browse/OJSI-195>`_]
-
+    - Event Processors
     
-*Known Security Issues*
-
-	None
+        - PM Subscription Handler
+        - DataLake Handlers 
+    - Analytics/RCA
+    
+        - TCA-GEN2
 	
-	
-*Known Vulnerabilities in Used Modules*
+	- Acumos Adapter (PoC)
 
-	None
-	
-DCAE code has been formally scanned during build time using NexusIQ and all Critical vulnerabilities have been addressed, items that remain open have been assessed for risk and determined to be false positive. The DCAE open Critical security vulnerabilities and their risk assessment have been documented as part of the `project <https://wiki.onap.org/pages/viewpage.action?pageId=51282478>`_.
+.. _frankfurt_deliverable:
 
+Deliverables
+------------
 
-Artifacts released:
+Software Deliverables
 
 .. csv-table::
    :header: "Repository", "SubModules", "Version & Docker Image (if applicable)"
@@ -184,17 +175,85 @@ Artifacts released:
    "dcaegen2/platform", "mod/bpgenerator", "Blueprint Generator 1.3.1 (jar)"
    "dcaegen2/services/sdk", "", "DCAE SDK 1.3.5 (jar)"
    "ccsdk/dashboard", "", "onap/org.onap.ccsdk.dashboard.ccsdk-app-os:1.3.2"
-   
-**Test Results**
+	
+
+Known Limitations, Issues and Workarounds
+-----------------------------------------
+
+    * Blueprint generator escape char issue (DCAEGEN2-2140)
+    * TCAgen2 Policy configuration support (DCAEGEN2-2198)
+    * TCA/CDAP config refresh causes duplicate events (DCAEGEN2-2241)
+
+
+
+*System Limitations*
+
+None
+
+*Known Vulnerabilities*
+
+None
+
+*Workarounds*
+
+Documented under corresponding jira if applicable.
+
+Security Notes
+--------------
+
+*Fixed Security Issues*
+
+    * Unsecured Swagger UI Interface in xdcae-ves-collector. [`OJSI-30 <https://jira.onap.org/browse/OJSI-30>`_]
+    * In default deployment DCAEGEN2 (xdcae-ves-collector) exposes HTTP port 30235 outside of cluster. [`OJSI-116 <https://jira.onap.org/browse/OJSI-116>`_]
+    * In default deployment DCAEGEN2 (xdcae-dashboard) exposes HTTP port 30418 outside of cluster. [`OJSI-159 <https://jira.onap.org/browse/OJSI-159>`_]
+    * In default deployment DCAEGEN2 (dcae-redis) exposes redis port 30286 outside of cluster. [`OJSI-187 <https://jira.onap.org/browse/OJSI-187>`_]
+    * In default deployment DCAEGEN2 (config-binding-service) exposes HTTP port 30415 outside of cluster. [`OJSI-195 <https://jira.onap.org/browse/OJSI-195>`_]
+
+    
+*Known Security Issues*
+
+	None
+	
+	
+*Known Vulnerabilities in Used Modules*
+
+	None
+	
+DCAE code has been formally scanned during build time using NexusIQ and all Critical vulnerabilities have been addressed, items that remain open have been assessed for risk and determined to be false positive. The DCAE open Critical security vulnerabilities and their risk assessment have been documented as part of the `project <https://wiki.onap.org/pages/viewpage.action?pageId=51282478>`_.
+
+Test Results
+------------
 
  - `DCAE Pairwise Test <https://wiki.onap.org/display/DW/DCAE+Pair+Wise+Testing+for+Frankfurt+Release>`_
  - `DCAE MOD Test <https://wiki.onap.org/display/DW/DCAE+MOD+Test+Plan>`_
 
 
-**References**
+References
+----------
+
+For more information on the ONAP Frankfurt release, please see:
+
+#. `ONAP Home Page`_
+#. `ONAP Documentation`_
+#. `ONAP Release Downloads`_
+#. `ONAP Wiki Page`_
+
+
+.. _`ONAP Home Page`: https://www.onap.org
+.. _`ONAP Wiki Page`: https://wiki.onap.org
+.. _`ONAP Documentation`: https://docs.onap.org
+.. _`ONAP Release Downloads`: https://git.onap.org
+
+Quick Links:
 
         - `DCAE project page <https://wiki.onap.org/display/DW/Data+Collection+Analytics+and+Events+Project>`_
         - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
+
+
+..      =========================
+..      * * *    EL-ALTO    * * *
+..      =========================
+
 
 Version: 5.0.1
 ==============
