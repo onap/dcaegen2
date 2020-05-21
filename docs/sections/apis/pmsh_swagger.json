@@ -1,0 +1,103 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "PM Subscription Handler Service",
+    "version": "1.1.0",
+    "description": "PM subscription handler enables control of performance management jobs on network functions in ONAP"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/subscriptions": {
+      "get": {
+        "description": "Get all defined Subscriptions and their related Network Functions from ONAP.",
+        "operationId": "mod.api.controller.get_all_sub_to_nf_relations",
+        "responses": {
+          "200": {
+            "description": "OK; Array of subscriptions are returned as an object",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "subscription_name": {
+                    "type": "string",
+                    "description": "Name of the Subscription"
+                  },
+                  "subscription_status": {
+                    "type": "string",
+                    "description": "Status of the Subscription"
+                  },
+                  "network_functions": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "nf_name": {
+                          "type": "string",
+                          "description": "Name of the Network Function"
+                        },
+                        "nf_sub_status": {
+                          "type": "string",
+                          "description": "Status of the Subscription on the Network Function"
+                        },
+                        "orchestration_status": {
+                          "type": "string",
+                          "description": "Orchestration status of the Network Function"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "there are no subscriptions defined"
+          }
+        }
+      }
+    },
+    "/healthcheck": {
+      "get": {
+        "operationId": "mod.api.controller.status",
+        "tags": [
+          "HealthCheck"
+        ],
+        "description": "This is the health check endpoint. If this returns a 200, the server is alive.",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Overall health of PMSH",
+                  "enum": [
+                    "healthy",
+                    "unhealthy"
+                  ]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "the pmsh service is unavailable"
+          }
+        }
+      }
+    }
+  }
+}
