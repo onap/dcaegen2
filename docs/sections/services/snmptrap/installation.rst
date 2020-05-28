@@ -72,7 +72,7 @@ Download a copy of the latest trapd image from gerrit in it's standard runtime l
 
     ``cd /opt/app``
 
-    ``git clone ssh://<your linux foundation id>@gerrit.onap.org:29418/dcaegen2/collectors/snmptrap snmptrap``
+    ``git clone --depth 1 ssh://<your linux foundation id>@gerrit.onap.org:29418/dcaegen2/collectors/snmptrap snmptrap``
 
 "Un-dockerize"
 """"""""""""""

@@ -25,7 +25,7 @@ Docker build procedure
 Clone the code using below command
 
 ::
-      git clone https://gerrit.onap.org/r/dcaegen2/services/heartbeat 
+      git clone --depth 1 https://gerrit.onap.org/r/dcaegen2/services/heartbeat 
 
 give executable permission to mvn-phase-script.sh if not there
 already
