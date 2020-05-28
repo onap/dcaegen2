@@ -5,10 +5,6 @@
 RestConf Collector 
 ==================
 
-.. contents::
-    :depth: 3
-..
-
 Overview
 ========
 
