@@ -25,13 +25,14 @@ DCAE charts are placed under the **dcaegen2** directory.
 
 All DCAE platform components  have corresponding Helm chart which will be used to trigger the deployment. 
 All DCAE Services are deployed through Cloudify Blueprint. The default ONAP DCAE deployment includes small subset of DCAE services deployed through Bootstrap pod to meet
-ONAP Integration usecases. Optionally operators can deploy on-demand other MS required for their usecases as described in `On-demand MS Installation
-<installation_MS_ondemand>`_.
+ONAP Integration usecases. Optionally operators can deploy on-demand other MS required for their usecases as described in :doc:`On-demand MS Installation
+<./installation_MS_ondemand>`.
+
 
 The PNDA data platform is an optional DCAE component that is placed under the **pnda**
 directory. Details for how to configure values to enable PNDA installation during Helm install
-are described in `Installing PNDA through Helm Chart
-<installation_pnda>`_.
+are described in :doc:`Installing PNDA through Helm Chart
+<./installation_pnda>`.
 
 
 DCAE Chart Organization
