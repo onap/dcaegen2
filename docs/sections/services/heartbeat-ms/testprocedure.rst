@@ -203,7 +203,7 @@ The postgres DB also have a CL_flag set indicating control loop event with ONSET
 
 		ubuntu@r3-aai-inst2:~/heartbeat12Dec/heartbeat$ sudo Docker run -d --name hb1 --env-file env.list heartbeat.test1:latest102413e8af4ab754e008cee43a01bf3d5439820aa91cfb4e099a140a7931fd71
 		ubuntu@r3-aai-inst2:~/heartbeat12Dec/heartbeat$ sudo Docker logs -f hb1
-		/usr/local/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+		/usr/local/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install --no-cache-dir psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
 		  """)
 		2018-12-12 12:39:58,968 | __main__ | misshtbtd | main | 309 |  INFO | MSHBD:Execution Started
 		2018-12-12 12:39:58,970 | __main__ | misshtbtd | main | 314 |  INFO | ('MSHBT:HB Properties -', '10.0.4.1', '5432', 'postgres', 'abc', 'hb_vnf', True, 300)
@@ -235,16 +235,16 @@ The postgres DB also have a CL_flag set indicating control loop event with ONSET
 		2018-12-12 12:39:59,139 | __main__ | misshtbtd | main | 386 |  INFO | ('MSHBD: Creating HB and DBM threads. The param pssed %d and %s', '../etc/config.json', 7)
 		2018-12-12 12:39:59,142 | __main__ | misshtbtd | create_process | 301 |  INFO | ('MSHBD:jobs list is', [<Process(Process-2, started)>, <Process(Process-3, started)>])
 		2018-12-12 12:39:59,221 | __main__ | misshtbtd | create_update_hb_common | 143 |  INFO | MSHBT:Updated  hb_common DB with new values
-		/usr/local/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+		/usr/local/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install --no-cache-dir psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
 		  """)
 		2018-12-12 12:39:59,815 | __main__ | htbtworker | <module> | 243 |  INFO | HBT:HeartBeat thread Created
 		2018-12-12 12:39:59,815 | __main__ | htbtworker | <module> | 245 |  INFO | ('HBT:The config file name passed is -%s', '../etc/config.json')
-		/usr/local/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+		/usr/local/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install --no-cache-dir psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
 		  """)
 		2018-12-12 12:39:59,931 | __main__ | cbs_polling | pollCBS | 39 |  INFO | ('CBSP:Main process ID in hb_common is %d', 7)
 		2018-12-12 12:39:59,931 | __main__ | cbs_polling | pollCBS | 41 |  INFO | ('CBSP:My parent process ID is %d', '7')
 		2018-12-12 12:39:59,931 | __main__ | cbs_polling | pollCBS | 43 |  INFO | ('CBSP:CBS Polling interval is %d', 300)
-		/usr/local/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+		/usr/local/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install --no-cache-dir psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
 		  """)
 		2018-12-12 12:39:59,937 | __main__ | db_monitoring | <module> | 231 |  INFO | DBM: DBM Process started
 		2018-12-12 12:39:59,939 | __main__ | db_monitoring | <module> | 236 |  INFO | ('DBM:Parent process ID and json file name', '7', '../etc/config.json')

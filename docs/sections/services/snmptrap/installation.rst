@@ -61,9 +61,9 @@ To install prerequisites:
 
     ``export PATH=<path to Python 3.6 binary>:$PATH``
 
-    ``pip3 install requests==2.18.3``
+    ``pip3 install --no-cache-dir requests==2.18.3``
 
-    ``pip3 install pysnmp==4.4.5``
+    ``pip3 install --no-cache-dir pysnmp==4.4.5``
 
 Download latest trapd version from Gerrit
 """""""""""""""""""""""""""""""""""""""""
