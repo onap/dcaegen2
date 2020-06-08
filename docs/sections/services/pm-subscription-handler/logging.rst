@@ -3,14 +3,29 @@
 
 .. _Logging:
 
-The PMSH logs will roll when the log file reaches 10Mb and a single backup will be kept. The logging level is not
-configurable.
+The PMSH logs will be rotated when the log file reaches 10Mb and a single backup will be kept,
+with a maximum of 10 back ups.
 
 Logging
 =======
 
-The PMSH application writes logs on the debug level to the following file:
+The PMSH application writes logs at INFO level to STDOUT, and also to the following file:
 
 .. code-block:: bash
 
-        /var/log/ONAP/dcaegen2/services/pmsh/debug.log
+    /var/log/ONAP/dcaegen2/services/pmsh/application.log
+
+To configure PMSH log level, the configuration yaml needs to be altered:
+
+.. code-block:: bash
+
+        nano /opt/app/pmsh/log_config.yaml
+
+onap_logger level should be changed from INFO to DEBUG in order to enable debug logs to be
+captured. This will affect both STDOUT logs and the logs written to application.log file
+
+.. code-block:: yaml
+
+    loggers:
+        onap_logger:
+            level: INFO
