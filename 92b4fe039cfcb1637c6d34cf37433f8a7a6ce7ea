@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce4eebbb_65673909",
+        "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2020-06-09T15:01:44Z",
+      "side": 1,
+      "message": ", with a maximum of 10 back ups.",
+      "range": {
+        "startLine": 6,
+        "startChar": 55,
+        "endLine": 6,
+        "endChar": 87
+      },
+      "revId": "92b4fe039cfcb1637c6d34cf37433f8a7a6ce7ea",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f541637_7670301a",
+        "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2020-06-09T15:01:44Z",
+      "side": 1,
+      "message": "Can remove this line as it\u0027s described below.",
+      "range": {
+        "startLine": 6,
+        "startChar": 89,
+        "endLine": 6,
+        "endChar": 1
+      },
+      "revId": "92b4fe039cfcb1637c6d34cf37433f8a7a6ce7ea",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd4826df_7dd583a1",
+        "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2020-06-09T15:01:44Z",
+      "side": 1,
+      "message": "be rotated",
+      "range": {
+        "startLine": 6,
+        "startChar": 19,
+        "endLine": 6,
+        "endChar": 23
+      },
+      "revId": "92b4fe039cfcb1637c6d34cf37433f8a7a6ce7ea",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f353d6c_3c9e751f",
+        "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2020-06-09T15:01:44Z",
+      "side": 1,
+      "message": "at INFO",
+      "range": {
+        "startLine": 12,
+        "startChar": 33,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "92b4fe039cfcb1637c6d34cf37433f8a7a6ce7ea",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
