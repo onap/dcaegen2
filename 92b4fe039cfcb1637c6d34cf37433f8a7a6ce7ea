@@ -71,6 +71,78 @@
     },
     {
       "key": {
+        "uuid": "0af02dc4_46307514",
+        "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5569
+      },
+      "writtenOn": "2020-06-10T09:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd4826df_7dd583a1",
+      "range": {
+        "startLine": 6,
+        "startChar": 19,
+        "endLine": 6,
+        "endChar": 23
+      },
+      "revId": "92b4fe039cfcb1637c6d34cf37433f8a7a6ce7ea",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe6b6660_92ec23b2",
+        "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5569
+      },
+      "writtenOn": "2020-06-10T09:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce4eebbb_65673909",
+      "range": {
+        "startLine": 6,
+        "startChar": 55,
+        "endLine": 6,
+        "endChar": 87
+      },
+      "revId": "92b4fe039cfcb1637c6d34cf37433f8a7a6ce7ea",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ebd9a06_0b9c89b1",
+        "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5569
+      },
+      "writtenOn": "2020-06-10T09:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f541637_7670301a",
+      "range": {
+        "startLine": 6,
+        "startChar": 89,
+        "endLine": 6,
+        "endChar": 1
+      },
+      "revId": "92b4fe039cfcb1637c6d34cf37433f8a7a6ce7ea",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8f353d6c_3c9e751f",
         "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
         "patchSetId": 1
@@ -91,6 +163,30 @@
       "revId": "92b4fe039cfcb1637c6d34cf37433f8a7a6ce7ea",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0cb3e46d_6484263e",
+        "filename": "docs/sections/services/pm-subscription-handler/logging.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5569
+      },
+      "writtenOn": "2020-06-10T09:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f353d6c_3c9e751f",
+      "range": {
+        "startLine": 12,
+        "startChar": 33,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "92b4fe039cfcb1637c6d34cf37433f8a7a6ce7ea",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
