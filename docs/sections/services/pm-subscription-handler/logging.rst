@@ -19,7 +19,7 @@ To configure PMSH log level, the configuration yaml needs to be altered:
 
 .. code-block:: bash
 
-        nano /opt/app/pmsh/log_config.yaml
+        vi /opt/app/pmsh/log_config.yaml
 
 onap_logger level should be changed from INFO to DEBUG in order to enable debug logs to be
 captured. This will affect both STDOUT logs and the logs written to application.log file
