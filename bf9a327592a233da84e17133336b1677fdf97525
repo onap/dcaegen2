@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "143c9832_2a8df09a",
+        "filename": "docs/sections/design-components/component-specification/docker-specification.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-06-24T14:03:56Z",
+      "side": 1,
+      "message": "Can we use different value as example: e.g. simpledemo.onap.org",
+      "revId": "bf9a327592a233da84e17133336b1677fdf97525",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f83a07a_a3336333",
+        "filename": "docs/sections/design-components/component-specification/docker-specification.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-06-24T14:03:56Z",
+      "side": 1,
+      "message": "In description it is written that sans must contain common_name, so need adjustment, e.g. \nsimpledemo.onap.org;ves.simpledemo.onap.org;ves.onap.org",
+      "revId": "bf9a327592a233da84e17133336b1677fdf97525",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
