@@ -1455,7 +1455,7 @@ Schema portion:
 
 .. code:: json
 
-   "auxilary_docker": {
+    "auxilary_docker": {
       "title": "Docker component specification schema",
       "type": "object",
       "properties": {
@@ -1500,11 +1500,15 @@ Schema portion:
             "use_tls": {
               "description": "Boolean flag to determine if the application is using tls certificates",
               "type": "boolean"
+            },
+            "use_external_tls": {
+              "description": "Boolean flag to determine if the application is using tls certificates for external communication",
+              "type": "boolean"
             }
           },
           "required": [
-              "cert_directory","use_tls"
-             ],
+            "cert_directory","use_tls"
+          ],
           "additionalProperties": false
         },
         "databases": {
@@ -1518,34 +1522,34 @@ Schema portion:
           }
         },
         "policy": {
-           "properties": {
-             "trigger_type": {
-                "description": "Only value of docker is supported at this time.",
-                "type": "string",
-                "enum": ["docker"]
-             },
-             "script_path": {
-                "description": "Script command that will be executed for policy reconfiguration",
-                "type": "string"
-             }
+          "properties": {
+            "trigger_type": {
+              "description": "Only value of docker is supported at this time.",
+              "type": "string",
+              "enum": ["docker"]
             },
-            "required": [
-              "trigger_type","script_path"
-             ],
-            "additionalProperties": false
+            "script_path": {
+              "description": "Script command that will be executed for policy reconfiguration",
+              "type": "string"
+            }
+          },
+          "required": [
+            "trigger_type","script_path"
+          ],
+          "additionalProperties": false
         },
         "volumes": {
           "description": "Volume mapping to be used for Docker containers. Each entry is of the format below",
           "type": "array",
           "items": {
-          "type": "object",
+            "type": "object",
             "properties": {
               "host":{
-              "type":"object",
+                "type":"object",
                 "path": {"type": "string"}
               },
               "container":{
-              "type":"object",
+                "type":"object",
                 "bind": { "type": "string"},
                 "mode": { "type": "string"}
               }
@@ -1558,4 +1562,3 @@ Schema portion:
       ],
       "additionalProperties": false
     }
-

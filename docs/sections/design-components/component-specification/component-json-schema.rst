@@ -52,9 +52,9 @@ The same is provided below for documentation reference.
           "uniqueItems": true,
           "items": {
             "oneOf": [
-                { "$ref": "#/definitions/publisher_http" },
-                { "$ref": "#/definitions/publisher_message_router" },
-                { "$ref": "#/definitions/publisher_data_router" }
+              { "$ref": "#/definitions/publisher_http" },
+              { "$ref": "#/definitions/publisher_message_router" },
+              { "$ref": "#/definitions/publisher_data_router" }
             ]
           }
         },
@@ -63,9 +63,9 @@ The same is provided below for documentation reference.
           "uniqueItems": true,
           "items": {
             "oneOf": [
-                { "$ref": "#/definitions/subscriber_http" },
-                { "$ref": "#/definitions/subscriber_message_router" },
-                { "$ref": "#/definitions/subscriber_data_router" }
+              { "$ref": "#/definitions/subscriber_http" },
+              { "$ref": "#/definitions/subscriber_message_router" },
+              { "$ref": "#/definitions/subscriber_data_router" }
             ]
           }
         }
@@ -98,7 +98,7 @@ The same is provided below for documentation reference.
         "provides"
       ]
     },
-   "parameters" : {
+    "parameters" : {
       "anyOf" : [
         {"$ref": "#/definitions/docker-parameters"},
         {"$ref": "#/definitions/cdap-parameters"}
@@ -120,25 +120,25 @@ The same is provided below for documentation reference.
     "policy_info": {
       "type": "object",
       "properties": {
-        "policy": 
+        "policy":
         {
           "type": "array",
-          "items": 
+          "items":
           {
             "type": "object",
-            "properties": 
+            "properties":
             {
-              "node_label": 
+              "node_label":
               {
                 "type": "string"
               },
-              "policy_id": 
+              "policy_id":
               {
-              "type": "string"
+                "type": "string"
               },
-              "policy_model_id": 
+              "policy_model_id":
               {
-              "type": "string"
+                "type": "string"
               }
             },
             "required": ["node_label", "policy_model_id"]
@@ -173,18 +173,18 @@ The same is provided below for documentation reference.
         "app_preferences" : {
           "description" : "Parameters Passed down to the CDAP preference API",
           "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "$ref": "#/definitions/parameter"
-            }
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/parameter"
+          }
         },
         "app_config" : {
           "description" : "Parameters Passed down to the CDAP App Config",
           "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "$ref": "#/definitions/parameter"
-            }
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/parameter"
+          }
         }
       }
     },
@@ -199,11 +199,11 @@ The same is provided below for documentation reference.
         },
         "program_pref":{
           "description" : "Parameters that the CDAP developer wants pushed to this program's preferences API. Optional",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "$ref": "#/definitions/parameter"
-            }
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/parameter"
+          }
         }
       },
       "required": ["program_type", "program_id", "program_pref"]
@@ -221,8 +221,8 @@ The same is provided below for documentation reference.
     },
     "parameter": {
       "oneOf": [
-         {"$ref": "#/definitions/parameter-list"},
-         {"$ref": "#/definitions/parameter-other"}
+        {"$ref": "#/definitions/parameter-list"},
+        {"$ref": "#/definitions/parameter-other"}
       ]
     },
     "parameter-list": {
@@ -255,10 +255,10 @@ The same is provided below for documentation reference.
           }
         },
         "entry_schema": {
-            "description": "The optional property used to declare the name of the Datatype definition for entries of certain types. entry_schema must be defined when the type is list.  This is the only type it is currently supported for.",
-                "type": "object",
-                "uniqueItems": true,
-                "items": {"$ref": "#/definitions/list-parameter"}
+          "description": "The optional property used to declare the name of the Datatype definition for entries of certain types. entry_schema must be defined when the type is list.  This is the only type it is currently supported for.",
+          "type": "object",
+          "uniqueItems": true,
+          "items": {"$ref": "#/definitions/list-parameter"}
         },
         "designer_editable": {
           "description": "A required property that declares a parameter as editable by designer in SDC Tool (true) or not (false).",
@@ -376,44 +376,44 @@ The same is provided below for documentation reference.
       "additionalProperties": false
     },
     "policy_schema_parameter": {
-        "type": "object",
-        "properties": {
-            "name": {
-                "type": "string"
-            },
-            "value": {
-                "description": "Default value for the parameter"
-            },
-            "description": {
-                "description": "Description for the parameter.",
-                "type": "string"
-            },
-            "type": {
-                "description": "The required data type for the parameter.",
-                "type": "string",
-                "enum": [ "string", "number", "boolean", "datetime", "list", "map" ]
-            },
-            "required": {
-                "description": "An optional key that declares a parameter as required (true) or not (false). Default is true.",
-                "type": "boolean",
-                "default": true
-            },
-            "constraints": {
-                "description": "The optional list of sequenced constraint clauses for the parameter.",
-                "type": "array",
-                "items": {
-                    "$ref": "#/definitions/parameter-constraints"
-                }
-            },
-            "entry_schema": {
-                "description": "The optional key that is used to declare the name of the Datatype definition for entries of certain types. entry_schema must be defined when the type is either list or map. If the type is list and the entry type is a simple type (string, number, boolean, datetime), follow with a simple string to describe the entry type. If the type is list and the entry type is a map, follow with an array to describe the keys for the entry map. If the type is list and the entry type is also list, this is not currently supported here. If the type is map, then follow with an array to describe the keys for this map. ",
-                "type": "array", "uniqueItems": true, "items": {"$ref": "#/definitions/policy_schema_parameter"}
-            }
-       },
-        "required": [
-            "name",
-            "type"
-            ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "description": "Default value for the parameter"
+        },
+        "description": {
+          "description": "Description for the parameter.",
+          "type": "string"
+        },
+        "type": {
+          "description": "The required data type for the parameter.",
+          "type": "string",
+          "enum": [ "string", "number", "boolean", "datetime", "list", "map" ]
+        },
+        "required": {
+          "description": "An optional key that declares a parameter as required (true) or not (false). Default is true.",
+          "type": "boolean",
+          "default": true
+        },
+        "constraints": {
+          "description": "The optional list of sequenced constraint clauses for the parameter.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/parameter-constraints"
+          }
+        },
+        "entry_schema": {
+          "description": "The optional key that is used to declare the name of the Datatype definition for entries of certain types. entry_schema must be defined when the type is either list or map. If the type is list and the entry type is a simple type (string, number, boolean, datetime), follow with a simple string to describe the entry type. If the type is list and the entry type is a map, follow with an array to describe the keys for the entry map. If the type is list and the entry type is also list, this is not currently supported here. If the type is map, then follow with an array to describe the keys for this map. ",
+          "type": "array", "uniqueItems": true, "items": {"$ref": "#/definitions/policy_schema_parameter"}
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ],
       "additionalProperties": false
     },
     "parameter-constraints": {
@@ -614,21 +614,21 @@ The same is provided below for documentation reference.
     "cdap-provider" : {
       "type": "object",
       "properties" : {
-         "request": {
-           "$ref": "#/definitions/formatPair"
-         },
-         "response": {
-           "$ref": "#/definitions/formatPair"
-         },
-         "service_name" : {
-           "type" : "string"
-         },
-         "service_endpoint" : {
-           "type" : "string"
-         },
-         "verb" : {
-           "type": "string",
-           "enum": ["GET", "PUT", "POST", "DELETE"]
+        "request": {
+          "$ref": "#/definitions/formatPair"
+        },
+        "response": {
+          "$ref": "#/definitions/formatPair"
+        },
+        "service_name" : {
+          "type" : "string"
+        },
+        "service_endpoint" : {
+          "type" : "string"
+        },
+        "verb" : {
+          "type": "string",
+          "enum": ["GET", "PUT", "POST", "DELETE"]
         }
       },
       "required" : [
@@ -637,7 +637,7 @@ The same is provided below for documentation reference.
         "service_name",
         "service_endpoint",
         "verb"
-        ]
+      ]
     },
     "docker-provider": {
       "type": "object",
@@ -810,11 +810,15 @@ The same is provided below for documentation reference.
             "use_tls": {
               "description": "Boolean flag to determine if the application is using tls certificates",
               "type": "boolean"
+            },
+            "use_external_tls": {
+              "description": "Boolean flag to determine if the application is using tls certificates for external communication",
+              "type": "boolean"
             }
           },
           "required": [
-              "cert_directory","use_tls"
-             ],
+            "cert_directory","use_tls"
+          ],
           "additionalProperties": false
         },
         "databases": {
@@ -828,34 +832,34 @@ The same is provided below for documentation reference.
           }
         },
         "policy": {
-           "properties": {
-             "trigger_type": {
-                "description": "Only value of docker is supported at this time.",
-                "type": "string",
-                "enum": ["docker"]
-             },
-             "script_path": {
-                "description": "Script command that will be executed for policy reconfiguration",
-                "type": "string"
-             }
+          "properties": {
+            "trigger_type": {
+              "description": "Only value of docker is supported at this time.",
+              "type": "string",
+              "enum": ["docker"]
             },
-            "required": [
-              "trigger_type","script_path"
-             ],
-            "additionalProperties": false
+            "script_path": {
+              "description": "Script command that will be executed for policy reconfiguration",
+              "type": "string"
+            }
+          },
+          "required": [
+            "trigger_type","script_path"
+          ],
+          "additionalProperties": false
         },
         "volumes": {
           "description": "Volume mapping to be used for Docker containers. Each entry is of the format below",
           "type": "array",
           "items": {
-          "type": "object",
+            "type": "object",
             "properties": {
               "host":{
-              "type":"object",
+                "type":"object",
                 "path": {"type": "string"}
               },
               "container":{
-              "type":"object",
+                "type":"object",
                 "bind": { "type": "string"},
                 "mode": { "type": "string"}
               }
@@ -896,7 +900,7 @@ The same is provided below for documentation reference.
       "required": [
         "type",
         "endpoint"
-        ]
+      ]
     },
     "docker_healthcheck_script": {
       "properties": {
@@ -926,8 +930,7 @@ The same is provided below for documentation reference.
       "required": [
         "type",
         "script"
-        ]
+      ]
     }
   }
  }
-
