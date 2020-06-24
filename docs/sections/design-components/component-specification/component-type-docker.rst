@@ -1444,6 +1444,8 @@ ports : Port mapping to be used for Docker containers. Each entry is of the form
 
 tls_info : Component information for use of tls certificates, where they will be available, whether or not to use them
 
+external_tls_info : Component information for use of tls certificates for external communication, where they will be available, whether or not to use them, which CA to use and certificates parameters (common-name, sans)
+
 policy : Information for Policy configuration and reconfiguration
 
 databases: Information about databases the application should connect to
@@ -1455,7 +1457,7 @@ Schema portion:
 
 .. code:: json
 
-   "auxilary_docker": {
+    "auxilary_docker": {
       "title": "Docker component specification schema",
       "type": "object",
       "properties": {
@@ -1503,8 +1505,45 @@ Schema portion:
             }
           },
           "required": [
-              "cert_directory","use_tls"
-             ],
+            "cert_directory","use_tls"
+          ],
+          "additionalProperties": false
+        },
+        "external_tls_info": {
+          "description": "Component information to use tls certificates",
+          "type": "object",
+          "properties": {
+            "external_cert_directory": {
+              "description": "The path in the container where the component certificates will be placed by the init container",
+              "type": "string"
+            },
+            "use_external_tls": {
+              "description": "Boolean flag to determine if the application is using tls certificates",
+              "type": "boolean"
+            },
+            "ca_name": {
+              "description": "Name of Certificate Authority configured on CertService side",
+              "type": "string"
+            },
+            "external_certificate_parameters": {
+              "type": "object",
+              "properties": {
+                "common_name":{
+                  "type": "string",
+                  "description": "Common name which should be present in certificate."
+                },
+                "sans":  {
+                  "type": "string",
+                  "description": "List of Subject Alternative Names (SANs) which should be present in certificate. Delimiter - : Should contain common_name value and other FQDNs under which given component is accessible"
+                }
+              },
+              "required": ["common_name", "sans"],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "external_cert_directory", "use_external_tls", "ca_name", "external_certificate_parameters"
+          ],
           "additionalProperties": false
         },
         "databases": {
@@ -1518,34 +1557,34 @@ Schema portion:
           }
         },
         "policy": {
-           "properties": {
-             "trigger_type": {
-                "description": "Only value of docker is supported at this time.",
-                "type": "string",
-                "enum": ["docker"]
-             },
-             "script_path": {
-                "description": "Script command that will be executed for policy reconfiguration",
-                "type": "string"
-             }
+          "properties": {
+            "trigger_type": {
+              "description": "Only value of docker is supported at this time.",
+              "type": "string",
+              "enum": ["docker"]
             },
-            "required": [
-              "trigger_type","script_path"
-             ],
-            "additionalProperties": false
+            "script_path": {
+              "description": "Script command that will be executed for policy reconfiguration",
+              "type": "string"
+            }
+          },
+          "required": [
+            "trigger_type","script_path"
+          ],
+          "additionalProperties": false
         },
         "volumes": {
           "description": "Volume mapping to be used for Docker containers. Each entry is of the format below",
           "type": "array",
           "items": {
-          "type": "object",
+            "type": "object",
             "properties": {
               "host":{
-              "type":"object",
+                "type":"object",
                 "path": {"type": "string"}
               },
               "container":{
-              "type":"object",
+                "type":"object",
                 "bind": { "type": "string"},
                 "mode": { "type": "string"}
               }
@@ -1558,4 +1597,3 @@ Schema portion:
       ],
       "additionalProperties": false
     }
-

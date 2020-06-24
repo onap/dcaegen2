@@ -45,6 +45,11 @@ mapping, volume mapping and policy reconfiguration script details.
 |                                | array   | reconfiguration script    |
 |                                |         | details                   |
 +--------------------------------+---------+---------------------------+
+| external tls_info              | JSON    | *Optional*. Information   |
+|                                | object  | about usage of tls certif\|
+|                                |         | icates for external commu\|
+|                                |         | nication.                 |
++--------------------------------+---------+---------------------------+
 
 Health Check Definition
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -274,6 +279,58 @@ $reconfigure_type {“updated policies”: , “application config”: }
 |                     |              | app_config, the component would have   |
 |                     |              | to call ``config-binding-service``.    |
 +---------------------+--------------+----------------------------------------+
+
+External TLS Info
+~~~~~~~~~~~~~~~~~
+
+External TLS Info is used to trigger addition of init container that can provide main containers with certificates for
+external communication.
+
++--------------------------------+---------+---------------------------------------------------------------------------+
+| Property Name                  | Type    | Description                                                               |
++================================+=========+===========================================================================+
+| external_cert_directory        | string  | *Required*. Directory where operator certificate and trusted certs should |
+|                                |         | be created.                                                               |
+|                                |         | (should have matching volume entry)                                       |
+|                                |         | i.e. ``/opt/app/dcae-certificate/external_cert``                          |
++--------------------------------+---------+---------------------------------------------------------------------------+
+| use_external_tls               | boolean | *Required*. A boolean that indicates whether the component uses AAF Cert\ |
+|                                |         | Service to acquire operator certificate to protect external (between xNFs |
+|                                |         | and ONAP) traffic. For a time being only operator certificate from CMPv2  |
+|                                |         | server is supported.                                                      |
+|                                |         | i.e ``true``                                                              |
++--------------------------------+---------+---------------------------------------------------------------------------+
+| ca_name                        | string  | *Required*. Name of Certificate Authority configured on CertService side. |
+|                                |         | i.e. ``RA``                                                               |
++--------------------------------+---------+---------------------------------------------------------------------------+
+| external_certificate_parameters| JSON    | *Required*. Contains common name and sans for external certificates.      |
+|                                | object  |                                                                           |
++--------------------------------+---------+---------------------------------------------------------------------------+
+| common_name                    | string  | *Required*. Common name which should be present in certificate. Specific  |
+|                                |         | for every blueprint.                                                      |
+|                                |         | i.e. ``dcae-ves-collector``                                               |
++--------------------------------+---------+---------------------------------------------------------------------------+
+| sans                           | string  | *Required*. List of Subject Alternative Names (SANs) which should be pre\ |
+|                                |         | sent in certificate. Delimiter - : Should contain common_name value and   |
+|                                |         | other FQDNs under which given component is accessible.                    |
+|                                |         | i.e. ``dcae-ves-collector:ves-collector``                                 |
++--------------------------------+---------+---------------------------------------------------------------------------+
+
+Example:
+
+.. code:: json
+
+	"auxilary": {
+		"external_tls_info": {
+			"external_cert_directory": "/opt/app/dcae-certificate/external_cert",
+			"use_external_tls": true,
+			"ca_name": "RA",
+			"external_certificate_parameters": {
+				"common_name": "common-name",
+				"sans": "sans"
+			}
+		}
+	},
 
 Docker Component Spec - Complete Example
 ----------------------------------------
