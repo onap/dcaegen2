@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "778fe32c_e1d538b4",
+        "filename": "docs/sections/design-components/component-specification/docker-specification.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-06-25T06:01:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "143c9832_2a8df09a",
+      "revId": "bf9a327592a233da84e17133336b1677fdf97525",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f83a07a_a3336333",
         "filename": "docs/sections/design-components/component-specification/docker-specification.rst",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "bf9a327592a233da84e17133336b1677fdf97525",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f0dca18_5d8a1bda",
+        "filename": "docs/sections/design-components/component-specification/docker-specification.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-06-25T06:01:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f83a07a_a3336333",
+      "revId": "bf9a327592a233da84e17133336b1677fdf97525",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
