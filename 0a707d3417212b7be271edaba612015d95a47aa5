@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ade93145_7e355252",
+        "filename": "docs/sections/design-components/component-specification/component-json-schema.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-06-25T07:31:55Z",
+      "side": 1,
+      "message": "Schema is not correctly generated in final doc. \nPlease check: \nhttps://logs.onap.org/production/vex-yul-ecomp-jenkins-1/rtdv3-global-verify-master/1872/docs/sections/design-components/component-specification/component-json-schema.html?highlight\u003dschema",
+      "range": {
+        "startLine": 55,
+        "startChar": 14,
+        "endLine": 55,
+        "endChar": 57
+      },
+      "revId": "0a707d3417212b7be271edaba612015d95a47aa5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
