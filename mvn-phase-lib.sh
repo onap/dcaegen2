@@ -176,8 +176,8 @@ run_tox_test()
     rm -rf ./venv-tox ./.tox
     virtualenv ./venv-tox
     source ./venv-tox/bin/activate
-    pip install --upgrade pip
-    pip install --upgrade tox argparse
+    pip install --no-cache-dir --upgrade pip
+    pip install --no-cache-dir --upgrade tox argparse
     pip freeze
     tox
     deactivate
@@ -199,8 +199,8 @@ build_wagons()
 
     virtualenv ./venv-pkg
     source ./venv-pkg/bin/activate
-    pip install --upgrade pip
-    pip install wagon
+    pip install --no-cache-dir --upgrade pip
+    pip install --no-cache-dir wagon
     wagon create --format tar.gz "$PLUGIN_DIR"
     deactivate
     rm -rf venv-pkg
