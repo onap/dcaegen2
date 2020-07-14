@@ -57,9 +57,9 @@ Deployment steps
 ~~~~~~~~~~~~~~~~
 1.Using DCAE Dashboard
  - Login to DCAE Dashboard
- - Go to Inventory --> Blueprints 
- - Upload son-handler blueprint which can be found under blueprints repo (https://gerrit.onap.org/r/dcaegen2/platform/blueprints)
+ - Go to Inventory --> Blueprints
  - Click on Deploy Action for son-handler blueprint
+ - Override the value of 'tag_version' to 'nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.son-handler:2.0.4' (latest version) and click deploy.
  - Deployment logs can be viewed under Deployments section 
 
 2.Using cloudify commands 
