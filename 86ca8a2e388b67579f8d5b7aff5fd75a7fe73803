@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aafc6d9_4fd5035a",
+        "filename": "docs/sections/services/son-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-14T13:41:55Z",
+      "side": 1,
+      "message": "As the blueprint is already loaded into inventory, this step is not required",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 116
+      },
+      "revId": "86ca8a2e388b67579f8d5b7aff5fd75a7fe73803",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0dabe48_92b34509",
+        "filename": "docs/sections/services/son-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-14T13:41:55Z",
+      "side": 1,
+      "message": "image version can be done as input override part of deployment step; pls update accordingly",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 110
+      },
+      "revId": "86ca8a2e388b67579f8d5b7aff5fd75a7fe73803",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
