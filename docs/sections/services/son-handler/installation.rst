@@ -57,8 +57,9 @@ Deployment steps
 ~~~~~~~~~~~~~~~~
 1.Using DCAE Dashboard
  - Login to DCAE Dashboard
- - Go to Inventory --> Blueprints 
- - Upload son-handler blueprint which can be found under blueprints repo (https://gerrit.onap.org/r/dcaegen2/platform/blueprints)
+ - Go to Inventory --> Blueprints
+ - son-handler blueprint can be found under blueprints repo (https://gerrit.onap.org/r/dcaegen2/platform/blueprints)
+ - Change the son-handler docker image version to '2.0.4'(latest version) in the blueprint file and upload it.
  - Click on Deploy Action for son-handler blueprint
  - Deployment logs can be viewed under Deployments section 
 
