@@ -19,6 +19,7 @@ Data Collection, Analytics, and Events (DCAE)
    ./sections/logging.rst
    ./sections/healthcheck.rst
    ./sections/tls_enablement.rst
+   ./sections/external_tls.rst
    ./sections/sdk/index.rst
    ./sections/configuration.rst
    ./sections/design-components/index-onboarding.rst
