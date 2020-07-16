@@ -45,6 +45,10 @@ mapping, volume mapping and policy reconfiguration script details.
 |                                | array   | reconfiguration script    |
 |                                |         | details                   |
 +--------------------------------+---------+---------------------------+
+| tls_info                       | JSON    | *Optional*. Information   |
+|                                | object  | about usage of tls certif\|
+|                                |         | icates                    |
++--------------------------------+---------+---------------------------+
 
 Health Check Definition
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -274,6 +278,42 @@ $reconfigure_type {“updated policies”: , “application config”: }
 |                     |              | app_config, the component would have   |
 |                     |              | to call ``config-binding-service``.    |
 +---------------------+--------------+----------------------------------------+
+
+TLS Info
+~~~~~~~~~~~~~~~~~
+
+TLS Info is used to trigger addition of init containers that can provide main application containers with certificates
+for internal and external communication.
+
++--------------------------------+---------+---------------------------------------------------------------------------+
+| Property Name                  | Type    | Description                                                               |
++================================+=========+===========================================================================+
+| cert_directory                 | string  | *Required*. Directory where certificates should be created.               |
+|                                |         | i.e. ``/opt/app/dcae-certificate``                                        |
++--------------------------------+---------+---------------------------------------------------------------------------+
+| use_tls                        | boolean | *Required*. A boolean that indicates whether server certificates for int\ |
+|                                |         | ernal communication should be added to the main container                 |
+|                                |         | i.e ``true``                                                              |
++--------------------------------+---------+---------------------------------------------------------------------------+
+| use_external_tls               | boolean | *Optional*. A boolean that indicates whether the component uses AAF Cert\ |
+|                                |         | Service to acquire operator certificate to protect external (between xNFs |
+|                                |         | and ONAP) traffic. For a time being only operator certificate from CMPv2  |
+|                                |         | server is supported.                                                      |
+|                                |         | i.e ``true``                                                              |
++--------------------------------+---------+---------------------------------------------------------------------------+
+
+
+Example:
+
+.. code:: json
+
+	"auxilary": {
+		"tls_info": {
+			"cert_directory": "/opt/app/dcae-certificate",
+			"use_tls": true
+			"use_external_tls": true,
+		}
+	},
 
 Docker Component Spec - Complete Example
 ----------------------------------------
