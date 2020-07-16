@@ -8,6 +8,8 @@ Filtering
 """""""""
 PM Mapper maps PM XML files to performance VES event by applying the mapper filtering information. Mapper filtering is configured during instantiation through cloudify manager.
 Mapper filtering is based on the PM dictionary fields.
+PM Mapper filtering mechanism support in measTypes field also regular expression (java.util.regex). Regex can be used also together with the exact measurement name.
+Filters which not match regex syntax will be ignored and warning will be printed in logs.
 PM Mapper expects the filter in the following JSON format:
 
 ::
@@ -17,8 +19,8 @@ PM Mapper expects the filter in the following JSON format:
             "pmDefVsn": "1.3",
             "nfType": "gnb",
             "vendor": "Ericsson",
-            "measTypes": [ "attTCHSeizures", "succTCHSeizures" ]
-        }]
+            "measTypes": [ "attTCHSeizures", "succTCHSeizures", "att.*", ".*Seizures" ]
+         }]
 
 
 
@@ -31,7 +33,7 @@ nfType                 nfType is vendor                  String
                        defined and should match the
                        string used in file ready
                        eventName.
-measTypes              Measurement name used in PM       Array of String
+measTypes              Measurement name used in PM       Array of String, Regular expression
                        file in 3GPP format where
                        specified, else vendor
                        defined.
