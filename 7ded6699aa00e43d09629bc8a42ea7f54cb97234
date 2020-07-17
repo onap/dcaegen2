@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3b7cd5e0_5f8a1628",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-07-17T13:13:05Z",
+      "side": 1,
+      "message": "Too vague, dcaegen2 repo houses documentation for lots of services, \nLets try include PM Mapper or PMM or the likes in here, so when looking at the Git logs we have some idea what this is for without loading Jira\u0027s or looking at files",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 50
+      },
+      "revId": "7ded6699aa00e43d09629bc8a42ea7f54cb97234",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bce86686_8365abab",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-07-17T13:13:05Z",
+      "side": 1,
+      "message": "This as a whole could probably do with a little bit of work, in terms of the existing piece and the new addition.\n\nIf I was doing this, I\u0027d probably reword it to something like:\n\nThe PM Mapper performs data reduction, by filtering the PM telemetry data it receives.\nThis filtering information is provided to the service as part of its configuration, and is used to identify desired PM measurements (measType) contained within the data.\n\nThe service can accept an exact match to the measType, or regex(java.util.regex) identifying multiple measTypes.\n\nif a filter is provided, any measurement that does not match the filter, will be ignored and a warning will be logged.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 92
+      },
+      "revId": "7ded6699aa00e43d09629bc8a42ea7f54cb97234",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a31a79b_d55d6736",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-07-17T13:13:05Z",
+      "side": 1,
+      "message": "Another good chance to fix this a little,\nI\u0027d probably say something like:\n\nList of Strings or Regular expressions\n\n\nList is generally easier to understand as a concept than an array, and reads better to someone who doesn\u0027t know the CS definitions of either :)",
+      "range": {
+        "startLine": 36,
+        "startChar": 57,
+        "endLine": 36,
+        "endChar": 92
+      },
+      "revId": "7ded6699aa00e43d09629bc8a42ea7f54cb97234",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
