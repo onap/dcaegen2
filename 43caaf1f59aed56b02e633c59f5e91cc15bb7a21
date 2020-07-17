@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b7361bf8_9a20d2e4",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6726
+      },
+      "writtenOn": "2020-07-17T12:01:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be186df9_715e93d0",
+      "range": {
+        "startLine": 11,
+        "startChar": 118,
+        "endLine": 11,
+        "endChar": 123
+      },
+      "revId": "43caaf1f59aed56b02e633c59f5e91cc15bb7a21",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c3e79b7_6c5e14d7",
         "filename": "docs/sections/services/pm-mapper/configuration.rst",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "43caaf1f59aed56b02e633c59f5e91cc15bb7a21",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "758607ef_19a003c8",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6726
+      },
+      "writtenOn": "2020-07-17T12:01:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c3e79b7_6c5e14d7",
+      "range": {
+        "startLine": 12,
+        "startChar": 13,
+        "endLine": 12,
+        "endChar": 17
+      },
+      "revId": "43caaf1f59aed56b02e633c59f5e91cc15bb7a21",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
