@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0f7cd551_51da49bc",
+        "filename": "docs/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-17T17:23:32Z",
+      "side": 1,
+      "message": "This should be added under tls_enablement.rst",
+      "range": {
+        "startLine": 21,
+        "startChar": 32,
+        "endLine": 22,
+        "endChar": 30
+      },
+      "revId": "66f0d82b96fef7ddad537c0640f9c087104fcfc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94169a79_7b10bd6e",
+        "filename": "docs/sections/external_tls.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-17T17:23:32Z",
+      "side": 1,
+      "message": "Would this add this content as separate section under https://git.onap.org/dcaegen2/tree/docs/sections/tls_enablement.rst",
+      "revId": "66f0d82b96fef7ddad537c0640f9c087104fcfc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "754e4555_45307a51",
+        "filename": "docs/sections/external_tls.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-17T17:23:32Z",
+      "side": 1,
+      "message": "Extend to full length",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 11
+      },
+      "revId": "66f0d82b96fef7ddad537c0640f9c087104fcfc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b326882b_87a29b16",
+        "filename": "docs/sections/external_tls.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-17T17:23:32Z",
+      "side": 1,
+      "message": "extra space",
+      "range": {
+        "startLine": 20,
+        "startChar": 61,
+        "endLine": 20,
+        "endChar": 62
+      },
+      "revId": "66f0d82b96fef7ddad537c0640f9c087104fcfc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b88debf_2a53eee2",
+        "filename": "docs/sections/external_tls.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-17T17:23:32Z",
+      "side": 1,
+      "message": "extra space",
+      "range": {
+        "startLine": 24,
+        "startChar": 121,
+        "endLine": 24,
+        "endChar": 122
+      },
+      "revId": "66f0d82b96fef7ddad537c0640f9c087104fcfc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e596c99b_c353bd85",
+        "filename": "docs/sections/external_tls.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-17T17:23:32Z",
+      "side": 1,
+      "message": "remove space",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 7
+      },
+      "revId": "66f0d82b96fef7ddad537c0640f9c087104fcfc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5742941a_2a0b20dc",
+        "filename": "docs/sections/external_tls.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-17T17:23:32Z",
+      "side": 1,
+      "message": "/external",
+      "range": {
+        "startLine": 79,
+        "startChar": 82,
+        "endLine": 79,
+        "endChar": 83
+      },
+      "revId": "66f0d82b96fef7ddad537c0640f9c087104fcfc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84e17ed3_00f277ff",
+        "filename": "docs/sections/external_tls.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-17T17:23:32Z",
+      "side": 1,
+      "message": "extra space",
+      "range": {
+        "startLine": 87,
+        "startChar": 91,
+        "endLine": 87,
+        "endChar": 92
+      },
+      "revId": "66f0d82b96fef7ddad537c0640f9c087104fcfc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9199ade_29fca155",
+        "filename": "docs/sections/external_tls.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-17T17:23:32Z",
+      "side": 1,
+      "message": "all above are files - this could be removed",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 97,
+        "endChar": 17
+      },
+      "revId": "66f0d82b96fef7ddad537c0640f9c087104fcfc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ae245cd_5b623921",
+        "filename": "docs/sections/external_tls.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-17T17:23:32Z",
+      "side": 1,
+      "message": "this is actually AAF CA in PEM format",
+      "range": {
+        "startLine": 100,
+        "startChar": 30,
+        "endLine": 100,
+        "endChar": 50
+      },
+      "revId": "66f0d82b96fef7ddad537c0640f9c087104fcfc3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
