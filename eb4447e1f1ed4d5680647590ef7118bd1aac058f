@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38b7bf6d_97916c4f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-07-20T08:27:01Z",
+      "side": 1,
+      "message": "Same as comment on last patchset since the dcaegen2 repo contains docs for everything in dcae, we should include some indication that this documentation update is specific to PM Mapper",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 50
+      },
+      "revId": "eb4447e1f1ed4d5680647590ef7118bd1aac058f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
