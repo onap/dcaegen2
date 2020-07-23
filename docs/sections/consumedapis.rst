@@ -15,8 +15,9 @@ Consumed APIs
 
 DCAEGEN2 Components making following API calls into other ONAP components.
 
-* `DMaaP Message Router <https://docs.onap.org/en/latest/submodules/dmaap/messagerouter/messageservice.git/docs/offeredapis/offeredapis.html>`_
-* `DMaaP Data Router <https://docs.onap.org/en/latest/submodules/dmaap/datarouter.git/docs/offeredapis.html>`_
-* `Policy <https://docs.onap.org/en/latest/submodules/policy/engine.git/docs/platform/offeredapis.html>`_
-* `SDC <https://docs.onap.org/en/latest/submodules/sdc.git/docs/offeredapis.html>`_
-* `A&AI <https://docs.onap.org/en/latest/submodules/aai/aai-common.git/docs/platform/offeredapis.html>`_
+* `DMaaP Message Router <https://docs.onap.org/projects/onap-dmaap-messagerouter-messageservice/en/latest/offeredapis/offeredapis.html>`_
+* `DMaaP Data Router <https://docs.onap.org/projects/onap-dmaap-datarouter/en/latest/offeredapis.html>`_
+* `DMaaP Buscontroller <https://docs.onap.org/projects/onap-dmaap-dbcapi/en/latest/api.html#offeredapis>`_
+* `Policy <https://docs.onap.org/projects/onap-policy-engine/en/latest/platform/offeredapis.html>`_
+* `SDC <https://docs.onap.org/projects/onap-sdc/en/latest/offeredapis.html>`_
+* `A&AI <https://docs.onap.org/projects/onap-aai-aai-common/en/latest/platform/offeredapis.html>`_

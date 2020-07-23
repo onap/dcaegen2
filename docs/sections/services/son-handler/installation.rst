@@ -56,10 +56,10 @@ Deployment Prerequisites
 Deployment steps
 ~~~~~~~~~~~~~~~~
 1.Using DCAE Dashboard
- - Login to DCAE Dashboard
+ - Login to DCAE Dashboard (https://{k8s-nodeip}:30418/ccsdk-app/login_external.htm)
  - Go to Inventory --> Blueprints
  - Click on Deploy Action for son-handler blueprint
- - Override the value of 'tag_version' to 'nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.son-handler:2.0.4' (latest version) and click deploy.
+ - Override the value of 'tag_version' to 'nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.son-handler:2.0.4' and click deploy.
  - Deployment logs can be viewed under Deployments section 
 
 2.Using cloudify commands 

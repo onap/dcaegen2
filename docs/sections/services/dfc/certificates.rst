@@ -4,7 +4,7 @@ Certificates (From AAF)
 =======================
 DCAE service components will use common certifcates generated from AAF/test instance and made available during deployment of DCAE TLS init container.
 
-DCAE has a generalized process of certificate distribution as documented here - https://docs.onap.org/en/latest/submodules/dcaegen2.git/docs/sections/tls_enablement.html
+DCAE has a generalized process of certificate distribution as documented here - https://docs.onap.org/projects/onap-dcaegen2/en/latest/sections/tls_enablement.html
 
 The updated certificates are located in https://git.onap.org/dcaegen2/deployments/tree/tls-init-container/tls
 

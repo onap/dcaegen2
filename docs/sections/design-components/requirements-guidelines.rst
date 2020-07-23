@@ -227,7 +227,7 @@ DCAE SDK
 
 DCAE has SDK/libraries which can be used for service components for easy integration.
 
-- `Java Library <https://docs.onap.org/en/latest/submodules/dcaegen2.git/docs/sections/sdk/architecture.html>`__
+- `Java Library <https://docs.onap.org/projects/onap-dcaegen2/en/latest/sections/sdk/architecture.html>`__
 - `Python Modules <https://git.onap.org/dcaegen2/utils/tree/onap-dcae-cbs-docker-client>`__
 
 
