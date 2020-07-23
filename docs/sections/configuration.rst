@@ -47,7 +47,7 @@ In addition, for DCAE components deployed through Cloudify Manager blueprints, t
         * The blueprint input files may contain Helm templates, which are resolved into actual deployment time values following the rules for Helm values.
 
 
-DCAE Service components are deployed via Cloudify Blueprints. Instruction for deployment and configuration are documented under https://docs.onap.org/en/latest/submodules/dcaegen2.git/docs/sections/services/serviceindex.html
+DCAE Service components are deployed via Cloudify Blueprints. Instruction for deployment and configuration are documented under https://docs.onap.org/projects/onap-dcaegen2/en/latest/sections/services/serviceindex.html
 
 Now we walk through an example, how to configure the Docker image for the DCAE VESCollector, which is deployed by Cloudify Manager.
 

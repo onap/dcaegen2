@@ -28,14 +28,14 @@ onap-discuss@lists.onap.org
 Security
 ~~~~~~~~
 
-`VES Authentication Types <https://docs.onap.org/en/latest/submodules/dcaegen2.git/docs/sections/services/ves-http/tls-authentication.html>`_
+`VES Authentication Types <https://docs.onap.org/projects/onap-dcaegen2/en/latest/sections/services/ves-http/tls-authentication.html>`_
 
 
 VES Specification
 ~~~~~~~~~~~~~~~~~
 
-- `VES 7.1.1 Data Model <https://docs.onap.org/en/latest/submodules/vnfrqts/requirements.git/docs/Chapter8/ves7_1spec.html#common-event-format>`_
-- `VES 5.4 Data Model <https://docs.onap.org/en/latest/submodules/vnfrqts/requirements.git/docs/Chapter8/ves_5_4_1/VESEventListener.html#common-event-format>`_
+- `VES 7.1.1 Data Model <https://docs.onap.org/projects/onap-vnfrqts-requirements/en/latest/Chapter8/ves7_1spec.html#common-event-format>`_
+- `VES 5.4 Data Model <https://docs.onap.org/projects/onap-vnfrqts-requirements/en/latest/Chapter8/ves_5_4_1/VESEventListener.html#common-event-format>`_
 
 
 Response Code
