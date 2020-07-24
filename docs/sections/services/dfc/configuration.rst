@@ -241,6 +241,149 @@ The blueprint below configures DFC to handle the two feeds shown in the picture 
             get_input: feed1_name
           useExisting: true
 
+.. _strict_host_checking_config:
+
+Turn On/Off StrictHostChecking
+------------------------------
+**StrictHostChecking** is a SSH connection option which prevents Man in the Middle (MitM) attacks. If it is enabled, client checks HostName and public key provided by server and compares it with keys stored locally. Only if matching entry is found, SSH connection can be established.
+By default in DataFile Collector this option is enabled (true) and requires to provide known_hosts list to DFC container.
+
+**Important: DFC requires public keys in sha-rsa KeyAlgorithm** 
+
+**Known_hosts file** is a list in following format:
+
+.. code-block:: bash
+
+  <HostName/HostIP> <KeyAlgorithms> <Public Key>
+
+e.g: 
+
+.. code-block:: bash
+
+  172.17.0.3 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRibxPenQC//2hzTuscdQDUA7P3gB9k4E8IgwCJxZM8YrJ2vqHomN8boByubebvo0L8+DWqzAtjy0nvgzsoEme9Y3lLWZ/2g9stlsOurwm+nFmWn/RPnwjqsAGNQjukV8C9D82rPMOYRES6qSGactFw4i8ZWLH8pmuJ3js1jb91HSlwr4zbZZd2XPKHk3nudyh8/Mwf3rndCU5FSnzjpBo55m48nsl2M1Tb6Xj1R0jQc5LWN0fsbrm5m+szsk4ccgHw6Vj9dr0Jh4EaIpNwA68k4LzrWb/N20bW8NzUsyDSQK8oEo1dvsiw8G9/AogBjQu9N4bqKWcrk5DOLCZHiCTSbbvdMWAMHXBdxEt9GZ0V53Fzwm8fI2EmIHdLhI4BWKZajumsfHRnd6UUxxna9ySt6qxVYZTyrPvfOFR3hRxVaxHL3EXplGeHT8fnoj+viai+TeSDdjMNwqU4MrngzrNKNLBHIl705uASpHUaRYQxUfWw/zgKeYlIbH+aGgE+4Q1vnh10Y35pATePRZgBIu+h2KsYBAtrP88LqW562OQ6T7VkfoAYwOjx9WV3/y5qonsStPhhzmJHDF22oBh5E5tZQxRcIlQF+5kHmXnFRUZtWshFnQATBh3yhOzJbh66CXn7aPj5Kl8TuuSN48zuI2lulVVqcv7GmTS0tWNpbxpzw==
+
+HostName could also be hashed, e.g:
+
+.. code-block:: bash
+
+  |1|FwSOxXYeJyZMAQM3jREjLSIcxRw=|o/b+CHEeHuED7WZS6sb3Y1IyHjk= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRibxPenQC//2hzTuscdQDUA7P3gB9k4E8IgwCJxZM8YrJ2vqHomN8boByubebvo0L8+DWqzAtjy0nvgzsoEme9Y3lLWZ/2g9stlsOurwm+nFmWn/RPnwjqsAGNQjukV8C9D82rPMOYRES6qSGactFw4i8ZWLH8pmuJ3js1jb91HSlwr4zbZZd2XPKHk3nudyh8/Mwf3rndCU5FSnzjpBo55m48nsl2M1Tb6Xj1R0jQc5LWN0fsbrm5m+szsk4ccgHw6Vj9dr0Jh4EaIpNwA68k4LzrWb/N20bW8NzUsyDSQK8oEo1dvsiw8G9/AogBjQu9N4bqKWcrk5DOLCZHiCTSbbvdMWAMHXBdxEt9GZ0V53Fzwm8fI2EmIHdLhI4BWKZajumsfHRnd6UUxxna9ySt6qxVYZTyrPvfOFR3hRxVaxHL3EXplGeHT8fnoj+viai+TeSDdjMNwqU4MrngzrNKNLBHIl705uASpHUaRYQxUfWw/zgKeYlIbH+aGgE+4Q1vnh10Y35pATePRZgBIu+h2KsYBAtrP88LqW562OQ6T7VkfoAYwOjx9WV3/y5qonsStPhhzmJHDF22oBh5E5tZQxRcIlQF+5kHmXnFRUZtWshFnQATBh3yhOzJbh66CXn7aPj5Kl8TuuSN48zuI2lulVVqcv7GmTS0tWNpbxpzw==
+
+
+
+To provide known_hosts list to DFC, execute following steps:
+
+1. Create file called known_hosts with desired entries.
+
+2. Mount file using Kubernetes Config Map.
+
+.. code-block:: bash
+
+  kubectl -n <ONAP NAMESPACE> create cm <config map name> --from-file <path to known_hosts file>
+
+e.g:
+
+.. code-block:: bash
+
+  kubectl -n onap create cm onap-dcae-dfc-known-hosts --from-file /home/ubuntu/.ssh/known_hosts
+
+
+3. Mount newly create Config Map as Volume to DFC by editing DFC deployment. **DFC deployment contains 3 containers, pay attention to mount the file to the appropriate container.**
+
+.. code-block:: yaml
+  
+  ...
+  kind: Deployment
+  metadata:
+  ...
+  spec:
+    ...
+    template:
+      ...
+      spec:
+        containers:
+        - image: <DFC image>
+          ...
+          volumeMounts:
+            ...
+          - mountPath: /home/datafile/.ssh/
+            name: onap-dcae-dfc-known-hosts
+            ...
+        volumes:
+        ...
+        - configMap:
+            name: <config map name, same as in step 1, e.g. onap-dcae-dfc-known-hosts>
+          name: onap-dcae-dfc-known-hosts
+      ...
+
+Known_hosts file path can be controlled by Environment Variable *KNOWN_HOST_PATH*. Full (absolute) path has to be provided. Sample deployment with changed known_hosts file path can be seen below.
+
+.. code-block:: yaml
+  
+  ...
+  kind: Deployment
+  metadata:
+  ...
+  spec:
+    ...
+    template:
+      ...
+      spec:
+        containers:
+        - image: <DFC image>
+          envs: 
+            - name: KNOWN_HOSTS_FILE_PATH
+              value: /home/datafile/.ssh/new/path/<know_host file name, e.g. my_custom_keys>
+          ...
+          volumeMounts:
+            ...
+          - mountPath: /home/datafile/.ssh/new/path
+            name: onap-dcae-dfc-known-hosts
+            ...
+        volumes:
+        ...
+        - configMap:
+            name: <config map name, same as in step 1, e.g. onap-dcae-dfc-known-hosts>
+          name: onap-dcae-dfc-known-hosts
+      ...
+
+To change mounted known_hosts list, edit existing Config Map or delete and create it again. **The DFC container may refresh changes with a delay.** Pod, nor container restart is NOT required.
+
+To edit Config Map execute:
+
+.. code-block:: bash
+
+  kubectl -n <ONAP NAMESPACE> edit cm <config map name>
+
+e.g:
+
+.. code-block:: bash
+
+   kubectl -n onap edit cm onap-dcae-dfc-known-hosts
+
+To delete and create again Config Map execute: 
+
+.. code-block:: bash
+
+  kubectl -n <ONAP NAMESPACE> delete cm <config map name>
+  kubectl -n <ONAP NAMESPACE> create cm <config map name> --from-file <path to known_hosts file>
+
+e.g:
+
+.. code-block:: bash
+
+  kubectl -n onap delete cm onap-dcae-dfc-known-hosts
+  kubectl -n onap create cm onap-dcae-dfc-known-hosts --from-file /home/ubuntu/.ssh/known_hosts
+
+
+To turn off StrictHostChecking, set below option to false. It could be changed in DCAE Config Binding Service (CBS).
+
+**WARNING: such operation is not recommended as it decreases DFC security and exposes DFC to MitM attacks.**
+
+.. code-block:: bash
+
+  "sftp.security.strictHostKeyChecking": false
+
+
 Performance
 ^^^^^^^^^^^
 
