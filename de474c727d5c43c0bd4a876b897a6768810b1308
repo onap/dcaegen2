@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "510c44dc_71d230f0",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-07-24T12:38:28Z",
+      "side": 1,
+      "message": "compare them",
+      "range": {
+        "startLine": 248,
+        "startChar": 122,
+        "endLine": 248,
+        "endChar": 131
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "557a2310_fadbb2bd",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-07-24T12:38:28Z",
+      "side": 1,
+      "message": "requires",
+      "range": {
+        "startLine": 251,
+        "startChar": 17,
+        "endLine": 251,
+        "endChar": 25
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59905dfd_3414f6b8",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-07-24T12:38:28Z",
+      "side": 1,
+      "message": "Doesn\u0027t have to be inside kubernetes cluster. If someone configured kubectl in local pc he can use his local file.",
+      "range": {
+        "startLine": 270,
+        "startChar": 71,
+        "endLine": 270,
+        "endChar": 121
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "205f0651_72c3772e",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-07-24T12:38:28Z",
+      "side": 1,
+      "message": "contains",
+      "range": {
+        "startLine": 272,
+        "startChar": 72,
+        "endLine": 272,
+        "endChar": 80
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9df08241_123513f1",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-07-24T12:38:28Z",
+      "side": 1,
+      "message": "below",
+      "range": {
+        "startLine": 162,
+        "startChar": 76,
+        "endLine": 162,
+        "endChar": 82
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e059efbc_a3168482",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-07-24T12:38:28Z",
+      "side": 1,
+      "message": "In this case DFC acts like StrictHostKeyChecking is disabled.",
+      "range": {
+        "startLine": 162,
+        "startChar": 130,
+        "endLine": 162,
+        "endChar": 186
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
