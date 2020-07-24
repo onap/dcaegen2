@@ -241,6 +241,71 @@ The blueprint below configures DFC to handle the two feeds shown in the picture 
             get_input: feed1_name
           useExisting: true
 
+.. _strict_host_checking_config:
+
+Turn On/Off StrictHostChecking
+------------------------------
+**StrictHostChecking** is SSH connection option. If it is enabled, checks HostName and public keys provided by server and compare them with keys stored locally. 
+By default in DataFile Collector this option is enabled (true) and required provide known_hosts list to DFC containter.
+
+**Important: DFC requires public key in sha-rsa KeyAlgorithm** 
+
+**Known_hosts file** is list with following format:
+
+.. code-block:: bash
+
+  <HostName/HostIP> <KeyAlgorithms> <Public Key>
+
+E.g. 
+
+.. code-block:: bash
+
+  172.17.0.3 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRibxPenQC//2hzTuscdQDUA7P3gB9k4E8IgwCJxZM8YrJ2vqHomN8boByubebvo0L8+DWqzAtjy0nvgzsoEme9Y3lLWZ/2g9stlsOurwm+nFmWn/RPnwjqsAGNQjukV8C9D82rPMOYRES6qSGactFw4i8ZWLH8pmuJ3js1jb91HSlwr4zbZZd2XPKHk3nudyh8/Mwf3rndCU5FSnzjpBo55m48nsl2M1Tb6Xj1R0jQc5LWN0fsbrm5m+szsk4ccgHw6Vj9dr0Jh4EaIpNwA68k4LzrWb/N20bW8NzUsyDSQK8oEo1dvsiw8G9/AogBjQu9N4bqKWcrk5DOLCZHiCTSbbvdMWAMHXBdxEt9GZ0V53Fzwm8fI2EmIHdLhI4BWKZajumsfHRnd6UUxxna9ySt6qxVYZTyrPvfOFR3hRxVaxHL3EXplGeHT8fnoj+viai+TeSDdjMNwqU4MrngzrNKNLBHIl705uASpHUaRYQxUfWw/zgKeYlIbH+aGgE+4Q1vnh10Y35pATePRZgBIu+h2KsYBAtrP88LqW562OQ6T7VkfoAYwOjx9WV3/y5qonsStPhhzmJHDF22oBh5E5tZQxRcIlQF+5kHmXnFRUZtWshFnQATBh3yhOzJbh66CXn7aPj5Kl8TuuSN48zuI2lulVVqcv7GmTS0tWNpbxpzw==
+
+To provide known_hosts list to DFC, execute following steps:
+
+1. mount file using config map.
+
+.. code-block:: bash
+
+  kubectl -n <ONAP NAMESPACE> create cm <config map name> --from-file <path to known_hosts file>
+
+2. Edit DFC deployment, add volume and volume monunts, **DFC deployment contains 3 containers, pay attention to mount the file to the appropriate container**
+
+.. code-block:: yaml
+  
+  ...
+  kind: Deployment
+  metadata:
+  ...
+  spec:
+    ...
+    template:
+      ...
+      spec:
+        containers:
+        - image: <DFC image>
+          ...
+          volumeMounts:
+            ...
+          - mountPath: /home/datafile/.ssh/
+            name: onap-dcae-dfc-known-hosts
+            ...
+        volumes:
+        ...
+        - configMap:
+            defaultMode: 420
+            name: <config map name, same as in step 1>
+          name: onap-dcae-dfc-known-hosts
+      ...
+
+To turn off **(insecure)** set bellow option to false, it could be changed by ONAP Consul.
+
+.. code-block:: bash
+
+  "sftp.security.strictHostKeyChecking": false
+
+
 Performance
 ^^^^^^^^^^^
 
