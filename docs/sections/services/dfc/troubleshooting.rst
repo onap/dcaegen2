@@ -156,3 +156,14 @@ DFC uses a number of configuration parameters. You can find below the kind of re
 
 -Consumer dmaapProtocol:
 Not configurable.
+
+Missing known_hosts file
+""""""""""""""""""""""""
+When StrictHostKeyChecking is enabled and DFC cannot find a known_hosts file, the WARN information shown below should be visible in the logfile. In this case, DFC acts like StrictHostKeyChecking is disabled.
+
+.. code-block:: bash
+
+    org.onap.dcaegen2.collectors.datafile.ftp.SftpClient     |2020-07-24T06:32:56.010Z     
+    |WARN     |StrictHostKeyChecking is enabled but environment variable KNOW_HOSTS_FILE_PATH is not set or points to not existing file [/home/datafile/.ssh/known_hosts]  -->  falling back to StrictHostKeyChecking='no'.  
+
+To resolve this warning, provide a known_hosts file or disable StrictHostKeyChecking, see DFC config page - :ref:`strict_host_checking_config`.
