@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2618c9aa_1b107030",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-24T13:02:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "510c44dc_71d230f0",
+      "range": {
+        "startLine": 248,
+        "startChar": 122,
+        "endLine": 248,
+        "endChar": 131
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "557a2310_fadbb2bd",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d46392e_05c0d5ef",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-24T13:02:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "557a2310_fadbb2bd",
+      "range": {
+        "startLine": 251,
+        "startChar": 17,
+        "endLine": 251,
+        "endChar": 25
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "714a5ae6_1e53f706",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-24T13:02:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59905dfd_3414f6b8",
+      "range": {
+        "startLine": 270,
+        "startChar": 71,
+        "endLine": 270,
+        "endChar": 121
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "205f0651_72c3772e",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 1
@@ -91,6 +163,30 @@
       "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b4aa61b_8f5ad3a4",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-24T13:02:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "205f0651_72c3772e",
+      "range": {
+        "startLine": 272,
+        "startChar": 72,
+        "endLine": 272,
+        "endChar": 80
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -137,6 +233,54 @@
       "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a9f8c8f_529c886d",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-24T13:02:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e059efbc_a3168482",
+      "range": {
+        "startLine": 162,
+        "startChar": 130,
+        "endLine": 162,
+        "endChar": 186
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51ff17ed_4f168e2c",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-24T13:02:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9df08241_123513f1",
+      "range": {
+        "startLine": 162,
+        "startChar": 76,
+        "endLine": 162,
+        "endChar": 82
+      },
+      "revId": "de474c727d5c43c0bd4a876b897a6768810b1308",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
