@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bcf518c9_04c93635",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-07-28T12:04:58Z",
+      "side": 1,
+      "message": "bellow \u003d\u003e below",
+      "revId": "0e18d88be889909973335b4ad3014ab05628ecb2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27f2912a_dbbb7972",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-07-28T12:04:58Z",
+      "side": 1,
+      "message": "When StrictHostKeyChecking is enabled and DFC cannot find a known_hosts file, the WARN information shown below should be visible in the logfile. In this case, DFC acts like StrictHostKeyChecking is disabled.",
+      "revId": "0e18d88be889909973335b4ad3014ab05628ecb2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0099efee_27a54378",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-07-28T12:04:58Z",
+      "side": 1,
+      "message": "To resolve this warning, provide a known_hosts file or disable StrictHostKeyChecking, see DFC config page - :ref:`strict_host_checking_config`.",
+      "revId": "0e18d88be889909973335b4ad3014ab05628ecb2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
