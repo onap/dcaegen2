@@ -132,6 +132,8 @@ This external TLS support doesn't influence ONAP internal traffic which is prote
        * A string ``state`` that indicates state name, for which certificate will be created.
        * A string ``organizational_unit`` that indicates organizational unit name, for which certificate will be created.
        * A string ``location`` that indicates location name, for which certificate will be created.
+       * A string ``keystore_password`` that indicates keystore password.
+       * A string ``truststore_password`` that indicates truststore password.
 
    Group ``external_cert`` from k8splugin.json with default values:
 
@@ -145,7 +147,9 @@ This external TLS support doesn't influence ONAP internal traffic which is prote
           "organization": "Linux-Foundation",
           "state": "California",
           "organizational_unit": "ONAP",
-          "location": "San-Francisco"
+          "location": "San-Francisco",
+          "keystore_password": "secret",
+          "truststore_password": "secret"
         }
 
 
@@ -154,14 +158,14 @@ This external TLS support doesn't influence ONAP internal traffic which is prote
 
 2. Certificate generation and retrieval:
 
-   When a DCAE component that needs a external TLS certificate is launched, a Kubernetes init container runs before the main
+   When a DCAE component that needs an external TLS certificate is launched, a Kubernetes init container runs before the main
    component container is launched.  The init container contacts the AAF CertService.
 
    DCAE service components (sometimes called "microservices") are deployed via Cloudify using blueprints.  This is described
    in more detail in the next section.
 
 3. Plugin and Blueprint:
-   The blueprint for a component that needs a external TLS certificate needs to include the node property called "external_cert" in
+   The blueprint for a component that needs an external TLS certificate needs to include the node property called "external_cert" in
    the node properties for the component. The property is a dictionary with following elements:
 
        * A boolean (``use_external_tls``) that indicates whether the component uses TLS in external traffic.
