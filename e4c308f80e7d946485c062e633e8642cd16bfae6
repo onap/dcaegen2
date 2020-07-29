@@ -1,0 +1,327 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49762277_851fa75a",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "**StrictHostChecking** is a SSH connection option which prevents Man in the Middle (MitM) attacks. If it is enabled, client checks HostName and public key provided by server and compares it with keys stored locally. Only if matching entry is found, SSH connection can be established.",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81219c95_1a643333",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "and requires to provide",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed78d5b1_c832fd5f",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "public keys :)",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3594e1d1_b6067198",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "is a list in",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4ec6ea1_ee2b2ba5",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "could also be hashed",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31a9730b_e9b1bb95",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "1. Create file called known_hosts with desired entries\n2. Mount file using Kubernetes Config Map",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f32506d_6ea84e4d",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "Under:\ne.g. kubectl -n onap create cm onap-dcae-dfc-known-hosts --from-file /home/ubuntu/.ssh/known_hosts",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1c6940a_d5a5775c",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "(first sentence)\n3. Mount newly create Config Map as Volume to DFC by editing DFC deployment.",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f3c0831_47a50ffd",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "\u003cconfig map name, same as in step 1, e.g. onap-dcae-dfc-known-hosts\u003e",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1188bf6_6f95341d",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "Environment instead of System\n*KNOWN_HOSTS_FILE_PATH*. Full (absolute) path has to be provided",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81128ec0_b3f31810",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "\u003cknown_hosts file name, e.g. my_custom_keys\u003e",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58c36f3a_57d9ab32",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "\u003cconfig map name, same as in step 1, e.g. onap-dcae-dfc-known-hosts\u003e",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8109d5e0_96a04fed",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "Config Map\n(At end) Pod, nor container restart is NOT required.",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7df4d0de_31e90d01",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "Config Map execute:",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24d304f3_0b9f33f8",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "Under:\ne.g. kubectl -n onap edit cm onap-dcae-dfc-known-hosts",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd3186e3_5bce343e",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "Config Map execute:",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9b5f6fb_479f2ecd",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "Under:\ne.g. \nkubectl -n onap delete cm onap-dcae-dfc-known-hosts\nkubectl -n onap create cm onap-dcae-dfc-known-hosts --from-file /home/ubuntu/.ssh/known_hosts",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "199352f0_b0965e5e",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "To turn off StrictHostChecking, set below option to false. It could be changed in DCAE Config Binding Service (CBS).\n\nWARNING: such operation is not recommended as it decreases DFC security and exposes DFC to MitM attacks.",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b349a8f5_49ba6e88",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-29T15:54:33Z",
+      "side": 1,
+      "message": "warning instead of WARN\nshould be -\u003e is",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
