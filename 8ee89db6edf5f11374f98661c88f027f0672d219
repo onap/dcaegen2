@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea64d708_cd250a01",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-30T10:18:50Z",
+      "side": 1,
+      "message": "newly created (with d) :)",
+      "revId": "8ee89db6edf5f11374f98661c88f027f0672d219",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c37065d7_f81925e8",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-07-30T10:18:50Z",
+      "side": 1,
+      "message": "known_hosts (with s at end)",
+      "revId": "8ee89db6edf5f11374f98661c88f027f0672d219",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
