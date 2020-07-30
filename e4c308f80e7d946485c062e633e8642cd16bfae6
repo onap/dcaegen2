@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a9d72c3_2d10d35f",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49762277_851fa75a",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "81219c95_1a643333",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 5
@@ -33,6 +51,24 @@
       "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9cc5a586_93a9a03a",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81219c95_1a643333",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "16278e9c_806fd897",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed78d5b1_c832fd5f",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3594e1d1_b6067198",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 5
@@ -67,6 +121,24 @@
       "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d8f85a7_6da17cd7",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3594e1d1_b6067198",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "0587b3bb_c69f37eb",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4ec6ea1_ee2b2ba5",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "31a9730b_e9b1bb95",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 5
@@ -101,6 +191,24 @@
       "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9bec13b2_3c3533f0",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31a9730b_e9b1bb95",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "661ed077_c732ac93",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f32506d_6ea84e4d",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d1c6940a_d5a5775c",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 5
@@ -135,6 +261,24 @@
       "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c856d6e_0dbf1d9e",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1c6940a_d5a5775c",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "845a89cd_dde20510",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f3c0831_47a50ffd",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d1188bf6_6f95341d",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 5
@@ -169,6 +331,24 @@
       "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90f907d8_93118d37",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1188bf6_6f95341d",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "7ff68857_f93f135a",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81128ec0_b3f31810",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "58c36f3a_57d9ab32",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 5
@@ -203,6 +401,24 @@
       "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1fa44b5_afd4647a",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58c36f3a_57d9ab32",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "a7765da6_fac388b3",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8109d5e0_96a04fed",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7df4d0de_31e90d01",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 5
@@ -237,6 +471,24 @@
       "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "007318cf_14f2bb51",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7df4d0de_31e90d01",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "22130c91_d9c66a36",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24d304f3_0b9f33f8",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bd3186e3_5bce343e",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 5
@@ -271,6 +541,24 @@
       "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96e96d03_79ff58c2",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd3186e3_5bce343e",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "5f3fcf42_09110839",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9b5f6fb_479f2ecd",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "199352f0_b0965e5e",
         "filename": "docs/sections/services/dfc/configuration.rst",
         "patchSetId": 5
@@ -308,6 +614,24 @@
     },
     {
       "key": {
+        "uuid": "56b1b8ca_4ec4f5a0",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "199352f0_b0965e5e",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b349a8f5_49ba6e88",
         "filename": "docs/sections/services/dfc/troubleshooting.rst",
         "patchSetId": 5
@@ -322,6 +646,24 @@
       "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61f8d5eb_0878d6b0",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b349a8f5_49ba6e88",
+      "revId": "e4c308f80e7d946485c062e633e8642cd16bfae6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0bb4df6c_f476133b",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bcf518c9_04c93635",
+      "revId": "0e18d88be889909973335b4ad3014ab05628ecb2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27f2912a_dbbb7972",
         "filename": "docs/sections/services/dfc/troubleshooting.rst",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1e037dd2_7e1611e7",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27f2912a_dbbb7972",
+      "revId": "0e18d88be889909973335b4ad3014ab05628ecb2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0099efee_27a54378",
         "filename": "docs/sections/services/dfc/troubleshooting.rst",
         "patchSetId": 3
@@ -50,6 +86,24 @@
       "revId": "0e18d88be889909973335b4ad3014ab05628ecb2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5049e0b3_84cf78c4",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2020-07-30T07:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0099efee_27a54378",
+      "revId": "0e18d88be889909973335b4ad3014ab05628ecb2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
