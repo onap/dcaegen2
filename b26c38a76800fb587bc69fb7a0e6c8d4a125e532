@@ -34,6 +34,24 @@
       "revId": "b26c38a76800fb587bc69fb7a0e6c8d4a125e532",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea657d6_d8d194d2",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-08-05T13:03:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89b8e22d_09e4fd10",
+      "revId": "b26c38a76800fb587bc69fb7a0e6c8d4a125e532",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
