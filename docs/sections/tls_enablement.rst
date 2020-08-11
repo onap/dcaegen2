@@ -121,7 +121,7 @@ This external TLS support doesn't influence ONAP internal traffic which is prote
 
 1. Certificate setup:
 
-   To create certificate artifacts, AAF CertService must obtain the certificate details. Common name and list of Subject Alternative Names (SANs) are set in blueprint as described in step 3.
+   To create certificate artifacts, OOM CertService must obtain the certificate details. Common name and list of Subject Alternative Names (SANs) are set in blueprint as described in step 3.
    The following parameters with default values are stored in OOM in k8splugin configuration file (k8splugin.json) in group ``external_cert``:
 
        * A string ``image_tag`` that indicates CertService client image name and version
@@ -140,8 +140,8 @@ This external TLS support doesn't influence ONAP internal traffic which is prote
    .. code-block:: JSON
 
         {
-          "image_tag": "nexus3.onap.org:10001/onap/org.onap.aaf.certservice.aaf-certservice-client:$VERSION",
-          "request_url": "https://aaf-cert-service:8443/v1/certificate/",
+          "image_tag": "nexus3.onap.org:10001/onap/org.onap.oom.platform.certservice.oom-certservice-client:$VERSION",
+          "request_url": "https://oom-cert-service:8443/v1/certificate/",
           "timeout":  "30000",
           "country": "US",
           "organization": "Linux-Foundation",
@@ -159,7 +159,7 @@ This external TLS support doesn't influence ONAP internal traffic which is prote
 2. Certificate generation and retrieval:
 
    When a DCAE component that needs an external TLS certificate is launched, a Kubernetes init container runs before the main
-   component container is launched.  The init container contacts the AAF CertService.
+   component container is launched.  The init container contacts the OOM CertService.
 
    DCAE service components (sometimes called "microservices") are deployed via Cloudify using blueprints.  This is described
    in more detail in the next section.
@@ -194,7 +194,7 @@ This external TLS support doesn't influence ONAP internal traffic which is prote
    During deployment Kubernetes plugin (referenced in blueprint) will check if the ``external_cert`` property is set and ``use_external_tls`` is set to true, then the plugin will add some elements to the Kubernetes Deployment for the component:
           * A Kubernetes volume (``tls-volume``) that will hold the certificate artifacts
           * A Kubernetes initContainer (``cert-service-client``)
-          * A Kubernetes volumeMount for the initContainer that mounts the ``tls-volume`` volume at ``/etc/onap/aaf/certservice/certs/``.
+          * A Kubernetes volumeMount for the initContainer that mounts the ``tls-volume`` volume at ``/etc/onap/oom/certservice/certs/``.
           * A Kubernetes volumeMount for the main container that mounts the ``tls-info`` volume at the mount point specified in the ``external_cert_directory`` property.
 
    Kurbernetes volumeMount tls-info is shared with TLS init container for internal traffic.
