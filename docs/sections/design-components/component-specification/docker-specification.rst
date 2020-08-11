@@ -295,7 +295,7 @@ for internal and external communication.
 |                                |         | ernal communication should be added to the main container                 |
 |                                |         | i.e ``true``                                                              |
 +--------------------------------+---------+---------------------------------------------------------------------------+
-| use_external_tls               | boolean | *Optional*. A boolean that indicates whether the component uses AAF Cert\ |
+| use_external_tls               | boolean | *Optional*. A boolean that indicates whether the component uses OOM Cert\ |
 |                                |         | Service to acquire operator certificate to protect external (between xNFs |
 |                                |         | and ONAP) traffic. For a time being only operator certificate from CMPv2  |
 |                                |         | server is supported.                                                      |
