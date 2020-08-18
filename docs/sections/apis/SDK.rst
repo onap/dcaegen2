@@ -15,19 +15,24 @@ Overview
 DCAE SDK contains utilities and clients which may be used for fetching
 configuration from CBS, consuming messages from DMaaP, etc. SDK is written in Java.
 
-Introduction
-------------
+Artifacts
+---------
 
-      SDK Maven dependencies (modules).
+Current version
+~~~~~~~~~~~~~~~
+.. code-block:: xml
 
-      .. code-block:: XML
+    <properties>
+        <sdk.version>1.4.1</sdk.version>
+    </properties>
 
-            <properties>
-                <sdk.version>1.3.4</sdk.version>
-            </properties>
+
+SDK Maven dependencies (modules)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
 
             <dependencies>
-
                 <dependency>
                   <groupId>org.onap.dcaegen2.services.sdk.rest.services</groupId>
                   <artifactId>cbs-client</artifactId>
@@ -72,31 +77,4 @@ Introduction
                 </dependency>
 
                 <!-- more to go -->
-
             </dependencies>
-
-
-Revision history
-----------------
-
-   **1.3.4**
-      - Usage of Java 11
-
-   **1.3.3-SNAPSHOT**
-      - Upgrade CBS to support SSL
-      - Fix static code vulnerabilities
-      - Exclude IT from tests
-      - Remove AAI client from SDK
-
-   **1.3.2-SNAPSHOT**
-      - Restructure AAI client
-      - Get rid of common-dependency module
-      - Rearrange files in packages inside rest-services
-
-   **1.3.1-SNAPSHOT**
-      - Bugfix release: AAI client
-         - Make AaiGetServiceInstanceClient build correct path to the service resource in AAI
-
-   **1.3.0-SNAPSHOT** (ElAlto - under development)
-      - All El-Alto work noted under 1.2.0-SNAPSHOT will roll into this version
-      - Version update was done for tracking global-jjb migration work and corresponding submission - https://gerrit.onap.org/r/#/c/dcaegen2/services/sdk/+/89902/
