@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "eff5cb40_2abca6ec",
+        "filename": "docs/sections/apis/SDK.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6592
+      },
+      "writtenOn": "2020-08-20T08:04:18Z",
+      "side": 1,
+      "message": "Done. Content moved to separated file - apis.rst and linked in sdk/index.rst. Now, content should be visible in section \"Available APIs\" under DCAE SDK",
+      "parentUuid": "b15ae8ca_32a3f402",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 14
+      },
+      "revId": "aa019bde892932cf9740ca893d8bb56bc9d630fb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf9dac58_debb15b5",
         "filename": "docs/sections/sdk/architecture.rst",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9786b08b_72b98c59",
+        "filename": "docs/sections/sdk/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6592
+      },
+      "writtenOn": "2020-08-20T08:04:18Z",
+      "side": 1,
+      "message": "Done. Content moved to changelog.rst and now it is visible in section \"Changelog\" under DCAE SDK",
+      "parentUuid": "bf9dac58_debb15b5",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 9
+      },
+      "revId": "aa019bde892932cf9740ca893d8bb56bc9d630fb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13f81436_317689cf",
         "filename": "docs/sections/sdk/architecture.rst",
         "patchSetId": 2
@@ -68,6 +116,30 @@
       "revId": "aa019bde892932cf9740ca893d8bb56bc9d630fb",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6b5ba8b_7adcda82",
+        "filename": "docs/sections/sdk/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6592
+      },
+      "writtenOn": "2020-08-20T08:04:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13f81436_317689cf",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 3
+      },
+      "revId": "aa019bde892932cf9740ca893d8bb56bc9d630fb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
