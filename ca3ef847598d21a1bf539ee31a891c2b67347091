@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7b47a154_29a6b563",
+        "filename": "docs/sections/sdk/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6592
+      },
+      "writtenOn": "2020-08-20T11:12:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "997c5e69_f00aea15",
+      "range": {
+        "startLine": 15,
+        "startChar": 261,
+        "endLine": 15,
+        "endChar": 282
+      },
+      "revId": "ca3ef847598d21a1bf539ee31a891c2b67347091",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8c6ba948_224b8b0f",
         "filename": "docs/sections/sdk/architecture.rst",
         "patchSetId": 3
@@ -39,6 +63,24 @@
       "revId": "ca3ef847598d21a1bf539ee31a891c2b67347091",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b377241_aabfc478",
+        "filename": "docs/sections/sdk/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6592
+      },
+      "writtenOn": "2020-08-20T11:12:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c6ba948_224b8b0f",
+      "revId": "ca3ef847598d21a1bf539ee31a891c2b67347091",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -109,6 +151,30 @@
       "revId": "ca3ef847598d21a1bf539ee31a891c2b67347091",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b26c4c80_30fb4857",
+        "filename": "docs/sections/sdk/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6592
+      },
+      "writtenOn": "2020-08-20T11:12:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e0aa6b1_393889f8",
+      "range": {
+        "startLine": 7,
+        "startChar": 271,
+        "endLine": 7,
+        "endChar": 292
+      },
+      "revId": "ca3ef847598d21a1bf539ee31a891c2b67347091",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
