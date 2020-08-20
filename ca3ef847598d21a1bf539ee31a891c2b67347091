@@ -65,6 +65,30 @@
     },
     {
       "key": {
+        "uuid": "e3c0ff36_63b4d798",
+        "filename": "docs/sections/sdk/faq.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6592
+      },
+      "writtenOn": "2020-08-20T10:29:32Z",
+      "side": 1,
+      "message": "In code I found MerkleTreeParser and MerkleTree. At a first glance it looks like prototype implementation Merkle Tree described here. Should I remove this Note or remain it?",
+      "parentUuid": "0655a930_54d7f35c",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 391
+      },
+      "revId": "ca3ef847598d21a1bf539ee31a891c2b67347091",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4e0aa6b1_393889f8",
         "filename": "docs/sections/sdk/index.rst",
         "patchSetId": 3
