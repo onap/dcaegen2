@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "997c5e69_f00aea15",
+        "filename": "docs/sections/sdk/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-08-20T10:10:15Z",
+      "side": 1,
+      "message": "to be removed",
+      "range": {
+        "startLine": 15,
+        "startChar": 261,
+        "endLine": 15,
+        "endChar": 282
+      },
+      "revId": "ca3ef847598d21a1bf539ee31a891c2b67347091",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c6ba948_224b8b0f",
+        "filename": "docs/sections/sdk/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-08-20T10:10:15Z",
+      "side": 1,
+      "message": "As this is kind of highlight about libs in sdk, add here same short description for other libs. Could be taken from: https://wiki.onap.org/display/DW/DCAE+SDK#DCAESDK-AvailableAPIs",
+      "revId": "ca3ef847598d21a1bf539ee31a891c2b67347091",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0655a930_54d7f35c",
+        "filename": "docs/sections/sdk/faq.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-08-20T10:10:15Z",
+      "side": 1,
+      "message": "I dont see anything about it in SDK code. Dont you?",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 391
+      },
+      "revId": "ca3ef847598d21a1bf539ee31a891c2b67347091",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e0aa6b1_393889f8",
+        "filename": "docs/sections/sdk/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2837
+      },
+      "writtenOn": "2020-08-20T10:10:15Z",
+      "side": 1,
+      "message": "to be removed, since was removed from SDK in version 1.3.3.",
+      "range": {
+        "startLine": 7,
+        "startChar": 271,
+        "endLine": 7,
+        "endChar": 292
+      },
+      "revId": "ca3ef847598d21a1bf539ee31a891c2b67347091",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
