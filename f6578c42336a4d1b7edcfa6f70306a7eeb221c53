@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a3e0c0cd_d3b2c70d",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-08-21T14:47:38Z",
+      "side": 1,
+      "message": "please add creative commons license",
+      "revId": "f6578c42336a4d1b7edcfa6f70306a7eeb221c53",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb557c09_8244ab61",
+        "filename": "docs/sections/sdk/faq.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-08-21T14:47:38Z",
+      "side": 1,
+      "message": "please add creative commons license",
+      "revId": "f6578c42336a4d1b7edcfa6f70306a7eeb221c53",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
