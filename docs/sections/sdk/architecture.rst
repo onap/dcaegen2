@@ -81,8 +81,12 @@ ConfigBindingService Client
 
 Crypt Password
 ++++++++++++++
-    Library to generate and match cryptography password using BCrypt algorithm
+    Library to generate and match cryptography password using BCrypt algorithm.
 
 High Volume VES Collector Client Producer
 +++++++++++++++++++++++++++++++++++++++++
     A reference Java implementation of High Volume VES Collector client. This library is used in xNF simulator which helps us test HV VES Collector in CSIT tests. You may use it as a reference when implementing your code in non-JVM language or directly when using Java/Kotlin/etc.
+
+External Schema Manager
++++++++++++++++++++++++++++++++++++++++++
+    Library to validate JSON with mapping of external schemas to local schema files.

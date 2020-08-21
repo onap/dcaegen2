@@ -23,7 +23,7 @@ Current version
 .. code-block:: xml
 
     <properties>
-        <sdk.version>1.4.1</sdk.version>
+        <sdk.version>1.4.2</sdk.version>
     </properties>
 
 
@@ -74,6 +74,12 @@ SDK Maven dependencies (modules)
                   <artifactId>hvvesclient-producer-impl</artifactId>
                   <version>${sdk.version}</version>
                   <scope>runtime</scope>
+                </dependency>
+
+                <dependency>
+                  <groupId>org.onap.dcaegen2.services.sdk</groupId>
+                  <artifactId>dcaegen2-services-sdk-services-external-schema-manager</artifactId>
+                  <version>${sdk.version}</version>
                 </dependency>
 
                 <!-- more to go -->
