@@ -186,3 +186,121 @@ Sample usage:
             .doOnSuccess(() -> logger.info("All events has been sent"))
             .doOnError(ex -> logger.warn("Failed to send one or more events", ex))
             .subscribe();
+
+external-schema-manager - JSON Validator with schema mapping
+------------------------------------------------------------------------------------------
+This library can be used to validate any JSON content incoming as JsonNode. What differs it from other validation
+libraries is mapping of externally located schemas to local schema files.
+
+Validated JSON must have one field that will refer to an external schema, which will be mapped to local file and then
+validation of any chosen part of JSON is executed using local schema.
+
+Mapping file is cached on validator creation, so it's not read every time validation is performed.
+Schemas' content couldn't be cached due to external library restrictions (OpenAPI4j).
+
+Example JSON:
+
+.. code-block:: json
+
+    {
+        "schemaReference": "https://forge.3gpp.org/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml",
+        "data":
+        {
+            "exampleData: "SAMPLE_VALUE"
+        }
+    }
+
+Interface:
+
+There are two methods, that are interface of this sub-project.
+
+Validator builder:
+
+.. code-block:: java
+
+    new StndDefinedValidator.ValidatorBuilder()
+            .mappingFilePath(mappingFilePath)
+            .schemasPath(schemasPath)
+            .schemaRefPath(schemaRefPath)
+            .stndDefinedDataPath(stndDefinedDataPath)
+            .build();
+
+
+Validator usage:
+
+.. code-block:: java
+
+    stndDefinedValidator.validate(event);
+
+There are 4 string parameters of the builder.
+
+- mappingFilePath: this should be a local filesystem path to file with mappings of public URLs to local URLs.
+Format of the schema mapping file is a JSON file with list of mappings, as shown in the example below.
+
+.. code-block:: json
+    [
+        {
+            "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml",
+            "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml"
+        },
+        {
+            "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/blob/REL-16/OpenAPI/heartbeatNtf.yaml",
+            "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/heartbeatNtf.yaml"
+        },
+        {
+            "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/blob/REL-16/OpenAPI/PerDataFileReportMnS.yaml",
+            "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/PerDataFileReportMnS.yaml"
+        },
+        {
+            "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/blob/master/OpenAPI/provMnS.yaml",
+            "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/provMnS.yaml"
+        }
+    ]
+
+- schemasPath: schemas path is a directory under which external-schema-manager will search for local schemas.
+For example, when this parameter is set to: "./etc/externalRepo/" and first mapping from example mappingFile is taken,
+validator will look for schema under the path:
+./etc/externalRepo/3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml
+
+- schemaRefPath: this is an internal path from validated JSON. It should define which field will be taken as public
+schema reference, which is later mapped. Example: "/event/stndDefinedFields/schemaReference".
+
+NOTE: in SDK version 1.4.2 this path doesn't use JSON path notation (with . signs). It might change in further versions.
+
+- schemaRefPath: this is internal path from validated JSON. It should define which field will be validated.
+Example: "/event/stndDefinedFields/data".
+
+NOTE: in SDK version 1.4.2 this path doesn't use JSON path notation (with . signs). It might change in further versions.
+
+Possible scenarios when using external-schema-manger:
+
+When the schema-map file, the schema and the sent event are correct, then the validation is successful and the log
+shows "Validation of stndDefinedDomain has been successful".
+
+Errors in the schema-map - none of the mappings are cached:
+- When no schema-map file exists, "Unable to read mapping file. Mapping file path: {}" is logged.
+
+- When a schema-map file exists, but has an incorrect format, a warning is logged: "Schema mapping file has
+incorrect format. Mapping file path: {}"
+
+
+Errors in one of the mappings in schema-map - this mapping is not cached, a warning is logged "Mapping for publicURL
+({}) will not be cached to validator.":
+
+- When the local url in the schema-map file references a file that does not exist, the warning "Local schema
+resource missing. Schema file with path {} has not been found."
+
+- When the schema file is empty, the information "Schema file is empty. Schema path: {}" is logged
+
+- When a schema file has an incorrect format (not a yaml), the following information is logged: Schema has
+incorrect YAML structure. Schema path: {} "
+
+Errors in schemaRefPath returns errors:
+
+- If in the schemaRef path in the event we provide an url that refers to an existing schema, but the part after #
+refers to a non-existent part of it, then an error is thrown: IncorrectInternalFileReferenceException
+("Schema reference refer to existing file, but internal reference (after #) is incorrect.") "
+
+- When in the schemaRef path in the event, we provide a url that refers to a non-existent mapping from public to
+localURL, a NoLocalReferenceException is thrown, which logs to the console: "Couldn't find mapping for
+public url. PublicURL: {}"
