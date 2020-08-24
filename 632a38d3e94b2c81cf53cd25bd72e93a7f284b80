@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba59e34b_7823aa77",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2020-08-24T07:49:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "408098af_9ab0fca6",
+      "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e049986_63de0028",
         "filename": "docs/sections/sdk/apis.rst",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4841ad90_f5e18f64",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2020-08-24T07:49:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e049986_63de0028",
+      "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8cdbc7c5_215ee22c",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2020-08-24T07:49:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57851060_16623dd4",
+      "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d9c0d21c_daf4227c",
         "filename": "docs/sections/sdk/apis.rst",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "d86c0422_b41e4a33",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2020-08-24T07:49:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9c0d21c_daf4227c",
+      "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "99347431_3d616003",
         "filename": "docs/sections/sdk/apis.rst",
         "patchSetId": 2
@@ -84,6 +156,24 @@
       "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b85d817_cf200a90",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2020-08-24T07:49:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99347431_3d616003",
+      "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
