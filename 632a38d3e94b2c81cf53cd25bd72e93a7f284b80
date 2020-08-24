@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "408098af_9ab0fca6",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 5234
+      },
+      "writtenOn": "2020-08-24T07:33:26Z",
+      "side": 1,
+      "message": "I would change added to cached. Respectively until the end.",
+      "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e049986_63de0028",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 5234
+      },
+      "writtenOn": "2020-08-24T07:33:26Z",
+      "side": 1,
+      "message": "Make empty line between elements of list (and list header). This will make new line between them when converted to readable format.\n\nAlso make space after -, and remove tabs.",
+      "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57851060_16623dd4",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 5234
+      },
+      "writtenOn": "2020-08-24T07:33:26Z",
+      "side": 1,
+      "message": "\u0027,\u0027 before but",
+      "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9c0d21c_daf4227c",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 5234
+      },
+      "writtenOn": "2020-08-24T07:33:26Z",
+      "side": 1,
+      "message": "worning -\u003e warning",
+      "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99347431_3d616003",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5234
+      },
+      "writtenOn": "2020-08-24T07:33:26Z",
+      "side": 1,
+      "message": "\u0027and the mapping\u0027 on the end (?). Finish sentence or remove.",
+      "revId": "632a38d3e94b2c81cf53cd25bd72e93a7f284b80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
