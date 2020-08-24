@@ -24,6 +24,7 @@ VES Collector (HTTP) overview and functions
   ./delivery.rst
   ./installation.rst
   ./tls-authentication.rst
+  ./stnd-defined-validation.rst
 
 API reference
 ^^^^^^^^^^^^^
