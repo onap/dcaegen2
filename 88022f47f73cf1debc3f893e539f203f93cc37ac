@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9925c7f_34469f84",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-08-25T21:45:30Z",
+      "side": 1,
+      "message": "remove extra hypen",
+      "range": {
+        "startLine": 191,
+        "startChar": 60,
+        "endLine": 191,
+        "endChar": 90
+      },
+      "revId": "88022f47f73cf1debc3f893e539f203f93cc37ac",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c9d9c28_16d50f5d",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-08-25T21:45:30Z",
+      "side": 1,
+      "message": "could be provided in tabular structure for better readability",
+      "range": {
+        "startLine": 260,
+        "startChar": 0,
+        "endLine": 273,
+        "endChar": 120
+      },
+      "revId": "88022f47f73cf1debc3f893e539f203f93cc37ac",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "812c2e37_854410aa",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-08-25T21:45:30Z",
+      "side": 1,
+      "message": "Make this in bold",
+      "range": {
+        "startLine": 275,
+        "startChar": 0,
+        "endLine": 275,
+        "endChar": 52
+      },
+      "revId": "88022f47f73cf1debc3f893e539f203f93cc37ac",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a69d8cfd_ed9dafc8",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-08-25T21:45:30Z",
+      "side": 1,
+      "message": "merge with above line",
+      "range": {
+        "startLine": 283,
+        "startChar": 106,
+        "endLine": 284,
+        "endChar": 40
+      },
+      "revId": "88022f47f73cf1debc3f893e539f203f93cc37ac",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2894333_b79689ed",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-08-25T21:45:30Z",
+      "side": 1,
+      "message": "merge with above line",
+      "range": {
+        "startLine": 291,
+        "startChar": 0,
+        "endLine": 291,
+        "endChar": 63
+      },
+      "revId": "88022f47f73cf1debc3f893e539f203f93cc37ac",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17d07186_736d0507",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-08-25T21:45:30Z",
+      "side": 1,
+      "message": "merge with prev line",
+      "range": {
+        "startLine": 301,
+        "startChar": 0,
+        "endLine": 302,
+        "endChar": 93
+      },
+      "revId": "88022f47f73cf1debc3f893e539f203f93cc37ac",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a16ba6c_1ad1a0ba",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-08-25T21:45:30Z",
+      "side": 1,
+      "message": "merge with prev line",
+      "range": {
+        "startLine": 305,
+        "startChar": 0,
+        "endLine": 306,
+        "endChar": 26
+      },
+      "revId": "88022f47f73cf1debc3f893e539f203f93cc37ac",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
