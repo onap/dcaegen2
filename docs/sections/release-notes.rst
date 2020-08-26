@@ -12,16 +12,16 @@ Release Notes
 
 
 Version: 5.0.2
-==============
+--------------
 
 Abstract
-========
+........
 
 This document provides the release notes for the El-Alto Maintenance release
 
 
 Summary
-=======
+.......
 
 This maintenance release is primarily to update expired certificates 
 from original El-Alto released TLS-init container.
@@ -30,7 +30,7 @@ This patch is not required for Frankfurt release (and beyond) as certificates ar
 retrieved from AAF at deployment time for all DCAE components.
 
 Release Data
-============
+............
 
 +--------------------------------------+--------------------------------------+
 | **Project**                          | DCAE                                 |
@@ -47,7 +47,7 @@ Release Data
 +--------------------------------------+--------------------------------------+
 
 New features
-------------
+............
 
 None
 
