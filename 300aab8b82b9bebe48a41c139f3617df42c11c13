@@ -39,6 +39,48 @@
       "revId": "300aab8b82b9bebe48a41c139f3617df42c11c13",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65411278_87c579ab",
+        "filename": "docs/sections/tls_enablement.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6714
+      },
+      "writtenOn": "2020-08-28T08:17:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f8e0bc8_3e98406f",
+      "revId": "300aab8b82b9bebe48a41c139f3617df42c11c13",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc6003ad_2205390f",
+        "filename": "docs/sections/tls_enablement.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6714
+      },
+      "writtenOn": "2020-08-28T08:17:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f33a4139_59158540",
+      "range": {
+        "startLine": 213,
+        "startChar": 90,
+        "endLine": 213,
+        "endChar": 99
+      },
+      "revId": "300aab8b82b9bebe48a41c139f3617df42c11c13",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
