@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d21cdc50_43455c0d",
+        "filename": "docs/sections/services/ves-http/architecture.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-08-28T19:12:15Z",
+      "side": 1,
+      "message": "reflecting old flow  - will be good to revise them based on std defined flow",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 35
+      },
+      "revId": "3565b46eb8f1a2a3ff3d216b18d4900f507abd0e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
