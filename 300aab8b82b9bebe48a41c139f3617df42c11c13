@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f8e0bc8_3e98406f",
+        "filename": "docs/sections/tls_enablement.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-08-28T08:10:08Z",
+      "side": 1,
+      "message": "Add trust.jks.bak with the previous description.",
+      "revId": "300aab8b82b9bebe48a41c139f3617df42c11c13",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f33a4139_59158540",
+        "filename": "docs/sections/tls_enablement.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-08-28T08:10:08Z",
+      "side": 1,
+      "message": "Add also that it\u0027s a password for trust.jks.bak",
+      "range": {
+        "startLine": 213,
+        "startChar": 90,
+        "endLine": 213,
+        "endChar": 99
+      },
+      "revId": "300aab8b82b9bebe48a41c139f3617df42c11c13",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
