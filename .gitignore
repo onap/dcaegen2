@@ -1,3 +1,7 @@
 docs/.DS_Store
 *.DS_Store
 site
+
+# IDEA intellij project files
+.idea/
+*.iml

@@ -176,6 +176,8 @@ This external TLS support doesn't influence ONAP internal traffic which is prote
            * A string (``common_name``) that indicates common name which should be present in certificate. Specific for every blueprint (e.g. dcae-ves-collector for VES).
            * A string (``sans``) that indicates list of Subject Alternative Names (SANs) which should be present in certificate. Delimiter - : Should contain common_name value and other FQDNs under which given component is accessible.
 
+   As a final step of the plugin the generated CMPv2 truststore entries will be appended to AAF CA truststore (see certificate artifacts below).
+
    Example
 
    .. code-block:: yaml
@@ -207,6 +209,7 @@ This external TLS support doesn't influence ONAP internal traffic which is prote
             * ``keystore.pass``: A text file with a single line that contains the password for the ``keystore.p12`` keystore.
             * ``truststore.p12``: A truststore containing the operator certificate.  (Needed by clients that access TLS-protected servers in external traffic.)
             * ``truststore.pass``: A text file with a single line that contains the password for the ``truststore.p12`` keystore.
-        * ``trust.jks``: The AAF CA certificate and private key packaged in Java form.
-        * ``trust.pass``: A text file with a single line that contains the password for ``trust.jks`` file.
+        * ``trust.jks``:  A file with the AAF CA certificate and CMPv2 certificate with private key packaged in Java form.
+        * ``trust.jks.bak``:  The (original) file with the AAF CA certificate only.
+        * ``trust.pass``: A text file with a single line that contains the password for ``trust.jks`` and ``trust.jks.bak`` file.
         * ``cacert.pem``: The AAF CA certificate, in PEM form.
