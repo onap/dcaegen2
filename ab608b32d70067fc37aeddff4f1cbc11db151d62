@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4618c780_03efdc7b",
+        "filename": "docs/sections/services/pm-subscription-handler/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2020-09-08T15:05:16Z",
+      "side": 1,
+      "message": "Can we change this to modelInvariantIDs.\nTrying to reflect what is in AAI.\n\nSame for others below.",
+      "range": {
+        "startLine": 131,
+        "startChar": 33,
+        "endLine": 131,
+        "endChar": 47
+      },
+      "revId": "ab608b32d70067fc37aeddff4f1cbc11db151d62",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
