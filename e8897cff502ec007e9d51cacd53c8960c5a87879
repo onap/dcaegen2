@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c365f675_90cee015",
+        "filename": "docs/sections/services/ves-http/stnd-defined-validation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-09-09T20:16:00Z",
+      "side": 1,
+      "message": "publicURL needs to be synced based on this submission https://gerrit.onap.org/r/c/vnfrqts/requirements/+/111693/3/docs/Chapter7/Monitoring-And-Management.rst)\n\nSimilar change required on vescollector repo also",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 5
+      },
+      "revId": "e8897cff502ec007e9d51cacd53c8960c5a87879",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
