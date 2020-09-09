@@ -119,6 +119,8 @@ External TLS support was introduced in order to integrate DCAE with CertService 
 
 This external TLS support doesn't influence ONAP internal traffic which is protected by certificates issued by AAF's CertMan. External TLS Support was introduced in k8splugin 3.1.0.
 
+From k8splugin 3.4.1 when external TLS is enabled (use_external_tls=true), keystores contain only certificates from CMPv2. Keystores issued by CertMan have appended extension .bak and are unused.
+
 1. Certificate setup:
 
    To create certificate artifacts, AAF CertService must obtain the certificate details. Common name and list of Subject Alternative Names (SANs) are set in blueprint as described in step 3.
