@@ -34,6 +34,24 @@
       "revId": "b0d64512b9062dade133ac3c9ea4f7d6575363a5",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b595ef8_50ddb576",
+        "filename": "docs/sections/tls_enablement.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2020-09-10T13:46:45Z",
+      "side": 1,
+      "message": "keystore contains only certificate from CMPv2 server. Keystore issued by CertMan has appende .bak extension and is not used.\n\n(cause we copy/backup just one keystore, not all of them)",
+      "parentUuid": "c14d5f58_65daf741",
+      "revId": "b0d64512b9062dade133ac3c9ea4f7d6575363a5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
