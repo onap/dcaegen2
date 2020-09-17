@@ -32,49 +32,54 @@ StndDefined properties
 
 There are 5 additional properties related to stndDefined validation in collector.properties file.
 
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| Name                                         | Description                                                                    | Example                                                                        | Note                                                                          |
-+==============================================+================================================================================+================================================================================+===============================================================================+
-| collector.externalSchema.checkflag           | Flag is responsible for turning on/off stndDefined data validation.            | -1 or 1                                                                        |                                                                               |
-|                                              | By default this flag is set to 1, which means that the validation is enabled.  |                                                                                |                                                                               |
-|                                              | In case flag is set to -1, validation is disabled.                             |                                                                                |                                                                               |
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| collector.externalSchema.mappingFileLocation | This should be a local filesystem path to file with mappings of public URLs    | etc/externalRepo/schema-map.json                                               |                                                                               |
-|                                              | to local URLs.                                                                 |                                                                                |                                                                               |
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| collector.externalSchema.schemasLocation     | Schemas location is a directory under which stndDefined validator will search  | ./etc/externalRepo/ and first mapping from example mappingFile below is taken, |                                                                               |
-|                                              | for local schemas.                                                             | validator will look for schema under the path:                                 |                                                                               |
-|                                              |                                                                                | ./etc/externalRepo/3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml  |                                                                               |
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| event.externalSchema.schemaRefPath           | This is an internal path from validated JSON. It should define which field     | /event/stndDefinedFields/schemaReference                                       | In SDK version 1.4.2 this path doesn’t use JSON path notation (with . signs). |
-|                                              | will be taken as public schema reference, which is later mapped.               |                                                                                | It might change in further versions                                           |
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| event.externalSchema.stndDefinedDataPath     | This is internal path from validated JSON.                                     | /event/stndDefinedFields/data                                                  | In SDK version 1.4.2 this path doesn’t use JSON path notation (with . signs). |
-|                                              | It should define which field will be validated.                                |                                                                                | It might change in further versions                                           |
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
++----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| Name                                         | Description                                                                    | Example                                                                        |
++==============================================+================================================================================+================================================================================+
+| collector.externalSchema.checkflag           | Flag is responsible for turning on/off stndDefined data validation.            | -1 or 1                                                                        |
+|                                              | By default this flag is set to 1, which means that the validation is enabled.  |                                                                                |
+|                                              | In case flag is set to -1, validation is disabled.                             |                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| collector.externalSchema.mappingFileLocation | This should be a local filesystem path to file with mappings of public URLs    | etc/externalRepo/schema-map.json                                               |
+|                                              | to local URLs.                                                                 |                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| collector.externalSchema.schemasLocation     | Schemas location is a directory under which stndDefined validator will search  | ./etc/externalRepo/ and first mapping from example mapping file below is taken,|
+|                                              | for local schemas.                                                             | validator will look for schema under the path:                                 |
+|                                              |                                                                                | ./etc/externalRepo/3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml  |
++----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| event.externalSchema.schemaRefPath           | This is an internal path from validated JSON. It should define which field     | $.event.stndDefinedFields.schemaReference                                      |
+|                                              | will be taken as public schema reference, which is later mapped.               |                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| event.externalSchema.stndDefinedDataPath     | This is internal path from validated JSON.                                     | $.event.stndDefinedFields.data                                                 |
+|                                              | It should define which field will be validated.                                |                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 Format of the schema mapping file is a JSON file with list of mappings, as shown in the example below.
 
 .. code-block:: json
 
     [
-        {
-            "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml",
-            "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml"
-        },
-        {
-            "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/blob/REL-16/OpenAPI/heartbeatNtf.yaml",
-            "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/heartbeatNtf.yaml"
-        },
-        {
-            "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/blob/REL-16/OpenAPI/PerDataFileReportMnS.yaml",
-            "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/PerDataFileReportMnS.yaml"
-        },
-        {
-            "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/blob/master/OpenAPI/provMnS.yaml",
-            "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/provMnS.yaml"
-        }
+      {
+        "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/tree/SA88-Rel16/OpenAPI/faultMnS.yaml",
+        "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml"
+      },
+      {
+        "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/tree/SA88-Rel16/OpenAPI/heartbeatNtf.yaml",
+        "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/heartbeatNtf.yaml"
+      },
+      {
+        "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/tree/SA88-Rel16/OpenAPI/PerDataFileReportMnS.yaml",
+        "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/PerDataFileReportMnS.yaml"
+      },
+      {
+        "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/tree/SA88-Rel16/OpenAPI/provMnS.yaml",
+        "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/provMnS.yaml"
+      }
     ]
+
+Collector.properties content may be overridden when deploying VES Collector via Cloudify. To keep VES settings consistent
+listed above properties has been updated in the VES Collector Cloudify blueprint (in blueprints/k8s-ves.yaml file under
+dcaegen2/platform/blueprints project) and in componentspec file (in dpo/spec/vescollector-componentspec.json file
+in VES project) which may be used for generation of VES Collector Cloudify blueprints in some scenarios.
 
 
 Requirements for stndDefined validation
