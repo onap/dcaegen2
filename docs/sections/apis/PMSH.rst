@@ -44,22 +44,28 @@ The Subscription details are returned successfully
 .. code-block:: javascript
 
    [
-     {
-       "network_functions": [
-         {
-           "nf_name": "pnf102",
-           "nf_sub_status": "PENDING_CREATE",
-           "orchestration_status": "Active"
-         },
-         {
-           "nf_name": "vnf101",
-           "nf_sub_status": "CREATED",
-           "orchestration_status": "Active"
-         }
-       ],
-       "subscription_name": "demo-subscription",
-       "subscription_status": "UNLOCKED"
-     }
+       {
+          "subscription_name":"subscriptiona",
+          "subscription_status":"UNLOCKED",
+          "network_functions":[
+             {
+                "nf_name":"PNF104",
+                "nf_sub_status":"PENDING_CREATE",
+                "model_invariant_id":"8a57e2e6-d7ad-445f-b37e-a9837921014f",
+                "model_version_id":"d0938fd8-6fe4-42a2-9d26-82b7fa9336ad",
+                "sdnc_model_name":"pm_control",
+                "sdnc_model_version":"1.2.4"
+             },
+             {
+                "nf_name":"PNF105",
+                "nf_sub_status":"CREATED",
+                "model_invariant_id":"9a57e2e6-d7ad-445f-b37e-d6754892",
+                "model_version_id":"a0938fd8-6fe4-42a2-9d26-82b7fa93378c",
+                "sdnc_model_name":"pm_control",
+                "sdnc_model_version":"1.2.5"
+             }
+          ]
+       }
    ]
 
 The subscription_status refers to the administrative status of the subscription.
@@ -70,16 +76,6 @@ The subscription_status refers to the administrative status of the subscription.
 
    LOCKED, The Subscription is un-deploying / inactive.
    UNLOCKED, The Subscription is deployed / active.
-
-
-The network_functions.orchestration_status refers to the status of the xNF in AAI ONAP.
-
-.. csv-table:: Potential Values
-   :header: "Status", "Description"
-   :widths: 4,18
-
-   Inventoried, The xNF has been on-boarded in ONAP but not yet operable.
-   Active, The xNF is active and contactable.
 
 
 The network_functions.nf_sub_status refers to the status of the subscription (PM Job) on the xNF.
