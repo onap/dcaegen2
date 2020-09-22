@@ -7,51 +7,40 @@ StndDefined Events Collection Mechanism
 Description
 -----------
 
-This mechanism can be used to validate any JSON content incoming as JsonNode using OpenAPI standardized schemas.
-During validation externally located schemas are mapped to local schema files.
+The target of that development was to allow collection of events defined by standards organizations using VES Collector,
+and providing them for consumption by analytics applications running on top of DCAE platform. The following features
+have been implemented:
 
-Validated JSON must have one field that will refer to an external schema, which will be mapped to local file and then
-validation of any chosen part of JSON is executed using local schema.
-
-StndDefined validation is integrated with the event collecting functionality available under the endpoint
-*/eventListener/v7*. Process of event collecting includes steps in the following order:
-
-1. General event validation (1st stage validation)
-2. Event transformation
-3. **StndDefined event validation** (2nd stage validation)
-4. Event routing to DMaaP
-
-Mapping file is cached on stndDefined validator creation, so it's not read every time validation is performed.
-Schemas' content couldn't be cached due to an external library restrictions (OpenAPI4j).
-
-The value of the 'stndDefinedNamespace' field in any incoming stndDefined JSON event is used to match the topic from
-property *collector.dmaap.streamid*.
+- Event routing, based on a new CommonHeader field "stndDefinedNamespace"
+- Standards-organization defined events can be included using a dedicated stndDefinedFields.data property
+- Standards-defined events can be validated using openAPI descriptions provided by standards organizations, and indicated in stndDefinedFields.schemaReference
 
 StndDefined properties
 ----------------------
 
 There are 5 additional properties related to stndDefined validation in collector.properties file.
 
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| Name                                         | Description                                                                    | Example                                                                        |
-+==============================================+================================================================================+================================================================================+
-| collector.externalSchema.checkflag           | Flag is responsible for turning on/off stndDefined data validation.            | -1 or 1                                                                        |
-|                                              | By default this flag is set to 1, which means that the validation is enabled.  |                                                                                |
-|                                              | In case flag is set to -1, validation is disabled.                             |                                                                                |
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| collector.externalSchema.mappingFileLocation | This should be a local filesystem path to file with mappings of public URLs    | etc/externalRepo/schema-map.json                                               |
-|                                              | to local URLs.                                                                 |                                                                                |
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| collector.externalSchema.schemasLocation     | Schemas location is a directory under which stndDefined validator will search  | ./etc/externalRepo/ and first mapping from example mapping file below is taken,|
-|                                              | for local schemas.                                                             | validator will look for schema under the path:                                 |
-|                                              |                                                                                | ./etc/externalRepo/3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml  |
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| event.externalSchema.schemaRefPath           | This is an internal path from validated JSON. It should define which field     | $.event.stndDefinedFields.schemaReference                                      |
-|                                              | will be taken as public schema reference, which is later mapped.               |                                                                                |
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| event.externalSchema.stndDefinedDataPath     | This is internal path from validated JSON.                                     | $.event.stndDefinedFields.data                                                 |
-|                                              | It should define which field will be validated.                                |                                                                                |
-+----------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
++----------------------------------------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| Name                                         | Description                                                                    | Example                                                                                              |
++==============================================+================================================================================+======================================================================================================+
+| collector.externalSchema.checkflag           | Flag is responsible for turning on/off stndDefined data validation.            | -1 or 1                                                                                              |
+|                                              | By default this flag is set to 1, which means that the validation is enabled.  |                                                                                                      |
+|                                              | In case flag is set to -1, validation is disabled.                             |                                                                                                      |
++----------------------------------------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| collector.externalSchema.mappingFileLocation | This should be a local filesystem path to file with mappings of public URLs    | /opt/app/VESCollector/etc/externalRepo/schema-map.json                                               |
+|                                              | to local URLs.                                                                 |                                                                                                      |
++----------------------------------------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| collector.externalSchema.schemasLocation     | Schemas location is a directory context for localURL paths set in mapping file.| /opt/app/VESCollector/etc/externalRepo/ ,                                                            |
+|                                              | Result path of schema is collector.externalSchema.schemasLocation + localURL.  | when first mapping from example mapping file below this table is taken, validator will look for      |
+|                                              | This path is not related to mapping file path and may point to any location.   | schema under the path:                                                                               |
+|                                              |                                                                                | /opt/app/VESCollector/etc/externalRepo/3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml    |
++----------------------------------------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| event.externalSchema.schemaRefPath           | This is an internal path from validated JSON. It should define which field     | $.event.stndDefinedFields.schemaReference                                                            |
+|                                              | will be taken as public schema reference, which is later mapped.               |                                                                                                      |
++----------------------------------------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| event.externalSchema.stndDefinedDataPath     | This is internal path from validated JSON.                                     | $.event.stndDefinedFields.data                                                                       |
+|                                              | It should define which field will be validated.                                |                                                                                                      |
++----------------------------------------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 Format of the schema mapping file is a JSON file with list of mappings, as shown in the example below.
 
@@ -76,11 +65,68 @@ Format of the schema mapping file is a JSON file with list of mappings, as shown
       }
     ]
 
-Collector.properties content may be overridden when deploying VES Collector via Cloudify. To keep VES settings consistent
-listed above properties has been updated in the VES Collector Cloudify blueprint (in blueprints/k8s-ves.yaml file under
-dcaegen2/platform/blueprints project) and in componentspec file (in dpo/spec/vescollector-componentspec.json file
-in VES project) which may be used for generation of VES Collector Cloudify blueprints in some scenarios.
+Properties configuration via Cloudify
+-------------------------------------
 
+Collector.properties content may be overridden when deploying VES Collector via Cloudify. To keep VES settings
+consistent listed above properties has been updated in the VES Collector Cloudify blueprint (in blueprints/k8s-ves.yaml
+file under dcaegen2/platform/blueprints project) and in componentspec file (in dpo/spec/vescollector-componentspec.json
+file in VES project) which may be used for generation of VES Collector Cloudify blueprints in some scenarios.
+
+The following table shows new stndDefined related properties added to VES Collector Cloudify blueprint. These properties
+represent fields from collector.properties file, but also contain configuration of DMaaP topic URLs used for stndDefined
+events routing. It has been specified in the table which of these properties may be configured via inputs during
+blueprint deployment.
+
+**NOTE**: Keep in mind that some properties may use relative path. It is relative to default VES Collector context which
+is: */opt/app/VESCollector/*. Final path of etc. *collector.externalSchema.schemasLocation* will be:
+*/opt/app/VESCollector/etc/externalRepo/*. Setting absolute path to these properties is also acceptable and won't
+generate error.
+
++----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+| Property name                                | Input? | Type    | Default value                                                                                                 |
++==============================================+========+=========+===============================================================================================================+
+| collector.externalSchema.checkflag           | Yes    | Integer | 1                                                                                                             |
++----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+| collector.externalSchema.mappingFileLocation | Yes    | String  | ./etc/externalRepo/schema-map.json                                                                            |
++----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+| collector.externalSchema.schemasLocation     | Yes    | String  | ./etc/externalRepo/                                                                                           |
++----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+| event.externalSchema.schemaRefPath           | No     | String  | $.event.stndDefinedFields.schemaReference                                                                     |
++----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+| event.externalSchema.stndDefinedDataPath     | No     | String  | $.event.stndDefinedFields.data                                                                                |
++----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+| ves_3gpp_fault_supervision_publish_url       | Yes    | String  | http://message-router.onap.svc.cluster.local:3904/events/unauthenticated.SEC_3GPP_FAULTSUPERVISION_OUTPUT     |
++----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+| ves_3gpp_provisioning_publish_url            | Yes    | String  | http://message-router.onap.svc.cluster.local:3904/events/unauthenticated.SEC_3GPP_PROVISIONING_OUTPUT         |
++----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+| ves_3gpp_hearbeat_publish_url                | Yes    | String  | http://message-router.onap.svc.cluster.local:3904/events/unauthenticated.SEC_3GPP_HEARTBEAT_OUTPUT            |
++----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+| ves_3gpp_performance_assurance_publish_url   | Yes    | String  | http://message-router.onap.svc.cluster.local:3904/events/unauthenticated.SEC_3GPP_PERFORMANCEASSURANCE_OUTPUT |
++----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+
+Validation overview
+-------------------
+
+This mechanism can be used to validate any JSON content incoming as JsonNode using OpenAPI standardized schemas.
+During validation externally located schemas are mapped to local schema files.
+
+Validated JSON must have one field that will refer to an external schema, which will be mapped to local file and then
+validation of any chosen part of JSON is executed using local schema.
+
+StndDefined validation is integrated with the event collecting functionality available under the endpoint
+*/eventListener/v7*. Process of event collecting includes steps in the following order:
+
+1. General event validation (1st stage validation)
+2. Event transformation
+3. **StndDefined event validation** (2nd stage validation)
+4. Event routing to DMaaP
+
+Mapping file is cached on stndDefined validator creation, so it's not read every time validation is performed.
+Schemas' content couldn't be cached due to an external library restrictions (OpenAPI4j).
+
+The value of the 'stndDefinedNamespace' field in any incoming stndDefined JSON event is used to match the topic from
+property *collector.dmaap.streamid*.
 
 Requirements for stndDefined validation
 ---------------------------------------
@@ -112,22 +158,22 @@ Below are scenarios when, the stndDefined validation will end with failure and r
 - Field of event referenced under the property event.externalSchema.schemaRefPath has publicURL which is not mapped in the schemas mappings
 - Field defining public schema in event (by default */event/stndDefinedFields/schemaReference*) after "#" has non existing reference in schema file
 
-Schemas repository description
-------------------------------
+Schema repository description
+-----------------------------
 
 Schemas and mapping file location might be configured to any local directory through properties in collector.properties
 as described in 'StndDefined properties' section.
 
-By default schemas repository is located under *etc/externalSchema* directory, as well as schemas mapping file called
-*schema-map.json*. There are files stored in the project repository which are schemas from 3GPP organisation. Every
-organisation which adds or mounts external schemas should store them in folder named by organisation
-name. Further folders structure may be whatever as long as schemas are correctly referenced in the mapping file.
+By default schemas repository is located under */opt/app/VESCollector/etc/externalSchema* directory, as well as schemas mapping file called
+*schema-map.json*. Every organisation which adds or mounts external schemas should store them in folder named by
+organisation name. Further folders structure may be whatever as long as schemas are correctly referenced in the mapping
+file.
 
-Sample directory tree of *etc* directory:
+Sample directory tree of */opt/app/VESCollector/etc* directory:
 
 .. code-block:: text
 
-    etc
+    /opt/app/VESCollector/etc
     ├── ...
     └── externalRepo
         ├── schema-map.json
@@ -135,8 +181,8 @@ Sample directory tree of *etc* directory:
             └── rep
                 └── sa5
                     └── data-models
-                        └── blob
-                            └── REL-16
+                        └── tree
+                            └── SA88-Rel16
                                 └── OpenAPI
                                     ├── faultMnS.yaml
                                     ├── heartbeatNtf.yaml
@@ -146,13 +192,13 @@ Sample directory tree of *etc* directory:
 Routing of stndDefined domain events
 ------------------------------------
 
-All events, expect those with 'stndDefined' domain, are routed to DMaaP topics basing on domain value. Events with
+All events, except those with 'stndDefined' domain, are routed to DMaaP topics based on domain value. Events with
 'stndDefined' domain are sent to proper topic basing on field 'stndDefinedNamespace'.
 
 This is the only difference from standard event routing, specific for 'stndDefined' domain. As in every other event
 routing value is being mapped for specific DMaaP stream. Stream ID to DMaaP channels mappings are located in
-*etc/collector.properties* file under property *collector.dmaap.streamid*. Channels descriptions are in
-*etc/DmaapConfig.json*, where destination DMaaP topics are selected.
+*/opt/app/VESCollector/etc/collector.properties* file under property *collector.dmaap.streamid*. Channels descriptions are in
+*/opt/app/VESCollector/etc/DmaapConfig.json*, where destination DMaaP topics are selected.
 
 With stndDefined domain managment 4 new mappings were added. Their routing has been described in the table below:
 
