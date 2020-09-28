@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "PM Subscription Handler Service",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "PM subscription handler enables control of performance management jobs on network functions in ONAP"
   },
   "produces": [
@@ -46,9 +46,21 @@
                           "type": "string",
                           "description": "Status of the Subscription on the Network Function"
                         },
-                        "orchestration_status": {
+                        "model_invariant_id": {
                           "type": "string",
-                          "description": "Orchestration status of the Network Function"
+                          "description": "The NF model-invariant-id defined in A&AI"
+                        },
+                        "model_version_id": {
+                          "type": "string",
+                          "description": "The NF model-version-id defined in A&AI"
+                        },
+                        "sdnc_model_name": {
+                          "type": "string",
+                          "description": "The sdnc_model_name (blueprint name) defined in A&AI"
+                        },
+                        "sdnc_model_version": {
+                          "type": "string",
+                          "description": "The sdnc_model_version (blueprint version) defined in A&AI"
                         }
                       }
                     }

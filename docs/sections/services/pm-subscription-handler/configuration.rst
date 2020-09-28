@@ -61,53 +61,57 @@ The subscription is configured within the monitoring policy. The subscription mo
 
 **subscription**
 
-::
+.. code-block:: json
 
-         {
-           "subscription": {
-             "subscriptionName": "someExtraPM-AllKista-gNB-R2B",
-             "administrativeState": "UNLOCKED",
-             "fileBasedGP": 15,
-             "fileLocation": "/pm/pm.xml",
-             "nfFilter": {
-               "swVersions": [
-                 "1.0.0",
-                 "1.0.1"
-               ],
-               "nfNames": [
-                 "ABC",
-                 "DEF",
-                 "foo.*"
-               ]
-             },
-             "measurementGroups": [
-                "measurementGroup": {
-                  "measurementTypes": [
-                    {
-                      "measurementType": "EutranCell.*"
-                    },
-                    {
-                      "measurementType": "EutranCellRelation.pmCounter1"
-                    },
-                    {
-                      "measurementType": "EutranCellRelation.pmCounter2"
-                    }
-                  ],
-                  "managedObjectDNsBasic": [
-                    {
-                      "DN": "ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1"
-                    },
-                    {
-                      "DN": "ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1, EUtranCellRelation=CityCenter2"
-                    },
-                    {
-                      "DN": "ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1, EUtranCellRelation=CityCenter3"
-                    }
-                  ]
-                }
+    {
+       "subscription":{
+          "subscriptionName":"someExtraPM-All-gNB-R2B",
+          "administrativeState":"UNLOCKED",
+          "fileBasedGP":15,
+          "fileLocation":"/pm/pm.xml",
+          "nfFilter":{
+             "nfNames":[
+                "^pnf1.*"
+             ],
+             "modelInvariantIDs":[
+                "5845y423-g654-6fju-po78-8n53154532k6",
+                "7129e420-d396-4efb-af02-6b83499b12f8"
+             ],
+             "modelVersionIDs":[
+                "e80a6ae3-cafd-4d24-850d-e14c084a5ca9"
              ]
-           }
-         }
+          },
+          "measurementGroups":[
+             {
+                "measurementGroup":{
+                   "measurementTypes":[
+                      {
+                         "measurementType":"EutranCell.*"
+                      },
+                      {
+                         "measurementType":"EutranCellRelation.pmCounter1"
+                      },
+                      {
+                         "measurementType":"EutranCellRelation.pmCounter2"
+                      }
+                   ],
+                   "managedObjectDNsBasic":[
+                      {
+                         "DN":"ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1"
+                      },
+                      {
+                         "DN":"ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1, EUtranCellRelation=CityCenter2"
+                      },
+                      {
+                         "DN":"ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1, EUtranCellRelation=CityCenter3"
+                      }
+                   ]
+                }
+             }
+          ]
+       }
+    }
+
 
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
 | Field               | Description                                                                                                                                                                | Type | Required | Values |
@@ -131,21 +135,21 @@ The ``nfFilter`` will be used in order to filter the list of NF's retrieved from
 can be filtered on, nfNames, modelInvariantIDs and/or modelVersionIDs.  All 3 of these are optional fields but at
 least 1 must be present for the filter to work.
 
-::
+.. code-block:: json
 
-        "nfFilter": {
-            "nfNames":[
-               "^pnf.*",
-               "^vnf.*"
-            ],
-            "modelInvariantIDs": [
-               "5845y423-g654-6fju-po78-8n53154532k6",
-               "7129e420-d396-4efb-af02-6b83499b12f8"
-            ],
-            "modelVersionIDs": [
-               "e80a6ae3-cafd-4d24-850d-e14c084a5ca9"
-            ]
-        }
+    "nfFilter": {
+        "nfNames":[
+           "^pnf.*",
+           "^vnf.*"
+        ],
+        "modelInvariantIDs": [
+           "5845y423-g654-6fju-po78-8n53154532k6",
+           "7129e420-d396-4efb-af02-6b83499b12f8"
+        ],
+        "modelVersionIDs": [
+           "e80a6ae3-cafd-4d24-850d-e14c084a5ca9"
+        ]
+    }
 
 +------------------------+-----------------------------------------------------------------------------------------------+------+----------+
 | Field                  | Description                                                                                   | Type | Required |
@@ -161,32 +165,32 @@ least 1 must be present for the filter to work.
 
 ``measurementGroup`` is used to specify the group of measurements that will be collected.
 
-::
+.. code-block:: json
 
-         "measurementGroup": {
-           "measurementTypes": [
-             {
-               "measurementType": "EutranCell.*"
-             },
-             {
-               "measurementType": "EutranCellRelation.pmCounter1"
-             },
-             {
-               "measurementType": "EutranCellRelation.pmCounter2"
-             }
-           ],
-           "managedObjectDNsBasic": [
-             {
-               "DN": "ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1"
-             },
-             {
-               "DN": "ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1, EUtranCellRelation=CityCenter2"
-             },
-             {
-               "DN": "ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1, EUtranCellRelation=CityCenter3"
-             }
-           ]
+    "measurementGroup": {
+       "measurementTypes": [
+         {
+           "measurementType": "EutranCell.*"
+         },
+         {
+           "measurementType": "EutranCellRelation.pmCounter1"
+         },
+         {
+           "measurementType": "EutranCellRelation.pmCounter2"
          }
+       ],
+       "managedObjectDNsBasic": [
+         {
+           "DN": "ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1"
+         },
+         {
+           "DN": "ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1, EUtranCellRelation=CityCenter2"
+         },
+         {
+           "DN": "ManagedElement=1,ENodeBFunction=1,EUtranCell=CityCenter1, EUtranCellRelation=CityCenter3"
+         }
+       ]
+    }
 
 +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+
 | Field                 | Description                                                                                                                                       | Type | Required |
@@ -208,22 +212,104 @@ Subscriber:
 
         AAI-EVENT
 
-This topic is used so that the PMSH can listen for new NFs getting registered. If the NF matches the NF filter (See
-:ref:`Configuration<Configuration>`) it will be added to the relevant subscription. This topic is **AAI_EVENT**.
+This topic is used so that the PMSH can listen for new NFs getting added or deleted. If the NF matches the NF filter (See
+:ref:`Configuration<Configuration>`) it will be added to the relevant subscription.
 
 ::
 
         unauthenticated.PMSH_CL_INPUT
 
-This topic enables the operational policy to provide feedback on the status of a subscription attempt back to the PMSH service.
+This topic enables the operational policy to provide feedback on the status of a subscription attempt, back to
+PMSH, with a message of either success or failed.
+
+Example of successful CREATE event sent from policy:
+
+.. code-block:: json
+
+    {
+        "name": "ResponseEvent",
+        "nameSpace": "org.onap.policy.apex.onap.pmcontrol",
+        "source": "APEX",
+        "target": "DCAE",
+        "version": "0.0.1",
+        "status": {
+            "subscriptionName": "subscriptiona",
+            "nfName": "PNF104",
+            "changeType": "CREATE",
+            "message": "success"
+        }
+    }
 
 
 Publisher:
 ^^^^^^^^^^
 
+.. _DCAE_CL_OUTPUT_Topic:
+
 ::
 
         unauthenticated.DCAE_CL_OUTPUT
 
-The PMSH publishes subscriptions to this topic. They will be consumed by an operational policy which will make a request to CDS to
+PMSH publishes subscriptions to this topic. They will be consumed by an operational policy which will make a request to CDS to
 change the state of the subscription.
+
+Example event sent from PMSH:
+
+.. code-block:: json
+
+    {
+       "nfName":"PNF104",
+       "policyName":"pmsh-operational-policy",
+       "closedLoopControlName":"pmsh-control-loop",
+       "blueprintName":"pm_control",
+       "blueprintVersion":"1.2.4",
+       "changeType":"CREATE",
+       "subscription":{
+          "administrativeState":"UNLOCKED",
+          "subscriptionName":"subscriptiona",
+          "fileBasedGP":15,
+          "fileLocation":"/pm/pm.xml",
+          "measurementGroups":[
+             {
+                "measurementGroup":{
+                   "measurementTypes":[
+                      {
+                         "measurementType":"countera"
+                      },
+                      {
+                         "measurementType":"counterb"
+                      }
+                   ],
+                   "managedObjectDNsBasic":[
+                      {
+                         "DN":"dna"
+                      },
+                      {
+                         "DN":"dnb"
+                      }
+                   ]
+                }
+             },
+             {
+                "measurementGroup":{
+                   "measurementTypes":[
+                      {
+                         "measurementType":"counterc"
+                      },
+                      {
+                         "measurementType":"counterd"
+                      }
+                   ],
+                   "managedObjectDNsBasic":[
+                      {
+                         "DN":"dnc"
+                      },
+                      {
+                         "DN":"dnd"
+                      }
+                   ]
+                }
+             }
+          ]
+       }
+    }

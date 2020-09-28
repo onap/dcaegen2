@@ -6,22 +6,22 @@
 Installation
 ============
 
-In Frankfurt, the PMSH can be deployed using the DCAE Dashboard or via CLI. Steps to deploy using CLI will be shown
+In Guilin, the PMSH can be deployed using the DCAE Dashboard or via CLI. Steps to deploy using CLI will be shown
 below.
 
 Deployment Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to successfully deploy the PMSH, one will need administrator access to the kubernetes cluster, as a service
-will need to be exposed. As well as this, the following components are required to be running. They can be verified by
-running the health checks.
+In order to successfully deploy the PMSH, one will need administrator access to the kubernetes cluster, as the following
+procedure will be run from the dcae-bootstrap pod.
+As well as this, the following components are required to be running. They can be verified by running the health checks.
 
     - DCAE Platform
     - DMaaP
     - A&AI
     - AAF
 
-The healthcheck can be run from one of the Kubernetes controllers.
+The robot healthcheck can be run from one of the Kubernetes controllers.
 
 .. code-block:: bash
 
@@ -30,41 +30,43 @@ The healthcheck can be run from one of the Kubernetes controllers.
 Deployment Procedure
 ^^^^^^^^^^^^^^^^^^^^
 
-To deploy the PMSH in the Frankfurt release, the monitoring policy needs to be pushed directly to CONSUL. The CONSUL
-service must first be exposed.
+To deploy the PMSH in the Frankfurt release, the monitoring policy needs to be pushed directly to CONSUL.
+To begin, kubectl exec on to the dcae-bootstrap pod and move to the /tmp directory.
 
 .. code-block:: bash
 
-        kubectl expose svc -n onap consul-server-ui --name=x-consul-server-ui --type=NodePort
+        kubectl exec -itn <onap-namespace> onap-dcae-bootstrap bash
 
-The monitoring policy can then be pushed with the following request, for information on creating a monitoring policy see
-See :ref:`Subscription configuration<Subscription>`
-
-.. code-block:: bash
-
-        curl -X PUT http://<k8s-node-ip>:<consul-port>/v1/kv/dcae-pmsh:policy \
-            -H 'Content-Type: application/json' \
-            -d @monitoring-policy.json
+For information on creating a monitoring policy see :ref:`Subscription configuration<Subscription>`.
 
 The following JSON is an example monitoring policy.
 
 .. literalinclude:: resources/monitoring-policy.json
     :language: json
 
-To deploy the PMSH microservice using the deployment handler API, the ``serviceTypeId`` is needed, this can be retrieved
-using the inventory API
+The monitoring-policy.json can then be PUT with the following curl request.
 
 .. code-block:: bash
 
-        curl https://<k8s-node-ip>:<inventory-port>/dcae-service-types
+        curl -X PUT http://consul:8500/v1/kv/dcae-pmsh:policy \
+            -H 'Content-Type: application/json' \
+            -d @monitoring-policy.json
 
-The ``serviceTypeId`` for the PMSH can be found under typeID. The PMSH can then be deployed.
+To deploy the PMSH microservice using the deployment handler API, the ``serviceTypeId`` is needed. This can be retrieved
+using the inventory API.
 
 .. code-block:: bash
 
-        curl https://<k8s-node-ip>:<dep-handler-port>/dcae-deployments/dcae-pmsh \
+        curl -k https://inventory:8080/dcae-service-types \
+            | grep k8s-pmsh | jq '.items[] | select(.typeName == "k8s-pmsh") | .typeId'
+
+Finally, deploy the PMSH via dcae deployment handler.
+
+.. code-block:: bash
+
+        curl -k https://deployment-handler:8443/dcae-deployments/dcae-pmsh \
             -H 'Content-Type: application/json' \
             -d '{
                 "inputs": (),
-                "serviceTypeId": "<typeId>"
+                "serviceTypeId": "<k8s-pmsh-typeId>"
             }'
