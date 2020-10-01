@@ -48,20 +48,20 @@ Format of the schema mapping file is a JSON file with list of mappings, as shown
 
     [
       {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/tree/SA88-Rel16/OpenAPI/faultMnS.yaml",
-        "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml"
+        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/faultMnS.yaml",
+        "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/faultMnS.yaml"
       },
       {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/tree/SA88-Rel16/OpenAPI/heartbeatNtf.yaml",
-        "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/heartbeatNtf.yaml"
+        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/heartbeatNtf.yaml",
+        "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/heartbeatNtf.yaml"
       },
       {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/tree/SA88-Rel16/OpenAPI/PerDataFileReportMnS.yaml",
-        "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/PerDataFileReportMnS.yaml"
+        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/PerDataFileReportMnS.yaml",
+        "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/PerDataFileReportMnS.yaml"
       },
       {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/data-models/tree/SA88-Rel16/OpenAPI/provMnS.yaml",
-        "localURL": "3gpp/rep/sa5/data-models/blob/REL-16/OpenAPI/provMnS.yaml"
+        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/provMnS.yaml",
+        "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/provMnS.yaml"
       }
     ]
 
@@ -180,8 +180,8 @@ Sample directory tree of */opt/app/VESCollector/etc* directory:
         └── 3gpp
             └── rep
                 └── sa5
-                    └── data-models
-                        └── tree
+                    └── MnS
+                        └── blob
                             └── SA88-Rel16
                                 └── OpenAPI
                                     ├── faultMnS.yaml
