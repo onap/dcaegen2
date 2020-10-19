@@ -259,6 +259,7 @@ Example event sent from PMSH:
 
     {
        "nfName":"PNF104",
+       "ipv4Address": "10.12.13.12",
        "policyName":"pmsh-operational-policy",
        "closedLoopControlName":"pmsh-control-loop",
        "blueprintName":"pm_control",
