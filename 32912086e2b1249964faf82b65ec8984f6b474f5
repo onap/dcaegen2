@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bbd3cb3e_bbb8704c",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-10-29T20:31:33Z",
+      "side": 1,
+      "message": "\"Under OOM (Kubernetes) deployment\" \u003d\u003e \"Under OOM (Kubernetes)\"",
+      "revId": "32912086e2b1249964faf82b65ec8984f6b474f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
