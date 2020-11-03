@@ -1,0 +1,1107 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API to manage deployment of microservices using blueprints. HTTP Basic authorization schema is required to authenticate users for all the resource endpoints. The client sends HTTP requests with an Authorization header  containing base64-encoded username:password string.",
+    "version": "1.4.0",
+    "title": "DCAE Dashboard API",
+    "contact": {
+      "email": "rp5662@att.com"
+    }
+  },
+  "host": "dcae-dashboard:8080",
+  "basePath": "/ccsdk-app/nb-api/v2",
+  "tags": [
+    {
+      "name": "Blueprints",
+      "description": "Query blueprint information"
+    },
+    {
+      "name": "Deployments",
+      "description": "Manage deployments"
+    },
+    {
+      "name": "Tenants",
+      "description": "Query Cloudify Tenants"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/tenants": {
+      "get": {
+        "tags": [
+          "Tenants"
+        ],
+        "summary": "Lists all Cloudify Tenants",
+        "description": "Query all Tenant names from Cloudify",
+        "operationId": "List Tenants",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Tenant"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/deployments": {
+      "get": {
+        "tags": [
+          "Deployments"
+        ],
+        "summary": "List all Deployments",
+        "description": "Query all deployments or Service objects from Inventory",
+        "operationId": "List Deployments",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "pagination control - page number",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "pagination control - page size",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "filters",
+            "in": "query",
+            "description": "search filters, {\"_include\":\"id\", \"tenant\":\"onap-tenant-1\",\"serviceId\":\"dcae\"}",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Deployment"
+              }
+            },
+            "headers": {
+              "Link": {
+                "type": "string",
+                "description": "pagination header"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Deployments"
+        ],
+        "summary": "Initiate a deployment (install) operation for an application or service",
+        "description": "Controller sends the blueprint and required inputs to Deployment Handler microservice to initiate the deployment process",
+        "operationId": "Create Deployment",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Inputs to initiate a deployment: blueprint ID from inventory, Cloudify tenant name, blueprint inputs",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DeploymentInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/DeploymentResource"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/deployments/{deploymentId}": {
+      "delete": {
+        "tags": [
+          "Deployments"
+        ],
+        "summary": "Initiate an uninstall operation for an application or service",
+        "description": "Controller sends the deployment reference to Deployment Handler microservice to initiate the uninstall process",
+        "operationId": "Delete Deployment",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "deploymentId",
+            "in": "path",
+            "description": "ID of deployment to query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tenant",
+            "in": "query",
+            "description": "Cloudify Tenant name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Deployments"
+        ],
+        "summary": "Upgrade or Rollback an existing deployment using Cloudify Helm plugin",
+        "description": "Upgrade or Rollback an existing deployment using Cloudify Helm plugin",
+        "operationId": "Upgrade/Rollback Deployment",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "deploymentId",
+            "in": "path",
+            "description": "ID of deployment in context",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Cloudify Execution Request object that has parameters to start either an upgrade or a rollback execution workflow",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CloudifyDeploymentUpgradeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          },
+          "404": {
+            "description": "Deployment not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Deployments"
+        ],
+        "summary": "Get a Deployment",
+        "description": "Query a deployment or Service object from Inventory",
+        "operationId": "Get Deployment",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "deploymentId",
+            "in": "path",
+            "description": "ID of deployment to query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Deployment"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/deployments/{deploymentId}/executions": {
+      "get": {
+        "tags": [
+          "Deployments"
+        ],
+        "summary": "Deployment execution status",
+        "description": "Query deployment workflow execution status",
+        "operationId": "Deployment Status",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "deploymentId",
+            "in": "path",
+            "description": "ID of deployment to query execution status",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tenant",
+            "in": "query",
+            "description": "tenant name associated with the deployment",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/execution"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/deployments/{deploymentId}/health": {
+      "get": {
+        "tags": [
+          "Deployments"
+        ],
+        "summary": "Deployment health status",
+        "description": "Query consul for service health using deployment ID filter",
+        "operationId": "Deployment health",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "deploymentId",
+            "in": "path",
+            "description": "ID of deployment to query service health",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/serviceHealth"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/deployments/{deploymentId}/inputs": {
+      "get": {
+        "tags": [
+          "Deployments"
+        ],
+        "summary": "Deployment inputs",
+        "description": "Get blueprint inputs used to create deployment",
+        "operationId": "Deployment Inputs",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "deploymentId",
+            "in": "path",
+            "description": "ID of deployment to query execution status",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tenant",
+            "in": "query",
+            "description": "tenant name associated with the deployment",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/deploymentInputs"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/blueprints": {
+      "get": {
+        "tags": [
+          "Blueprints"
+        ],
+        "summary": "Find all blueprint templates",
+        "description": "Fetch the blueprints data from inventory",
+        "operationId": "List Blueprints",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "page number",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "page size",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filters",
+            "in": "query",
+            "description": "search filters, {\"owner\":\"user1\", \"name\":\"user1-bp1\",\"id\":\"2334-343\"}",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of `DCAEServiceType` objects",
+            "schema": {
+              "$ref": "#/definitions/InlineResponse200"
+            },
+            "headers": {
+              "Link": {
+                "type": "string",
+                "description": "pagination header"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid tag value"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Blueprints"
+        ],
+        "summary": "Create/Upload a new blueprint template",
+        "description": "Upload a new blueprint template into inventory",
+        "operationId": "Create Blueprint",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "upload blueprint request to inventory",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DCAEServiceTypeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "A `DCAEServiceType` object",
+            "schema": {
+              "$ref": "#/definitions/InlineResponse200"
+            }
+          },
+          "400": {
+            "description": "Invalid tag value"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/blueprints/{typeId}": {
+      "delete": {
+        "tags": [
+          "Blueprints"
+        ],
+        "summary": "Delete a blueprint template",
+        "description": "Delete a blueprint template from inventory",
+        "operationId": "Delete Blueprint",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "typeId",
+            "in": "path",
+            "description": "ID of blueprint to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
+    "/blueprints/{typeId}/services": {
+      "get": {
+        "tags": [
+          "Blueprints"
+        ],
+        "summary": "Get Services mapped to a blueprint template",
+        "description": "Get Deployment References existing for a blueprint",
+        "operationId": "Get Deployments for a blueprint",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "typeId",
+            "in": "path",
+            "description": "ID of blueprint to query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "responses": {
+    "UnauthorizedError": {
+      "description": "Authentication information is missing or invalid",
+      "headers": {
+        "WWW_Authenticate": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Tenant": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "cloudify tenant name"
+        }
+      }
+    },
+    "InlineResponse200": {
+      "type": "object",
+      "properties": {
+        "totalItems": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DCAEServiceTypeSummary"
+          }
+        }
+      }
+    },
+    "InlineResponse200Links": {
+      "type": "object",
+      "properties": {
+        "previousLink": {
+          "$ref": "#/definitions/Link"
+        },
+        "nextLink": {
+          "$ref": "#/definitions/Link"
+        }
+      },
+      "description": "Pagination links"
+    },
+    "ApiResponseMessage": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "Deployment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "cloudify deployment name",
+          "type": "string"
+        },
+        "blueprint_id": {
+          "description": "cloudify blueprint name",
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "tenant_name": {
+          "type": "string",
+          "description": "cloudify tenant name"
+        }
+      }
+    },
+    "InlineResponse2001": {
+      "type": "object",
+      "properties": {
+        "links": {
+          "$ref": "#/definitions/InlineResponse200Links"
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Deployment"
+          }
+        }
+      }
+    },
+    "UriBuilder": {
+      "type": "object"
+    },
+    "Link": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "rel": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "uriBuilder": {
+          "$ref": "#/definitions/UriBuilder"
+        },
+        "rels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "DCAEServiceComponent": {
+      "type": "object",
+      "required": [
+        "componentId",
+        "componentLink",
+        "componentSource",
+        "componentType",
+        "created",
+        "modified",
+        "shareable"
+      ],
+      "properties": {
+        "componentId": {
+          "type": "string",
+          "description": "The id format is unique to the source"
+        },
+        "componentLink": {
+          "description": "Link to the underlying resource of this component",
+          "$ref": "#/definitions/Link"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "modified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "componentType": {
+          "type": "string"
+        },
+        "componentSource": {
+          "type": "string",
+          "description": "Specifies the name of the underying source service that is responsible for this components",
+          "enum": [
+            "DCAEController",
+            "DMaaPController"
+          ]
+        },
+        "status": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string",
+          "description": "Location information of the component"
+        },
+        "shareable": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Used to determine if this component can be shared amongst different DCAE services"
+        }
+      }
+    },
+    "DCAEServiceTypeRequest": {
+      "type": "object",
+      "required": [
+        "blueprintTemplate",
+        "owner",
+        "typeName",
+        "typeVersion",
+        "component"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string"
+        },
+        "typeName": {
+          "type": "string",
+          "description": "Descriptive name for this DCAE service type"
+        },
+        "typeVersion": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Version number for this DCAE service type"
+        },
+        "blueprintTemplate": {
+          "type": "string",
+          "description": "String representation of a Cloudify blueprint with unbound variables"
+        },
+        "application": {
+          "type": "string",
+          "description": "controller application name"
+        },
+        "component": {
+          "type": "string",
+          "description": "onboarding component name  e.g. dcae"
+        }
+      }
+    },
+    "DCAEServiceType": {
+      "type": "object",
+      "required": [
+        "blueprintTemplate",
+        "created",
+        "owner",
+        "selfLink",
+        "typeId",
+        "typeName",
+        "typeVersion"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string"
+        },
+        "typeName": {
+          "type": "string",
+          "description": "Descriptive name for this DCAE service type"
+        },
+        "typeVersion": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Version number for this DCAE service type"
+        },
+        "blueprintTemplate": {
+          "type": "string",
+          "description": "String representation of a Cloudify blueprint with unbound variables"
+        },
+        "serviceIds": {
+          "type": "array",
+          "description": "List of service ids that are used to associate with DCAE service type. DCAE service types with this propery as null or empty means them apply for every service id.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "vnfTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "serviceLocations": {
+          "type": "array",
+          "description": "List of service locations that are used to associate with DCAE service type. DCAE service types with this propery as null or empty means them apply for every service location.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "asdcServiceId": {
+          "type": "string",
+          "description": "Id of service this DCAE service type is associated with. Value source is from ASDC's notification event's field `serviceInvariantUUID`."
+        },
+        "asdcResourceId": {
+          "type": "string",
+          "description": "Id of vf/vnf instance this DCAE service type is associated with. Value source is from ASDC's notification event's field `resourceInvariantUUID`."
+        },
+        "asdcServiceURL": {
+          "type": "string",
+          "description": "URL to the ASDC service model"
+        },
+        "typeId": {
+          "type": "string",
+          "description": "Unique identifier for this DCAE service type"
+        },
+        "selfLink": {
+          "description": "Link to self where the Link.title is typeName",
+          "$ref": "#/definitions/Link"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created timestamp for this DCAE service type in epoch time"
+        },
+        "deactivated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Deactivated timestamp for this DCAE service type in epoch time"
+        }
+      }
+    },
+    "DCAEServiceTypeSummary": {
+      "type": "object",
+      "required": [
+        "created",
+        "owner",
+        "selfLink",
+        "typeId",
+        "typeName",
+        "typeVersion",
+        "application",
+        "component"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string"
+        },
+        "typeName": {
+          "type": "string",
+          "description": "Descriptive name for this DCAE service type"
+        },
+        "application": {
+          "type": "string",
+          "description": "application name"
+        },
+        "component": {
+          "type": "string",
+          "description": "component name"
+        },
+        "typeVersion": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Version number for this DCAE service type"
+        },
+        "typeId": {
+          "type": "string",
+          "description": "Unique identifier for this DCAE service type"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created timestamp for this DCAE service type in epoch time"
+        }
+      }
+    },
+    "CloudifyDeploymentUpgradeRequest": {
+      "type": "object",
+      "required": [
+        "chartVersion",
+        "chartRepo",
+        "config_url",
+        "config_format",
+        "tenant",
+        "workflow"
+      ],
+      "properties": {
+        "chartVersion": {
+          "type": "string",
+          "description": "Helm package version used for install"
+        },
+        "chartRepo": {
+          "type": "string",
+          "description": "Helm repository URL for the chart"
+        },
+        "config_url": {
+          "type": "string",
+          "description": "Helm repository URL for the chart values to update"
+        },
+        "config_format": {
+          "type": "string",
+          "description": "yaml format or json format"
+        },
+        "tenant": {
+          "type": "string",
+          "description": "cloudify tenant name for the deployment upgrade"
+        },
+        "workflow": {
+          "type": "string",
+          "description": "input values are upgrade or rollback - helm upgrade workflow or helm rollback workflow "
+        }
+      }
+    },
+    "DeploymentInput": {
+      "type": "object",
+      "required": [
+        "component",
+        "tag",
+        "blueprintId",
+        "tenant",
+        "inputs"
+      ],
+      "properties": {
+        "component": {
+          "type": "string",
+          "description": "component or namespace for the service"
+        },
+        "tag": {
+          "type": "string",
+          "description": "unique tag to identify the deployment. A non-unique value results in name conflict error"
+        },
+        "blueprintId": {
+          "type": "string",
+          "description": "typeId from inventory, a unique Id for the blueprint, this can be replaced with blueprintName and blueprintVersion"
+        },
+        "blueprintName": {
+          "type": "string",
+          "description": "Descriptive name for this DCAE service type"
+        },
+        "blueprintVersion": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Version number for this DCAE service type, optional. Defaults to 1."
+        },
+        "tenant": {
+          "type": "string",
+          "description": "cloudify tenant name"
+        },
+        "inputs": {
+          "type": "object",
+          "description": "JSON object containing the input parameter names and values"
+        }
+      }
+    },
+    "deploymentInputs": {
+      "type": "object"
+    },
+    "serviceHealth": {
+      "type": "object",
+      "properties": {
+        "node": {
+          "type": "string",
+          "description": "The node where service is deployed"
+        },
+        "checkID": {
+          "type": "string",
+          "description": "A unique identifier for the service health check"
+        },
+        "name": {
+          "type": "string",
+          "description": "A unique name for this service health check"
+        },
+        "status": {
+          "type": "string",
+          "description": "Health check status"
+        },
+        "serviceID": {
+          "type": "string",
+          "description": "An identifier containing combination of consul registration ID and consul service name"
+        },
+        "serviceName": {
+          "type": "string",
+          "description": "A unique consul service name"
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "description": "The time the execution was queued at"
+        },
+        "deployment_id": {
+          "type": "string",
+          "description": "The id of the deployment the execution is in the context of"
+        },
+        "id": {
+          "type": "string",
+          "description": "A unique identifier for the execution"
+        },
+        "status": {
+          "type": "string",
+          "description": "The executions status"
+        },
+        "workflow_id": {
+          "type": "string",
+          "description": "The id/name of the workflow the execution is of"
+        },
+        "tenant_name": {
+          "type": "string",
+          "description": "Cloudify tenant name where the deployment was done"
+        }
+      }
+    },
+    "DeploymentResourceLinks": {
+      "type": "object",
+      "properties": {
+        "self": {
+          "description": "Link to retrieve information about the service being deployed",
+          "type": "string"
+        },
+        "outcome": {
+          "description": "Link to retrieve information about deployment outcome",
+          "type": "string"
+        },
+        "status": {
+          "description": "Link to retrieve information about the status of the installation workflow",
+          "type": "string"
+        }
+      }
+    },
+    "DeploymentResource": {
+      "type": "object",
+      "properties": {
+        "deployment_id": {
+          "type": "string",
+          "description": "unique ID for the deployment resource"
+        },
+        "links": {
+          "$ref": "#/definitions/DeploymentResourceLinks",
+          "description": "Links that the API client can access"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
