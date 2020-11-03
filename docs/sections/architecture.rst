@@ -82,7 +82,6 @@ ONAP supports deployment through OOM Helm Chart currently (Heat deployment suppo
 
 To keep the ONAP footprint minimal, only minimal set of MS (required for ONAP Integration usecases) are deployed via bootstrap pod. Rest of service blueprints are available for operator to deploy on-demand as required. 
 
-The PNDA platform service is an optional component that can be installed when using the OOM Helm Chart installation method on Openstack based Kubernetes infrastructure.
 
 More details of the DCAE deployment can be found under Installation section.
 
@@ -94,7 +93,7 @@ For ONAP  DCAE participates in the following use cases.
 
 - vDNS:  VES collector, TCA analytics
 
-- vFW:  VES collector, TCA analytics, PNDA based analytics
+- vFW:  VES collector, TCA analytics
 
 - vCPE:  VES collector, TCA analytics
 

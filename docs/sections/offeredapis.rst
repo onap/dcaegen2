@@ -14,7 +14,6 @@ Offered APIs
    apis/ves-hv/index.rst
    apis/PRH.rst
    apis/DFC.rst
-   apis/PNDA.rst
    apis/pmmapper.rst
    apis/PMSH.rst
    apis/SDK.rst
