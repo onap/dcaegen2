@@ -1,11 +1,30 @@
-Deployment Steps
+./docs/sections/services/datalake-handler/installation.rst:86:    .. image :: ./feeder-log.pngDeployment Steps
 ################
-DL-handler consists of two pods- the feeder and admin UI. It can be deployed by using cloudify blueprint. Datalake can be easily deployed through DCAE cloudify manager. The following steps guides you launch Datalake though cloudify manager.
+DL-handler consists of three pods- the feeder, admin UI and des. It can be deployed by using cloudify blueprint. Datalake can be easily deployed through DCAE cloudify manager. The following steps guides you launch Datalake though cloudify manager.
 
 Pre-requisite
 ----------------
-- Make sure mariadb-galera from OOM is properly deployed and functional.
-- An external database, such as Elasticsearch and MongoDB is deployed.
+Make sure mariadb-galera from OOM is properly deployed and functional.
+An external database, such as Elasticsearch and MongoDB is deployed. Install mongodb through the following command.
+
+     #docker run -itd --restart=always --name dl-mongo -p 27017:27017 mongo
+
+For DES service deployment, presto service is deployed. Here is a sample how presto deploy in the environment.
+    Build a presto image:
+      The package of presto version we are using is v0.0.2:presto-v0.0.2.tar.gz 
+
+        #docker build -t presto:v0.0.2 .
+        #docker tag presto:v0.0.2 registry.baidubce.com/onap/presto:v0.0.2
+        #docker push registry.baidubce.com/onap/presto:v0.0.2
+
+    Note： Replace the repository path with your own repository. 
+    
+    Install presto service:
+
+	    #kubectl -n onap run dl-presto --image=registry.baidubce.com/onap/presto:v0.0.2 --env="MongoDB_IP=192.168.235.11" --env="MongoDB_PORT=27017" 
+        #kubectl -n onap expose deployment dl-presto --port=9000 --target-port=9000 --type=NodePort
+
+    Note： MonoDB_IP and Mongo_PORT you can replace this two values with your own configuration.
 
 After datalake getting deployed, the admin UI can be used to configure the sink database address and credentials.
 
@@ -22,23 +41,25 @@ Login to the DCAE bootstrap pod through the following command.
 
 Validate Blueprint
 -------------------
-Before the blueprints uploading to Cloudify manager, the blueprints shoule be validated first throuhg the following command.
+Before the blueprints uploading to Cloudify manager, the blueprints shoule be validated first through the following command.
   .. code-block :: bash
 
     #cfy blueprint validate /bluerints/k8s-datalake-feeder.yaml
     #cfy blueprint validate /blueprints/k8s-datalake-admin-ui.yaml
+    #cfy blueprint validate /blueprints/k8s-datalake-des.yaml
 
 Upload the Blueprint to Cloudify Manager.
 -----------------------------------------
 After validating, we can start to proceed blueprints uploading.
   .. code-block :: bash
 
-     #cfy blueprint upload -b datalake-feeder /bluerints/k8s-datalake-feeder.yaml
-     #cfy blueprint upload -b datalake-admin-ui /blueprints/k8s-datalake-admin-ui.yaml
+     #cfy blueprint upload -b dl-feeder /bluerints/k8s-datalake-feeder.yaml
+     #cfy blueprint upload -b dl-admin-ui /blueprints/k8s-datalake-admin-ui.yaml
+     #cfy blueprint upload -b des /blueprints/k8s-datalake-des.yaml
 
 Verify Uploaded Blueprints
 --------------------------
-Using "cft blueprint list" to varify your work.
+Using "cfy blueprint list" to varify your work.
   .. code-block :: bash
 
      #cfy blueprint list
@@ -59,8 +80,9 @@ Create Deployment
 Here we are going to create deployments for both feeder and admin UI.
   .. code-block :: bash
 
-     #cfy deployments create -b datalake-feeder feeder-deploy
-     #cfy deployments create -b datalake-admin-ui admin-ui-deploy
+     #cfy deployments create -b dl-feeder feeder-deploy
+     #cfy deployments create -b dl-admin-ui admin-ui-deploy
+     #cfy deployments create -b des des
 
 Launch Service
 ---------------
@@ -69,6 +91,7 @@ Next, we are going to launch the datalake.
 
      #cfy executions start -d feeder-deploy install
      #cfy executions start -d admin-ui-deploy install
+     #cfy executions start -d des install
 
 
 Verify the Deployment Result
@@ -77,8 +100,11 @@ The following command can be used to list the datalake logs.
   .. code-block :: bash
      #kubectl logs <datalake-pod> -n onap
 
-The output should looks like.
+The feeder output should looks like.
     .. image :: ./feeder-log.png
+
+The des output should looks like.
+    .. image :: ./des-log.png
 
 If you find any Java exception from log, make sure that the external database and datalake configuration are properly configured.
 Admin UI can be used to configure the external database configuration.
@@ -91,10 +117,12 @@ Uninstall running component and delete deployment
 
      #cfy uninstall feeder-deploy
      #cfy uninstall admin-ui-deploy
+     #cfy uninstall des
 
 Delete Blueprint
 ------------------
   .. code-block :: bash
 
-     #cfy blueprints delete datalake-feeder
-     #cfy blueprints deltet datalake-admin-ui
+     #cfy blueprints delete dl-feeder
+     #cfy blueprints delett dl-admin-ui
+     #cfy blueprints delete des

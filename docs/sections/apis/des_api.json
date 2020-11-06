@@ -1,0 +1,67 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "This page lists all the rest apis for DataLake.",
+		"version": "1.2.0-SNAPSHOT",
+		"title": "DataLake Exposure Service Rest APIs"
+	},
+	"host": "r-node-1:31157/datalake/v1/",
+	"basePath": "/",
+	"tags": [{
+		"name": "des-controller",
+		"description": "DES Controller"
+	}],
+	"paths": {
+		"/exposure/{serviceId}": {
+			"post": {
+				"tags": ["des-controller"],
+				"summary": "Datalake Data Exposure Service.",
+				"operationId": "serveUsingPOST",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+				"parameters": [{
+					"in": "body",
+					"name": "requestMap",
+					"description": "requestMap",
+					"required": true,
+					"schema": {
+						"type": "object",
+						"additionalProperties": {
+							"type": "string"
+						}
+					}
+				}, {
+					"name": "serviceId",
+					"in": "path",
+					"description": "serviceId",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object",
+							"additionalProperties": {
+								"type": "object"
+							}
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	}
+}
