@@ -73,7 +73,7 @@ Below service components (mS) are available to be deployed on-demand.
  	- PM-Subscription Handler
  	- DataLake Handler (Admin and Feeder)
  	- Slice Analysis
- 	- DataExposure Service
+ 	- DataLake Extraction Service
 
     Notes:
 
@@ -130,7 +130,7 @@ DCAEGEN2-2262)
 - Following new services are delivered this release
 
     - Event Processors
-        - DataExposure Service 
+        - DataLake Extraction Service 
        
     - Analytics/RCA
         - Slice Analysis MS
