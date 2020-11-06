@@ -25,7 +25,7 @@ The architecture below depicts the DataLake MS as a part of ONAP. Only the relev
 
 .. image:: ./arch.PNG
 
-Note that not all data storage systems in the picture are supported. In R6, the following storage are supported:
+Note that not all data storage systems in the picture are supported. the following storage are supported:
   - MongoDB
   - Couchbase
   - Elasticsearch and Kibana
@@ -33,12 +33,11 @@ Note that not all data storage systems in the picture are supported. In R6, the 
 Depending on demands, new systems may be added to the supported list. In the following we use the term database for the storage, 
 even though HDFS is a file system (but with simple settings, it can be treats as a database, e.g. Hive.)
 
-Note that once the data is stored in databases, other ONAP components and systems will directly query data from the databases, 
-without interacting with DataLake Handler.
+Note that once the data is stored in databases, other ONAP components and systems will query data via rest API des service exposured.
 
 Description
 ~~~~~~~~~~~
-DataLate Handler's main function is to monitor and persist data flow through DMaaP. The databases are outside of ONAP scope, 
+DataLake Handler's main function is to monitor and persist data flow through DMaaP and provide a query API for other component or external services. The databases are outside of ONAP scope, 
 since the data is expected to be huge, and a database may be a complicated cluster consisting of thousand of nodes.
 
 Admin UI
@@ -69,8 +68,18 @@ Features
    and Flatten JSON Array (org.onap.datalake.feeder.service.StoreService).    
    - Connection to Kafka and DBs are secured
 
+Des
+~~~
+Architecture
+.. image:: ./des-arch.PNG
+
+Features
+
+   - Provide a data query API for other components to consume.
+   - Integrate with Presto to do data query via sql template.
 
 Links
 ~~~~~
    - DataLake Development Environment Setup https://wiki.onap.org/display/DW/DataLake+Development+Environment+Setup
+   - Des description and deployment steps: https://wiki.onap.org/display/DW/DES
    - Source Code https://gerrit.onap.org/r/gitweb?p=dcaegen2/services.git;a=tree;f=components/datalake-handler;hb=HEAD
