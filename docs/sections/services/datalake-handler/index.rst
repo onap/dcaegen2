@@ -9,6 +9,7 @@ DataLake-Handler MS
 It has a Admin UI, where a system administrator configures which Topics to be monitored, and to which data storage to store the data. 
 It is also used to manage the settings of the storage and associated data analytics tool. 
 The second part is the Feeder, which does the data transfer work and is horizontal scalable. 
+The third part, Data Extraction Service (DES), which will expose the data in the data storage via REST API for other ONAP components and external systems to consume.
 
 .. image:: DL-DES.PNG
 
