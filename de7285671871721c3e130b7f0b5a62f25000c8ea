@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c79a1228_fc4d468d",
+        "filename": "docs/sections/services/datalake-handler/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-09T20:36:47Z",
+      "side": 1,
+      "message": "expand the pre-requiste steps with exact commands",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 57
+      },
+      "revId": "de7285671871721c3e130b7f0b5a62f25000c8ea",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
