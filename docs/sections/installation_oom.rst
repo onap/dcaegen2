@@ -29,12 +29,6 @@ ONAP Integration usecases. Optionally operators can deploy on-demand other MS re
 <./installation_MS_ondemand>`.
 
 
-The PNDA data platform is an optional DCAE component that is placed under the **pnda**
-directory. Details for how to configure values to enable PNDA installation during Helm install
-are described in :doc:`Installing PNDA through Helm Chart
-<./installation_pnda>`.
-
-
 DCAE Chart Organization
 -----------------------
 
