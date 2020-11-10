@@ -24,3 +24,4 @@ DCAE Service components
    ./restconf/index.rst
    ./tcagen2-docker/index.rst
    ./datalake-handler/index.rst
+   ./slice-analysis-ms/index.rst
