@@ -59,6 +59,7 @@ The following lists the components included in ONAP DCAE .  All DCAE components 
         - Docker based Threshold Crosssing Analytics
         - Heartbeat Services
         - SON-Handler Service
+        - Slice Analysis
     - Event processors
         - PNF Registration Handler
         - VES Mapper Service
@@ -82,6 +83,7 @@ ONAP supports deployment through OOM Helm Chart currently (Heat deployment suppo
 
 To keep the ONAP footprint minimal, only minimal set of MS (required for ONAP Integration usecases) are deployed via bootstrap pod. Rest of service blueprints are available for operator to deploy on-demand as required. 
 
+The PNDA platform service is an optional component that can be installed when using the OOM Helm Chart installation method on Openstack based Kubernetes infrastructure.
 
 More details of the DCAE deployment can be found under Installation section.
 
@@ -93,7 +95,7 @@ For ONAP  DCAE participates in the following use cases.
 
 - vDNS:  VES collector, TCA analytics
 
-- vFW:  VES collector, TCA analytics
+- vFW:  VES collector, TCA analytics, PNDA based analytics
 
 - vCPE:  VES collector, TCA analytics
 
@@ -103,8 +105,11 @@ For ONAP  DCAE participates in the following use cases.
 
 - BBS : VES Collector, PRH, BBS-Event Processor, VES-Mapper, RESTConf Collector
 
-- 5g Bulk PM : DataFile Collector, PM-Mapper, HV-VES 
+- 5G Bulk PM : DataFile Collector, PM-Mapper, HV-VES
+
+- 5G OOF SON: VES collector, SON-Handler
+
+- 5G E2E Network Slicing: VES collector, Slice Analysis, DES, PM-Mapper, DFC, Datalake feeder
  
 
 In addition, DCAE supports on-demand deployment and configuration of service components via CLAMP.  In such case CLAMP invokes the deployment and configuration of additional TCA instances.
-
