@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "886ee106_f669073e",
+        "filename": "docs/sections/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-10T15:33:48Z",
+      "side": 1,
+      "message": "must be removed",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 168
+      },
+      "revId": "7a697c91e591be585fd2eaaf650923018bd6ce07",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2614025f_ffae20a8",
+        "filename": "docs/sections/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-10T15:33:48Z",
+      "side": 1,
+      "message": "PNDA was removed under this commit - https://gerrit.onap.org/r/c/dcaegen2/+/114568; pls rebase/submit updates",
+      "range": {
+        "startLine": 98,
+        "startChar": 36,
+        "endLine": 98,
+        "endChar": 58
+      },
+      "revId": "7a697c91e591be585fd2eaaf650923018bd6ce07",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
