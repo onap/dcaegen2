@@ -5,7 +5,7 @@ Configuration and Performance
 =============================
 
 PM Mapper Filtering
-"""""""""
+"""""""""""""""""""
 The PM Mapper performs data reduction, by filtering the PM telemetry data it receives.
 This filtering information is provided to the service as part of its configuration, and is used to identify desired PM measurements (measType) contained within the data.
 The service can accept an exact match to the measType or regex(java.util.regex) identifying multiple measTypes (it is possible to use both types simultaneously).

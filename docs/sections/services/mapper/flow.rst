@@ -2,9 +2,9 @@
 .. http://creativecommons.org/licenses/by/4.0
 .. Copyright 2018-2019 Tech Mahindra Ltd.
 
-============
-Flow for converting Rest Conf Collector notification
-============
+
+Flow for converting RestConf Collector notification
+===================================================
 .. [1] RestConf Collector generates rcc-notication in JSON format and publishes it on DMaaP topic **unathenticated.DCAE_RCC_OUTPUT**
 .. [2] The Universal VES Adapter(UVA) microservice has subscribed to this DMaaP topic.
 .. [3] On receiving an event from DMaaP, the adapter uses the corresponding mapping file and converts received notification into the VES event. It uses the notification-id from the received notification to find the required mapping file. 
@@ -20,9 +20,10 @@ Flow for converting Rest Conf Collector notification
    :align: left
    
    
-   ============
+
 Flow for converting SNMP Collector notification
-============
+===============================================
+
 .. [1] VNF submits SNMP traps to the SNMP collector.
 .. [2] Collector converts the trap into JSON format and publishes it on DMaaP topic **unauthenticated.ONAP-COLLECTOR-SNMPTRAP**
 .. [3] The Universal VES Adapter(UVA) microservice has subscribed to this DMaaP topic.

@@ -3,14 +3,14 @@ Deployment Steps
 DL-handler consists of two pods- the feeder and admin UI. It can be deployed by using cloudify blueprint. Datalake can be easily deployed through DCAE cloudify manager. The following steps guides you launch Datalake though cloudify manager.
 
 Pre-requisite
-----------------
+-------------
 - Make sure mariadb-galera from OOM is properly deployed and functional.
 - An external database, such as Elasticsearch and MongoDB is deployed.
 
 After datalake getting deployed, the admin UI can be used to configure the sink database address and credentials.
 
 Log-in to the DCAE Bootstrap POD
----------------------------------------------------
+--------------------------------
 
 First, we should find the bootstrap pod name through the following command and make sure that DCAE coudify manager is properly deployed.
   .. image :: .images/bootstrap-pod.png
@@ -74,6 +74,7 @@ Next, we are going to launch the datalake.
 Verify the Deployment Result
 -----------------------------
 The following command can be used to list the datalake logs.
+
   .. code-block :: bash
      #kubectl logs <datalake-pod> -n onap
 

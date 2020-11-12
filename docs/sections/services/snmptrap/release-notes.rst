@@ -15,11 +15,9 @@ Version: 2.3.0
 
 **New Features**
 
-    - `https://jira.onap.org/browse/DCAEGEN2-2020`
-    Eliminate use of consul service discovery in snmptrap
+    - `https://jira.onap.org/browse/DCAEGEN2-2020` Eliminate use of consul service discovery in snmptrap
 
-    - `https://jira.onap.org/browse/DCAEGEN2-2068`
-    Updated dependency library version; stormwatch support
+    - `https://jira.onap.org/browse/DCAEGEN2-2068` Updated dependency library version; stormwatch support
 
 
 **Bug Fixes**
@@ -45,12 +43,10 @@ Version: 1.4.0
 
 **New Features**
 
-    - `https://jira.onap.org/browse/DCAEGEN2-630`
-    Added support for SNMPv3 traps with varying levels of privacy and authentication support.
+    - `https://jira.onap.org/browse/DCAEGEN2-630`  Added support for SNMPv3 traps with varying levels of privacy and authentication support.
 
 **Bug Fixes**
-    - `https://jira.onap.org/browse/DCAEGEN2-842`
-    Remove additional RFC3584 (Sec 3.1 (4)) varbinds from published/logged SNMPv1 messages, fix DMAAP publish error for traps with no varbinds present.
+    - `https://jira.onap.org/browse/DCAEGEN2-842`  Remove additional RFC3584 (Sec 3.1 (4)) varbinds from published/logged SNMPv1 messages, fix DMAAP publish error for traps with no varbinds present.
 
 **Known Issues**
 
@@ -77,9 +73,9 @@ Support for config binding services.
 
 **Bug Fixes**
     - `https://jira.onap.org/browse/DCAEGEN2-465`
+    
 **Known Issues**
-    - `https://jira.onap.org/browse/DCAEGEN2-465`
-      Default config causes standalone instance startup failure.
+    - `https://jira.onap.org/browse/DCAEGEN2-465`  Default config causes standalone instance startup failure.
 
 **Security Issues**
     - None 
@@ -91,6 +87,3 @@ Support for config binding services.
 
 **Other**
 
-===========
-
-End of Release Notes
