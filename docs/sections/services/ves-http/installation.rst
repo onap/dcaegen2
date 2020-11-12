@@ -41,8 +41,7 @@ If VESCollector instance need to be deployed with authentication disabled, follo
 
 - Execute into Bootstrap POD using kubectl command
 
-- VES blueprint is available under  /blueprints directory ``k8s-ves-tls.yaml``. A corresponding input files is also pre-loaded into bootstrap
-pod under /inputs/k8s-ves-inputs.yaml
+- VES blueprint is available under  /blueprints directory ``k8s-ves-tls.yaml``. A corresponding input file is also pre-loaded into bootstrap pod under /inputs/k8s-ves-inputs.yaml
 
 - Deploy blueprint
     .. code-block:: bash

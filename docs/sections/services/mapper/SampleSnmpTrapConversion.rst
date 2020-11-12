@@ -3,7 +3,7 @@
 .. Copyright 2018 Tech Mahindra Ltd.
 
 Sample Snmp trap Conversion:
-===========================
+============================
 
 Following is the **Sample SNMP Trap** that will be received by the Universal VES Adapter from the Snmp Trap Collector :
 

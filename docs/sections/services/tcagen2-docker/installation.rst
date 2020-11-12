@@ -18,10 +18,9 @@ Following are steps if manual deployment/undeployment is required.  Steps to dep
 
 Enter the Cloudify Manager kuberenetes pod
 
-    - Tca-gen2 blueprint directory (/blueprints/k8s-tcagen2.yaml). The blueprint is also maintained in gerrit and can be downloaded from
-    https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-tcagen2.yaml
+    - Tca-gen2 blueprint directory (/blueprints/k8s-tcagen2.yaml). The blueprint is also maintained in gerrit and can be downloaded from https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-tcagen2.yaml
      
-    - Create input file required for deployment 
+    - Create input file required for deployment
     	
         Configuration of the service consists of generating an inputs file (YAML) which will be used as part of the
         Cloudify install. The tca-gen2 blueprints was designed with known defaults for the majority of the fields.
@@ -34,6 +33,7 @@ Enter the Cloudify Manager kuberenetes pod
             :widths: auto
             :delim: ;
             :header: Property , Sample Value , Description , Required
+          
             tca_handle_in_subscribe_url ; http://message-router:3904/events/unauthenticated.TCAGEN2_OUTPUT/; DMaap topic to publish CL event output ; No
             tca_handle_in_subscribe_url ; http://message-router:3904/events/unauthenticated.VES_MEASUREMENT_OUTPUT/; DMaap topic to subscribe VES measurement feeds ; No
             tag_version ; nexus3.onap.org:10001/onap/org.onap.dcaegen2.analytics.tca-gen2.dcae-analytics-tca-web:1.0.1 ; The tag of the Docker image will be used when deploying the tca-gen2. ; No

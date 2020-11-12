@@ -121,12 +121,9 @@ docker script example
 During deployment, the K8S plugin maps the healthcheck defined into 
 into a Kubernetes readiness probe.  
 
-Kubernetes execs the script in the container (using the `docker exec API
- <https://docs.docker.com/engine/api/v1.29/#tag/Exec>`__ ). 
-It will examine the
-script result to identify whether your component is healthy. Your
-component is considered healthy when the script returns ``0`` otherwise
-your component is considered not healthy.
+Kubernetes execs the script in the container (using the `docker exec API <https://docs.docker.com/engine/api/v1.29/#tag/Exec>`__ ). 
+It will examine the script result to identify whether your component is healthy. Your
+component is considered healthy when the script returns ``0`` otherwise your component is considered not healthy.
 
 Example:
 

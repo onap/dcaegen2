@@ -3,17 +3,17 @@ Deployment Steps
 DL-handler consists of two pods- the feeder and admin UI. It can be deployed by using cloudify blueprint. Datalake can be easily deployed through DCAE cloudify manager. The following steps guides you launch Datalake though cloudify manager.
 
 Pre-requisite
-----------------
+-------------
 - Make sure mariadb-galera from OOM is properly deployed and functional.
 - An external database, such as Elasticsearch and MongoDB is deployed.
 
 After datalake getting deployed, the admin UI can be used to configure the sink database address and credentials.
 
 Log-in to the DCAE Bootstrap POD
----------------------------------------------------
+--------------------------------
 
 First, we should find the bootstrap pod name through the following command and make sure that DCAE coudify manager is properly deployed.
-  .. image :: .images/bootstrap-pod.png
+  .. image :: ./images/bootstrap-pod.png
 
 Login to the DCAE bootstrap pod through the following command.
   .. code-block :: bash
@@ -38,17 +38,17 @@ After validating, we can start to proceed blueprints uploading.
 
 Verify Uploaded Blueprints
 --------------------------
-Using "cft blueprint list" to varify your work.
+Using "cfy blueprint list" to verify your work.
   .. code-block :: bash
 
      #cfy blueprint list
 
 You can see the following returned message to show the blueprints have been correctly uploaded.
-  .. image :: ./imagesblueprint-list.png
+  .. image :: ./images/blueprint-list.png
 
 
 Verify Plugin Versions
-------------------------------------------------------------------------------
+----------------------
 If the version of the plugin used is different, update the blueprint import to match.
   .. code-block :: bash
 
@@ -74,11 +74,13 @@ Next, we are going to launch the datalake.
 Verify the Deployment Result
 -----------------------------
 The following command can be used to list the datalake logs.
+
   .. code-block :: bash
+  
      #kubectl logs <datalake-pod> -n onap
 
 The output should looks like.
-    .. image :: ./feeder-log.png
+    .. image :: ./images/feeder-log.png
 
 If you find any Java exception from log, make sure that the external database and datalake configuration are properly configured.
 Admin UI can be used to configure the external database configuration.
@@ -97,4 +99,4 @@ Delete Blueprint
   .. code-block :: bash
 
      #cfy blueprints delete datalake-feeder
-     #cfy blueprints deltet datalake-admin-ui
+     #cfy blueprints delete datalake-admin-ui

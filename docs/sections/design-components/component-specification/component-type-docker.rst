@@ -30,7 +30,7 @@ to another artifact for a schema. The reference allows for XML and Protocol Buff
 but can be used as a pointer to JSON, Delimited Format, and Unstructured
 schemas as well.
 
-.. _metadata:
+.. _component_metadata:
 
 Component Metadata
 ------------------

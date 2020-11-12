@@ -15,7 +15,6 @@ Following Services are deployed via DCAE Bootstrap
    ./services/ves-http/index.rst
    ./services/ves-hv/index.rst
    ./services/prh/index.rst
-   ./services/tca-cdap/index.rst
    ./services/tcagen2-docker/index.rst
    
 Following additional MS are available for on-demand deployment as necessary for any usecases; instruction for deployment are provided under each MS. 

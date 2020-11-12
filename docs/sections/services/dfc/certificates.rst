@@ -1,5 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
+
 Certificates (From AAF)
 =======================
 DCAE service components will use common certifcates generated from AAF/test instance and made available during deployment of DCAE TLS init container.

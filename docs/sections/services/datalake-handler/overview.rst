@@ -30,6 +30,7 @@ Note that not all data storage systems in the picture are supported. In R6, the 
   - Couchbase
   - Elasticsearch and Kibana
   - HDFS
+
 Depending on demands, new systems may be added to the supported list. In the following we use the term database for the storage, 
 even though HDFS is a file system (but with simple settings, it can be treats as a database, e.g. Hive.)
 
@@ -61,12 +62,9 @@ Features
 
    - Read data directly from Kafka for performance.
    - Support for pluggable databases. To add a new database, we only need to implement its corrosponding service.
-   - Support REST API for inter-component communications. Besides managing DatAlake settings in MariaDB, 
-   Admin UI also use this API to start/stop Feeder, query Feeder status and statistics.
+   - Support REST API for inter-component communications. Besides managing DatAlake settings in MariaDB, Admin UI also use this API to start/stop Feeder, query Feeder status and statistics.
    - Use MariaDB to store settings.
-   - Support data processing features. Before persisting data, data can be massaged in Feeder. 
-   Currently two features are implemented: Correlate Cleared Message (in org.onap.datalake.feeder.service.db.ElasticsearchService) 
-   and Flatten JSON Array (org.onap.datalake.feeder.service.StoreService).    
+   - Support data processing features. Before persisting data, data can be massaged in Feeder. Currently two features are implemented: Correlate Cleared Message (in org.onap.datalake.feeder.service.db.ElasticsearchService)  and Flatten JSON Array (org.onap.datalake.feeder.service.StoreService).
    - Connection to Kafka and DBs are secured
 
 
