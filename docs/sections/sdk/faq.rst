@@ -16,7 +16,7 @@ Which Java version is supported?
 For now we are compiling SDK using JDK 11. Hence we advice to use SDK on JDK 11.
 
 Are you sure Java 11 is supported? I can see a debug log from Netty.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you have enabled a debug log level for Netty packages you might have seen the following log:
 
 .. code-block:: java
