@@ -17,7 +17,7 @@ VES-Mapper can be deployed individually though it will throw errors if it can't 
 VES-Mapper blueprint is available @ 
 https://git.onap.org/dcaegen2/services/mapper/tree/UniversalVesAdapter/dpo/blueprints/k8s-vesmapper.yaml-template.yaml?h=elalto
 
-VES-Mapper docker image is available in Nexus repo @ `nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.1 <nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.0.1>`_
+VES-Mapper docker image is available in Nexus repo @ `nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest <nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest>`_
 
 
 
@@ -27,11 +27,8 @@ VES-Mapper docker image is available in Nexus repo @ `nexus3.onap.org:10001/onap
 *a. Verify DMaaP configurations in the blueprint as per setup*
 
   Dmaap Configuration consists of subscribe url to fetch notifications from the respective collector and publish url to publish ves event.
-
-
-``streams_publishes`` and ``streams_subscribes`` points to the publishing topic and subscribe topic respectively.
-
-update these ``urls`` as per your DMaaP configurations in the blueprint. 
+ 
+``streams_publishes`` and ``streams_subscribes`` point to the publishing topic and subscribe topic respectively. Update these ``urls`` as per your DMaaP configurations in the blueprint.
 
 *b. Verify the Smooks mapping configuration in the blueprint as per the usecase. Blueprint contains default mapping  for each supported collector ( SNMP Collector and RESTConf collector currently) which may serve the purpose for the usecase. The ``mapping-files`` in ``collectors`` contains the contents of the mapping file.
 
