@@ -95,7 +95,7 @@ CBS polling. The following environment variables are to be set.**
 
    The sample consul KV is as below.
    ::
-      http://10.12.6.50:8500/ui/#/dc1/kv/mvp-dcaegen2-heartbeat-static
+     http://10.12.6.50:8500/ui/#/dc1/kv/mvp-dcaegen2-heartbeat-static
 
    Go to the above link and click on KEY/VALUE tab
 
@@ -164,18 +164,21 @@ CBS polling. The following environment variables are to be set.**
  To check whether image is built or not, run below command
 
 ::
+
       sudo Docker images |grep heartbeat.test1
 
 **Run the Docker using below command which uses the environment file
 mentioned in the above section.**
 
 ::
+
       sudo Docker run -d --name hb1 --env-file env.list
       heartbeat.test1:latest
 
  To check the logs, run below command
  
 ::
+
       sudo Docker logs -f hb1
 
 **To stop the Docker run**
@@ -198,6 +201,7 @@ mentioned in the above section.**
    To run the maven build, execute any one of them.
    
 :: 
+
       sudo mvn -s settings.xml deploy
       OR
       sudo mvn -s settings.xml -X deploy

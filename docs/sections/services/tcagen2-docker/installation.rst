@@ -18,10 +18,9 @@ Following are steps if manual deployment/undeployment is required.  Steps to dep
 
 Enter the Cloudify Manager kuberenetes pod
 
-    - Tca-gen2 blueprint directory (/blueprints/k8s-tcagen2.yaml). The blueprint is also maintained in gerrit and can be downloaded from
-    https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-tcagen2.yaml
+    - Tca-gen2 blueprint directory (/blueprints/k8s-tcagen2.yaml). The blueprint is also maintained in gerrit and can be downloaded from https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-tcagen2.yaml
      
-    - Create input file required for deployment 
+    - Create input file required for deployment
     	
         Configuration of the service consists of generating an inputs file (YAML) which will be used as part of the
         Cloudify install. The tca-gen2 blueprints was designed with known defaults for the majority of the fields.

@@ -34,7 +34,7 @@ Error and warning logs contain also:
 **Do not rely on exact log messages or their presence, as they are often subject to change.**
 
 Deployment/Installation errors
---------------------
+------------------------------
 
 **Missing Default Config File in case of using local config instead of Consul**
 

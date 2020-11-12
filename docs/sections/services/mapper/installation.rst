@@ -29,9 +29,8 @@ VES-Mapper docker image is available in Nexus repo @ `nexus3.onap.org:10001/onap
   Dmaap Configuration consists of subscribe url to fetch notifications from the respective collector and publish url to publish ves event.
 
 
-``streams_publishes`` and ``streams_subscribes`` points to the publishing topic and subscribe topic respectively.
+``streams_publishes`` and ``streams_subscribes`` points to the publishing topic and subscribe topic respectively. update these ``urls`` as per your DMaaP configurations in the blueprint. 
 
-update these ``urls`` as per your DMaaP configurations in the blueprint. 
 
 *b. Verify the Smooks mapping configuration in the blueprint as per the usecase. Blueprint contains default mapping  for each supported collector ( SNMP Collector and RESTConf collector currently) which may serve the purpose for the usecase. The ``mapping-files`` in ``collectors`` contains the contents of the mapping file.
 

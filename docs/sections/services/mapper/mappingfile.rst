@@ -12,7 +12,7 @@ The Adapter uses Smooks Framework to do the data format conversion by using the 
 | http://www.smooks.org/guide
 
 SNMP Collector Default Mapping File
-============
+===================================
 Following is the default snmp mapping file which is used when no mapping file is found while processing event from SNMP Trap Collector. 
 
 .. code-block:: xml
@@ -60,7 +60,8 @@ Following is the default snmp mapping file which is used when no mapping file is
    </jb:bean></smooks-resource-list>
 
 RestConf Collector Default Mapping File
-============
+=======================================
+
 Following is the default RestConf collector mapping file which is used when no mapping file is found while processing notification from RestConf Collector. 
 
 .. code-block:: xml

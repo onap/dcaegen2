@@ -413,8 +413,6 @@ Request
 
 
 
-.. _d_fb61d9acd5848e8d882a33934d47ad4f:
-
 Body
 ^^^^
 
@@ -528,7 +526,6 @@ Request
 
 
 
-.. _d_fb61d9acd5848e8d882a33934d47ad4f:
 
 Body
 ^^^^
@@ -641,7 +638,6 @@ Headers
 
 
 
-.. _d_fd89ec3540efda71c3748235024e0b4d:
 
 Body
 ^^^^
@@ -757,7 +753,6 @@ Headers
 
 
 
-.. _d_7a085a9ab5ed1527229588d3b6d2c4c2:
 
 Body
 ^^^^
@@ -768,9 +763,9 @@ Body
     :widths: 20, 10, 15, 15, 30, 25
 
         owner | No | string |  |  |
-        spec | No | :ref:`spec <i_24d5c9ce4ae509ac2272fb61bf0e2003>` |  |  | The Data Format Spec schema is here -> https://git.onap.org/dcaegen2/platform/cli/plain/component-json-schemas/data-format/dcae-cli-v1/data-format-schema.json
+        spec | No | :ref:`spec <i_24d5c9ce4ae509ac2272fb61bf0e2004>` |  |  | The Data Format Spec schema is here -> https://git.onap.org/dcaegen2/platform/cli/plain/component-json-schemas/data-format/dcae-cli-v1/data-format-schema.json
 
-.. _i_24d5c9ce4ae509ac2272fb61bf0e2003:
+.. _i_24d5c9ce4ae509ac2272fb61bf0e2004:
 
 **Spec schema:**
 
@@ -875,8 +870,6 @@ Request
 
 
 
-.. _d_fd89ec3540efda71c3748235024e0b4d:
-
 Body
 ^^^^
 
@@ -886,9 +879,9 @@ Body
     :widths: 20, 10, 15, 15, 30, 25
 
         owner | No | string |  |  |
-        spec | No | :ref:`spec <i_793f480461dccbb35537f2001ab7af5b>` |  |  | The Component Spec schema is here -> https://git.onap.org/dcaegen2/platform/cli/plain/component-json-schemas/component-specification/dcae-cli-v2/component-spec-schema.json
+        spec | No | :ref:`spec <i_793f480461dccbb35537f2001ab7af5c>` |  |  | The Component Spec schema is here -> https://git.onap.org/dcaegen2/platform/cli/plain/component-json-schemas/component-specification/dcae-cli-v2/component-spec-schema.json
 
-.. _i_793f480461dccbb35537f2001ab7af5b:
+.. _i_793f480461dccbb35537f2001ab7af5c:
 
 **Spec schema:**
 
@@ -983,8 +976,6 @@ Request
 
 
 
-.. _d_7a085a9ab5ed1527229588d3b6d2c4c2:
-
 Body
 ^^^^
 
@@ -1077,7 +1068,6 @@ Component List Model Structure
 
         components | No | array of :ref:`component fields <d_41cf5e14516a536474c8079d332e86c7>` |  |  |
 
-.. _d_fd89ec3540efda71c3748235024e0b4d:
 
 Component Spec Model Structure
 ------------------------------
@@ -1123,7 +1113,6 @@ Data Format List Model Structure
 
         dataFormats | No | array of :ref:`dataformat fields <d_68ab1278c950fd214a4077565fd97922>` |  |  |
 
-.. _d_7a085a9ab5ed1527229588d3b6d2c4c2:
 
 Data Format Spec Model Structure
 --------------------------------
@@ -1169,7 +1158,6 @@ Error message Model Structure
 
         message | No | string |  |  | . . . . .Details about the unsuccessful API request
 
-.. _d_fb61d9acd5848e8d882a33934d47ad4f:
 
 Patch Spec Model Structure
 --------------------------

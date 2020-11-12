@@ -3,7 +3,7 @@
 
 
 DataLake-Handler MS
-==============
+===================
 
 **DataLake-Handler MS** is a software component of ONAP that can systematically persist the events from DMaaP into supported Big Data storage systems. 
 It has a Admin UI, where a system administrator configures which Topics to be monitored, and to which data storage to store the data. 
