@@ -13,7 +13,7 @@ All DCAE projects use ONAP **oparent** project POM as ancestor.  That is, DCAE p
 
 A number of DCAE projects are not written Java.  For these projects we use the CodeHaus Maven Execution plugin for triggering a Bash script at various stages of Maven lifecycle. The script is  mvn-phase-script.sh, located at the root of each non-Java DACE project.  It is in this script that the actual build operation is performed at different Maven phases.  For example, for a Python project, Maven test will actually trigger a call to tox to conduct project unit tests.
 
-Below is a list of the repos and their sub-modules, and the language they are written in.
+Below is a list of the repositories and their sub-modules, and the language they are written in.
 
 * dcaegen2
 
@@ -22,21 +22,9 @@ Below is a list of the repos and their sub-modules, and the language they are wr
 
 * dcaegen2.analytics
 
-* dcaegen2.analytics.tca
-
- - dcae-analytics-aai (Java)
- - dcae-analytics-cdap-common (Java)
- - dcae-analytics-cdap-plugins (Java)
- - dcae-analytics-cdap-tca (Java)
- - dcae-analytics-common (Java)
- - dcae-analytics-dmaap (Java)
- - dcae-analytics-it (Java)
- - dcae-analytics-model (Java)
- - dcae-analytics-tca (Java)
- - dcae-analytics-test (Java)
- - dpo (Java)
 
 * dcaegen2.analytics.tca-gen2
+
  - dcae-analytics (Java)
  - eelf-logger (Java)
  

@@ -331,12 +331,9 @@ dashboard at https://<IPAddress>:30418/ccsdk-app/login_external.htm in
 our deployment. The name for each component will be appended by the flow
 name followed by underscore followed by the component’s name.
 
-The credentials to access the DCAE Dashboard are-
-
-::
+The credentials to access the DCAE Dashboard 
 
 Login: su1234
-
 Password: fusion
 
 

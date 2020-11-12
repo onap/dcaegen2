@@ -12,6 +12,7 @@ Login into postgres DB
 Run below commands to login into postgres DB and connect to HB Micro service DB.
 
 ::
+
      sudo su postgres
      psql
      \l hb_vnf
@@ -19,6 +20,7 @@ Run below commands to login into postgres DB and connect to HB Micro service DB.
 Sample output is as below
 
 ::
+
 		ubuntu@r3-dcae:~$ sudo su postgres
 		postgres@r3-dcae:/home/ubuntu$ psql
 		psql (9.5.14)

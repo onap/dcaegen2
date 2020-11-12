@@ -73,7 +73,7 @@ Below service components (mS) are available to be deployed on-demand.
  	- PM-Subscription Handler
  	- DataLake Handler (Admin and Feeder)
  	- Slice Analysis
- 	- DataExposure Service
+ 	- Data Extraction Service
 
     Notes:
 
@@ -91,7 +91,7 @@ Release Data
 | **DCAE Project**                     |                                                        |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
-| **Docker images**                    |Refer :any:`Deliverable <guilin_deliverable>`           |
+| **Docker images**                    | Refer :any:`Deliverable <guilin_deliverable>`          |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
 | **Release designation**              | 7.0.0 Guilin                                           |
@@ -107,8 +107,7 @@ New features
 
 - DCAE Enhancement
 
-    - Cloudify Container upgraded with new base image; plugins load optimized (DCAEGEN2-2236, DCAEGEN2-2207 
-DCAEGEN2-2262)
+    - Cloudify Container upgraded with new base image; plugins load optimized (DCAEGEN2-2236, DCAEGEN2-2207, DCAEGEN2-2262)
     - Bootstrap container optimization  (DCAEGEN2-1791)
     - MOD/Runtime – Enable configuration for dynamic topic support (DCAEGEN2-1996)
     - MOD/OnboardingAPI - Support for offline install (DCAEGEN2-2221)
@@ -228,8 +227,8 @@ DCAE code has been formally scanned during build time using NexusIQ and all Crit
 Test Results
 ------------
 
- - `DCAE Pairwise Test <https://wiki.onap.org/display/DW/DCAE+Pair+Wise+Testing+for+Guilin+Release>`_
- - `DCAE MOD Test <https://wiki.onap.org/display/DW/DCAE+R7+Testplan>`_
+ - `DCAE R7 Pairwise Test <https://wiki.onap.org/display/DW/DCAE+Pair+Wise+Testing+for+Guilin+Release>`_
+ - `DCAE MOD R7 Test <https://wiki.onap.org/display/DW/DCAE+R7+Testplan>`_
 
 
 References
@@ -265,13 +264,13 @@ Version: 5.0.2
 ==============
 
 Abstract
-========
+--------
 
 This document provides the release notes for the El-Alto Maintenance release
 
 
 Summary
-=======
+-------
 
 This maintenance release is primarily to update expired certificates 
 from original El-Alto released TLS-init container.
@@ -280,7 +279,7 @@ This patch is not required for Frankfurt release (and beyond) as certificates ar
 retrieved from AAF at deployment time for all DCAE components.
 
 Release Data
-============
+------------
 
 +--------------------------------------+--------------------------------------+
 | **Project**                          | DCAE                                 |
@@ -303,8 +302,7 @@ None
 
 **Bug fixes**
 
-- `DCAEGEN2-2206 <https://jira.onap.org/browse/DCAEGEN2-2206>`_ DCAE TLS Container : Address certificate
-expiration
+- `DCAEGEN2-2206 <https://jira.onap.org/browse/DCAEGEN2-2206>`_ DCAE TLS Container : Address certificate expiration
 
 **Known Issues**
 Same as El-Alto Release
@@ -320,18 +318,18 @@ Version: 6.0.1
 ==============
 
 Abstract
-========
+--------
 
 This document provides the release notes for the Frankfurt Maintenance release
 
 
 Summary
-=======
+-------
 
 The focus of this release is to correct issues found on Frankfurt release.
 
 Release Data
-============
+------------
 
 +--------------------------------------+--------------------------------------+
 | **Project**                          | DCAE                                 |
@@ -354,12 +352,11 @@ None
 
 **Bug fixes**
 
-- `DCAEGEN2-2249 <https://jira.onap.org/browse/DCAEGEN2-2249>`_ SON-Handler: Fix networkId issue 
-while making call to oof
-- `DCAEGEN2-2216 <https://jira.onap.org/browse/DCAEGEN2-2216>`_ SON-Handler: Change Policy notification 
- to align with policy component updates
+- `DCAEGEN2-2249 <https://jira.onap.org/browse/DCAEGEN2-2249>`_ SON-Handler: Fix networkId issue while making call to oof
+- `DCAEGEN2-2216 <https://jira.onap.org/browse/DCAEGEN2-2216>`_ SON-Handler: Change Policy notification  to align with policy component updates
 
 **Known Issues**
+
 Same as Frankfurt Release
 
 
@@ -576,8 +573,8 @@ DCAE code has been formally scanned during build time using NexusIQ and all Crit
 Test Results
 ------------
 
- - `DCAE Pairwise Test <https://wiki.onap.org/display/DW/DCAE+Pair+Wise+Testing+for+Frankfurt+Release>`_
- - `DCAE MOD Test <https://wiki.onap.org/display/DW/DCAE+MOD+Test+Plan>`_
+ - `DCAE R6 Pairwise Test <https://wiki.onap.org/display/DW/DCAE+Pair+Wise+Testing+for+Frankfurt+Release>`_
+ - `DCAE MOD R6 Test <https://wiki.onap.org/display/DW/DCAE+MOD+Test+Plan>`_
 
 
 References
@@ -739,7 +736,7 @@ Quick Links:
 
         - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
 
-        - `Project Vulnerability Review Table for DCAE <https://wiki.onap.org/pages/viewpage.action?pageId=68540441>`_
+        - `Project Vulnerability Review Table for DCAE (El-Alto Maintenance) <https://wiki.onap.org/pages/viewpage.action?pageId=68540441>`_
 
 
 **Upgrade Notes**
@@ -830,7 +827,7 @@ Quick Links:
 
         - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
 
-        - `Project Vulnerability Review Table for DCAE <https://wiki.onap.org/pages/viewpage.action?pageId=68540441>`_
+        - `Project Vulnerability Review Table for DCAE (El-Alto) <https://wiki.onap.org/pages/viewpage.action?pageId=68540441>`_
 
 
 **Upgrade Notes**
@@ -987,7 +984,7 @@ Quick Links:
 
         - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
 
-        - `Project Vulnerability Review Table for DCAE <https://wiki.onap.org/pages/viewpage.action?pageId=51282478>`_
+        - `Project Vulnerability Review Table for DCAE (Dublin) <https://wiki.onap.org/pages/viewpage.action?pageId=51282478>`_
 
 
 **New component Notes**
@@ -1199,7 +1196,7 @@ Quick Links:
 
         - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
 
-        - `Project Vulnerability Review Table for DCAE <https://wiki.onap.org/pages/viewpage.action?pageId=41421168>`_
+        - `Project Vulnerability Review Table for DCAE (Casablanca) <https://wiki.onap.org/pages/viewpage.action?pageId=41421168>`_
 
 
 **New component Notes**
@@ -1333,7 +1330,7 @@ Quick Links:
 
         - `Passing Badge information for DCAE <https://bestpractices.coreinfrastructure.org/en/projects/1718>`_
 
-        - `Project Vulnerability Review Table for DCAE <https://wiki.onap.org/pages/viewpage.action?pageId=28377647>`_
+        - `Project Vulnerability Review Table for DCAE (Beijing) <https://wiki.onap.org/pages/viewpage.action?pageId=28377647>`_
 
 
 

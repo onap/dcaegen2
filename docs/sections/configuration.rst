@@ -63,6 +63,7 @@ The corresponding input file, ``https://git.onap.org/oom/tree/kubernetes/dcaegen
 it is defined again as:
 
 .. code-block:: yaml
+
   {{ if .Values.componentImages.ves }}
   tag_version: {{ include "common.repository" . }}/{{ .Values.componentImages.ves }}
   {{ end }}
