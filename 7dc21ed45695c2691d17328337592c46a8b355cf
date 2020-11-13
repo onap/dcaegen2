@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3c81e8_1f3656e2",
+        "filename": "docs/sections/services/mapper/flow.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-11-13T01:46:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50e4e50a_9ef859ba",
+      "revId": "7dc21ed45695c2691d17328337592c46a8b355cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ea14557_99716d7d",
         "filename": "docs/sections/services/mapper/installation.rst",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "58d58e8f_f20d1efb",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-11-13T01:46:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ea14557_99716d7d",
+      "revId": "7dc21ed45695c2691d17328337592c46a8b355cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d0a28486_be4ea31b",
         "filename": "docs/sections/services/ves-http/installation.rst",
         "patchSetId": 2
@@ -50,6 +86,24 @@
       "revId": "7dc21ed45695c2691d17328337592c46a8b355cf",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c607be83_db46686d",
+        "filename": "docs/sections/services/ves-http/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-11-13T01:46:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0a28486_be4ea31b",
+      "revId": "7dc21ed45695c2691d17328337592c46a8b355cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }

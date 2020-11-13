@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e478068_bf82dae5",
+        "filename": "docs/sections/services/mapper/flow.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-11-13T01:46:21Z",
+      "side": 1,
+      "message": "[4] On receiving an event from DMaaP, the adapter uses the corresponding mapping file and converts the received event into the VES event. It uses the enterprise ID from the received event to find the required mapping file.",
+      "revId": "5f61f0c148cae0b78075f6cf6d636e774136131c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e81de2a8_23d5fcc8",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-11-13T01:46:21Z",
+      "side": 1,
+      "message": "``streams_publishes`` and ``streams_subscribes`` point to the publishing topic and subscribe topic respectively. Update these ``urls`` as per your DMaaP configurations in the blueprint.",
+      "revId": "5f61f0c148cae0b78075f6cf6d636e774136131c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
