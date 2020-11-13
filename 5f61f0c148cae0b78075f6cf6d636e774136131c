@@ -51,6 +51,24 @@
       "revId": "5f61f0c148cae0b78075f6cf6d636e774136131c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25fcff8e_4d09a191",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-11-13T03:39:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e81de2a8_23d5fcc8",
+      "revId": "5f61f0c148cae0b78075f6cf6d636e774136131c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
