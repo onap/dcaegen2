@@ -39,7 +39,7 @@ without interacting with DataLake Handler.
 
 Description
 ~~~~~~~~~~~
-DataLate Handler's main function is to monitor and persist data flow through DMaaP. The databases are outside of ONAP scope, 
+DataLake Handler's main function is to monitor and persist data flow through DMaaP and provide a query API for other component or external services. The databases are outside of ONAP scope, 
 since the data is expected to be huge, and a database may be a complicated cluster consisting of thousand of nodes.
 
 Admin UI
@@ -67,8 +67,18 @@ Features
    - Support data processing features. Before persisting data, data can be massaged in Feeder. Currently two features are implemented: Correlate Cleared Message (in org.onap.datalake.feeder.service.db.ElasticsearchService)  and Flatten JSON Array (org.onap.datalake.feeder.service.StoreService).
    - Connection to Kafka and DBs are secured
 
+Des
+~~~
+Architecture
+.. image:: ./des-arch.PNG
+
+Features
+
+   - Provide a data query API for other components to consume.
+   - Integrate with Presto to do data query via sql template.
 
 Links
 ~~~~~
    - DataLake Development Environment Setup https://wiki.onap.org/display/DW/DataLake+Development+Environment+Setup
+   - Des description and deployment steps: https://wiki.onap.org/display/DW/DES
    - Source Code https://gerrit.onap.org/r/gitweb?p=dcaegen2/services.git;a=tree;f=components/datalake-handler;hb=HEAD

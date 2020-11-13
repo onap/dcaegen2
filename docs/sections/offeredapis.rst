@@ -19,3 +19,4 @@ Offered APIs
    apis/PMSH.rst
    apis/SDK.rst
    apis/mod-onboardingapi.rst
+   apis/des_api.rst
