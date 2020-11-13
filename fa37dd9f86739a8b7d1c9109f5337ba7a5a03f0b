@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2d31fcd6_de265b89",
+        "filename": "docs/sections/apis/des_api.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "Title underline not matching the text; this causes build warnings",
+      "range": {
+        "startLine": 4,
+        "startChar": 17,
+        "endLine": 4,
+        "endChar": 24
+      },
+      "revId": "fa37dd9f86739a8b7d1c9109f5337ba7a5a03f0b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21bc407b_8aade1dd",
+        "filename": "docs/sections/apis/des_api.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 24
+      },
+      "revId": "fa37dd9f86739a8b7d1c9109f5337ba7a5a03f0b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3aa2ec53_3611a467",
+        "filename": "docs/sections/services/datalake-handler/DL-DES.PNG",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "All components with exception of Big data store (and analysic app - which can be internal or external) are ONAP component/services (including DL feeder/admin, DES, Mariadb); color coding to be changed accordingly\n\nAnalytic app component box can be split into two separate to show as internal-analytic app  and external app and color coded accordingly",
+      "revId": "fa37dd9f86739a8b7d1c9109f5337ba7a5a03f0b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a84defc0_6150fe98",
+        "filename": "docs/sections/services/datalake-handler/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "Title underline not matching the text; code should be rebased as this was addressed on recent commit",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 13
+      },
+      "revId": "fa37dd9f86739a8b7d1c9109f5337ba7a5a03f0b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de341bcc_34363e90",
+        "filename": "docs/sections/services/datalake-handler/installation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "Title underline longer than text",
+      "revId": "fa37dd9f86739a8b7d1c9109f5337ba7a5a03f0b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c9e649d_bf31a66a",
+        "filename": "docs/sections/services/datalake-handler/installation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "same comment as above",
+      "range": {
+        "startLine": 33,
+        "startChar": 32,
+        "endLine": 33,
+        "endChar": 51
+      },
+      "revId": "fa37dd9f86739a8b7d1c9109f5337ba7a5a03f0b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba5bdf33_5726e0ad",
+        "filename": "docs/sections/services/datalake-handler/installation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "same comment as above",
+      "range": {
+        "startLine": 73,
+        "startChar": 22,
+        "endLine": 73,
+        "endChar": 78
+      },
+      "revId": "fa37dd9f86739a8b7d1c9109f5337ba7a5a03f0b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa3d17eb_80f460c5",
+        "filename": "docs/sections/services/datalake-handler/installation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "same comment as above",
+      "range": {
+        "startLine": 124,
+        "startChar": 16,
+        "endLine": 124,
+        "endChar": 18
+      },
+      "revId": "fa37dd9f86739a8b7d1c9109f5337ba7a5a03f0b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5251e31_751207c7",
+        "filename": "docs/sections/services/datalake-handler/overview.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "Title underline longer than text",
+      "range": {
+        "startLine": 72,
+        "startChar": 3,
+        "endLine": 72,
+        "endChar": 6
+      },
+      "revId": "fa37dd9f86739a8b7d1c9109f5337ba7a5a03f0b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}

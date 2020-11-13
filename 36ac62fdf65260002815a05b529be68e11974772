@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "77420186_d287e08f",
+        "filename": "docs/sections/apis/des_api.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7a63d43_5c8f32d6",
+      "range": {
+        "startLine": 5,
+        "startChar": 20,
+        "endLine": 5,
+        "endChar": 34
+      },
+      "revId": "36ac62fdf65260002815a05b529be68e11974772",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "82b4109f_dc3c0c24",
         "filename": "docs/sections/services/datalake-handler/DL-DES.PNG",
         "patchSetId": 4
@@ -59,6 +83,24 @@
     },
     {
       "key": {
+        "uuid": "def59042_b7ea6284",
+        "filename": "docs/sections/services/datalake-handler/arch.PNG",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e5e75dc_f8c34629",
+      "revId": "36ac62fdf65260002815a05b529be68e11974772",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "527c29c3_4bc64856",
         "filename": "docs/sections/services/datalake-handler/installation.rst",
         "patchSetId": 4
@@ -79,6 +121,30 @@
       "revId": "36ac62fdf65260002815a05b529be68e11974772",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff6ba81f_9634ccc4",
+        "filename": "docs/sections/services/datalake-handler/installation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-13T03:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "527c29c3_4bc64856",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 110
+      },
+      "revId": "36ac62fdf65260002815a05b529be68e11974772",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
