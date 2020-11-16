@@ -13,11 +13,7 @@ Flow for converting RestConf Collector notification
 
 
 .. image:: ./flow-rest-conf.png
-   :alt: alternate text
-   :align: left
    
-   
-
 Flow for converting SNMP Collector notification
 ===============================================
 
@@ -30,5 +26,3 @@ Flow for converting SNMP Collector notification
 
 
 .. image:: ./flow.png
-   :alt: alternate text
-   :align: left

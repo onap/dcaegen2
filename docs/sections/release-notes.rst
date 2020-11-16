@@ -105,7 +105,7 @@ Release Data
 New features
 ------------
 
-- DCAE Enhancement
+- DCAE Enhancements
 
     - Cloudify Container upgraded with new base image; plugins load optimized (DCAEGEN2-2236, DCAEGEN2-2207, DCAEGEN2-2262)
     - Bootstrap container optimization  (DCAEGEN2-1791)
@@ -150,7 +150,7 @@ Software Deliverables
    "dcaegen2/collectors/hv-ves", "", "onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main:1.5.0"
    "dcaegen2/collectors/restconf", "", "onap/org.onap.dcaegen2.collectors.restconfcollector:1.2.2"
    "dcaegen2/collectors/snmptrap", "", "onap/org.onap.dcaegen2.collectors.snmptrap:2.0.3"
-   "dcaegen2/collectors/ves", "", "onap/org.onap.dcaegen2.collectors.ves.vescollector:1.7.8"
+   "dcaegen2/collectors/ves", "", "onap/org.onap.dcaegen2.collectors.ves.vescollector:1.7.9"
    "dcaegen2/deployments", "cm-container", "onap/org.onap.dcaegen2.deployments.cm-container:3.3.4"
    "dcaegen2/deployments", "consul-loader-container", "onap/org.onap.dcaegen2.deployments.consul-loader-container:1.0.0"
    "dcaegen2/deployments", "dcae-k8s-cleanup-container", "onap/org.onap.dcaegen2.deployments.dcae-k8s-cleanup-container:1.0.0"
@@ -191,9 +191,8 @@ Known Limitations, Issues and Workarounds
 -----------------------------------------
 
     * BPGenerator yaml Fixes are different for yaml file and string (DCAEGEN2-2489)
-    * Ves Collector is down because of java heap space (DCAEGEN2-2495)
+    * Slice Analysis - Avoid removal of data when insufficient samples are present (DCAEGEN2-2509)
     
-
 
 *System Limitations*
 
