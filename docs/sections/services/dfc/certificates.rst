@@ -47,72 +47,64 @@ We have two keystore files, one for TrustManager, one for KeyManager.
 
    openssl x509 -outform der -in ftp.crt -out ftp.der
 
-2. And after, import it in the keystore :
+2. And after copy existing keystore and password from container:
 
  .. code:: bash
 
-   keytool -import -alias ftp -keystore ftp.jks -file ftp.der
+  kubectl cp <DFC pod>:/opt/app/datafile/etc/cert/trust.jks trust.jks
+  kubectl cp <DFC pod>:/opt/app/datafile/etc/cert/trust.pass trust.pass
+
+3. Import DER certificate in the keystore :
+
+ .. code:: bash
+
+   keytool -import -alias ftp -keystore trust.jks -file ftp.der
 
 **For KeyManager:**
 
-1. First, create a jks keystore:
+1. Import dfc.crt and dfc.key to dfc.jks. This is a bit troublesome.
+
+ Convert x509 Cert and Key to a pkcs12 file
 
  .. code:: bash
 
-    keytool -keystore dfc.jks -genkey -alias dfc
-
-2. Second, import dfc.crt and dfc.key to dfc.jks. This is a bit troublesome.
-
- 1). Step one: Convert x509 Cert and Key to a pkcs12 file
-
- .. code:: bash
-
-    openssl pkcs12 -export -in dfc.crt -inkey dfc.key -out dfc.p12 -name [some-alias]
+    openssl pkcs12 -export -in dfc.crt -inkey dfc.key -out cert.p12 -name dfc
 
  Note: Make sure you put a password on the p12 file - otherwise you'll get a null reference exception when you try to import it.
 
- Note 2: You might want to add the -chainoption to preserve the full certificate chain.
+2. Create password files for cert.p12
+    .. code:: bash
 
- 2). Step two: Convert the pkcs12 file to a java keystore:
+    printf "[your password]" > p12.pass
 
- .. code:: bash
-
-    keytool -importkeystore -deststorepass [changeit] -destkeypass [changeit] -destkeystore dfc.jks -srckeystore dfc.p12 -srcstoretype PKCS12 -srcstorepass [some-password] -alias [some-alias]
-
-4. Update existing jks.b64 files
+4. Update existing KeyStore files
 ---------------------------------
 
-Copy the existing jks from the DFC container to a local environment.
+Copy the new trust.jks and cert.p12 files from local environment to the DFC container.
 
  .. code:: bash
 
-   docker cp <DFC container>:/opt/app/datafile/config/ftp.jks .
-   docker cp <DFC container>:/opt/app/datafile/config/dfc.jks .
+   kubectl cp cert.p12 <DFC pod>:/opt/app/datafile/etc/mycert/
+   kubectl cp p12.pass <DFC pod>:/opt/app/datafile/etc/mycert/
+   kubectl cp trust.jks <DFC pod>:/opt/app/datafile/etc/mycert/
+   kubectl cp trust.pass <DFC pod>:/opt/app/datafile/etc/mycert/
 
+5. Update configuration in consul
+-----------------------------------
+Change path in consul:
  .. code:: bash
+  dmaap.ftpesConfig.keyCert": "/opt/app/datafile/etc/mycert/cert.p12
+  dmaap.ftpesConfig.keyPasswordPath": "/opt/app/datafile/etc/mycert/p12.pass
+  dmaap.ftpesConfig.trustedCa": "/opt/app/datafile/etc/mycert/trust.jks
+  dmaap.ftpesConfig.trustedCaPasswordPath": "/opt/app/datafile/etc/mycert/trust.pass
 
-   openssl base64 -in ftp.jks -out ftp.jks.b64
-   openssl base64 -in dfc.jks -out dfc.jks.b64
-
+Consul's address: http://<worker external IP>:<Consul External Port>
  .. code:: bash
+  kubectl -n onap get svc | grep consul
 
-   chmod 755 ftp.jks.b64
-   chmod 755 dfc.jks.b64
+.. image:: ./consule-certificate-update.png
 
-Copy the new jks.64 files from local environment to the DFC container.
-
- .. code:: bash
-
-   docker cp ftp.jks.b64 <DFC container>:/opt/app/datafile/config/
-   docker cp dfc.jks.b64 <DFC container>:/opt/app/datafile/config/
-
-Finally
-
- .. code:: bash
-
-   docker restart <DFC container>
-
-5. Configure vsftpd:
+6. Configure vsftpd:
 --------------------
     update /etc/vsftpd/vsftpd.conf:
 
@@ -135,19 +127,6 @@ Finally
       require_cert=YES
       ssl_request_cert=YES
       ca_certs_file=/home/vsftpd/myuser/dfc.crt
-
-6. Configure config/datafile_endpoints.json:
---------------------------------------------
-   Update the file accordingly:
-
-  .. code-block:: javascript
-
-            "ftpesConfiguration": {
-                "keyCert": "/config/dfc.jks",
-                "keyPassword": "[yourpassword]",
-                "trustedCA": "/config/ftp.jks",
-                "trustedCAPassword": "[yourpassword]"
-            }
 
 7. Other conditions
 ---------------------------------------------------------------------------
