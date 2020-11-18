@@ -66,12 +66,12 @@ The following lists the components included in ONAP DCAE .  All DCAE components 
         - PM-Mapper Service
         - BBS-EventProcessor Service
         - PM Subcription Handler
-        - DataLake Handlers
+        - DataLake Handlers (DL-Admin, DL-Feeder, DES)
         
 
 The figure below shows the DCAE architecture and how the components work with each other.  The components on the right constitute the Platform/controller components which are statically deployed. The components on the right represent the services which can be both deployed statically or dynamically (via CLAMP)
 
-.. image:: images/R6_architecture_diagram.png
+.. image:: images/R7_architecture diagram.png
  
 
 Deployment Scenarios
