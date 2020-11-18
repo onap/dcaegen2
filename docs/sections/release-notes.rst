@@ -192,6 +192,7 @@ Known Limitations, Issues and Workarounds
 
     * BPGenerator yaml Fixes are different for yaml file and string (DCAEGEN2-2489)
     * Slice Analysis - Avoid removal of data when insufficient samples are present (DCAEGEN2-2509)
+    * HV-VES - Pod recovery when config-fetch fails (DCAEGEN2-2516)
     
 
 *System Limitations*
