@@ -51,60 +51,37 @@ We have two keystore files, one for TrustManager, one for KeyManager.
 
  .. code:: bash
 
-   keytool -import -alias ftp -keystore ftp.jks -file ftp.der
+   keytool -import -alias ftp -keystore trust.jks -file ftp.der
 
 **For KeyManager:**
 
-1. First, create a jks keystore:
+1. Import dfc.crt and dfc.key to dfc.jks. This is a bit troublesome.
+
+ Convert x509 Cert and Key to a pkcs12 file
 
  .. code:: bash
 
-    keytool -keystore dfc.jks -genkey -alias dfc
-
-2. Second, import dfc.crt and dfc.key to dfc.jks. This is a bit troublesome.
-
- 1). Step one: Convert x509 Cert and Key to a pkcs12 file
-
- .. code:: bash
-
-    openssl pkcs12 -export -in dfc.crt -inkey dfc.key -out dfc.p12 -name [some-alias]
+    openssl pkcs12 -export -in dfc.crt -inkey dfc.key -out cert.p12 -name dfc
 
  Note: Make sure you put a password on the p12 file - otherwise you'll get a null reference exception when you try to import it.
 
- Note 2: You might want to add the -chainoption to preserve the full certificate chain.
+2. Create password files for trust.jks and cert.p12
+    .. code:: bash
 
- 2). Step two: Convert the pkcs12 file to a java keystore:
+    echo "[your password]" > p12.pass
+    echo "[your password]" > trust.pass
 
- .. code:: bash
-
-    keytool -importkeystore -deststorepass [changeit] -destkeypass [changeit] -destkeystore dfc.jks -srckeystore dfc.p12 -srcstoretype PKCS12 -srcstorepass [some-password] -alias [some-alias]
-
-4. Update existing jks.b64 files
+4. Update existing KeyStore files
 ---------------------------------
 
-Copy the existing jks from the DFC container to a local environment.
+Copy the new trust.jks and cert.p12 files from local environment to the DFC container.
 
  .. code:: bash
 
-   docker cp <DFC container>:/opt/app/datafile/config/ftp.jks .
-   docker cp <DFC container>:/opt/app/datafile/config/dfc.jks .
-
- .. code:: bash
-
-   openssl base64 -in ftp.jks -out ftp.jks.b64
-   openssl base64 -in dfc.jks -out dfc.jks.b64
-
- .. code:: bash
-
-   chmod 755 ftp.jks.b64
-   chmod 755 dfc.jks.b64
-
-Copy the new jks.64 files from local environment to the DFC container.
-
- .. code:: bash
-
-   docker cp ftp.jks.b64 <DFC container>:/opt/app/datafile/config/
-   docker cp dfc.jks.b64 <DFC container>:/opt/app/datafile/config/
+   docker cp cert.p12 <DFC container>:/opt/app/datafile/etc/cert/
+   docker cp p12.pass <DFC container>:/opt/app/datafile/etc/cert/
+   docker cp trust.jks <DFC container>:/opt/app/datafile/etc/cert/
+   docker cp trust.pass <DFC container>:/opt/app/datafile/etc/cert/
 
 Finally
 
@@ -136,20 +113,7 @@ Finally
       ssl_request_cert=YES
       ca_certs_file=/home/vsftpd/myuser/dfc.crt
 
-6. Configure config/datafile_endpoints.json:
---------------------------------------------
-   Update the file accordingly:
-
-  .. code-block:: javascript
-
-            "ftpesConfiguration": {
-                "keyCert": "/config/dfc.jks",
-                "keyPassword": "[yourpassword]",
-                "trustedCA": "/config/ftp.jks",
-                "trustedCAPassword": "[yourpassword]"
-            }
-
-7. Other conditions
+6. Other conditions
 ---------------------------------------------------------------------------
    This has been tested with vsftpd and dfc, with self-signed certificates.
    In real deployment, we should use ONAP-CA signed certificate for DFC, and vendor-CA signed certificate for xNF
