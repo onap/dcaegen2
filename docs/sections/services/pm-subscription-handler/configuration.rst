@@ -79,7 +79,10 @@ The subscription is configured within the monitoring policy. The subscription mo
              ],
              "modelVersionIDs":[
                 "e80a6ae3-cafd-4d24-850d-e14c084a5ca9"
-             ]
+             ],
+            "modelNames": [
+                "pnf102"
+            ]
           },
           "measurementGroups":[
              {
@@ -131,8 +134,8 @@ The subscription is configured within the monitoring policy. The subscription mo
 
 **nfFilter**
 
-The ``nfFilter`` will be used in order to filter the list of NF's retrieved from A&AI. There are three criteria that
-can be filtered on, nfNames, modelInvariantIDs and/or modelVersionIDs.  All 3 of these are optional fields but at
+The ``nfFilter`` will be used in order to filter the list of NF's retrieved from A&AI. There are four criteria that
+can be filtered on, nfNames, modelInvariantIDs, modelVersionIDs and/or modelNames.  All 4 of these are optional fields but at
 least 1 must be present for the filter to work.
 
 .. code-block:: json
@@ -148,6 +151,9 @@ least 1 must be present for the filter to work.
         ],
         "modelVersionIDs": [
            "e80a6ae3-cafd-4d24-850d-e14c084a5ca9"
+        ],
+        "modelNames": [
+            "pnf102"
         ]
     }
 
@@ -159,6 +165,8 @@ least 1 must be present for the filter to work.
 | modelInvariantIDs      | List of modelInvariantIDs. These UUIDs will be checked for exact matches with AAI entities.   | list | False    |
 +------------------------+-----------------------------------------------------------------------------------------------+------+----------+
 | modelVersionIDs        | List of modelVersionIDs. These IDs will be checked for exact matches with AAI entities.       | list | False    |
++------------------------+-----------------------------------------------------------------------------------------------+------+----------+
+| modelNames             | List of modelNames. These names will be checked for exact matches with AAI entities.          | list | False    |
 +------------------------+-----------------------------------------------------------------------------------------------+------+----------+
 
 **measurementGroup**
