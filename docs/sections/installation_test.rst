@@ -99,11 +99,14 @@ After the platform is assessed as healthy, the next step is to check the functio
   
     kubectl logs -f -n onap <vescollectorpod> dcae-ves-collector
 
+.. note::
+     To get the "vescollectorpod" run this command: kubectl -n onap get pods | grep  dcae-ves-collector
+
 2. Check VES Output
 
     VES publishes received VNF data, after authentication and syntax check, onto DMaaP Message Router.  To check this is happening we can subscribe to the publishing topic.
 
-    1. Run the subscription command to subscribe to the topic: **curl  -H "Content-Type:text/plain" -X GET http://{{K8S_NODEIP}}:30227/events/unauthenticated.VES_MEASUREMENT_OUTPUT/group1/C1?timeout=50000**.  The actual format and use of Message Router API can be found in DMaaP project documentation.
+    1. Run the subscription command to subscribe to the topic: **curl  -H "Content-Type:text/plain" -X GET http://{{K8S_NODEIP}}:3904/events/unauthenticated.VES_MEASUREMENT_OUTPUT/group1/C1?timeout=50000**.  The actual format and use of Message Router API can be found in DMaaP project documentation.
         * When there are messages being published, this command returns with the JSON array of messages;
         * If no message being published, up to the timeout value (i.e. 50000 seconds as in the example above), the call is returned with empty JAON array;
         * It may be useful to run this command in a loop:  **while :; do curl  -H "Content-Type:text/plain" -X GET http://{{K8S_NODEIP}}:3904/events/unauthenticated.VES_MEASUREMENT_OUTPUT/group1/C1?timeout=50000; echo; done**;

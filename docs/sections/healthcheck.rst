@@ -26,6 +26,12 @@ blueprints after the initial DCAE installation.
 The healthcheck service is exposed as a Kubernetes ClusterIP Service named
 `dcae-healthcheck`.   The service can be queried for status as shown below.
 
+.. note::
+  Run the below commands before running "curl dcae-healthcheck"
+
+  * To get the dcae-healthcheck pod name, run this: kubectl  get pods -n onap | grep dcae-healthcheck
+  * Then enter in to the shell of the container, run this: kubectl exec -it <dcae-healthcheck pod> -n onap bash
+
 .. code-block:: json
 
    $ curl dcae-healthcheck
