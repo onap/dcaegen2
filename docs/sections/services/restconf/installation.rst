@@ -18,8 +18,20 @@ Steps to deploy are shown below
 
 - Enter the Bootstrap POD using kubectl
 
+     .. note::
+       For doing this, follow the below steps
+
+       * First get the bootstrap pod name by running run this: kubectl get pods -n onap | grep bootstrap
+       * Then login to bootstrap pod by running this: kubectl exec -it <bootstrap pod> bash -n onap
+
 - Transfer blueprint component file in DCAE bootstrap POD under /blueprints directory. Blueprint can be found in
      https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-restconf.yaml
+
+     .. note::
+       Verify the below before validate blueprint
+
+       * If the version of the plugin used is different from "cfy plugins list", update the blueprint import to match
+       * Use an explicit URL to the plugin YAML file instead of a plugin repository under import in blueprint
 
 - Validate blueprint
     .. code-block:: bash
