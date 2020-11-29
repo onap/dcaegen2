@@ -23,6 +23,12 @@ Following are steps if manual deployment/undeployment is required.  Steps to dep
 
 Enter the Cloudify Manager kuberenetes pod
 
+    .. note::
+      For doing this, follow the below steps
+
+      * First get the bootstrap pod name by running run this: kubectl get pods -n onap | grep bootstrap
+      * Then login to bootstrap pod by running this: kubectl exec -it <bootstrap pod> bash -n onap
+
     - Tca-gen2 blueprint directory (/blueprints/k8s-tcagen2.yaml). The blueprint is also maintained in gerrit and can be downloaded from https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-tcagen2.yaml
      
     - Create input file required for deployment
