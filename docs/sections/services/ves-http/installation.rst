@@ -42,13 +42,18 @@ If VESCollector instance need to be deployed with authentication disabled, follo
 
 
 - Execute into Bootstrap POD using kubectl command
+    .. note::
+      For doing this, follow the below steps
 
-- VES blueprint is available under  /blueprints directory ``k8s-ves-tls.yaml``. A corresponding input file is also pre-loaded into bootstrap pod under /inputs/k8s-ves-inputs.yaml
+      * First get the bootstrap pod name by running run this: kubectl get pods -n onap | grep bootstrap
+      * Then login to bootstrap pod by running this: kubectl exec -it <bootstrap pod> bash -n onap
+
+- VES blueprint is available under  /blueprints directory ``k8s-ves.yaml``. A corresponding input file is also pre-loaded into bootstrap pod under /inputs/k8s-ves-inputs.yaml
 
 - Deploy blueprint
     .. code-block:: bash
 
-        cfy install -b ves-http -d ves-http -i /inputs/k8s-ves-inputs.yaml /blueprints/k8s-ves-tls.yaml
+        cfy install -b ves-http -d ves-http -i /inputs/k8s-ves-inputs.yaml /blueprints/k8s-ves.yaml
 
 To undeploy ves-http, steps are noted below
 
