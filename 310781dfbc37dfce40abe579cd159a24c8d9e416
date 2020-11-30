@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dc5942b2_801378ba",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-30T17:13:44Z",
+      "side": 1,
+      "message": "This work is no longer scoped; suggest removing this note.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 211
+      },
+      "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d146e32_5b3a1d07",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-30T17:13:44Z",
+      "side": 1,
+      "message": "all blueprints are now under dcaegen2/platform/blueprint repo; modify link to below\n\nhttps://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-ves-mapper.yaml?h\u003dguilin",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 127
+      },
+      "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4dfbe979_5b8283de",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-30T17:13:44Z",
+      "side": 1,
+      "message": "k8s-ves-mapper.yaml is default blueprint name (preloaded into bootstrap container)",
+      "range": {
+        "startLine": 55,
+        "startChar": 42,
+        "endLine": 55,
+        "endChar": 74
+      },
+      "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ffa6ded_9f5cae43",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-30T17:13:44Z",
+      "side": 1,
+      "message": "k8s-ves-mapper.yaml",
+      "range": {
+        "startLine": 59,
+        "startChar": 51,
+        "endLine": 59,
+        "endChar": 83
+      },
+      "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7784ff5b_cb2d87bd",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-30T17:13:44Z",
+      "side": 1,
+      "message": "1.1.0",
+      "range": {
+        "startLine": 90,
+        "startChar": 114,
+        "endLine": 90,
+        "endChar": 119
+      },
+      "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
