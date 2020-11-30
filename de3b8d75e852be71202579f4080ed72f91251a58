@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6332e945_98944892",
+        "filename": "docs/sections/installation_test.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-30T17:40:37Z",
+      "side": 1,
+      "message": "DMAAP team disabled HTTP nodeport, pls switch http to https and port to 30226",
+      "range": {
+        "startLine": 109,
+        "startChar": 129,
+        "endLine": 109,
+        "endChar": 133
+      },
+      "revId": "de3b8d75e852be71202579f4080ed72f91251a58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f42531f_c633c13c",
+        "filename": "docs/sections/installation_test.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-30T17:40:37Z",
+      "side": 1,
+      "message": "https/30226",
+      "range": {
+        "startLine": 116,
+        "startChar": 106,
+        "endLine": 116,
+        "endChar": 133
+      },
+      "revId": "de3b8d75e852be71202579f4080ed72f91251a58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e15503fa_c2717ec5",
+        "filename": "docs/sections/installation_test.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-30T17:40:37Z",
+      "side": 1,
+      "message": "https/30226",
+      "range": {
+        "startLine": 117,
+        "startChar": 100,
+        "endLine": 117,
+        "endChar": 119
+      },
+      "revId": "de3b8d75e852be71202579f4080ed72f91251a58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
