@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd10772c_10e37e4f",
+        "filename": "docs/sections/services/restconf/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-11-30T17:20:16Z",
+      "side": 1,
+      "message": "This step to be removed as all blueprints are preloaded (under /blueprints/ directory) during deployment of DCAE bootstrap pod",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 109
+      },
+      "revId": "f355a14e100d7ff18ae52605ddf4681e447ba691",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
