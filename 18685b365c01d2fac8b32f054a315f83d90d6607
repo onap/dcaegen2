@@ -16,6 +16,24 @@
       "revId": "18685b365c01d2fac8b32f054a315f83d90d6607",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e59508db_cc090678",
+        "filename": "docs/sections/sdk/changelog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-12-01T17:06:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e3696c49_a691b1f9",
+      "revId": "18685b365c01d2fac8b32f054a315f83d90d6607",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
