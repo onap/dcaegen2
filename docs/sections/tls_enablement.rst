@@ -176,7 +176,7 @@ From k8splugin 3.4.1 when external TLS is enabled (use_external_tls=true), keyst
        * A string (``output_type``) that indicates certificate output type.
        * A dictionary (``external_certificate_parameters``) with two elements:
            * A string (``common_name``) that indicates common name which should be present in certificate. Specific for every blueprint (e.g. dcae-ves-collector for VES).
-           * A string (``sans``) that indicates list of Subject Alternative Names (SANs) which should be present in certificate. Delimiter - : Should contain common_name value and other FQDNs under which given component is accessible.
+           * A string (``sans``) that indicates list of Subject Alternative Names (SANs) which should be present in certificate. Delimiter - , Should contain common_name value and other FQDNs under which given component is accessible.
 
    As a final step of the plugin the generated CMPv2 truststore entries will be appended to AAF CA truststore (see certificate artifacts below).
 
@@ -191,7 +191,7 @@ From k8splugin 3.4.1 when external TLS is enabled (use_external_tls=true), keyst
             cert_type: "P12"
             external_certificate_parameters:
                 common_name: "simpledemo.onap.org"
-                sans: "simpledemo.onap.org;ves.simpledemo.onap.org;ves.onap.org"
+                sans: "simpledemo.onap.org,ves.simpledemo.onap.org,ves.onap.org"
 
    For this example the certificates are mounted into ``/opt/app/dcae-certificate/external`` directory within the container.
 
