@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d1556074_ba6af385",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6721
+      },
+      "writtenOn": "2020-12-01T05:51:45Z",
+      "side": 1,
+      "message": "Done, updated based on the comment.",
+      "parentUuid": "dc5942b2_801378ba",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 211
+      },
+      "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0d146e32_5b3a1d07",
         "filename": "docs/sections/services/mapper/installation.rst",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee82bf62_85e55d4b",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6721
+      },
+      "writtenOn": "2020-12-01T05:51:45Z",
+      "side": 1,
+      "message": "Done, updated based on the comment.",
+      "parentUuid": "0d146e32_5b3a1d07",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 127
+      },
+      "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "603876e0_918be8a9",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6721
+      },
+      "writtenOn": "2020-12-01T05:51:45Z",
+      "side": 1,
+      "message": "Done,updated based on the comment.",
+      "parentUuid": "4dfbe979_5b8283de",
+      "range": {
+        "startLine": 55,
+        "startChar": 42,
+        "endLine": 55,
+        "endChar": 74
+      },
+      "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ffa6ded_9f5cae43",
         "filename": "docs/sections/services/mapper/installation.rst",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "639cddf7_27876da1",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6721
+      },
+      "writtenOn": "2020-12-01T05:51:45Z",
+      "side": 1,
+      "message": "Done, updated based on the comment.",
+      "parentUuid": "8ffa6ded_9f5cae43",
+      "range": {
+        "startLine": 59,
+        "startChar": 51,
+        "endLine": 59,
+        "endChar": 83
+      },
+      "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7784ff5b_cb2d87bd",
         "filename": "docs/sections/services/mapper/installation.rst",
         "patchSetId": 1
@@ -114,6 +210,30 @@
       "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d2f6e05_544d9a06",
+        "filename": "docs/sections/services/mapper/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6721
+      },
+      "writtenOn": "2020-12-01T05:51:45Z",
+      "side": 1,
+      "message": "Done, updated based on the comment.",
+      "parentUuid": "7784ff5b_cb2d87bd",
+      "range": {
+        "startLine": 90,
+        "startChar": 114,
+        "endLine": 90,
+        "endChar": 119
+      },
+      "revId": "310781dfbc37dfce40abe579cd159a24c8d9e416",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
