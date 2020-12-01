@@ -1,6 +1,17 @@
 Changelog
 =========
 
+**1.5.0-SNAPSHOT**
+    - Update spring boot to version: 2.4.0
+    - Update reactor to version: 2020.0.1
+    - Update testcontainers to version: 1.15.0
+
+**1.4.4-SNAPSHOT**
+    - Fix CbsClientFactory to allow retry on Mono from createCbsClient
+
+**1.4.3-SNAPSHOT**
+    - Change parameters of external-schema-manager to JSON notation
+
 **1.4.2-SNAPSHOT**
     - Update spring boot to version: 2.3.3.RELEASE
 
