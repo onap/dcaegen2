@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e3696c49_a691b1f9",
+        "filename": "docs/sections/sdk/changelog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-12-01T16:19:02Z",
+      "side": 1,
+      "message": "pls include 1.5.0  (which was released yesterday)",
+      "revId": "18685b365c01d2fac8b32f054a315f83d90d6607",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
