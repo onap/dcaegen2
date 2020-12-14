@@ -76,11 +76,10 @@ controller, it is necessary to override the OOM default global settings
 for ingress configuration.   Specifically, the installation needs to set
 the following configuration in an override file::
  
-  global:
-   ingress:
+  ingress:
     enabled: true
     virtualhost:
-     enabled: false
+      baseurl: "simpledemo.onap.org"
 
 When DCAE MOD is deployed with an ingress controller, several endpoints
 are exposed outside the cluster at the ingress controller's external IP
@@ -130,10 +129,17 @@ design tool's controller settings.
 | Distribution target    | http://dcaemod-runtime-api:9090            |
 +------------------------+--------------------------------------------+
 
+With Guilin release, OOM/ingress template has been updated to enable virtual host by default. 
+All MOD API's and UI access via ingress should use dcaemod.api.simpledemo.onap.org.  
+
+In order to access Design UI from local, add an entry for dcaemod.api.simpledemo.onap.org in /etc/hosts with the correct IP (any K8S node IP can be specified).
+
+
 Using DCAE MOD without an Ingress Controller
 
 
 Not currently supported
+
 
 2.    Configuring DCAE mod
 ==========================
@@ -164,7 +170,7 @@ Distribution target URL will be
 
 
 
-Now let’s access the Nifi (DCAE designer) UI - http://<IPAddress>/nifi
+Now let’s access the Nifi (DCAE designer) UI - http://dcaemod.api.simpledemo.onap.org/nifi
 
 IPAddress is the host address or the DNS FQDN, if there is one, for one of the Kubernetes nodes.
 
@@ -212,9 +218,9 @@ curl -X POST http://<onboardingapi host>/onboarding/components     -H "Conte
 
 In our case,
 
-curl -X POST http://<IPAddress>/onboarding/dataformats     -H "Content-Type: application/json" -d @<filepath to request>
+curl -X POST http://dcaemod.api.simpledemo.onap.org/onboarding/dataformats     -H "Content-Type: application/json" -d @<filepath to request>
 
-curl -X POST http://<IPAddress>/onboarding/components    -H "Content-Type: application/json" -d @<filepath to request>
+curl -X POST http://dcaemod.api.simpledemo.onap.org/onboarding/components    -H "Content-Type: application/json" -d @<filepath to request>
 
 
 
@@ -227,7 +233,7 @@ curl -X GET http://<IPAddress>/onboarding/components
 
 **f. Verify the genprocessor (which polls onboarding periodically to convert component specs to nifi processor), converted the component**
 
-Open http://<IPAddress>/nifi-jars in a browser.
+Open http://dcaemod.api.simpledemo.onap.org/nifi-jars in a browser.
 
 These jars should now be available for you to use in the nifi UI as
 processors
