@@ -18,5 +18,6 @@ DataFile Collector(DFC)
    ./configuration.rst
    ./consumedapis.rst
    ./administration.rst
+   ./http-notes.rst
    ./troubleshooting.rst
    ./release-notes.rst
