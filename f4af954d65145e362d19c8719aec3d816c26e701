@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1c6ca93_8a4408b6",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-12-30T11:52:00Z",
+      "side": 1,
+      "message": "Section doesn\u0027t really fit in the troubleshooting. If there is no better page for that, consider creating a new one.",
+      "range": {
+        "startLine": 171,
+        "startChar": 0,
+        "endLine": 171,
+        "endChar": 1
+      },
+      "revId": "f4af954d65145e362d19c8719aec3d816c26e701",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c4f0775_fbd4e42a",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-12-30T11:52:00Z",
+      "side": 1,
+      "message": "To be more precise - file ready message for http server is the same, the only difference is scheme set to \"http\" (at least I think it is).",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 134
+      },
+      "revId": "f4af954d65145e362d19c8719aec3d816c26e701",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9387348d_4721bbb7",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2020-12-30T11:52:00Z",
+      "side": 1,
+      "message": "Couldn\u0027t files from different locations be given in the array? Also consider changing http call to connecion.",
+      "range": {
+        "startLine": 225,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 25
+      },
+      "revId": "f4af954d65145e362d19c8719aec3d816c26e701",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
