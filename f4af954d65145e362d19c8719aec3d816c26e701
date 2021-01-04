@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d5916e1d_2514bcea",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6675
+      },
+      "writtenOn": "2021-01-04T19:26:56Z",
+      "side": 1,
+      "message": "Done. Moved to \"HTTP notes\".",
+      "parentUuid": "f1c6ca93_8a4408b6",
+      "range": {
+        "startLine": 171,
+        "startChar": 0,
+        "endLine": 171,
+        "endChar": 1
+      },
+      "revId": "f4af954d65145e362d19c8719aec3d816c26e701",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9c4f0775_fbd4e42a",
         "filename": "docs/sections/services/dfc/troubleshooting.rst",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "883799f6_92c1cdca",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6675
+      },
+      "writtenOn": "2021-01-04T19:26:56Z",
+      "side": 1,
+      "message": "I agree with your suggestion. Taking into account, I\u0027ve adapted the cited text slightly, the final form is like below:\n\nFile ready message for http server is the same like in other protocols. The only difference is scheme set to \"http\". Processed uri is in the form of...",
+      "parentUuid": "9c4f0775_fbd4e42a",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 134
+      },
+      "revId": "f4af954d65145e362d19c8719aec3d816c26e701",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9387348d_4721bbb7",
         "filename": "docs/sections/services/dfc/troubleshooting.rst",
         "patchSetId": 2
@@ -68,6 +116,30 @@
       "revId": "f4af954d65145e362d19c8719aec3d816c26e701",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d41aa1e6_486a1de4",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6675
+      },
+      "writtenOn": "2021-01-04T19:26:56Z",
+      "side": 1,
+      "message": "We\u0027ve discussed this internally. Now we know, that single \"array\" should contain files from single endpoint, so files from different locations can\u0027t occur.\n\nCall changed to connection",
+      "parentUuid": "9387348d_4721bbb7",
+      "range": {
+        "startLine": 225,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 25
+      },
+      "revId": "f4af954d65145e362d19c8719aec3d816c26e701",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
