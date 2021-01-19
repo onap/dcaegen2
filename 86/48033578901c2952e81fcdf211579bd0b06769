@@ -1,0 +1,11 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Damian Nowak <damian.nowak@nokia.com>
+Code-Review+1: Piotr Marcinkiewicz <piotr.marcinkiewicz@nokia.com>
+Code-Review+1: Tomasz Wr�bel <tomasz.wrobel@nokia.com>
+Code-Review+1: Jan Malkiewicz <jan.malkiewicz@nokia.com>
+Code-Review+2: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-by: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-at: Tue, 19 Jan 2021 14:44:07 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/dcaegen2/+/116951
+Project: dcaegen2
+Branch: refs/heads/guilin
