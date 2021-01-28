@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e51ee8b_9f35bf03",
+        "filename": "docs/sections/design-components/component-specification/component-type-docker.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2021-01-28T13:37:09Z",
+      "side": 1,
+      "message": "Please fix this mark, it should be vertical in-lined.",
+      "range": {
+        "startLine": 278,
+        "startChar": 34,
+        "endLine": 278,
+        "endChar": 35
+      },
+      "revId": "60d5a00dfdf4123ce316ea0658cae17c1ecc036e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e839ac2a_5155b7f7",
+        "filename": "docs/sections/design-components/component-specification/component-type-docker.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2021-01-28T13:37:09Z",
+      "side": 1,
+      "message": "As above",
+      "range": {
+        "startLine": 446,
+        "startChar": 33,
+        "endLine": 446,
+        "endChar": 35
+      },
+      "revId": "60d5a00dfdf4123ce316ea0658cae17c1ecc036e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
