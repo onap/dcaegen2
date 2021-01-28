@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0c9a9d91_ef0adb53",
+        "filename": "docs/sections/design-components/component-specification/component-type-docker.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2021-01-28T14:28:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e51ee8b_9f35bf03",
+      "range": {
+        "startLine": 278,
+        "startChar": 34,
+        "endLine": 278,
+        "endChar": 35
+      },
+      "revId": "60d5a00dfdf4123ce316ea0658cae17c1ecc036e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e839ac2a_5155b7f7",
         "filename": "docs/sections/design-components/component-specification/component-type-docker.rst",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "60d5a00dfdf4123ce316ea0658cae17c1ecc036e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f33f735_749f2c9f",
+        "filename": "docs/sections/design-components/component-specification/component-type-docker.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2021-01-28T14:28:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e839ac2a_5155b7f7",
+      "range": {
+        "startLine": 446,
+        "startChar": 33,
+        "endLine": 446,
+        "endChar": 35
+      },
+      "revId": "60d5a00dfdf4123ce316ea0658cae17c1ecc036e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
