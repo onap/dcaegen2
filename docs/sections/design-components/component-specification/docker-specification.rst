@@ -36,10 +36,10 @@ mapping, volume mapping and policy reconfiguration script details.
 |                                |         | host port. See example    |
 |                                |         | below.                    |
 +--------------------------------+---------+---------------------------+
-| volume                         | JSON    | each array item contains  |
-|                                | array   | a host and container      |
-|                                |         | object. See example       |
-|                                |         | below.                    |
+| volumes                        | JSON    | each array item contains  |
+|                                | array   | volume definition of eith\|
+|                                |         | er: host path or config m\|
+|                                |         | ap volume.                |
 +--------------------------------+---------+---------------------------+
 | policy                         | JSON    | *Required*. Policy        |
 |                                | array   | reconfiguration script    |
@@ -171,6 +171,15 @@ Volume Mapping
                 "host": {
                     "path": "/var/run/docker.sock"
                 }
+            },
+            {
+               "container": {
+                   "bind": "/tmp/mount_path"
+                   "mode": "ro"
+                },
+                "config_volume": {
+                    "name": "config_map_name"
+                }
             }
         ]
     }
@@ -180,7 +189,8 @@ At the top-level:
 +---------------+-------+-------------------------------------+
 | Property Name | Type  | Description                         |
 +===============+=======+=====================================+
-| volumes       | array | Contains container and host objects |
+| volumes       | array | Contains container with host/config\|
+|               |       | _volume objects                     |
 +---------------+-------+-------------------------------------+
 
 The ``container`` object contains:
@@ -208,7 +218,15 @@ The ``host`` object contains:
 | path          | string | path to the host volume |
 +---------------+--------+-------------------------+
 
-Here’s an example of the minimal JSON that must be provided as an input:
+The ``config_volume`` object contains:
+
++---------------+--------+-------------------------+
+| Property Name | Type   | Description             |
++===============+========+=========================+
+| name          | string | name of config map      |
++---------------+--------+-------------------------+
+
+Here’s an example of the minimal JSON with host path volume that must be provided as an input:
 
 .. code:: json
 
@@ -228,6 +246,24 @@ Here’s an example of the minimal JSON that must be provided as an input:
 In the example above, the container volume “/tmp/docker.sock” maps to
 host volume “/var/run/docker.sock”.
 
+Here’s an example of the minimal JSON with config map volume that must be provided as an input:
+
+.. code:: json
+
+    "auxilary": {
+        "volumes": [
+            {
+               "container": {
+                   "bind": "/tmp/mount_path"
+                },
+                "config_volume": {
+                    "name": "config_map_name"
+                }
+            }
+        ]
+    }
+
+In the example above, config map named "config_map_name" is mounted at "/tmp/mount_path".
 
 Policy 
 ~~~~~~~

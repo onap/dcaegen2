@@ -54,7 +54,8 @@ The same is provided below for documentation reference.
             "oneOf": [
               { "$ref": "#/definitions/publisher_http" },
               { "$ref": "#/definitions/publisher_message_router" },
-              { "$ref": "#/definitions/publisher_data_router" }
+              { "$ref": "#/definitions/publisher_data_router" },
+              { "$ref": "#/definitions/publisher_kafka" }
             ]
           }
         },
@@ -65,7 +66,8 @@ The same is provided below for documentation reference.
             "oneOf": [
               { "$ref": "#/definitions/subscriber_http" },
               { "$ref": "#/definitions/subscriber_message_router" },
-              { "$ref": "#/definitions/subscriber_data_router" }
+              { "$ref": "#/definitions/subscriber_data_router" },
+              { "$ref": "#/definitions/subscriber_kafka" }
             ]
           }
         }
@@ -484,6 +486,33 @@ The same is provided below for documentation reference.
         "type"
       ]
     },
+    "stream_kafka": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "$ref": "#/definitions/name"
+        },
+        "version": {
+          "$ref": "#/definitions/version"
+        },
+        "config_key": {
+          "type": "string"
+        },
+        "type": {
+          "description": "Type of stream to be used",
+          "type": "string",
+          "enum": [
+            "kafka"
+          ]
+        }
+      },
+      "required": [
+        "format",
+        "version",
+        "config_key",
+        "type"
+      ]
+    },
     "publisher_http": {
       "type": "object",
       "properties": {
@@ -541,6 +570,9 @@ The same is provided below for documentation reference.
         "config_key",
         "type"
       ]
+    },
+    "publisher_kafka": {
+      "$ref": "#/definitions/stream_kafka"
     },
     "subscriber_http": {
       "type": "object",
@@ -604,6 +636,9 @@ The same is provided below for documentation reference.
         "type",
         "config_key"
       ]
+    },
+    "subscriber_kafka": {
+      "$ref": "#/definitions/stream_kafka"
     },
     "provider" : {
       "oneOf" : [
@@ -853,17 +888,10 @@ The same is provided below for documentation reference.
           "type": "array",
           "items": {
             "type": "object",
-            "properties": {
-              "host":{
-                "type":"object",
-                "path": {"type": "string"}
-              },
-              "container":{
-                "type":"object",
-                "bind": { "type": "string"},
-                "mode": { "type": "string"}
-              }
-            }
+            "oneOf": [
+              { "$ref": "#/definitions/host_path_volume" },
+              { "$ref": "#/definitions/config_map_volume" }
+            ]
           }
         }
       },
@@ -871,6 +899,46 @@ The same is provided below for documentation reference.
         "healthcheck"
       ],
       "additionalProperties": false
+    },
+    "host_path_volume": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "object",
+          "path": {
+            "type": "string"
+          }
+        },
+        "container": {
+          "type": "object",
+          "bind": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "config_map_volume": {
+      "type": "object",
+      "properties": {
+        "config_volume": {
+          "type": "object",
+          "name": {
+            "type": "string"
+          }
+        },
+        "container": {
+          "type": "object",
+          "bind": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          }
+        }
+      }
     },
     "docker_healthcheck_http": {
       "properties": {
