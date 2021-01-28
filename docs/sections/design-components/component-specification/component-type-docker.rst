@@ -274,6 +274,8 @@ format of ``dcae.vnf.kpi`` version ``1.0.0``.
 |             |    | ``message_router`` |
 |             |    | ,                  |
 |             |    | ``data_router``    |
+|             |    | ,                  |
+|             |    | ``kafka``    |
 +-------------+----+--------------------+
 
 .. _message-router:
@@ -325,6 +327,27 @@ Example (not tied to the larger example):
             "route": "/identity",
             "type": "data_router",
             "version": "0.1.0"
+        }],
+    ...
+    }
+
+.. _kafka:
+
+Kafka
+''''''''''''''
+
+Kafka subscribers are clients fetching data directly from kafka.
+
+``config_key``:
+
+.. code:: json
+
+    "streams": {
+        "subscribes": [{
+            "format": "dcae.some-format",
+            "version": "1.0.0",
+            "config_key": "some_format_handle",
+            "type": "kafka"
         }],
     ...
     }
@@ -419,6 +442,8 @@ POST requests to streams that support the data format
 |             |    | ``message_router`` |
 |             |    | ,                  |
 |             |    | ``data_router``    |
+|             |    | ,                  |
+|             |    | ``kafka``    |
 +-------------+----+--------------------+
 
 .. message-router-1:
@@ -471,6 +496,27 @@ Example (not tied to the larger example):
             "type": "data_router",
             "version": "0.1.0"
         }]
+    }
+
+.. kafka-1:
+
+Kafka
+''''''''''''''
+
+Kafka subscribers are clients fetching data directly from kafka.
+
+``config_key``:
+
+.. code:: json
+
+    "streams": {
+        "subscribes": [{
+            "format": "dcae.some-format",
+            "version": "1.0.0",
+            "config_key": "some_format_handle",
+            "type": "kafka"
+        }],
+    ...
     }
 
 Quick Reference
@@ -1543,17 +1589,10 @@ Schema portion:
           "type": "array",
           "items": {
             "type": "object",
-            "properties": {
-              "host":{
-                "type":"object",
-                "path": {"type": "string"}
-              },
-              "container":{
-                "type":"object",
-                "bind": { "type": "string"},
-                "mode": { "type": "string"}
-              }
-            }
+            "oneOf": [
+              { "$ref": "#/definitions/host_path_volume" },
+              { "$ref": "#/definitions/config_map_volume" }
+            ]
           }
         }
       },
