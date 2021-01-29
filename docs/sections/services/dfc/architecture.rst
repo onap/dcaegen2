@@ -30,7 +30,9 @@ Interaction
 """""""""""
 DFC will interact with the DMaaP Message Router, using json, and with the Data Router, using metadata in the header and
 file in the body, via secured protocol.
-So far, the implemented protocols to communicate with xNFs are http (with basic authentication), sftp and ftpes.
+So far, the implemented protocols to communicate with xNFs are http (with basic authentication), https, sftp and ftpes.
+When https protocol is used, following ways of connection are possible - client certificate authentication, basic
+authentication and no authentication.
 
 Retry mechanism
 """""""""""""""
