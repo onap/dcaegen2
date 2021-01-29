@@ -167,3 +167,9 @@ When StrictHostKeyChecking is enabled and DFC cannot find a known_hosts file, th
     |WARN     |StrictHostKeyChecking is enabled but environment variable KNOWN_HOSTS_FILE_PATH is not set or points to not existing file [/home/datafile/.ssh/known_hosts]  -->  falling back to StrictHostKeyChecking='no'.  
 
 To resolve this warning, provide a known_hosts file or disable StrictHostKeyChecking, see DFC config page - :ref:`strict_host_checking_config`.
+
+Inability to download file from xNF due to certificate problem
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+When collecting files using HTTPS and DFC contains certs from CMPv2 server, an exception like "unable to find valid certification path to requested target" may occur.
+Except obvious certificates problems make sure, that xNF which are connecting to the DFC are supplied with certificates coming from the same ONAP unit where DFC was installed.

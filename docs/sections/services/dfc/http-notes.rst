@@ -1,7 +1,7 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-HTTP notes
+HTTP/HTTPS notes
 ==========
 
 HTTP Basic Authentication in FileReady messages
@@ -61,3 +61,54 @@ Example file ready message is as follows:
 
 Note, more than one file from the same location can be added to the "arrayOfNamedHashMap". If so, they are downloaded
 from the endpoint through single http connection.
+
+HTTPS connection with DFC
+"""""""""""""""""""""""""
+The file ready message for https server is the same as used in other protocols and http. The only difference is that the scheme is set to
+"https":
+
+.. code-block:: bash
+
+   ...
+   "arrayOfNamedHashMap": [
+           {
+             "name": "C_28532_measData_file.xml",
+             "hashMap": {
+               "location": "https://login:password@server.com:443/file.xml.gz",
+   ...
+
+The processed uri depends on the https connection type that has to be established (client certificate authentication, basic
+authentication, and no authentication).
+
+For client certificate authentication:
+
+.. code-block:: bash
+
+   scheme://host:port/path
+   i.e.
+   https://example.com:443/C20200502.1830+0200-20200502.1845+0200_195500.xml.gz
+
+Authentication is based on the certificate used by the DFC.
+
+For basic authentication:
+
+.. code-block:: bash
+
+   scheme://userinfo@host:port/path
+   i.e.
+   https://demo:demo123456!@example.com:443/C20200502.1830+0200-20200502.1845+0200_195500.xml.gz
+
+Authentication is based on the "userinfo" applied within the link.
+
+If no authentication is required:
+
+.. code-block:: bash
+
+   scheme://host:port/path
+   i.e.
+   https://example.com:443/C20200502.1830+0200-20200502.1845+0200_195500.xml.gz
+
+Note, effective way of authentication depends of uri provided and http server configuration.
+
+If port number was not supplied , port 443 is used by default.
+Every file is sent through separate https connection.
