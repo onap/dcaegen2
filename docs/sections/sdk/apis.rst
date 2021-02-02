@@ -168,6 +168,90 @@ Writing message subscriber
                     logger.warn("An unexpected error while receiving messages from DMaaP", ex);
                 });
 
+| Configure timeout when talking to DMaaP-MR
+
+* publisher:
+
+.. code-block:: java
+
+   ImmutableMessageRouterPublishRequest.builder()
+                .timeoutConfig(ImmutableDmaapTimeoutConfig.builder()
+                        .timeout(Duration.ofSeconds(2))
+                        .build())
+                .
+                .
+                .
+                .build();
+
+* subscriber:
+
+.. code-block:: java
+
+  ImmutableMessageRouterSubscribeRequest.builder()
+                .timeoutConfig(ImmutableDmaapTimeoutConfig.builder()
+                        .timeout(Duration.ofSeconds(2))
+                        .build())
+                .
+                .
+                .
+                .build();
+
+The default timeout value(4 seconds) can be used:
+
+.. code-block:: java
+
+   ImmutableDmaapTimeoutConfig.builder().build()
+
+For timeout exception following message is return as failReason in DmaapResponse:
+
+.. code-block:: RST
+
+   408 Request Timeout
+   {"requestError":{"serviceException":{"messageId":"SVC0001","text":"Client timeout exception occurred, Error code is %1","variables":["408"]}}}
+
+| Configure retry mechanism
+
+* publisher:
+
+.. code-block:: java
+
+       final MessageRouterPublisherConfig config = ImmutableMessageRouterPublisherConfig.builder()
+                .retryConfig(ImmutableDmaapRetryConfig.builder()
+                        .retryIntervalInSeconds(2)
+                        .retryCount(2)
+                        .build())
+                .
+                .
+                .
+                .build();
+       final MessageRouterPublisher publisher = DmaapClientFactory.createMessageRouterPublisher(config);
+
+* subscriber:
+
+.. code-block:: java
+
+    final MessageRouterSubscriberConfig config = ImmutableMessageRouterSubscriberConfig.builder()
+                .retryConfig(ImmutableDmaapRetryConfig.builder()
+                        .retryIntervalInSeconds(2)
+                        .retryCount(2)
+                        .build())
+                .
+                .
+                .
+                .build();
+    final MessageRouterSubscriber subscriber = DmaapClientFactory.createMessageRouterSubscriber(config);
+
+The default retry config(retryCount=3, retryIntervalInSeconds=1) can be used:
+
+.. code-block:: java
+
+    ImmutableDmaapRetryConfig.builder().build()
+
+Retry functionality can handle following errors:
+ - 404, 408, 413, 429, 500, 502, 503, 504
+ - ReadTimeoutException
+ - ConnectException
+
 hvvesclient-producer - a reference Java implementation of High Volume VES Collector client
 ------------------------------------------------------------------------------------------
 This library is used in xNF simulator which helps us test HV VES Collector in CSIT tests. You may use it as a reference when implementing your code in non-JVM language or directly when using Java/Kotlin/etc.
