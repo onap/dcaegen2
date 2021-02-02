@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "13fd9ce4_c8234d68",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-02-02T15:17:41Z",
+      "side": 1,
+      "message": "Would it be possible to align this with a complete statement, like:\nfinal MessageRouterSubscribeRequest request \u003d ImmutableMessageRouterSubscribeRequest.builder()\n        .sourceDefinition(sourceDefinition)\n        .build();\n\nI mean, to add the part, when we`re moving a reference to an object, we will be using later on.\nThat is for both -- publisher and subscribe parts below.",
+      "revId": "ba1c6376d26cb782f1bb0638c2e45cb76cb675f6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73b8d896_98a79aac",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-02-02T15:17:41Z",
+      "side": 1,
+      "message": "space between \"value\" and \"(4 seconds)\"",
+      "range": {
+        "startLine": 199,
+        "startChar": 20,
+        "endLine": 199,
+        "endChar": 36
+      },
+      "revId": "ba1c6376d26cb782f1bb0638c2e45cb76cb675f6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb6eb5f0_d5847d57",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-02-02T15:17:41Z",
+      "side": 1,
+      "message": "This and previous \"Configure timeout when talking to DMaaP-MR\"\nWould it be possible to make this a Heading?",
+      "range": {
+        "startLine": 212,
+        "startChar": 2,
+        "endLine": 212,
+        "endChar": 27
+      },
+      "revId": "ba1c6376d26cb782f1bb0638c2e45cb76cb675f6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70aa48f4_02a271a6",
+        "filename": "docs/sections/sdk/apis.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-02-02T15:17:41Z",
+      "side": 1,
+      "message": "What do You want to say with this?\nWhat does it mean \"can handle\"?",
+      "range": {
+        "startLine": 250,
+        "startChar": 1,
+        "endLine": 250,
+        "endChar": 47
+      },
+      "revId": "ba1c6376d26cb782f1bb0638c2e45cb76cb675f6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
