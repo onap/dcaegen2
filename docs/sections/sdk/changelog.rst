@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**1.6.0-SNAPSHOT**
+    - Add configurable timeout in dmaap-client
+    - Add configurable retry mechanism in dmaap-client
+
 **1.5.0-SNAPSHOT**
     - Update spring boot to version: 2.4.0
     - Update reactor to version: 2020.0.1
