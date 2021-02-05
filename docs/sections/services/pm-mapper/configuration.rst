@@ -4,6 +4,24 @@
 Configuration and Performance
 =============================
 
+Files Processing Configuration 
+""""""""""""""""""""""""""""""
+The PM Mapper is consuming the 3GPP XML files from DMaaP-DR, and process them. It is possible to process it in parallel.
+In order to parallel processing, new configuration env has been introduced:
+
+- PROCESSING_LIMIT_RATE (optional, default value: 1) - allows to limit the rate of processing files through channel.
+
+- THREADS_MULTIPLIER (optional, default value: 1) - allows to specify multiplier to calculate the amount of threads. By default threads number equals to number processors available to JVM (multiplier=1). 
+
+Envs should be specified in section "envs:" in blueprint. Example part of blueprint configuration:
+
+::
+
+         envs:
+           ROCESSING_LIMIT_RATE: "1"
+           THREADS_MULTIPLIER: "2"
+
+
 PM Mapper Filtering
 """""""""""""""""""
 The PM Mapper performs data reduction, by filtering the PM telemetry data it receives.
