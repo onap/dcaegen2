@@ -4,6 +4,55 @@
 Configuration and Performance
 =============================
 
+Files Processing Configuration
+""""""""""""""""""""""""""""""
+The PM Mapper is consuming the 3GPP XML files from DMaaP-DR, and processing them. It is possible to process it in parallel.
+In order to parallel processing, new configuration env has been introduced:
+
+- PROCESSING_LIMIT_RATE (optional, default value: 1) - allows to limit the rate of processing files through channel.
+
+- THREADS_MULTIPLIER (optional, default value: 1) - allows to specify multiplier to calculate the amount of threads.
+
+- PROCESSING_THREADS_COUNT (optional, default value: number of threads available to JVM) - allows to specify number of threads that will be used for files processing.
+
+The final number of the processing threads can be calculated based on the following formula: THREADS_NUMBER = PROCESSING_THREADS_COUNT * THREADS_MULTIPLIER + PROCESSING_LIMIT_RATE
+
+Example calculation:
+
+- PROCESSING_LIMIT_RATE = 4
+
+- THREADS_MULTIPLIER = 2
+
+- PROCESSING_THREADS_COUNT = 3
+
+In this case, 10 threads will be able to parallel processing files.
+
+Envs should be specified in section "envs:" in blueprint. Example part of blueprint configuration:
+
+::
+
+        ...
+        pm-mapper:
+          type: dcae.nodes.ContainerizedServiceComponentUsingDmaap
+          interfaces:
+            cloudify.interfaces.lifecycle:
+              create:
+                inputs:
+                  ports:
+                    - '8443:0'
+                    - '8081:0'
+                  envs:
+                    PROCESSING_LIMIT_RATE: "1"
+                    THREADS_MULTIPLIER: "2"
+                    PROCESSING_THREADS_COUNT = "3"
+          relationships:
+            - type: dcaegen2.relationships.subscribe_to_files
+              target: pm-feed
+            - type: dcaegen2.relationships.publish_events
+              target: pm-topic
+        ...
+
+
 PM Mapper Filtering
 """""""""""""""""""
 The PM Mapper performs data reduction, by filtering the PM telemetry data it receives.
