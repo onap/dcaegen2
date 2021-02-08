@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "37b36fee_b6efcf3f",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2021-02-08T17:55:38Z",
+      "side": 1,
+      "message": "When https protocol is used, the following ways of connection are possible: client certificate authentication, basic\nauthentication, and no authentication.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 37
+      },
+      "revId": "db4487120141a62ac740d2f8951e52505eaf8aee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0add6eb3_eeef39e0",
+        "filename": "docs/sections/services/dfc/http-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2021-02-08T17:55:38Z",
+      "side": 1,
+      "message": "The file ready message for https server is the same as used in other protocols and http. The only difference is that the scheme is set to \"https\":",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 8
+      },
+      "revId": "db4487120141a62ac740d2f8951e52505eaf8aee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df3f887c_3e20dd7d",
+        "filename": "docs/sections/services/dfc/http-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2021-02-08T17:55:38Z",
+      "side": 1,
+      "message": "The processed uri depends on the https connection type that has to be established (client certificate authentication, basic \nauthentication, and no authentication).",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 0
+      },
+      "revId": "db4487120141a62ac740d2f8951e52505eaf8aee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a6e19bc_da63fe7e",
+        "filename": "docs/sections/services/dfc/http-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2021-02-08T17:55:38Z",
+      "side": 1,
+      "message": "If no authentication is required:",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 36
+      },
+      "revId": "db4487120141a62ac740d2f8951e52505eaf8aee",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
