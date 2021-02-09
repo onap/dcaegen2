@@ -255,6 +255,42 @@ Retry functionality works for:
  - DMaaP MR HTTP response status codes: 404, 408, 413, 429, 500, 502, 503, 504
  - Java Exception classes: ReadTimeoutException, ConnectException
 
+**************************************
+Configure custom persistent connection
+**************************************
+
+* publisher:
+
+.. code-block:: java
+
+       final MessageRouterPublisherConfig connectionPoolConfiguration = ImmutableMessageRouterPublisherConfig.builder()
+                 .connectionPoolConfig(ImmutableDmaapConnectionPoolConfig.builder()
+                        .connectionPool(16)
+                        .maxIdleTime(10) //in seconds
+                        .maxLifeTime(20) //in seconds
+                        .build())
+                .build();
+       final MessageRouterPublisher publisher = DmaapClientFactory.createMessageRouterPublisher(connectionPoolConfiguration);
+
+* subscriber:
+
+.. code-block:: java
+
+    final MessageRouterSubscriberConfig connectionPoolConfiguration = ImmutableMessageRouterSubscriberConfig.builder()
+                    .connectionPoolConfig(ImmutableDmaapConnectionPoolConfig.builder()
+                        .connectionPool(16)
+                        .maxIdleTime(10) //in seconds
+                        .maxLifeTime(20) //in seconds
+                        .build())
+                .build();
+    final MessageRouterSubscriber subscriber = DmaapClientFactory.createMessageRouterSubscriber(connectionPoolConfiguration);
+
+The default custom persistent connection configuration (connectionPool=16, maxLifeTime=2147483647, maxIdleTime=2147483647) can be used:
+
+.. code-block:: java
+
+    ImmutableDmaapConnectionPoolConfig.builder().build()
+
 hvvesclient-producer - a reference Java implementation of High Volume VES Collector client
 ------------------------------------------------------------------------------------------
 This library is used in xNF simulator which helps us test HV VES Collector in CSIT tests. You may use it as a reference when implementing your code in non-JVM language or directly when using Java/Kotlin/etc.
