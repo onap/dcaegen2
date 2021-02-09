@@ -6,7 +6,7 @@
 Installation
 ============
 
-In Guilin, the PMSH can be deployed using the DCAE Dashboard or via CLI. Steps to deploy using CLI will be shown
+The PMSH microservice can be deployed using the DCAE Dashboard or via CLI. Steps to deploy using CLI will be shown
 below.
 
 Deployment Prerequisites
@@ -21,7 +21,7 @@ As well as this, the following components are required to be running. They can b
     - A&AI
     - AAF
 
-The robot healthcheck can be run from one of the Kubernetes controllers.
+The robot healthcheck test suite can be run from the local OOM repository.
 
 .. code-block:: bash
 
@@ -30,7 +30,7 @@ The robot healthcheck can be run from one of the Kubernetes controllers.
 Deployment Procedure
 ^^^^^^^^^^^^^^^^^^^^
 
-To deploy the PMSH in the Frankfurt release, the monitoring policy needs to be pushed directly to CONSUL.
+To deploy the PMSH, the monitoring policy needs to be pushed directly to CONSUL.
 To begin, kubectl exec on to the dcae-bootstrap pod and move to the /tmp directory.
 
 .. code-block:: bash

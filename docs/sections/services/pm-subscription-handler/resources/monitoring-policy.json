@@ -14,6 +14,9 @@
          ],
          "modelVersionIDs":[
             "e80a6ae3-cafd-4d24-850d-e14c084a5ca9"
+         ],
+         "modelNames": [
+            "PnfSVC"
          ]
       },
       "measurementGroups":[
