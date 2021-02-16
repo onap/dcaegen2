@@ -52,6 +52,7 @@ The dcaegen2 chart has the following sub-charts:
 * ``dcae-redis``: deploys the DCAE Redis cluster.
 * ``dcae-dashboard``: deploys the DCAE Dashboard for managing DCAE microservices deployments
 * ``dcae-servicechange-handler``: deploys the DCAE service change handler service.  A subchart (``dcae-inventory-api``) deploys the DCAE inventory API service.
+* ``dcae-ves-openapi-manager``: deploys the DCAE service validator of VES_EVENT type artifacts from distributed services.
 
 DCAE Deployment
 ---------------
@@ -73,6 +74,7 @@ These include:
   * Inventory postgres database service (launched as a dependency of the inventory API service)
   * DCAE postgres database service (launched as a dependency of the bootstrap service)
   * DCAE Redis cluster
+  * VES OpenAPI Manager
 
 Some of the DCAE subcharts include an initContainer that checks to see if
 other services that they need in order to run have become ready.  The installation

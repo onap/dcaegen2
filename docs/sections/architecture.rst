@@ -18,7 +18,7 @@ apparatus (i.e. the collectors, the analytics, and auxiliary microservices) that
 DCAE Platform also provisions DMaaP topics and manages the distribution scopes of the topics following the prescription of the control loop model by interacting 
 with controlling function of DMaaP.
 
-DCAE Service components are the  functional entities that realize the collection and analytics needs of ONAP control loops.  They include the collectors for various 
+DCAE Service components are the  functional entities that realize the collection and analytics needs of ONAP control loops.  They include the collectors for various
 data collection needs, event processors for data standardization,  analytics that assess collected data, and various auxiliary microservices that assist data 
 collection and analytics, and support other ONAP functions.  Service components and DMaaP buses form the "data plane" for DCAE, where DCAE collected data is 
 transported among different DCAE service components.
@@ -41,11 +41,11 @@ The following lists the components included in ONAP DCAE .  All DCAE components 
         - Policy Handler: Handler for fetching policy updates from Policy engine; and updating the configuration policies of KV entries in Consul cluster KV store for DCAE components.
         - Service Change Handler: Handler for interfacing with SDC; receiving new TOSCA models; and storing them in DCAE's own inventory.
         - DCAE Inventory-API: API for DCAE's TOSCA model store.
+        - VES OpenApi Manager: Optional validator of VES_EVENT type artifacts executed during Service distributions.
     - Platform services
         - Consul: Distributed service discovery service and KV store.
         - Postgres Database: DCAE's TOSCA model store.
         - Redis Database: DCAE's transactional state store, used by TCA for supporting persistence and seamless scaling.
-
 - DCAE Services
     - Collectors
         - Virtual Event Streaming (VES) collector
@@ -71,8 +71,11 @@ The following lists the components included in ONAP DCAE .  All DCAE components 
 
 The figure below shows the DCAE architecture and how the components work with each other.  The components on the right constitute the Platform/controller components which are statically deployed. The components on the right represent the services which can be both deployed statically or dynamically (via CLAMP)
 
-.. image:: images/R7_architecture diagram.png
- 
+..
+  The following diagram has been created on https://app.diagrams.net/. There is an editable version of the diagram
+  in repository under path docs/sections/images/architecture_diagram. Import this file to mentioned page to edit diagram.
+
+.. image:: images/R8_architecture_diagram.png
 
 Deployment Scenarios
 --------------------
