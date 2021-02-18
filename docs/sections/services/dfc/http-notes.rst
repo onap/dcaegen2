@@ -112,3 +112,23 @@ Note, effective way of authentication depends of uri provided and http server co
 
 If port number was not supplied , port 443 is used by default.
 Every file is sent through separate https connection.
+
+JWT token in HTTP/HTTPS connection
+""""""""""""""""""""""""""""""""""
+
+JWT token is processed, if it is provided as a ``access_token`` in the query part of the **location** entry:
+
+.. code-block:: bash
+
+   scheme://host:port/path?access_token=<token>
+   i.e.
+   https://example.com:443/C20200502.1830+0200-20200502.1845+0200_195500.xml.gz?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZW1vIiwiaWF0IjoxNTE2MjM5MDIyfQ.MWyG1QSymi-RtG6pkiYrXD93ZY9NJzaPI-wS4MEpUto
+
+JWT tokens are consumed both in HTTP and HTTPS connections. Using JWT token is optional. If it is provided, its
+**validity is not verified**. Token is only extracted to the HTTP header as the ``Authorization: Bearer <token>``.
+Only single JWT token entry in the query is acceptable. If more than one ''access_token'' entry is found in the query,
+such situation is reported as error and DFC tries to download file without token. Another query parameters are not
+modified at all and are used in URL in HTTP GET call.
+
+If both JWT token and basic authentication are provided, JWT token has the priority. Such situation is considered
+as fault and is logged on warning level.
