@@ -173,3 +173,20 @@ Inability to download file from xNF due to certificate problem
 
 When collecting files using HTTPS and DFC contains certs from CMPv2 server, an exception like "unable to find valid certification path to requested target" may occur.
 Except obvious certificates problems make sure, that xNF which are connecting to the DFC are supplied with certificates coming from the same ONAP unit where DFC was installed.
+
+Inability to properly run DFC (v1.5.3 and above)
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+Note, since DFC 1.5.3 FTPeS/HTTPS config blueprint was slighly changed.
+
+.. code-block:: json
+
+    "dmaap.ftpesConfig.*"
+
+was changed with
+
+.. code-block:: json
+
+    "dmaap.certificateConfig.*"
+
+Container update without updating DFC config (or blueprint) will result in inability to run DFC with FTPeS and HTTPS.
