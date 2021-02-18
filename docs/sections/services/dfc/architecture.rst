@@ -32,7 +32,7 @@ DFC will interact with the DMaaP Message Router, using json, and with the Data R
 file in the body, via secured protocol.
 So far, the implemented protocols to communicate with xNFs are http (with basic authentication), https, sftp and ftpes.
 When https protocol is used, the following ways of connection are possible: client certificate authentication, basic
-authentication, and no authentication.
+authentication, and no authentication. Both http and https protocols are able to process JWT token.
 
 Retry mechanism
 """""""""""""""
