@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "94f5edad_3e1b201e",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6675
+      },
+      "writtenOn": "2021-02-25T10:35:37Z",
+      "side": 1,
+      "message": "\"no authentication\" was not implemented, so not added.\nThe rest part added.",
+      "parentUuid": "760f5c1e_74c8e3b1",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a58d115e_c9b88b0d",
         "filename": "docs/sections/services/dfc/architecture.rst",
         "patchSetId": 3
@@ -33,6 +51,24 @@
       "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd3135f9_e24b9373",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6675
+      },
+      "writtenOn": "2021-02-25T10:35:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a58d115e_c9b88b0d",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "58b37982_db99cfaa",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6675
+      },
+      "writtenOn": "2021-02-25T10:35:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5f8d764_33251431",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a81c54c1_a8c54604",
         "filename": "docs/sections/services/dfc/http-notes.rst",
         "patchSetId": 3
@@ -67,6 +121,24 @@
       "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "395a10f5_b4b87318",
+        "filename": "docs/sections/services/dfc/http-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6675
+      },
+      "writtenOn": "2021-02-25T10:35:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a81c54c1_a8c54604",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "32a05301_619b80ab",
+        "filename": "docs/sections/services/dfc/http-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6675
+      },
+      "writtenOn": "2021-02-25T10:35:37Z",
+      "side": 1,
+      "message": "this is how currently DFC processes multiple \u0027access_token\u0027 parameters? Yes.\nIn HTTP basic auth data has to be present.",
+      "parentUuid": "726c74c5_e632d649",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "37012515_343d8de0",
         "filename": "docs/sections/services/dfc/http-notes.rst",
         "patchSetId": 3
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "886d7cc3_2e225044",
+        "filename": "docs/sections/services/dfc/http-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6675
+      },
+      "writtenOn": "2021-02-25T10:35:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37012515_343d8de0",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "67cab621_15c77a2c",
         "filename": "docs/sections/services/dfc/troubleshooting.rst",
         "patchSetId": 3
@@ -118,6 +226,24 @@
       "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b35a451f_3fdbf9f2",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6675
+      },
+      "writtenOn": "2021-02-25T10:35:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67cab621_15c77a2c",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
