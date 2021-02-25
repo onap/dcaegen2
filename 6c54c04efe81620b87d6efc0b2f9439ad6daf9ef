@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c7d2c22a_e0ea4de0",
+        "filename": "docs/sections/services/dfc/http-notes.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2021-02-25T13:46:46Z",
+      "side": 1,
+      "message": "Strangely one my comment was not saved: \nToken is only extracted to the HTTP header as the ``Authorization: Bearer \u003ctoken\u003e``.\n-\u003e\nToken is extracted to the HTTP header as ``Authorization: Bearer \u003ctoken\u003e``and is NOT used in URL in HTTP GET call.",
+      "revId": "6c54c04efe81620b87d6efc0b2f9439ad6daf9ef",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
