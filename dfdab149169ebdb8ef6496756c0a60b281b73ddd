@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "760f5c1e_74c8e3b1",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2021-02-25T08:49:41Z",
+      "side": 1,
+      "message": "Remove brackets here and add below following sentence:\nWhen HTTP protocol protocol is used, following ways of authentication are supported: basic authentication, bearer token (e.g. JWT) authentication and no authentication.",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a58d115e_c9b88b0d",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2021-02-25T08:49:41Z",
+      "side": 1,
+      "message": "connection -\u003e authentication\nhttps -\u003e HTTPS\nWhen HTTPS protocol protocol is used, following ways of authentication are supported: client certificate authentication, basic authentication, bearer token (e.g. JWT) authentication and no authentication.",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5f8d764_33251431",
+        "filename": "docs/sections/services/dfc/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2021-02-25T08:49:41Z",
+      "side": 1,
+      "message": "After you fix above comments you can remove added sentence",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a81c54c1_a8c54604",
+        "filename": "docs/sections/services/dfc/http-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2021-02-25T08:49:41Z",
+      "side": 1,
+      "message": "rewritten -\u003e extracted\nHTTPS(s) -\u003e HTTP",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "726c74c5_e632d649",
+        "filename": "docs/sections/services/dfc/http-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2021-02-25T08:49:41Z",
+      "side": 1,
+      "message": "DFC tries to download file without token -\u003e this is how currently DFC processes multiple \u0027access_token\u0027 parameters?\n\nAnother query entries are rewritten. -\u003e Another query parameters are not modified at all and are used in URL in HTTP GET call.",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37012515_343d8de0",
+        "filename": "docs/sections/services/dfc/http-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2021-02-25T08:49:41Z",
+      "side": 1,
+      "message": "is -\u003e are\nSuch situation is considered as fault and is logged on warning level.",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67cab621_15c77a2c",
+        "filename": "docs/sections/services/dfc/troubleshooting.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5775
+      },
+      "writtenOn": "2021-02-25T08:49:41Z",
+      "side": 1,
+      "message": "from the same ONAP unit where DFC was installed -\u003e from the same CMPv2 server and the same CA which is configured on ONAP side and used by DFC.",
+      "revId": "dfdab149169ebdb8ef6496756c0a60b281b73ddd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
