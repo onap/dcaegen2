@@ -23,11 +23,11 @@ to inventory and deployed from Dashboard directly.
 Steps to run the blueprint generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Download the `blueprint generator jar <https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/mod/blueprint-generator/1.3.1/blueprint-generator-1.3.1-executable.jar>`__  file from Nexus 
+1. Download the `blueprint generator jar <https://nexus.onap.org/service/local/repositories/releases/content/org/onap/dcaegen2/platform/mod/blueprint-generator-onap-executable/1.7.3/blueprint-generator-onap-executable-1.7.3.jar>`__  file from Nexus
 
 2. To execute the application, run the following command
  
-    ``java -jar blueprint-generator-1.3.1-executable.jar blueprint``
+    ``java -jar blueprint-generator-onap-executable-1.7.3.jar app ONAP``
 
 3. This execution will provide the help, as you have not provided the required flags.
 
@@ -35,16 +35,16 @@ Steps to run the blueprint generator
 
 5. OPTIONS
 
-   -  -p: The path to where the final blueprint yaml file will be created (required)
-   -  -i: The path to the JSON spec file (required)
-   -  -n: Name of the blueprint (optional)
-   -  -t: the path to the import yaml file (optional)
-   -  -d: If this flag is present the bp generator will be created with dmaap plugin (optional)
-   -  -o: This flag will create a service component override for your deployment equal to the value you put (optional)
+   -  -i OR --component-spec: The path of the ONAP Blueprint INPUT JSON SPEC FILE (Required)
+   -  -p OR --blueprint-path: The path of the ONAP Blueprint OUTPUT where it will be saved (Required)
+   -  -n OR --blueprint-name: The NAME of the ONAP Blueprint OUTPUT that will be created (Optional)
+   -  -t OR --imports: The path of the ONAP Blueprint IMPORT FILE (Optional)
+   -  -o OR --service-name-override: The Value used to OVERRIDE the SERVICE NAME of the ONAP Blueprint  (Optional)
+   -  -d OR --dmaap-plugin: The option to create an ONAP Blueprint with DMAAP Plugin included (Optional)
 
 6. An example running this program is shown below
 
-    ``java -jar blueprint-generator-1.3.1-executable.jar -p blueprint_output -i ComponentSpecs/TestComponentSpec.json -n TestAppBlueprint``
+    ``java -jar blueprint-generator-onap-executable-1.7.3.jar app ONAP -p blueprint_output -i ComponentSpecs/TestComponentSpec.json -n TestAppBlueprint``
 
 
 Extra information
@@ -60,7 +60,14 @@ Extra information
 
 5. If the directory you specified in the -p flag does not already exist the directory will be created for you
 
-6. The -t flag will override the default imports set for the blueprints. To see an example of how the import yaml file should be structured see the testImports.yaml file under the folder TestCases
+6. The -t flag will override the default imports set for the blueprints. Below you can see example content of the import file:
+
+::
+
+    imports:
+      - https://www.getcloudify.org/spec/cloudify/4.5.5/types.yaml
+      - plugin:k8splugin?version=3.6.0
+      - plugin:dcaepolicyplugin?version=2.4.0
 
 
 How to create policy models:
@@ -68,16 +75,16 @@ How to create policy models:
 
 1. Policy model creation can be done with the same jar as downloaded for the blueprint generation.
 
-2. Run the same command as the blueprint generator except replace the ``blueprint`` positional with ``policy``
+2. Run the same command as the blueprint generator except add a flag ``-type policycreate``
 
-3. Example command
-
-    ``java -jar blueprint-generator-1.3.1-executable.jar policy``
-
-4. Options
+3. Options
 
    - -i: The path to the JSON spec file (required)
    - -p: The Output path for all of the models (required)
+
+4. Example command
+
+    ``java -jar blueprint-generator-onap-executable-1.7.3.jar app ONAP -type policycreate -i componentspec -p OutputPolicyPath``
 
 
 Extra information
@@ -86,3 +93,18 @@ Extra information
 1. Not all component specs will be able to create policy models
 
 2. Multiple policy model files may be created from a single component spec
+
+
+How to use Blueprint Generator as a Spring library
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To use BlueprintGenerator you need to import the following artifact to your project:
+
+::
+
+    <dependency>
+        <groupId>org.onap.dcaegen2.platform.mod</groupId>
+        <artifactId>blueprint-generator-onap</artifactId>
+        <version>1.7.3</version>
+    </dependency>
+
+In order to see how to use the library in detail please familiarize yourself with real application: `Blueprint Generator Executable main class <https://git.onap.org/dcaegen2/platform/plain/mod/bpgenerator/onap-executable/src/main/java/org/onap/blueprintgenerator/BlueprintGeneratorMainApplication.java>`__
