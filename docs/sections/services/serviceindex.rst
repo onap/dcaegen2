@@ -25,3 +25,4 @@ DCAE Service components
    ./tcagen2-docker/index.rst
    ./datalake-handler/index.rst
    ./slice-analysis-ms/index.rst
+   ./kpi-computation-ms/index.rst
