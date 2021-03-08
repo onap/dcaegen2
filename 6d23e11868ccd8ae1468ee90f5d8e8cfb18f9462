@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3691eac_15b2064c",
+        "filename": "docs/sections/services/kpi-computation-ms/arch.jpg",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-08T17:10:27Z",
+      "side": 1,
+      "message": "Is the interface to Policy available in this release?",
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5687fc0d_1e10892d",
+        "filename": "docs/sections/services/kpi-computation-ms/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-08T17:10:27Z",
+      "side": 1,
+      "message": "Missing 1 char (need to match to same lenght as line #5)",
+      "range": {
+        "startLine": 6,
+        "startChar": 16,
+        "endLine": 6,
+        "endChar": 17
+      },
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ada8e371_5b8fb3de",
+        "filename": "docs/sections/services/kpi-computation-ms/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-08T17:10:27Z",
+      "side": 1,
+      "message": "missing Camel casing and space",
+      "range": {
+        "startLine": 11,
+        "startChar": 130,
+        "endLine": 11,
+        "endChar": 134
+      },
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85da1f2e_494052b9",
+        "filename": "docs/sections/services/kpi-computation-ms/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-08T17:10:27Z",
+      "side": 1,
+      "message": "does calculation",
+      "range": {
+        "startLine": 11,
+        "startChar": 60,
+        "endLine": 11,
+        "endChar": 78
+      },
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4d44245_d461e211",
+        "filename": "docs/sections/services/kpi-computation-ms/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-08T17:10:27Z",
+      "side": 1,
+      "message": "extend to same length as line#27",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 36
+      },
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b2a3ad3_15e5a37b",
+        "filename": "docs/sections/services/kpi-computation-ms/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-08T17:10:27Z",
+      "side": 1,
+      "message": "Add another sub-page to document sample KPI MS configuration, corresponding VES input and output published",
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3862fb38_33e68431",
+        "filename": "docs/sections/services/kpi-computation-ms/kpi_computation_ms_overview.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-08T17:10:27Z",
+      "side": 1,
+      "message": "Recommend adding information to RTD directly than referencing release specific/wiki page (as this WIKI is specific to R8 and any future updates should be maintained/reflected under RTD only)",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 93
+      },
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
