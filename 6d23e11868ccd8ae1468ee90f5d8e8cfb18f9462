@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f1446eb_3ddb4563",
+        "filename": "docs/sections/services/kpi-computation-ms/arch.jpg",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2021-03-09T02:22:07Z",
+      "side": 1,
+      "message": "For this release,just can get configuration from cbs",
+      "parentUuid": "d3691eac_15b2064c",
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5687fc0d_1e10892d",
         "filename": "docs/sections/services/kpi-computation-ms/index.rst",
         "patchSetId": 4
@@ -39,6 +57,30 @@
       "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7a3cecc_4a290e2f",
+        "filename": "docs/sections/services/kpi-computation-ms/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2021-03-09T02:22:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5687fc0d_1e10892d",
+      "range": {
+        "startLine": 6,
+        "startChar": 16,
+        "endLine": 6,
+        "endChar": 17
+      },
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -88,6 +130,54 @@
     },
     {
       "key": {
+        "uuid": "441e96ef_2ca2b896",
+        "filename": "docs/sections/services/kpi-computation-ms/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2021-03-09T02:22:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ada8e371_5b8fb3de",
+      "range": {
+        "startLine": 11,
+        "startChar": 130,
+        "endLine": 11,
+        "endChar": 134
+      },
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "32de296e_57e035e3",
+        "filename": "docs/sections/services/kpi-computation-ms/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2021-03-09T02:22:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85da1f2e_494052b9",
+      "range": {
+        "startLine": 11,
+        "startChar": 60,
+        "endLine": 11,
+        "endChar": 78
+      },
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f4d44245_d461e211",
         "filename": "docs/sections/services/kpi-computation-ms/index.rst",
         "patchSetId": 4
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "6e76d0e6_a5d7eb46",
+        "filename": "docs/sections/services/kpi-computation-ms/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2021-03-09T02:22:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4d44245_d461e211",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 36
+      },
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b2a3ad3_15e5a37b",
         "filename": "docs/sections/services/kpi-computation-ms/index.rst",
         "patchSetId": 4
@@ -125,6 +239,24 @@
       "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54fc7e17_366e1aea",
+        "filename": "docs/sections/services/kpi-computation-ms/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2021-03-09T02:22:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b2a3ad3_15e5a37b",
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -148,6 +280,30 @@
       "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae6262b4_4758217a",
+        "filename": "docs/sections/services/kpi-computation-ms/kpi_computation_ms_overview.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2021-03-09T02:22:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3862fb38_33e68431",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 93
+      },
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
