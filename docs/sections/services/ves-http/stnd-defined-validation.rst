@@ -65,6 +65,21 @@ Format of the schema mapping file is a JSON file with list of mappings, as shown
       }
     ]
 
+Config maps
+-----------
+
+The mapping and schemas files content can be changed by editing a proper config map.
+
+
++----------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| Config map name                              | Description                                                                                         |
++==============================================+=====================================================================================================+
+| dcae-external-repo-configmap-schema-map      | Defines a content of the /opt/app/VESCollector/etc/externalRepo/schema-map.json file.               |
++----------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| dcae-external-repo-configmap-sa88-rel16      | Defines a content of schemas stored in the /opt/app/VESCollector/etc/externalRepo folder.           |
++----------------------------------------------+-----------------------------------------------------------------------------------------------------+
+
+
 Properties configuration via Cloudify
 -------------------------------------
 
