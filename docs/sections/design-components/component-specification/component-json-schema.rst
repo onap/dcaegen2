@@ -918,7 +918,8 @@ The same is provided below for documentation reference.
             "type": "string"
           }
         }
-      }
+      },
+      "required": ["host", "container"]
     },
     "config_map_volume": {
       "type": "object",
@@ -938,7 +939,8 @@ The same is provided below for documentation reference.
             "type": "string"
           }
         }
-      }
+      },
+      "required": ["config_volume", "container"]
     },
     "docker_healthcheck_http": {
       "properties": {
