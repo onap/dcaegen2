@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ef4366d4_7bf34ce9",
+        "filename": "docs/sections/services/ves-http/stnd-defined-validation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-09T14:43:58Z",
+      "side": 1,
+      "message": "Will be good to add reference to OOM/doc on how these configmap are created here.",
+      "revId": "408e22068470f9e33c3b8e174c66651e52a78d44",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
