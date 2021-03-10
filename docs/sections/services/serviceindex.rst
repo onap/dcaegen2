@@ -10,19 +10,20 @@ DCAE Service components
 .. toctree::
    :maxdepth: 1
 
-   ./snmptrap/index.rst
-   ./ves-http/index.rst
-   ./ves-hv/index.rst
-   ./mapper/index.rst
-   ./prh/index.rst
+   ./bbs-event-processor/index.rst
+   ./datalake-handler/index.rst
    ./dfc/index.rst
    ./heartbeat-ms/index.rst
+   ./kpi-computation-ms/index.rst
+   ./mapper/index.rst
    ./pm-mapper/index.rst
    ./pm-subscription-handler/index.rst
-   ./bbs-event-processor/index.rst
-   ./son-handler/index.rst
+   ./prh/index.rst
    ./restconf/index.rst
-   ./tcagen2-docker/index.rst
-   ./datalake-handler/index.rst
    ./slice-analysis-ms/index.rst
-   ./kpi-computation-ms/index.rst
+   ./snmptrap/index.rst
+   ./son-handler/index.rst
+   ./tcagen2-docker/index.rst
+   ./ves-hv/index.rst
+   ./ves-http/index.rst
+   ./ves-openapi-manager/index.rst
