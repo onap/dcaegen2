@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3f5ccab6_1641e7ce",
+        "filename": "docs/sections/services/kpi-computation-ms/arch.jpg",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-10T04:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f1446eb_3ddb4563",
+      "revId": "6d23e11868ccd8ae1468ee90f5d8e8cfb18f9462",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5687fc0d_1e10892d",
         "filename": "docs/sections/services/kpi-computation-ms/index.rst",
         "patchSetId": 4
