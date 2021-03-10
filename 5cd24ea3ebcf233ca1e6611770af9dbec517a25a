@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "e72ba5c5_04c507f6",
+        "filename": "docs/sections/services/serviceindex.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-03-10T17:05:45Z",
+      "side": 1,
+      "message": "To me, it would be easiest to sort by the directories.\nThat would be probably the fastest thing to do and at the same time, it would give pretty similar results as if we were using the titles.",
+      "parentUuid": "9bd590d0_f51d9e34",
+      "revId": "5cd24ea3ebcf233ca1e6611770af9dbec517a25a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f8a83703_1d9a8ed9",
         "filename": "docs/sections/services/ves-openapi-manager/architecture.rst",
         "patchSetId": 2
