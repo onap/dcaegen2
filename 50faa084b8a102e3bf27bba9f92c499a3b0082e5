@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "457cb05e_5738f601",
+        "filename": "docs/sections/services/ves-openapi-manager/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-03-10T15:23:44Z",
+      "side": 1,
+      "message": "To validate what? Proposal:\n\"to validate the presence of openapi schemas declared in VES_Event_Registration artifacts, within the DCAE run-time environment\".",
+      "range": {
+        "startLine": 8,
+        "startChar": 40,
+        "endLine": 8,
+        "endChar": 48
+      },
+      "revId": "50faa084b8a102e3bf27bba9f92c499a3b0082e5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3aa72cd2_5b686175",
+        "filename": "docs/sections/services/ves-openapi-manager/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-03-10T15:23:44Z",
+      "side": 1,
+      "message": "... in order to read the declared openapi descriptions.",
+      "range": {
+        "startLine": 9,
+        "startChar": 61,
+        "endLine": 9,
+        "endChar": 68
+      },
+      "revId": "50faa084b8a102e3bf27bba9f92c499a3b0082e5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "416c3aa1_42bbe2ca",
+        "filename": "docs/sections/services/ves-openapi-manager/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-03-10T15:23:44Z",
+      "side": 1,
+      "message": "accessible",
+      "range": {
+        "startLine": 11,
+        "startChar": 111,
+        "endLine": 11,
+        "endChar": 120
+      },
+      "revId": "50faa084b8a102e3bf27bba9f92c499a3b0082e5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0174419f_96fc453f",
+        "filename": "docs/sections/services/ves-openapi-manager/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-03-10T15:23:44Z",
+      "side": 1,
+      "message": "...which schemas need to be uploaded to the DCAE run-time environment.",
+      "range": {
+        "startLine": 12,
+        "startChar": 111,
+        "endLine": 12,
+        "endChar": 1
+      },
+      "revId": "50faa084b8a102e3bf27bba9f92c499a3b0082e5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4edecf8_f8c71917",
+        "filename": "docs/sections/services/ves-openapi-manager/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-03-10T15:23:44Z",
+      "side": 1,
+      "message": "absent in local externalSchema repository, the VES OpenAPI...",
+      "range": {
+        "startLine": 12,
+        "startChar": 52,
+        "endLine": 12,
+        "endChar": 59
+      },
+      "revId": "50faa084b8a102e3bf27bba9f92c499a3b0082e5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be97bb71_940d99d6",
+        "filename": "docs/sections/services/ves-openapi-manager/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-03-10T15:23:44Z",
+      "side": 1,
+      "message": "Manager (typo)",
+      "range": {
+        "startLine": 12,
+        "startChar": 73,
+        "endLine": 12,
+        "endChar": 79
+      },
+      "revId": "50faa084b8a102e3bf27bba9f92c499a3b0082e5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
