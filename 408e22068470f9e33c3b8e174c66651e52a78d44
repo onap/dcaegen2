@@ -34,6 +34,24 @@
       "revId": "408e22068470f9e33c3b8e174c66651e52a78d44",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e075681a_2dc8c8fb",
+        "filename": "docs/sections/services/ves-http/stnd-defined-validation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 3793
+      },
+      "writtenOn": "2021-03-10T09:32:59Z",
+      "side": 1,
+      "message": "Hi,\n\nI think Vijay is considering here \"StndDefined schemas ConfigMap generator\" https://gerrit.onap.org/r/gitweb?p\u003doom/utils.git;a\u003dblob_plain;f\u003dexternal-schema-repo-generator/README.md;hb\u003d1898455d2fdd4c4f1f4914119e123babed60ce61",
+      "parentUuid": "ed000c81_bafdffbd",
+      "revId": "408e22068470f9e33c3b8e174c66651e52a78d44",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
