@@ -16,6 +16,24 @@
       "revId": "408e22068470f9e33c3b8e174c66651e52a78d44",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed000c81_bafdffbd",
+        "filename": "docs/sections/services/ves-http/stnd-defined-validation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 3433
+      },
+      "writtenOn": "2021-03-10T06:56:17Z",
+      "side": 1,
+      "message": "I do not understand. What should I add here? Config maps are created during dceagen2 component installation: https://gerrit.onap.org/r/gitweb?p\u003doom.git;a\u003dblob;f\u003dkubernetes/dcaegen2/templates/configmap.yaml;h\u003da9917a55ce6e05b501aca1f7bb0b586fd6936902;hb\u003drefs/heads/master\n\nI\u0027m not able to find any information about config maps in the OOM documentation.",
+      "parentUuid": "ef4366d4_7bf34ce9",
+      "revId": "408e22068470f9e33c3b8e174c66651e52a78d44",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
