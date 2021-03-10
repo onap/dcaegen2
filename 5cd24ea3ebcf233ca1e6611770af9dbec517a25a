@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9bd590d0_f51d9e34",
+        "filename": "docs/sections/services/serviceindex.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5234
+      },
+      "writtenOn": "2021-03-10T15:42:44Z",
+      "side": 1,
+      "message": "We can sort it by directories or by titles of each rst file here. What do you prefer?",
+      "parentUuid": "e88012f0_83cdfc79",
+      "revId": "5cd24ea3ebcf233ca1e6611770af9dbec517a25a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f8a83703_1d9a8ed9",
         "filename": "docs/sections/services/ves-openapi-manager/architecture.rst",
         "patchSetId": 2
