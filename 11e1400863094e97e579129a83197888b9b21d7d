@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a8a4ca9a_8fdb6237",
+        "filename": "docs/sections/services/ves-openapi-manager/use-cases.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5234
+      },
+      "writtenOn": "2021-03-10T15:10:07Z",
+      "side": 1,
+      "message": "Fix filename to resources/schema-map.json. Image is not showing now.",
+      "revId": "11e1400863094e97e579129a83197888b9b21d7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
