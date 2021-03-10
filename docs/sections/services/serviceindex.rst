@@ -26,3 +26,4 @@ DCAE Service components
    ./datalake-handler/index.rst
    ./slice-analysis-ms/index.rst
    ./kpi-computation-ms/index.rst
+   ./ves-openapi-manager/index.rst

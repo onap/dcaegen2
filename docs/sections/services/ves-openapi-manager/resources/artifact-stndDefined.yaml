@@ -1,0 +1,30 @@
+---
+event:
+  presence: required
+  comment: "stndDefined event to support 3GPP FaultSupervision NotifyNewAlarm notification"
+  structure:
+    commonEventHeader:
+      presence: required
+      structure:
+        domain: {presence: required, value: stndDefined}
+        eventName: {presence: required, value: stndDefined-gNB-Nokia-Notification}
+        priority: {presence: required, value: Normal}
+        eventId: {presence: required}
+        reportingEntityId: {presence: required}
+        reportingEntityName: {presence: required}
+        sequence: {presence: required, value: 0}
+        sourceId: {presence: required}
+        sourceName: {presence: required}
+        version: {presence: required, value: 4.1}
+        vesEventListenerVersion: {presence: required, value: 7.2}
+        startEpochMicrosec: {presence: required}
+        lastEpochMicrosec: {presence: required}
+        stndDefinedNamespace: {presence: required, value: "3GPP-FaultSupervision"}
+    stndDefinedFields:
+      presence: required
+      structure:
+        schemaReference: { presence: required, value: "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/faultMnS.yaml#/components/schemas/NotifyNewAlarm" }
+        data: {presence: required}
+        stndDefinedFieldsVersion: {presence: required, value: "1.0"}
+
+...
