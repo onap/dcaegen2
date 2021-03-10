@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ca040f97_448dc418",
+        "filename": "docs/sections/services/kpi-computation-ms/installation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2021-03-10T03:00:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9dcad87_a7dde477",
+      "range": {
+        "startLine": 67,
+        "startChar": 33,
+        "endLine": 67,
+        "endChar": 41
+      },
+      "revId": "76ac2ddd976be2d8398594cb03f57769f2600733",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a654932b_0a23b05f",
         "filename": "docs/sections/services/kpi-computation-ms/installation.rst",
         "patchSetId": 5
@@ -45,6 +69,30 @@
       "revId": "76ac2ddd976be2d8398594cb03f57769f2600733",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03c85c59_91d30d0c",
+        "filename": "docs/sections/services/kpi-computation-ms/installation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2021-03-10T03:00:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a654932b_0a23b05f",
+      "range": {
+        "startLine": 75,
+        "startChar": 46,
+        "endLine": 75,
+        "endChar": 54
+      },
+      "revId": "76ac2ddd976be2d8398594cb03f57769f2600733",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
