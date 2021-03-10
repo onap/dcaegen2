@@ -16,6 +16,24 @@
       "revId": "11e1400863094e97e579129a83197888b9b21d7d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4034813_f2beed9f",
+        "filename": "docs/sections/services/ves-openapi-manager/use-cases.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5234
+      },
+      "writtenOn": "2021-03-10T17:33:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8a4ca9a_8fdb6237",
+      "revId": "11e1400863094e97e579129a83197888b9b21d7d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
