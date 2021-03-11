@@ -52,6 +52,24 @@
       "revId": "408e22068470f9e33c3b8e174c66651e52a78d44",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50bc09c3_3ae146b6",
+        "filename": "docs/sections/services/ves-http/stnd-defined-validation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-11T03:27:38Z",
+      "side": 1,
+      "message": "Sorry was not clear on earlier comment. Was suggesting to add reference to map/schema file under oom (https://gerrit.onap.org/r/gitweb?p\u003doom.git;a\u003dtree;f\u003dkubernetes/dcaegen2/resources/external) here. This will be useful if operator need to override these config directly prior to DCAE deployment",
+      "parentUuid": "e075681a_2dc8c8fb",
+      "revId": "408e22068470f9e33c3b8e174c66651e52a78d44",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
