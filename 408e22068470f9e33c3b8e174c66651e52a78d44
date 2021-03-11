@@ -70,6 +70,24 @@
       "revId": "408e22068470f9e33c3b8e174c66651e52a78d44",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0becc3ca_28aaca57",
+        "filename": "docs/sections/services/ves-http/stnd-defined-validation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 3433
+      },
+      "writtenOn": "2021-03-11T07:09:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50bc09c3_3ae146b6",
+      "revId": "408e22068470f9e33c3b8e174c66651e52a78d44",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
