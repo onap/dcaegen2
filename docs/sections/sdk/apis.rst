@@ -291,6 +291,38 @@ The default custom persistent connection configuration (connectionPool=16, maxLi
 
     ImmutableDmaapConnectionPoolConfig.builder().build()
 
+***************************************
+Configure request for authorized topics
+***************************************
+
+* publisher:
+
+.. code-block:: java
+
+    final MessageRouterPublishRequest request = ImmutableMessageRouterPublishRequest.builder()
+                .topicCredentials(ImmutableSecureTopicCredentials.builder()
+                        .username("username")
+                        .password('p', 'a', 's', 's', 'w', 'o', 'r', 'd')
+                        .build())
+                .
+                .
+                .
+                .build();
+
+* subscriber:
+
+.. code-block:: java
+
+    final MessageRouterSubscribeRequest request = ImmutableMessageRouterSubscribeRequest.builder()
+                .topicCredentials(ImmutableSecureTopicCredentials.builder()
+                        .username("username")
+                        .password('p', 'a', 's', 's', 'w', 'o', 'r', 'd')
+                        .build())
+                .
+                .
+                .
+                .build();
+
 hvvesclient-producer - a reference Java implementation of High Volume VES Collector client
 ------------------------------------------------------------------------------------------
 This library is used in xNF simulator which helps us test HV VES Collector in CSIT tests. You may use it as a reference when implementing your code in non-JVM language or directly when using Java/Kotlin/etc.
