@@ -1,0 +1,14 @@
+[
+  {
+    "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/tree/SA88-Rel16/OpenAPI/comDefs.yaml",
+    "localURL": "3gpp/rep/sa5/MnS/tree/SA88-Rel16/OpenAPI/comDefs.yaml"
+  },
+  {
+    "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/tree/SA88-Rel16/OpenAPI/coslaNrm.yaml",
+    "localURL": "3gpp/rep/sa5/MnS/tree/SA88-Rel16/OpenAPI/coslaNrm.yaml"
+  },
+  {
+    "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/faultMnS.yaml",
+    "localURL": "3gpp/rep/sa5/MnS/tree/SA88-Rel16/OpenAPI/faultMnS.yaml"
+  }
+]
