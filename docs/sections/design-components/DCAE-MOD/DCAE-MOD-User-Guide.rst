@@ -130,9 +130,9 @@ design tool's controller settings.
 +------------------------+--------------------------------------------+
 
 With Guilin release, OOM/ingress template has been updated to enable virtual host by default. 
-All MOD API's and UI access via ingress should use dcaemod.api.simpledemo.onap.org.  
+All MOD API's and UI access via ingress should use dcaemod.simpledemo.onap.org.  
 
-In order to access Design UI from local, add an entry for dcaemod.api.simpledemo.onap.org in /etc/hosts with the correct IP (any K8S node IP can be specified).
+In order to access Design UI from local, add an entry for dcaemod.simpledemo.onap.org in /etc/hosts with the correct IP (any K8S node IP can be specified).
 
 
 Using DCAE MOD without an Ingress Controller
@@ -170,7 +170,7 @@ Distribution target URL will be
 
 
 
-Now let’s access the Nifi (DCAE designer) UI - http://dcaemod.api.simpledemo.onap.org/nifi
+Now let’s access the Nifi (DCAE designer) UI - http://dcaemod.simpledemo.onap.org/nifi
 
 IPAddress is the host address or the DNS FQDN, if there is one, for one of the Kubernetes nodes.
 
@@ -181,9 +181,18 @@ IPAddress is the host address or the DNS FQDN, if there is one, for one of the K
 
 Let's fetch the artifacts/ spec files 
 
-**Sample Component DCAE-VES-Collector :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/spec/vescollector-componentspec.json
+**Component Spec for DCAE-VES-Collector :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/spec/vescollector-componentspec.json
 
-**Sample Data Format :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/data-formats/VES-5.28.4-dataformat.json
+**Component Spec for DCAE-TCAgen2 :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/spec/vescollector-componentspec.json
+
+**VES 5.28.4 Data Format :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/data-formats/VES-5.28.4-dataformat.json
+
+**VES 7.30.2.1 Data Format :** https://git.onap.org/dcaegen2/collectors/ves/tree/etc/CommonEventFormat_30.2.1_ONAP.jsonormat.json
+
+**VES Collector Response Data Format :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/data-formats/ves-response.json
+
+**TCA CL Data Format :** https://git.onap.org/dcaegen2/analytics/tca-gen2/tree/dcae-analytics/dpo/dcaeCLOutput.json
+
 
 For the purpose of onboarding, a Sample Request body should be of the type -::
 
@@ -218,10 +227,9 @@ curl -X POST http://<onboardingapi host>/onboarding/components     -H "Conte
 
 In our case,
 
-curl -X POST http://dcaemod.api.simpledemo.onap.org/onboarding/dataformats     -H "Content-Type: application/json" -d @<filepath to request>
+curl -X POST http://dcaemod.simpledemo.onap.org/onboarding/dataformats     -H "Content-Type: application/json" -d @<filepath to request>
 
-curl -X POST http://dcaemod.api.simpledemo.onap.org/onboarding/components    -H "Content-Type: application/json" -d @<filepath to request>
-
+curl -X POST http://dcaemod.simpledemo.onap.org/onboarding/components    -H "Content-Type: application/json" -d @<filepath to request>
 
 
 
@@ -233,7 +241,7 @@ curl -X GET http://<IPAddress>/onboarding/components
 
 **f. Verify the genprocessor (which polls onboarding periodically to convert component specs to nifi processor), converted the component**
 
-Open http://dcaemod.api.simpledemo.onap.org/nifi-jars in a browser.
+Open http://dcaemod.simpledemo.onap.org/nifi-jars in a browser.
 
 These jars should now be available for you to use in the nifi UI as
 processors
