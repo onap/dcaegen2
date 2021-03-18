@@ -80,3 +80,12 @@ The ``componentImages.ves`` value is provided in the ``oom/kubernetes/dcaegen2/c
 
   componentImages:
     ves: onap/org.onap.dcaegen2.collectors.ves.vescollector:1.5.4
+
+Config maps
+-----------
+
+During installation of DCAEGEN2 module two config maps are installed by default: dcae-external-repo-configmap-schema-map and dcae-external-repo-configmap-sa88-rel16.
+
+Config maps are used by DCAEGEN VES and VES OPEN API components.
+
+Instruction how to generate the content of config maps is described in `README <https://gerrit.onap.org/r/gitweb?p=oom/utils.git;a=blob_plain;f=external-schema-repo-generator/README.md;hb=refs/heads/master>`_ file. 
