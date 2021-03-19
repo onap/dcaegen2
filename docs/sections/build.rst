@@ -45,7 +45,12 @@ Below is a list of the repositories and their sub-modules, and the language they
  - dcaegen2.services.pm-mapper (Java)
  - dcaegen2.services.ves-mapper (Java)
  - dcaegen2.services.son-handler (Java)
+ - dcaegen2.services.kpi-ms (Java)
+ - dcaegen2.services.pmsh (Python)
+ - dcaegen2.services.datalake-handler (Java)
 
+* dcaegen2.services.son-handler (Java)
+ 
 * dcaegen2.deployments
 
  - scripts (bash, python)
@@ -56,6 +61,7 @@ Below is a list of the repositories and their sub-modules, and the language they
  - tca-cdap-container (bash)
  - multisite-init-container (python)
  - dcae-remote-site (helm chart)
+
 
 * dcaegen2.platform
 
@@ -77,15 +83,15 @@ Below is a list of the repositories and their sub-modules, and the language they
 
 * dcaegen2.platform.plugins
 
- - cdap (Python)
  - dcae-policy (Python)
- - docker (Python)
  - relationships (Python)
  - k8splugin (Python)
 
 * dcaegen2.platform.policy-handler (Python)
 
 * dcaegen2.platform.servicechange-handler (Clojure)
+
+* dcaegen2.platform.ves-openapi-manager (Java)
 
 * dcaegen2.utils
 
