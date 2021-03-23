@@ -21,11 +21,10 @@ At deployment time, with a single **helm deploy** command, Helm resolves all the
 and invokes Kubernetes deployment operations for all the resources.
 
 All ONAP Helm charts are organized under the **kubernetes** directory of the **OOM** project, where roughly each ONAP component occupies a subdirectory.
-DCAE charts are placed under the **dcaegen2** directory.
+DCAE platform components are deployed using Helm charts under the **dcaegen2** directory.
+Four DCAE services (the HV VES collector, the VES collector, the PNF Registration Handler, and the TCA (Gen 2) analytics service) are deployed using Helm charts under the **dcaegen2-services** directory.
 
-All DCAE platform components  have corresponding Helm chart which will be used to trigger the deployment. 
-All DCAE Services are deployed through Cloudify Blueprint. The default ONAP DCAE deployment includes small subset of DCAE services deployed through Bootstrap pod to meet
-ONAP Integration usecases. Optionally operators can deploy on-demand other MS required for their usecases as described in :doc:`On-demand MS Installation
+Other DCAE Services are deployed on-demand, after ONAP/DCAE installation, through Cloudify Blueprints.  Operators can deploy on-demand other MS required for their usecases as described in :doc:`On-demand MS Installation
 <./installation_MS_ondemand>`.
 
 
@@ -51,8 +50,19 @@ The dcaegen2 chart has the following sub-charts:
 * ``dcae-policy-handler``: deploys the DCAE policy handler service.
 * ``dcae-redis``: deploys the DCAE Redis cluster.
 * ``dcae-dashboard``: deploys the DCAE Dashboard for managing DCAE microservices deployments
-* ``dcae-servicechange-handler``: deploys the DCAE service change handler service.  A subchart (``dcae-inventory-api``) deploys the DCAE inventory API service.
+* ``dcae-servicechange-handler``: deploys the DCAE service change handler service.
+* ``dcae-inventory-api``: deploys the DCAE inventory API service.
 * ``dcae-ves-openapi-manager``: deploys the DCAE service validator of VES_EVENT type artifacts from distributed services.
+
+The dcaegen2-services chart has the following sub-charts:
+
+* ``dcae-hv-ves-collector``: deploys the DCAE High-Volume VES collector service.
+* ``dcae-ms-healthcheck``: deploys a health check component that tests the health of the 4 DCAE services deployed via Helm.
+* ``dcae-prh``: deploys the DCAE PNF Registration Handler service.
+* ``dcae-tcagen2``: deploys the DCAE TCA analytics service.
+* ``dcae-ves-collector``: deploys the DCAE VES collector service.
+
+The dcaegen2-services sub-charts depend on a set of common templates, found under the ``common`` subdirectory under ``dcaegen2-services``.
 
 DCAE Deployment
 ---------------
@@ -70,10 +80,11 @@ These include:
   * Deployment handler
   * Policy handler
   * Service change handler
-  * Inventory API service (launched as a subchart of service change handler)
+  * Inventory API service
   * Inventory postgres database service (launched as a dependency of the inventory API service)
   * DCAE postgres database service (launched as a dependency of the bootstrap service)
   * DCAE Redis cluster
+  * DCAE Mongo database service (launched as a dependency of the bootstrap service)
   * VES OpenAPI Manager
 
 Some of the DCAE subcharts include an initContainer that checks to see if
@@ -87,7 +98,6 @@ directory, not as part of the DCAE chart hierarchy.
 
 The dcae-bootstrap service has a number of prerequisites because the subsequently deployed DCAE components depends on a number of resources having entered their normal operation state.  DCAE bootstrap job will not start before these resources are ready.  They are:
 
- 
   * dcae-cloudify-manager
   * consul-server
   * msb-discovery
@@ -96,32 +106,10 @@ The dcae-bootstrap service has a number of prerequisites because the subsequentl
   * dcae-db
   * dcae-mongodb
   * dcae-inventory-api
-  
+
 Additionaly tls-init-container invoked during component deployment relies on AAF to generate the required certificate hence AAF
-must be enabled under OOM deployment configuration. 
+must be enabled under OOM deployment configuration.
 
-Once started, the DCAE bootstrap service will call Cloudify Manager to deploy
-a series of blueprints which specify the additional DCAE microservice components.
-These blueprints use the DCAE Kubernetes plugin (``k8splugin``) to deploy
-Docker images into the ONAP Kubernetes cluster.  For each component, the plugin
-creates a Kubernetes deployment and other Kubernetes resources (services, volumes, logging sidecar, etc.)
-as needed.
-
-The DCAE bootstrap service creates the following Kubernetes deployments:
-
-* deploy/dep-dcae-hv-ves-collector
-* deploy/dep-dcae-prh
-* deploy/dep-dcae-tca-analytics
-* deploy/dep-dcae-tcagen2
-* deploy/dep-dcae-ves-collector
-* deploy/dep-holmes-engine-mgmt
-* deploy/dep-holmes-rule-mgmt
-
-After deploying all of the blueprints, the DCAE bootstrap service
-continues to run.   The bootstrap container can be useful for
-troubleshooting or for launching additional components.  The bootstrap
-container logs (accessed using the ``kubectl logs`` command) show the
-details of all of the component deployments.
 
 DCAE Configuration
 ------------------
@@ -149,6 +137,9 @@ In addition, for DCAE components deployed through Cloudify Manager blueprints, t
 
 Now we walk through an example, how to configure the Docker image for the DCAE VESCollector, which is deployed by Cloudify Manager.
 
+(*Note: Beginning with the Honolulu release, VESCollector is no longer deployed using Cloudify Manager.  However, the example is still
+useful for understanding how to deploy other components using a Cloudify blueprint.*)
+
 In the  `k8s-ves.yaml <https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-ves.yaml>`_ blueprint, the Docker image to use is defined as an input parameter with a default value:
 
 .. code-block:: yaml
@@ -156,7 +147,7 @@ In the  `k8s-ves.yaml <https://git.onap.org/dcaegen2/platform/blueprints/tree/bl
     tag_version:
     type: string
     default: "nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.ves.vescollector:1.5.4"
-    
+
 The corresponding input file, ``https://git.onap.org/oom/tree/kubernetes/dcaegen2/components/dcae-bootstrap/resources/inputs/k8s-ves-inputs-tls.yaml``,
 it is defined again as:
 
@@ -164,7 +155,7 @@ it is defined again as:
   {{ if .Values.componentImages.ves }}
   tag_version: {{ include "common.repository" . }}/{{ .Values.componentImages.ves }}
   {{ end }}
-  
+
 
 Thus, when ``common.repository`` and ``componentImages.ves`` are defined in the ``values.yaml`` files,
 their values will be plugged in here and the resulting ``tag_version`` value
@@ -184,22 +175,23 @@ DCAE Service Endpoints
 ----------------------
 
 Below is a table of default hostnames and ports for DCAE component service endpoints in Kubernetes deployment:
-    ==================   =================================   ======================================================
-    Component            Cluster Internal (host:port)        Cluster external (svc_name:port)
-    ==================   =================================   ======================================================
-    VES                  dcae-ves-collector:8443             xdcae-ves-collector.onap:30417
-    HV-VES               dcae-hv-ves-collector:6061          xdcae-hv-ves-collector.onap:30222
-    TCA                  dcae-tca-analytics:11011            xdcae-tca-analytics.onap:32010
-    TCA-Gen2             dcae-tcagen2:9091                   NA
-    PRH                  dcae-prh:8100                       NA
-    Policy Handler       policy-handler:25577                NA
-    Deployment Handler   deployment-handler:8443             NA
-    Inventory            inventory:8080                      NA
-    Config binding       config-binding-service:10000/10001  config-binding-service:30415
-    DCAE Healthcheck     dcae-healthcheck:80                 NA
-    Cloudify Manager     dcae-cloudify-manager:80            NA
-    DCAE Dashboard       dcae-dashboard:8443                 xdcae-dashboard:30419
-    ==================   =================================   ======================================================
+    ===================  ==================================   =======================================================
+    Component            Cluster Internal (host:port)         Cluster external (svc_name:port)
+    ===================  ==================================   =======================================================
+    VES                  dcae-ves-collector:8443              dcae-ves-collector.onap:30417
+    HV-VES               dcae-hv-ves-collector:6061           dcae-hv-ves-collector.onap:30222
+    TCA-Gen2             dcae-tcagen2:9091                    NA
+    PRH                  dcae-prh:8100                        NA
+    Policy Handler       policy-handler:25577                 NA
+    Deployment Handler   deployment-handler:8443              NA
+    Inventory            inventory:8080                       NA
+    Config binding       config-binding-service:10000/10001   NA
+    DCAE Healthcheck     dcae-healthcheck:80                  NA
+    DCAE MS Healthcheck  dcae-ms-healthcheck:8080             NA
+    Cloudify Manager     dcae-cloudify-manager:80             NA
+    DCAE Dashboard       dashboard:8443                       dashboard:30418
+    DCAE mongo           dcae-mongo-read:27017                NA
+    ===================  ==================================   =======================================================
 
 In addition, a number of ONAP service endpoints that are used by DCAE components are listed as follows
 for reference by DCAE developers and testers:
@@ -207,10 +199,10 @@ for reference by DCAE developers and testers:
     ====================   ============================      ================================
     Component              Cluster Internal (host:port)      Cluster external (svc_name:port)
     ====================   ============================      ================================
-    Consul Server          consul-server:8500                consul-server:30270
+    Consul Server          consul-server-ui:8500             NA
     Robot                  robot:88                          robot:30209 TCP
-    Message router         message-router:3904               message-router:30227
-    Message router         message-router:3905               message-router:30226
+    Message router         message-router:3904               NA
+    Message router         message-router:3905               message-router-external:30226
     Message router Kafka   message-router-kafka:9092         NA
     MSB Discovery          msb-discovery:10081               msb-discovery:30281
     Logging                log-kibana:5601                   log-kibana:30253
@@ -253,3 +245,7 @@ The DCAE cleanup script uses Cloudify Manager and the DCAE Kubernetes
 plugin to instruct Kubernetes to delete the components deployed by Cloudify
 Manager.  This includes the components deployed when the DCAE bootstrap
 service ran and any components deployed after bootstrap.
+
+To undeploy the DCAE services deployed via Helm (the hv-ves-collector, ves-collector, tcagen2,
+and prh), use the ``helm undeploy`` command against the `top_level_release_name`-``dcaegen2-services``
+Helm sub-release.
