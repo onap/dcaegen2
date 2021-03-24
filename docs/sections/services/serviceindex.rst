@@ -7,11 +7,12 @@ DCAE Service components
 
 .. Add or remove sections below as appropriate for the platform component.
 
-.. toctree::
-   :maxdepth: 1
 
 Collectors
 ----------
+
+.. toctree::
+   :maxdepth: 1
 
    ./dfc/index.rst
    ./restconf/index.rst
@@ -19,10 +20,11 @@ Collectors
    ./ves-hv/index.rst
    ./ves-http/index.rst
 
-
 Event Processor
 ---------------
-
+.. toctree::
+   :maxdepth: 1
+   
    ./bbs-event-processor/index.rst
    ./datalake-handler/index.rst
    ./mapper/index.rst
@@ -31,6 +33,9 @@ Event Processor
 Analytics
 ---------
 
+.. toctree::
+   :maxdepth: 1
+   
    ./heartbeat-ms/index.rst
    ./kpi-computation-ms/index.rst
    ./pm-subscription-handler/index.rst
@@ -40,5 +45,8 @@ Analytics
    
 Miscellaneous Services
 ----------------------
-   ./ves-openapi-manager/index.rst
 
+.. toctree::
+   :maxdepth: 1
+   
+   ./ves-openapi-manager/index.rst
