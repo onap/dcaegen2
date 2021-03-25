@@ -29,6 +29,7 @@ Event Processor
    ./datalake-handler/index.rst
    ./mapper/index.rst
    ./pm-mapper/index.rst
+   ./prh/index.rst
 
 Analytics
 ---------
