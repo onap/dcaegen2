@@ -3,11 +3,13 @@
 
 .. _running_insecure:
 
-Running insecure HV-VES in test environments
-============================================
+HV-VES installation (incl. insecure for test environments)
+===========================================================
 
-HV-VES application is configured by default to use TLS/SSL encryption on TCP connection. However it is posible to turn off TLS/SSL authorization by overriding Cloudify blueprint inputs.
-
+Starting from ONAP/Honolulu release, HV-VES is installed with a DCAEGEN2-Services Helm charts.
+This installation mechanism is convenient, but it doesn`t support all HV-VES features (e.g. CMP v2 certificates, and IPv4/IPv6 dual stack networking). This description demonstrates, how to deploy HV-VES collector using Cloudify orchestrator.
+HV-VES application is configured by default to use TLS/SSL encryption on TCP connection. 
+However it is posible to turn off TLS/SSL authorization by overriding Cloudify blueprint inputs.
 
 Accessing bootstrap container with Kubernetes command line tool
 ---------------------------------------------------------------
@@ -25,8 +27,8 @@ To run command line in bootstrap pod, execute:
     kubectl -n <onap namespace> exec -it <bootstrap-pod-name> bash
 
 
-Disable TLS/SSL by overriding Cloudify blueprint inputs
--------------------------------------------------------
+Install HV-VES collector using Cloudify blueprint inputs
+---------------------------------------------------------
 
 1. If You have a running HV-VES instance, uninstall HV-VES and delete current deployment:
 
@@ -35,9 +37,15 @@ Disable TLS/SSL by overriding Cloudify blueprint inputs
     cfy executions start -d hv-ves uninstall
     cfy deployments delete hv-ves 
 
-2. Create new deployment with inputs from yaml file and override 'security_ssl_disable' value:
+2. Create new deployment with inputs from yaml file (available by default in bootstrap container):
 
 :: 
+
+    cfy deployments create -b hv-ves -i inputs/k8s-hv_ves-inputs.yaml hv-ves
+
+In order to disable the TLS security, override the 'security_ssl_disable' value in the deloyment:
+
+::
 
     cfy deployments create -b hv-ves -i inputs/k8s-hv_ves-inputs.yaml -i security_ssl_disable=True hv-ves
 
