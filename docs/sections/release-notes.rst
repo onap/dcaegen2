@@ -1,6 +1,7 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 .. Copyright (c) 2017-2021 AT&T Intellectual Property. All rights reserved.
+.. Modification Copyright 2021 Nokia Solutions and Networks.
 .. _release_notes:
 
 
@@ -198,12 +199,18 @@ Software Deliverables
 Known Limitations, Issues and Workarounds
 -----------------------------------------
 
-None
-    
+The new, Helm based installation mechanism for collectors doesn`t support yet certain features available with the traditional Cloudify orchestration based mechanisms:
+   - Obtaining X.509 certificates from external CMP v2 server for secure xNF connections
+   - Exposing the Collector port in Dual Stack IPv4/IPv6 networks.
 
-*System Limitations*
+Such features are available, when the collectors are installed using the Cloudify mechanisms.
+Refer to the installation process descriptions available in collectors DCAE pages:
 
-None
+.. toctree::
+   :maxdepth: 1
+
+   ./services/ves-http/index.rst
+   ./services/ves-hv/index.rst
 
 *Known Vulnerabilities*
 
