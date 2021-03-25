@@ -291,6 +291,54 @@ The default custom persistent connection configuration (connectionPool=16, maxLi
 
     ImmutableDmaapConnectionPoolConfig.builder().build()
 
+***************************************
+Configure request for authorized topics
+***************************************
+
+* publisher:
+
+.. code-block:: java
+
+    final MessageRouterSink sink = ImmutableMessageRouterSink.builder()
+                .aafCredentials(ImmutableAafCredentials.builder()
+                        .username("username")
+                        .password("password").build())
+                .
+                .
+                .
+                .build();
+
+    final MessageRouterPublishRequest request = ImmutableMessageRouterPublishRequest.builder()
+                .sinkDefinition(sink)
+                .
+                .
+                .
+                .build();
+
+* subscriber:
+
+.. code-block:: java
+
+    final MessageRouterSource sourceDefinition = ImmutableMessageRouterSource.builder()
+                .aafCredentials(ImmutableAafCredentials.builder()
+                        .username("username")
+                        .password("password")
+                        .build())
+                .
+                .
+                .
+                .build();
+
+    final MessageRouterSubscribeRequest request = ImmutableMessageRouterSubscribeRequest.builder()
+                .sourceDefinition(sourceDefinition)
+                .
+                .
+                .
+                .build();
+
+AAF Credentials are optional for subscribe/publish requests.
+Username and password are used for basic authentication header during sending HTTP request to dmaap-mr.
+
 hvvesclient-producer - a reference Java implementation of High Volume VES Collector client
 ------------------------------------------------------------------------------------------
 This library is used in xNF simulator which helps us test HV VES Collector in CSIT tests. You may use it as a reference when implementing your code in non-JVM language or directly when using Java/Kotlin/etc.
