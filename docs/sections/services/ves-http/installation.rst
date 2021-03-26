@@ -71,3 +71,12 @@ In this case blueprint can be deleted explicitly using this command.
 
         cfy blueprint delete ves-http
 
+Using external TLS certificates obtained using CMP v2 protocol
+--------------------------------------------------------------
+
+In order to use the X.509 certificates obtained from the CMP v2 server (so called "operator`s certificates"), refer to the following description:
+
+.. toctree::
+    :maxdepth: 1
+
+      Enabling TLS with external x.509 certificates <../../tls_enablement>
