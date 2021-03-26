@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "8562b615_1edd2757",
+        "filename": "docs/sections/services/ves-hv/running-insecure.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-03-26T09:56:58Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "dfa89b87_2f00ecf1",
+      "range": {
+        "startLine": 6,
+        "startChar": 19,
+        "endLine": 6,
+        "endChar": 58
+      },
+      "revId": "134baa8280a0af11254b24472bc6f62a401dcf0e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b46a20f_d6a8a068",
         "filename": "docs/sections/services/ves-hv/running-insecure.rst",
         "patchSetId": 2
@@ -65,6 +89,30 @@
     },
     {
       "key": {
+        "uuid": "f9650432_8147915d",
+        "filename": "docs/sections/services/ves-hv/running-insecure.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-03-26T09:56:58Z",
+      "side": 1,
+      "message": "I think, this needs to stay as \"Install using Cloudify blueprint inputs\".\nInstallation within TLS/SSL is a point in this procedure (we override a single parameters in point 2).",
+      "parentUuid": "7b46a20f_d6a8a068",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 56
+      },
+      "revId": "134baa8280a0af11254b24472bc6f62a401dcf0e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "661cf6a7_29695d3f",
         "filename": "docs/sections/services/ves-hv/running-insecure.rst",
         "patchSetId": 2
@@ -76,6 +124,30 @@
       "writtenOn": "2021-03-25T19:49:39Z",
       "side": 1,
       "message": "similar steps also needed to override input for CMPV2 (external_cert_use_external_tls is disabled by default)",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 105
+      },
+      "revId": "134baa8280a0af11254b24472bc6f62a401dcf0e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c13450e3_30a0102f",
+        "filename": "docs/sections/services/ves-hv/running-insecure.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-03-26T09:56:58Z",
+      "side": 1,
+      "message": "I added a dedicated section to cover this requirement, based on the \"TLS enablement\" pages.\nThere are more settings than just the single override You mentioned to get this running e2e, thus a full description will be more appropriate.",
+      "parentUuid": "661cf6a7_29695d3f",
       "range": {
         "startLine": 46,
         "startChar": 0,
