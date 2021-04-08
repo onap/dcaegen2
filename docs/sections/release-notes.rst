@@ -99,7 +99,7 @@ Release Data
 | **Release designation**              | 8.0.0 Honolulu                                         |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
-| **Release date**                     | 2021-04-01                                             |
+| **Release date**                     | 2021-04-15                                             |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
 
@@ -107,27 +107,28 @@ Release Data
 New features
 ------------
 
-- DCAE Enhancements
+*DCAE Enhancements*
 
 
 Functional Updates
 
-   - (New) VES-Openapi-Manager component added to DCAE, allowing to notify of missing openAPI description, at xNF distribution phase
-   - Added VES 7.2.1 support in VESCollector
-   - DCAE MS deployment through helm (common template defined for easier migration of DCAE services)
-   - (New) KPI-Computation MS introduced for support for E2E Slicing Usecase
-   - K8S configMap support through onboarding/design/deployment via DCAE-MOD and DCAE-Platform
-   - BP-generation Enhancements (Native-kafka support/Config-map)
-   - CFY plugin enhancements (support IPV6 service exposure + Config-Map + Cert-Manager's CMPv2 issuer integration)
-   - DCAE SDK enhancement (Dmaap Client update for timeout/retry + CBS client update)
-   - DFC enhancement - support in HTTP/HTTPS/enroll certificate from CMPv2 server
+   - New service VES-Openapi-Manager component added to DCAE, allowing to notify of missing openAPI description, at xNF distribution phase (DCAEGEN2-2571) 
+   - Added VES 7.2.1 support in VESCollector (DCAEGEN2-2539, DCAEGEN2-2477)
+   - DCAE MS deployment through helm with introduction of common dcae-service template to standardize charts with migration (DCAEGEN2-2488) 
+   - New service KPI-Computation MS introduced for support for E2E Slicing Usecase (DCAEGEN2-2521)
+   - K8S configMap support through onboarding/design/deployment via DCAE-MOD and DCAE-Platform (DCAEGEN2-2539)
+   - BP-generation Enhancements - support Native-kafka & Config-map through onboarding (DCAEGEN2-2458)
+   - CFY plugin enhancements - support IPV6 service exposure + Config-Map + Cert-Manager's CMPv2 issuer integration (DCAEGEN2-2539, DCAEGEN2-2458, DCAEGEN2-2388)
+   - DCAE SDK enhancement - Dmaap Client update for timeout/retry + CBS client update (DCAEGEN2-1483)
+   - DFC enhancement - support in HTTP/HTTPS/enroll certificate from CMPv2 server (DCAEGEN2-2517)
 
 Non-Functional
-   - DCAE Cloudify py3 upgrade (including plugins/bootstrap cli)
-   - CII Badging improvements
-   - Policy-Handler Py3 upgrade
-   - Vulnerability updates for several DCAE MS (DataFile Collector, RESTConf, VESCollector, InventoryAPI, MOD/RuntimeAPI, VES-mapper, PM-Mapper, PRH, SON-Handler)
-   - Code Coverage improvement (DataFile, SDK, Blueprint-generator, Plugins, Acumos Adapter)
+
+   - DCAE Cloudify py3 upgrade including plugins/bootstrap cli (DCAEGEN2-1546)
+   - CII Badging improvements (DCAEGEN2-2570)
+   - Policy-Handler Py3 upgrade  (DCAEGEN2-2494)
+   - Vulnerability updates for several DCAE MS (DataFile Collector, RESTConf, VESCollector, InventoryAPI, MOD/RuntimeAPI, VES-mapper, PM-Mapper, PRH, SON-Handler) (DCAEGEN2-2551)
+   - Code Coverage improvement (DataFile, SDK, Blueprint-generator, Plugins, Acumos Adapter) (DCAEGEN2-2382)
    - Documentation/user-guide updates
 
 Bug Fixes
@@ -138,8 +139,7 @@ Bug Fixes
 
 - Following new services are delivered this release
     - VES OpenAPI Manager
-    - Analytics/RCA
-        - KPI MS
+    - KPI MS (Analytics/RCA)
 
 .. _honolulu_deliverable:
 
@@ -154,7 +154,7 @@ Software Deliverables
 
    "dcaegen2/analytics/tca-gen2", "", "onap/org.onap.dcaegen2.analytics.tca-gen2.dcae-analytics-tca-web:1.2.1"
    "dcaegen2/collectors/datafile", "", "onap/org.onap.dcaegen2.collectors.datafile.datafile-app-server:1.5.5"
-   "dcaegen2/collectors/hv-ves", "", "onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main:1.5.0"
+   "dcaegen2/collectors/hv-ves", "", "onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main:1.6.0"
    "dcaegen2/collectors/restconf", "", "onap/org.onap.dcaegen2.collectors.restconfcollector:1.2.4"
    "dcaegen2/collectors/snmptrap", "", "onap/org.onap.dcaegen2.collectors.snmptrap:2.0.4"
    "dcaegen2/collectors/ves", "", "onap/org.onap.dcaegen2.collectors.ves.vescollector:1.8.0"
@@ -172,7 +172,7 @@ Software Deliverables
    "dcaegen2/platform", "mod/designtool/mod-registry", "onap/org.onap.dcaegen2.platform.mod.mod-registry:1.0.0"
    "dcaegen2/platform", "mod/runtimeapi", "onap/org.onap.dcaegen2.platform.mod.runtime-web:1.2.3"
    "dcaegen2/platform", "adapter/acumos", "onap/org.onap.dcaegen2.platform.adapter.acumos:1.0.4"
-   "dcaegen2/platform/blueprints", "", "onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:3.0.3" 
+   "dcaegen2/platform/blueprints", "", "onap/org.onap.dcaegen2.deployments.k8s-bootstrap-container:3.0.4" 
    "dcaegen2/platform/configbinding", "", "onap/org.onap.dcaegen2.platform.configbinding:2.5.3"
    "dcaegen2/platform/deployment-handler", "", "onap/org.onap.dcaegen2.platform.deployment-handler:4.4.1"
    "dcaegen2/platform/inventory-api", "", "onap/org.onap.dcaegen2.platform.inventory-api:3.5.2"  
@@ -199,7 +199,7 @@ Software Deliverables
 Known Limitations, Issues and Workarounds
 -----------------------------------------
 
-The new, Helm based installation mechanism for collectors doesn`t support yet certain features available with the traditional Cloudify orchestration based mechanisms:
+The new, Helm based installation mechanism for collectors doesn't support yet certain features available with the traditional Cloudify orchestration based mechanisms:
    - Obtaining X.509 certificates from external CMP v2 server for secure xNF connections
    - Exposing the Collector port in Dual Stack IPv4/IPv6 networks.
 
@@ -212,6 +212,7 @@ Refer to collector installation page for more details:
    ./services/ves-http/installation.rst
    ./services/ves-hv/installation.rst
 
+    
 *Known Vulnerabilities*
 
 None
@@ -224,12 +225,15 @@ Security Notes
 --------------
 
 *Fixed Security Issues*
-    Listed above
+    
+    Documented on earlier section
 
 *Known Security Issues*
+    
     None
 
 *Known Vulnerabilities in Used Modules*
+    
     None
 	
 DCAE code has been formally scanned during build time using NexusIQ and all Critical vulnerabilities have been addressed, items that remain open have been assessed for risk and determined to be false positive. The DCAE open Critical security vulnerabilities and their risk assessment have been documented as part of the `project <https://wiki.onap.org/pages/viewpage.action?pageId=51282478>`_.
