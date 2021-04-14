@@ -41,7 +41,7 @@ Payload is binary-encoded, using Google Protocol Buffers (GPB) representation of
 .. literalinclude:: VesEvent.proto
     :language: protobuf
 
-HV-VES makes routing decisions based mostly on the content of the **Domain** parameter in the VES Common Event Header.
+HV-VES makes routing decisions based on the content of the **domain** field or **stndDefinedNamespace** field in case of stndDefined events.
 
 The PROTO file, which contains the VES CommonEventHeader, comes with a binary-type Payload (eventFields) parameter, where domain-specific
 data should be placed. Domain-specific data are encoded as well with GPB. A domain-specific PROTO file is required to decode the data.
@@ -49,15 +49,15 @@ data should be placed. Domain-specific data are encoded as well with GPB. A doma
 API towards DMaaP
 =================
 
-HV-VES Collector forwards incoming messages to a particular DMaaP Kafka topic based on the domain and configuration. Every Kafka record is comprised of a key and a value. In case of HV-VES:
+HV-VES Collector forwards incoming messages to a particular DMaaP Kafka topic based on the domain (or stndDefinedNamespace) and configuration. Every Kafka record is comprised of a key and a value. In case of HV-VES:
 
 - **Kafka record key** is a GPB-encoded `CommonEventHeader`.
 - **Kafka record value** is a GPB-encoded `VesEvent` (`CommonEventHeader` and domain-specific `eventFields`).
 
 In both cases raw bytes might be extracted using ``org.apache.kafka.common.serialization.ByteArrayDeserializer``. The resulting bytes might be further passed to ``parseFrom`` methods included in classes generated from GPB definitions. WTP is not used here - it is only used in communication between PNF/VNF and the collector.
 
-By default, **HV-VES** will use routing defined in **k8s-hv-ves.yaml-template** in **dcaegen2/platform/blueprints project**.
-Currently there is one domain->topic mapping defined: perf3gpp->HV_VES_PERF3GPP
+By default, **HV-VES** will use routing defined in **k8s-hv-ves.yaml-template** in **dcaegen2/platform/blueprints project** when deployed using Cloudify.
+In case of Helm deployment routing is defined in values.yaml file in HV-VES Helm Chart.
 
 
 .. _supported_domains:
@@ -65,7 +65,10 @@ Currently there is one domain->topic mapping defined: perf3gpp->HV_VES_PERF3GPP
 Supported domains
 =================
 
-As for now **HV-VES** supports only **perf3gpp** domain
+Domains that are currently supported by HV-VES:
+
+- perf3gpp - basic domain to Kafka topic mapping
+- stndDefined - specific routing, when event has this domain, then stndDefinedNamespace field value is mapped to Kafka topic
 
 For domains descriptions, see :ref:`domains_supported_by_hvves`
 

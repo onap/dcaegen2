@@ -15,8 +15,8 @@ HV-VES follows the VES-JSON schema as much as possible.
 
 - HV-VES uses a Google Protocol Buffers (GPB, proto files) representation of the VES Common Header.
 - The proto files use most encoding-effective types defined by GPB to cover Common Header fields.
-- HV-VES makes routing decisions based mostly on the content of the **Domain** parameter.
-- HV-VES allows to embed Payload of different types (by default perf3gpp domain is included).
+- HV-VES makes routing decisions based on the content of the **domain** field or **stndDefinedNamespace** field in case of stndDefined events.
+- HV-VES allows to embed Payload of different types (by default perf3gpp and stndDefined domains are included).
 
 Analytics applications impacts
 
@@ -35,6 +35,11 @@ This domain-specific proto has to be shared with analytics applications - HV-VES
 
 In order to support the RT-PM use-case, HV-VES uses a **perf3gpp** domain proto file. Within this domain, high volume data are expected to be reported to HV-VES collector.
 Additional domains can be defined based on existing VES domains (like Fault, Heartbeat) or completely new domains. New domains can be added when needed.
+
+There is also **stndDefined** domain supported by default in HV-VES. Events with this domain are expected to contain
+data payload described by OpenAPI schemas. HV-VES doesn't decode payload of stndDefined events thus it does not contain
+specific **stndDefined** proto files. The only difference of **stndDefined** domain is its specific routing. More
+details of stndDefined routing: :ref:`_stndDefined_domain`.
 
 GPB proto files are backwards compatible, and a new domain can be added without affecting existing systems.
 

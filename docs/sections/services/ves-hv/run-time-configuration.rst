@@ -35,7 +35,7 @@ Routing
 
 For every JSON key-object pair defined in **"stream_publishes"**, the key is used as domain and related object is used to setup Kafka's bootstrap servers and Kafka topic **for this domain**.
 
-When receiving a VES Event from client, collector checks if domain from the event corresponds to any domain from Routing and publishes this event into related topic. If there is no match, the event is dropped. If there are two routes from the same domain to different topics, then it is undefined which route is used.
+When receiving a VES Event from client, collector checks if domain (or stndDefinedNamespace when domain is 'stndDefined') from the event corresponds to any domain from Routing and publishes this event into related topic. If there is no match, the event is dropped. If there are two routes from the same domain to different topics, then it is undefined which route is used.
 
 For more information, see :ref:`supported_domains`.
 

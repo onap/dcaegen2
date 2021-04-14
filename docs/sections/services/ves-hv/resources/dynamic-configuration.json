@@ -22,6 +22,20 @@
         "bootstrap_servers": "message-router-kafka:9092",
         "topic_name": "HV_VES_HEARTBEAT"
       }
+    },
+    "ves-3gpp-fault-supervision": {
+      "type": "kafka",
+      "kafka_info": {
+        "bootstrap_servers": "message-router-kafka:9092",
+        "topic_name": "SEC_3GPP_FAULTSUPERVISION_OUTPUT"
+      }
+    },
+    "ves-3gpp-heartbeat": {
+      "type": "kafka",
+      "kafka_info": {
+        "bootstrap_servers": "message-router-kafka:9092",
+        "topic_name": "SEC_3GPP_HEARTBEAT_OUTPUT"
+      }
     }
   }
 }

@@ -84,7 +84,29 @@ Each row of the table corresponds to one field where a choice is to be made. For
 .. note:: *MeasResult.p* can be used to reduce the event size when more than half of the values in the event are zero values, and these values are not sent to ONAP. Only non-zero values are sent, together with their *MeasInfo.MeasTypes* index (*MeasResult.p*).
 
 
+.. _stndDefined_domain:
 
+stndDefined domain
+------------------
 
+The purpose of 'stndDefined' domain was to allow collection of events defined by standard organizations using HV-VES,
+and providing them for consumption by analytics applications running on top of DCAE platform.
 
+All events, except those with 'stndDefined' domain, are routed to DMaaP topics based on domain value. Events with
+'stndDefined' domain are sent to proper topic basing on field 'stndDefinedNamespace'.
 
+This is the only difference from standard event routing, specific for 'stndDefined' domain. As in every other event
+routing value is being mapped for specific Kafka topic. Mappings to Kafka topics are located in HV-VES Helm Chart
+values.yaml file. Four of them are by default available in HV-VES:
+
++-------------+--------------------------------+--------------------------------------+
+| Domain      | StndDefinedNamespace           | Kafka topic                          |
++=============+================================+======================================+
+| stndDefined | ves-3gpp-fault-supervision     | SEC_3GPP_FAULTSUPERVISION_OUTPUT     |
++-------------+--------------------------------+--------------------------------------+
+| stndDefined | ves-3gpp-provisioning          | SEC_3GPP_PROVISIONING_OUTPUT         |
++-------------+--------------------------------+--------------------------------------+
+| stndDefined | ves-3gpp-heartbeat             | SEC_3GPP_HEARTBEAT_OUTPUT            |
++-------------+--------------------------------+--------------------------------------+
+| stndDefined | ves-3gpp-performance-assurance | SEC_3GPP_PERFORMANCEASSURANCE_OUTPUT |
++-------------+--------------------------------+--------------------------------------+
