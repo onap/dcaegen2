@@ -3,8 +3,8 @@
 
 .. _installation:
 
-HV-VES installation
-===================
+HV-VES Cloudify Installation
+============================
 
 Starting from ONAP/Honolulu release, HV-VES is installed with a DCAEGEN2-Services Helm charts.
 This installation mechanism is convenient, but it doesn`t support all HV-VES features (e.g. CMP v2 certificates, and IPv4/IPv6 dual stack networking). This description demonstrates, how to deploy HV-VES collector using Cloudify orchestrator.
