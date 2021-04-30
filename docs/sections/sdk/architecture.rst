@@ -77,7 +77,7 @@ DmaaP-MR Client
 
 ConfigBindingService Client
 +++++++++++++++++++++++++++
-    Thin client wrapper to invoke CBS api to fetch configuration based on exposed properties during deployment. Provides option to periodically query and capture new configuration changes if any should be returned to application.
+    Thin client wrapper to fetch configuration based on exposed properties during deployment from the file on a configMap/volume or from CBS api if configMap/volume not exist. Provides option to periodically query and capture new configuration changes if any should be returned to application.
 
 Crypt Password
 ++++++++++++++
