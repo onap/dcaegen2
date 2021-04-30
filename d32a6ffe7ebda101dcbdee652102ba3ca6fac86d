@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a2bf223c_9fb03667",
+        "filename": "docs/sections/sdk/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5098
+      },
+      "writtenOn": "2021-04-30T07:25:08Z",
+      "side": 1,
+      "message": "does not exist",
+      "range": {
+        "startLine": 80,
+        "startChar": 164,
+        "endLine": 80,
+        "endChar": 174
+      },
+      "revId": "d32a6ffe7ebda101dcbdee652102ba3ca6fac86d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
