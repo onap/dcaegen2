@@ -9,7 +9,7 @@ DL-handler consists of three pods- the feeder, admin UI and des. It can be deplo
 
 Pre-requisite
 -------------
-Make sure mariadb-galera from OOM is properly deployed and functional.
+Make sure dcae postgres is properly deployed and functional.
 An external database, such as Elasticsearch and MongoDB is deployed. Install mongodb through the following command.
 
      #docker run -itd --restart=always --name dl-mongo -p 27017:27017 mongo

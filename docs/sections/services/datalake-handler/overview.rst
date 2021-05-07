@@ -49,7 +49,7 @@ A system administrator uses DataLake Admin UI to:
   - Configure which Topics to monitor, which databases to store the data for each Topic.
   - Pre-configured 3rd Party Tools dashboards and templates.
 
-This UI tool is used to manage all the Dayalake settings stored in MariaDB. Here is the database schema:
+This UI tool is used to manage all the Dayalake settings stored in postgres. Here is the database schema:
 
 .. image:: ./dbschema.PNG
 
@@ -62,8 +62,8 @@ Features
 
    - Read data directly from Kafka for performance.
    - Support for pluggable databases. To add a new database, we only need to implement its corrosponding service.
-   - Support REST API for inter-component communications. Besides managing DatAlake settings in MariaDB, Admin UI also use this API to start/stop Feeder, query Feeder status and statistics.
-   - Use MariaDB to store settings.
+   - Support REST API for inter-component communications. Besides managing DatAlake settings in postgres, Admin UI also use this API to start/stop Feeder, query Feeder status and statistics.
+   - Use postgres to store settings.
    - Support data processing features. Before persisting data, data can be massaged in Feeder. Currently two features are implemented: Correlate Cleared Message (in org.onap.datalake.feeder.service.db.ElasticsearchService)  and Flatten JSON Array (org.onap.datalake.feeder.service.StoreService).
    - Connection to Kafka and DBs are secured
 
