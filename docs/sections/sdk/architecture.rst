@@ -65,6 +65,21 @@ As noted above a reactive stream (Flux/Mono) terminates on first exception in an
                 .map(resp -> ...);
     }
 
+Environment substitution
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+CBS-client have ability to insert environment variables into loaded application configuration.
+Environment variables in configuration file must be in format `${ENV_NAME}` example:
+
+.. code-block:: yaml
+
+    streams_publishes:
+      perf3gpp:
+        testArray:
+          - testPrimitiveArray:
+              - "${AAF_USER}"
+              - "${AAF_PASSWORD}"
+
 Libraries
 ~~~~~~~~~~
 
