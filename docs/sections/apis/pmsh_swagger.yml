@@ -1,5 +1,5 @@
 # ============LICENSE_START=======================================================
-#  Copyright (C) 2020 Nordix Foundation.
+#  Copyright (C) 2021 Nordix Foundation.
 # ================================================================================
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,23 +19,28 @@
 swagger: "2.0"
 info:
   title: PM Subscription Handler Service
-  version: "1.1.1"
+  version: "1.1.0"
   description: PM subscription handler enables control of performance management jobs on network functions in ONAP
 produces:
   - "application/json"
-basePath: "/"
+basePath: "/pmsh"
+tags:
+- name: "Existing API"
+  description: "Existing API before Public API work"
 schemes:
   - https
 # Paths supported by the server application
 paths:
-  /subscriptions:
+  /v1/subscriptions:
     get:
+      tags:
+        - Existing API
       description: >-
-        Get all defined Subscriptions and their related Network Functions from ONAP.
+        Get all defined subscription and their related Network Functions from ONAP.
       operationId: mod.api.controller.get_all_sub_to_nf_relations
       responses:
         200:
-          description: OK; Array of subscriptions are returned as an object
+          description: OK; Array of subscription are returned as an object
           schema:
             type: array
             items:
@@ -58,30 +63,21 @@ paths:
                       nf_sub_status:
                         type: string
                         description: Status of the Subscription on the Network Function
-                      model_invariant_id:
+                      orchestration_status:
                         type: string
-                        description: The NF model-invariant-id defined in A&AI
-                      model_version_id:
-                        type: string
-                        description: The NF model-version-id defined in A&AI
-                      sdnc_model_name:
-                        type: string
-                        description: The sdnc_model_name (blueprint name) defined in A&AI
-                      sdnc_model_version:
-                        type: string
-                        description: The sdnc_model_version (blueprint version) defined in A&AI
+                        description: Orchestration status of the Network Function
         401:
           description: Unauthorized
         403:
           description: Forbidden
         404:
-          description: there are no subscriptions defined
+          description: there are no subscription defined
 
   /healthcheck:
     get:
       operationId: mod.api.controller.status
       tags:
-        - "HealthCheck"
+        - "Existing API"
       description: >-
         This is the health check endpoint. If this returns a 200, the server is alive.
       responses:
@@ -96,3 +92,1356 @@ paths:
                 enum: [healthy, unhealthy]
         503:
           description: the pmsh service is unavailable
+
+  /subscription:
+    post:
+      tags:
+        - "Subscriptions"
+      description: >-
+        Create a PM Subscription
+      operationId: mod.api.controller.create_subscription
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Subscription object to be created"
+        required: true
+        schema:
+          type: object
+          properties:
+            subscription:
+              type: object
+              properties:
+                subscriptionName:
+                  type: string
+                administrativeState:
+                  allOf:
+                    - type: string
+                    - enum:
+                        - UNLOCKED
+                        - LOCKED
+                        - FILTERING
+                fileBasedGP:
+                  type: integer
+                fileLocation:
+                  type: string
+                nfFilter:
+                  type: object
+                  properties:
+                    nfNames:
+                      type: array
+                      items:
+                        type: string
+                    modelInvariantIDs:
+                      type: array
+                      items:
+                        type: string
+                    modelVersionIDs:
+                      type: array
+                      items:
+                        type: string
+                    modelNames:
+                      type: array
+                      items:
+                        type: string
+                  additionalProperties: false
+                measurementGroups:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+                    properties:
+                      measurementGroup:
+                        type: object
+                        properties:
+                          measurementTypes:
+                            type: array
+                            minItems: 1
+                            items:
+                              type: object
+                              properties:
+                                measurementType:
+                                  type: string
+                              required:
+                                - measurementType
+                          managedObjectDNsBasic:
+                            type: array
+                            minItems: 1
+                            items:
+                              type: object
+                              properties:
+                                DN:
+                                  type: string
+                              required:
+                                - DN
+                        required:
+                          - measurementTypes
+                          - managedObjectDNsBasic
+                    required:
+                      - measurementGroup
+              required:
+                - subscriptionName
+                - administrativeState
+                - fileBasedGP
+                - fileLocation
+                - nfFilter
+                - measurementGroups
+      responses:
+        201:
+          description: successfully created PM Subscription
+        405:
+          description: Invalid input
+
+
+  #subcriptions
+  /subscription/{subscriptionName}:
+   get:
+      tags:
+        - "Subscriptions"
+      description: >-
+        Show the subscription
+      operationId: mod.api.controller.get_subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested Subscription returned
+          schema:
+            type: object
+            properties:
+              subscription:
+                type: object
+                properties:
+                  subscriptionName:
+                    type: string
+                  administrativeState:
+                    allOf:
+                      - type: string
+                      - enum:
+                          - UNLOCKED
+                          - LOCKED
+                          - FILTERING
+                  fileBasedGP:
+                    type: integer
+                  fileLocation:
+                    type: string
+                  nfFilter:
+                    type: object
+                    properties:
+                      nfNames:
+                        type: array
+                        items:
+                          type: string
+                      modelInvariantIDs:
+                        type: array
+                        items:
+                          type: string
+                      modelVersionIDs:
+                        type: array
+                        items:
+                          type: string
+                      modelNames:
+                        type: array
+                        items:
+                          type: string
+                    additionalProperties: false
+                  measurementGroups:
+                    type: array
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        measurementGroup:
+                          type: object
+                          properties:
+                            measurementTypes:
+                              type: array
+                              minItems: 1
+                              items:
+                                type: object
+                                properties:
+                                  measurementType:
+                                    type: string
+                            managedObjectDNsBasic:
+                              type: array
+                              minItems: 1
+                              items:
+                                type: object
+                                properties:
+                                  DN:
+                                    type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+   put: #full modify sub object
+      tags:
+        - "Subscriptions"
+      description: >-
+        This is an update for Subscription object
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: body
+          name: Subscription
+          description: The subscription object to update
+          schema:
+            type: object
+            properties:
+              subscription:
+                type: object
+                properties:
+                  subscriptionName:
+                    type: string
+                  administrativeState:
+                    type: string
+                    enum:
+                     - UNLOCKED
+                     - LOCKED
+                     - FILTERING
+                  fileBasedGP:
+                    type: integer
+                  fileLocation:
+                    type: string
+                  nfFilter:
+                    type: object
+                    properties:
+                      nfNames:
+                        type: array
+                        items:
+                          type: string
+                      modelInvariantIDs:
+                        type: array
+                        items:
+                          type: string
+                      modelVersionIDs:
+                        type: array
+                        items:
+                          type: string
+                      modelNames:
+                        type: array
+                        items:
+                          type: string
+                  measurementGroups:
+                    type: array
+                    items:
+                        type: object
+                        properties:
+                          measurementGroup:
+                            type: object
+                            properties:
+                              measurementTypes:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                      measurementType:
+                                        type: string
+                              managedObjectDNsBasic:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                      DN:
+                                        type: string
+                required:
+                  - subscriptionName
+            required:
+              - subscription
+                #add subscription schema here
+      responses:
+        201:
+          description: Subscription object updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+   delete:
+     tags:
+        - "Subscriptions"
+     description: >-
+       This is a delete for Subscription object
+     parameters:
+       - in: path
+         name: subscriptionName
+         type: string
+         required: true
+     responses:
+       204:
+         description: Subscription object deleted
+       401:
+         description: Unauthorized
+       403:
+         description: Forbidden
+       404:
+         description: Subscription object not found
+
+#quick way to update a field here
+  #adminState
+  /subscription/{subscriptionName}/adminState:
+    get:
+      tags:
+        - "adminState"
+      description: >-
+        Show admin state of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested admin state returned
+          schema:
+            type: object
+            properties:
+              adminState:
+                type: string
+                enum:
+                  - UNLOCKED
+                  - LOCKED
+                  - FILTERING
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "adminState"
+      description: >-
+        This is an update for a specific subscription's admin state
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: body
+          name: adminState
+          description: The adminState of the subscription object to update
+          schema:
+            type: object
+            required:
+              - adminState
+            properties:
+              adminState:
+                type: string
+                enum:
+                  - UNLOCKED
+                  - LOCKED
+                  - FILTERING
+      responses:
+        201:
+          description: adminState is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+
+  #fileBasedGP
+  /subscription/{subscriptionName}/fileBasedGP:
+    get:
+      tags:
+        - "fileBasedGP"
+      description: >-
+        Show the fileBasedGP of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested fileBasedGP returned
+          schema:
+            type: object
+            properties:
+              fileBasedGP:
+                type: integer
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "fileBasedGP"
+      description: >-
+        This is an update for a specific subscription's fileBasedGP
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: body
+          name: fileBasedGP
+          description: The fileBasedGP field of the subscription object to update
+          schema:
+            type: object
+            required:
+              - fileBasedGP
+            properties:
+              fileBasedGP:
+                type: integer
+      responses:
+        201:
+          description: fileBasedGP is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+    delete:
+      tags:
+        - "fileBasedGP"
+      description: >-
+        This is a delete for fileBasedGP field on a subscription object
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        204:
+          description: fileBasedGP field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+
+  #fileLocation
+  /subscription/{subscriptionName}/fileLocation:
+    get:
+      tags:
+        - "fileLocation"
+      description: >-
+        Show the fileLocation of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested fileLocation returned
+          schema:
+            type: object
+            properties:
+              fileLocation:
+                type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "fileLocation"
+      description: >-
+        This is an update for a specific subscription's fileLocation
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: body
+          name: fileLocation
+          description: The fileLocation field of the subscription object to update
+          schema:
+            type: object
+            required:
+              - fileLocation
+            properties:
+              fileBasedGP:
+                type: string
+      responses:
+        201:
+          description: fileLocation is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+    delete:
+      tags:
+        - "fileLocation"
+      description: >-
+          This is a delete for fileLocation field on a subscription object
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        204:
+          description: fileLocation field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+
+  #nfFilter
+  /subscription/{subscriptionName}/nfFilter:
+    get:
+      tags:
+        - "nfFilter"
+      description: >-
+        Show the nfFilter of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested nfFilter returned
+          schema:
+            type: object
+            properties:
+              nfFilter:
+                type: object
+                properties:
+                  nfNames:
+                    type: array
+                    items:
+                      type: string
+                  modelInvariantIDs:
+                    type: array
+                    items:
+                      type: string
+                  modelVersionIDs:
+                    type: array
+                    items:
+                      type: string
+                  modelNames:
+                    type: array
+                    items:
+                      type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "nfFilter"
+      description: >-
+        This is an update for a specific subscription's nfFilter
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: body
+          name: nfFilter
+          description: The nfFilter field of the subscription object to update
+          schema:
+            type: object
+            properties:
+              nfFilter:
+                type: object
+                properties:
+                  nfNames:
+                    type: array
+                    items:
+                      type: string
+                  modelInvariantIDs:
+                    type: array
+                    items:
+                      type: string
+                  modelVersionIDs:
+                    type: array
+                    items:
+                      type: string
+                  modelNames:
+                    type: array
+                    items:
+                      type: string
+      responses:
+        201:
+          description: fileLocation is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+    delete:
+      tags:
+        - "nfFilter"
+      description: >-
+        This is a delete for nfFilter field on a subscription object
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        204:
+          description: nfFilter field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+
+  #nfNames
+  /subscription/{subscriptionName}/nfFilter/nfNames:
+    get:
+      tags:
+        - "nfFilter"
+      description: >-
+        Show the nfNames of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested nfNames returned
+          schema:
+            type: object
+            properties:
+              nfNames:
+                items:
+                  type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "nfFilter"
+      description: >-
+        This is an update for a specific subscription's nfNames
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: body
+          name: nfNames
+          description: The nfNames field of nfFilter of the subscription object to update
+          schema:
+            type: object
+            required:
+              - nfNames
+            properties:
+              nfNames:
+                type: array
+                items:
+                  type: string
+      responses:
+        201:
+          description: nfNames is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+    delete:
+      tags:
+        - "nfFilter"
+      description: >-
+        This is a delete for nfNames field on a subscription object
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        204:
+          description: nfNames field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+
+  #nfinvariantModelIds
+  /subscription/{subscriptionName}/nfFilter/nfinvariantModelIds:
+    get:
+      tags:
+        - "nfFilter"
+      description: >-
+        Show the nfinvariantModelIds of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested nfinvariantModelIds returned
+          schema:
+            type: object
+            properties:
+              nfinvariantModelIds:
+                items:
+                  type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "nfFilter"
+      description: >-
+        This is an update for a specific subscription's nfinvariantModelIds
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: body
+          name: nfinvariantModelIds
+          description: The nfinvariantModelIds field of nfFilter of the subscription object to update
+          schema:
+            type: object
+            required:
+              - nfNames
+            properties:
+              nfinvariantModelIds:
+                type: array
+                items:
+                  type: string
+      responses:
+        201:
+          description: nfNames is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+    delete:
+      tags:
+        - "nfFilter"
+      description: >-
+          This is a delete for nfinvariantModelIds field on a subscription object
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        204:
+          description: nfinvariantModelIds field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+
+  #modelVersionIds
+  /subscription/{subscriptionName}/nfFilter/modelVersionIds:
+    get:
+      tags:
+        - "nfFilter"
+      description: >-
+        Show the modelVersionIds of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested modelVersionIds returned
+          schema:
+            type: object
+            properties:
+              modelVersionIds:
+                items:
+                  type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "nfFilter"
+      description: >-
+        This is an update for a specific subscription's modelVersionIds
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: body
+          name: modelVersionIds
+          description: The modelVersionIds field of nfFilter of the subscription object to update
+          schema:
+            type: object
+            required:
+              - modelVersionIds
+            properties:
+              modelVersionIds:
+                type: array
+                items:
+                  type: string
+      responses:
+        201:
+          description: modelVersionIds is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+    delete:
+      tags:
+        - "nfFilter"
+      description: >-
+          This is a delete for modelVersionIds field on a subscription object
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        204:
+          description: modelVersionIds field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+
+  #modelNames
+  /subscription/{subscriptionName}/nfFilter/modelNames:
+    get:
+      tags:
+        - "nfFilter"
+      description: >-
+        Show the modelNames of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested modelNames returned
+          schema:
+            type: object
+            properties:
+              modelNames:
+                items:
+                  type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "nfFilter"
+      description: >-
+        This is an update for a specific subscription's modelNames
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: body
+          name: modelNames
+          description: The modelNames field of nfFilter of the subscription object to update
+          schema:
+            type: object
+            required:
+              - modelNames
+            properties:
+              modelNames:
+                type: array
+                items:
+                  type: string
+      responses:
+        201:
+          description: modelNames is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+    delete:
+      tags:
+        - "nfFilter"
+      description: >-
+        This is a delete for modelNames field on a subscription object
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        204:
+          description: modelNames field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+
+  #measurementGroups
+  /subscription/{subscriptionName}/measurementGroups:
+    get:
+      tags:
+        - "measurementGroups"
+      description: >-
+        Show the fileBasedGP of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested measurementGroups returned
+          schema:
+            type: object
+            properties:
+              measurementGroups:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    measurementGroup:
+                      type: object
+                      properties:
+                        measurementTypes:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              measurementType:
+                                type: string
+                        managedObjectDNsBasic:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              DN:
+                                type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "measurementGroups"
+      description: >-
+        This is an update for a specific subscription's measurementGroups
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: body
+          name: measurementGroups
+          description: The measurementGroups field of the subscription object to update
+          schema:
+            type: object
+            properties:
+              measurementGroups:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    measurementGroup:
+                      type: object
+                      properties:
+                        measurementTypes:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              measurementType:
+                                type: string
+                        managedObjectDNsBasic:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              DN:
+                                type: string
+      responses:
+        201:
+          description: measurementGroups is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+    delete:
+      tags:
+        - "measurementGroups"
+      description: >-
+          This is a delete for measurementGroups field on a subscription object
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+      responses:
+        204:
+          description: measurementGroups field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Subscription object not found
+
+  #measurementGroupName
+  /subscription/{subscriptionName}/measurementGroups/{measurementGroupName}:
+    get:
+      tags:
+        - "measurementGroups"
+      description: >-
+        Show a measurementGroup of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: path
+          name: measurementGroupName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested measurementGroup returned
+          schema:
+            type: object
+            properties:
+              measurementGroup:
+                type: object
+                properties:
+                  measurementTypes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        measurementType:
+                          type: string
+                        managedObjectDNsBasic:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              DN:
+                                type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "measurementGroups"
+      description: >-
+        This is an update for a specific a measurementGroup
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: path
+          name: measurementGroupName
+          type: string
+          required: true
+        - in: body
+          name: measurementGroup
+          description: The measurementGroup field of the subscription object to update
+          schema:
+            type: object
+            properties:
+              measurementGroup:
+                type: object
+                properties:
+                  measurementTypes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        measurementType:
+                          type: string
+                        managedObjectDNsBasic:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              DN:
+                                type: string
+      responses:
+        201:
+          description: measurementGroup is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: measurementGroup object not found
+    delete:
+      tags:
+        - "measurementGroups"
+      description: >-
+        This is a delete for measurementGroup field on a subscription object
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: path
+          name: measurementGroupName
+          type: string
+          required: true
+      responses:
+        204:
+          description: measurementGroup field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: measurementGroup object not found
+
+  #measurementType
+  /subscription/{subscriptionName}/measurementGroups/{measurementGroupName}/measurementTypes:
+    get:
+      tags:
+        - "measurementGroups"
+      description: >-
+        Show the measurementTypes of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: path
+          name: measurementGroupName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested measurementTypes returned
+          schema:
+            type: object
+            properties:
+              measurementTypes:
+                type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "measurementGroups"
+      description: >-
+        This is an update for measurementType field in a specific measurementGroup
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: path
+          name: measurementGroupName
+          type: string
+          required: true
+        - in: body
+          name: measurementTypes
+          description: The measurementTypes field of the measurementGroup to update
+          schema:
+            type: object
+            properties:
+              measurementTypes:
+                type: string
+      responses:
+        201:
+          description: measurementType is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: measurementGroup object not found
+    delete:
+      tags:
+        - "measurementGroups"
+      description: >-
+        This is a delete for measurementType field on a measurementGroup
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: path
+          name: measurementGroupName
+          type: string
+          required: true
+      responses:
+        204:
+          description: measurementGroup field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: measurementGroup object not found
+
+  #managedObjectDNsBasic
+  /subscription/{subscriptionName}/measurementGroups/{measurementGroupName}/managedObjectDNsBasic:
+    get:
+      tags:
+        - "measurementGroups"
+      description: >-
+        Show the managedObjectDNsBasic of a subscription
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: path
+          name: measurementGroupName
+          type: string
+          required: true
+      responses:
+        200:
+          description: Requested managedObjectDNsBasic returned
+          schema:
+            type: object
+            properties:
+              managedObjectDNsBasic:
+                type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: there are no subscription defined
+    put:
+      tags:
+        - "measurementGroups"
+      description: >-
+        This is an update for managedObjectDNsBasic field in a specific measurementGroup
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: path
+          name: measurementGroupName
+          type: string
+          required: true
+        - in: body
+          name: managedObjectDNsBasic
+          description: The managedObjectDNsBasic field of the measurementGroup to update
+          schema:
+            type: object
+            properties:
+              managedObjectDNsBasic:
+                type: string
+      responses:
+        201:
+          description: managedObjectDNsBasic is updated
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: measurementGroup object not found
+    delete:
+      tags:
+        - "measurementGroups"
+      description: >-
+        This is a delete for managedObjectDNsBasic field on a measurementGroup
+      parameters:
+        - in: path
+          name: subscriptionName
+          type: string
+          required: true
+        - in: path
+          name: measurementGroupName
+          type: string
+          required: true
+      responses:
+        204:
+          description: managedObjectDNsBasic field is deleted
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: measurementGroup object not found
