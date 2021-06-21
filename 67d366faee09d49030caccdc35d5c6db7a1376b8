@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b3da0772_09d92ee0",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-06-21T20:45:50Z",
+      "side": 1,
+      "message": "missing license header",
+      "revId": "67d366faee09d49030caccdc35d5c6db7a1376b8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e3271c3_5606e4ae",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-06-21T20:45:50Z",
+      "side": 1,
+      "message": "These line can be removed to keep this page generic; this will be covered under overall release notes.",
+      "range": {
+        "startLine": 23,
+        "startChar": 32,
+        "endLine": 26,
+        "endChar": 50
+      },
+      "revId": "67d366faee09d49030caccdc35d5c6db7a1376b8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d012afe_11aed2a6",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-06-21T20:45:50Z",
+      "side": 1,
+      "message": "As this doc/pg on describe Svc template - suggest title like \"DCAE Service Template - Introduction\"",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 20
+      },
+      "revId": "67d366faee09d49030caccdc35d5c6db7a1376b8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53e9ab7d_73c859f3",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-06-21T20:45:50Z",
+      "side": 1,
+      "message": "pls add another subsection listing the templates along with repo/location they are maintained",
+      "revId": "67d366faee09d49030caccdc35d5c6db7a1376b8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f1296fb_ccef45a1",
+        "filename": "docs/sections/installation_oom.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-06-21T20:45:50Z",
+      "side": 1,
+      "message": ".rst extension to be removed",
+      "range": {
+        "startLine": 68,
+        "startChar": 83,
+        "endLine": 68,
+        "endChar": 87
+      },
+      "revId": "67d366faee09d49030caccdc35d5c6db7a1376b8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
