@@ -64,6 +64,9 @@ The dcaegen2-services chart has the following sub-charts:
 
 The dcaegen2-services sub-charts depend on a set of common templates, found under the ``common`` subdirectory under ``dcaegen2-services``.
 
+Information about using the common templates to deploy a microservice can be
+found in :doc:`Using Helm to deploy DCAE Microservices <./dcaeservice_helm_template>`.
+
 DCAE Deployment
 ---------------
 
