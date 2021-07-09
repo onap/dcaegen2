@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b042c29_0344ca36",
+        "filename": "docs/sections/services/ves-http/ves-processing-flow.png",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-07-09T13:43:14Z",
+      "side": 1,
+      "message": "There is also a check in collector to verify if all events are contained under same/single domain - will be good to depict that also as that is key for syncronous distribution",
+      "revId": "cceec838a35b3e6f620679d11d24350a38168834",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
