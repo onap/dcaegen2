@@ -56,8 +56,10 @@ The dcaegen2 chart has the following sub-charts:
 
 The dcaegen2-services chart has the following sub-charts:
 
+* ``dcae-datafile-collector``: deploys the DCAE DataFile Collector service.
 * ``dcae-hv-ves-collector``: deploys the DCAE High-Volume VES collector service.
 * ``dcae-ms-healthcheck``: deploys a health check component that tests the health of the 4 DCAE services deployed via Helm.
+* ``dcae-pm-mapper``: deploys the DCAE PM-Mapper service.
 * ``dcae-prh``: deploys the DCAE PNF Registration Handler service.
 * ``dcae-tcagen2``: deploys the DCAE TCA analytics service.
 * ``dcae-ves-collector``: deploys the DCAE VES collector service.
