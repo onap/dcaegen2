@@ -464,3 +464,101 @@ correct common name/SAN.
 
 Also note that if the chart for ``dcae-ves-collector`` has been pushed into a Helm repository, the ``helm install`` command can refer to the
 repository (for instance, ``local/dcae-ves-collector``) instead of using the chart on the local filesystem.
+
+
+DMaaP Topics on Message Router and Feeds on Data Router Creation from DCAE
+--------------------------------------------------------------------------
+The ``common.dmaap.provisioning.initContainer`` template can be used to create Message Router Topics and Data Router Feeds, To do this successfully,
+it's necessary to import common.dmaap.provisioning.initContainer into initContainer specs of ``deployment.yaml`` template.
+
+::
+
+  {{- include "common.dmaap.provisioning.initContainer" . | nindent XX }}
+
+Note also need to take care of the ``Volumes`` that are required to be mounted on Application Pod in ``deployment.yaml``.
+
+::
+
+  {{- include "common.dmaap.provisioning._volumes" . | nindent XX -}}
+
+The ``common.dmaap.provisioning.initContainer`` template make use of Dmaap Bus Controller docker image to create resources on Dmaap Data Router,
+Message Router microservice, with the help of ``dbc-client.sh`` script it makes use of Bus Controller API to create Feed, Topics.
+
+If the resource creation is successful via script, response is logged in file with appropriate naming convention.
+Template ``common.dmaap.provisioning.initContainer`` directly references data in ``values.yaml`` file.
+
+The figure below shows Dmaap Topics, Feeds Provisioning architecture via DCAE and how the components work with each other.
+
+..
+  The following diagram has been created on https://app.diagrams.net/. There is an editable version of the diagram
+  in repository under path docs/sections/images/dmaap_provisioning_architecture_diagram. Import this file to mentioned page to edit diagram.
+
+.. image:: images/dmaap_provisioning.png
+
+
+Dmaap Data Router Feeds creation input can be provided in below format. It consumes list of Feeds.
+
+::
+
+  drFeedConfig:
+    - feedName: bulk_pm_feed
+      owner: dcaecm
+      feedVersion: 0.0
+      asprClassification: unclassified
+      feedDescription: DFC Feed Creation
+
+Once the Feeds creation is successful we can attach Publisher, Subscriber to Feeds.
+
+Dmaap Data Router Publisher config:
+
+::
+
+  drPubConfig:
+    - feedName: bulk_pm_feed
+      dcaeLocationName: loc00
+
+Dmaap Data Router Subscriber config:
+
+::
+
+  drSubConfig:
+   - feedName: bulk_pm_feed
+      decompress: True
+      username: ${DR_USERNAME}
+      userpwd: ${DR_PASSWORD}
+      dcaeLocationName: loc00
+      privilegedSubscriber: True
+      deliveryURL: https://dcae-pm-mapper:8443/delivery
+
+Dmaap Message Router Topics creation input can be provided in below format. It consumes list of Topics.
+Also we can attach Message Router Publisher and Subscriber at same time while creation of Topic.
+
+::
+
+  mrTopicsConfig:
+    - topicName: PERFORMANCE_MEASUREMENTS
+      topicDescription: Description about Topic
+      owner: dcaecm
+      tnxEnabled: false
+      clients:
+        - dcaeLocationName: san-francisco
+          clientRole: org.onap.dcae.pmPublisher
+          action:
+            - pub
+            - view
+
+Volume configuration for configMap should be provided in ``values.yaml`` file.
+
+::
+
+  volumes:
+    - name: feeds-config
+      path: /opt/app/config/feeds
+    - name: drpub-config
+      path: /opt/app/config/dr_pubs
+    - name: drsub-config
+      path: /opt/app/config/dr_subs
+    - name: topics-config
+      path: /opt/app/config/topics
+
+In the directory containing ``dcae-datafile-collector``, ``dcae-pm-mapper`` chart we can find examples for Feed, Topic creation.
