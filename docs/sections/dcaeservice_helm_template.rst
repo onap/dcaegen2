@@ -464,3 +464,157 @@ correct common name/SAN.
 
 Also note that if the chart for ``dcae-ves-collector`` has been pushed into a Helm repository, the ``helm install`` command can refer to the
 repository (for instance, ``local/dcae-ves-collector``) instead of using the chart on the local filesystem.
+
+
+Dynamic Topic and Feed Provisioning
+-----------------------------------
+This section introduces details on creation of dynamic Dmaap Topics in Message Router and Feeds in Data Router via DCAE helm charts.
+
+Provisioning support through DCAE common-service template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When using DCAE common-service template in microservice chart ``deployment.yaml`` file it is required to include ``dcaegen2-services-common.microserviceDeployment`` template.
+The dcaegen2-services-common include necessary ``common.dmaap.provisioning.initContainer`` template which provisions topics and feeds on Dmaap Message Router and Data Router.
+
+Example : Including ``dcaegen2-services-common.microserviceDeployment`` template in ``deployment.yaml``.
+
+::
+
+  {{ include "dcaegen2-services-common.microserviceDeployment" . }}
+
+The ``common.dmaap.provisioning.initContainer`` template included in DCAE ``dcaegen2-services-common.microserviceDeployment`` makes use of
+dmaap-bc client image to create Topics on Message Router and Feeds on Data Router microservice, with the help of ``dbc-client.sh`` script,
+it uses Bus Controller REST API to create resources.
+
+If the resource creation is successful via script, the response is logged in file with appropriate naming convention.
+
+.. note::
+  The configuration provided via ``values.yaml`` file, is consumed by ``common.dmaap.provisioning.initContainer`` template which runs two
+  init-container, First named init-dmaap-provisioning for creating resources on Dmaap, Second named init-merge-config which updates application config
+  with response generated as an outcome of operation by init-dmaap-provisioning container.
+
+The figure below shows Dmaap Topics, Feeds Provisioning architecture via dcae-service-common helm charts.
+
+..
+  The following diagram has been created on https://app.diagrams.net/. There is an editable version of the diagram
+  in repository under path docs/sections/images/dmaap_provisioning_architecture_diagram. Import this file to mentioned page to edit diagram.
+
+.. image:: images/dmaap_provisioning.png
+
+Configuration to be added in ``values.yaml`` file.
+
+Dmaap Data Router Feeds creation input can be provided in below format. It consumes list of Feeds.
+
+.. note::
+  For DR Feed creation except ``feedName``, ``feedDescription`` do not update any other attribute.
+  All other attributes are mandatory, contains required default values, not required to be updated.
+
+::
+
+  drFeedConfig:
+    - feedName: bulk_pm_feed
+      owner: dcaecm
+      feedVersion: 0.0
+      asprClassification: unclassified
+      feedDescription: DFC Feed Creation
+
+Once the Feeds creation is successful we can attach Publisher and Subscriber to Feeds.
+
+Dmaap Data Router Publisher config:
+
+.. note::
+  For DR Publisher creation except ``feedName`` do not update any other attribute.
+  All other attributes are mandatory, contains required default values, not required to be updated.
+
+::
+
+  drPubConfig:
+    - feedName: bulk_pm_feed
+      dcaeLocationName: loc00
+
+Dmaap Data Router Subscriber config:
+
+.. note::
+  For DR Subscriber creation except ``feedName`` do not update any other attribute.
+  Attribute username, userpwd will be updated via init-merge-config init-container of ``common.dmaap.provisioning.initContainer`` template.
+  All other attributes are mandatory, contains required default values, not required to be updated.
+
+::
+
+  drSubConfig:
+    - feedName: bulk_pm_feed
+      decompress: True
+      username: ${DR_USERNAME}
+      userpwd: ${DR_PASSWORD}
+      dcaeLocationName: loc00
+      privilegedSubscriber: True
+      deliveryURL: https://dcae-pm-mapper:8443/delivery
+
+Dmaap Message Router Topics creation input can be provided in below format. It consumes list of Topics.
+Also we can attach Message Router Publisher and Subscriber at same time while creation of Topic.
+
+.. note::
+  For Message Router Topic creation except ``topicName`` and ``topicDescription``  do not update any other attribute.
+  All other attributes are mandatory, contains required default values, not required to be updated.
+
+::
+
+  mrTopicsConfig:
+    - topicName: PERFORMANCE_MEASUREMENTS
+      topicDescription: Description about Topic
+      owner: dcaecm
+      tnxEnabled: false
+      clients:
+        - dcaeLocationName: san-francisco
+          clientRole: org.onap.dcae.pmPublisher
+          action:
+            - pub
+            - view
+
+Volume configuration for configMap to be provided in ``values.yaml`` file.
+
+::
+
+  volumes:
+    - name: feeds-config
+      path: /opt/app/config/feeds
+    - name: drpub-config
+      path: /opt/app/config/dr_pubs
+    - name: drsub-config
+      path: /opt/app/config/dr_subs
+    - name: topics-config
+      path: /opt/app/config/topics
+
+
+For example directory containing ``dcae-datafile-collector``, ``dcae-pm-mapper`` chart under
+dcaegen2-services in OOM repository we can find examples for Feed and Topic creation.
+
+Provisioning support through DCAE When using custom deployment.yaml
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When using custom ``deployment.yaml`` it is required explicitly to include ``common.dmaap.provisioning.initContainer`` template in
+initContainer specs of ``deployment.yaml`` file.
+
+Example : Including ``common.dmaap.provisioning.initContainer`` template in ``deployment.yaml`` file.
+
+::
+
+  {{- include "common.dmaap.provisioning.initContainer" . | nindent XX }}
+
+Note also need to take care of the ``Volumes`` that are required to be mounted on Application Pod in ``deployment.yaml``.
+
+::
+
+  {{- include "common.dmaap.provisioning._volumes" . | nindent XX -}}
+
+Configuration to be added in ``values.yaml`` file is similar to described in ``Provisioning support through DCAE common-service template``.
+
+Removal of Data Router Feed, Publisher and Subscriber Or Message Router Topic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+DCAE does not support automatic removal of Feed, Publisher and Subscriber from Data Router or Topic from Message Router at present.
+So it is the responsibility of operator to manually remove Feeds and associated Publisher or Subscriber from Data Router and Topics
+from Message Router after uninstalling microservice charts which created resources on installation.
+
+Reference to DMAAP Bus Controller API documentation to figure out steps for manual removal of resources.
+https://docs.onap.org/projects/onap-dmaap-buscontroller/en/latest/apis/api.html
