@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3520ebf8_5acf1a50",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-07-21T21:29:38Z",
+      "side": 1,
+      "message": "Suggest rephrasing title as \"Dynamic Topic and Feed provisioning\"",
+      "range": {
+        "startLine": 469,
+        "startChar": 0,
+        "endLine": 469,
+        "endChar": 74
+      },
+      "revId": "a7fbdbe0ef1610019ad0b546b22f78fd6f52fcde",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e0f7f5f_0e6fb673",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-07-21T21:29:38Z",
+      "side": 1,
+      "message": "As this page is about DCAE common-service template and these init containers are included in dcaegen2-service-common, suggest breaking this into two sub-section\n\nSection 1 - provisioning support through DCAE common-service template. Include only details on config required on values.yaml to enable this feature.\n\nSection 2 - When using custom deployment.yaml (this can include the require init containers and volume setting)",
+      "revId": "a7fbdbe0ef1610019ad0b546b22f78fd6f52fcde",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdf34ffd_700227e0",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-07-21T21:29:38Z",
+      "side": 1,
+      "message": "I suppose you meant dmaap-bc client image here?",
+      "range": {
+        "startLine": 484,
+        "startChar": 69,
+        "endLine": 484,
+        "endChar": 102
+      },
+      "revId": "a7fbdbe0ef1610019ad0b546b22f78fd6f52fcde",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c010a9be_3cdd4853",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-07-21T21:29:38Z",
+      "side": 1,
+      "message": "via dcae-service-common helm charts and flow involved",
+      "range": {
+        "startLine": 490,
+        "startChar": 69,
+        "endLine": 490,
+        "endChar": 122
+      },
+      "revId": "a7fbdbe0ef1610019ad0b546b22f78fd6f52fcde",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "321062eb_8905a7aa",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-07-21T21:29:38Z",
+      "side": 1,
+      "message": "Possibly note here indicating which fields can/should be modified will be good here (i suppose except for feedname/description - other fields are treated statically)",
+      "revId": "a7fbdbe0ef1610019ad0b546b22f78fd6f52fcde",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b209656_c5e92e4f",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-07-21T21:29:38Z",
+      "side": 1,
+      "message": "pls add note here on the dependency of this value on DMAAP BC chart configuration/deployment",
+      "range": {
+        "startLine": 518,
+        "startChar": 24,
+        "endLine": 518,
+        "endChar": 29
+      },
+      "revId": "a7fbdbe0ef1610019ad0b546b22f78fd6f52fcde",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "453b691e_2ec1690c",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-07-21T21:29:38Z",
+      "side": 1,
+      "message": "Add note to indicate DR username/password are generated dynamically; and location dependency on DMAAP initialization config",
+      "range": {
+        "startLine": 527,
+        "startChar": 2,
+        "endLine": 529,
+        "endChar": 29
+      },
+      "revId": "a7fbdbe0ef1610019ad0b546b22f78fd6f52fcde",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42cf2f26_8dad5727",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-07-21T21:29:38Z",
+      "side": 1,
+      "message": "As uninstall of the topic/feed are not yet supported, possibly a brief note indicating topic/feed removal is manual and require to be done via DMAAP BC api\u0027s (will be good include a reference to DMAAP BC API documentation here as well)",
+      "revId": "a7fbdbe0ef1610019ad0b546b22f78fd6f52fcde",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
