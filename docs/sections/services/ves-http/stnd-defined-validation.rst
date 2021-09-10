@@ -48,26 +48,28 @@ Format of the schema mapping file is a JSON file with list of mappings, as shown
 
     [
       {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/faultMnS.yaml",
-        "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/faultMnS.yaml"
+        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/faultMnS.yaml",
+        "localURL": "3gpp/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/faultMnS.yaml"
       },
       {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/heartbeatNtf.yaml",
-        "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/heartbeatNtf.yaml"
+        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/FileDataReportingMnS.yaml",
+        "localURL": "3gpp/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/FileDataReportingMnS.yaml"
       },
       {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/PerDataFileReportMnS.yaml",
-        "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/PerDataFileReportMnS.yaml"
+        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/heartbeatNtf.yaml",
+        "localURL": "3gpp/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/heartbeatNtf.yaml"
       },
       {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/provMnS.yaml",
-        "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/provMnS.yaml"
+        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/provMnS.yaml",
+        "localURL": "3gpp/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/provMnS.yaml"
       }
     ]
 
-Config maps
------------
+External repo config maps
+-------------------------
 
+The VES collector allows to define externalRepo using config maps. In order to enable taking externalRepo from config maps, during the VES deployment using Helm,
+it is necessary to set the dcae-ves-collector.externalSchemaRepo.enabled flag to true.
 The mapping and schemas files content can be changed by editing a proper config map.
 
 
@@ -76,10 +78,11 @@ The mapping and schemas files content can be changed by editing a proper config 
 +==============================================+=====================================================================================================+
 | dcae-external-repo-configmap-schema-map      | Defines a content of the /opt/app/VESCollector/etc/externalRepo/schema-map.json file.               |
 +----------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| dcae-external-repo-configmap-sa88-rel16      | Defines a content of schemas stored in the /opt/app/VESCollector/etc/externalRepo folder.           |
+| dcae-external-repo-configmap-sa91-rel16      | Defines a content of schemas stored in the /opt/app/VESCollector/etc/externalRepo folder.           |
 +----------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
-Config maps are defined in the `OOM <https://gerrit.onap.org/r/gitweb?p=oom.git;a=tree;f=kubernetes/dcaegen2/resources/external>`_ repository and installed with dcaegen2 module. 
+Config maps are defined in the `OOM <https://gerrit.onap.org/r/gitweb?p=oom.git;a=tree;f=kubernetes/dcaegen2-services/resources/external>`_ repository
+and are installed with dcaegen2-services module.
 
 Properties configuration via Cloudify
 -------------------------------------
@@ -120,6 +123,63 @@ generate error.
 +----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
 | ves_3gpp_performance_assurance_publish_url   | Yes    | String  | http://message-router.onap.svc.cluster.local:3904/events/unauthenticated.SEC_3GPP_PERFORMANCEASSURANCE_OUTPUT |
 +----------------------------------------------+--------+---------+---------------------------------------------------------------------------------------------------------------+
+
+Config maps with app properties via Helm
+----------------------------------------
+
+When deploying VES via Helm, application properties can be changed by editing the corresponding config map.
+
+
++------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| Config map name                                      | Description                                                                                         |
++======================================================+=====================================================================================================+
+| dcae-ves-collector-application-config-configmap      | Defines a content of the /app-config/application_config.yaml file.                                  |
++------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| dcae-ves-collector-filebeat-configmap                | Defines a content of the /usr/share/filebeat/filebeat.yml file.                                     |
++------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+
+
+Properties configuration via Helm
+---------------------------------
+
+Collector.properties content may be overridden when deploying VES Collector via Helm. In case of deploying VES using Helm,
+a config map "dcae-ves-collector-application-config-configmap" with the application_config.yaml file is created. The application_config.yaml
+contains properties, that override values from Collector.properties. In order to change any value, it is sufficient to edit the application_config.yaml
+in the config map. The VES application frequently listens for and applies configuration changes.
+
+The content of "dcae-ves-collector-application-config-configmap" is defined in the values.yaml of the dcae-ves-collector chart
+and is installed with dcaegen2-services module.
+
+The following table shows stndDefined related properties added to VES Collector Helm chart. These properties
+represent fields from collector.properties file, but also contain configuration of DMaaP topic URLs used for stndDefined
+events routing.
+
+**NOTE**: Keep in mind that some properties may use relative path. It is relative to default VES Collector context which
+is: */opt/app/VESCollector/*. Final path of etc. *collector.externalSchema.schemasLocation* will be:
+*/opt/app/VESCollector/etc/externalRepo/*. Setting absolute path to these properties is also acceptable and won't
+generate error.
+
++-----------------------------------------------------------------------------+---------+---------------------------------------------------------------------------------------------------------------+
+| Property name                                                               | Type    | Default value                                                                                                 |
++=============================================================================+=========+===============================================================================================================+
+| collector.externalSchema.checkflag                                          | Integer | 1                                                                                                             |
++-----------------------------------------------------------------------------+---------+---------------------------------------------------------------------------------------------------------------+
+| collector.externalSchema.mappingFileLocation                                | String  | ./etc/externalRepo/schema-map.json                                                                            |
++-----------------------------------------------------------------------------+---------+---------------------------------------------------------------------------------------------------------------+
+| collector.externalSchema.schemasLocation                                    | String  | ./etc/externalRepo/                                                                                           |
++-----------------------------------------------------------------------------+---------+---------------------------------------------------------------------------------------------------------------+
+| event.externalSchema.schemaRefPath                                          | String  | $.event.stndDefinedFields.schemaReference                                                                     |
++-----------------------------------------------------------------------------+---------+---------------------------------------------------------------------------------------------------------------+
+| event.externalSchema.stndDefinedDataPath                                    | String  | $.event.stndDefinedFields.data                                                                                |
++-----------------------------------------------------------------------------+---------+---------------------------------------------------------------------------------------------------------------+
+| streams_publishes.ves-3gpp-fault-supervision.dmaap_info.topic_url           | String  | http://message-router.onap.svc.cluster.local:3904/events/unauthenticated.SEC_3GPP_FAULTSUPERVISION_OUTPUT     |
++-----------------------------------------------------------------------------+---------+---------------------------------------------------------------------------------------------------------------+
+| streams_publishes.ves-3gpp-provisioning.dmaap_info.topic_url                | String  | http://message-router.onap.svc.cluster.local:3904/events/unauthenticated.SEC_3GPP_PROVISIONING_OUTPUT         |
++-----------------------------------------------------------------------------+---------+---------------------------------------------------------------------------------------------------------------+
+| streams_publishes.ves-3gpp-heartbeat.dmaap_info.topic_url                   | String  | http://message-router.onap.svc.cluster.local:3904/events/unauthenticated.SEC_3GPP_HEARTBEAT_OUTPUT            |
++-----------------------------------------------------------------------------+---------+---------------------------------------------------------------------------------------------------------------+
+| streams_publishes.ves-3gpp-performance-assurance.dmaap_info.topic_url       | String  | http://message-router.onap.svc.cluster.local:3904/events/unauthenticated.SEC_3GPP_PERFORMANCEASSURANCE_OUTPUT |
++-----------------------------------------------------------------------------+---------+---------------------------------------------------------------------------------------------------------------+
 
 Validation overview
 -------------------
