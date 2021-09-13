@@ -113,8 +113,8 @@ that is available in R6 but is not currently being used.
 
       k8splugin version 2.0.0 uses an init container to supply the CA certificates.
 
-External TLS Support
---------------------
+External TLS Support - using Cloudify
+-------------------------------------
 
 External TLS support was introduced in order to integrate DCAE with CertService to acquire operator certificates meant to protect external traffic between DCAE's components (VES collector, HV-VES, RestConf collector and DFC) and xNFs. For that reason K8s plugin which creates K8s resources from Cloudify blueprints was enhanced with new TLS properties support. New TLS properties are meant to control CertService's client call in init containers section and environment variables which are passed to it.
 
@@ -216,3 +216,71 @@ From k8splugin 3.4.1 when external TLS is enabled (use_external_tls=true), keyst
         * ``trust.jks.bak``:  The (original) file with the AAF CA certificate only.
         * ``trust.pass``: A text file with a single line that contains the password for ``trust.jks`` and ``trust.jks.bak`` file.
         * ``cacert.pem``: The AAF CA certificate, in PEM form.
+
+.. _external-tls-helm:
+
+External TLS Support - Helm based deployment
+--------------------------------------------
+
+CMPv2 certificates can be enabled and configured via helm values. The feature is switched on only when:
+    * ``global.cmpv2Enabled`` flag is set to true
+    * ``certDirectory`` directory where TLS certs should be stored is set (in a specific component)
+    * flag ``useCmpv2Certificates`` is set to true (in a specific component)
+
+Default values for certificates are defined in ``global.certificate.default`` and can be overriden during onap installation process.
+
+    .. code-block:: yaml
+
+      global:
+        certificate:
+          default:
+            renewBefore: 720h #30 days
+            duration:    8760h #365 days
+            subject:
+              organization: "Linux-Foundation"
+              country: "US"
+              locality: "San-Francisco"
+              province: "California"
+              organizationalUnit: "ONAP"
+            issuer:
+              group: certmanager.onap.org
+              kind: CMPv2Issuer
+              name: cmpv2-issuer-onap
+
+CMPv2 settings can be changed in Helm values.
+    * ``mountPath`` - the directory within the container where certificates should be mounted
+    * ``commonName`` - indicates common name which should be present in certificate
+    * ``dnsNames`` - list of DNS names which should be present in certificate
+    * ``ipAddresses`` - list of IP addresses which should be present in certificate
+    * ``uris`` - list of uris which should be present in certificate
+    * ``emailAddresses`` - list of email addresses which should be present in certificate
+    * ``outputType`` - indicates certificate output type (jks or p12)
+
+    .. code-block:: yaml
+
+      certificates:
+      - mountPath: <PATH>
+        commonName: <COMMON-NAME>
+        dnsNames:
+          - <DNS-NAME-1>
+          - <DNS-NAME-2>
+          ...
+        ipAddresses:
+          ...
+        uris:
+          ...
+        emailAddresses:
+          ...
+        keystore:
+          outputType:
+            - <OUTPUT-TYPE>
+          passwordSecretRef:
+            name: <SECRET-NAME>
+            key: <PASSWORD-KEY>
+            create: <SHOULD-CREATE>
+
+The values can be changed by upgrading a component with modified values, eg.
+
+    .. code-block:: bash
+
+        helm -n onap upgrade <deploymant name> --values <path to updated values>
