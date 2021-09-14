@@ -1,9 +1,8 @@
 {
    "subscription":{
-      "subscriptionName":"subscriptiona",
-      "administrativeState":"UNLOCKED",
-      "fileBasedGP":15,
-      "fileLocation":"/pm/pm.xml",
+      "subscriptionName":"subscription-name",
+      "operationalPolicyName":"operational-policy-name",
+      "controlLoopName":"controlLoop-name",
       "nfFilter":{
          "nfNames":[
             "^pnf1.*"
@@ -14,11 +13,18 @@
          ],
          "modelVersionIDs":[
             "e80a6ae3-cafd-4d24-850d-e14c084a5ca9"
+         ],
+         "modelNames":[
+            "pnf102"
          ]
       },
       "measurementGroups":[
          {
             "measurementGroup":{
+               "measurementGroupName":"msgroupnamea",
+               "administrativeState":"UNLOCKED",
+               "fileBasedGP":15,
+               "fileLocation":"/pm/pma.xml",
                "measurementTypes":[
                   {
                      "measurementType":"countera"
@@ -39,6 +45,10 @@
          },
          {
             "measurementGroup":{
+               "measurementGroupName":"msgroupnameb",
+               "administrativeState":"UNLOCKED",
+               "fileBasedGP":15,
+               "fileLocation":"/pm/pmb.xml",
                "measurementTypes":[
                   {
                      "measurementType":"counterc"
