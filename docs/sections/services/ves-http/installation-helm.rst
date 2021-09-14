@@ -33,6 +33,61 @@ It can be verified by running:
 
         kubectl -n onap get cm <config map name> -o yaml
 
+
+
+.. _external-repo-schema-via-helm:
+
+External repo schema files from OOM connection to VES collector
+-------------------------------------------------------------------
+In order to not use schema files bundled in VES Collector image but schema files defined in `OOM <https://gerrit.onap.org/r/gitweb?p=oom.git;a=tree;f=kubernetes/dcaegen2/resources/external>`_ repository and installed with dcaegen2 module, follow below setup.
+
+1. Go to diretcory with dcaegen2-services (oom/kubernete/dcaegen2-services)
+2. Create file with VES values:
+
+.. code-block:: yaml
+
+  dcae-ves-collector:
+    externalVolumes:
+      - name: '<config map name with schema mapping file>'
+        type: configmap
+        mountPath: <path on VES collector container>
+        optional: true
+      - name: '<config map name contains schemas>'
+        type: configmap
+        mountPath: <path on VES collector container>
+        optional: true
+
+E.g:
+
+.. code-block:: yaml
+
+  dcae-ves-collector:
+    externalVolumes:
+      - name: 'dev-dcae-external-repo-configmap-schema-map'
+        type: configmap
+        mountPath: /opt/app/VESCollector/etc/externalRepo
+        optional: true
+      - name: 'dev-dcae-external-repo-configmap-sa91-rel16'
+        type: configmap
+        mountPath: /opt/app/VESCollector/etc/externalRepo/3gpp/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI
+        optional: true
+
+For use more schemas add new config map to object 'externalVolumes' like in above example.
+
+3. Upgrade release using following command:
+
+.. code-block:: bash
+
+  helm -n <namespace> upgrade <dcaegen2-services release name> --reuse-values -f <path to values.yaml file created in previous step> <path to dcaegen2-services helm chart>
+
+E.g:
+
+.. code-block:: bash
+
+  helm -n onap upgrade dcaegen2-services --reuse-values -f values.yaml .
+
+
+
 Using external TLS certificates obtained using CMP v2 protocol
 --------------------------------------------------------------
 
