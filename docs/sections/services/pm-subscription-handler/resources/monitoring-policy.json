@@ -1,9 +1,6 @@
 {
    "subscription":{
       "subscriptionName":"subscriptiona",
-      "administrativeState":"UNLOCKED",
-      "fileBasedGP":15,
-      "fileLocation":"/pm/pm.xml",
       "nfFilter":{
          "nfNames":[
             "^pnf1.*"
@@ -19,6 +16,10 @@
       "measurementGroups":[
          {
             "measurementGroup":{
+               "measurementGroupName":"msgroupnamea",
+               "administrativeState":"UNLOCKED",
+               "fileBasedGP":15,
+               "fileLocation":"/pm/pma.xml",
                "measurementTypes":[
                   {
                      "measurementType":"countera"
@@ -39,6 +40,10 @@
          },
          {
             "measurementGroup":{
+               "measurementGroupName":"msgroupnameb",
+               "administrativeState":"UNLOCKED",
+               "fileBasedGP":15,
+               "fileLocation":"/pm/pmb.xml",
                "measurementTypes":[
                   {
                      "measurementType":"counterc"
