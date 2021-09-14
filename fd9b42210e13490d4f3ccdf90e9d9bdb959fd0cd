@@ -22,6 +22,30 @@
       "revId": "fd9b42210e13490d4f3ccdf90e9d9bdb959fd0cd",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60411c09_fea91c18",
+        "filename": "docs/sections/services/ves-http/stnd-defined-validation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6592
+      },
+      "writtenOn": "2021-09-14T13:31:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf803c43_04c8de4f",
+      "range": {
+        "startLine": 68,
+        "startChar": 9,
+        "endLine": 68,
+        "endChar": 13
+      },
+      "revId": "fd9b42210e13490d4f3ccdf90e9d9bdb959fd0cd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
