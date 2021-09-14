@@ -66,9 +66,6 @@ The subscription is configured within the monitoring policy. The subscription mo
     {
        "subscription":{
           "subscriptionName":"someExtraPM-All-gNB-R2B",
-          "administrativeState":"UNLOCKED",
-          "fileBasedGP":15,
-          "fileLocation":"/pm/pm.xml",
           "nfFilter":{
              "nfNames":[
                 "^pnf1.*"
@@ -87,6 +84,10 @@ The subscription is configured within the monitoring policy. The subscription mo
           "measurementGroups":[
              {
                 "measurementGroup":{
+                   "measurementGroupName":"msgroupname",
+                   "administrativeState":"UNLOCKED",
+                   "fileBasedGP":15,
+                   "fileLocation":"/pm/pm.xml",
                    "measurementTypes":[
                       {
                          "measurementType":"EutranCell.*"
@@ -116,21 +117,20 @@ The subscription is configured within the monitoring policy. The subscription mo
     }
 
 
-+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
-| Field               | Description                                                                                                                                                                | Type | Required | Values |
-+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
-| subscriptionName    | Name of the subscription.                                                                                                                                                  |      |          |        |
-+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
-| administrativeState | Setting a subscription to UNLOCKED will apply the subscription to the NF instances immediately. If it is set to LOCKED, it will not be applied until it is later unlocked. |      |          |        |
-+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
-| fileBasedGP         | The frequency at which measurements are produced.                                                                                                                          |      |          |        |
-+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
-| fileLocation        | Location of Report Output Period file.                                                                                                                                     |      |          |        |
-+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
-| nfFilter            | The network function filter will be used to filter the list of nf's stored in A&AI to produce a subset.                                                                    |      |          |        |
-+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
-| measurementGroups   | List containing measurementGroup.                                                                                                                                          |      |          |        |
-+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
++-----------------------+---------------------------------------------------------------------------------------------------------+------+----------+--------+
+| Field                 | Description                                                                                             | Type | Required | Values |
++-----------------------+---------------------------------------------------------------------------------------------------------+------+----------+--------+
+| subscriptionName      | Name of the subscription.                                                                               |      |          |        |
++-----------------------+---------------------------------------------------------------------------------------------------------+------+----------+--------+
+| nfFilter              | The network function filter will be used to filter the list of nf's stored in A&AI to produce a subset. |      |          |        |
++-----------------------+---------------------------------------------------------------------------------------------------------+------+----------+--------+
+| measurementGroups     | List containing measurementGroup.                                                                       |      |          |        |
++-----------------------+---------------------------------------------------------------------------------------------------------+------+----------+--------+
+
+.. note::
+  Since release Istanbul of ONAP, PMSH Subscriptions model schema is updated.
+  Subscription model is centric to ``measurementGroup``, for instance any update on attributes administrativeState, fileBasedGP,
+  fileLocation, nfFilter will be applicable to only individual measurementGroup object.
 
 **nfFilter**
 
@@ -176,6 +176,10 @@ least 1 must be present for the filter to work.
 .. code-block:: json
 
     "measurementGroup": {
+       "measurementGroupName":"msgroupname",
+       "administrativeState":"UNLOCKED",
+       "fileBasedGP":15,
+       "fileLocation":"/pm/pm.xml",
        "measurementTypes": [
          {
            "measurementType": "EutranCell.*"
@@ -200,13 +204,21 @@ least 1 must be present for the filter to work.
        ]
     }
 
-+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+
-| Field                 | Description                                                                                                                                       | Type | Required |
-+=======================+===================================================================================================================================================+======+==========+
-| measurementTypes      | List of measurement types. These are regexes, and it is expected that either the CDS blueprint, or NF can parse them. As the PMSH will not do so. | list | True     |
-+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+
-| managedObjectDNsBasic | List of managed object distinguished names.                                                                                                       | list | True     |
-+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
+| Field                 | Description                                                                                                                                                                            | Type | Required | Values |
++=======================+========================================================================================================================================================================================+======+==========+========+
+| measurementGroupName  | Unique identifier for measurementGroup.                                                                                                                                                |      |          |        |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
+| administrativeState   | Setting a measurementGroup to UNLOCKED will apply the subscription changes to the NF instances immediately. If it is set to LOCKED, it will not be applied until it is later unlocked. |      |          |        |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
+| fileBasedGP           | The frequency at which measurements are produced.                                                                                                                                      |      |          |        |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
+| fileLocation          | Location of Report Output Period file.                                                                                                                                                 |      |          |        |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
+| measurementTypes      | List of measurement types. These are regexes, and it is expected that either the CDS blueprint, or NF can parse them. As the PMSH will not do so.                                      | list | True     |        |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
+| managedObjectDNsBasic | List of managed object distinguished names.                                                                                                                                            | list | True     |        |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
 
 .. _Topics:
 
@@ -242,6 +254,7 @@ Example of successful CREATE event sent from policy:
         "version": "0.0.1",
         "status": {
             "subscriptionName": "subscriptiona",
+            "measurementGroupName":"msgroupname",
             "nfName": "PNF104",
             "changeType": "CREATE",
             "message": "success"
@@ -261,6 +274,11 @@ Publisher:
 PMSH publishes subscriptions to this topic. They will be consumed by an operational policy which will make a request to CDS to
 change the state of the subscription.
 
+.. note::
+  Since release Istanbul of ONAP, PMSH Publish Subscriptions event format is updated.
+  A new attribute ``measurementGroupName`` is added as a unique identifier for ``measurementGroup`` and a single ``measurementGroup`` is associated with
+  PMSH Subscription event.
+
 Example event sent from PMSH:
 
 .. code-block:: json
@@ -278,47 +296,24 @@ Example event sent from PMSH:
           "subscriptionName":"subscriptiona",
           "fileBasedGP":15,
           "fileLocation":"/pm/pm.xml",
-          "measurementGroups":[
-             {
-                "measurementGroup":{
-                   "measurementTypes":[
-                      {
-                         "measurementType":"countera"
-                      },
-                      {
-                         "measurementType":"counterb"
-                      }
-                   ],
-                   "managedObjectDNsBasic":[
-                      {
-                         "DN":"dna"
-                      },
-                      {
-                         "DN":"dnb"
-                      }
-                   ]
+          "measurementGroup":{
+             "measurementGroupName":"msgroupname",
+             "measurementTypes":[
+                {
+                   "measurementType":"countera"
+                },
+                {
+                   "measurementType":"counterb"
                 }
-             },
-             {
-                "measurementGroup":{
-                   "measurementTypes":[
-                      {
-                         "measurementType":"counterc"
-                      },
-                      {
-                         "measurementType":"counterd"
-                      }
-                   ],
-                   "managedObjectDNsBasic":[
-                      {
-                         "DN":"dnc"
-                      },
-                      {
-                         "DN":"dnd"
-                      }
-                   ]
+             ],
+             "managedObjectDNsBasic":[
+                {
+                   "DN":"dna"
+                },
+                {
+                   "DN":"dnb"
                 }
-             }
-          ]
+             ]
+          }
        }
     }
