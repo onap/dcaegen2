@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "cfd90197_bcd70a14",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-15T14:13:24Z",
+      "side": 1,
+      "message": "Btw this was among my list to do; I will submit the patch by early next week unless Nokia team wants to push a draft sooner.",
+      "parentUuid": "e535636f_43390255",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 47
+      },
+      "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "979d82dc_061ae1d9",
         "filename": "docs/sections/services/ves-http/installation-helm.rst",
         "patchSetId": 3
