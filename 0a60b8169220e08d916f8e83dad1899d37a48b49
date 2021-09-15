@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e535636f_43390255",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-15T14:10:34Z",
+      "side": 1,
+      "message": "Damian - As these steps would be generic across all DCAE services, would suggest adding it under docs/sections/installation_oom.rst (or create separate common subpage)\n\nEach MS can elaborate on properties/overrides specific to collector as done here",
+      "parentUuid": "fcfc095e_970081fc",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 47
+      },
+      "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "979d82dc_061ae1d9",
         "filename": "docs/sections/services/ves-http/installation-helm.rst",
         "patchSetId": 3
