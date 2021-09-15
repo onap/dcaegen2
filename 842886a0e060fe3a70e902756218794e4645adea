@@ -22,6 +22,30 @@
       "revId": "842886a0e060fe3a70e902756218794e4645adea",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "545abae8_8a5dddad",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3699
+      },
+      "writtenOn": "2021-09-15T07:15:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00fe38fe_1abe58ae",
+      "range": {
+        "startLine": 13,
+        "startChar": 27,
+        "endLine": 13,
+        "endChar": 41
+      },
+      "revId": "842886a0e060fe3a70e902756218794e4645adea",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
