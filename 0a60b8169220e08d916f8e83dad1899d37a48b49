@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "1d5ca207_69027f63",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-15T15:46:04Z",
+      "side": 1,
+      "message": "Sounds good Damian.. we touch based on this topic on the call little earlier.",
+      "parentUuid": "253a9c69_edef1276",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 47
+      },
+      "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "979d82dc_061ae1d9",
         "filename": "docs/sections/services/ves-http/installation-helm.rst",
         "patchSetId": 3
