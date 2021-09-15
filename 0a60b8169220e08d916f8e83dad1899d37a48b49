@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fcfc095e_970081fc",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-15T13:05:47Z",
+      "side": 1,
+      "message": "I think, we need a generic, short description on how we do manage the VES collector configuration using Helm charts. Something along the lines of:\n1. Starting from ONAP/Istanbul VES Collector deployment is happening with a Helm chart\n2. DCAEGEN2-Services (check...) is the Helm chart, which need to be updated\n3. All VES collector updates are happening thru (and provide here the example of a property change) -- like this: helm -n onap upgrade dev-dcaegen2-services --values \u003cpath to values\u003e\n4. The default VES collector values.yaml file is located at \u003cLink to git repo, where the latest VES/values.yaml is located).\n5. We can add, that the VES Collector application properties are stored in the dcae-ves-collector section of values.yaml file?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 47
+      },
+      "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "979d82dc_061ae1d9",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-15T13:05:47Z",
+      "side": 1,
+      "message": "This is part of release-name, right?\nIf yes, then we might note this in the code block - and then give a specific example with specific release-name...",
+      "range": {
+        "startLine": 21,
+        "startChar": 29,
+        "endLine": 21,
+        "endChar": 33
+      },
+      "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9b298e8_e50b6d59",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-15T13:05:47Z",
+      "side": 1,
+      "message": "What about providing here a one-liner, something along the lines of:\nhelm -n onap upgrade dev-dcaegen2-services -i dcae-ves-collector.applicationConfig.auth.method\u003d\"noAuth\"",
+      "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2f84617_e6407125",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-15T13:05:47Z",
+      "side": 1,
+      "message": "Please provide an exact example here -- in a separate line.\nIf we know exactly which configMap is used, let`s state it in a direct example.",
+      "range": {
+        "startLine": 34,
+        "startChar": 31,
+        "endLine": 34,
+        "endChar": 48
+      },
+      "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
