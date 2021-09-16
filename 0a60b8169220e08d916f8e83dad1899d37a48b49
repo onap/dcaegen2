@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "734bf478_d6a22c54",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 3699
+      },
+      "writtenOn": "2021-09-16T06:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "979d82dc_061ae1d9",
+      "range": {
+        "startLine": 21,
+        "startChar": 29,
+        "endLine": 21,
+        "endChar": 33
+      },
+      "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d9b298e8_e50b6d59",
         "filename": "docs/sections/services/ves-http/installation-helm.rst",
         "patchSetId": 3
@@ -158,6 +182,24 @@
       "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a2095a4_0b2d7a02",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 3699
+      },
+      "writtenOn": "2021-09-16T06:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9b298e8_e50b6d59",
+      "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -181,6 +223,30 @@
       "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a71303f_8ece1219",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 3699
+      },
+      "writtenOn": "2021-09-16T06:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2f84617_e6407125",
+      "range": {
+        "startLine": 34,
+        "startChar": 31,
+        "endLine": 34,
+        "endChar": 48
+      },
+      "revId": "0a60b8169220e08d916f8e83dad1899d37a48b49",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
