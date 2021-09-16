@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "137ffe18_969220c1",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2021-09-16T10:40:55Z",
+      "side": 1,
+      "message": "oom/kubernetes/dcaegen2-services\n\nI\u0027d also suggest to order the calls as:\n helm -n onap upgrade \u003cDEPLOYMENT_PREFIX\u003e-dcaegen2-services oom/kubernetes/dcaegen2-services --reuse-values\n --values \u003cpath to values\u003e",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 132
+      },
+      "revId": "1802c6da541359a1297fde166313bd70014825ac",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
