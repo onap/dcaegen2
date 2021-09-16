@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a04e32a1_f4a947d5",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-16T10:17:10Z",
+      "side": 1,
+      "message": "integration with VES Collector\n\n(The External Repo can be created using an additional script after the ONAP installation\u003e\nIt is not the case, that they are coming always form OOM. By default, they`re coming form OOM, but they can be regenerated later.)",
+      "range": {
+        "startLine": 54,
+        "startChar": 21,
+        "endLine": 54,
+        "endChar": 46
+      },
+      "revId": "f138fb63e20ab542f631855df7063867f5ee2364",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
