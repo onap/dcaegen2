@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f54cfbe3_fe8f6a12",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-16T09:36:03Z",
+      "side": 1,
+      "message": "steps (not setup).",
+      "range": {
+        "startLine": 56,
+        "startChar": 261,
+        "endLine": 56,
+        "endChar": 266
+      },
+      "revId": "7342d92fa06638053862d4e268bb6c906265e65a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3653bb69_4372a88c",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-16T09:36:03Z",
+      "side": 1,
+      "message": "...remove this part and replace with: \n\"utulize the externalRepo openAPI schema files...\"",
+      "range": {
+        "startLine": 56,
+        "startChar": 12,
+        "endLine": 56,
+        "endChar": 67
+      },
+      "revId": "7342d92fa06638053862d4e268bb6c906265e65a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b750a32c_d0beaa73",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-16T09:36:03Z",
+      "side": 1,
+      "message": "Typos:\n1. diretcory --\u003e directory\n2. oom/kubernete --\u003e oom/kubernetes\n3. add \"helm charts\" after \"dcaegen2-services\"\n\nAdd here, where these files are located - K8S master node? RKE deployer node?\nSimply a server, where the ONAP Helm charts used to deploy an installation of ONAP are stored...\n\nWhere are those files located?",
+      "range": {
+        "startLine": 58,
+        "startChar": 3,
+        "endLine": 58,
+        "endChar": 75
+      },
+      "revId": "7342d92fa06638053862d4e268bb6c906265e65a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62165157_2f255105",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-16T09:36:03Z",
+      "side": 1,
+      "message": "with specific VES values-overrides:",
+      "range": {
+        "startLine": 59,
+        "startChar": 20,
+        "endLine": 59,
+        "endChar": 30
+      },
+      "revId": "7342d92fa06638053862d4e268bb6c906265e65a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62fa7725_1e831476",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-16T09:36:03Z",
+      "side": 1,
+      "message": "...where externalRepo schema-map is expected.",
+      "range": {
+        "startLine": 67,
+        "startChar": 20,
+        "endLine": 67,
+        "endChar": 51
+      },
+      "revId": "7342d92fa06638053862d4e268bb6c906265e65a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "240fdcec_21b0a711",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-16T09:36:03Z",
+      "side": 1,
+      "message": "...where externalRepo openAPI files are stored.",
+      "range": {
+        "startLine": 71,
+        "startChar": 20,
+        "endLine": 71,
+        "endChar": 51
+      },
+      "revId": "7342d92fa06638053862d4e268bb6c906265e65a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6c52b0a_3033fe20",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5597
+      },
+      "writtenOn": "2021-09-16T09:36:03Z",
+      "side": 1,
+      "message": "\"If more than a single external schema is required...\"\nand in next sentence:\n\"Make sure that all external schemas (all openAPI files) are reflected in the schema-map file.\"",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 12
+      },
+      "revId": "7342d92fa06638053862d4e268bb6c906265e65a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
