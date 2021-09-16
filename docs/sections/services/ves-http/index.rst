@@ -23,6 +23,7 @@ VES Collector (HTTP) overview and functions
   ./configuration.rst
   ./delivery.rst
   ./installation.rst
+  ./installation-helm.rst
   ./tls-authentication.rst
   ./stnd-defined-validation.rst
 
