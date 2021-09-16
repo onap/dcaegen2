@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f8d04ca7_2835c58f",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-16T19:48:27Z",
+      "side": 1,
+      "message": "A brief note on how the schemas are generated could be useful here or possibly a reference to oom/external_schema_repo_generator docs",
+      "revId": "a3a8c2beff830957b96ef14faa23335ea9abc119",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
