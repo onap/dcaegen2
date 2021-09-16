@@ -22,6 +22,30 @@
       "revId": "a623b71e55970f258d73e1c2abf7c1269918eb22",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9b00a78_7efc305c",
+        "filename": "docs/sections/services/ves-http/installation-helm.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2021-09-16T10:32:10Z",
+      "side": 1,
+      "message": "also - to be safe I think it\u0027s worth to add --reuse-values flag to the commands. Without it default chart values will be used (and previously used overrides discarded)",
+      "parentUuid": "03289ab0_6b1a6ce6",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 93
+      },
+      "revId": "a623b71e55970f258d73e1c2abf7c1269918eb22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
