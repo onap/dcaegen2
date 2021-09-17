@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "69865374_d8a0a0e7",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2021-09-17T01:26:20Z",
+      "side": 1,
+      "message": "add .drawio extension to the filename",
+      "revId": "8fae432a08c485e5e67ac964af435a529f426455",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28ea00b9_56ce2565",
+        "filename": "docs/sections/images/dmaap_provisioning_architecture_diagram",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2021-09-17T01:26:20Z",
+      "side": 1,
+      "message": "rename to have .drawio extension",
+      "revId": "8fae432a08c485e5e67ac964af435a529f426455",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
