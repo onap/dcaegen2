@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a76fee87_30a9cf65",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 6004
+      },
+      "writtenOn": "2021-09-17T07:25:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "69865374_d8a0a0e7",
+      "revId": "8fae432a08c485e5e67ac964af435a529f426455",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "28ea00b9_56ce2565",
         "filename": "docs/sections/images/dmaap_provisioning_architecture_diagram",
         "patchSetId": 3
@@ -33,6 +51,24 @@
       "revId": "8fae432a08c485e5e67ac964af435a529f426455",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b732837_e848453e",
+        "filename": "docs/sections/images/dmaap_provisioning_architecture_diagram",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6004
+      },
+      "writtenOn": "2021-09-17T07:25:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28ea00b9_56ce2565",
+      "revId": "8fae432a08c485e5e67ac964af435a529f426455",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
