@@ -61,6 +61,22 @@ The dcaegen2-services chart has the following sub-charts:
 * ``dcae-prh``: deploys the DCAE PNF Registration Handler service.
 * ``dcae-tcagen2``: deploys the DCAE TCA analytics service.
 * ``dcae-ves-collector``: deploys the DCAE VES collector service.
+* ``dcae-bbs-evenprocessor-ms``: deploys the DCAE BBS Evenprocessor service.
+* ``dcae-datafile-collector``: deploys the DCAE Datafile collector service.
+* ``dcae-datalake-admin-ui``: deploys the Datalake Admin UI service.
+* ``dcae-datalake-des``: deploys the Datalake Data Extraction service.
+* ``dcae-datalake-feeder``: deploys the Datalake Feeder service.
+* ``dcae-heartbeat``: deploys the DCAE Heartbeat microservice.
+* ``dcae-kpi-ms``: deploys the DCAE KPI computation microservice.
+* ``dcae-ms-healthcheck``: deploys the DCAE healthcheck service that provides API to check health of bootstrapped DCAE service deployed via helm
+* ``dcae-pm-mapper``: deploys the DCAE PM-Mapper service.
+* ``dcae-pmsh``: deploys the DCAE PM Subscription Handler service.
+* ``dcae-restconf-collector``: deploys the DCAE RESTConf collector service.
+* ``dcae-slice-analysis-ms``: deploys the DCAE Slice Analysis service.
+* ``dcae-snmptrap-collector``: deploys the DCAE SNMPTRAP collector service.
+* ``dcae-son-handler``: deploys the DCAE SON-Handler microservice.
+* ``dcae-ves-mapper``: deploys the DCAE VES Mapper microservice.
+
 
 The dcaegen2-services sub-charts depend on a set of common templates, found under the ``common`` subdirectory under ``dcaegen2-services``.
 
@@ -70,13 +86,16 @@ found in :doc:`Using Helm to deploy DCAE Microservices <./dcaeservice_helm_templ
 DCAE Deployment
 ---------------
 
-At deployment time, when the **helm deploy** command is executed,
-all DCAE resources defined within the subcharts above are deployed.
+At deployment time for ONAP, when the **helm deploy** command is executed,
+DCAE resources defined within the subcharts - "dcaegen2" above are deployed
+along with subset of DCAE Microservices (based on override file configuration 
+defined in `values.yaml <https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/values.yaml>`_
+ 
 These include:
 
-* the DCAE bootstrap service
-* the DCAE healthcheck service
-* the DCAE platform components:
+* DCAE bootstrap service
+* DCAE healthcheck service
+* DCAE platform components:
 
   * Cloudify Manager
   * Config binding service
@@ -86,9 +105,14 @@ These include:
   * Inventory API service
   * Inventory postgres database service (launched as a dependency of the inventory API service)
   * DCAE postgres database service (launched as a dependency of the bootstrap service)
-  * DCAE Redis cluster
   * DCAE Mongo database service (launched as a dependency of the bootstrap service)
   * VES OpenAPI Manager
+  
+* DCAE Service components:
+  * VES Collector
+  * HV-VES Collector
+  * PNF-Registration Handler Service
+  * Threshold Crossing Analysis (TCA-gen2)
 
 Some of the DCAE subcharts include an initContainer that checks to see if
 other services that they need in order to run have become ready.  The installation
@@ -98,6 +122,10 @@ In addition, DCAE operations depends on a Consul server cluster.
 For ONAP OOM deployment, the Consul cluster is provided as a shared
 resource. Its charts are defined under the ``oom/kubernetes/consul``
 directory, not as part of the DCAE chart hierarchy.
+
+With Istanbul release, DCAE bootstrapped Microservice deployment are managed completely under Helm. The Cloudify
+Bootstrap container preloads the microservice blueprints into DCAE Inventory, thereby making them available
+for On-Demand deployment support (trigger from CLAMP or external projects). 
 
 The dcae-bootstrap service has a number of prerequisites because the subsequently deployed DCAE components depends on a number of resources having entered their normal operation state.  DCAE bootstrap job will not start before these resources are ready.  They are:
 
@@ -140,7 +168,7 @@ In addition, for DCAE components deployed through Cloudify Manager blueprints, t
 
 Now we walk through an example, how to configure the Docker image for the DCAE VESCollector, which is deployed by Cloudify Manager.
 
-(*Note: Beginning with the Honolulu release, VESCollector is no longer deployed using Cloudify Manager.  However, the example is still
+(*Note: Beginning with the Istanbul release, VESCollector is no longer deployed using Cloudify Manager during bootstrap.  However, the example is still
 useful for understanding how to deploy other components using a Cloudify blueprint.*)
 
 In the  `k8s-ves.yaml <https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-ves.yaml>`_ blueprint, the Docker image to use is defined as an input parameter with a default value:
@@ -173,6 +201,64 @@ The ``componentImages.ves`` value is provided in the ``oom/kubernetes/dcaegen2/c
 
 
 The final result is that when DCAE bootstrap calls Cloudify Manager to deploy the DCAE VES collector, the 1.5.4 image will be deployed.
+
+
+.. _dcae-service-deployment:
+On-demand deployment/upgrade through Helm
+-----------------------------------------
+
+Under DCAE Transformation to Helm, all DCAE components has been delivered as helm charts under 
+OOM repository (https://git.onap.org/oom/tree/kubernetes/dcaegen2-services). 
+
+
+Blueprint deployment is also available to support regression usecases; ``Istanbul will be final release where 
+Cloudify blueprint for components/microservices will be supported.`` 
+
+All DCAE component charts follows standard Helm structure. Each Microservice charts has predefined configuration defined under 
+``applicationConfig`` which can be modified or overridden at deployment time. 
+
+Using helm, any of DCAE microservice can be deployed/upgraded/uninstalled on-demand.
+
+
+``Installation``
+
+Review and update local copy of dcaegen2-service ``values.yaml`` oom/kubernetes/dcaegen2-services/values.yaml
+to ensure component is enabled for deployment (or provide as command line override)
+
+    .. code-block:: bash
+        helm -n <namespace> install <DEPLOYMENT_PREFIX>-dcaegen2-services -dcaegen2-services oom/kubernetes/dcaegen2-services
+
+        
+Service component can also be installed individually from oom/kubernetes/dcaegen2-services/components/<dcae-ms-chart>
+
+    .. code-block:: bash
+        helm -n onap install dev-dcaegen2-services-ves-mapper oom/kubernetes/dcaegen2-services/components/dcae-ves-mapper -f values.yaml
+
+Using -f flag override file can be specified which will take precedence over default configuration. 
+When commandline override is not provided, default (values.yaml) provided in chart-directory will be used.
+
+``Upgrade``
+
+Helm support upgrade of charts already deployed; using ``upgrade``  component deployment can be modified
+
+    .. code-block:: bash
+
+        helm -n <namespace> upgrade <DEPLOYMENT_PREFIX>-dcaegen2-services --reuse-values --values <updated values.yaml path> <dcaegen2-services helm charts path>
+
+
+For minor configuration updates, helm also supports new values to be provided inline to the upgrade command. Example below - 
+
+    .. code-block:: bash
+
+        helm -n onap upgrade dev-dcaegen2-services oom/kubernetes/dcaegen2-services --reuse-values --set dcae-ves-collector.applicationConfig.auth.method="noAuth"
+
+``Uninstall``
+
+Components can be uninstalled using delete command.
+
+    .. code-block:: bash
+
+        helm -n <namespace> delete <DEPLOYMENT_PREFIX>-dcaegen2-services 
 
 DCAE Service Endpoints
 ----------------------
@@ -212,6 +298,8 @@ for reference by DCAE developers and testers:
     AAI                    aai:8080                          aai:30232
     AAI                    aai:8443                          aai:30233
     ====================   ============================      ================================
+
+
 
 Uninstalling DCAE
 -----------------
