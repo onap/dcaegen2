@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80f561d7_c19b8c30",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 511
+      },
+      "writtenOn": "2021-09-21T15:43:20Z",
+      "side": 1,
+      "message": "It would be good to have a reference to DMaaP documentation that explains the various attributes that are used in the values.yaml.  For applications other than DFC/PM-Mapper, users might need to modify attributes that you don\u0027t modify for DFC/PM-Mapper.",
+      "revId": "6f20d83bb2155d5fa6743fbba5014662314627b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae651874_46afacdd",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 511
+      },
+      "writtenOn": "2021-09-21T15:43:20Z",
+      "side": 1,
+      "message": "Aren\u0027t there cases where the feedVersion might need to be updated?",
+      "revId": "6f20d83bb2155d5fa6743fbba5014662314627b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbc35a83_f3a73b6b",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 511
+      },
+      "writtenOn": "2021-09-21T15:43:20Z",
+      "side": 1,
+      "message": "If someone is creating a subscriber for a component other than dcae-pm-mapper, they will need to use a different deliveryURL.  And they may or may not need privilegedSubscriber set to True.",
+      "revId": "6f20d83bb2155d5fa6743fbba5014662314627b0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
