@@ -44,7 +44,7 @@ Release Data
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
 | **Docker images**                    | onap/org.onap.ccsdk.dashboard.       |
-|                                      |   .ccsdk-app-os:1.4.3                |
+|                                      |   .ccsdk-app-os:1.4.4                |
 +--------------------------------------+--------------------------------------+
 | **Release designation**              | Honolulu Maintenance Release         |
 |                                      |                                      |
@@ -62,7 +62,8 @@ None
 
 - `DCAEGEN2-2751 <https://jira.onap.org/browse/DCAEGEN2-2751>`_ Dashboard login issue due to oom/common PG upgrade to centos8-13.2-4.6.1
 - `CCSDK-3233 <https://jira.onap.org/browse/CCSDK-3233>`_ Switch to integration base image & vulnerability updates fixes
-
+- `DCAEGEN2-2800 <https://jira.onap.org/browse/DCAEGEN2-2800>`_ DCAE Healthcheck failure due to Dashboard 
+- `DCAEGEN2-2869 <https://jira.onap.org/browse/DCAEGEN2-2869>`_ Fix PRH aai lookup url config
 
 **Known Issues**
 
