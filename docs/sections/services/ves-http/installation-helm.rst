@@ -55,6 +55,9 @@ External repository schema files integration with VES Collector
 -------------------------------------------------------------------
 In order to utilize the externalRepo openAPI schema files defined in `OOM <https://gerrit.onap.org/r/gitweb?p=oom.git;a=tree;f=kubernetes/dcaegen2-services/resources/external>`_ repository and installed with dcaegen2 module, follow below steps.
 
+.. note::
+  For more information on generating schema files, see `External-schema-repo-generator (OOM Utils repository) <https://gerrit.onap.org/r/gitweb?p=oom/utils.git;a=tree;f=external-schema-repo-generatore>`_
+
 1. Go to directory with dcaegen2-services helm charts (oom/kubernetes/dcaegen2-services). These charts should be located on RKE deployer node or server which is used to deploy and manage ONAP installation by Helm charts.
 2. Create file with specific VES values-overrides:
 
