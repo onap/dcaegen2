@@ -16,6 +16,24 @@
       "revId": "ade2ca936662cc3679e9b1132536e3e18457c88d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf93a91b_fe75ac18",
+        "filename": "docs/sections/installation_oom.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T14:45:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9410c1ce_5dd81d2a",
+      "revId": "ade2ca936662cc3679e9b1132536e3e18457c88d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
