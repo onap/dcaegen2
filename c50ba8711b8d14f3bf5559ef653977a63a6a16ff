@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2555e82c_51ce348f",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "Modify this as \"Helm Installation\" (as this shows up as duplicate reference on index page)",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 12
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29a4a127_39e00046",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "extend to same length as line#12",
+      "range": {
+        "startLine": 13,
+        "startChar": 20,
+        "endLine": 13,
+        "endChar": 21
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d006803_ff9f5238",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "indentation not correct (causing this to be out of codeblock)",
+      "range": {
+        "startLine": 21,
+        "startChar": 13,
+        "endLine": 39,
+        "endChar": 73
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed5afbed_c124de1a",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "indentation to be fixed",
+      "range": {
+        "startLine": 48,
+        "startChar": 13,
+        "endLine": 48,
+        "endChar": 71
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c179ab0_85d571c0",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "indentation to be fixed",
+      "range": {
+        "startLine": 109,
+        "startChar": 12,
+        "endLine": 118,
+        "endChar": 0
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79e0abca_938c6060",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "remove extra space",
+      "range": {
+        "startLine": 165,
+        "startChar": 41,
+        "endLine": 165,
+        "endChar": 45
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "039efd1b_8dc1a115",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "remove extra space",
+      "range": {
+        "startLine": 184,
+        "startChar": 30,
+        "endLine": 184,
+        "endChar": 34
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5276d51_26da94e9",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "missing new line",
+      "range": {
+        "startLine": 230,
+        "startChar": 33,
+        "endLine": 231,
+        "endChar": 14
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d3ef64d_64f1c4b3",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "remove extra space",
+      "range": {
+        "startLine": 256,
+        "startChar": 33,
+        "endLine": 256,
+        "endChar": 35
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c78a3a9d_6d6c550b",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "remove spaces",
+      "range": {
+        "startLine": 288,
+        "startChar": 0,
+        "endLine": 290,
+        "endChar": 2
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "986cb88e_a5fa22fe",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-09-30T21:29:43Z",
+      "side": 1,
+      "message": "need new line between \".. code-block:: bash\" and command to be included",
+      "range": {
+        "startLine": 291,
+        "startChar": 1,
+        "endLine": 311,
+        "endChar": 0
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
