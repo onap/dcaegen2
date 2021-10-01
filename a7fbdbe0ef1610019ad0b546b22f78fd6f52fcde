@@ -195,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "95275e6e_433256fe",
+        "filename": "docs/sections/dcaeservice_helm_template.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-01T17:10:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "321062eb_8905a7aa",
+      "revId": "a7fbdbe0ef1610019ad0b546b22f78fd6f52fcde",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9b209656_c5e92e4f",
         "filename": "docs/sections/dcaeservice_helm_template.rst",
         "patchSetId": 2
