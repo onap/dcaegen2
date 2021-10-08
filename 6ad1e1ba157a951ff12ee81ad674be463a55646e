@@ -1,0 +1,279 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "993facf8_d6e22f21",
+        "filename": "docs/sections/services/datalake-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "Change this to Datalake-postgress as its separate instance for DL under helm deploy (not shared anymore)\nAlso worth noting postgress instance deployment is included in DL-feeder charts",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 14
+      },
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3d3a27b_67338ea2",
+        "filename": "docs/sections/services/datalake-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "indicate reference/step on how to deploy this",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 53
+      },
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60aaf964_261c215e",
+        "filename": "docs/sections/services/datalake-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "need new line after codeblock start",
+      "range": {
+        "startLine": 24,
+        "startChar": 20,
+        "endLine": 24,
+        "endChar": 24
+      },
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da5ce92a_fadf330c",
+        "filename": "docs/sections/services/datalake-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "same as above; missing new line",
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa2c2c38_136838b4",
+        "filename": "docs/sections/services/datalake-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "missing new line",
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84ee6fe4_c8300712",
+        "filename": "docs/sections/services/datalake-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "missing new line",
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d539c5cd_83ee7912",
+        "filename": "docs/sections/services/datalake-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "missing new line",
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f33ddb2_ff4b590f",
+        "filename": "docs/sections/services/datalake-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "Formatting to be fixed - check here https://logs.onap.org/production/vex-yul-ecomp-jenkins-1/rtdv3-global-verify-master/5032/docs/sections/services/datalake-handler/installation-helm.html#application-configurations",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 82
+      },
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4938ab73_c88624c2",
+        "filename": "docs/sections/services/slice-analysis-ms/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "change this to \"Helm Installation\" as its MS name is displayed redundantly on the index page",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 35
+      },
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "485d2315_77a25c16",
+        "filename": "docs/sections/services/slice-analysis-ms/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "remove \u003e\u003e and add a new line after code-block start",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 9
+      },
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "454eb67a_a54174f8",
+        "filename": "docs/sections/services/slice-analysis-ms/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "remove \u003e\u003e characters",
+      "range": {
+        "startLine": 55,
+        "startChar": 14,
+        "endLine": 55,
+        "endChar": 16
+      },
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76257f6c_e26f9642",
+        "filename": "docs/sections/services/slice-analysis-ms/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "remove all \u003e\u003e",
+      "range": {
+        "startLine": 59,
+        "startChar": 15,
+        "endLine": 59,
+        "endChar": 59
+      },
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09380522_f0a30a57",
+        "filename": "docs/sections/services/slice-analysis-ms/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-08T16:49:15Z",
+      "side": 1,
+      "message": "same as abv comment",
+      "range": {
+        "startLine": 67,
+        "startChar": 9,
+        "endLine": 67,
+        "endChar": 11
+      },
+      "revId": "6ad1e1ba157a951ff12ee81ad674be463a55646e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
