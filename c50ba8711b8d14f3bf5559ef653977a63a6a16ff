@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6052c6b2_6d1d7695",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2555e82c_51ce348f",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 12
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "29a4a127_39e00046",
         "filename": "docs/sections/services/son-handler/installation-helm.rst",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cb5278a_c2c78f34",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29a4a127_39e00046",
+      "range": {
+        "startLine": 13,
+        "startChar": 20,
+        "endLine": 13,
+        "endChar": 21
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "a6ba05b2_4c10f946",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d006803_ff9f5238",
+      "range": {
+        "startLine": 21,
+        "startChar": 13,
+        "endLine": 39,
+        "endChar": 73
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ed5afbed_c124de1a",
         "filename": "docs/sections/services/son-handler/installation-helm.rst",
         "patchSetId": 2
@@ -91,6 +163,30 @@
       "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2b1377f_986a17af",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed5afbed_c124de1a",
+      "range": {
+        "startLine": 48,
+        "startChar": 13,
+        "endLine": 48,
+        "endChar": 71
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "c024ee40_66429803",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c179ab0_85d571c0",
+      "range": {
+        "startLine": 109,
+        "startChar": 12,
+        "endLine": 118,
+        "endChar": 0
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79e0abca_938c6060",
         "filename": "docs/sections/services/son-handler/installation-helm.rst",
         "patchSetId": 2
@@ -137,6 +257,30 @@
       "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a898b15_db1876f0",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79e0abca_938c6060",
+      "range": {
+        "startLine": 165,
+        "startChar": 41,
+        "endLine": 165,
+        "endChar": 45
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "c6716225_4540ce79",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "039efd1b_8dc1a115",
+      "range": {
+        "startLine": 184,
+        "startChar": 30,
+        "endLine": 184,
+        "endChar": 34
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e5276d51_26da94e9",
         "filename": "docs/sections/services/son-handler/installation-helm.rst",
         "patchSetId": 2
@@ -183,6 +351,30 @@
       "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76237850_2db85bd1",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5276d51_26da94e9",
+      "range": {
+        "startLine": 230,
+        "startChar": 33,
+        "endLine": 231,
+        "endChar": 14
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "c8509dd3_77077fca",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8d3ef64d_64f1c4b3",
+      "range": {
+        "startLine": 256,
+        "startChar": 33,
+        "endLine": 256,
+        "endChar": 35
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c78a3a9d_6d6c550b",
         "filename": "docs/sections/services/son-handler/installation-helm.rst",
         "patchSetId": 2
@@ -232,6 +448,30 @@
     },
     {
       "key": {
+        "uuid": "60acfa22_8145ff65",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c78a3a9d_6d6c550b",
+      "range": {
+        "startLine": 288,
+        "startChar": 0,
+        "endLine": 290,
+        "endChar": 2
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "986cb88e_a5fa22fe",
         "filename": "docs/sections/services/son-handler/installation-helm.rst",
         "patchSetId": 2
@@ -252,6 +492,30 @@
       "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4bb7321d_d97ee6c3",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T17:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "986cb88e_a5fa22fe",
+      "range": {
+        "startLine": 291,
+        "startChar": 1,
+        "endLine": 311,
+        "endChar": 0
+      },
+      "revId": "c50ba8711b8d14f3bf5559ef653977a63a6a16ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
