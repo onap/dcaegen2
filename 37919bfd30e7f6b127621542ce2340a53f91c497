@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e8cf8b95_4f96ccf5",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T19:15:56Z",
+      "side": 1,
+      "message": "Good catch; fixed in latest patchset.. will address the same in master part of subsequent doc patch",
+      "parentUuid": "c71b9902_261b3d5b",
+      "revId": "37919bfd30e7f6b127621542ce2340a53f91c497",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f15638f7_bf749e8e",
         "filename": "docs/sections/services/son-handler/installation-helm.rst",
         "patchSetId": 1
