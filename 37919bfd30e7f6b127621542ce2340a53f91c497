@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c71b9902_261b3d5b",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 511
+      },
+      "writtenOn": "2021-10-11T18:58:25Z",
+      "side": 1,
+      "message": "Should this be \u0027streams_subscribes\u0027 (lower-case \u0027s\u0027)?",
+      "revId": "37919bfd30e7f6b127621542ce2340a53f91c497",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f15638f7_bf749e8e",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 511
+      },
+      "writtenOn": "2021-10-11T18:58:25Z",
+      "side": 1,
+      "message": "Should this be \u0027streams_publishes\u0027 (lower-case \u0027s\u0027)?",
+      "revId": "37919bfd30e7f6b127621542ce2340a53f91c497",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
