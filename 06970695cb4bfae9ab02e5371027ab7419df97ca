@@ -16,6 +16,24 @@
       "revId": "06970695cb4bfae9ab02e5371027ab7419df97ca",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b91f6d6d_4d0f6265",
+        "filename": "docs/sections/services/son-handler/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-10-11T21:56:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6cdcf180_4a692efb",
+      "revId": "06970695cb4bfae9ab02e5371027ab7419df97ca",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
