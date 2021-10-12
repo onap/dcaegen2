@@ -92,9 +92,9 @@ Application Configurations
 +-------------------------------+------------------------------------------------+
 |Configuration                  | Description                                    |
 +===============================+================================================+
-|Streams_subscribes             | Dmaap topics that the MS will consume messages |
+|streams_subscribes             | Dmaap topics that the MS will consume messages |
 +-------------------------------+------------------------------------------------+
-|Streams_publishes              | Dmaap topics that the MS will publish messages |
+|streams_publishes              | Dmaap topics that the MS will publish messages |
 +-------------------------------+------------------------------------------------+
 |cbsPollingInterval             | Polling Interval for consuming config data from|
 |                               | CBS                                            |

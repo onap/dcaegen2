@@ -108,35 +108,40 @@ Release Data
 New features
 ------------
 
-
-
 *DCAE Enhancements Features*
 
-
 DCAEGEN2-2771 DCAE Impacts for E2E Network Slicing in Istanbul release
-    - Enhance SliceAnalysis and KPI-Computation MS to interface with CPS; integration with new CBS client SDK and support policy sidecar
+    - SliceAnalysis and KPI-Computation MS migrated from ConfigDb to CPS
+    - Integration with new CBS client SDK and support policy sidecar
 
 DCAEGEN2-2703 Add stndDefined domain to HV-VES
-	- Adapt HV_VES to support stdDefined domain instroduced under VES7.2.1 spec 
+    - HV_VES microservice was adapted to support stdDefined domain introduced under VES7.2.1 spec  
 
 DCAEGEN2-2630 DCAE Helm Transformation (Phase 2)
-	- Since Honolulu, 13 additional MS has been delivered for Helm deployment
-	- DCAE Service helm deployment is supported through implementing common functions as named template/functions defined in dcaegen2-services-common charts. Several new common features has been added in generic fashion and components/mS can enable required features via configuration override
-			- K8S Secret/Environment mapping
-			- CMPv2 Certificate support
-			- Policy Sidecar
-			- Mount data from configmap through PV/PVC
-			- Topic/feed provisioning support
-	- SDK Libraries (java and python) has been enhanced to support configuration retrieval from files
-	- Helm-generator tool available for generating DCAE component helm-chart given component spec
+    - All DCAE microservices migration to helm was completed in Istanbul release. Since Honolulu, 13 additional MS has been delivered added for Helm deployment support
+    - All DCAE Microservice are supported under both Helm and Cloudify/blueprint based deployments (legacy)
+    - Helm Templated resuable function - Several new common features has been added in generic fashion as named template/functions defined in dcaegen2-services-common charts; each DCAEcomponents/mS can enable required features via configuration override. Following are current set of features available under dcaegen2-services-common
+            - K8S Secret/Environment mapping
+            - CMPv2 Certificate support
+            - Policy Sidecar
+            - Mount data from configmap through PV/PVC
+            - Topic/feed provisioning support
+            - AAF certificates generation/distribution
+            - Consul loader for application config
+			
+    - Reducing Consul Dependency for DCAE components
+		Under cloudify deployments, Consul is used as central configuration store for all applications. With migration to Helm, the consul dependency is being removed by switching config management through K8S Configmap. This allows application to be deployed standalone in multi/edge cloud without any dependency on central platform components. 
+
+    - Helm-generator tool (POC) available for generating DCAE component helm-chart given component spec. This tool will be integrated with MOD/design flow to support helm chart generation and distribution for Jakarta release. 
 
 DCAEGEN2-2541 Bulk PM (PMSH) - Additional use cases, deployment and documentation enhancements
-	- Enhanced PMSH Microservice to support subscription property updates, config updates to support 'n' subscriptions, support resource name in filter
+    - Enhanced PMSH Microservice to support subscription property updates, config updates to support 'n' subscriptions, support resource name in filter
 
 DCAEGEN2-2522 Enhancements for OOF SON use case
-	- Implemented CPS client and switched to new CBS client SDK for removing consul dependency and enabling policy configuration through sidecar.
+    - Implemented CPS client interface (replacing ConfigDb)
+    - Switched to new CBS client SDK for removing consul dependency and enabling policy configuration through sidecar.
 
-Non-Functional
+*Non-Functional*
 
    - Removed GPLv3 license from software by switching to onap/integration base images (DCAEGEN2-2455)
    - CII Badging improvements (DCAEGEN2-2622)
@@ -148,7 +153,6 @@ Bug Fixes
 
    - BPGenerator yaml Fixes are different for yaml file and string (DCAEGEN2-2489)
    - Slice Analysis - Avoid removal of data when insufficient samples are present (DCAEGEN2-2509)
-
 
 
 .. _istanbul_deliverable:
