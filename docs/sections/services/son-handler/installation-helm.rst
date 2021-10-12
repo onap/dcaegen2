@@ -91,8 +91,8 @@ Deployment Steps
   .. code-block:: bash
 
     dcaePolicySyncImage: onap/org.onap.dcaegen2.deployments.dcae-services-policy-sync:1.0.1
-     policies:
-       policyID: |
+    policies:
+      policyID: |
        '["com.Config_PCIMS_CONFIG_POLICY"]'
 
 - Update Config db IP address:
@@ -135,9 +135,9 @@ Application Configurations
 +-------------------------------+------------------------------------------------+
 |Configuration                  | Description                                    |
 +===============================+================================================+
-|Streams_subscribes             | Dmaap topics that the MS will consume messages |
+|streams_subscribes             | Dmaap topics that the MS will consume messages |
 +-------------------------------+------------------------------------------------+
-|Streams_publishes              | Dmaap topics that the MS will publish messages |
+|streams_publishes              | Dmaap topics that the MS will publish messages |
 +-------------------------------+------------------------------------------------+
 |postgres.host                  | Host where the postgres database is running    |
 +-------------------------------+------------------------------------------------+
