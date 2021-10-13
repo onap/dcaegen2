@@ -28,6 +28,7 @@ DataLake-Handler MS Installation Steps and Configurations
     :maxdepth: 1
 
     ./installation.rst
+    ./installation-helm.rst
 
 DataLake-Handler MS Admin UI User Guide
 ---------------------------------------
@@ -35,4 +36,4 @@ DataLake-Handler MS Admin UI User Guide
 .. toctree::
     :maxdepth: 1
 
-    ./userguide.rst 
+    ./userguide.rst
