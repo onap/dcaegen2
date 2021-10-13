@@ -40,6 +40,7 @@ Slice Analysis MS Installation Steps
     :maxdepth: 1
 
     ./installation.rst
+    ./installation-helm.rst
 
 
 Slice Analysis MS Troubleshooting Steps
