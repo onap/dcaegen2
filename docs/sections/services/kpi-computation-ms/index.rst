@@ -24,6 +24,7 @@ Kpi Computation MS Installation Steps
     :maxdepth: 1
 
     ./installation.rst
+    ./installation-helm.rst
 
 Kpi Computation MS Configurations
 ---------------------------------
