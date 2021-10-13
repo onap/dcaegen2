@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "687d37ac_309eb474",
+        "filename": "docs/sections/services/kpi-computation-ms/installation-helm.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-10-13T04:54:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6641e7db_0aa08c57",
+      "revId": "f27aad9d0f8550350222f846362f0fbe1d0d69bd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfa77c41_886d686f",
         "filename": "docs/sections/services/kpi-computation-ms/installation-helm.rst",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "f27aad9d0f8550350222f846362f0fbe1d0d69bd",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e60212a7_07e1f415",
+        "filename": "docs/sections/services/kpi-computation-ms/installation-helm.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-10-13T04:54:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfa77c41_886d686f",
+      "revId": "f27aad9d0f8550350222f846362f0fbe1d0d69bd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
