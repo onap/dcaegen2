@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7d683896_b99bfc24",
+        "filename": "docs/sections/services/ves-hv/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2021-10-20T06:37:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1dfab72_636d8f8d",
+      "range": {
+        "startLine": 6,
+        "startChar": 24,
+        "endLine": 6,
+        "endChar": 31
+      },
+      "revId": "0f2971db432b864f47d9e6be9d6edaea358b9622",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3190b9_6a503dce",
         "filename": "docs/sections/services/ves-hv/installation-helm.rst",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "0f2971db432b864f47d9e6be9d6edaea358b9622",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b85c0c6_ba4f8764",
+        "filename": "docs/sections/services/ves-hv/installation-helm.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2021-10-20T06:37:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3190b9_6a503dce",
+      "range": {
+        "startLine": 11,
+        "startChar": 44,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "0f2971db432b864f47d9e6be9d6edaea358b9622",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
