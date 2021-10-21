@@ -47,22 +47,22 @@ Format of the schema mapping file is a JSON file with list of mappings, as shown
 .. code-block:: json
 
     [
-      {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/faultMnS.yaml",
-        "localURL": "3gpp/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/faultMnS.yaml"
-      },
-      {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/FileDataReportingMnS.yaml",
-        "localURL": "3gpp/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/FileDataReportingMnS.yaml"
-      },
-      {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/heartbeatNtf.yaml",
-        "localURL": "3gpp/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/heartbeatNtf.yaml"
-      },
-      {
-        "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/provMnS.yaml",
-        "localURL": "3gpp/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI/provMnS.yaml"
-      }
+	  {
+	    "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/faultMnS.yaml",
+	    "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/faultMnS.yaml"
+	  },
+	  {
+	    "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/heartbeatNtf.yaml",
+	    "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/heartbeatNtf.yaml"
+	  },
+	  {
+	    "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/PerDataFileReportMnS.yaml",
+	    "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/PerDataFileReportMnS.yaml"
+	  },
+	  {
+	    "publicURL": "https://forge.3gpp.org/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/provMnS.yaml",
+	    "localURL": "3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI/provMnS.yaml"
+	  }
     ]
 
 External schema config maps
@@ -76,7 +76,7 @@ The mapping and schema files content can be changed by editing a proper config m
 +==============================================+=====================================================================================================+
 | dcae-external-repo-configmap-schema-map      | Defines a content of the /opt/app/VESCollector/etc/externalRepo/schema-map.json file.               |
 +----------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| dcae-external-repo-configmap-sa91-rel16      | Defines a content of schemas stored in the /opt/app/VESCollector/etc/externalRepo folder.           |
+| dcae-external-repo-configmap-sa88-rel16      | Defines a content of schemas stored in the /opt/app/VESCollector/etc/externalRepo folder.           |
 +----------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 Config maps are defined in the `OOM <https://gerrit.onap.org/r/gitweb?p=oom.git;a=tree;f=kubernetes/dcaegen2-services/resources/external>`_ repository
