@@ -52,11 +52,14 @@ For VES Collector:
 .. _external-repo-schema-via-helm:
 
 External repository schema files integration with VES Collector
--------------------------------------------------------------------
+---------------------------------------------------------------
 In order to utilize the externalRepo openAPI schema files defined in `OOM <https://gerrit.onap.org/r/gitweb?p=oom.git;a=tree;f=kubernetes/dcaegen2-services/resources/external>`_ repository and installed with dcaegen2 module, follow below steps.
 
-.. note::
-  For more information on generating schema files, see `External-schema-repo-generator (OOM Utils repository) <https://gerrit.onap.org/r/gitweb?p=oom/utils.git;a=tree;f=external-schema-repo-generatore>`_
+.. note:: 
+  For more information on generating schema files, see `External-schema-repo-generator (OOM Utils repository) <https://gerrit.onap.org/r/gitweb?p=oom/utils.git;a=tree;f=external-schema-repo-generator>`_
+  
+  Default ONAP deployment for Istanbul release makes available the SA88-Rel16 OpenAPI schema files; optionally SA99-Rel16 files can be loaded using the `Generator script <https://gerrit.onap.org/r/gitweb?p=oom/utils.git;a=blob;f=external-schema-repo-generator/generator/generate.sh>`_ based on the steps documented in `README <https://git.onap.org/oom/utils/tree/external-schema-repo-generator/README.md>`_
+
 
 1. Go to directory with dcaegen2-services helm charts (oom/kubernetes/dcaegen2-services). These charts should be located on RKE deployer node or server which is used to deploy and manage ONAP installation by Helm charts.
 2. Create file with specific VES values-overrides:
@@ -84,9 +87,9 @@ E.g:
         type: configmap
         mountPath: /opt/app/VESCollector/etc/externalRepo
         optional: true
-      - name: 'dev-dcae-external-repo-configmap-sa91-rel16'
+      - name: 'dev-dcae-external-repo-configmap-sa88-rel16'
         type: configmap
-        mountPath: /opt/app/VESCollector/etc/externalRepo/3gpp/rep/sa5/MnS/blob/Rel-16-SA-91/OpenAPI
+        mountPath: /opt/app/VESCollector/etc/externalRepo/3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI 
         optional: true
 
 If more than a single external schema is required add new config map to object 'externalVolumes' like in above example. Make sure that all external schemas (all openAPI files) are reflected in the schema-map file.
