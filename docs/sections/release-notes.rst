@@ -204,7 +204,7 @@ Software Deliverables
    "dcaegen2/services/mapper", "", "onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.3.0"
    "dcaegen2/services/pm-mapper", "", "onap/org.onap.dcaegen2.services.pm-mapper:1.7.2"
    "dcaegen2/services/prh", "", "onap/org.onap.dcaegen2.services.prh.prh-app-server:1.7.1"
-   "dcaegen2/services/son-handler", "", "onap/org.onap.dcaegen2.services.son-handler:2.1.4"
+   "dcaegen2/services/son-handler", "", "onap/org.onap.dcaegen2.services.son-handler:2.1.5"
    "dcaegen2/platform", "mod/bpgenerator", "Blueprint Generator 1.8.0 (jar)"
    "dcaegen2/services/sdk", "", "DCAE SDK 1.8.7 (jar)"
    "ccsdk/dashboard", "", "onap/org.onap.ccsdk.dashboard.ccsdk-app-os:1.4.4"
