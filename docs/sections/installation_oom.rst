@@ -222,6 +222,34 @@ All DCAE component charts follows standard Helm structure. Each Microservice cha
 
 Using helm, any of DCAE microservice can be deployed/upgraded/uninstalled on-demand.
 
+``Pre-Install``
+
+.. note::
+  This step is only required when helm install should be done on different releasename/prefix from rest of ONAP deployment 
+ 
+With Istanbul release, OOM team included support for ServiceAccount in ONAP deployment to limit the pod access to API server.
+
+Following packages has been added under oom/common to support pre-provisioning of cluster roles and ServiceAccount management 
+
+  * `ServiceAccount <https://git.onap.org/oom/tree/kubernetes/common/serviceAccount/values.yaml>`_ 
+  * `RoleWrapper <https://git.onap.org/oom/tree/kubernetes/common/roles-wrapper>`_
+ 
+When deployed, these chart will create the ServiceAccount and Role (based on override) and required Rolebinding (to associate the Serviceaccount to a role).
+
+ONAP deployment by default includes the required provisioning of roles under release name (such as "dev") under which ONAP is deployed. For subsequent 
+helm installation under same release name prefix (i.e dev-) no further action is required.  
+
+When Helm install is required under different releasename prefix, then execute following command prior to running helm install.
+
+   .. code-block:: bash
+        helm install <DEPLOYMENT_PREFIX>-role-wrapper local/roles-wrapper -n <namespace>
+        
+And then followed by install of required service/chart  
+        
+    .. code-block:: bash
+        helm -n <namespace> install <DEPLOYMENT_PREFIX>-dcaegen2-services oom/kubernetes/dcaegen2-services
+        
+
 
 ``Installation``
 
@@ -229,7 +257,7 @@ Review and update local copy of dcaegen2-service ``values.yaml`` oom/kubernetes/
 to ensure component is enabled for deployment (or provide as command line override)
 
     .. code-block:: bash
-        helm -n <namespace> install <DEPLOYMENT_PREFIX>-dcaegen2-services -dcaegen2-services oom/kubernetes/dcaegen2-services
+        helm -n <namespace> install <DEPLOYMENT_PREFIX>-dcaegen2-services oom/kubernetes/dcaegen2-services
 
 
 Service component can also be installed individually from oom/kubernetes/dcaegen2-services/components/<dcae-ms-chart>
