@@ -38,7 +38,7 @@ VES Version     API version         Schema Definition
 VES 1.2         eventListener/v1    `CommonEventFormat_Vendors_v25.json <https://git.onap.org/dcaegen2/collectors/ves/tree/etc/CommonEventFormat_Vendors_v25.json>`_
 VES 4.1         eventListener/v4    `CommonEventFormat_27.2.json <https://git.onap.org/dcaegen2/collectors/ves/tree/etc/CommonEventFormat_27.2.json>`_
 VES 5.4         eventListener/v5    `CommonEventFormat_28.4.1.json <https://git.onap.org/dcaegen2/collectors/ves/tree/etc/CommonEventFormat_28.4.1.json>`_
-VES 7.2         eventListener/v7    `CommonEventFormat_30.2_ONAP.json <https://git.onap.org/dcaegen2/collectors/ves/tree/etc/CommonEventFormat_30.2_ONAP.json>`_
+VES 7.2.1       eventListener/v7    `CommonEventFormat_30.2.1_ONAP.json <https://git.onap.org/dcaegen2/collectors/ves/tree/etc/CommonEventFormat_30.2.1_ONAP.json>`_
 ===========     ================    ==================================
 
 Features Supported
