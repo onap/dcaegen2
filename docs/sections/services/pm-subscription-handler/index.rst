@@ -1,5 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
+.. Copyright 2022 Nordix Foundation
 
 
 PM Subscription Handler
@@ -14,5 +15,5 @@ PM Subscription Handler
    ./delivery.rst
    ./logging.rst
    ./installation.rst
-   ./configuration.rst
+   ./offeredapi.rst
    ./troubleshooting.rst

@@ -1,5 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
+.. Copyright 2022 Nordix Foundation
 
 .. _Delivery:
 
@@ -13,4 +14,4 @@ The PMSH is delivered as a docker image that can be downloaded from ONAP docker 
 
 ::
 
-    nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.pm-subscription-handler:1.0.3
+    nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.pm-subscription-handler:2.0.0
