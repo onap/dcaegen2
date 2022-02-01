@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f813c176_944ff5bf",
+        "filename": "docs/sections/services/pm-subscription-handler/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-01T23:44:24Z",
+      "side": 1,
+      "message": "missing copyright",
+      "revId": "eb2118b1e99922d576d3dccacdb09cc7fca3b188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3385cb2d_ea2d189f",
+        "filename": "docs/sections/services/pm-subscription-handler/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-01T23:44:24Z",
+      "side": 1,
+      "message": "missing copyright",
+      "revId": "eb2118b1e99922d576d3dccacdb09cc7fca3b188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c76c0e0_c51680d0",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-01T23:44:24Z",
+      "side": 1,
+      "message": "missing copyright",
+      "revId": "eb2118b1e99922d576d3dccacdb09cc7fca3b188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b779f8d1_c6caeb78",
+        "filename": "docs/sections/services/pm-subscription-handler/offeredapi.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-01T23:44:24Z",
+      "side": 1,
+      "message": "missing copyright",
+      "revId": "eb2118b1e99922d576d3dccacdb09cc7fca3b188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
