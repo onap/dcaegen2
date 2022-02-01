@@ -14,5 +14,5 @@ PM Subscription Handler
    ./delivery.rst
    ./logging.rst
    ./installation.rst
-   ./configuration.rst
+   ./offeredapi.rst
    ./troubleshooting.rst
