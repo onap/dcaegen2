@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7efccc53_b066a3de",
+        "filename": "docs/sections/services/pm-subscription-handler/delivery.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2022-02-02T10:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f813c176_944ff5bf",
+      "revId": "eb2118b1e99922d576d3dccacdb09cc7fca3b188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3385cb2d_ea2d189f",
         "filename": "docs/sections/services/pm-subscription-handler/index.rst",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "eb2118b1e99922d576d3dccacdb09cc7fca3b188",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "278568f9_272f141c",
+        "filename": "docs/sections/services/pm-subscription-handler/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2022-02-02T10:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3385cb2d_ea2d189f",
+      "revId": "eb2118b1e99922d576d3dccacdb09cc7fca3b188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "91ae7828_ef0dcffa",
+        "filename": "docs/sections/services/pm-subscription-handler/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2022-02-02T10:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c76c0e0_c51680d0",
+      "revId": "eb2118b1e99922d576d3dccacdb09cc7fca3b188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b779f8d1_c6caeb78",
         "filename": "docs/sections/services/pm-subscription-handler/offeredapi.rst",
         "patchSetId": 1
@@ -67,6 +121,24 @@
       "revId": "eb2118b1e99922d576d3dccacdb09cc7fca3b188",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86a4f988_1444e763",
+        "filename": "docs/sections/services/pm-subscription-handler/offeredapi.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4893
+      },
+      "writtenOn": "2022-02-02T10:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b779f8d1_c6caeb78",
+      "revId": "eb2118b1e99922d576d3dccacdb09cc7fca3b188",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
