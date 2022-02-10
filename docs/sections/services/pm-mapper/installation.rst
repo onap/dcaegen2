@@ -2,7 +2,7 @@
 .. http://creativecommons.org/licenses/by/4.0
 .. _pm-mapper-installation:
 
-Installation
+Cloudify Installation
 ============
 
 PM mapper is a microservice that will be configured and instantiated through Cloudify Manager, either through the user
