@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Piotr Marcinkiewicz <piotr.marcinkiewicz@nokia.com>
+Code-Review+1: Tomasz Wr�bel <tomasz.wrobel@nokia.com>
+Code-Review+2: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-by: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-at: Mon, 14 Feb 2022 14:30:29 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/dcaegen2/+/127052
+Project: dcaegen2
+Branch: refs/heads/master
