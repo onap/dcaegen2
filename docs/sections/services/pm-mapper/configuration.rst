@@ -42,6 +42,56 @@ Envs should be specified in section "envs:" in blueprint. Example part of bluepr
         ...
 
 
+.. _pm_mapper_disable_tls:
+
+Disable TLS
+"""""""""""
+Pm-mapper by default use communication over TLS. It is posible to use plain http request. For disable TLS set configuration flag 'enable_http' to true, and set certificate paths to empty string or remove it from configuration, like in bellow config.yaml. 
+
+.. code-block:: yaml
+    
+  applicationConfig:
+    enable_http: true
+    key_store_path: ""
+    key_store_pass_path: ""
+    trust_store_path: ""
+    trust_store_pass_path: ""
+
+
+
+Or 
+
+.. code-block:: yaml
+
+  applicationConfig:
+    enable_http: true
+    #key_store_path: 
+    #key_store_pass_path: 
+    #trust_store_path: 
+    #trust_store_pass_path: 
+
+
+Unauthenticated topic
+""""""""""""""""""""
+For use unauthenticated topics :ref:`disable TLS <pm_mapper_disable_tls>`, and edit AFF credentials in configuration, it should be removed or set to empty string. See bellow examples. 
+
+.. code-block:: yaml
+    
+  applicationConfig:
+    aaf_identity: ""
+    aaf_password: ""
+
+
+Or
+
+.. code-block:: yaml
+    
+  applicationConfig:
+    #aaf_identity: 
+    #aaf_password: 
+
+
+
 PM Mapper Filtering
 """""""""""""""""""
 The PM Mapper performs data reduction, by filtering the PM telemetry data it receives.
