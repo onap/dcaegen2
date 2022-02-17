@@ -1,5 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
+.. Copyright 2022 Nokia. All rights reserved.
 
 Configuration and Performance
 =============================
@@ -40,6 +41,56 @@ Envs should be specified in section "envs:" in blueprint. Example part of bluepr
             - type: dcaegen2.relationships.publish_events
               target: pm-topic
         ...
+
+
+.. _pm_mapper_disable_tls:
+
+Disable TLS
+"""""""""""
+Pm-mapper by default uses communication over TLS, but it is also possible to use plain http request. To disable TLS, set configuration flag 'enable_http' to true, and set the certificate paths to empty strings or remove them from the configuration. See the config.yaml examples below.
+
+.. code-block:: yaml
+    
+  applicationConfig:
+    enable_http: true
+    key_store_path: ""
+    key_store_pass_path: ""
+    trust_store_path: ""
+    trust_store_pass_path: ""
+
+
+
+Or 
+
+.. code-block:: yaml
+
+  applicationConfig:
+    enable_http: true
+    #key_store_path: 
+    #key_store_pass_path: 
+    #trust_store_path: 
+    #trust_store_pass_path: 
+
+
+Unauthenticated topic
+"""""""""""""""""""""
+To use unauthenticated topics :ref:`disable TLS <pm_mapper_disable_tls>`, and edit AAF credentials in configuration, it should be removed or set to empty string. See the examples below.
+
+.. code-block:: yaml
+    
+  applicationConfig:
+    aaf_identity: ""
+    aaf_password: ""
+
+
+Or
+
+.. code-block:: yaml
+    
+  applicationConfig:
+    #aaf_identity: 
+    #aaf_password: 
+
 
 
 PM Mapper Filtering
