@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2e688334_a211bc00",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2022-02-18T14:54:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43736750_fa558b84",
+      "revId": "af647e9ececf27c5312ae446e67440da832bcf31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d92c00c_a15099b1",
         "filename": "docs/sections/services/pm-mapper/configuration.rst",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "a0c42e3e_8eea1f98",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2022-02-18T14:54:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d92c00c_a15099b1",
+      "revId": "af647e9ececf27c5312ae446e67440da832bcf31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1be93cfd_92b9c512",
         "filename": "docs/sections/services/pm-mapper/configuration.rst",
         "patchSetId": 1
@@ -50,6 +86,24 @@
       "revId": "af647e9ececf27c5312ae446e67440da832bcf31",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec192323_7d6abda9",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2022-02-18T14:54:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1be93cfd_92b9c512",
+      "revId": "af647e9ececf27c5312ae446e67440da832bcf31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
