@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43736750_fa558b84",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-18T13:53:22Z",
+      "side": 1,
+      "message": "Missing copyright?",
+      "revId": "af647e9ececf27c5312ae446e67440da832bcf31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d92c00c_a15099b1",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-18T13:53:22Z",
+      "side": 1,
+      "message": "Pm-mapper by default uses communication over TLS, but it is also possible to use plain http request. To disable TLS, set configuration flag \u0027enable_http\u0027 to true, and set the certificate paths to empty strings or remove them from the configuration. See the config.yaml examples below.",
+      "revId": "af647e9ececf27c5312ae446e67440da832bcf31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1be93cfd_92b9c512",
+        "filename": "docs/sections/services/pm-mapper/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-18T13:53:22Z",
+      "side": 1,
+      "message": "To use unauthenticated topics :ref:`disable TLS \u003cpm_mapper_disable_tls\u003e`, and edit AAF credentials in configuration, it should be removed or set to empty string. See the examples below.",
+      "revId": "af647e9ececf27c5312ae446e67440da832bcf31",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
