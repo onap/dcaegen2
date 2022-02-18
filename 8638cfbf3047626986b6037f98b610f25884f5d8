@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7d103b21_c70fff5c",
+        "filename": "docs/sections/services/pm-mapper/installation-helm.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-18T15:55:43Z",
+      "side": 1,
+      "message": "\"periodical\" \u003d\u003e \"periodic\"",
+      "revId": "8638cfbf3047626986b6037f98b610f25884f5d8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
