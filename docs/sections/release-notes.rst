@@ -67,6 +67,14 @@ None
 
 None
 
+Security Notes
+--------------
+
+*Known Vulnerabilities in Used Modules*
+
+    dcaegne2/services/mapper includes transitive dependency on log4j 1.2.17; this will be addressed in later release (DCAEGEN2-3105) 
+     
+
 Istanbul Maintenance Rls Deliverables
 -------------------------------------
 
