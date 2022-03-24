@@ -35,7 +35,6 @@ Description
 
 Create a PM Subscription
 
-
 Responses
 ~~~~~~~~~
 
@@ -157,8 +156,105 @@ Responses
 +-----------+---------------------------------------------------------------------+
 
 
+PUT /subscription/{subscription_name}/nfFilter
+----------------------------------------------
+
+Description
+~~~~~~~~~~~
+
+Update a Subscription nf filter
+
+
+Sample NF Filter Body
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: http
+
+    {
+        "nfFilter": {
+            "nfNames": [
+            "^pnf.*",
+            "^vnf.*"
+            ],
+            "modelInvariantIDs": [
+
+            ],
+            "modelVersionIDs": [
+
+            ],
+            "modelNames": [
+
+            ]
+        }
+    }
+
+Responses
+~~~~~~~~~
+
++-----------+---------------------------------------------------------------------+
+| HTTP Code | Description                                                         |
++===========+=====================================================================+
+| **201**   | Successfully updated nf filter                                      |
++-----------+---------------------------------------------------------------------+
+| **400**   | Invalid input                                                       |
++-----------+---------------------------------------------------------------------+
+| **409**   | Conflicting data                                                    |
++-----------+---------------------------------------------------------------------+
+| **500**   | Exception occurred while querying database                          |
++-----------+---------------------------------------------------------------------+
+
+
+POST /subscription/{subscription_name}/measurementGroups/{measurement_group_name}
+----------------------------------------------------------------------------------
+
+Description
+~~~~~~~~~~~
+
+Create a measurement group for a given subscription
+
+
+Sample Measurement Group Body
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: http
+
+    {
+        "measurementGroup": {
+            "measurementGroupName": "msg_grp_03",
+            "fileBasedGP":15,
+            "fileLocation":"pm.xml",
+            "administrativeState": "UNLOCKED",
+            "measurementTypes": [
+                {
+                    "measurementType": "counter_a"
+                }
+            ],
+            "managedObjectDNsBasic": [
+                {
+                    "DN": "string"
+                }
+            ]
+        }
+    }
+
+Responses
+~~~~~~~~~
+
++-----------+---------------------------------------------------------------------+
+| HTTP Code | Description                                                         |
++===========+=====================================================================+
+| **201**   | Successfully created measurement group                              |
++-----------+---------------------------------------------------------------------+
+| **404**   | Subscription with the specified name not found                      |
++-----------+---------------------------------------------------------------------+
+| **409**   | Duplicate data                                                      |
++-----------+---------------------------------------------------------------------+
+| **500**   | Internal server error                                               |
++-----------+---------------------------------------------------------------------+
+
+
 GET /subscription/{subscription_name}/measurementGroups/{measurement_group_name}
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
 Description
 ~~~~~~~~~~~
@@ -179,8 +275,32 @@ Responses
 +-----------+---------------------------------------------------------------------+
 
 
+DELETE /subscription/{subscription_name}/measurementGroups/{measurement_group_name}
+------------------------------------------------------------------------------------
+
+Description
+~~~~~~~~~~~
+
+Delete a measurement group
+
+Responses
+~~~~~~~~~
+
++-----------+--------------------------------------------------------------------------------------------------+
+| HTTP Code | Description                                                                                      |
++===========+==================================================================================================+
+| **204**   | Successfully deleted the measurement group and returns NO Content                                |
++-----------+--------------------------------------------------------------------------------------------------+
+| **404**   | Measurement group with the specified name not found                                              |
++-----------+--------------------------------------------------------------------------------------------------+
+| **409**   | Measurement group not deleted because state UNLOCKED OR state change to LOCKED was under process |
++-----------+--------------------------------------------------------------------------------------------------+
+| **500**   | Exception occurred on the server                                                                 |
++-----------+--------------------------------------------------------------------------------------------------+
+
+
 PUT /subscription/{subscription_name}/measurementGroups/{measurement_group_name}/{administrativeState}
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 
 Description
 ~~~~~~~~~~~

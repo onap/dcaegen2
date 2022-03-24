@@ -125,9 +125,9 @@ The subscription is configured within the monitoring policy. The subscription mo
 +-----------------------+---------------------------------------------------------------------------------------------------------+--------+----------+--------------------------+
 | operationalPolicyName | Name of the operational policy to be executed.                                                          | string | True     | operationalPolicyName    |
 +-----------------------+---------------------------------------------------------------------------------------------------------+--------+----------+--------------------------+
-| controlLoopName       | Name of the control loop.                                                                               | string | True     | controlLoopName          |
+| controlLoopName       | Name of the control loop.                                                                               | string | False    | controlLoopName          |
 +-----------------------+---------------------------------------------------------------------------------------------------------+--------+----------+--------------------------+
-| nfFilter              | The network function filter will be used to filter the list of nf's stored in A&AI to produce a subset. |  list  | False    |                          |
+| nfFilter              | The network function filter will be used to filter the list of nf's stored in A&AI to produce a subset. |  list  | True     |                          |
 +-----------------------+---------------------------------------------------------------------------------------------------------+--------+----------+--------------------------+
 | measurementGroups     | List containing measurementGroup.                                                                       |  list  | True     | List of measurementGroup |
 +-----------------------+---------------------------------------------------------------------------------------------------------+--------+----------+--------------------------+
@@ -165,13 +165,13 @@ least 1 must be present for the filter to work.
 +------------------------+-----------------------------------------------------------------------------------------------+------+----------+
 | Field                  | Description                                                                                   | Type | Required |
 +========================+===============================================================================================+======+==========+
-| nfNames                | List of NF names. These names are regexes, which will be parsed by the PMSH.                  | list | False    |
+| nfNames                | List of NF names. These names are regexes, which will be parsed by the PMSH.                  | list | True     |
 +------------------------+-----------------------------------------------------------------------------------------------+------+----------+
-| modelInvariantIDs      | List of modelInvariantIDs. These UUIDs will be checked for exact matches with AAI entities.   | list | False    |
+| modelInvariantIDs      | List of modelInvariantIDs. These UUIDs will be checked for exact matches with AAI entities.   | list | True     |
 +------------------------+-----------------------------------------------------------------------------------------------+------+----------+
-| modelVersionIDs        | List of modelVersionIDs. These IDs will be checked for exact matches with AAI entities.       | list | False    |
+| modelVersionIDs        | List of modelVersionIDs. These IDs will be checked for exact matches with AAI entities.       | list | True     |
 +------------------------+-----------------------------------------------------------------------------------------------+------+----------+
-| modelNames             | List of modelNames. These names will be checked for exact matches with AAI entities.          | list | False    |
+| modelNames             | List of modelNames. These names will be checked for exact matches with AAI entities.          | list | True     |
 +------------------------+-----------------------------------------------------------------------------------------------+------+----------+
 
 **measurementGroup**
@@ -212,13 +212,13 @@ least 1 must be present for the filter to work.
 +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
 | Field                 | Description                                                                                                                                                                            | Type | Required | Values |
 +=======================+========================================================================================================================================================================================+======+==========+========+
-| measurementGroupName  | Unique identifier for measurementGroup.                                                                                                                                                |      |          |        |
+| measurementGroupName  | Unique identifier for measurementGroup.                                                                                                                                                |      | True     |        |
 +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
-| administrativeState   | Setting a measurementGroup to UNLOCKED will apply the subscription changes to the NF instances immediately. If it is set to LOCKED, it will not be applied until it is later unlocked. |      |          |        |
+| administrativeState   | Setting a measurementGroup to UNLOCKED will apply the subscription changes to the NF instances immediately. If it is set to LOCKED, it will not be applied until it is later unlocked. |      | True     |        |
 +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
-| fileBasedGP           | The frequency at which measurements are produced.                                                                                                                                      |      |          |        |
+| fileBasedGP           | The frequency at which measurements are produced.                                                                                                                                      |      | True     |        |
 +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
-| fileLocation          | Location of Report Output Period file.                                                                                                                                                 |      |          |        |
+| fileLocation          | Location of Report Output Period file.                                                                                                                                                 |      | True     |        |
 +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
 | measurementTypes      | List of measurement types. These are regexes, and it is expected that either the CDS blueprint, or NF can parse them. As the PMSH will not do so.                                      | list | True     |        |
 +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------+--------+
