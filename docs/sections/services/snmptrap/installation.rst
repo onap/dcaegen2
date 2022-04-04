@@ -24,7 +24,7 @@ configuration assets to instantiated containers as needed.
 
 Also required is a working DMAAP/MR environment.  trapd
 publishes traps to DMAAP/MR as JSON messages and expects the host
-resources and publishing credentials to be included in the *Config Binding Service* 
+resources and publishing credentials to be included in the *Config Binding Service*
 config.
 
 Installation
@@ -33,7 +33,7 @@ Installation
 The following command will download the latest trapd container from
 nexus and launch it in the container named "trapd":
 
-    ``docker run --detach -t --rm -p 162:6162/udp -P --name=trapd nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.snmptrap:2.0.3 ./bin/snmptrapd.sh start``
+    ``docker run --detach -t --rm -p 162:6162/udp -P --name=trapd nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.snmptrap:2.0.6 ./bin/snmptrapd.sh start``
 
 Running an instance of **trapd** will result in arriving traps being published
 to the topic specified by Config Binding Services.  
