@@ -8,6 +8,7 @@ Available APIs
 .. toctree::
     :depth: 3
 
+.. _config_binding_service_sdk:
 
 cbs-client - a Config Binding Service client
 --------------------------------------------
