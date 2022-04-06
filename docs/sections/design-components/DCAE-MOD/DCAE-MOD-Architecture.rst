@@ -1,3 +1,6 @@
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+.. http://creativecommons.org/licenses/by/4.0
+
 =====================
 DCAE MOD Architecture
 =====================
@@ -104,17 +107,88 @@ major functionalities:
 
 1. It accepts changes on the flow-graph via fbp protocol
 
-2. It generates and distributes blueprints based on the change made on
+2. It generates and distributes helm charts OR blueprints based on the change made on
    the flow-graph
+
+
+Build Updates
+~~~~~~~~~~~~~
+
+New Java module - Helmgenerator-core was introduced for Helm charts
+generation. MOD/Runtime has been enhanced to include this new dependency
+(inaddition to Bp-generator for supporting cloudify blueprints flows).
+
+Below is snippet from -
+https://github.com/onap/dcaegen2-platform/blob/master/mod/runtimeapi/runtime-core/pom.xml
+
+::
+
+        <dependency>
+            <groupId>org.onap.dcaegen2.platform</groupId>
+            <artifactId>helmchartgenerator-core</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+
+
+Chart Updates
+~~~~~~~~~~~~~
+
+MOD/Runtime Charts has been modified to include under resources, common
+base templates, Charts.yaml, add-on templates and Values.yaml with
+placeholder.
+
+|image3|
+
+The Helmgenerator-core modules uses these template to pull the required
+dependencies and generate new chart for MS onboarded. The parameters in
+component-spec provided during onboarding is used for final Values.yaml
+file generation.
+
+Deployment
+~~~~~~~~~~
+
+The MOD/RuntimeAPI introduces new configuration to identify distribution
+mechanism. Supported artifactType are **BLUEPRINT** or **HELM. **
+
+Blueprint – Distribution to Inventory/Dashboard
+
+Helm – Distribution to ChartMuseum
+
+For Jakarta release, the charts configuration has been set to support
+HELM distribution by default and configured for ONAP-internal
+chart-museum registry.  RuntimeAPI Chart updates
+https://github.com/onap/oom/blob/master/kubernetes/dcaemod/components/dcaemod-runtime-api/values.yaml
+
+::
+
+  artifactType: "HELM"
+  registryBaseurl: http://chart-museum:80
+  basehelmchartlocation: /helm-gen/
+
 
 Blueprint Generator
 -------------------
 
 This tool allows the user to create a blueprint from a component spec json file.
-This tool is used by the runtime api.
+This tool is used by the runtime api when artifactType is set to **BLUEPRINT** under 
+`RuntimeAPI charts
+   deployment <https://git.onap.org/oom/tree/kubernetes/dcaemod/components/dcaemod-runtime-api/values.yaml#n44>`__ 
+
+Helm Generator
+--------------
+
+This tool allows the user to create a DCAE Services helm chart from a component spec json file.
+This tool is used by the runtime api when artifactType is set to **HELM** under 
+`RuntimeAPI charts
+   deployment <https://git.onap.org/oom/tree/kubernetes/dcaemod/components/dcaemod-runtime-api/values.yaml#n44>`__ 
+
 
 Inventory API
 -------------
+
+
+.. note::
+   Used only under BLUEPRINT mode
 
 DCAE Inventory is a web
 service that provides the following:
@@ -146,6 +220,9 @@ dashboard.
 DCAE Dashboard
 --------------
 
+.. note::
+   Used only under BLUEPRINT mode
+
 The DCAE dashboard provides visibility into running DCAE services for
 operational purposes. It queries the DCAE Inventory for aggregate
 details on all the running DCAE services and for getting up-to-date
@@ -165,9 +242,11 @@ The registry api offers version control and retrieval for flows. The
 distributor api can be used to set distribution targets. Once a flow is
 designed and distributed, it goes to the distributor api which is
 supposed to post graph changes (in accordance with fbp) to the runtime
-api. The runtime api generates and distributes blueprints based on the
-change made on the flow-graph. These blueprints received by the DCAE
-inventory can then be viewed and deployed from the DCAE dashboard.
+api. The runtime api generates and distributes deployment artifacts (either 
+blueprints or helm charts) based on the
+change made on the flow-graph. The generated blueprints are received by the DCAE
+inventory can then be viewed and deployed from the DCAE dashboard. On helm mode, 
+charts generated are pushed into configured Chartmuseum registry. 
 
 
 
@@ -176,3 +255,5 @@ inventory can then be viewed and deployed from the DCAE dashboard.
 .. |image1| image:: ../images/Onboarding-with-DCAE-MOD.png
 
 .. |image2| image:: ../images/nifi-toolbar-components.png
+
+.. |image3| image:: ../images/128713731_image2022.png
