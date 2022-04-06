@@ -1,5 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
+
 .. _moduserguide:
 
 ===================
@@ -57,8 +58,106 @@ Types of Users and Usage Instructions:
 |       | and validate it             |                             |
 +-------+-----------------------------+-----------------------------+
 
+1.    Pre-requisite for DCAE MOD Deployment
+===========================================
 
-1.    Deployment of DCAE MOD components via Helm charts
+With complete of DCAE Helm tranformation in Jakarta release, DCAE MOD has been enhanced
+to support Helm chart generation for microservices onboarded.
+In order to support the HELM flow through MOD, following dependency should be met
+
+
+-  An accessible ChartMuseum registry (internal or external)
+
+-  As the provided registry is used both to pull required dependencies
+   and push new generated charts, all common charts used by DCAE
+   components must be available in this registry.
+
+.. note:: 
+   By default, MOD charts are set to use local chartmuseum registry. This can be modified by 
+   updating the `RuntimeAPI charts
+   deployment <https://git.onap.org/oom/tree/kubernetes/dcaemod/components/dcaemod-runtime-api/values.yaml#n44>`__ 
+   
+
+ONAP deployments (gating) will include Chartmuseum installation within
+ONAP cluster  (charts hosted here
+- https://github.com/onap/oom/tree/master/kubernetes/platform/components/chartmuseum). 
+
+Dependent charts such as - dcaegen2-services-common, readinessCheck,
+common, repositoryGenerator, postgres, mongo, serviceAccount,
+certInitializer should be preloaded into this registry as MOD retrieves
+them during new MS helm charts creation and linting.  To support the
+registry initialization, following scripts has been introduced. 
+
+-  https://github.com/onap/oom/blob/master/kubernetes/contrib/tools/registry-initialize.sh
+
+-  https://github.com/onap/oom/blob/master/kubernetes/robot/demo-k8s.sh
+
+Note:  Chartmuseum being a platform component, it has to be enabled
+on-demand and not available with generic ONAP installation.  
+
+Follow below steps to setup chartmuseum and pre-load required charts.
+
+Chartmuseum Installation
+------------------------
+
+Clone OOM repository and deploy optional Chartmuseum component
+
+**Chartmuseum Deployment**
+
+::
+
+    # git clone -b <BRANCH> http://gerrit.onap.org/r/oom --recurse-submodules
+    cd  ~/oom/kubernetes/platform/components/chartmuseum
+    helm install -name dev-chartmuseum -n onap . -f ~/onap-1-override.yaml  --set global.masterPassword=test1 --set global.pullPolicy=IfNotPresent
+
+
+.. note:: 
+   This instance of chartmuseum registry is deployed internal to ONAP cluster and 
+   is different from the registry setup done part `OOM
+   deployment <https://docs.onap.org/projects/onap-oom/en/latest/oom_quickstart_guide.html>`__ 
+   where local helm server is setup for serving chart and to pull/push the
+   charts generated make process
+
+Chartmuseum initialization 
+--------------------------
+
+As noted earlier, there are two scripts available for pre-load. The
+`registry-initialize.sh <https://github.com/onap/oom/blob/master/kubernetes/contrib/tools/registry-initialize.sh>`__
+retrieves the Chartmuseum credential from secret and load the charts
+individually based on parameter (default no parameters, will load all
+DCAE service charts and its dependencies).  And
+`demo-k8s.sh <https://github.com/onap/oom/blob/master/kubernetes/robot/demo-k8s.sh>`__
+is wrapper script used in gating, which invokes
+`registry-initialize.sh <https://github.com/onap/oom/blob/master/kubernetes/contrib/tools/registry-initialize.sh>`__
+with required parameters.
+
+**Chartmuseum initialization via demo-k8s.sh**
+
+::
+
+    cd ~/oom/kubernetes/robot
+    ./demo-k8s.sh onap registrySynch
+
+OR 
+
+**Chartmuseum initialization via registry-initialize script**
+
+::
+
+    cd ~/oom/kubernetes/contrib/tools   
+    ./registry-initialize.sh -d ../../dcaegen2-services/charts/ -n onap -r dev-chartmuseum
+    ./registry-initialize.sh -d ../../dcaegen2-services/charts/ -n onap -r dev-chartmuseum -p common
+    ./registry-initialize.sh -h repositoryGenerator  -n onap -r dev-chartmuseum
+    ./registry-initialize.sh -h readinessCheck   -n onap -r dev-chartmuseum
+    ./registry-initialize.sh -h dcaegen2-services-common  -n onap -r dev-chartmuseum
+    ./registry-initialize.sh -h postgres   -n onap -r dev-chartmuseum
+    ./registry-initialize.sh -h serviceAccount   -n onap -r dev-chartmuseum
+    ./registry-initialize.sh -h certInitializer  -n onap -r dev-chartmuseum
+    ./registry-initialize.sh -h mongo -n onap -r dev-chartmuseum
+
+
+
+2.    Deployment of DCAE MOD components via Helm charts
 =======================================================
 
 The DCAE MOD components are deployed using the standard ONAP OOM
@@ -74,7 +173,8 @@ deployed.   The Rancher RKE installation process sets up a suitable
 ingress controller.   In order to enable the use of the ingress
 controller, it is necessary to override the OOM default global settings
 for ingress configuration.   Specifically, the installation needs to set
-the following configuration in an override file::
+the following configuration in an override file
+::
  
   ingress:
     enabled: true
@@ -135,13 +235,21 @@ All MOD API's and UI access via ingress should use dcaemod.simpledemo.onap.org.
 In order to access Design UI from local, add an entry for dcaemod.simpledemo.onap.org in /etc/hosts with the correct IP (any K8S node IP can be specified).
 
 
+Example below using generic override
+
+**Deploy MOD**
+
+::
+
+    helm install dev-dcaemod local/dcaemod --namespace onap  -f ~/onap-override.yaml --set global.masterPassword=test1 --set global.pullPolicy=IfNotPresent  
+
 Using DCAE MOD without an Ingress Controller
 
 
 Not currently supported
 
 
-2.    Configuring DCAE mod
+3.    Configuring DCAE mod
 ==========================
 
 **a. Configure Nifi Registry url**
@@ -179,11 +287,12 @@ IPAddress is the host address or the DNS FQDN, if there is one, for one of the K
 
 **c. Get the artifacts to test and onboard.**
 
-Let's fetch the artifacts/ spec files 
+MOD components has been upgraded to use v3 specification for Helm flow support 
 
-**Component Spec for DCAE-VES-Collector :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/spec/vescollector-componentspec.json
+VESCollector
+~~~~~~~~~~~~
 
-**Component Spec for DCAE-TCAgen2 :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/spec/vescollector-componentspec.json
+**Component Spec for DCAE-VES-Collector :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/spec/vescollector-componentspec-v3.json
 
 **VES 5.28.4 Data Format :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/data-formats/VES-5.28.4-dataformat.json
 
@@ -191,7 +300,18 @@ Let's fetch the artifacts/ spec files
 
 **VES Collector Response Data Format :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/data-formats/ves-response.json
 
+
+TCAGen2
+~~~~~~~
+
+**Component Spec for DCAE-TCAgen2 :** https://git.onap.org/dcaegen2/collectors/ves/tree/dpo/spec/vescollector-componentspec.json
+
 **TCA CL Data Format :** https://git.onap.org/dcaegen2/analytics/tca-gen2/tree/dcae-analytics/dpo/dcaeCLOutput.json
+
+**TCA DMAAP Format :** https://git.onap.org/dcaegen2/analytics/tca-gen2/tree/dcae-analytics/dpo/dmaap.json
+
+**TCA AAI Data Format :** https://git.onap.org/dcaegen2/analytics/tca-gen2/tree/dcae-analytics/dpo/aai.json
+
 
 
 For the purpose of onboarding, a Sample Request body should be of the type -::
@@ -205,15 +325,16 @@ Request bodies of this type will be used in the onboarding requests you make usi
 **The prepared Sample Request body for a component dcae-ves-collector looks like
 so –**
 
-See :download:`VES Collector Spec <./Sample-Input-Files/Request-body-of-Sample-Component.json>`
+See :download:`VES Collector Spec <./Sample-Input-Files/Request-body-of-Sample-Component_v3.json>`
 
 **The prepared Sample request body for a sample data format  looks like so -**
 
 See :download:`VES data Format <./Sample-Input-Files/Request-body-of-Sample-Data-Format.json>`
 
+Similar updates should be done for other specification and data-formats files
 
 
-**d. To onboard a data format and a component**
+**d. Onboard data format and component-spec**
 
 Each component has a description that tells what it does.
 
@@ -231,13 +352,30 @@ curl -X POST http://dcaemod.simpledemo.onap.org/onboarding/dataformats     -
 
 curl -X POST http://dcaemod.simpledemo.onap.org/onboarding/components    -H "Content-Type: application/json" -d @<filepath to request>
 
+**Onboard Specs and DF**
+
+::
+
+    HOST=dcaemod.simpledemo.onap.org
+    curl -X POST http://$HOST/onboarding/dataformats     -H "Content-Type: application/json" -d @ves-4.27.2-df.json
+    curl -X POST http://$HOST/onboarding/dataformats     -H "Content-Type: application/json" -d @ves-5.28.4-df.json
+    curl -X POST http://$HOST/onboarding/dataformats     -H "Content-Type: application/json" -d @ves-response-df.json
+    curl -X POST http://$HOST/onboarding/dataformats     -H "Content-Type: application/json" -d @VES-7.30.2_ONAP-dataformat_onboard.json
+    curl -X POST http://$HOST/onboarding/components -H "Content-Type: application/json" -d @vescollector-componentspec-v3-mod.json
+
+    curl -X POST  http://$HOST/onboarding/dataformats     -H "Content-Type: application/json" -d @dcaeCLOutput-resp.json
+    curl -X POST  http://$HOST/onboarding/dataformats     -H "Content-Type: application/json" -d @aai-resp.json
+    curl -X POST  http://$HOST/onboarding/components -H "Content-Type: application/json" -d @tcagen2-componentspec-v3-mod.json
+
+You can download the Component Specification and Data Formats used for
+the demo from here - `demo.zip <https://wiki.onap.org/download/attachments/128713665/demo.zip?version=1&modificationDate=1646673042000&api=v2>`__
 
 
 **e. Verify the resources were created using**
 
-curl -X GET http://<IPAddress>/onboarding/dataformats
+curl -X GET http://dcaemod.simpledemo.onap.org/onboarding/dataformats
 
-curl -X GET http://<IPAddress>/onboarding/components
+curl -X GET http://dcaemod.simpledemo.onap.org/onboarding/components
 
 **f. Verify the genprocessor (which polls onboarding periodically to convert component specs to nifi processor), converted the component**
 
@@ -248,7 +386,7 @@ processors
 
 |image1|
 
-3.    Design & Distribution Flow
+4.    Design & Distribution Flow
 ================================
 
 
@@ -339,43 +477,100 @@ get a pop up a success message like so -
 
 At this step, the design was packaged and sent to Runtime api.
 
-The runtime is supposed to generate the blueprint out of the packaged
-design/flow and push it to the DCAE inventory and the DCAE Dasboard.
+The runtime is supposed to generate the Helmchart for components
+involved in the flow and push them to registry configured. The
+RuntimeAPI logs should looks like below for successful distribution (can
+be viewed through kubectl log -f command)
 
-**c. Checking the components in the DCAE Dashboard**
+**MOD/RuntimeAPI Console logs**
 
-You should see the generated artifact/ blueprint in the DCAE Dashboard
-dashboard at https://<IPAddress>:30418/ccsdk-app/login_external.htm in
-our deployment. The name for each component will be appended by the flow
-name followed by underscore followed by the component’s name.
+::
 
-The credentials to access the DCAE Dashboard 
+    2022-03-07 18:13:25.865  INFO 1 --- [nio-9090-exec-8] o.o.d.r.web.controllers.GraphController  : org.onap.dcae.runtime.web.models.GraphRequest@65efc9d3
+    2022-03-07 18:13:26.119  INFO 1 --- [nio-9090-exec-1] o.o.d.r.web.controllers.GraphController  : [org.onap.dcae.runtime.web.models.Action@335a6cff, org.onap.dcae.runtime.web.models.Action@291687dd, org.onap.dcae.runtime.web.models.Action@36d57691]
+    2022-03-07 18:13:26.142  INFO 1 --- [nio-9090-exec-1] o.o.d.platform.helmchartgenerator.Utils  : cloning dir/file at : /tmp/chart17927059362260733428
+    2022-03-07 18:13:26.158  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : running: helm dep up /tmp/chart17927059362260733428
+    Hang tight while we grab the latest from your chart repositories...
+    ...Successfully got an update from the "local" chart repository
+    Update Complete. ⎈Happy Helming!⎈
+    Saving 7 charts
+    Downloading common from repo http://chart-museum:80
+    Downloading repositoryGenerator from repo http://chart-museum:80
+    Downloading readinessCheck from repo http://chart-museum:80
+    Downloading dcaegen2-services-common from repo http://chart-museum:80
+    Downloading postgres from repo http://chart-museum:80
+    Downloading serviceAccount from repo http://chart-museum:80
+    Downloading mongo from repo http://chart-museum:80
+    Deleting outdated charts
+    2022-03-07 18:13:26.273  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : running: helm lint /tmp/chart17927059362260733428
+    2022-03-07 18:13:30.641  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : ==> Linting /tmp/chart17927059362260733428
+    2022-03-07 18:13:30.642  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : [INFO] Chart.yaml: icon is recommended
+    2022-03-07 18:13:30.642  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    :
+    2022-03-07 18:13:30.642  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : 1 chart(s) linted, 0 chart(s) failed
+    2022-03-07 18:13:30.646  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : running: helm package -d /tmp/chart13832736430918913290 /tmp/chart17927059362260733428
+    2022-03-07 18:13:30.737  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : Successfully packaged chart and saved it to: /tmp/chart13832736430918913290/dcae-ves-collector-1.10.1.tgz
+    2022-03-07 18:13:30.836  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.d.ChartMuseumDistributor       : {"saved":true}
+    2022-03-07 18:13:30.857  INFO 1 --- [nio-9090-exec-1] o.o.d.platform.helmchartgenerator.Utils  : cloning dir/file at : /tmp/chart7638328545634423550
+    2022-03-07 18:13:30.870  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : running: helm dep up /tmp/chart7638328545634423550
+    Hang tight while we grab the latest from your chart repositories...
+    ...Successfully got an update from the "local" chart repository
+    Update Complete. ⎈Happy Helming!⎈
+    Saving 7 charts
+    Downloading common from repo http://chart-museum:80
+    Downloading repositoryGenerator from repo http://chart-museum:80
+    Downloading readinessCheck from repo http://chart-museum:80
+    Downloading dcaegen2-services-common from repo http://chart-museum:80
+    Downloading postgres from repo http://chart-museum:80
+    Downloading serviceAccount from repo http://chart-museum:80
+    Downloading mongo from repo http://chart-museum:80
+    Deleting outdated charts
+    2022-03-07 18:13:31.022  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : running: helm lint /tmp/chart7638328545634423550
+    2022-03-07 18:13:35.142  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : ==> Linting /tmp/chart7638328545634423550
+    2022-03-07 18:13:35.143  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : [INFO] Chart.yaml: icon is recommended
+    2022-03-07 18:13:35.143  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    :
+    2022-03-07 18:13:35.143  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : 1 chart(s) linted, 0 chart(s) failed
+    2022-03-07 18:13:35.148  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : running: helm package -d /tmp/chart14389934160290252569 /tmp/chart7638328545634423550
+    2022-03-07 18:13:35.238  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.chartbuilder.HelmClientImpl    : Successfully packaged chart and saved it to: /tmp/chart14389934160290252569/dcae-tcagen2-1.3.1.tgz
+    2022-03-07 18:13:35.303  INFO 1 --- [nio-9090-exec-1] o.o.d.p.h.d.ChartMuseumDistributor       : {"saved":true}
 
-Login: su1234
-Password: fusion
+
+5.    Validation & Deployment
+=============================
+
+** Verify if the charts are pushed into registry**
 
 
-|image20|
+Charts distributed by MOD/Runtime can be verified on Chartmuseum
+registry  http://chart-museum:80/api/charts
 
-|image21|
+Refer to supported api under `Chartmuseum Docs <https://chartmuseum.com/docs/>`__
 
-|image22|
+Once the charts are retrieved, they can be installed using helm install command.
 
-The generated Blueprint can be viewed.
+::
 
-|image23|
+    curl -X GET http://<registry:port>/charts/dcae-tcagen2-1.3.1.tgz -u onapinitializer:demo123456!  -o dcae-tcagen2-1.3.1.tgz
+    helm install -name dev-dcaegen2-services -n onap dcae-tcagen2-1.3.1.tgz --set global.masterPassword=test1 --set global.pullPolicy=Always --set mongo.enabled=true
 
-Finally, the generated Blueprint can be deployed.
 
-|image24|
 
-You can use/import the attached input configurations files to deploy. Drag and Drop these sample JSON files to fill in the configuration values.
-See :download:`VES Collector Input Configuration <./Sample-Input-Files/ves-deploy.input.json>`
-See :download:`Tcagen2 Input Configuration <./Sample-Input-Files/tca-deploy.input.json>`
+6.  Environment Cleanup
+-----------------------
 
-|image25|
+**Demo Env Cleanup**
 
-|image26|
+::
+
+    helm delete -n onap dev-chartmuseum  # To remove Chartmuseum setup completely
+    helm delete -n onap dev-dcaegen2-services  # To remove TCAGen2 services
+    helm delete -n onap dev-dcaemod # To undeploy DCAEMOD
+
+    # USE DELETE METHOD ON CHARTMUSEUM TO REMOVE ANY SPECIFIC CHART PACKAGE - example below
+    curl -X DELETE http://<registry:port>/api/charts/dcae-ves-collector/1.10.1 -u onapinitializer:demo123456!
+    curl -X DELETE http://<registry:port>/api/charts/dcae-tcagen2/1.3.1 -u onapinitializer:demo123456!
+
+**Remove also any persistence directory from /dockerdata-nfs/onap/ associated to chartmuseum and dcaemod**
+
 
 .. |image0| image:: ../images/1.png
    :width: 6.5in
@@ -437,22 +632,5 @@ See :download:`Tcagen2 Input Configuration <./Sample-Input-Files/tca-deploy.inpu
 .. |image19| image:: ../images/20.png
    :width: 4.91667in
    :height: 2.41667in
-.. |image20| image:: ../images/21.png
-   :width: 6.5in
-   :height: 2.41667in
-.. |image21| image:: ../images/22.png
-   :width: 6.5in
-   :height: 3in
-.. |image22| image:: ../images/23.png
-   :width: 6.5in
-   :height: 2.16667in
-.. |image23| image:: ../images/24.png
-   :width: 6.5in
-   :height: 2.83333in
-.. |image24| image:: ../images/25.png
-   :width: 6.5in
-   :height: 3in
-.. |image25| image:: ../images/26.png
-.. |image26| image:: ../images/27.png
 
   
