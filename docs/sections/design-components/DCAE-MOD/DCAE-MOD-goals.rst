@@ -1,3 +1,5 @@
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+.. http://creativecommons.org/licenses/by/4.0
 ==============
 MOD Objectives
 ==============
@@ -37,7 +39,6 @@ an effort to reboot the onboarding and design experience in DCAE.
 
 - Support automated adaptation of ML model from Acumos to DCAE design & runtime environment through the Acumos Adapter.
 
-- DCAE-MOD is developed by the DCAE team to ensure consistency across all DCAE implementation, with the long term objective to integrate with SDC as part of the Design Platform.
+- DCAE-MOD is developed by the DCAE team to ensure consistency across all DCAE implementation, with the long term objective to integrate with SDC & Policy/CLAMP as part of the Design Platform.
 
-- Integrate with ONAP User Experience portals (initially ONAP portal, later SDC portal).
 
