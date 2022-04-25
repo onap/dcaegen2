@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "64968dd3_5f5d68f4",
+        "filename": "docs/sections/design-components/component-specification/component-json-schema.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1176,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-04-25T22:48:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2340de9_0dffdf77",
+      "revId": "73ed53292ff924420fc344a0140a72a588fe8276",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d9dc552f_0e7fc9b0",
         "filename": "docs/sections/design-components/component-specification/data-formats.rst",
         "patchSetId": 4
@@ -33,6 +51,24 @@
       "revId": "73ed53292ff924420fc344a0140a72a588fe8276",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "032ae646_860673c9",
+        "filename": "docs/sections/design-components/component-specification/data-formats.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-04-25T22:48:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9dc552f_0e7fc9b0",
+      "revId": "73ed53292ff924420fc344a0140a72a588fe8276",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
