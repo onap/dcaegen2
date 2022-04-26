@@ -25,7 +25,6 @@ Event Processor
 .. toctree::
    :maxdepth: 1
    
-   ./bbs-event-processor/index.rst
    ./datalake-handler/index.rst
    ./mapper/index.rst
    ./pm-mapper/index.rst
