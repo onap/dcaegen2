@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66b6243a_1e69ab87",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "have been",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0dbdce60_9546d931",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "The following\n\ninstallation:",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "91c20330_ac40dd06",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "are deployed",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5b48f8b_c2671f91",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "Postgresql",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b93e56f2_cfdece1b",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "These service\n\nhelm:",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5e6efec_cb9629ec",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "a Kubernetes cluster.",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd45caa8_e22cbf00",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "each chart",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ebaaa294_47fc23cb",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "the dcaegen2-services-common template.\nFeatures can be enabled or disabled via a configuration",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c77b454_217f9683",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "For a list\n\nhelm, refer to",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d3292d5_a2a7f45e",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "Enhancements and Features ?\nEnhancement Features ?",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c1fd0b4_1e4fb10d",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-04-27T15:05:35Z",
+      "side": 1,
+      "message": "The following\nhave been",
+      "revId": "1c6a6aba80807da31bcab24c2b783ad8b0912db6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
