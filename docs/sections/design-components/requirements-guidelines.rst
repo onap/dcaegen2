@@ -4,223 +4,67 @@
 Onboarding Pre-requisite
 ========================
 
-Before a component is onboarded into DCAE, the component developer must ensure it 
-is compliant with ONAP & DCAE goals and requirement in order to correctly be deployed and be managed. This
-page will discuss the changes which are grouped into the following
-categories:
-
--  :any:`Configuration management via ConfigBindingService <configuration_management>`
--  :any:`Docker images <docker_images>`
--  :any:`Policy Reconfiguration flow support <policy_reconfiguration>`
--  :any:`Operational Requirement <operation_requirement>`
-
-
-.. _configuration_management:
-
-Configuration Management
-------------------------
-
-All configuration for a component is stored in CONSUL under the
-components uniquely generated name which is provided by the environment
-variable ``HOSTNAME`` as well as ``SERVICE_NAME``. It is then made
-available to the component via a remote HTTP service call to CONFIG
-BINDING SERVICE.
-
-The main entry in CONSUL for the component contains its
-**generated application configuration**. This is based on the submitted
-component specification, and consists of the *interfaces* (streams and
-services/calls) and *parameters* sections. Other entries may exist as
-well, under specific keys, such as :dmaap . Each key represents a
-specific type of information and is also available to the component by
-calling CONFIG BINDING SERVICE. More on this below.
-
-Components are required to pull their
-**generated application configuration** at application startup using the environment
-setting exposed during deployment. 
-
- 
-Envs
-~~~~
-
-The platform provides a set of environment variables into each Docker
-container:
-
-+----------------------------+--------------+----------------------------------------+
-| Name                       | Type         | Description                            |
-+============================+==============+========================================+
-| ``HOSTNAME``               | string       | Unique name of the component instance  |
-|                            |              | that is generated                      |
-+----------------------------+--------------+----------------------------------------+
-| ``CONSUL_HOST``            | string       | Hostname of the platform's Consul      |
-|                            |              | instance                               |
-+----------------------------+--------------+----------------------------------------+
-| ``CONFIG_BINDING_SERVICE`` | string       | Hostname of the platform's config      |
-|                            |              | binding service instance               |
-|                            |              |                                        |
-+----------------------------+--------------+----------------------------------------+
-| ``DOCKER_HOST``            | string       | Host of the target platform Docker     |
-|                            |              | host to run the container on           |
-+----------------------------+--------------+----------------------------------------+
-| ``CBS_CONFIG_URL``         | string       | Fully resolved URL to query config     |
-|                            |              | from CONSUL via CBS                    |
-+----------------------------+--------------+----------------------------------------+
+Before a component is onboarded into DCAE, the component developer must ensure it
+is compliant with ONAP & DCAE goals and requirement in order to correctly be deployed and be managed.
 
 
 .. _config_binding_service:
 
-Config Binding Service
-~~~~~~~~~~~~~~~~~~~~~~
+Config Binding Service SDK Integration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The config binding service is a platform HTTP service that is
-responsible for providing clients with its fully resolve configuration
-JSON at startup, and also other configurations objects 
-when requested.
+With Jakarta release, Consul and ConfigBindingService interface has been deprecated from DCAE
+All Microservice configuration are resolved through files mounted via Configmap created part of 
+dcae-services helm chart deployment. 
 
-At runtime, components should make an HTTP GET on:
+CBS SDK library are available within DCAE which can be used by DCAE Microservices for configuration
+retrieval. For details on the API - refer  `CBS SDK Java Library 
+<https://docs.onap.org/projects/onap-dcaegen2/en/latest/sections/sdk/api.html>`__
 
-::
-  
-  <config binding service hostname>:<port>/service_component/NAME
+Its strongly recommended to use CBS SDK library for consistency across DCAE services to retrieve  both static and policy driven configuration. 
 
-For Docker components, NAME should be set to ``HOSTNAME``, which is
-provided as an ENV variable to the container.
+Topic Configuration
+~~~~~~~~~~~~~~~~~~~
 
-The binding service integrates with the streams and services section of
-the component specification. For example, if you specify that you call a
-service:
+With Helm flow integration in MOD, topic generation feature is not supported.
 
-::
+Applications are required to identify the topic and feed information as application 
+configuration.
 
-    "services": {
-        "calls": [{
-            "config_key": "vnf-db",
-            "request": {
-                "format": "dcae.vnf.meta",
-                "version": "1.0.0"
-                },
-            "response": {
-                "format": "dcae.vnf.kpi",
-                "version": "1.0.0"
-                }
-        }],
-    ...
-    }
-
-Then the config binding service will find all available IP addresses of
-services meeting the containers needs, and provide them to the container
-under your ``config_key``:
-
+For application onboarded through MOD, these should be included in the specification file under **parameters**
 ::
 
-    // your configuration
-    {
-        "vbf-db" :                 // see above 
-            [IP:Port1, IP:Port2,…] // all of these meet your needs, choose one.
-    }
+  "parameters": [{
+    "name": "streams_publishes",
+     "value": "{\"ves-3gpp-fault-supervision\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.SEC_3GPP_FAULTSUPERVISION_OUTPUT\"},\"type\":\"message_router\"},\"ves-3gpp-heartbeat\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.SEC_3GPP_HEARTBEAT_OUTPUT\"},\"type\":\"message_router\"},\"ves-3gpp-performance-assurance\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.SEC_3GPP_PERFORMANCEASSURANCE_OUTPUT\"},\"type\":\"message_router\"},\"ves-3gpp-provisioning\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.SEC_3GPP_PROVISIONING_OUTPUT\"},\"type\":\"message_router\"},\"ves-fault\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.SEC_FAULT_OUTPUT\"},\"type\":\"message_router\"},\"ves-heartbeat\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.SEC_HEARTBEAT_OUTPUT\"},\"type\":\"message_router\"},\"ves-measurement\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.VES_MEASUREMENT_OUTPUT\"},\"type\":\"message_router\"},\"ves-notification\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.VES_NOTIFICATION_OUTPUT\"},\"type\":\"message_router\"},\"ves-other\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.SEC_OTHER_OUTPUT\"},\"type\":\"message_router\"},\"ves-pnfRegistration\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.VES_PNFREG_OUTPUT\"},\"type\":\"message_router\"}}",
+     "description": "standard http port collector will open for listening;",
+     "sourced_at_deployment": false,
+     "policy_editable": false,
+     "designer_editable": false
+   }]
 
-Regarding ``<config binding service hostname>:<port>``, there is DNS
-work going on to make this resolvable in a convenient way inside of your
-container. 
-
-For all Kubernetes deployments since El-Alto, an environment variable ``CBS_CONFIG_URL`` will be exposed 
-by platform (k8s plugins) providing the exact URL to be used for configuration retrieval. 
-Application can use this URL directly instead of constructing URL from HOSTNAME (which refers to ServiceComponentName) 
-and CONFIG_BINDING_SERVICE env's.  By default, this URL will use HTTPS CBS interface
-
-If you are integrating with CBS SDK, then the DNS resolution and configuration fetch 
-are handled via library functions.
-
-Generated Application Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The DCAE platform uses the component specification to generate the
-component’s application configuration provided at deployment time. The
-component developer should expect to use this configuration JSON in the
-component.
-
-
-The following component spec snippet (from String Matching):
-
+For components delivered as Helm directly, it should be specified under **applicationConfig** section in values.yaml
 ::
 
-    "streams":{  
-        "subscribes": [{
-          "format": "VES_specification",  
-          "version": "4.27.2",    
-          "type": "message_router",
-          "config_key" : "mr_input"
-        }],
-        "publishes": [{
-          "format": "VES_specification",  
-          "version": "4.27.2",    
-          "config_key": "mr_output",
-          "type": "message_router"
-         }]
-      },
-      "services":{  
-        "calls": [{
-          "config_key" : "aai_broker_handle",
-          "verb": "GET",
-          "request": {
-            "format": "get_with_query_params",
-            "version": "1.0.0"
-          },
-          "response": {
-            "format": "aai_broker_response",
-            "version": "3.0.0"
-          } 
-        }],
-        "provides": []
-      },
+  streams_publishes:
+    ves-fault:
+      dmaap_info:
+        topic_url:"http://message-router:3904/events/unauthenticated.SEC_FAULT_OUTPUT"
+      type: message_router
+    ves-measurement:
+      dmaap_info:
+        topic_url: "http://message-router:3904/events/unauthenticated.VES_MEASUREMENT_OUTPUT"
+      type: message_router
 
-Will result in the following top level keys in the configuration
 
-::
+You can find  examples of topic and feed configuration used in DCAE components from charts under OOM repository - 
+https://github.com/onap/oom/tree/master/kubernetes/dcaegen2-services/components
 
-       "streams_publishes":{  
-          "mr_output":{                // notice the config key above
-             "aaf_password":"XXX",
-             "type":"message_router",
-             "dmaap_info":{  
-                "client_role": null,
-                "client_id": null,
-                "location": null,
-                "topic_url":"https://YOUR_HOST:3905/events/com.att.dcae.dmaap.FTL2.DCAE-CL-EVENT" // just an example
-             },
-             "aaf_username":"XXX"
-          }
-       },
-       "streams_subscribes":{  
-          "mr_input":{                 // notice the config key above
-             "aaf_password":"XXX",
-             "type":"message_router",
-             "dmaap_info":{  
-                "client_role": null,
-                "client_id": null,
-                "location": null,
-                "topic_url":"https://YOUR_HOST:3905/events/com.att.dcae.dmaap.FTL2.TerrysStringMatchingTest" // just an example
-             },
-             "aaf_username":"XXX"
-          }
-       },
-       "services_calls":{  
-          "aai_broker_handle":[        // notice the config key above
-             "135.205.226.128:32768"   // based on deployment time, just an example
-          ]
-       }
+Its recommended to follow similar topic construct for consistency across all DCAE Services. This will also enable using 
+ `SDK DMAAP Java Library 
+<https://docs.onap.org/projects/onap-dcaegen2/en/latest/sections/sdk/api.html>`__
+for easier integration.
 
-These keys will always be populated whether they are empty or not. So
-the minimum configuration you will get, (in the case of a component that
-provides an HTTP service, doesn’t call any services, and has no streams,
-is:
-
-::
-
-        "streams_publishes":{},
-        "streams_subscribes":{},
-        "services_calls":{}
-
-Thus your component should expect these well-known top level keys.
 
 DCAE SDK
 ~~~~~~~~
@@ -237,15 +81,52 @@ DCAE has SDK/libraries which can be used for service components for easy integra
 Policy Reconfiguration
 ----------------------
 
-Components must provide a way to receive policy reconfiguration, that
-is, configuration parameters that have been updated via the Policy UI.
-The component developer must either periodically poll the ConfigBindingService API
-to retrieve/refresh the new configuration or provides a script (defined in the :any:`Docker
-auxiliary specification <docker-auxiliary-details>`)
-that will be triggered when policy update is detected by the platform.
+
+Policy Framework based reconfiguration is supported via sidecar. The component owners are responsible for
+loading the required model and creating policies required. 
+
+Once the policies are created, the corresponding policy_id should be listed in the component_spec or helm charts override as below
+
+Component spec must include the policy_info object and list of policy_id to be retrieved 
+::
+  "policy_info":{
+    "policy": [
+    {
+      "node_label": "tca_policy_00",
+      "policy_model_id": "onap.policies.monitoring.cdap.tca.hi.lo.app",
+      "policy_id": "onap.vfirewall.tca"
+	},
+    {
+      "node_label":"tca_policy_01", 
+      "policy_model_id":"onap.policies.monitoring.cdap.tca.hi.lo.app",
+      "policy_id":"onap.vdns.tca"
+    }
+    ]
+  }
+
+"node_label" is optional and can be ignored
+"policy_model_id" refers to model uploaded into policy framework
+"policy_id" refers to the instance of policy created for model specified.
+
+When the helm-charts are generated by DCAEMOD/Runtime, the charts will have following property defined in the values.yaml
+
+::
+  dcaePolicySyncImage: onap/org.onap.dcaegen2.deployments.dcae-services-policy-sync:1.0.1
+  policies:
+     policyID: |
+        '["onap.vfirewall.tca","onap.vdns.tca"]'
+
+When using dcaegen2-services-common templates, the presence of **policies** property will deploy policy-sidecar automatically which will 
+periodically pull configuration from Policy framework and make it available shared mountpoint to microservice container. 
+
+More information on Policy side car can be found on this wiki - https://wiki.onap.org/display/DW/Policy+function+as+Sidecar
+ 
+.. note:: 
+  When using DCAE CBS SDK, policy config retrieval is supported natively by the library
+  
 
 
-.. _docker_images:	
+.. _docker_images:
 
 Docker Images
 -------------
@@ -258,6 +139,13 @@ For ONAP microservices, the components images are expected to pushed into ONAP n
 part of `ONAP CI jobs <https://wiki.onap.org/display/DW/Using+Standard+Jenkins+Job+%28JJB%29+Templates>`__
 
 
+Helm Chart
+----------
+
+Components being delivered under ONAP/OOM must adopt dcaegen2-common-services template.
+Information about using the common templates to deploy a microservice can be
+found in :doc:`Helm to deploy DCAE Microservices <./dcaeservice_helm_template>`.
+
 .. _operation_requirement:
 
 Operational Requirement
@@ -266,14 +154,14 @@ Operational Requirement
 Logging
 ~~~~~~~
 
-All ONAP MS logging should follow logging specification defined by `logging project <https://wiki.onap.org/pages/viewpage.action?pageId=71831691>`__
+All ONAP MS logging should follow logging specification defined by `SECCOM <https://wiki.onap.org/display/DW/Jakarta+Best+Practice+Proposal+for+Standardized+Logging+Fields+-+v2>`__
 
 The application log configuration must enable operation to choose if to be written into file or stdout or both during deployment.
 
 
-S3P 
+S3P
 ~~~
-ONAP S3P (all scaling/resiliency/security/maintainability) goals should meet at the minimum level defined for DCAE project for the targeted release 
+ONAP S3P (all scaling/resiliency/security/maintainability) goals should meet at the minimum level defined for DCAE project for the targeted release
 
-If the component is stateful, it should persist its state on external store (eg. pg, redis) to allow support for scaling and resiliency. This should be important design criteria for the component. If the components either publish/subscribe into DMAAP topic, then secure connection to DMAAP must be supported (platform will provide aaf_username/aaf_password for each topic as configuration).
-
+If the component is stateful, it should persist its state on external store (eg. pg, redis) to allow support for scaling and
+resiliency. This should be important design criteria for the component.

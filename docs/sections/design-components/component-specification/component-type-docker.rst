@@ -1470,7 +1470,28 @@ the Docker image. For CDAP, this is the full path to the CDAP jar.
 
 Auxilary
 --------
+New V3 version of component spec schema introduced -
+https://github.com/onap/dcaegen2-platform/blob/master/mod/component-json-schemas/component-specification/dcae-cli-v3/component-spec-schema.json
 
+-  Added new “helm” object under “auxilary\_docker” properties
+
+   -  Includes “applicationEnv”
+
+   -  Includes “service” definition
+
+-  Readiness Configuration support
+
+   -  docker\_healthcheck\_http
+
+       -  Added HTTP/HTTPS for supported protocol enum list
+
+       -  Added “port”
+
+       -  Added “initialDelaySeconds”
+
+   -  docker\_healthcheck\_script
+
+       -  Added “initialDelaySeconds”
 
 Health check
 ~~~~~~~~~~~~

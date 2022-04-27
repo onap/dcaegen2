@@ -92,7 +92,7 @@ Then the data format description is loaded by this schema:
 
 
 Simple JSON Example
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 
 ::
@@ -179,7 +179,7 @@ Nested JSON Example
     }
 
 Unstructured Example
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 ::
 
