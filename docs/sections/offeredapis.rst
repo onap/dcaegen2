@@ -7,10 +7,6 @@ Offered APIs
    :maxdepth: 1
    :titlesonly:
 
-   apis/dcaedashboard.rst
-   apis/configbinding.rst
-   apis/deployment-handler.rst
-   apis/inventory.rst
    apis/ves.rst
    apis/ves-hv/index.rst
    apis/PRH.rst
