@@ -21,75 +21,51 @@ Below is a list of the repositories and their sub-modules, and the language they
  - docs (rst)
  - platformdoc (mkdoc)
 
-* dcaegen2.analytics
-
-
 * dcaegen2.analytics.tca-gen2
 
  - dcae-analytics (Java)
  - eelf-logger (Java)
- 
-* dcaegen2.collectors
 
- - dcaegen2.collectors.snmptrap (Python)
- - dcaegen2.collectors.ves (Java)
- - dcaegen2.collectors.hv-ves (Kotlin)
- - dcaegen2.collectors.datafile (Java)
- - dcaegen2.collectors.restconf (Java)
+* dcaegen2.collectors.snmptrap (Python)
+
+* dcaegen2.collectors.ves (Java)
+
+* dcaegen2.collectors.hv-ves (Kotlin)
+
+* dcaegen2.collectors.datafile (Java)
+
+* dcaegen2.collectors.restconf (Java)
 
 * dcaegen2.services
 
- - dcaegen2.services.heartbeat (Python)
- - dcaegen2.services.prh (Java)
- - dcaegen2.services.bbs-eventprocessor (Java)
- - dcaegen2.services.pm-mapper (Java)
- - dcaegen2.services.ves-mapper (Java)
- - dcaegen2.services.son-handler (Java)
  - dcaegen2.services.kpi-ms (Java)
  - dcaegen2.services.pmsh (Python)
  - dcaegen2.services.datalake-handler (Java)
+ - dcaegen2.services.slice-analysis-ms (Java)
+
+* dcaegen2.services.heartbeat (Python)
+
+* dcaegen2.services.prh (Java)
+
+* dcaegen2.services.pm-mapper (Java)
+
+* dcaegen2.services.ves-mapper (Java)
 
 * dcaegen2.services.son-handler (Java)
- 
+
 * dcaegen2.deployments
 
  - scripts (bash, python)
  - tls-init-container (bash)
- - k8s-bootstrap-container (bash)
  - healthcheck-container (Node.js)
- - k8s-bootstrap-container (bash)
- - tca-cdap-container (bash)
- - multisite-init-container (python)
- - dcae-remote-site (helm chart)
 
 
 * dcaegen2.platform
-
-* dcaegen2.platform.blueprints
-
- - blueprints (yaml)
- - input-templates (yaml)
 
 * dcaegen2.platform.cli (Python)
 
  - component-json-schemas (yaml)
  - dcae-cli (Python)
-
-* dcaegen2.platform.configbinding (Python)
-
-* dcaegen2.platform.deployment-handler (NodeJS)
-
-* dcaegen2.platform.inventory-api (Java) 
-
-* dcaegen2.platform.plugins
-
- - dcae-policy (Python)
- - relationships (Python)
- - k8splugin (Python)
-
-* dcaegen2.platform.policy-handler (Python)
-
-* dcaegen2.platform.servicechange-handler (Clojure)
 
 * dcaegen2.platform.ves-openapi-manager (Java)
 
@@ -101,10 +77,11 @@ Below is a list of the repositories and their sub-modules, and the language they
  - python-dockering (Python)
  - scripts (bash)
 
+* dcaegen2.services.sdk (Java)
 
 Environment
 -----------
-Building is conducted in a Linux environment that has the basic building tools such as JDK 8, Maven 3, Python 2.7 and 3.6, docker engine, etc.
+Building is conducted in a Linux environment that has the basic building tools such as JDK 11, Maven 3.6 or higher, Python 3.6, docker engine, etc.
 
 
 Steps
@@ -114,7 +91,5 @@ Because of the uniform adoption of Maven framework, each project can be built by
 
 Artifacts
 ---------
-Building of DCAE projects produce three different kinds of artifacts: Java jar files, raw file artifacts (including yaml files, scripts, wagon packages, etc), Pypi packages, and docker container images.  
-
-
+Building of DCAE projects produce three different kinds of artifacts: Java jar files, raw file artifacts (including yaml files, scripts, wagon packages, etc), Pypi packages, and docker container images.
 
