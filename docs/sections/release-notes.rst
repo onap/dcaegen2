@@ -88,7 +88,7 @@ Release Data
 | **Release designation**              | 10.0.0 Jakarta                                         |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
-| **Release date**                     | 2022-05-12                                             |
+| **Release date**                     | 2022-06-02                                             |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
 
@@ -164,7 +164,7 @@ Software Deliverables
    "dcaegen2/services", "components/datalake-handler", "onap/org.onap.dcaegen2.services.datalakeadminui:1.1.1"
    "dcaegen2/services", "components/datalake-handler", "onap/org.onap.dcaegen2.services.datalake.exposure.service:1.1.1"
    "dcaegen2/services", "components/pm-subscription-handler", "onap/org.onap.dcaegen2.services.pmsh:2.2.2"
-   "dcaegen2/services", "components/slice-analysis-ms", "onap/org.onap.dcaegen2.services.components.slice-analysis-ms:1.1.1"
+   "dcaegen2/services", "components/slice-analysis-ms", "onap/org.onap.dcaegen2.services.components.slice-analysis-ms:1.1.2"
    "dcaegen2/services", "components/kpi-ms", "onap/org.onap.dcaegen2.services.components.kpi-ms:1.0.4"
    "dcaegen2/services/heartbeat", "", "onap/org.onap.dcaegen2.services.heartbeat:2.3.1"
    "dcaegen2/services/mapper", "", "onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.4.0"

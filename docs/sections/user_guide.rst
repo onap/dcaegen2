@@ -9,6 +9,5 @@ User Guide
    :maxdepth: 1
    :titlesonly:
 
-   ./platform-doc/dcaedashboard_userguide.rst
    ./design-components/DCAE-MOD/DCAE-MOD-User-Guide.rst
- 
+   
