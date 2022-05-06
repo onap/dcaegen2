@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7be7081c_712dbda9",
+        "filename": "docs/sections/healthcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-06T22:03:52Z",
+      "side": 1,
+      "message": "shouldn\u0027t the doubled `` be single ` ?",
+      "revId": "7bf8a0702afe2b110cd8e6f225f9cf91eddc1ea6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f78df262_92a137b8",
+        "filename": "docs/sections/healthcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-06T22:03:52Z",
+      "side": 1,
+      "message": "the URL should be surround with ``",
+      "revId": "7bf8a0702afe2b110cd8e6f225f9cf91eddc1ea6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "950ec42d_8d637b6b",
+        "filename": "docs/sections/healthcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-06T22:03:52Z",
+      "side": 1,
+      "message": "instead of \"\", probably should use ``",
+      "revId": "7bf8a0702afe2b110cd8e6f225f9cf91eddc1ea6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "498f076c_0c84c737",
+        "filename": "docs/sections/healthcheck.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-06T22:03:52Z",
+      "side": 1,
+      "message": "should the command on this and the next line be enclosed in `` ?",
+      "range": {
+        "startLine": 37,
+        "startChar": 10,
+        "endLine": 37,
+        "endChar": 11
+      },
+      "revId": "7bf8a0702afe2b110cd8e6f225f9cf91eddc1ea6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
