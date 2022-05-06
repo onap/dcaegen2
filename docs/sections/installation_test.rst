@@ -6,88 +6,43 @@ Check Deployment Status
 -----------------------
 
 The healthcheck service is exposed as a Kubernetes ClusterIP Service named
-`dcae-healthcheck`.   The service can be queried for status as shown below.
+`dcae-ms-healthcheck`.   The service can be queried for status as shown below.
 
 .. code-block:: json
 
-   $ curl dcae-healthcheck
+   $ curl dcae-ms-healthcheck
    {
-     "type": "summary",
-     "count": 14,
-     "ready": 14,
-     "items": [
-        {
-          "name": "dev-dcaegen2-dcae-cloudify-manager",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dev-dcaegen2-dcae-config-binding-service",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dev-dcaegen2-dcae-inventory-api",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dev-dcaegen2-dcae-servicechange-handler",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dev-dcaegen2-dcae-deployment-handler",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dev-dcaegen2-dcae-policy-handler",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dep-dcae-ves-collector",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dep-dcae-tca-analytics",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dep-dcae-prh",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dep-dcae-hv-ves-collector",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dep-dcae-dashboard",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dep-dcae-snmptrap-collector",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dep-holmes-engine-mgmt",
-          "ready": 1,
-          "unavailable": 0
-        },
-        {
-          "name": "dep-holmes-rule-mgmt",
-          "ready": 1,
-          "unavailable": 0
-        }
-      ]
-    }
+      "type": "summary",
+      "count": 5,
+      "ready": 5,
+      "items": [{
+            "name": "onap-dcae-hv-ves-collector",
+            "ready": 1,
+            "unavailable": 0
+       }, 
+       {
+            "name": "onap-dcae-prh",
+            "ready": 1,
+            "unavailable": 0
+       },
+       {
+            "name": "onap-dcae-tcagen2",
+            "ready": 1,
+            "unavailable": 0
+       },
+       {
+            "name": "onap-dcae-ves-collector",
+            "ready": 1,
+            "unavailable": 0
+       },
+       {
+            "name": "onap-dcae-ves-openapi-manager",
+            "ready": 1,
+            "unavailable": 0
+       }
+    ]
+ }
+
 
 
 Data Flow Verification
