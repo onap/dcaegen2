@@ -16,6 +16,24 @@
       "revId": "48210d44e98569703d917feef05f268782c5a1f8",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b95e2c7_1c2cb698",
+        "filename": "docs/tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3685
+      },
+      "writtenOn": "2022-05-06T11:27:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfb5aeb8_caa1cf4a",
+      "revId": "48210d44e98569703d917feef05f268782c5a1f8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
