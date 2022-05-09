@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c7d42936_81617294",
+        "filename": "docs/sections/build.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-09T19:17:33Z",
+      "side": 1,
+      "message": "probably Python 3.9 ???",
+      "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4043e8c_752d6c37",
+        "filename": "docs/sections/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-09T19:17:33Z",
+      "side": 1,
+      "message": "... via a separate override file under its respective ...",
+      "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0df574dd_46cab5f9",
+        "filename": "docs/sections/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-09T19:17:33Z",
+      "side": 1,
+      "message": "Below is a list of DCAE Services and the corresponding helm chart override location.",
+      "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c7bcdee_c970073d",
+        "filename": "docs/sections/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-09T19:17:33Z",
+      "side": 1,
+      "message": "... Instructions for ...",
+      "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a83b928c_43e81487",
+        "filename": "docs/sections/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-09T19:17:33Z",
+      "side": 1,
+      "message": "During the installation of the DCAEGE2-SERVICES module, two ..",
+      "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
