@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a0c5271_897cebc4",
+        "filename": "docs/sections/healthcheck.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-09T16:06:35Z",
+      "side": 1,
+      "message": "should that be two \"_\" after the trailing \"`\"?",
+      "revId": "b83c7760f62825d921a220cf433d3b80b797bc89",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7971edae_5343820c",
+        "filename": "docs/sections/healthcheck.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-09T16:06:35Z",
+      "side": 1,
+      "message": "``kubctl...check``",
+      "revId": "b83c7760f62825d921a220cf433d3b80b797bc89",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1394fa1b_54008af6",
+        "filename": "docs/sections/healthcheck.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-09T16:06:35Z",
+      "side": 1,
+      "message": "``kubctl ... bash``",
+      "revId": "b83c7760f62825d921a220cf433d3b80b797bc89",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
