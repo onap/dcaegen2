@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f0f18e4_285f0bdf",
+        "filename": "docs/sections/build.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-05-09T22:35:20Z",
+      "side": 1,
+      "message": "Not fully compliant yet (e.g snmptrap); changed to 3.x in latest patch",
+      "parentUuid": "c7d42936_81617294",
+      "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a4043e8c_752d6c37",
         "filename": "docs/sections/configuration.rst",
         "patchSetId": 8
@@ -33,6 +51,24 @@
       "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8286b2a9_a61cb35b",
+        "filename": "docs/sections/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-05-09T22:35:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4043e8c_752d6c37",
+      "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3faa9c0c_4ef21101",
+        "filename": "docs/sections/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-05-09T22:35:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0df574dd_46cab5f9",
+      "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c7bcdee_c970073d",
         "filename": "docs/sections/configuration.rst",
         "patchSetId": 8
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "d60bddf7_9c551953",
+        "filename": "docs/sections/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-05-09T22:35:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c7bcdee_c970073d",
+      "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a83b928c_43e81487",
         "filename": "docs/sections/configuration.rst",
         "patchSetId": 8
@@ -84,6 +156,24 @@
       "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "941c2355_5774f6a7",
+        "filename": "docs/sections/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-05-09T22:35:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a83b928c_43e81487",
+      "revId": "4f882ea0ed4616147f23a1df159c047caf9ce130",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
