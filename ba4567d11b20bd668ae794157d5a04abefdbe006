@@ -34,6 +34,24 @@
       "revId": "ba4567d11b20bd668ae794157d5a04abefdbe006",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5793c6ed_525c2fda",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-23T17:15:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc78c57c_e5721b2f",
+      "revId": "ba4567d11b20bd668ae794157d5a04abefdbe006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
