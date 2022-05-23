@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b27b6d9a_05862e50",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-23T02:10:09Z",
+      "side": 1,
+      "message": "see question in the jakarta branch version of this",
+      "revId": "ba4567d11b20bd668ae794157d5a04abefdbe006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
