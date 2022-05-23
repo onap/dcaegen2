@@ -16,6 +16,24 @@
       "revId": "ba4567d11b20bd668ae794157d5a04abefdbe006",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc78c57c_e5721b2f",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-05-23T14:24:32Z",
+      "side": 1,
+      "message": "Good practice to add it; amended that patch to include the same",
+      "parentUuid": "b27b6d9a_05862e50",
+      "revId": "ba4567d11b20bd668ae794157d5a04abefdbe006",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
