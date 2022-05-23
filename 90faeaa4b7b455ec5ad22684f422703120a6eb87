@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "965e5a34_8b07fe35",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-23T02:09:16Z",
+      "side": 1,
+      "message": "question: since there\u0027s a copyright block, shouldn\u0027t it be surrounded by LICENSE_START/LICENSE_END lines?",
+      "revId": "90faeaa4b7b455ec5ad22684f422703120a6eb87",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
