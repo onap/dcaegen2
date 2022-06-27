@@ -384,6 +384,17 @@ To turn off StrictHostChecking, set below option to false. It could be changed i
   "sftp.security.strictHostKeyChecking": false
 
 
+
+Disable TLS connection
+----------------------
+TLS connection in external interface is enabled by default. Disable TLS can be controll by following application properties:
+
+.. code-block:: bash
+
+  "dmaap.certificateConfig.enableCertAuth: false"
+
+
+
 Performance
 ^^^^^^^^^^^
 
