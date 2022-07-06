@@ -16,6 +16,24 @@
       "revId": "bb3878bcc2e2d8980febff55155067649bc28cb1",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca2fcdd5_2601075e",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2022-07-06T04:19:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "891d95af_7d428261",
+      "revId": "bb3878bcc2e2d8980febff55155067649bc28cb1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
