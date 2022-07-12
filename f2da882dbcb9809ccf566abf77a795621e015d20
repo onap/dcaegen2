@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1783ca9_e7ab3458",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-07-12T16:38:06Z",
+      "side": 1,
+      "message": "This specific update looks okay however this file and couple others (like installation.rst etc) have cloudify blueprint references which should be replaced to point to helm charts. \n\nWill be good to update them. However if you considering these updates under separate patch - I can merge this change. Let me know.",
+      "range": {
+        "startLine": 388,
+        "startChar": 0,
+        "endLine": 396,
+        "endChar": 0
+      },
+      "revId": "f2da882dbcb9809ccf566abf77a795621e015d20",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
