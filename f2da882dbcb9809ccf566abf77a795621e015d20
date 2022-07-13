@@ -22,6 +22,30 @@
       "revId": "f2da882dbcb9809ccf566abf77a795621e015d20",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "172c37d7_48ebfb9e",
+        "filename": "docs/sections/services/dfc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2022-07-13T09:25:19Z",
+      "side": 1,
+      "message": "I think the helm-installation should be done in other MR. The user can easy find application properties in values.yaml. So helm-description should not block this MR.",
+      "parentUuid": "f1783ca9_e7ab3458",
+      "range": {
+        "startLine": 388,
+        "startChar": 0,
+        "endLine": 396,
+        "endChar": 0
+      },
+      "revId": "f2da882dbcb9809ccf566abf77a795621e015d20",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
