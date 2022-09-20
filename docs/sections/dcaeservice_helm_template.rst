@@ -88,6 +88,23 @@ Example:
 
    image: onap/org.onap.dcaegen2.services.prh.prh-app-server:1.5.6
 
+**imageRepositoryOverride**:
+
+Alternative repository for the Docker image for the microservice.
+Optional.  If this value is set, the Docker image for the microservice
+will be pulled from the repository specified by this value, instead of
+from the repository set by ``repositoryGenerator.repository``.  Note that
+this alternative repository is used only for the microservice image and
+not for other images (such as images for initContainers).  Note also that
+the alternative repository must not use any form of authentication,
+because there is no way to provide credentials for the repository.
+
+Example:
+
+::
+
+  imageRepositoryOverride: "myrepo.example.org:5000"
+
 **global.pullPolicy** and **pullPolicy**:
 
 These settings control when

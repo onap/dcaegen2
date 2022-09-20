@@ -5,3 +5,6 @@ site
 # IDEA intellij project files
 .idea/
 *.iml
+
+# VSCode file
+.vscode/
