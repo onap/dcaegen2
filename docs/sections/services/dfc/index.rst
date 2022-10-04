@@ -14,6 +14,7 @@ DataFile Collector(DFC)
    ./delivery.rst
    ./logging.rst
    ./installation.rst
+   ./installation-helm.rst
    ./certificates.rst
    ./configuration.rst
    ./consumedapis.rst
