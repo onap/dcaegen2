@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "70cb9a53_50009b44",
+        "filename": "docs/sections/services/dfc/installation-helm.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-06T13:42:48Z",
+      "side": 1,
+      "message": "extend to same length as on line#5",
+      "range": {
+        "startLine": 6,
+        "startChar": 26,
+        "endLine": 6,
+        "endChar": 27
+      },
+      "revId": "ae48ec223bda4723e3c1fa8549c1089ad4465d6d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34787afe_c79cb7f3",
+        "filename": "docs/sections/services/dfc/installation-helm.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-06T13:42:48Z",
+      "side": 1,
+      "message": "missing dmaap.certificateConfig.enableCertAuth: true ???\n\nBrief description on behavior of DFC when enableCertAuth\u003dfalse would be also be helpful here.",
+      "revId": "ae48ec223bda4723e3c1fa8549c1089ad4465d6d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
