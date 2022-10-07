@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a494e517_fa3668c8",
+        "filename": "docs/sections/services/dfc/installation-helm.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2022-10-07T13:57:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70cb9a53_50009b44",
+      "range": {
+        "startLine": 6,
+        "startChar": 26,
+        "endLine": 6,
+        "endChar": 27
+      },
+      "revId": "ae48ec223bda4723e3c1fa8549c1089ad4465d6d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "34787afe_c79cb7f3",
         "filename": "docs/sections/services/dfc/installation-helm.rst",
         "patchSetId": 1
@@ -39,6 +63,24 @@
       "revId": "ae48ec223bda4723e3c1fa8549c1089ad4465d6d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60a15f20_d0f53f90",
+        "filename": "docs/sections/services/dfc/installation-helm.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6310
+      },
+      "writtenOn": "2022-10-07T13:57:00Z",
+      "side": 1,
+      "message": "I added property and link to configuration page (to avoid duplication)",
+      "parentUuid": "34787afe_c79cb7f3",
+      "revId": "ae48ec223bda4723e3c1fa8549c1089ad4465d6d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
