@@ -6,7 +6,7 @@
 Installation
 ============
 
-Slice Analysis MS can be deployed using cloudify blueprint using bootstrap container of an existing DCAE deployment.
+Slice Analysis MS can be deployed by OOM. Make sure to enable "dcae-slice-analysis-ms" in oom/kubernetes/dcaegen2-services/values.yaml first.
 
 Deployment Pre-requisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~
