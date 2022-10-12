@@ -6,7 +6,7 @@
 Installation
 ============
 
-Slice Analysis MS can be deployed using cloudify blueprint using bootstrap container of an existing DCAE deployment.
+Slice Analysis MS can either be deployed using cloudify blueprint using bootstrap container of an existing DCAE deployment, or deployed by OOM.
 
 Deployment Pre-requisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~
