@@ -1,0 +1,231 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f65dd00f_c8100c4d",
+        "filename": "docs/sections/services/slice-analysis-ms/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "We no longer deploy using cloudify, so this can be simplified.",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "029612e3_da5130fa",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "I think it\u0027s better to consistently use \"the Slice Analytics MS\" instead of either \"SliceMS\" or \"Slice MS\", both here and below.\n\nOther grammar nits fixed:\nThe Slice Analysis MS provides an easy way to receive runtime configurations through Policy, another ONAP module. Runtime configuration is initially developed to meet the requirements of the ONAP Kohn release IBN use case. If you want to use this function, please also refer to https://wiki.onap.org/display/DW/R11+General+Intent+Model+and+General+Intent+Interface+Requirements",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11e5277d_9857e2a9",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "Using \"So ...\" and \"just ...\" is considered informal and should almost always be removed in formal documentation.",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b7b97b2_28d2d822",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "This section is almost identical to what is in slice_analysis_ms_overview.rst. See my comments there for grammatical changes for this section.",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3cd7f19_5f57c734",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "grammar:\n\"use helm chart\" \u003d\u003e \"using the helm chart\"",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "436c7965_9efcf2ec",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "grammar:\n\"has to be\" \u003d\u003e \"have to be\"",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31959e49_265d0d9c",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "what unit is duration in? milliseconds? seconds? minutes? hours? days?",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb583df0_1c206c51",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "grammar:\n\"the last 2\" \u003d\u003e \"the previous two\"",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "134ff526_e7725cec",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "grammar:\nSo if someone wants to pass new configurations to the Slice Analysis MS, do the following steps:",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b93343d4_8f39225a",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "grammar:\n   Prerequisite: Create the policy type. This step only needs to be done once when you deploy the ONAP environment, except for when you redeploy the POLICY module (which causes the policy type to not exist). Then the policy type needs to be recreated. Currently only 1 policy type is supported, which will be attached here.",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d82b3f0_86eefe0b",
+        "filename": "docs/sections/services/slice-analysis-ms/slice_analysis_ms_overview.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "For consistency, I think this should change to say \"the Slice Analysis MS\".",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c7f2aa7_a9673222",
+        "filename": "docs/sections/services/slice-analysis-ms/slice_analysis_ms_overview.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "Minor grammar changes:\n\nUnlike the SON-Handler MS, which passes runtime configuration through Policy - Policy Handler - Cloudify Manager - Consul Cluster - CBS - SONHandler, the Slice Analysis MS provides a lighter and easier way to send runtime configurations in seconds.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 237
+      },
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5707edd1_a0b42b62",
+        "filename": "docs/sections/services/slice-analysis-ms/slice_analysis_ms_overview.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-21T17:52:33Z",
+      "side": 1,
+      "message": "Minor grammar changes:\n\nFor the Slice Analysis MS, there is a CBS thread running that will continually fetch the latest policies from the XCAML PDP engine. So if you want to pass runtime configuration, you can format your configuration contents in the form of an XCAML policy, then push it into the XCAML PDP engine. The Slice Analysis MS will get updated within seconds.",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
