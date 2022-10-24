@@ -10,14 +10,14 @@ DCAE project provides intelligence for ONAP to support automation (via open-loop
 
 Prior to Jakara release, DCAE architecture comprised of DCAE Platform and DCAE Service components; DCAE Platform supported the functions to deploy, host and perform LCM applications of Service components.
 
-With Jakarta release, DCAE Platform component centered around Cloudify has been deprecated. All Microservice orchestration and lifecycle management will be handled through Helm/Kubernetes. 
+Since Jakarta release, DCAE Platform component centered around Cloudify has been deprecated. All Microservice orchestration and lifecycle management will be handled through Helm/Kubernetes. 
 
 The DCAE services components includes all the microservices - collectors, analytics and event processor which supports active data-flow  and processing as required by ONAP usecases. These Service components are the functional entities that realize the various 
 data collection needs, event processors for data standardization, analytics that assess collected data, and various auxiliary microservices that assist automated closed loop flows.
 
 The architecture of DCAE with Helm transformation is more flexible, microsservice oriented and supports model based component design and deployment through DCAE-MOD. Also with migration to helm, DCAE miroservice deployments can be handled independently, dependencies are captured under its helm charts.
 
-Prior to Jakarta release, DCAE components relied on Consul's distributed K-V to manage and store component configuration. However with Jakarta release, Consul dependency has been removed completely across all DCAE service components. 
+Prior to Jakarta release, DCAE components relied on Consul's distributed K-V to manage and store component configuration. However since Jakarta release, Consul dependency has been removed completely across all DCAE service components. 
 All Microservice configuration are resolved through files mounted via Configmap created part of 
 dcae-services helm chart deployment. 
 
@@ -58,7 +58,7 @@ The figure below shows the DCAE architecture and how the components work with ea
   The following diagram has been created on https://app.diagrams.net/. There is an editable version of the diagram
   in repository under path docs/sections/images/architecture_diagram. Import this file to mentioned page to edit diagram.
 
-.. image:: images/R10_architecture_diagram.png
+.. image:: images/R11_architecture_diagram.png
  
 
 Deployment Scenarios
@@ -67,7 +67,7 @@ Deployment Scenarios
 Because DCAE service components are deployed on-demand following the control loop needs for managing ONAP deployed services, DCAE must
 support dynamic and on-demand deployment of service components based on ONAP control loop demands.  
 
-With DCAE Transformation to Helm completed in Jakarta/R10 release, all DCAE components deployment will be supported only via helm. 
+With DCAE Transformation to Helm completed in Jakarta/R10 release, all DCAE components deployment are supported only via helm. 
  Charts for individual MS are available under **dcaegen2-services** directory under OOM project
  (https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components). To keep the ONAP footprint minimal, only minimal set of MS
  (required for ONAP Integration usecases) are enabled by default on ONAP/DCAE deployment, which includes four DCAE services (HV VES
@@ -78,9 +78,8 @@ More details of the DCAE deployment can be found under Installation section.
 Architectural Reference
 -----------------------
 
- - `ARC DCAE Component Description <https://wiki.onap.org/display/DW/ARC+DCAE+Component+Description+-+Jakarta-R10>`_
- - `R10 M2 ARC Proposal <https://wiki.onap.org/display/DW/DCAE+R10+M2+Architecture+Review>`_
-
+ - `ARC DCAE Component Description <https://wiki.onap.org/display/DW/ARC+DCAE+Component+Description+-+Kohn-R11>`_
+ - `R11 M2 ARC Proposal <https://wiki.onap.org/display/DW/DCAE+R11+Kohn+M2+Architecture+Review>`_
 
 Usage Scenarios
 ---------------

@@ -23,7 +23,7 @@ and invokes Kubernetes deployment operations for all the resources.
 All ONAP Helm charts are organized under the **kubernetes** directory of the **OOM** project, where roughly each ONAP component occupies a subdirectory.
 
 
-With DCAE Transformation to Helm completed in Jakarta/R10 release, all DCAE components deployment will be supported only via helm.  Charts for individual MS are available under **dcaegen2-services** directory under OOM project (https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components). With ONAP deployment, four DCAE services (HV VES collector, VES collector, PNF Registration Handler, and TCA (Gen2) analytics service) are bootstrapped via Helm charts.
+With DCAE Transformation to Helm completed in Jakarta/R10 release, all DCAE components deployment is supported only via helm.  Charts for individual MS are available under **dcaegen2-services** directory under OOM project (https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components). With ONAP deployment, four DCAE services (HV VES collector, VES collector, PNF Registration Handler, and TCA (Gen2) analytics service) are bootstrapped via Helm charts.
 
 Other DCAE Services can be deployed on-demand via their independent helm-charts. For on-demand helm chart, refer to steps described in :ref:`Helm install/upgrade section <dcae-service-deployment>`.
 
