@@ -101,13 +101,16 @@ DCAEGEN2-3148 5G SON use case enhancements for Kohn release
     - CL message for ANR modified to align with A1-based flow/support
 
 DCAEGEN2-3195 CCVPN Kohn Enhancements for Intent-based Cloud Leased Line and Transport Slicing
-    - DCAE SDK alignment for SliceAnalysis MS & enhanching AAI interface for supporting IBN CL 
+    - DCAE SDK alignment for SliceAnalysis MS & enhancing AAI interface for supporting IBN CL 
 
 DCAEGEN2-3194 Maintenance and Enhancement of Intent-driven Closed-loop Autonomous Networks
     - Slice Analysis Enhancement with AAI Interface/processing for CL notification
 
 DCAEGEN2-3119 Helm Transformation - Post migration
-
+     - DCAE Common Template improvements
+     - Removed Cloudify and associated platform component charts 
+     - Removed Consul/CBS API dependency from each DCAE MS, enabling independent config management via respective charts
+     
 DCAEGEN2-2975 VES 7.2.1 support for DCAE Microservices
      - TCAgen2 enhanced to support VES 7.2.1
 
@@ -115,14 +118,15 @@ DCAEGEN2-3037 AAF certificate dependency removal
     - DFC Enhanced to support additional property to disable certificates checks
 
 DCAEGEN2-3030 DMAAP SDK standardization for DCAE Microservices
-    - SliceAnalysis MS, KPI-MS, SON-Handler MS switched to use DMAAP SDK
+    - SliceAnalysis MS, SON-Handler MS switched to use DMAAP SDK
 
 
 *Non-Functional*
 
-   - DCAEGEN2-3089 - Sonarcoverage improvements for DCAE components - SliceAnalysis mS, SNMPTrap, TCA-gen2, SON-Handler, KPi-MS, Mapper, RESTConf
-   - DCAEGEN2-3209 - CII Badging improvements
+   - DCAEGEN2-3089 - Sonarcoverage improvements for DCAE components - SliceAnalysis mS, SNMPTrap, TCA-gen2, SON-Handler, KPi-MS, Mapper, RESTConf  (meeting 80% or more coverage) 
+   - DCAEGEN2-3209 - CII Badging improvements (Silver badge completion)
    - DCAEGEN2-3196 - Vulnerability updates for several DCAE MS (TCA-gen2, DataFileCollector, HV-VES, RESTConf, VES, Mapper, PM-Mapper, PRH, SON-handler, KPI-MS, Slice-Analysis MS, DCAE-SDK, VES OpenAPI Manager)
+   - DCAEGEN2-3225 - SBOM Enablement for DCAE components  
 
 
 .. _kohn_deliverable:
@@ -158,7 +162,7 @@ Software Deliverables
    "dcaegen2/services", "components/datalake-handler", "onap/org.onap.dcaegen2.services.datalake.exposure.service:1.1.1"
    "dcaegen2/services", "components/pm-subscription-handler", "onap/org.onap.dcaegen2.services.pmsh:2.2.2"
    "dcaegen2/services", "components/slice-analysis-ms", "onap/org.onap.dcaegen2.services.components.slice-analysis-ms:1.1.5"
-   "dcaegen2/services", "components/kpi-ms", "onap/org.onap.dcaegen2.services.components.kpi-ms:1.0.9"
+   "dcaegen2/services", "components/kpi-ms", "onap/org.onap.dcaegen2.services.components.kpi-ms:1.0.10"
    "dcaegen2/services/heartbeat", "", "onap/org.onap.dcaegen2.services.heartbeat:2.4.1"
    "dcaegen2/services/mapper", "", "onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.4.3"
    "dcaegen2/services/pm-mapper", "", "onap/org.onap.dcaegen2.services.pm-mapper:1.9.0"
@@ -193,6 +197,7 @@ Known Limitations, Issues and Workarounds
 -----------------------------------------
 
 
+   - DCAEGEN2-3184 DL-Feeder log error and configuration issue
 
 *Known Vulnerabilities*
 
