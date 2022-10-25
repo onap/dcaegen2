@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb6f1ea2_5157501a",
+        "filename": "docs/sections/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-25T00:19:29Z",
+      "side": 1,
+      "message": "Should this be the following?\n\nAs of the Jakarta release, DCAE Platform components centered around Cloudify have been deprecated. As of the Kohn release, DCAE Platform components centered around Cloudify have been removed.",
+      "revId": "f95faf06e81e5f4ee2d457f924af1d337d2c1830",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
