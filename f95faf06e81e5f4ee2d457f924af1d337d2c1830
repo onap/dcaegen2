@@ -34,6 +34,24 @@
       "revId": "f95faf06e81e5f4ee2d457f924af1d337d2c1830",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e07a0a0a_ea7caf86",
+        "filename": "docs/sections/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-10-25T15:01:25Z",
+      "side": 1,
+      "message": "Thank you.\nDeprecated means \"The capability is still present, but will be removed in a future release. It should not be used for new code, and current code should move away from using it.\"\nRemoved means \"gone\".",
+      "parentUuid": "c6fa9b44_253ed2e9",
+      "revId": "f95faf06e81e5f4ee2d457f924af1d337d2c1830",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
