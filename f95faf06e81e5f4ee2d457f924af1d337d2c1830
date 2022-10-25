@@ -16,6 +16,24 @@
       "revId": "f95faf06e81e5f4ee2d457f924af1d337d2c1830",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6fa9b44_253ed2e9",
+        "filename": "docs/sections/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-25T14:07:13Z",
+      "side": 1,
+      "message": "I believe the platform deprecation and removal would mean the same. I\u0027ve rephrased this paragraph, hopefully that articulates the updates better.",
+      "parentUuid": "cb6f1ea2_5157501a",
+      "revId": "f95faf06e81e5f4ee2d457f924af1d337d2c1830",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
