@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e1f1d190_8298c3f1",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-25T16:00:18Z",
+      "side": 1,
+      "message": "This line should be removed as its no longer reflective of current architecture",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 248
+      },
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55815a06_f4a41af8",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-25T16:00:18Z",
+      "side": 1,
+      "message": "Missing new line on line#70 for the code-block to work",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a8bca7f_72a2a1c7",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-25T16:00:18Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "470cba09_b4d78056",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-25T16:00:18Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c15bdca1_da4aac3c",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-25T16:00:18Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef47e4cf_ef2a427c",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-25T16:00:18Z",
+      "side": 1,
+      "message": "new line required between .. code-block:: bash and actual line to be embedded under it.",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ffef3092_c1a142f3",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-25T16:00:18Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ecf99a4f_e1334cde",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-25T16:00:18Z",
+      "side": 1,
+      "message": "missing new line above",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
