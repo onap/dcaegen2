@@ -32,6 +32,14 @@ Slice Analysis MS overview and functions
 
     ./slice_analysis_ms_overview.rst
 
+Slice Analysis MS Runtime Configuration
+----------------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    ./runtime_configuration.rst
+
 
 Slice Analysis MS Installation Steps
 ------------------------------------

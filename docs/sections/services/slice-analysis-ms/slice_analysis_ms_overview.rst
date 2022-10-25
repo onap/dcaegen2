@@ -5,6 +5,15 @@
 
 Architecture
 ------------
+The architecture below depicts the Slice Analysis MS as a part of DCAE.
+.. image:: ./slice_analysis_ms_architecture.jpg
+
+Slice Analysis MS provides runtime configuration feature since Kohn Version.
+
+Unlike the SON-Handler MS, which passes runtime configuration through Policy - Policy Handler - Cloudify Manager - Consul Cluster - CBS - SONHandler, the Slice Analysis MS provides a lighter and easier way to send runtime configurations in seconds.
+
+For the Slice Analysis MS, there is a CBS thread running that will continually fetch the latest policies from the XCAML PDP engine. So if you want to pass runtime configuration, you can format your configuration contents in the form of an XCAML policy, then push it into the XCAML PDP engine. The Slice Analysis MS will get updated within seconds.
+
 The internal architecture of Slice Analysis MS is shown below.
 
 .. image:: ./slice_analysis_ms_arch.jpg
