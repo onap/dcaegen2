@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "801c1fe0_5035a503",
+        "filename": "docs/sections/services/slice-analysis-ms/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f65dd00f_c8100c4d",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "029612e3_da5130fa",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2022-10-21T17:52:33Z",
       "side": 1,
       "message": "I think it\u0027s better to consistently use \"the Slice Analytics MS\" instead of either \"SliceMS\" or \"Slice MS\", both here and below.\n\nOther grammar nits fixed:\nThe Slice Analysis MS provides an easy way to receive runtime configurations through Policy, another ONAP module. Runtime configuration is initially developed to meet the requirements of the ONAP Kohn release IBN use case. If you want to use this function, please also refer to https://wiki.onap.org/display/DW/R11+General+Intent+Model+and+General+Intent+Interface+Requirements",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d49ab29d_5ca8c803",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Ok thanks. Done",
+      "parentUuid": "029612e3_da5130fa",
       "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "a840ecb7_995ab7a2",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11e5277d_9857e2a9",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3b7b97b2_28d2d822",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 2
@@ -67,6 +121,24 @@
       "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40f8c05f_d95fd810",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b7b97b2_28d2d822",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "b69322e5_890b1be4",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d3cd7f19_5f57c734",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "436c7965_9efcf2ec",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 2
@@ -101,6 +191,24 @@
       "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7deebdf7_db26769b",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "436c7965_9efcf2ec",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "6ba75696_5c28c9e3",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31959e49_265d0d9c",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cb583df0_1c206c51",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 2
@@ -135,6 +261,24 @@
       "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b9a8362_ee3b1f14",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb583df0_1c206c51",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "8ee242d1_f1a134d9",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "134ff526_e7725cec",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b93343d4_8f39225a",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 2
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "22f09d26_12da7371",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b93343d4_8f39225a",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6d82b3f0_86eefe0b",
         "filename": "docs/sections/services/slice-analysis-ms/slice_analysis_ms_overview.rst",
         "patchSetId": 2
@@ -186,6 +366,24 @@
       "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fee9a212_a15784dc",
+        "filename": "docs/sections/services/slice-analysis-ms/slice_analysis_ms_overview.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d82b3f0_86eefe0b",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -212,6 +410,30 @@
     },
     {
       "key": {
+        "uuid": "bb599801_dce33052",
+        "filename": "docs/sections/services/slice-analysis-ms/slice_analysis_ms_overview.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c7f2aa7_a9673222",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 237
+      },
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5707edd1_a0b42b62",
         "filename": "docs/sections/services/slice-analysis-ms/slice_analysis_ms_overview.rst",
         "patchSetId": 2
@@ -226,6 +448,24 @@
       "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "323f52c1_1078756d",
+        "filename": "docs/sections/services/slice-analysis-ms/slice_analysis_ms_overview.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-25T09:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5707edd1_a0b42b62",
+      "revId": "74384288bdb3737e3e7d5f4e90b97e1d58152257",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
