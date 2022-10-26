@@ -13,7 +13,6 @@ DataFile Collector(DFC)
    ./architecture.rst
    ./delivery.rst
    ./logging.rst
-   ./installation.rst
    ./installation-helm.rst
    ./certificates.rst
    ./configuration.rst
