@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7a9fae8_2170ddd2",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_config_work_flow2.jpg",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-26T13:32:02Z",
+      "side": 1,
+      "message": "This image should be removed as this architecture/flow is obsolete now.",
+      "revId": "b41e336594217588a21d0a9347e5c09d9d556064",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4470c364_5f6079ea",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-26T13:32:02Z",
+      "side": 1,
+      "message": "Requires new line before image tag for this to work... but as noted in earlier comment, this architecture diagram is old and not be included here. You may instead refer to diagram under dcaegen2\\docs\\sections\\images\\R11_architecture_diagram.PNG",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 42
+      },
+      "revId": "b41e336594217588a21d0a9347e5c09d9d556064",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "462f11e5_a40edb22",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-10-26T13:32:02Z",
+      "side": 1,
+      "message": "Requires new line before image tag",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 42
+      },
+      "revId": "b41e336594217588a21d0a9347e5c09d9d556064",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
