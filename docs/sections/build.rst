@@ -1,4 +1,4 @@
-	.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+Y	.. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 .. _build:
 
@@ -71,10 +71,6 @@ Below is a list of the repositories and their sub-modules, and the language they
 
 * dcaegen2.utils
 
- - onap-dcae-cbs-docker-client (Python)
- - onap-dcae-dcaepolicy-lib (Python)
- - python-discovery-client (Python)
- - python-dockering (Python)
  - scripts (bash)
 
 * dcaegen2.services.sdk (Java)

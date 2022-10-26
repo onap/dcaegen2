@@ -1,6 +1,5 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
-.. _runtime_configuration:
 
 Runtime Configuration
 =====================
@@ -10,12 +9,11 @@ This page will explain how runtime configuration works, and how to utilize it. H
 
 Architecture
 ------------
-The architecture below depicts the Slice MS as a part of DCAE.
-.. image:: ./slice_analysis_ms_architecture.jpg
+The architecture below depicts how runtime configuration works in the Slice MS as a part of DCAE.
+
+.. image:: ../../images/R11_architecture_diagram.png
 
 Slice Analysis MS provides runtime configuration feature since Kohn Version.
-
-Unlike the SON-Handler MS, which passes runtime configuration through Policy - Policy Handler - Cloudify Manager - Consul Cluster - CBS - SONHandler, the Slice Analysis MS provides a lighter and easier way to send runtime configurations in seconds.
 
 For the Slice Analysis MS, there is a CBS thread running that will continually fetch the latest policies from the XCAML PDP engine. So if you want to pass runtime configuration, you can format your configuration contents in the form of an XCAML policy, then push it into the XCAML PDP engine. The Slice Analysis MS will get updated within seconds.
 
@@ -28,7 +26,9 @@ Deployment
 - Enable "dcae-slice-analysis-ms" in oom /oom/kubernetes/dcaegen2-services/values.yaml.
 
      1. Enable dcae-slice-analysis-ms in values.yaml. When using the helm chart of OOM to pull up the whole onap environment, dcae-slice-analysis-ms will be automatically installed.
+
             .. code-block:: bash
+
                dcae-slice-analysis-ms:
                  enabled: true
                  logConfigMapNamePrefix: '{{ include "common.release" . }}-dcaegen2-services'
@@ -36,7 +36,9 @@ Deployment
 - Original params set in oom /oom/kubernetes/dcaegen2-services/components/dcae-slice-analysis-ms/values.yaml have to be modified.
 
      1. Uncomment the following lines. "duration" is the interval of a thread in policy sync container to retrieve latest policy from XCAML PDP engine. The unit of "duration" is seconds.
+
              .. code-block:: bash
+
                 dcaePolicySyncImage: onap/org.onap.dcaegen2.deployments.dcae-services-policy-sync:1.0.1
                 policies:
                   duration:
@@ -48,7 +50,8 @@ Deployment
 
 Workflow
 ~~~~~~~~
-.. image:: ./runtime_config_work_flow.jpg
+
+.. image:: ./runtime_config_work_flow1.jpg
 
 To realize the runtime configuration feature for SliceMS, similarly to SON-Handler, we add a "policy sync" container for Slice MS. There are 3 containers in Slice MS, "dcae-slice-analysis-ms", "dcae-slice-analysis-ms-filebeat" and "policy-sync".
 
@@ -66,11 +69,15 @@ Steps to Use Runtime Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. Create the policy type
     command
+
     .. code-block:: bash
+
        curl -k -v --user 'username:password' -X POST "https://policyApiIp:6969/policy/api/v1/policytypes" -H "Content-Type:application/json" -H "Accept: application/json" -d @policy_type.json
 
     request body: policy_type.json
+
     .. code-block:: bash
+
        {
           "tosca_definitions_version": "tosca_simple_yaml_1_1_0",
           "policy_types": {
@@ -102,11 +109,15 @@ Steps to Use Runtime Configuration
 
 2. Create the policy
     command: {versionNumber} here needs to match the "policies"-"version" in the request body "slicems_config_policy.json"
+
     .. code-block:: bash
+
        curl --silent -k -w %{http_code}  --user 'username:password' -X POST "https://policyApiIp:6969/policy/api/v1/policytypes/onap.policies.monitoring.docker.slicems.app/versions/{versionNumber}}/policies" -H "Accept: application/json" -H "Content-Type: application/json" -d @slicems_config_policy.json
 
     request body: slicems_config_policy.json
+
     .. code-block:: bash
+
         {
           "tosca_definitions_version": "tosca_simple_yaml_1_1_0",
           "topology_template": {
@@ -133,11 +144,15 @@ Steps to Use Runtime Configuration
 
 3. Deploy the policy
     command
+
     .. code-block:: bash
+
     curl -w %{http_code} --silent -k --user 'username:password' -X POST "https://policyPAPApi:6969/policy/pap/v1/pdps/policies" -H "Accept: application/json" -H "Content-Type: application/json" -d @push.json
 
     request body: push.json
+
     .. code-block:: bash
+
     {
       "policies": [
         {
@@ -148,6 +163,7 @@ Steps to Use Runtime Configuration
     }
 
 4. Verify in SliceMS that configurations received
+
 .. image:: ./example_slice_update_policy.png
 
 How to Develop Your Own Runtime Configuration

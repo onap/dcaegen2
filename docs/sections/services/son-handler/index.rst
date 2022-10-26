@@ -29,6 +29,5 @@ SON-Handler MS Installation Steps, Configurations, Troubleshooting Tips and Logg
 .. toctree::
     :maxdepth: 1
 
-    ./installation.rst
     ./installation-helm.rst
     ./son_handler_troubleshooting.rst

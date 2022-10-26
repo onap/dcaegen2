@@ -31,7 +31,6 @@ High Volume VES Collector overview and functions
     design
     repositories
     deployment
-    installation
     installation-helm
     run-time-configuration
     HV-VES Offered APIs <../../apis/ves-hv/index>
