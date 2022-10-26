@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8c9b6d1c_1abbb213",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-26T02:15:47Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e1f1d190_8298c3f1",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 248
+      },
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "55815a06_f4a41af8",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 3
@@ -39,6 +63,24 @@
       "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a207c7d2_45c7ed12",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-26T02:15:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55815a06_f4a41af8",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "5ec68cfd_f8b1f2d9",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-26T02:15:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a8bca7f_72a2a1c7",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "470cba09_b4d78056",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 3
@@ -73,6 +133,24 @@
       "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "973346b1_7150e71e",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-26T02:15:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "470cba09_b4d78056",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "acc2fe58_84134ef8",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-26T02:15:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c15bdca1_da4aac3c",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef47e4cf_ef2a427c",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 3
@@ -107,6 +203,24 @@
       "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9366abb2_78f1c1be",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-26T02:15:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef47e4cf_ef2a427c",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -127,6 +241,24 @@
     },
     {
       "key": {
+        "uuid": "3ab054e0_69c2c439",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-26T02:15:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffef3092_c1a142f3",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ecf99a4f_e1334cde",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 3
@@ -141,6 +273,24 @@
       "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b230f101_aefd40f4",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-26T02:15:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ecf99a4f_e1334cde",
+      "revId": "f91cb4af395d9969d117c248a2b32c7b5b441573",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
