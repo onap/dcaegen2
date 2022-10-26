@@ -1,4 +1,4 @@
-	.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 .. _architecture:
 
@@ -8,12 +8,12 @@ Architecture
 
 DCAE project provides intelligence for ONAP to support automation (via open-loop and CL) by performing network data collections, analytics & correlation and trigger actionable rootcause events.
 
-Prior to Jakarta release, DCAE architecture comprised of DCAE Platform and DCAE Service components; DCAE Platform supported the functions to deploy, host and perform LCM applications of Service components. With Jakarta release, these DCAE Platform components centered around Cloudify has been removed and all Microservice orchestration and lifecycle management are supported primarily through Helm/Kubernetes.
+Prior to Jakarta release, DCAE architecture comprised of DCAE Platform and DCAE Service components; DCAE Platform supported the functions to deploy, host and perform LCM applications of Service components. With Jakarta release, these DCAE Platform components centered around Cloudify have been removed and all Microservice orchestration and lifecycle management are supported through Helm/Kubernetes.
 
 The DCAE services components includes all the microservices - collectors, analytics and event processor which supports active data-flow  and processing as required by ONAP usecases. These Service components are the functional entities that realize the various 
 data collection needs, event processors for data standardization, analytics that assess collected data, and various auxiliary microservices that assist automated closed loop flows.
 
-The architecture of DCAE with Helm transformation is more flexible, microsservice oriented and supports model based component design and deployment through DCAE-MOD. Also with migration to helm, DCAE microservice deployments can be handled independently, dependencies are captured under its helm charts.
+The architecture of DCAE with Helm transformation is more flexible, microservice oriented and supports model based component design and deployment through DCAE-MOD. Also with migration to helm, DCAE microservice deployments can be handled independently, dependencies are captured under its helm charts.
 
 Under the Cloudify/DCAE Platform architecture, DCAE Service components relied on Consul's distributed K-V to manage and store component configuration. With Platform simplification under DCAE Transformation initiative for Kohn, Consul dependency has been removed across all DCAE service components. All Microservice configuration are currently resolved through files mounted via Configmap created part of dcae-services helm chart deployment. 
 

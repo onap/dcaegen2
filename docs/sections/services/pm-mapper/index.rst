@@ -13,7 +13,6 @@
    ./architecture.rst
    ./delivery.rst
    ./logging.rst
-   ./installation.rst
    ./installation-helm.rst
    ./configuration.rst
    ./troubleshooting.rst

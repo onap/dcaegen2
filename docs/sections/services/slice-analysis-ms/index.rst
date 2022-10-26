@@ -47,7 +47,6 @@ Slice Analysis MS Installation Steps
 .. toctree::
     :maxdepth: 1
 
-    ./installation.rst
     ./installation-helm.rst
 
 

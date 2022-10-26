@@ -23,7 +23,6 @@ Kpi Computation MS Installation Steps
 .. toctree::
     :maxdepth: 1
 
-    ./installation.rst
     ./installation-helm.rst
 
 Kpi Computation MS Configurations
