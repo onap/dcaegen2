@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9399a9_33adf2c7",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-10-26T02:02:25Z",
+      "side": 1,
+      "message": "I\u0027m trying to figure out why this page, runtime configuration.rst, didn\u0027t bind correctly on readthedocs. Not sure whether it\u0027s because this image importing error.",
+      "revId": "b866ef240276cd9e38f24d032c7bbf19e53ae63d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
