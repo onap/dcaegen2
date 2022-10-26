@@ -1,6 +1,5 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
-.. _runtime_configuration:
 
 Runtime Configuration
 =====================
@@ -11,7 +10,7 @@ This page will explain how runtime configuration works, and how to utilize it. H
 Architecture
 ------------
 The architecture below depicts the Slice MS as a part of DCAE.
-.. image:: ./slice_analysis_ms_architecture.jpg
+.. image:: ./slice_architecture.jpg
 
 Slice Analysis MS provides runtime configuration feature since Kohn Version.
 
