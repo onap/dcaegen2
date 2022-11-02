@@ -1,0 +1,8 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Thomas Kulik <thomas.kulik@telekom.de>
+Code-Review+2: Tony Hansen <tony@att.com>
+Submitted-by: Tony Hansen <tony@att.com>
+Submitted-at: Wed, 02 Nov 2022 18:57:09 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/dcaegen2/+/131940
+Project: dcaegen2
+Branch: refs/heads/master
