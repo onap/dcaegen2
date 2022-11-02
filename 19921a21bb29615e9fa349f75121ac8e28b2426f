@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e32db9f5_ea28be93",
+        "filename": "docs/conf.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3091
+      },
+      "writtenOn": "2022-11-02T15:37:57Z",
+      "side": 1,
+      "message": "must be \"onap\" !!",
+      "range": {
+        "startLine": 1,
+        "startChar": 11,
+        "endLine": 1,
+        "endChar": 19
+      },
+      "revId": "19921a21bb29615e9fa349f75121ac8e28b2426f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
