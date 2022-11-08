@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a1110fc_1c19615f",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_config_work_flow2.jpg",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-11-08T03:22:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7a9fae8_2170ddd2",
+      "revId": "b41e336594217588a21d0a9347e5c09d9d556064",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4470c364_5f6079ea",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 2
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "ac7489e4_28c870d0",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-11-08T03:22:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4470c364_5f6079ea",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 42
+      },
+      "revId": "b41e336594217588a21d0a9347e5c09d9d556064",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "462f11e5_a40edb22",
         "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
         "patchSetId": 2
@@ -62,6 +104,30 @@
       "revId": "b41e336594217588a21d0a9347e5c09d9d556064",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25440312_a75ddfe5",
+        "filename": "docs/sections/services/slice-analysis-ms/runtime_configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8040
+      },
+      "writtenOn": "2022-11-08T03:22:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "462f11e5_a40edb22",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 42
+      },
+      "revId": "b41e336594217588a21d0a9347e5c09d9d556064",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
