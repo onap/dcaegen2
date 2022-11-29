@@ -87,7 +87,7 @@ Release Data
 | **Release designation**              | 11.0.0 Kohn                                            |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
-| **Release date**                     | 2022-11-10                                             |
+| **Release date**                     | 2022-12-08                                             |
 |                                      |                                                        |
 +--------------------------------------+--------------------------------------------------------+
 
@@ -162,12 +162,12 @@ Software Deliverables
    "dcaegen2/services", "components/datalake-handler", "onap/org.onap.dcaegen2.services.datalake.exposure.service:1.1.1"
    "dcaegen2/services", "components/pm-subscription-handler", "onap/org.onap.dcaegen2.services.pmsh:2.2.2"
    "dcaegen2/services", "components/slice-analysis-ms", "onap/org.onap.dcaegen2.services.components.slice-analysis-ms:1.1.5"
-   "dcaegen2/services", "components/kpi-ms", "onap/org.onap.dcaegen2.services.components.kpi-ms:1.0.10"
-   "dcaegen2/services/heartbeat", "", "onap/org.onap.dcaegen2.services.heartbeat:2.4.1"
+   "dcaegen2/services", "components/kpi-ms", "onap/org.onap.dcaegen2.services.components.kpi-ms:1.0.11"
+   "dcaegen2/services/heartbeat", "", "onap/org.onap.dcaegen2.services.heartbeat:2.5.0"
    "dcaegen2/services/mapper", "", "onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:1.4.3"
    "dcaegen2/services/pm-mapper", "", "onap/org.onap.dcaegen2.services.pm-mapper:1.9.0"
    "dcaegen2/services/prh", "", "onap/org.onap.dcaegen2.services.prh.prh-app-server:1.8.1"
-   "dcaegen2/services/son-handler", "", "onap/org.onap.dcaegen2.services.son-handler:2.1.10"
+   "dcaegen2/services/son-handler", "", "onap/org.onap.dcaegen2.services.son-handler:2.1.11"
    "dcaegen2/platform", "mod2/helm-generator", "Helm Generator 1.0.4 (jar)"
    "dcaegen2/services/sdk", "", "DCAE SDK 1.8.10 (jar)"
 
