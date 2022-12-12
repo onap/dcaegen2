@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eb268fd_29cd53e3",
+        "filename": "docs/sections/services/ves-hv/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-12-12T16:45:23Z",
+      "side": 1,
+      "message": "Either \n\"put on\" \u003d\u003e \"put it on\"\nor\n\"put on\" \u003d\u003e \"put the data on\"",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eccde540_543c9a88",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-12-12T16:45:23Z",
+      "side": 1,
+      "message": "\"by argument\" \u003d\u003e \"by an argument\"",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "515795e0_47f55e49",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-12-12T16:45:23Z",
+      "side": 1,
+      "message": "\"if corresponding\" \u003d\u003e \"if the corresponding\"",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d6232c6_af62d78e",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-12-12T16:45:23Z",
+      "side": 1,
+      "message": "\"after command\" \u003d\u003e \"after the command\"",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4de2a53d_b9bdcc13",
+        "filename": "docs/sections/services/ves-hv/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-12-12T16:45:23Z",
+      "side": 1,
+      "message": "Hmmm, we don\u0027t use Cloudify anymore.",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cfc2f94f_ee911fe6",
+        "filename": "docs/sections/services/ves-hv/resources/dynamic-configuration.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-12-12T16:45:23Z",
+      "side": 1,
+      "message": "missing a newline at the end of the file",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
