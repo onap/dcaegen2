@@ -162,7 +162,8 @@ To resolve this issue, you can either wait for that Kafka service to be availabl
     | org.onap.dcae.collectors.veshv.impl.socket.NettyTcpServer | INFO	| Connection has been closed
 
 
-The above log is printed when the message payload size is too big. **HV-VES** does not handle messages that exceed maximum payload size specified under streams_publishes configuration (see :ref:`dmaap-connection-objects`)
+The above log is printed when the message payload size is too big.
+**HV-VES** does not handle messages that exceed maximum payload size specified under streams_publishes configuration (see :ref:`dmaap-connection-objects`)
 
 ====
 
