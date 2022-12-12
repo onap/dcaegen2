@@ -17,7 +17,7 @@ number of NFs. The driving use-case is described and published within presentati
 The goal of the collector is to support high volume data. It uses plain TCP connections.
 Connections are stream-based (as opposed to request-based) and long running.
 Payload is binary-encoded (currently using Google Protocol Buffers).
-HV-VES uses direct connection to DMaaP's Kafka.
+HV-VES uses direct connection to Kafka.
 All these decisions were made in order to support high-volume data with minimal latency.
 
 

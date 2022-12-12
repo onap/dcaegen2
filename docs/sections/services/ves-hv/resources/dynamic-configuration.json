@@ -1,42 +1,48 @@
 {
-  "logLevel": "INFO",
-  "server.listenPort": 6061,
-  "server.idleTimeoutSec": 60,
-  "cbs.requestIntervalSec": 5,
-  "security.sslDisable": false,
-  "security.keys.keyStoreFile": "/etc/ves-hv/ssl/cert.jks",
-  "security.keys.keyStorePasswordFile": "/etc/ves-hv/ssl/jks.pass",
-  "security.keys.trustStoreFile": "/etc/ves-hv/ssl/trust.jks",
-  "security.keys.trustStorePasswordFile": "/etc/ves-hv/ssl/trust.pass",
-  "streams_publishes": {
-    "perf3gpp": {
-      "type": "kafka",
-      "kafka_info": {
-        "bootstrap_servers": "message-router-kafka:9092",
-        "topic_name": "HV_VES_PERF3GPP"
+   "logLevel":"INFO",
+   "server.listenPort":6061,
+   "server.idleTimeoutSec":60,
+   "cbs.requestIntervalSec":5,
+   "security.sslDisable":false,
+   "security.keys.keyStoreFile":"/etc/ves-hv/ssl/cert.jks",
+   "security.keys.keyStorePasswordFile":"/etc/ves-hv/ssl/jks.pass",
+   "security.keys.trustStoreFile":"/etc/ves-hv/ssl/trust.jks",
+   "security.keys.trustStorePasswordFile":"/etc/ves-hv/ssl/trust.pass",
+   "streams_publishes":{
+      "ves-3gpp-fault-supervision":{
+         "type":"kafka",
+         "kafka_info":{
+            "bootstrap_servers":"kafka:9092",
+            "topic_name":"SEC_3GPP_FAULTSUPERVISION_OUTPUT"
+         }
+      },
+      "ves-3gpp-provisioning":{
+         "type":"kafka",
+         "kafka_info":{
+            "bootstrap_servers":"kafka:9092",
+            "topic_name":"SEC_3GPP_PROVISIONING_OUTPUT"
+         }
+      },
+      "ves-3gpp-heartbeat":{
+         "type":"kafka",
+         "kafka_info":{
+            "bootstrap_servers":"kafka:9092",
+            "topic_name":"SEC_3GPP_HEARTBEAT_OUTPUT"
+         }
+      },
+      "ves-3gpp-performance-assurance":{
+         "type":"kafka",
+         "kafka_info":{
+            "bootstrap_servers":"kafka:9092",
+            "topic_name":"SEC_3GPP_PERFORMANCEASSURANCE_OUTPUT"
+         }
+      },
+      "perf3gpp":{
+         "type":"kafka",
+         "kafka_info":{
+            "bootstrap_servers":"kafka:9092",
+            "topic_name":"HV_VES_PERF3GPP"
+         }
       }
-    },
-    "heartbeat": {
-      "type": "kafka",
-      "kafka_info": {
-        "bootstrap_servers": "message-router-kafka:9092",
-        "topic_name": "HV_VES_HEARTBEAT"
-      }
-    },
-    "ves-3gpp-fault-supervision": {
-      "type": "kafka",
-      "kafka_info": {
-        "bootstrap_servers": "message-router-kafka:9092",
-        "topic_name": "SEC_3GPP_FAULTSUPERVISION_OUTPUT"
-      }
-    },
-    "ves-3gpp-heartbeat": {
-      "type": "kafka",
-      "kafka_info": {
-        "bootstrap_servers": "message-router-kafka:9092",
-        "topic_name": "SEC_3GPP_HEARTBEAT_OUTPUT"
-      }
-    }
-  }
+   }
 }
-
