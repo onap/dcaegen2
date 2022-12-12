@@ -13,7 +13,7 @@ Setting insecure mode for testing
 ---------------------------------
 
 HV-VES application is configured by default to use TLS/SSL encryption on TCP connection. 
-However it is posible to turn off TLS/SSL authorization by overriding Cloudify blueprint inputs.
+However it is possible to turn off TLS/SSL authorization by overriding Cloudify blueprint inputs.
 
 Accessing bootstrap container with Kubernetes command line tool
 ---------------------------------------------------------------

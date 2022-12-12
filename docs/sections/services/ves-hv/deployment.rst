@@ -8,7 +8,11 @@ Deployment
 
 To run HV-VES Collector container you need to specify required command line options and environment variables.
 
-Command line parameters can be specified either by using long form (--long-form) or short form (-s) followed by argument if needed (see `Arg` column in table below). These parameters can be omitted if corresponding environment variables are set. These variables are named after command line option name rewritten using `UPPER_SNAKE_CASE` and prepended with `VESHV_` prefix, for example `VESHV_CONFIGURATION_FILE`.
+Command line parameters can be specified either by using long form (--long-form) or short form (-s)
+followed by argument if needed (see `Arg` column in table below).
+These parameters can be omitted if corresponding environment variables are set.
+These variables are named after command line option name rewritten using `UPPER_SNAKE_CASE` and prepended
+with `VESHV_` prefix, for example `VESHV_CONFIGURATION_FILE`.
 
 Command line options have precedence over environment variables in cases when both are present.
 
@@ -21,7 +25,8 @@ Currently HV-VES requires single command line parameter which points to base con
 
     configuration-file ; c ; yes ; VESHV_CONFIGURATION_FILE  ; Path to JSON file containing HV-VES configuration
 
-Environment variables that are required by HV-VES are used by collector for provisioning of run-time configuration and are provided by DCAE platform.
+Environment variables that are required by HV-VES are used by collector for provisioning of run-time configuration
+and are provided by DCAE platform.
 
 .. csv-table::
     :widths: auto
@@ -32,7 +37,8 @@ Environment variables that are required by HV-VES are used by collector for prov
     CONFIG_BINDING_SERVICE ; Hostname under which Config Binding Service is available
     HOSTNAME               ; Configuration key of HV-VES as seen by CBS, usually *dcae-hv-ves-collector*
 
-There is also optional command line parameter which configures container-internal port for Healthcheck Server API (see :ref:`healthcheck_and_monitoring`).
+There is also optional command line parameter which configures container-internal port
+for Healthcheck Server API (see :ref:`healthcheck_and_monitoring`).
 
 .. csv-table::
     :widths: auto
@@ -48,9 +54,11 @@ Configuration file
 
 File must provide base configuration for HV-VES Collector in JSON format.
 
-Some entries in configuration can also be obtained from Config Binding Service (see :ref:`run_time_configuration`). **Every entry defined in configuration file will be OVERRIDEN if it is also present in run-time configuration.**
+Some entries in configuration can also be obtained from Config Binding Service (see :ref:`run_time_configuration`).
+**Every entry defined in configuration file will be OVERRIDEN if it is also present in run-time configuration.**
 
-Following JSON shows every possible configuration option. Default file shipped with HV-VES container can be found in the collector's repository (see :ref:`repositories`).
+Following JSON shows every possible configuration option. Default file shipped with HV-VES container
+can be found in the collector's repository (see :ref:`repositories`).
 
 .. literalinclude:: resources/base-configuration.json
     :language: json
@@ -92,7 +100,8 @@ Tables show restrictions on fields in file configuration and short description.
     security.keys.trustStoreFile          ; String     ; Path to file with trusted certificates bundle used in HV-VES incoming connections
     security.keys.trustStorePasswordFile  ; String     ; Trust store password file used in HV-VES incoming connections
 
-All security entries are mandatory with `security.sslDisable` set to `false`. Otherwise only `security.sslDisable` needs to be specified. If `security.sslDisable` flag is missing, then it is  interpreted as it was set to `false`.
+All security entries are mandatory with `security.sslDisable` set to `false`.
+Otherwise only `security.sslDisable` needs to be specified. If `security.sslDisable` flag is missing, then it is  interpreted as it was set to `false`.
 
 .. csv-table::
     :widths: auto
@@ -110,7 +119,8 @@ Horizontal Scaling
 Kubernetes command line tool (`kubectl`) is recommended for manual horizontal scaling of HV-VES Collector.
 
 To scale HV-VES deployment you need to determine its name and namespace in which it is deployed.
-For default OOM deployment, HV-VES full deployment name is `deployment/dep-dcae-hv-ves-collector` and it is installed under `onap` namespace.
+For default OOM deployment, HV-VES full deployment name is `deployment/dep-dcae-hv-ves-collector`
+and it is installed under `onap` namespace.
 
 1. If the namespace is unknown, execute the following command to determine possible namespaces.
 

@@ -7,7 +7,13 @@ Run-Time configuration
 ======================
 
 HV-VES dynamic configuration is primarily meant to provide DMaaP Connection Objects (see :ref:`dmaap-connection-objects`).
-These objects contain information necessary to route received VES Events to correct Kafka topic. This metadata will be later referred to as Routing definition.
+
+.. note:: Kafka config info.
+    In the case of HV-VES, this configuration method is purely used as a generic reference.
+    The underlying kafka connection config is managed as part of the dcea helm configuration.
+
+These objects contain information necessary to route received VES Events to correct Kafka topic.
+This metadata will be later referred to as Routing definition.
 
 Collector uses DCAE-SDK internally, to fetch configuration from Config Binding Service.
 
