@@ -101,6 +101,23 @@
       "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bc112dc_61490c46",
+        "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-12-12T16:47:09Z",
+      "side": 1,
+      "message": "The newline is missing at the end of the file",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
