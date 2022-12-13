@@ -195,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "2ff567f4_dd74381d",
+        "filename": "docs/sections/services/ves-hv/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-12-13T15:52:24Z",
+      "side": 1,
+      "message": "Good question. Vijay, care to comment?",
+      "parentUuid": "f744478d_5176650b",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cfc2f94f_ee911fe6",
         "filename": "docs/sections/services/ves-hv/resources/dynamic-configuration.json",
         "patchSetId": 1
