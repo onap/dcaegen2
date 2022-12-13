@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "071c68be_95238bd7",
+        "filename": "docs/sections/services/ves-hv/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2022-12-13T08:30:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6eb268fd_29cd53e3",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eccde540_543c9a88",
         "filename": "docs/sections/services/ves-hv/deployment.rst",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70d39583_94794673",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2022-12-13T08:30:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eccde540_543c9a88",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "6ab9a8ac_84590577",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2022-12-13T08:30:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "515795e0_47f55e49",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6d6232c6_af62d78e",
         "filename": "docs/sections/services/ves-hv/deployment.rst",
         "patchSetId": 1
@@ -67,6 +121,24 @@
       "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3617cdbe_caf55469",
+        "filename": "docs/sections/services/ves-hv/deployment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2022-12-13T08:30:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d6232c6_af62d78e",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "f744478d_5176650b",
+        "filename": "docs/sections/services/ves-hv/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2022-12-13T08:30:39Z",
+      "side": 1,
+      "message": "Will do but this raises another question of do we need to remove all refs to Cloudify?",
+      "parentUuid": "d519819c_4ebf2e78",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cfc2f94f_ee911fe6",
         "filename": "docs/sections/services/ves-hv/resources/dynamic-configuration.json",
         "patchSetId": 1
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "777dcb2d_25875ec0",
+        "filename": "docs/sections/services/ves-hv/resources/dynamic-configuration.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2022-12-13T08:30:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfc2f94f_ee911fe6",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0bc112dc_61490c46",
         "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
         "patchSetId": 1
@@ -136,6 +244,24 @@
       "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09c1a301_1186f816",
+        "filename": "docs/sections/services/ves-hv/run-time-configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4405
+      },
+      "writtenOn": "2022-12-13T08:30:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0bc112dc_61490c46",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
