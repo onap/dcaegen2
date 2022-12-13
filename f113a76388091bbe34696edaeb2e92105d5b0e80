@@ -231,6 +231,24 @@
     },
     {
       "key": {
+        "uuid": "1ea2b40b_73170122",
+        "filename": "docs/sections/services/ves-hv/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-12-13T16:03:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b4515d68_d3afea38",
+      "revId": "f113a76388091bbe34696edaeb2e92105d5b0e80",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cfc2f94f_ee911fe6",
         "filename": "docs/sections/services/ves-hv/resources/dynamic-configuration.json",
         "patchSetId": 1
