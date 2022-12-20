@@ -7,7 +7,7 @@ VES OpenAPI Manager architecture
 ================================
 Functionalities of VES OpenAPI Manager require communication with other ONAP components. Because of that, SDC
 Distribution Client has been used as a library to achieve such a communication. There are two components required by
-application to work: SDC BE and Message Router. SDC Distribution Client provides communication with both of them when
+application to work: SDC BE and Kafka. SDC Distribution Client provides communication with both of them when
 it's properly configured (for application configuration instruction refer to: :ref:`ves-openapi-manager-deployment` ).
 
 .. image:: resources/architecture.png
