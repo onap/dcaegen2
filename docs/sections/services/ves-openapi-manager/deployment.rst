@@ -9,7 +9,7 @@ VES OpenAPI Manager is a simple Java application which can be started by using o
 prerequisites to work correctly:
 
 1) File with OpenAPI schemas mappings.
-2) Access to two ONAP services: SDC BE and Message Router.
+2) Access to two ONAP services: SDC BE and Kafka.
 
 These prerequisites are met by default when using Helm charts created for VES OpenAPI Manager in OOM. It's described in
 more detail in *Helm chart* section.
@@ -58,7 +58,7 @@ configured to deploy application with all prerequisites met. It achieves that by
 
 1) Mounting ConfigMap with mapping file under */app/schema-map.json* path.
 2) Proper setting environment variables to values described in section *Environment variables*. Mapping file path is set to point to mounted file and SDC BE URL is set to internal port available only from Kubernetes cluster.
-3) Setting Readiness check. It waits for other ONAP components to start: SDC BE, Message Router. VES OpenAPI Manager Pod will not start until they are not ready.
+3) Setting Readiness check. It waits for other ONAP components to start: SDC BE, Kafka. VES OpenAPI Manager Pod will not start until they are not ready.
 
 Local deployment
 ----------------
