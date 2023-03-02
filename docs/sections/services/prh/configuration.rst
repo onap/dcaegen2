@@ -66,4 +66,4 @@ PRH fetches configuration directly from CBS service in the following JSON format
     }
   }
 
-The configuration is created from PRH Cloudify blueprint by specifying **application_config** node during ONAP OOM/Kubernetes deployment.
+The configuration is created from PRH helm charts by specifying **applicationConfig**  during ONAP OOM/Kubernetes deployment.

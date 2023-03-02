@@ -7,7 +7,7 @@ High-level architecture of HV-VES
 =================================
 
 HV-VES Collector is a part of DCAEGEN2. Its goal is to collect data from xNF (PNF/VNF) and put the data on a given Kafka topic.
-High Volume Collector is deployed with DCAEGEN2 via OOM Helm charts and Cloudify blueprints.
+High Volume Collector is deployed with DCAEGEN2 via OOM Helm charts.
 
 Input messages come from TCP interface and Wire Transfer Protocol. Each frame includes Google Protocol Buffers (GPB) encoded payload.
 Based on information provided in CommonEventHeader, domain messages are validated and published to specific Kafka topic.

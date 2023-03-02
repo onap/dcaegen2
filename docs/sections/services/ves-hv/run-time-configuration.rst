@@ -48,7 +48,4 @@ For more information, see :ref:`supported_domains`.
 Providing configuration during OOM deployment
 ---------------------------------------------
 
-The configuration is created from HV-VES Cloudify blueprint by specifying **application_config** node during ONAP OOM/Kubernetes deployment. Example of the node specification:
-
-.. literalinclude:: resources/blueprint-snippet.yaml
-    :language: yaml
+The configuration is created from HV-VES Helm charts defined under **applicationConfig**  during ONAP OOM/Kubernetes deployment. 

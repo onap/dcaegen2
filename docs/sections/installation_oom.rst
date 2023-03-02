@@ -55,7 +55,6 @@ The dcaegen2-services chart has the following sub-charts:
 * ``dcae-prh``: deploys the DCAE PNF Registration Handler service.
 * ``dcae-tcagen2``: deploys the DCAE TCA analytics service.
 * ``dcae-ves-collector``: deploys the DCAE VES collector service.
-* ``dcae-bbs-eventprocessor-ms``: deploys the DCAE BBS Eventprocessor service.
 * ``dcae-datafile-collector``: deploys the DCAE Datafile collector service.
 * ``dcae-datalake-admin-ui``: deploys the Datalake Admin UI service.
 * ``dcae-datalake-des``: deploys the Datalake Data Extraction service.
@@ -78,20 +77,6 @@ The dcaegen2-services sub-charts depend on a set of common templates, found unde
 Information about using the common templates to deploy a microservice can be
 found in :doc:`Using Helm to deploy DCAE Microservices <./dcaeservice_helm_template>`.
 
-The dcaegen2 chart has the following sub-charts:
-
-* ``dcae-bootstrap``: deploys the DCAE bootstrap service that performs some DCAE initialization and deploys additional DCAE components.
-* ``dcae-cloudify-manager``: deploys the DCAE Cloudify Manager instance.
-* ``dcae-config-binding-service``: deploys the DCAE config binding service.
-* ``dcae-deployment-handler``: deploys the DCAE deployment handler service.
-* ``dcae-healthcheck``: deploys the DCAE healthcheck service that provides an API to check the health of all DCAE components.
-* ``dcae-policy-handler``: deploys the DCAE policy handler service.
-* ``dcae-redis``: deploys the DCAE Redis cluster.
-* ``dcae-dashboard``: deploys the DCAE Dashboard for managing DCAE microservices deployments
-* ``dcae-servicechange-handler``: deploys the DCAE service change handler service.
-* ``dcae-inventory-api``: deploys the DCAE inventory API service.
-
-These components are by default disabled under ONAP for Jakarta release and charts will be removed next release
 
 DCAE Deployment
 ---------------
@@ -259,13 +244,10 @@ uninstall just DCAE, by having the command undeploy the `top_level_release_name`
 Helm sub-release.
 
 Helm will undeploy only the components that were originally deployed using
-Helm charts.  Components deployed by Cloudify Manager are not deleted by
-the Helm operations.
-
-When uninstalling all of ONAP, it is sufficient to delete the namespace
+Helm charts. When uninstalling all of ONAP, it is sufficient to delete the namespace
 used for the deployment (typically ``onap``) after running the undeploy
 operation.  Deleting the namespace will get rid of any remaining resources
-in the namespace, including the components deployed by Cloudify Manager.
+in the namespace.
 
 
 To undeploy the DCAE services deployed via Helm (the hv-ves-collector, ves-collector, tcagen2,

@@ -56,7 +56,6 @@ HV-VES Collector forwards incoming messages to a particular DMaaP Kafka topic ba
 
 In both cases raw bytes might be extracted using ``org.apache.kafka.common.serialization.ByteArrayDeserializer``. The resulting bytes might be further passed to ``parseFrom`` methods included in classes generated from GPB definitions. WTP is not used here - it is only used in communication between PNF/VNF and the collector.
 
-By default, **HV-VES** will use routing defined in **k8s-hv-ves.yaml-template** in **dcaegen2/platform/blueprints project** when deployed using Cloudify.
 In case of Helm deployment routing is defined in values.yaml file in HV-VES Helm Chart.
 
 
