@@ -1,6 +1,8 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 .. Copyright 2022 Nokia. All rights reserved.
+.. Copyright (c) 2023 AT&T Intellectual Property. All rights reserved.
+
 
 Configuration and Performance
 =============================
@@ -15,33 +17,6 @@ In order to parallel processing, new configuration env has been introduced:
 - THREADS_MULTIPLIER (optional, default value: 1) - allows to specify multiplier to calculate the amount of threads.
 
 - PROCESSING_THREADS_COUNT (optional, default value: number of threads available to JVM) - allows to specify number of threads that will be used for files processing.
-
-
-Envs should be specified in section "envs:" in blueprint. Example part of blueprint configuration:
-
-::
-
-        ...
-        pm-mapper:
-          type: dcae.nodes.ContainerizedServiceComponentUsingDmaap
-          interfaces:
-            cloudify.interfaces.lifecycle:
-              create:
-                inputs:
-                  ports:
-                    - '8443:0'
-                    - '8081:0'
-                  envs:
-                    PROCESSING_LIMIT_RATE: "1"
-                    THREADS_MULTIPLIER: "2"
-                    PROCESSING_THREADS_COUNT: "3"
-          relationships:
-            - type: dcaegen2.relationships.subscribe_to_files
-              target: pm-feed
-            - type: dcaegen2.relationships.publish_events
-              target: pm-topic
-        ...
-
 
 .. _pm_mapper_disable_tls:
 
