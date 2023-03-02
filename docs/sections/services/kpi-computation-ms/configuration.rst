@@ -4,7 +4,7 @@
 Configuration
 =============
 
-KPI Computation MS expects to be able to fetch configuration directly from consul service in following JSON format:
+KPI Computation MS expects to be able to fetch configuration in following JSON format:
 
 .. code-block:: json
     {
@@ -39,4 +39,5 @@ KPI Computation MS expects to be able to fetch configuration directly from consu
       "dmaap.server": ["message-router"]
     }
 
-During ONAP OOM/Kubernetes deployment this configuration is created from KPI Computation MS Cloudify blueprint.
+During ONAP OOM/Kubernetes deployment this configuration is created from Helm chart based on properties defined under **applicationConfig** section.
+

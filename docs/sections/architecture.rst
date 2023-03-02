@@ -15,7 +15,7 @@ data collection needs, event processors for data standardization, analytics that
 
 The architecture of DCAE with Helm transformation is more flexible, microservice oriented and supports model based component design and deployment through DCAE-MOD. Also with migration to helm, DCAE microservice deployments can be handled independently, dependencies are captured under its helm charts.
 
-Under the Cloudify/DCAE Platform architecture, DCAE Service components relied on Consul's distributed K-V to manage and store component configuration. With Platform simplification under DCAE Transformation initiative for Kohn, Consul dependency has been removed across all DCAE service components. All Microservice configuration are currently resolved through files mounted via Configmap created part of dcae-services helm chart deployment. 
+All Microservice configuration are currently resolved through files mounted via Configmap created part of dcae-services helm chart deployment. 
 
 
 DCAE Components
@@ -41,7 +41,6 @@ The following lists the components included in ONAP DCAE.  All DCAE components a
         - PNF Registration Handler
         - VES Mapper Service
         - PM-Mapper Service
-        - BBS-EventProcessor Service
         - PM Subcription Handler
         - DataLake Handlers (DL-Admin, DL-Feeder, DES)
     - Misc Services
@@ -54,7 +53,7 @@ The figure below shows the DCAE architecture and how the components work with ea
   The following diagram has been created on https://app.diagrams.net/. There is an editable version of the diagram
   in repository under path docs/sections/images/architecture_diagram. Import this file to mentioned page to edit diagram.
 
-.. image:: images/R11_architecture_diagram.png
+.. image:: images/R12_architecture_diagram.png
  
 
 Deployment Scenarios

@@ -213,7 +213,6 @@ They can be changed by specifying ``security.keys.trustStore`` or ``security.key
 
 For testing purposes there is possibility to use plain TCP protocol. In order to do this navigate with your browser to consul-ui service and than pick KEY/VALUE tab. Select dcae-hv-ves-collector and change ``security.sslDisable`` to true. Update of configuration should let start TCP server without SSL/TLS configured.
 
-In order to disable TLS/SSL by overriding Cloudify blueprint inputs, see :ref:`running_insecure`.
 
 ====
 
