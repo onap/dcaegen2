@@ -51,7 +51,7 @@ PRH identity and certificate data
 | It's the DCAEGEN2 responsibility to generate certificate for dcae identity and provide it to the collector.
 |
 | PRH by default expects that the volume ``tls-info`` is being mounted under path ``/opt/app/prh/etc/cert``.
-| It's the component/collector responsibility to provide necessary inputs in Cloudify blueprint to get the volume mounted.
+| It's the component/collector responsibility to provide necessary inputs in Helm charts to get the volume mounted.
 | See :doc:`../../tls_enablement` for detailed information.
 |
 | PRH is using four files from ``tls-info`` DCAE volume (``cert.jks, jks.pass, trust.jks, trust.pass``).
