@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41d2cef4_4bf13f9d",
+        "filename": "docs/sections/tls_enablement.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-04-13T22:05:48Z",
+      "side": 1,
+      "message": "The k8splugin related notes can be removed to keep it generic",
+      "range": {
+        "startLine": 19,
+        "startChar": 235,
+        "endLine": 21,
+        "endChar": 181
+      },
+      "revId": "787dba60468761c79b66da83a4d57954c8a8fe24",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9db4e40d_a3f7a34a",
+        "filename": "docs/sections/tls_enablement.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-04-13T22:05:48Z",
+      "side": 1,
+      "message": "similar comment here - this can be either removed or info kept generic to reflect current supported config.",
+      "range": {
+        "startLine": 59,
+        "startChar": 3,
+        "endLine": 119,
+        "endChar": 0
+      },
+      "revId": "787dba60468761c79b66da83a4d57954c8a8fe24",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
