@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "581530f7_be83b760",
+        "filename": "docs/sections/tls_enablement.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 511
+      },
+      "writtenOn": "2023-04-17T14:31:03Z",
+      "side": 1,
+      "message": "I\u0027ve marked this entire section as obsolete.  It doesn\u0027t make sense to try to make it generic, since it\u0027s specifically about Cloudify deployments.\n\nI would have removed this section entirely (it should have been removed several releases ago), but the section below about Helm deployment looks incomplete to me.  (For instance, it doesn\u0027t say anything about the contents of the certificate directory.)   Unfortunately, I don\u0027t know enough about how the external certificate process works to be able to create good documentation for the Helm deployment.   We need the external TLS developers to make these changes.\n\nThe alternative is to remove this section completely and just hope that the section on Helm deployment is sufficient.",
+      "parentUuid": "41d2cef4_4bf13f9d",
+      "range": {
+        "startLine": 19,
+        "startChar": 235,
+        "endLine": 21,
+        "endChar": 181
+      },
+      "revId": "787dba60468761c79b66da83a4d57954c8a8fe24",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9db4e40d_a3f7a34a",
         "filename": "docs/sections/tls_enablement.rst",
         "patchSetId": 2
