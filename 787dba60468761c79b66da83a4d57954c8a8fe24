@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "eecd0792_4327a586",
+        "filename": "docs/sections/tls_enablement.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-04-17T16:43:08Z",
+      "side": 1,
+      "message": "Suggest removing the cloudify sections as well - otherwise it would be confusing for anyone new  reading these doc.\n\nReg contents of cert generated or for addition info - you can include reference to this wiki page - https://wiki.onap.org/display/DW/DCAE+CertService+integration",
+      "parentUuid": "581530f7_be83b760",
+      "range": {
+        "startLine": 19,
+        "startChar": 235,
+        "endLine": 21,
+        "endChar": 181
+      },
+      "revId": "787dba60468761c79b66da83a4d57954c8a8fe24",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9db4e40d_a3f7a34a",
         "filename": "docs/sections/tls_enablement.rst",
         "patchSetId": 2
