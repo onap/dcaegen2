@@ -76,7 +76,7 @@ The PRH microservice can be deployed using helm charts in the oom repository.
 
 
 Deployment steps
-~~~~~~~~~~~~~~~~
+================
 
 - Default app config values can be updated in oom/kubernetes/dcaegen2-services/components/dcae-prh/values.yaml.
 
@@ -101,7 +101,7 @@ Deployment steps
     helm uninstall dev-dcae-prh
 
 Application Configurations
---------------------------
+==========================
 
 Supported configuration modifiable in HELM charts under **applicationConfig** section.
 
@@ -155,3 +155,31 @@ Supported configuration modifiable in HELM charts under **applicationConfig** se
 The location of the configuration file should be set in ``CBS_CLIENT_CONFIG_PATH`` env, for example:
 
     ``CBS_CLIENT_CONFIG_PATH: /app-config-input/application_config.yaml``
+    
+    
+For PRH 1.9.0 version (London) , a new mode has been introduced which allows early PNF registrations. This mode uses a direct Kafka consumer and not the DMAAP consumer. This mode is not the default mode and has to be activated by setting certain environment variables in the Helm chart values.yaml file under **applicationEnv**, as shown below: 
+
+.. code-block:: yaml
+
+
+        - name: kafkaBoostrapServerConfig
+          value: onap-strimzi-kafka-bootstrap:9092
+        - name: groupIdConfig
+          value: OpenDCAE-c12
+        - name: kafkaUsername
+          value: strimzi-kafka-admin
+        - name: kafkaPassword
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: strimzi-kafka-admin
+        - name: kafkaTopic
+          value: unauthenticated.VES_PNFREG_OUTPUT
+        - name: SPRING_PROFILES_ACTIVE
+          value: autoCommitDisabled
+        - name: JAAS_CONFIG
+          valueFrom:
+            secretKeyRef:
+              key: sasl.jaas.config
+              name: strimzi-kafka-admin
+
