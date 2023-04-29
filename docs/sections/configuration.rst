@@ -1,11 +1,11 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
-.. _configuration:
+
 
 Configuration
 =============
 
-DACEGEN2 is deployed via helm charts. The configuration are maintained as on values.yaml and can be updated for deployment if necessary.
+DCAEGEN2 is deployed via helm charts. The configuration are maintained as on values.yaml and can be updated for deployment if necessary.
 
 The helm charts for each component can be controlled via a separate override file under its respective component under ``oom/kubernetes/dcaegen2-services/components``
 
