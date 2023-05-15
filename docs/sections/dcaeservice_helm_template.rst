@@ -15,21 +15,17 @@ Kubernetes API to create the Kubernetes resources (including a
 Kubernetes Deployment and a Kubernetes Service) that make up a running
 instance of the microservice.
 
-Beginning with the Honolulu release, DCAE is migrating to a new approach
-for deploying DCAE microservices. Instead of using Cloudify with a
-Cloudify blueprint for each microservice, DCAE will use Helm to deploy
-microservices. Each microservice will have a Helm chart instead of a
-Cloudify blueprint. In the Honolulu release, four DCAE microservices
-(the VES and HV-VES collectors, the PNF registration handler, and the
-TCA Gen2 analytics service) moved to Helm deployment. All four of these
-are deployed “statically”–that is, they are deployed when DCAE is
-installed and run continuously.
+In the Honolulu release, DCAE began migrating to a new approach for
+deploying DCAE microservices.  Instead of using Cloudify with a
+Cloudify blueprint for each microservice, DCAE began using Helm to
+deploy microservices.  This migration is now complete, and all
+DCAE microservices have a Helm chart instead of a Cloudify blueprint.
 
 DCAE Service Templates - Introduction
 -------------------------------------
 
 It would be possible to write a Helm chart for each microservice, each
-completely unrelated. We are taking a different approach. We are
+completely unrelated to the others. We are taking a different approach. We are
 providing shared Helm templates that (approximately) create the same
 Kubernetes resources that the Cloudify plugin created when it processed
 a blueprint. Creating a Helm chart for a microservice involves setting
@@ -202,17 +198,6 @@ with keys and values as needed for the specific microservice. It will be
 converted to JSON before being pushed to Consul or mounted as a file. If
 not present, defaults to an empty object ({}).
 
-*Note: Due to a bug in the Honolulu release (DCAEGEN2-2782), it is
-necessary to supply an ``applicationConfig`` in the ``values.yaml`` for
-a microservice even if the microservice does not have any configuration.
-The workaround is to supply an empty configuration:*
-
-::
-
-   applicationConfig: {}
-
-*This is being fixed in the Istanbul release.*
-
 **applicationEnv:**
 
 Microservice-specific environment variables to be
@@ -306,7 +291,7 @@ external volumes will be set up for the microservice.
 **certDirectory:**
 
 Path to the directory in the microservice’s
-container file system where TLS-certificate information from AAF should
+container file system where TLS-certificate information from CMPv2 should
 be mounted. This is an optional field. When it is present, the
 dcaegen2-services-common deployment template will set up an
 initContainer that retrieves the certificate information into a shared
@@ -318,16 +303,6 @@ Example:
 ::
 
    certDirectory: /etc/ves-hv/ssl
-
-**tlsServer:**
-
-Boolean flag. If set to ``true``, the
-dcaegen2-services-common deployment will configure the initContainer
-described above to fetch a server certificate for the microservice. If
-set to ``false``, the initContainer will fetch only a CA certificate for
-the AAF certificate authority. ``tlsServer`` is optional. The value
-defaults to ``false``. ``tlsServer`` is ignored if ``certDirectory`` is
-not set.
 
 **logDirectory:**
 
@@ -387,40 +362,6 @@ Example:
 ::
 
    dcaePolicySyncImage: onap/org.onap.dcaegen2.deployments.dcae-services-policy-sync:1.0.1
-
-**consulLoaderImage:**
-
-Name and tag of the consul loader image to be
-used. Required. The consul loader image runs in an initContainer that
-loads application configuration information into Consul. The image
-repository is set using the OOM common
-``repositoryGenerator.repository`` template. Normally this points to the
-ONAP image repository, but it can be overridden on a global basis or a
-per-chart basis. See the OOM documentation for more details.
-
-Example:
-
-::
-
-   consulLoaderImage: onap/org.onap.dcaegen2.deployments.consul-loader-container:1.1.0
-
-**tlsImage:**
-
-Name and tag of the TLS initialization image to be used.
-Required if the microservice is configured to act as a TLS client and/or
-server using AAF certificates. The TLS initialization image runs in an
-initContainer and pulls TLS certificate information from AAF and stores
-it in a volume on the microservice’s pod. The image repository is set
-using the OOM common ``repositoryGenerator.repository`` template.
-Normally this points to the ONAP image repository, but it can be
-overridden on a global basis or a per-chart basis. See the OOM
-documentation for more details.
-
-Example:
-
-::
-
-   tlsImage: onap/org.onap.dcaegen2.deployments.tls-init-container:2.1.0
 
 **certProcessorImage:**
 
