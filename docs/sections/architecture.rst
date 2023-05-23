@@ -50,7 +50,7 @@ The figure below shows the DCAE architecture and how the components work with ea
 
 ..
   The following diagram has been created on https://app.diagrams.net/. There is an editable version of the diagram
-  in repository under path docs/sections/images/architecture_diagram. Import this file to mentioned page to edit diagram.
+  in repository under path docs/sections/images/architecture_diagram.drawio. Import this file to mentioned page to edit diagram.
 
 .. image:: images/R12_architecture_diagram.png
  
