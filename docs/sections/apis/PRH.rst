@@ -1,5 +1,6 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
 
 .. _prh_api:
 
@@ -123,7 +124,7 @@ Compiling PRH
 =============
 
 Whole project (top level of PRH directory) and each module (sub module
-directory) can be compiled using `mvn clean install` command.   
+directory) can be compiled using `mvn clean install` command.
 
 Main API Endpoints
 ==================
@@ -150,4 +151,3 @@ Maven Children Artifacts:
 2. prh-aai-client: Contains implementation of AAI client
 3. prh-dmaap-client: Contains implementation of DmaaP client
 4. prh-commons: Common code for whole prh modules
-

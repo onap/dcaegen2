@@ -1,3 +1,7 @@
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
+
 .. _offeredapis:
 
 Offered APIs
@@ -14,5 +18,6 @@ Offered APIs
    apis/pmmapper.rst
    apis/PMSH.rst
    apis/SDK.rst
-   apis/mod-onboardingapi.rst
    apis/des_api.rst
+
+.. apis/mod-onboardingapi.rst

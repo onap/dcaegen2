@@ -40,7 +40,7 @@ Sample output is as below
 
 		postgres=# \c hb_vnf
 		You are now connected to database "hb_vnf" as user "postgres".
-		hb_vnf=# 
+		hb_vnf=#
 
 Delete all tables before starting Docker run or local run
 ---------------------------------------------------------
@@ -174,7 +174,7 @@ Testing Control loop event
 
 - Modify the Json as below
 	Modify the lastEpochTime and startEpochTime with current time in Test1.json
-	Modify the eventName in Test1.json to one of the eventName in vnf_table_1 
+	Modify the eventName in Test1.json to one of the eventName in vnf_table_1
 
 - Inject the Test1.json as mentioned in above section
 
@@ -432,4 +432,3 @@ The postgres DB also have a CL_flag set indicating control loop event with ONSET
 		2018-12-12 12:45:51,291 | __main__ | htbtworker | process_msg | 77 |  INFO | HBT:Getting :http://10.12.5.252:3904/events/unauthenticated.SEC_HEARTBEAT_INPUT/group1/1?timeout=15000
 		2018-12-12 12:45:51,292 | urllib3.connectionpool | connectionpool | _new_conn | 208 |  DEBUG | Starting new HTTP connection (1): 10.12.5.252
 		2018-12-12 12:46:00,585 | __main__ | db_monitoring | db_monitoring | 53 |  INFO | DBM: Active DB Monitoring Instance
-

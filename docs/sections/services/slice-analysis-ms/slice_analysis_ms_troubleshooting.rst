@@ -1,14 +1,18 @@
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
+
 Trouble shooting steps
 ----------------------
 1. **Microservice stops and restarts during startup**
 
-    Possible reason & Solution: Microservice is not registered with the consul 
+    Possible reason & Solution: Microservice is not registered with the consul
      - Check the consul if the microservice is registered with it and the MS is able to fetch the app config from the CBS. Check if CBS and consul are   deployed properly and try to redeploy the MS
         The below logs will be seen if CBS is not reachable by the MS
 
-       15:14:13.861 [main] WARN  org.postgresql.Driver - JDBC URL port: 0 not valid (1:65535) 
+       15:14:13.861 [main] WARN  org.postgresql.Driver - JDBC URL port: 0 not valid (1:65535)
        15:14:13.862 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -
-       Exception encountered during context initialization - cancelling refresh attempt: 
+       Exception encountered during context initialization - cancelling refresh attempt:
        org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name
        'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied
        dependency expressed through constructor parameter 0; nested exception is
@@ -26,7 +30,7 @@ Trouble shooting steps
 2. **No PostgreSQL clusters have been deployed on this manager**
 
    Solution:
-   
+
     kubectl exec -ti -n onap dev-dcaemod-db-primary-56ff585cf7-dxkkx bash
     psql
     ALTER ROLE "postgres" WITH PASSWORD 'onapdemodb';
@@ -43,4 +47,4 @@ Logging
 Since the Slice Analysis MS is deployed as a pod in the kubernetes, we can check the logs by
 using the following command:
 
- $ kubectl logs <pod-name> –namespace onap
+ $ kubectl logs <pod-name> -namespace onap
