@@ -20,7 +20,7 @@ DFC will handle the collection of bulk PM data flow:
 DFC is delivered as one **Docker container** which hosts application server.
 See `Delivery`_ for more information about the docker container.
 
-.. _Delivery: ./delivery.html
+.. _Delivery: ./delivery.rst
 
 Functionality
 """""""""""""
@@ -49,5 +49,5 @@ affect the handling of others.
 Generalized  DFC
 """"""""""""""""
 From version 1.2.1 and onwards, the DFC has more general use. Instead of only handling PM files, any kind of files
-are handled. The 'changeIdentifier' field in the FileReady VES event (which is reported from the PNFs) identifies the 
+are handled. The 'changeIdentifier' field in the FileReady VES event (which is reported from the PNFs) identifies the
 file type. This is mapped to a publishing stream in the DR.

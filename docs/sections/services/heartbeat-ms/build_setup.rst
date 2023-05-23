@@ -25,7 +25,7 @@ Docker build procedure
 Clone the code using below command
 
 ::
-      git clone --depth 1 https://gerrit.onap.org/r/dcaegen2/services/heartbeat 
+      git clone --depth 1 https://gerrit.onap.org/r/dcaegen2/services/heartbeat
 
 give executable permission to mvn-phase-script.sh if not there
 already
@@ -54,10 +54,10 @@ CBS polling. The following environment variables are to be set.**
 	   consumerID=1
 
    If the postgres parameters are not there in environment setting file,
-   then it takes the values from    miss_htbt_service/config/hbproperties.yaml 
-   file. Make sure that postgres running in the machine where pg_ipAddress 
-   parameter is mentioned. 
-   
+   then it takes the values from    miss_htbt_service/config/hbproperties.yaml
+   file. Make sure that postgres running in the machine where pg_ipAddress
+   parameter is mentioned.
+
    Run below netstat command to check postgres port number and IP address are fine.
 
 ::
@@ -75,7 +75,7 @@ CBS polling. The following environment variables are to be set.**
    are as follows
 
 ::
-	
+
 	   pg_ipAddress: 10.0.4.1
 	   pg_portNum: 5432
 	   pg_userName: postgres
@@ -89,25 +89,25 @@ CBS polling. The following environment variables are to be set.**
    correctly. Usually groupID remains the same for all instance of HB
    where as consumerID would be changed for each instance of HB Micro
    service. If groupID and consumerID is not provided, then it takes
-   “DefaultGroup” and “1” respectively.
+   "DefaultGroup" and "1" respectively.
 
 **Setting CBS configuration parameters using the consule KV URL.**
 
    The sample consul KV is as below.
    ::
-   
+
      http://10.12.6.50:8500/ui/#/dc1/kv/mvp-dcaegen2-heartbeat-static
 
    Go to the above link and click on KEY/VALUE tab
 
    Click on mvp-dcaegen2-heartbeat-static
 
-   Copy the configuration in the box provided and click on update. 
-   
+   Copy the configuration in the box provided and click on update.
+
    The sample configuration is as below
-   
+
    .. code-block:: json
-   
+
 		{
 			"heartbeat_config": {
 				"vnfs": [{
@@ -177,7 +177,7 @@ mentioned in the above section.**
       heartbeat.test1:latest
 
  To check the logs, run below command
- 
+
 ::
 
       sudo Docker logs -f hb1
@@ -191,17 +191,17 @@ mentioned in the above section.**
        sudo Docker ps -a \| grep heartbeat.test1
 
    Run below commands to stop the Docker run
-   
+
 ::
-   
+
        sudo Docker stop <Docker container ID)
        sudo Docker rm -f hb1
 
 **Initiate the maven build**
 
    To run the maven build, execute any one of them.
-   
-:: 
+
+::
 
       sudo mvn -s settings.xml deploy
       OR
@@ -211,5 +211,5 @@ mentioned in the above section.**
    libxml-xpath as below. If the issue is something else, follow the
    link given as part of the build failure.
 
-:: 
+::
       sudo apt install libxml-xpath-perl

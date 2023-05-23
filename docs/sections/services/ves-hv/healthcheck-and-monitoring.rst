@@ -17,7 +17,7 @@ and ready for connections. Otherwise it returns a **HTTP 503 Service Unavailable
 
 Monitoring
 ----------
-HV-VES collector allows to collect metrics data at runtime. To serve this purpose HV-VES application exposes an endpoint **GET /monitoring/prometheus** 
+HV-VES collector allows to collect metrics data at runtime. To serve this purpose HV-VES application exposes an endpoint **GET /monitoring/prometheus**
 which returns a **HTTP 200 OK** message with a specific data in its body. Returned data is in a format readable by Prometheus service.
 Prometheus endpoint shares a port with healthchecks.
 

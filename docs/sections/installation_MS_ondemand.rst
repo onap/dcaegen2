@@ -4,7 +4,7 @@
 DCAE MS Deployment
 ==================
 
-DCAE MS catalog includes number of collectors, analytics and event processor services. Not all MS available on default ONAP/DCAE deployment. 
+DCAE MS catalog includes number of collectors, analytics and event processor services. Not all MS available on default ONAP/DCAE deployment.
 
 Following Services are deployed via DCAE Bootstrap
 
@@ -16,19 +16,18 @@ Following Services are deployed via DCAE Bootstrap
    ./services/ves-hv/index.rst
    ./services/prh/index.rst
    ./services/tcagen2-docker/index.rst
-   
-Following additional MS are available for on-demand deployment as necessary for any usecases; instruction for deployment are provided under each MS. 
+
+Following additional MS are available for on-demand deployment as necessary for any usecases; instruction for deployment are provided under each MS.
 
 .. toctree::
    :maxdepth: 1
 
-   Mapper MS Installation <./services/mapper/installation>
-   DFC MS Installation <./services/dfc/installation>
+   Mapper MS Installation <./services/mapper/installation-helm>
+   DFC MS Installation <./services/dfc/installation-helm>
    Heartbeat MS Installation <./services/heartbeat-ms/installation>
-   PM-Mapper MS Installation <./services/pm-mapper/installation>
-   BBS EventProcessor MS Installation <./services/bbs-event-processor/installation>
-   Son-Handler MS Installation <./services/son-handler/installation>
-   RESTconf MS Installation <./services/restconf/installation>
+   PM-Mapper MS Installation <./services/pm-mapper/installation-helm>
+   Son-Handler MS Installation <./services/son-handler/installation-helm>
+   RESTconf MS Installation <./services/restconf/installation-helm>
    SNMP Trap Collector MS Installation <./services/snmptrap/installation>
    PM Subscription Handler MS Installation <./services/pm-subscription-handler/installation>
-   DataLake Handler Installation <./services/datalake-handler/installation>
+   DataLake Handler Installation <./services/datalake-handler/installation-helm>
