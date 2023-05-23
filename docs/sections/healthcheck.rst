@@ -9,18 +9,16 @@ DCAE Health Check
 HealthCheck Services
 --------------------
 
-DCAE healthchecks are performed by a separate services.
+DCAE healthchecks are performed by a separate service.
 
 - dcae-ms-healthcheck
-- dcaemod-healthcheck
- 
+
 These service is packaged into a Docker image (``onap/org.onap.dcaegen2.deployments.healthcheck-container``),
 which is built in the ``healthcheck-container`` module in the ``dcaegen2/deployments`` repository.
 
 dcae-ms-healthcheck is deployed along with services enabled under (``oom/kubernetes/dcaegen2-services``)
-dcaemod-healthcheck is deployed along with services enabled under (``oom/kubernetes/dcaemod``)
 
-These healthcheck container runs as service that exposes a simple Web API.  In response to
+This healthcheck container runs as service that exposes a simple Web API.  In response to
 request, the service checks Kubernetes to verify that all of the expected
 DCAE platform and service components are in a ready state.
 
@@ -33,18 +31,20 @@ The healthcheck service is exposed as a Kubernetes ClusterIP Service named
 .. note::
   Run the below commands before running "curl dcae-ms-healthcheck"
 
-  * To get the dcae-ms-healthcheck pod name, run following command: 
-  .. code-block:: bash
+  * To get the dcae-ms-healthcheck pod name, run following command:
+
+.. code-block:: bash
 
     kubectl  get pods -n onap | grep dcae-ms-healthcheck
 
   * Then enter in to the shell of the container, run the following command (substituting the pod name retrieved by the previous command):
-  .. code-block:: bash
+
+.. code-block:: bash
 
     kubectl exec -it <dcae-ms-healthcheck pod> -n onap bash
 
 
-.. code-block:: json
+.. code-block:: bash
 
    $ curl dcae-ms-healthcheck
    {
@@ -55,7 +55,7 @@ The healthcheck service is exposed as a Kubernetes ClusterIP Service named
             "name": "onap-dcae-hv-ves-collector",
             "ready": 1,
             "unavailable": 0
-       }, 
+       },
        {
             "name": "onap-dcae-prh",
             "ready": 1,
@@ -77,8 +77,4 @@ The healthcheck service is exposed as a Kubernetes ClusterIP Service named
             "unavailable": 0
        }
     ]
- }
-
- 
-The dcaemod-healthcheck service is also exposed as a Kubernetes ClusterIP Service named
-`dcaemod-healthcheck`.   The service can be queried similar to `dcae-ms-healthcheck`
+   }

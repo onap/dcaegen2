@@ -21,11 +21,11 @@ Version: 2.3.0
 
 
 **Bug Fixes**
-  
+
 **Known Issues**
 
 **Security Issues**
-    - None 
+    - None
 
 **Upgrade Notes**
 
@@ -51,7 +51,7 @@ Version: 1.4.0
 **Known Issues**
 
 **Security Issues**
-    - None 
+    - None
 
 **Upgrade Notes**
 
@@ -73,12 +73,12 @@ Support for config binding services.
 
 **Bug Fixes**
     - `https://jira.onap.org/browse/DCAEGEN2-465`
-    
+
 **Known Issues**
     - `https://jira.onap.org/browse/DCAEGEN2-465`  Default config causes standalone instance startup failure.
 
 **Security Issues**
-    - None 
+    - None
 
 
 **Upgrade Notes**
@@ -86,4 +86,3 @@ Support for config binding services.
 **Deprecation Notes**
 
 **Other**
-

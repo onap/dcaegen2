@@ -23,4 +23,3 @@ Repository
 ----------
 Repository with the code of VES OpenAPI Manager is available on ONAP Gerrit:
 `Gerrit <https://gerrit.onap.org/r/admin/repos/dcaegen2/platform/ves-openapi-manager>`_
-

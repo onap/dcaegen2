@@ -1,3 +1,7 @@
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
+
 DCAE Deployment Validation
 ==========================
 
@@ -8,7 +12,7 @@ Check Deployment Status
 The healthcheck service is exposed as a Kubernetes ClusterIP Service named
 `dcae-ms-healthcheck`.   The service can be queried for status as shown below.
 
-.. code-block:: json
+.. code-block:: bash
 
    $ curl dcae-ms-healthcheck
    {
@@ -19,7 +23,7 @@ The healthcheck service is exposed as a Kubernetes ClusterIP Service named
             "name": "onap-dcae-hv-ves-collector",
             "ready": 1,
             "unavailable": 0
-       }, 
+       },
        {
             "name": "onap-dcae-prh",
             "ready": 1,
@@ -50,8 +54,8 @@ Data Flow Verification
 
 After the platform is assessed as healthy, the next step is to check the functionality of the system.  This can be monitored at a number of "observation" points.
 
-1. Incoming VNF Data into VES Collector can be verified through logs using kubectl 
-  
+1. Incoming VNF Data into VES Collector can be verified through logs using kubectl
+
     kubectl logs -f -n onap <vescollectorpod> dcae-ves-collector
 
 .. note::
@@ -70,4 +74,3 @@ After the platform is assessed as healthy, the next step is to check the functio
     TCA also publishes its events to Message Router under the topic of "unauthenticated.DCAE_CL_OUTPUT".  The same Message Router subscription command can be used for checking the messages being published by TCA;
     * Run the subscription command to subscribe to the topic: **curl  -H "Content-Type:text/plain" -k -X GET https://{{K8S_NODEIP}}:30226/events/unauthenticated.DCAE_CL_OUTPUT/group1/C1?timeout=50000**.
     * Or run the command in a loop:  **while :; do curl  -H "Content-Type:text/plain" -k -X GET https://{{K8S_NODEIP}}:30226/events/unauthenticated.DCAE_CL_OUTPUT/group1/C1?timeout=50000; echo; done**;
-

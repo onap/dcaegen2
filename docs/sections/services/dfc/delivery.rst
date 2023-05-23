@@ -27,4 +27,3 @@ Choose your preferred settings (ssh, http or https, with or without hook) and ru
 DFC deployment is handled through Helm charts under OOM repository `here`_.
 
 .. _here: https://gerrit.onap.org/r/gitweb?p=oom.git;a=tree;f=kubernetes/dcaegen2-services/components/dcae-datafile-collector
-
