@@ -13,7 +13,7 @@ DCAE healthchecks are performed by a separate services.
 
 - dcae-ms-healthcheck
 - dcaemod-healthcheck
- 
+
 These service is packaged into a Docker image (``onap/org.onap.dcaegen2.deployments.healthcheck-container``),
 which is built in the ``healthcheck-container`` module in the ``dcaegen2/deployments`` repository.
 
@@ -33,13 +33,13 @@ The healthcheck service is exposed as a Kubernetes ClusterIP Service named
 .. note::
   Run the below commands before running "curl dcae-ms-healthcheck"
 
-  * To get the dcae-ms-healthcheck pod name, run following command: 
-  .. code-block:: bash
+  * To get the dcae-ms-healthcheck pod name, run following command:
+.. code-block:: bash
 
     kubectl  get pods -n onap | grep dcae-ms-healthcheck
 
   * Then enter in to the shell of the container, run the following command (substituting the pod name retrieved by the previous command):
-  .. code-block:: bash
+.. code-block:: bash
 
     kubectl exec -it <dcae-ms-healthcheck pod> -n onap bash
 
@@ -55,7 +55,7 @@ The healthcheck service is exposed as a Kubernetes ClusterIP Service named
             "name": "onap-dcae-hv-ves-collector",
             "ready": 1,
             "unavailable": 0
-       }, 
+       },
        {
             "name": "onap-dcae-prh",
             "ready": 1,
@@ -79,6 +79,6 @@ The healthcheck service is exposed as a Kubernetes ClusterIP Service named
     ]
  }
 
- 
+
 The dcaemod-healthcheck service is also exposed as a Kubernetes ClusterIP Service named
 `dcaemod-healthcheck`.   The service can be queried similar to `dcae-ms-healthcheck`

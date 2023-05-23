@@ -125,5 +125,3 @@ Make sure Config Binding Service is up and running and the **ip + port** combina
 
 
 **PM Mapper** logs this information when connected to Consul, but cannot find a valid JSON configuration.
-
-
