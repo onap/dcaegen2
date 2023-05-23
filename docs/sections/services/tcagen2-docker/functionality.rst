@@ -1,7 +1,11 @@
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
+
 Functionality
 =============
 
-TCA-gen2 is driven by the VES collector events published into Message Router.  This Message Router topic is the source for the CDAP application which will read each incoming message. If a message meets the VES (CEF, v28.4) as specified by the VES 5.4 standard, it will be parsed and if it contains a message which matches the policy configuration for a given metric (denoted primarily by the "eventName" and the "fieldPath"), the value of the metric will be compared to the "thresholdValue".  If that comparison indicates that a Control Loop Event Message should be generated, the application will output the alarm to the Message Router  topic in a format that matches the interface spec defined for Control-Loop by ONAP-Policy 
+TCA-gen2 is driven by the VES collector events published into Message Router.  This Message Router topic is the source for the CDAP application which will read each incoming message. If a message meets the VES (CEF, v28.4) as specified by the VES 5.4 standard, it will be parsed and if it contains a message which matches the policy configuration for a given metric (denoted primarily by the "eventName" and the "fieldPath"), the value of the metric will be compared to the "thresholdValue".  If that comparison indicates that a Control Loop Event Message should be generated, the application will output the alarm to the Message Router  topic in a format that matches the interface spec defined for Control-Loop by ONAP-Policy
 
 Assumptions:
 

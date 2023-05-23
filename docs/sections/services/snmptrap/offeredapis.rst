@@ -27,10 +27,10 @@ running instance.  To accomplish this, you may:
 NetSNMP snmptrap
 ----------------
 
-One way to simulate an arriving SNMP trap is to use the Net-SNMP utility/command snmptrap.  
+One way to simulate an arriving SNMP trap is to use the Net-SNMP utility/command snmptrap.
 This command can send V1, V2c or V3 traps to a manager based on the parameters provided.
 
-The example below sends a SNMP V1 trap to the specified host.  Prior to running this command, export 
+The example below sends a SNMP V1 trap to the specified host.  Prior to running this command, export
 the values of *to_ip_address* (set it to the IP of the VM hosting the ONAP trapd container) and *to_port* (typically
 set to "162"):
 
@@ -52,18 +52,18 @@ python using pysnmp
 -------------------
 
 Another way to simulate an arriving SNMP trap is to send one with the python *pysnmp* module.  (Note that this
-is the same module that ONAP trapd is based on).  
+is the same module that ONAP trapd is based on).
 
-To do this, create a python script called "send_trap.py" with the following contents.  You'll need to change the 
+To do this, create a python script called "send_trap.py" with the following contents.  You'll need to change the
 target (from "localhost" to whatever the destination IP/hostname of the trap receiver is) before saving:
 
 .. code-block:: python
 
         from pysnmp.hlapi import *
         from pysnmp import debug
-        
+
         # debug.setLogger(debug.Debug('msgproc'))
-        
+
         errorIndication, errorStatus, errorIndex, varbinds = next(sendNotification(SnmpEngine(),
              CommunityData('not_public'),
              UdpTransportTarget(('localhost', 162)),
@@ -72,7 +72,7 @@ target (from "localhost" to whatever the destination IP/hostname of the trap rec
              [ObjectType(ObjectIdentity('.1.3.6.1.4.1.999.1'), OctetString('test trap - ignore')),
               ObjectType(ObjectIdentity('.1.3.6.1.4.1.999.2'), OctetString('ONAP pytest trap'))])
         )
-        
+
         if errorIndication:
             print(errorIndication)
         else:
@@ -80,4 +80,6 @@ target (from "localhost" to whatever the destination IP/hostname of the trap rec
 
 To run the pysnmp example:
 
-   ``python ./send_trap.py``
+.. code-block:: bash
+
+   python ./send_trap.py

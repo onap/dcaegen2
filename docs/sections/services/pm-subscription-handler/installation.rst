@@ -25,7 +25,7 @@ Deployment Steps
 
 - Enable PMSH component in oom/kubernetes/dcaegen2-services/values.yaml
 
-  .. code-block:: bash
+  .. code-block:: yaml
 
     dcae-pmsh:
         enabled: true

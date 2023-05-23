@@ -23,7 +23,7 @@ The **trapd** service can be started by running the command:
 
 Output from this command will be two-fold.  First will be the textual response:
 
-.. code-block:: bash
+.. code-block:: none
 
     2018-10-16T15:14:59,461 Starting snmptrapd...
     2018-10-16T19:15:01,966 ONAP controller not present, trying json config override via CBS_SIM_JSON env variable
@@ -45,7 +45,7 @@ The **trapd** container can be monitored for status by running this command from
 
 If **SNMPTRAPD** is present/running, output from this command will be:
 
-.. code-block:: bash
+.. code-block:: none
 
     2018-10-16T15:01:47,705 Status: snmptrapd running
     ucsnmp    16109  16090  0 Oct08 ?        00:07:16 python ./snmptrapd.py
@@ -61,7 +61,7 @@ and the return code presented to the shell upon exit:
 
 If **trapd** is not present, output from this command will be:
 
-.. code-block:: bash
+.. code-block:: none
 
     2018-10-16T15:10:47,815 PID file /opt/app/snmptrap/tmp/snmptrapd.py.pid does not exist or not readable - unable to check status of snmptrapd
     2018-10-16T15:10:47,816 Diagnose further at command line as needed.
@@ -82,7 +82,7 @@ Stopping trapd
 
 Output from this command will be two-fold.  First will be the textual response:
 
-.. code-block:: bash
+.. code-block:: none
 
     2018-10-16T15:10:07,808 Stopping snmptrapd PID 16109...
     2018-10-16T15:10:07,810 Stopped
