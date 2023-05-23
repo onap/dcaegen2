@@ -8,9 +8,9 @@
 
 
 
-==================
+
 DCAE Release Notes
-==================
+##################
 
 .. contents::
     :depth: 2
@@ -24,6 +24,8 @@ DCAE Release Notes
 
 Version: 12.0.0
 ===============
+
+.. _Version_12.0.0:
 
 
 Abstract
@@ -253,6 +255,8 @@ Quick Links:
 
 Version: 11.0.0
 ===============
+
+.. _Version_11.0.0:
 
 
 Abstract
@@ -492,6 +496,8 @@ Quick Links:
 Version: 10.0.0
 ===============
 
+.. _Version_10.0.0:
+
 
 Abstract
 --------
@@ -730,6 +736,8 @@ Quick Links:
 Version: 9.0.1
 ==============
 
+.. _Version_9.0.1:
+
 Abstract
 --------
 
@@ -805,6 +813,8 @@ Software Deliverables
 
 Version: 9.0.0
 ==============
+
+.. _Version_9.0.0:
 
 
 Abstract
@@ -1062,6 +1072,8 @@ Quick Links:
 Version: 8.0.1
 ==============
 
+.. _Version_8.0.1:
+
 Abstract
 --------
 
@@ -1114,6 +1126,8 @@ None
 
 Version: 8.0.0
 ==============
+
+.. _Version_8.0.0:
 
 
 Abstract
@@ -1301,8 +1315,8 @@ Refer to collector installation page for more details:
 .. toctree::
    :maxdepth: 1
 
-   ./services/ves-http/installation.rst
-   ./services/ves-hv/installation.rst
+   ./services/ves-http/installation-helm.rst
+   ./services/ves-hv/installation-helm.rst
 
     
 *Known Vulnerabilities*
@@ -1367,6 +1381,8 @@ Quick Links:
 Version: 7.0.1
 ==============
 
+.. _Version_7.0.1:
+
 Abstract
 --------
 
@@ -1418,6 +1434,8 @@ Same as Guilin Release
 
 Version: 7.0.0
 ==============
+
+.. _Version_7.0.0:
 
 
 Abstract
@@ -1660,6 +1678,8 @@ Quick Links:
 Version: 5.0.2
 ==============
 
+.. _Version_5.0.2:
+
 Abstract
 --------
 
@@ -1714,6 +1734,8 @@ Same as El-Alto Release
 Version: 6.0.1
 ==============
 
+.. _Version_6.0.1:
+
 Abstract
 --------
 
@@ -1766,6 +1788,8 @@ Same as Frankfurt Release
 
 Version: 6.0.0
 ==============
+
+.. _Version_6.0.0:
 
 
 Abstract
@@ -2004,6 +2028,8 @@ Quick Links:
 Version: 5.0.1
 ==============
 
+.. _Version_5.0.1:
+
 The offical El-Alto release (rolls up all 5.0.0 early drop deliverables) focused on technical debts and SECCOM priority work-items.
 
 Following is summary of updates done for DCAEGEN2
@@ -2167,6 +2193,8 @@ The following components are upgraded from Dublin/R4 and El-Alto EarlyDrop deliv
 Version: 5.0.0
 ==============
 
+.. _Version_5.0.0:
+
 El-Alto Early-drop focused on technical debts and SECCOM priority work-items.
 
 Following is summary of updates done for DCAEGEN2
@@ -2259,6 +2287,8 @@ The following components are upgraded from Dublin/R4.
 
 Version: 4.0.0
 ==============
+
+.. _Version_4.0.0:
 
 :Release Date: 2019-06-06
 
@@ -2462,6 +2492,8 @@ The following components are upgraded from R3
 Version: 3.0.1
 ==============
 
+.. _Version_3.0.1:
+
 :Release Date: 2019-01-31
 
 DCAE R3 Maintenance release includes following fixes
@@ -2512,6 +2544,8 @@ The following containers are updated in R3.0.1
 
 Version: 3.0.0
 --------------
+
+.. _Version_3.0.0:
 
 :Release Date: 2018-11-30
 
@@ -2649,6 +2683,8 @@ The following components are upgraded from R2:
 Version: 2.0.0
 ==============
 
+.. _Version_2.0.0:
+
 :Release Date: 2018-06-07
 
 **New Features**
@@ -2764,6 +2800,8 @@ The following components are upgraded from R1:
 
 Version: 1.0.0
 ==============
+
+.. _Version_1.0.0:
 
 :Release Date: 2017-11-16
 

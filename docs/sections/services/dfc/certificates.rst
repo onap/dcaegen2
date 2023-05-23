@@ -73,7 +73,8 @@ We have two keystore files, one for TrustManager, one for KeyManager.
  Note: Make sure you put a password on the p12 file - otherwise you'll get a null reference exception when you try to import it.
 
 2. Create password files for cert.p12
-    .. code:: bash
+
+.. code:: bash
 
     printf "[your password]" > p12.pass
 
@@ -82,7 +83,8 @@ We have two keystore files, one for TrustManager, one for KeyManager.
 
 Copy the new trust.jks and cert.p12 and password files from local environment to the DFC container.
 
- .. code:: bash
+.. code-block:: bash
+
    mkdir mycert
    cp cert.p12 mycert/
    cp p12.pass mycert/
@@ -93,14 +95,18 @@ Copy the new trust.jks and cert.p12 and password files from local environment to
 5. Update configuration in consul
 -----------------------------------
 Change path in consul:
- .. code:: bash
+
+.. code-block:: bash
+
   dmaap.ftpesConfig.keyCert": "/opt/app/datafile/etc/cert/mycert/cert.p12
   dmaap.ftpesConfig.keyPasswordPath": "/opt/app/datafile/etc/cert/mycert/p12.pass
   dmaap.ftpesConfig.trustedCa": "/opt/app/datafile/etc/cert/mycert/trust.jks
   dmaap.ftpesConfig.trustedCaPasswordPath": "/opt/app/datafile/etc/cert/mycert/trust.pass
 
 Consul's address: http://<worker external IP>:<Consul External Port>
- .. code:: bash
+
+.. code-block:: bash
+
   kubectl -n onap get svc | grep consul
 
 .. image:: ./consule-certificate-update.png
