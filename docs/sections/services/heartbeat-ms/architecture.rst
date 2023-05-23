@@ -38,8 +38,8 @@ function/method to download the CBS configuration.
 
 The heartbeat microservice has 2 states
 
-**Reconfiguration state** – Download configuration from CBS and update
+**Reconfiguration state** - Download configuration from CBS and update
 the vnf_table_1 is in progress.
 
-**Running state** – Normal working that comprises of receiving of HB
+**Running state** - Normal working that comprises of receiving of HB
 events and sending of control loop event if required conditions are met.

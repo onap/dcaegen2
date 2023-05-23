@@ -1,3 +1,7 @@
+.. This work is licensed under a
+   Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
+
 Trouble shooting steps
 ----------------------
 1. **Microservice stops and restarts during startup**
@@ -43,4 +47,4 @@ Logging
 Since the Slice Analysis MS is deployed as a pod in the kubernetes, we can check the logs by
 using the following command:
 
- $ kubectl logs <pod-name> –namespace onap
+ $ kubectl logs <pod-name> -namespace onap
