@@ -8,7 +8,7 @@
 
 
 
-==================
+
 DCAE Release Notes
 ==================
 
@@ -1073,8 +1073,8 @@ Refer to collector installation page for more details:
 .. toctree::
    :maxdepth: 1
 
-   ./services/ves-http/installation.rst
-   ./services/ves-hv/installation.rst
+   ./services/ves-http/installation-helm.rst
+   ./services/ves-hv/installation-helm.rst
 
     
 *Known Vulnerabilities*
