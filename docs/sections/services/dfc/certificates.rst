@@ -21,7 +21,7 @@ keys & certificates on both vsftpd server and DFC.
 
 1. Generate key/certificate with openssl for DFC:
 -------------------------------------------------
-.. code:: bash
+.. code-block:: bash
 
     openssl genrsa -out dfc.key 2048
     openssl req -new -out dfc.csr -key dfc.key
@@ -29,7 +29,7 @@ keys & certificates on both vsftpd server and DFC.
 
 2. Generate key & certificate with openssl for vsftpd:
 ------------------------------------------------------
-.. code:: bash
+.. code-block:: bash
 
    openssl genrsa -out ftp.key 2048
    openssl req -new -out ftp.csr -key ftp.key
@@ -43,20 +43,20 @@ We have two keystore files, one for TrustManager, one for KeyManager.
 
 1. First, convert your certificate in a DER format :
 
- .. code:: bash
+ .. code-block:: bash
 
    openssl x509 -outform der -in ftp.crt -out ftp.der
 
 2. And after copy existing keystore and password from container:
 
- .. code:: bash
+ .. code-block:: bash
 
   kubectl cp <DFC pod>:/opt/app/datafile/etc/cert/trust.jks trust.jks
   kubectl cp <DFC pod>:/opt/app/datafile/etc/cert/trust.pass trust.pass
 
 3. Import DER certificate in the keystore :
 
- .. code:: bash
+ .. code-block:: bash
 
    keytool -import -alias ftp -keystore trust.jks -file ftp.der
 
@@ -66,42 +66,48 @@ We have two keystore files, one for TrustManager, one for KeyManager.
 
  Convert x509 Cert and Key to a pkcs12 file
 
- .. code:: bash
+ .. code-block:: bash
 
     openssl pkcs12 -export -in dfc.crt -inkey dfc.key -out cert.p12 -name dfc
 
  Note: Make sure you put a password on the p12 file - otherwise you'll get a null reference exception when you try to import it.
 
 2. Create password files for cert.p12
-    .. code:: bash
 
-    printf "[your password]" > p12.pass
+   .. code-block:: bash
+
+      printf "[your password]" > p12.pass
 
 4. Update existing KeyStore files
 ---------------------------------
 
 Copy the new trust.jks and cert.p12 and password files from local environment to the DFC container.
 
- .. code:: bash
-   mkdir mycert
-   cp cert.p12 mycert/
-   cp p12.pass mycert/
-   cp trust.jks mycert/
-   cp trust.pass mycert/
-   kubectl cp mycert/ <DFC pod>:/opt/app/datafile/etc/cert/
+ .. code-block:: bash
+
+    mkdir mycert
+    cp cert.p12 mycert/
+    cp p12.pass mycert/
+    cp trust.jks mycert/
+    cp trust.pass mycert/
+    kubectl cp mycert/ <DFC pod>:/opt/app/datafile/etc/cert/
 
 5. Update configuration in consul
 -----------------------------------
 Change path in consul:
- .. code:: bash
+
+.. code-block:: bash
+
   dmaap.ftpesConfig.keyCert": "/opt/app/datafile/etc/cert/mycert/cert.p12
   dmaap.ftpesConfig.keyPasswordPath": "/opt/app/datafile/etc/cert/mycert/p12.pass
   dmaap.ftpesConfig.trustedCa": "/opt/app/datafile/etc/cert/mycert/trust.jks
   dmaap.ftpesConfig.trustedCaPasswordPath": "/opt/app/datafile/etc/cert/mycert/trust.pass
 
 Consul's address: http://<worker external IP>:<Consul External Port>
- .. code:: bash
-  kubectl -n onap get svc | grep consul
+
+ .. code-block:: bash
+
+   kubectl -n onap get svc | grep consul
 
 .. image:: ./consule-certificate-update.png
 
@@ -132,4 +138,4 @@ Consul's address: http://<worker external IP>:<Consul External Port>
 7. Other conditions
 ---------------------------------------------------------------------------
    This has been tested with vsftpd and dfc, with self-signed certificates.
-   In real deployment, we should use ONAP-CA signed certificate for DFC, and vendor-CA signed certificate for xNF
+   In real deployment, we should use ONAP-CA signed certificate for DFC, and vendor-CA signed certificate for xNF.

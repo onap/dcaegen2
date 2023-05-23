@@ -11,9 +11,9 @@ VES Processing Flow
 -------------------
 
 1. Collector supports different URI based on single or batch event to be received.
-2. Post authentication – events are validated against schema. At this point – appropriate return code is sent to client when validation fails.
+2. Post authentication - events are validated against schema. At this point - appropriate return code is sent to client when validation fails.
 3. Event Processor checks against transformation rules (if enabled) and handles VES output standardization (e.g. VES 7.x input to VES5.4 output).
-4. Optional (activated by flag *collector.externalSchema.checkflag*) post authentication of stndDefined fields – specific fields are validated against schema. At this point – appropriate return code is sent to client when validation fails.
+4. Optional (activated by flag *collector.externalSchema.checkflag*) post authentication of stndDefined fields - specific fields are validated against schema. At this point - appropriate return code is sent to client when validation fails.
 5. If no problems were detected during previous steps, success HTTP code is being returned.
 6. Based on domain (or stndDefinedNamespace), events are asynchronously distributed to configurable topics.
     1. If topic mapping does not exist, event distribution is skipped.
@@ -51,17 +51,17 @@ Features Supported
 - General schema validation (against standard VES definition)
 - StndDefined fields schema validation
 - Mapping of external schemas to local schema files during stndDefined validation
-- Multiple schema support and backward compatibility 
+- Multiple schema support and backward compatibility
 - Configurable event transformation
-- Configurable suppression 
+- Configurable suppression
 - Publish events into Dmaap Topic (with/without AAF)
 
-The collector can receive events via standard HTTP port (8080) or secure port (8443).  Depending on the install/configuration – either one or both can be supported (ports are also modifiable).
+The collector can receive events via standard HTTP port (8080) or secure port (8443).  Depending on the install/configuration - either one or both can be supported (ports are also modifiable).
 
 Dynamic configuration fed into Collector via DCAEPlatform
 ---------------------------------------------------------
 
-- Outbound Dmaap/UEB topic 
+- Outbound Dmaap/UEB topic
 - Schema version to be validated against
 - Authentication account for VNF
 
@@ -70,5 +70,3 @@ POST requests result in standard HTTP status codes:
 - 200-299  Success
 - 400-499  Client request has a problem (data error)
 - 500-599  Collector service has a problem
- 
-

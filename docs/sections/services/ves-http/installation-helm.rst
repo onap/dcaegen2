@@ -26,7 +26,7 @@ For example:
         helm -n onap upgrade dev-dcaegen2-services --reuse-values --values new-config.yaml oom/kubernetes/dcaegen2-services
 
 Where the contents of ``new-config.yaml`` file is:
-    .. code-block:: bash
+    .. code-block:: yaml
 
         dcae-ves-collector:
           applicationConfig:
@@ -39,11 +39,13 @@ For small changes like this, it is also possible to inline the new value:
 
 After the upgrade, the new auth method value should be visible inside dev-dcae-ves-collector-application-config-configmap Config-Map.
 It can be verified by running:
+
     .. code-block:: bash
 
         kubectl -n onap get cm <config map name> -o yaml
 
 For VES Collector:
+
     .. code-block:: bash
 
         kubectl -n onap get cm dev-dcae-ves-collector-application-config-configmap -o yaml
@@ -55,9 +57,9 @@ External repository schema files integration with VES Collector
 ---------------------------------------------------------------
 In order to utilize the externalRepo openAPI schema files defined in `OOM <https://gerrit.onap.org/r/gitweb?p=oom.git;a=tree;f=kubernetes/dcaegen2-services/resources/external>`_ repository and installed with dcaegen2 module, follow below steps.
 
-.. note:: 
+.. note::
   For more information on generating schema files, see `External-schema-repo-generator (OOM Utils repository) <https://gerrit.onap.org/r/gitweb?p=oom/utils.git;a=tree;f=external-schema-repo-generator>`_
-  
+
   Default ONAP deployment for Istanbul release makes available the SA88-Rel16 OpenAPI schema files; optionally SA99-Rel16 files can be loaded using the `Generator script <https://gerrit.onap.org/r/gitweb?p=oom/utils.git;a=blob;f=external-schema-repo-generator/generator/generate.sh>`_ based on the steps documented in `README <https://git.onap.org/oom/utils/tree/external-schema-repo-generator/README.md>`_
 
 
@@ -89,7 +91,7 @@ E.g:
         optional: true
       - name: 'dev-dcae-external-repo-configmap-sa88-rel16'
         type: configmap
-        mountPath: /opt/app/VESCollector/etc/externalRepo/3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI 
+        mountPath: /opt/app/VESCollector/etc/externalRepo/3gpp/rep/sa5/MnS/blob/SA88-Rel16/OpenAPI
         optional: true
 
 If more than a single external schema is required add new config map to object 'externalVolumes' like in above example. Make sure that all external schemas (all openAPI files) are reflected in the schema-map file.
@@ -112,10 +114,10 @@ Using external TLS certificates obtained using CMP v2 protocol
 
 In order to use the X.509 certificates obtained from the CMP v2 server (so called "operator`s certificates"), refer to the following description:
 
-:ref:`Enabling TLS with external x.509 certificates <external-tls-helm>`
+:ref:`Enabling TLS with external x.509 certificates <tls_enablement>`
 
 Example values for VES Collector:
-    .. code-block:: bash
+    .. code-block:: yaml
 
         global:
           cmpv2Enabled: true
@@ -135,4 +137,3 @@ Example values for VES Collector:
                 name: ves-cmpv2-keystore-password
                 key: password
                 create: true
-

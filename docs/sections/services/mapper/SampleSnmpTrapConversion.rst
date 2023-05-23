@@ -9,58 +9,58 @@ Following is the **Sample SNMP Trap** that will be received by the Universal VES
 
 .. code-block:: json
 
-    {  
+    {
    "cambria.partition":"10.53.172.132",
    "trap category":"ONAP-COLLECTOR-SNMPTRAP",
    "community len":0,
    "protocol version":"v2c",
-   "varbinds":[  
-      {  
+   "varbinds":[
+      {
          "varbind_value":"CLEARED and CRITICAL severities have the same name",
          "varbind_oid":"1.3.6.1.4.1.19444.12.2.0.2.0",
          "varbind_type":"OctetString"
       },
-      {  
+      {
          "varbind_value":"1.3",
          "varbind_oid":"1.3.6.1.4.1.19444.12.2.0.3.0",
          "varbind_type":"ObjectIdentifier"
       },
-      {  
+      {
          "varbind_value":"1.3",
          "varbind_oid":"1.3.6.1.4.1.19444.12.2.0.4.0",
          "varbind_type":"ObjectIdentifier"
       },
-      {  
+      {
          "varbind_value":"CLEARED",
          "varbind_oid":"1.3.6.1.4.1.19444.12.2.0.5.0",
          "varbind_type":"OctetString"
       },
-      {  
+      {
          "varbind_value":"Queue manager: Process failure cleared",
          "varbind_oid":"1.3.6.1.4.1.19444.12.2.0.6.0",
          "varbind_type":"OctetString"
       },
-      {  
+      {
          "varbind_value":"The queue manager process has been restored to normal operation",
          "varbind_oid":"1.3.6.1.4.1.19444.12.2.0.7.0",
          "varbind_type":"OctetString"
       },
-      {  
+      {
          "varbind_value":"The queue manager process has been restored to normal operation. The previously issued alarm has been cleared",
          "varbind_oid":"1.3.6.1.4.1.19444.12.2.0.8.0",
          "varbind_type":"OctetString"
       },
-      {  
+      {
          "varbind_value":"Changes to shared config will be synchronized across the cluster",
          "varbind_oid":"1.3.6.1.4.1.19444.12.2.0.9.0",
          "varbind_type":"OctetString"
       },
-      {  
+      {
          "varbind_value":"No action",
          "varbind_oid":"1.3.6.1.4.1.19444.12.2.0.10.0",
          "varbind_type":"OctetString"
       },
-      {  
+      {
          "varbind_value":"sprout-1.example.com",
          "varbind_oid":"1.3.6.1.4.1.19444.12.2.0.12.0",
          "varbind_type":"OctetString"
@@ -82,9 +82,9 @@ Following is the converted VES Format of the above SNMP Sample Trap by using the
 
 .. code-block:: json
 
- {  
-   "event":{  
-      "commonEventHeader":{  
+ {
+   "event":{
+      "commonEventHeader":{
          "startEpochMicrosec":1.5350269902625413E9,
          "eventId":"XXXX",
          "sequence":0,
@@ -96,49 +96,49 @@ Following is the converted VES Format of the above SNMP Sample Trap by using the
          "version":3,
          "reportingEntityName":"VesAdapter"
       },
-      "faultFields":{  
+      "faultFields":{
          "eventSeverity":"MINOR",
          "alarmCondition":"ONAP-COLLECTOR-SNMPTRAP",
          "faultFieldsVersion":2,
          "specificProblem":"SNMP Fault",
-         "alarmAdditionalInformation":[  
-            {  
+         "alarmAdditionalInformation":[
+            {
                "name":"1.3.6.1.4.1.19444.12.2.0.2.0",
                "value":"CLEARED and CRITICAL severities have the same name"
             },
-            {  
+            {
                "name":"1.3.6.1.4.1.19444.12.2.0.3.0",
                "value":"1.3"
             },
-            {  
+            {
                "name":"1.3.6.1.4.1.19444.12.2.0.4.0",
                "value":"1.3"
             },
-            {  
+            {
                "name":"1.3.6.1.4.1.19444.12.2.0.5.0",
                "value":"CLEARED"
             },
-            {  
+            {
                "name":"1.3.6.1.4.1.19444.12.2.0.6.0",
                "value":"Queue manager: Process failure cleared"
             },
-            {  
+            {
                "name":"1.3.6.1.4.1.19444.12.2.0.7.0",
                "value":"The queue manager process has been restored to normal operation"
             },
-            {  
+            {
                "name":"1.3.6.1.4.1.19444.12.2.0.8.0",
                "value":"The queue manager process has been restored to normal operation. The previously issued alarm has been cleared"
             },
-            {  
+            {
                "name":"1.3.6.1.4.1.19444.12.2.0.9.0",
                "value":"Changes to shared config will be synchronized across the cluster"
             },
-            {  
+            {
                "name":"1.3.6.1.4.1.19444.12.2.0.10.0",
                "value":"No action"
             },
-            {  
+            {
                "name":"1.3.6.1.4.1.19444.12.2.0.12.0",
                "value":"sprout-1.example.com"
             }
