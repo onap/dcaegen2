@@ -3,7 +3,7 @@
 
 Runtime Configuration
 =====================
-The Slice Analysis MS provides an easy way to receive runtime configurations through Policy, another ONAP module. Runtime configuration is initially developed to meet the requirements of the ONAP Kohn release IBN use case. If you want to use this function, please also refer to https://wiki.onap.org/display/DW/R11+General+Intent+Model+and+General+Intent+Interface+Requirements
+The Slice Analysis MS provides an easy way to receive runtime configurations through Policy, another ONAP module. Runtime configuration is initially developed to meet the requirements of the ONAP Kohn release IBN use case. If you want to use this function, please also refer to https://wiki.onap.org/pages/viewpage.action?pageId=138872665
 
 This page will explain how runtime configuration works, and how to utilize it. Hopefully this page can help you develop your own runtime configuration to meet your own requirements.
 
@@ -151,7 +151,7 @@ Steps to Use Runtime Configuration
 
     request body: push.json
 
-    .. code-block:: bash
+.. code-block:: bash
 
     {
       "policies": [
