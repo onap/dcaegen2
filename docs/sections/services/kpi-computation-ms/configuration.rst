@@ -7,6 +7,7 @@ Configuration
 KPI Computation MS expects to be able to fetch configuration in following JSON format:
 
 .. code-block:: json
+
     {
       "pollingInterval": 20,
       "aafUsername": "dcae@dcae.onap.org",

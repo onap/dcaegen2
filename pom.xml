@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!--
+===========LICENSE_START========================================================
 ================================================================================
 Copyright (c) 2017 AT&T Intellectual Property. All rights reserved.
 ================================================================================
@@ -70,6 +71,15 @@ ECOMP is a trademark and service mark of AT&T Intellectual Property.
     <sonar.pluginName>JS</sonar.pluginName>
     <sonar.inclusions>**/*.js</sonar.inclusions>
     -->
+    <onap-gerrit-review>
+        -changelog-missing
+        -missing-setup-py
+        -changelog-or-release-file-missing
+        -copyright-year-not-found-in-file
+        -text-before-copyright
+        -copyright-not-found-in-file
+        -capitalized-extension
+      </onap-gerrit-review>
   </properties>
   <build>
     <finalName>${project.artifactId}-${project.version}</finalName>
