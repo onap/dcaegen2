@@ -1,5 +1,6 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
 
 =================================
 DES (DataLake Extraction Service)
@@ -15,7 +16,7 @@ Overview
 
 Component description is included in `DES`_.
 
-.. _DES: ../../sections/services/datalake-handler/index.html
+.. _DES: ../../sections/services/datalake-handler/index.rst
 
 Offered APIs
 ============

@@ -1,5 +1,5 @@
-.. This work is licensed under a Creative Commons Attribution 4.0
-   International License. http://creativecommons.org/licenses/by/4.0
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
    
 .. _docs_SON_Handler_MS:
 
@@ -28,7 +28,7 @@ The logic may not be 100% fool-proof (i.e., cover all possible scenarios and bou
 
 The details of the state machines of all the threads in the core logic are available in https://wiki.onap.org/pages/viewpage.action?pageId=56131985.
 
-In Frankfurt release, adaptive SON functionality was introduced for PCI optimization. While determining the optimum PCI values to resolve PCI collision and confusion, the optimizer also takes into consideration a set of cells whose PCI values may not be changed during the optimization. Such situations could arise, for example, when the PCI value of a cell could not be updated in the past (due to whatever reason), or configuration policy specifies that certain cells’ PCI values should never be changed. So, the SON-Handler MS keeps track of cells whose PCI values cannot be changed. When triggering OOF for PCI optimization, the SON-Handler MS also provides the list of cells whose PCI values cannot be changed.
+In Frankfurt release, adaptive SON functionality was introduced for PCI optimization. While determining the optimum PCI values to resolve PCI collision and confusion, the optimizer also takes into consideration a set of cells whose PCI values may not be changed during the optimization. Such situations could arise, for example, when the PCI value of a cell could not be updated in the past (due to whatever reason), or configuration policy specifies that certain cells' PCI values should never be changed. So, the SON-Handler MS keeps track of cells whose PCI values cannot be changed. When triggering OOF for PCI optimization, the SON-Handler MS also provides the list of cells whose PCI values cannot be changed.
  
 
 Details of Frankfurt implementation are available in https://wiki.onap.org/display/DW/SON-Handler+MS+%28DCAE%29+Impacts.

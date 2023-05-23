@@ -5,18 +5,29 @@ branch = 'latest'
 master_doc = 'index'
 
 linkcheck_ignore = [
-  r'http://localhost:\d+/'
+    r'http://localhost:\d+/',
+    r'http:/',
+    r'https://localhost:\d+/',
+    r'https:/',
+    r'jdbc:'
+]
+
+exclude_patterns = [
+    r'.tox/**.rst'
 ]
 
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.graphviz',
+#    'sphinx.ext.autosectionlabel',
     'sphinxcontrib.blockdiag',
     'sphinxcontrib.seqdiag',
     'sphinxcontrib.swaggerdoc',
     'sphinxcontrib.plantuml'
 ]
 
+# Make sure the target is unique
+# autosectionlabel_prefix_document = True
 pygments_style = "sphinx"
 html_theme = "sphinx_rtd_theme"
 html_theme_options = {

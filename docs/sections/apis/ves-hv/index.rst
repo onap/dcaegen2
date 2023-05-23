@@ -16,7 +16,8 @@ Overview
 
 Component description can be found under `HV-VES Collector`_.
 
-.. _HV-VES Collector: ../../services/ves-hv/index.html
+.. _HV-VES Collector: ../../services/ves-hv/index.rst
+.. _Domains supported by HV-VES: ./supported-domains
 
 .. _tcp_endpoint:
 
@@ -26,7 +27,7 @@ TCP Endpoint
 HV-VES is exposed as NodePort service on Kubernetes cluster on port 30222/tcp.
 By default, as of the Frankfurt release, all TCP communications are secured using
 SSL/TLS. Plain, insecure TCP connections without socket data encryption can be enabled if needed.
- (see ref:`ssl_tls_authorization`).
+(see ref:`ssl_tls_authorization`).
  
 Without TLS, client authentication/authorization is not possible. 
 Connections are stream-based (as opposed to request-based) and long-running.
