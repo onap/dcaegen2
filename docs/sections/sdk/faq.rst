@@ -19,7 +19,7 @@ Are you sure Java 11 is supported? I can see a debug log from Netty.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you have enabled a debug log level for Netty packages you might have seen the following log:
 
-.. code-block:: java
+.. code-block:: log
 
     [main] DEBUG i.n.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
 

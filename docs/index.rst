@@ -22,8 +22,7 @@ Data Collection, Analytics, and Events (DCAE)
    ./sections/sdk/index.rst
    ./sections/configuration.rst
    ./sections/services/serviceindex.rst
-   ./sections/release-notes.rst  
- 
+   ./sections/release-notes.rst
+
 
 .. image:: https://bestpractices.coreinfrastructure.org/projects/1718/badge
-

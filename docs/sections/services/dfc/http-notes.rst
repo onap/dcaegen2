@@ -67,7 +67,7 @@ HTTPS connection with DFC
 The file ready message for https server is the same as used in other protocols and http. The only difference is that the scheme is set to
 "https":
 
-.. code-block:: bash
+.. code-block:: json
 
    ...
    "arrayOfNamedHashMap": [

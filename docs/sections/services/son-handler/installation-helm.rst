@@ -88,7 +88,7 @@ Deployment Steps
 
 - Update monitoring policy ID in below configuration which is used to enable Policy-Sync Side car container to be deployed and retrieves active policy configuration.
 
-  .. code-block:: bash
+  .. code-block:: yaml
 
     dcaePolicySyncImage: onap/org.onap.dcaegen2.deployments.dcae-services-policy-sync:1.0.1
     policies:
@@ -97,13 +97,13 @@ Deployment Steps
 
 - Update Config db IP address:
 
-  .. code-block:: bash
+  .. code-block:: yaml
 
     sonhandler.configDb.service: http://<configDB-IPAddress>:8080
 
 - Enable sonhandler component in oom/kubernetes/dcaegen2-services/values.yaml
 
-  .. code-block:: bash
+  .. code-block:: yaml
 
     dcae-son-handler:
         enabled: true
