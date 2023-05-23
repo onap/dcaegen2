@@ -28,9 +28,9 @@ With DCAE Transformation to Helm completed in Jakarta/R10 release, all DCAE comp
 Other DCAE Services can be deployed on-demand via their independent helm-charts. For on-demand helm chart, refer to steps described in :ref:`Helm install/upgrade section <dcae-service-deployment>`.
 
 
-.. note:: 
+.. note::
   DCAE platform components deployments is optionally available through Helm charts under the **dcaegen2** directory however this mode is not supported with Jakarta release. These charts will be removed in subsequent release.
-  
+
 
 
 DCAE Chart Organization
@@ -92,7 +92,7 @@ These include:
   * HV-VES Collector
   * PNF-Registration Handler Service
   * Threshold Crossing Analysis (TCA-gen2)
-* DCAE-Services healthcheck 
+* DCAE-Services healthcheck
 * VES OpenAPI Manager
 
 Some of the DCAE subcharts include an initContainer that checks to see if
@@ -102,9 +102,9 @@ of these subcharts will pause until the needed services are available.
 Since Istanbul release, DCAE bootstrapped Microservice deployment are managed completely under Helm.
 
 Additionaly tls-init-container invoked during component deployment relies on AAF to generate the required certificate hence AAF
-must be enabled under OOM deployment configuration. 
+must be enabled under OOM deployment configuration.
 
-As majority of DCAE services rely on DMAAP (MR and DR) interfaces, ONAP/DMAAP must also be enabled under OOM deployment configuration. 
+As majority of DCAE services rely on DMAAP (MR and DR) interfaces, ONAP/DMAAP must also be enabled under OOM deployment configuration.
 
 DCAE Configuration
 ------------------
@@ -122,11 +122,12 @@ Deployment time configuration of DCAE components are defined in several places.
 
 
 .. _dcae-service-deployment:
+
 On-demand deployment/upgrade through Helm
 -----------------------------------------
 
 Under DCAE Transformation to Helm, all DCAE components has been delivered as helm charts under
-OOM repository (https://git.onap.org/oom/tree/kubernetes/dcaegen2-services). 
+OOM repository (https://git.onap.org/oom/tree/kubernetes/dcaegen2-services).
 
 
 All DCAE component charts follows standard Helm structure. Each Microservice charts has predefined configuration defined under
@@ -143,9 +144,9 @@ With Istanbul release, OOM team included support for ServiceAccount in ONAP depl
 
 Following packages has been added under oom/common to support pre-provisioning of cluster roles and ServiceAccount management
 
-  * `ServiceAccount <https://git.onap.org/oom/tree/kubernetes/common/serviceAccount/values.yaml>`_ 
+  * `ServiceAccount <https://git.onap.org/oom/tree/kubernetes/common/serviceAccount/values.yaml>`_
   * `RoleWrapper <https://git.onap.org/oom/tree/kubernetes/common/roles-wrapper>`_
- 
+
 When deployed, these chart will create the ServiceAccount and Role (based on override) and required Rolebinding (to associate the Serviceaccount to a role).
 
 ONAP deployment by default includes the required provisioning of roles under release name (such as "dev") under which ONAP is deployed. For subsequent
@@ -181,7 +182,7 @@ Service component can also be installed individually from oom/kubernetes/dcaegen
 
         helm -n onap install dev-dcaegen2-services-ves-mapper oom/kubernetes/dcaegen2-services/components/dcae-ves-mapper -f values.yaml
 
-Using -f flag override file can be specified which will take precedence over default configuration. 
+Using -f flag override file can be specified which will take precedence over default configuration.
 When commandline override is not provided, default (values.yaml) provided in chart-directory will be used.
 
 ``Upgrade``
@@ -205,7 +206,7 @@ Components can be uninstalled using delete command.
 
     .. code-block:: bash
 
-        helm -n <namespace> delete <DEPLOYMENT_PREFIX>-dcaegen2-services 
+        helm -n <namespace> delete <DEPLOYMENT_PREFIX>-dcaegen2-services
 
 DCAE Service Endpoints
 ----------------------

@@ -1,5 +1,6 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
 
 VES-Collector
 =============
@@ -125,7 +126,7 @@ Request Example
 
 Response Example
 
-.. code-block:: http
+.. code-block:: text
 
     HTTPS/1.1 202 Accepted
     X-MinorVersion: 1
