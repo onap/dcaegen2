@@ -71,4 +71,4 @@ Example yaml file with DataFile Collector configuration:
         type: message_router
 
 
-More information about properties could be found in configuration section, see :ref:`dfc_configuration`
+More information about properties could be found in configuration section, see :ref:`dfc_configuration`.

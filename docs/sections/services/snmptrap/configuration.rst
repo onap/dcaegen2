@@ -56,7 +56,7 @@ Potential Config Changes in your environment
        "minimum_severity_to_log": 2    # minimum message level to log; 0 recommended for debugging, 3+ recommended for runtime/production
 
     in snmpv3_config section:
-    
+
        (see detailed snmpv3_config discussion below)
 
 snmpv3_config
@@ -419,5 +419,5 @@ The format of the JSON configuration that drives all behavior of SNMPTRAP is pro
                     "usmAesCfb256Protocol": "privkey47",
                     "usmHMAC384SHA512AuthProtocol": "authkey47"
                 }
-    
+
        }

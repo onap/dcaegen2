@@ -51,7 +51,7 @@ Responses
 Sample Subscription Body
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: http
+.. code-block:: json
 
     {
         "subscription": {
@@ -168,7 +168,7 @@ Update a Subscription nf filter
 Sample NF Filter Body
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: http
+.. code-block:: json
 
     {
         "nfFilter": {
@@ -216,7 +216,7 @@ Create a measurement group for a given subscription
 Sample Measurement Group Body
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: http
+.. code-block:: json
 
     {
         "measurementGroup": {

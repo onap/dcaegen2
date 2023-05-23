@@ -45,7 +45,7 @@ Deployment/Installation errors
    |13:04:37.537 [main] ERROR errorLogger - Application stoped due to missing default Config file
    |13:04:37.538 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
    |15:40:43.982 [main] WARN  debugLogger - All Smooks objects closed
-   
+
 **These log messages are printed when the default configuration file "kv.json", was not present.**
 
 
