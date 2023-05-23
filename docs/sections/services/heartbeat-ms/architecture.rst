@@ -9,7 +9,7 @@ configuration from CBS and parses these entries and saves them in the
 postgres database having table name **vnf_table_1**. Each entry in the
 configuration is for a particular eventName. Each entry has missed
 heartbeat count, heartbeat interval, Control loop name etc. along with
-many other parameters. 
+many other parameters.
 
 Whenever a heartbeat event is received, the sourceName, lastEpochTime
 and other information is stored in another postgres database having
@@ -38,8 +38,8 @@ function/method to download the CBS configuration.
 
 The heartbeat microservice has 2 states
 
-**Reconfiguration state** – Download configuration from CBS and update
+**Reconfiguration state** - Download configuration from CBS and update
 the vnf_table_1 is in progress.
 
-**Running state** – Normal working that comprises of receiving of HB
+**Running state** - Normal working that comprises of receiving of HB
 events and sending of control loop event if required conditions are met.

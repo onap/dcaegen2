@@ -7,15 +7,15 @@ Installation
 
 An environment suitable for running docker containers is recommended.
 If that is not available, SNMPTRAP source can be downloaded and run
-in a VM or on baremetal.  
+in a VM or on baremetal.
 
 Both scenarios are documented below.
 
 As a docker container
 ---------------------
 
-**trapd** is delivered as a docker container based on python 3.6.  The 
-host or VM that will run this container must have the docker application 
+**trapd** is delivered as a docker container based on python 3.6.  The
+host or VM that will run this container must have the docker application
 loaded and available to the userID that will be running the SNMPTRAP container.
 
 If running from a docker container, it is assumed that *Config
@@ -36,12 +36,12 @@ nexus and launch it in the container named "trapd":
     ``docker run --detach -t --rm -p 162:6162/udp -P --name=trapd nexus3.onap.org:10001/onap/org.onap.dcaegen2.collectors.snmptrap:2.0.6 ./bin/snmptrapd.sh start``
 
 Running an instance of **trapd** will result in arriving traps being published
-to the topic specified by Config Binding Services.  
+to the topic specified by Config Binding Services.
 
 Standalone
 ----------
 
-**trapd** can also be run outside of a container environment, without CBS interactions. 
+**trapd** can also be run outside of a container environment, without CBS interactions.
 If CBS is not present, SNMPTRAP will look for a JSON configuration file specified via the
 environment variable CBS_SIM_JSON at startup.  Location of this file should be specified
 as a relative path from the <SNMPTRAP base directory>/bin directory. E.g.
@@ -55,8 +55,8 @@ Prerequisites
 trapd requires the following to run in a non-docker environment:
 
     - Python 3.6+
-    - Python module “pysnmp” 4.4.5
-    - Python module “requests” 2.18.3
+    - Python module "pysnmp" 4.4.5
+    - Python module "requests" 2.18.3
 
 To install prerequisites:
 
@@ -83,7 +83,7 @@ Download a copy of the latest trapd image from gerrit in it's standard runtime l
 Configure for your environment
 """"""""""""""""""""""""""""""
 
-In a non-docker environment, ONAP trapd is controlled by a locally hosted JSON configuration file.  It is 
+In a non-docker environment, ONAP trapd is controlled by a locally hosted JSON configuration file.  It is
 referenced in the trapd startup script as:
 
 .. code-block:: bash
@@ -97,7 +97,7 @@ This file should be in the exact same format is the response from CBS in a fully
 
     /opt/app/snmptrap/etc/snmptrapd.json
 
-Make applicable changes to this file - typically things that will need to change include: 
+Make applicable changes to this file - typically things that will need to change include:
 
 .. code-block:: bash
 
@@ -115,4 +115,3 @@ Start the application
 """""""""""""""""""""
 
     ``nohup /opt/app/snmptrap/bin/snmptrapd.sh start > /opt/app/snmptrap/logs/snmptrapd.out 2>&1 &``
-

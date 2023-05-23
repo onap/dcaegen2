@@ -38,10 +38,10 @@ The user can also enable secure communication with the DMaaP Message Router.
 DFC can handle multiple stream identifiers. For each stream identifier/feed combination the user must provide the
 ** stream identifier**, **feed name**, and **feed location**.
 
-**Note!** The **feed name** provided should be used by the consumer/s to set up the subscription to the feed. 
+**Note!** The **feed name** provided should be used by the consumer/s to set up the subscription to the feed.
 
 The **stream identifier** shall be defined as an item under the **streams_publishes** tag in the "**applicationConfig**"
-section. 
+section.
 
 .. code-block:: yaml
 
@@ -68,10 +68,10 @@ section.
 Under this tag the internal "**feed identifier**" for the feed shall also be added to get the
 info about the feed substituted in by CBS (that's what the <<>> tags are for).
 
-The **feed name** and **feed location** are defined as inputs for the user to provide in helm chart values.yaml. An example snapshot on default configuration is provided below. 
+The **feed name** and **feed location** are defined as inputs for the user to provide in helm chart values.yaml. An example snapshot on default configuration is provided below.
 
 .. code-block:: yaml
- 
+
   	# DataRouter Feed Configuration
 	drFeedConfig:
 	  - feedName: bulk_pm_feed
@@ -79,7 +79,7 @@ The **feed name** and **feed location** are defined as inputs for the user to pr
 	    feedVersion: "0.0"
 	    asprClassification: unclassified
 	    feedDescription: DFC Feed Creation
-	
+
 	# DataRouter Publisher Configuration
 	drPubConfig:
 	  - feedName: bulk_pm_feed
@@ -95,7 +95,7 @@ Turn On/Off StrictHostChecking
 **StrictHostChecking** is a SSH connection option which prevents Man in the Middle (MitM) attacks. If it is enabled, client checks HostName and public key provided by server and compares it with keys stored locally. Only if matching entry is found, SSH connection can be established.
 By default in DataFile Collector this option is enabled (true) and requires to provide known_hosts list to DFC container.
 
-**Important: DFC requires public keys in sha-rsa KeyAlgorithm** 
+**Important: DFC requires public keys in sha-rsa KeyAlgorithm**
 
 **Known_hosts file** is a list in following format:
 
@@ -103,7 +103,7 @@ By default in DataFile Collector this option is enabled (true) and requires to p
 
   <HostName/HostIP> <KeyAlgorithms> <Public Key>
 
-e.g: 
+e.g:
 
 .. code-block:: bash
 
@@ -137,7 +137,7 @@ e.g:
 3. Mount newly created Config Map as Volume to DFC by editing DFC deployment. **DFC deployment contains 3 containers, pay attention to mount the file to the appropriate container.**
 
 .. code-block:: yaml
-  
+
   ...
   kind: Deployment
   metadata:
@@ -165,7 +165,7 @@ e.g:
 Known_hosts file path can be controlled by Environment Variable *KNOWN_HOSTS_FILE_PATH*. Full (absolute) path has to be provided. Sample deployment with changed known_hosts file path can be seen below.
 
 .. code-block:: yaml
-  
+
   ...
   kind: Deployment
   metadata:
@@ -177,7 +177,7 @@ Known_hosts file path can be controlled by Environment Variable *KNOWN_HOSTS_FIL
       spec:
         containers:
         - image: <DFC image>
-          envs: 
+          envs:
             - name: KNOWN_HOSTS_FILE_PATH
               value: /home/datafile/.ssh/new/path/<known_hosts file name, e.g. my_custom_keys>
           ...
@@ -207,7 +207,7 @@ e.g:
 
    kubectl -n onap edit cm onap-dcae-dfc-known-hosts
 
-To delete and create again Config Map execute: 
+To delete and create again Config Map execute:
 
 .. code-block:: bash
 

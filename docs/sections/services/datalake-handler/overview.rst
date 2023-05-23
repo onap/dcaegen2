@@ -1,6 +1,6 @@
-.. This work is licensed under a Creative Commons Attribution 4.0
-   International License. http://creativecommons.org/licenses/by/4.0
-   
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
+
 .. _docs_Datalake_Handler_MS:
 
 Architecture
@@ -9,12 +9,12 @@ Architecture
 
 Background
 ~~~~~~~~~~
-There are large amount of data flowing among ONAP components, mostly via DMaaP and Web Services. 
-For example, all events/feed collected by DCAE collectors go through DMaaP. 
-DMaaP is backed by Kafka, which is a system for Publish-Subscribe, 
-where data is not meant to be permanent and gets deleted after certain retention period. 
+There are large amount of data flowing among ONAP components, mostly via DMaaP and Web Services.
+For example, all events/feed collected by DCAE collectors go through DMaaP.
+DMaaP is backed by Kafka, which is a system for Publish-Subscribe,
+where data is not meant to be permanent and gets deleted after certain retention period.
 Kafka is not a database, means that data there is not for query.
-Though some components may store processed result into their local databases, most of the raw data will eventually lost. 
+Though some components may store processed result into their local databases, most of the raw data will eventually lost.
 We should provide a systematic way to store these raw data, and even the processed result,
 which will serve as the source for data analytics and machine learning, providing insight to the network operation.
 
@@ -31,15 +31,15 @@ Note that not all data storage systems in the picture are supported. In R6, the 
   - Elasticsearch and Kibana
   - HDFS
 
-Depending on demands, new systems may be added to the supported list. In the following we use the term database for the storage, 
+Depending on demands, new systems may be added to the supported list. In the following we use the term database for the storage,
 even though HDFS is a file system (but with simple settings, it can be treats as a database, e.g. Hive.)
 
-Note that once the data is stored in databases, other ONAP components and systems will directly query data from the databases, 
+Note that once the data is stored in databases, other ONAP components and systems will directly query data from the databases,
 without interacting with DataLake Handler.
 
 Description
 ~~~~~~~~~~~
-DataLake Handler's main function is to monitor and persist data flow through DMaaP and provide a query API for other component or external services. The databases are outside of ONAP scope, 
+DataLake Handler's main function is to monitor and persist data flow through DMaaP and provide a query API for other component or external services. The databases are outside of ONAP scope,
 since the data is expected to be huge, and a database may be a complicated cluster consisting of thousand of nodes.
 
 Admin UI
