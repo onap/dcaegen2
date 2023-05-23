@@ -8,12 +8,12 @@
 
 
 
-==================
+
 DCAE Release Notes
-==================
+##################
 
 .. contents::
-    :depth: 2
+    :maxdepth: 2
 ..
 
 
@@ -22,7 +22,7 @@ DCAE Release Notes
 ..      =======================
 
 
-Version: 12.0.0
+Version 12.0.0
 ===============
 
 
@@ -251,7 +251,7 @@ Quick Links:
 ..      =====================
 
 
-Version: 11.0.0
+Version 11.0.0
 ===============
 
 
@@ -489,7 +489,7 @@ Quick Links:
 ..      ==========================
 
 
-Version: 10.0.0
+Version 10.0.0
 ===============
 
 
@@ -727,7 +727,7 @@ Quick Links:
 ..      =====================================
 
 
-Version: 9.0.1
+Version 9.0.1
 ==============
 
 Abstract
@@ -803,7 +803,7 @@ Software Deliverables
 ..      ==========================
 
 
-Version: 9.0.0
+Version 9.0.0
 ==============
 
 
@@ -1059,7 +1059,7 @@ Quick Links:
 ..      =====================================
 
 
-Version: 8.0.1
+Version 8.0.1
 ==============
 
 Abstract
@@ -1112,7 +1112,7 @@ None
 ..      ==========================
 
 
-Version: 8.0.0
+Version 8.0.0
 ==============
 
 
@@ -1301,8 +1301,8 @@ Refer to collector installation page for more details:
 .. toctree::
    :maxdepth: 1
 
-   ./services/ves-http/installation.rst
-   ./services/ves-hv/installation.rst
+   ./services/ves-http/installation-helm.rst
+   ./services/ves-hv/installation-helm.rst
 
     
 *Known Vulnerabilities*
@@ -1364,7 +1364,7 @@ Quick Links:
 ..      ===================================
 
 
-Version: 7.0.1
+Version 7.0.1
 ==============
 
 Abstract
@@ -1416,7 +1416,7 @@ Same as Guilin Release
 ..      ========================
 
 
-Version: 7.0.0
+Version 7.0.0
 ==============
 
 
@@ -1657,7 +1657,7 @@ Quick Links:
 ..      ======================================
 
 
-Version: 5.0.2
+Version 5.0.2
 ==============
 
 Abstract
@@ -1711,7 +1711,7 @@ Same as El-Alto Release
 ..      ======================================
 
 
-Version: 6.0.1
+Version 6.0.1
 ==============
 
 Abstract
@@ -1764,7 +1764,7 @@ Same as Frankfurt Release
 ..      ===========================
 
 
-Version: 6.0.0
+Version 6.0.0
 ==============
 
 
@@ -2001,7 +2001,7 @@ Quick Links:
 ..      =========================
 
 
-Version: 5.0.1
+Version 5.0.1
 ==============
 
 The offical El-Alto release (rolls up all 5.0.0 early drop deliverables) focused on technical debts and SECCOM priority work-items.
@@ -2164,7 +2164,7 @@ The following components are upgraded from Dublin/R4 and El-Alto EarlyDrop deliv
        - Docker container tag: onap/org.onap.dcaegen2.collectors.hv-ves.hv-collector-main:1.3.0
        - Description : Code optimization, bug fixes and SDK alignment
 
-Version: 5.0.0
+Version 5.0.0
 ==============
 
 El-Alto Early-drop focused on technical debts and SECCOM priority work-items.
@@ -2257,7 +2257,7 @@ The following components are upgraded from Dublin/R4.
 
 
 
-Version: 4.0.0
+Version 4.0.0
 ==============
 
 :Release Date: 2019-06-06
@@ -2459,7 +2459,7 @@ The following components are upgraded from R3
 
 
 
-Version: 3.0.1
+Version 3.0.1
 ==============
 
 :Release Date: 2019-01-31
@@ -2510,7 +2510,7 @@ The following containers are updated in R3.0.1
 
 
 
-Version: 3.0.0
+Version 3.0.0
 --------------
 
 :Release Date: 2018-11-30
@@ -2646,7 +2646,7 @@ The following components are upgraded from R2:
 
 
 
-Version: 2.0.0
+Version 2.0.0
 ==============
 
 :Release Date: 2018-06-07
@@ -2762,7 +2762,7 @@ The following components are upgraded from R1:
 
 
 
-Version: 1.0.0
+Version 1.0.0
 ==============
 
 :Release Date: 2017-11-16

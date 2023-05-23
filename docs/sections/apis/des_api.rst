@@ -1,5 +1,6 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
 
 =================================
 DES (DataLake Extraction Service)
@@ -8,7 +9,7 @@ DES (DataLake Extraction Service)
 :Date: 2020-11-11
 
 .. contents::
-    :depth: 3
+    :maxdepth: 3
 
 Overview
 ========
