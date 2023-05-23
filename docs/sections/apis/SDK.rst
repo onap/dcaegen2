@@ -1,12 +1,13 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
 
 
 DCAE SDK
 ========
 
 .. contents::
-    :depth: 3
+    :maxdepth: 3
 ..
 
 Overview
