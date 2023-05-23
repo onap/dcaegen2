@@ -18,4 +18,3 @@ Component Logging
 -----------------
 
 Please refer to individual service component webpage for more information. In general the logs of service component can be accessed using ``kubectl get logs -n onap <pod_name>``   
-

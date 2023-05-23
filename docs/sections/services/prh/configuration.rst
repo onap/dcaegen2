@@ -1,6 +1,7 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
+.. _prh_configuration:
 
 Configuration
 =============
@@ -92,4 +93,3 @@ For PRH 1.9.0 version (London) , a new mode has been introduced which allows ear
             secretKeyRef:
               key: sasl.jaas.config
               name: strimzi-kafka-admin
-

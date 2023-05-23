@@ -1,5 +1,6 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
 
 .. _prh_api:
 
@@ -150,4 +151,3 @@ Maven Children Artifacts:
 2. prh-aai-client: Contains implementation of AAI client
 3. prh-dmaap-client: Contains implementation of DmaaP client
 4. prh-commons: Common code for whole prh modules
-

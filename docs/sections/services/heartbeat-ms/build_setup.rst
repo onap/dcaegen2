@@ -89,7 +89,7 @@ CBS polling. The following environment variables are to be set.**
    correctly. Usually groupID remains the same for all instance of HB
    where as consumerID would be changed for each instance of HB Micro
    service. If groupID and consumerID is not provided, then it takes
-   “DefaultGroup” and “1” respectively.
+   "DefaultGroup" and "1" respectively.
 
 **Setting CBS configuration parameters using the consule KV URL.**
 

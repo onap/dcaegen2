@@ -6,7 +6,7 @@ Available APIs
 
 
 .. toctree::
-    :depth: 3
+    :maxdepth: 3
 
 .. _config_binding_service_sdk:
 

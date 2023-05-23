@@ -181,4 +181,3 @@ For PRH 1.9.0 version (London) , a new mode has been introduced which allows ear
             secretKeyRef:
               key: sasl.jaas.config
               name: strimzi-kafka-admin
-
