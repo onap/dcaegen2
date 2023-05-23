@@ -82,7 +82,7 @@ DFC uses a number of configuration parameters. You can find below the kind of re
 
 -Wrong trustedCaPassword:
 
-.. code-block:: json
+.. code-block:: log
 
     org.onap.dcaegen2.collectors.datafile.tasks.FileCollector     |2019-04-24T14:05:54.494Z     |WARN     |Failed to download file: PNF0 A20000626.2315+0200-2330+0200_PNF0-0-1MB.tar.gz, reason: org.onap.dcaegen2.collectors.datafile.exceptions.DatafileTaskException: Could not open connection: java.io.IOException: Keystore was tampered with, or password was incorrect     |RequestID=A20000626.2315+0200-2330+0200_PNF0-0-1MB.tar.gz     |     |     |FileCollectorWorker-2     |
     \...     |WARN     |Failed to download file: ..., reason: org.onap.dcaegen2.collectors.datafile.exceptions.DatafileTaskException: Could not open connection: java.io.IOException: Keystore was tampered with, or password was incorrect     ...
@@ -93,7 +93,7 @@ DFC uses a number of configuration parameters. You can find below the kind of re
 
 -Wrong trustedCa:
 
-.. code-block:: json
+.. code-block:: none
 
     org.onap.dcaegen2.collectors.datafile.tasks.FileCollector     |2019-04-24T14:11:22.584Z     |WARN     |Failed to download file: PNF0 A20000626.2315+0200-2330+0200_PNF0-0-1MB.tar.gz, reason: org.onap.dcaegen2.collectors.datafile.exceptions.DatafileTaskException: Could not open connection: java.io.FileNotFoundException: **WRONGconfig/ftp.jks**     |RequestID=A20000626.2315+0200-2330+0200_PNF0-0-1MB.tar.gz     |     |     |FileCollectorWorker-2     |
     \...     |WARN     |Failed to download file: ..., reason: org.onap.dcaegen2.collectors.datafile.exceptions.DatafileTaskException: Could not open connection: java.io.FileNotFoundException: WRONGconfig/ftp.jks     ...
@@ -103,7 +103,7 @@ DFC uses a number of configuration parameters. You can find below the kind of re
 
 -Wrong keyPassword:
 
-.. code-block:: json
+.. code-block:: none
 
     org.onap.dcaegen2.collectors.datafile.tasks.FileCollector     |2019-04-24T14:15:40.694Z     |WARN     |Failed to download file: PNF0 A20000626.2315+0200-2330+0200_PNF0-0-1MB.tar.gz, reason: org.onap.dcaegen2.collectors.datafile.exceptions.DatafileTaskException: Could not open connection: java.io.IOException: Keystore was tampered with, or password was incorrect     |RequestID=A20000626.2315+0200-2330+0200_PNF0-0-1MB.tar.gz     |     |     |FileCollectorWorker-2     |
     \...     |WARN     |Failed to download file: ..., reason: org.onap.dcaegen2.collectors.datafile.exceptions.DatafileTaskException: Could not open connection: java.io.IOException: Keystore was tampered with, or password was incorrect     ...
@@ -113,7 +113,7 @@ DFC uses a number of configuration parameters. You can find below the kind of re
 
 -Wrong keyCert:
 
-.. code-block:: json
+.. code-block:: none
 
     org.onap.dcaegen2.collectors.datafile.tasks.FileCollector     |2019-04-24T14:20:46.308Z     |WARN     |Failed to download file: PNF0 A20000626.2315+0200-2330+0200_PNF0-0-1MB.tar.gz, reason: org.onap.dcaegen2.collectors.datafile.exceptions.DatafileTaskException: Could not open connection: java.io.FileNotFoundException: **WRONGconfig/dfc.jks (No such file or directory)**     |RequestID=A20000626.2315+0200-2330+0200_PNF0-0-1MB.tar.gz     |     |     |FileCollectorWorker-2     |
     \...     |WARN     |Failed to download file: ..., reason: org.onap.dcaegen2.collectors.datafile.exceptions.DatafileTaskException: Could not open connection: java.io.FileNotFoundException: WRONGconfig/dfc.jks (No such file or directory)     ...
@@ -123,7 +123,7 @@ DFC uses a number of configuration parameters. You can find below the kind of re
 
 -Wrong consumer dmaapHostName:
 
-.. code-block:: json
+.. code-block:: none
 
     org.onap.dcaegen2.collectors.datafile.tasks.ScheduledTasks     |2019-04-24T14:27:06.578Z     |ERROR     |Polling for file ready message failed, exception: java.net.UnknownHostException: **WRONGlocalhost**: Try again, config: DmaapConsumerConfiguration{consumerId=C12, consumerGroup=OpenDcae-c12, timeoutMs=-1, messageLimit=1, **dmaapHostName=WRONGlocalhost**, dmaapPortNumber=2222, dmaapTopicName=/events/unauthenticated.VES_NOTIFICATION_OUTPUT, dmaapProtocol=http, dmaapUserName=, dmaapUserPassword=, dmaapContentType=application/json, trustStorePath=change it, trustStorePasswordPath=change it, keyStorePath=change it, keyStorePasswordPath=change it, enableDmaapCertAuth=false}     |RequestID=90fe7450-0bc2-4bf6-a2f0-2aeef6f196ae     |     |     |reactor-http-epoll-3     |
     \...     |ERROR     |Polling for file ready message failed, exception: java.net.UnknownHostException: *WRONGlocalhost*, config: DmaapConsumerConfiguration{..., dmaapHostName=*WRONGlocalhost*, ...}     ...
@@ -134,7 +134,7 @@ DFC uses a number of configuration parameters. You can find below the kind of re
 
 -Wrong consumer dmaapPortNumber:
 
-.. code-block:: json
+.. code-block:: none
 
     org.onap.dcaegen2.collectors.datafile.tasks.ScheduledTasks     |2019-04-24T14:33:35.286Z     |ERROR     |Polling for file ready message failed, exception: io.netty.channel.AbstractChannel$AnnotatedConnectException: syscall:getsockopt(..) failed: Connection refused: localhost/127.0.0.1:**WRONGport**, config: DmaapConsumerConfiguration{consumerId=C12, consumerGroup=OpenDcae-c12, timeoutMs=-1, messageLimit=1, dmaapHostName=localhost, **dmaapPortNumber=WRONGport**, dmaapTopicName=/events/unauthenticated.VES_NOTIFICATION_OUTPUT, dmaapProtocol=http, dmaapUserName=, dmaapUserPassword=, dmaapContentType=application/json, trustStorePath=change it, trustStorePasswordPath=change it, keyStorePath=change it, keyStorePasswordPath=change it, enableDmaapCertAuth=false}     |RequestID=b57c68fe-84bf-442f-accd-ea821a5a321f     |     |     |reactor-http-epoll-3     |
     \...     |ERROR     |Polling for file ready message failed, exception: io.netty.channel.AbstractChannel$AnnotatedConnectException: syscall:getsockopt(..) failed: Connection refused: localhost/127.0.0.1:*WRONGport*, config: DmaapConsumerConfiguration{..., dmaapPortNumber=*WRONGport*, ...}     ...
@@ -145,7 +145,7 @@ DFC uses a number of configuration parameters. You can find below the kind of re
 
 -Wrong consumer dmaapTopicName:
 
-.. code-block:: json
+.. code-block:: none
 
     org.onap.dcaegen2.collectors.datafile.tasks.ScheduledTasks     |2019-04-24T14:38:07.097Z     |ERROR     |Polling for file ready message failed, exception: java.lang.RuntimeException: DmaaPConsumer HTTP 404 NOT_FOUND, config: DmaapConsumerConfiguration{consumerId=C12, consumerGroup=OpenDcae-c12, timeoutMs=-1, messageLimit=1, dmaapHostName=localhost, dmaapPortNumber=2222, **dmaapTopicName=/events/unauthenticated.VES_NOTIFICATION_OUTPUTWRONG**, dmaapProtocol=http, dmaapUserName=, dmaapUserPassword=, dmaapContentType=application/json, trustStorePath=change it, trustStorePasswordPath=change it, keyStorePath=change it, keyStorePasswordPath=change it, enableDmaapCertAuth=false}     |RequestID=8bd71bac-68af-494b-9518-3ab4478371cf     |     |     |reactor-http-epoll-4     |
     \...     |ERROR     |Polling for file ready message failed, exception: java.lang.RuntimeException: DmaaPConsumer HTTP 404 NOT_FOUND, config: DmaapConsumerConfiguration{..., dmaapTopicName=*/events/unauthenticated.VES_NOTIFICATION_OUTPUTWRONG*, ...}     ...
@@ -161,10 +161,10 @@ Missing known_hosts file
 """"""""""""""""""""""""
 When StrictHostKeyChecking is enabled and DFC cannot find a known_hosts file, the warning information shown below is visible in the logfile. In this case, DFC acts like StrictHostKeyChecking is disabled.
 
-.. code-block:: bash
+.. code-block:: none
 
-    org.onap.dcaegen2.collectors.datafile.ftp.SftpClient     |2020-07-24T06:32:56.010Z     
-    |WARN     |StrictHostKeyChecking is enabled but environment variable KNOWN_HOSTS_FILE_PATH is not set or points to not existing file [/home/datafile/.ssh/known_hosts]  -->  falling back to StrictHostKeyChecking='no'.  
+    org.onap.dcaegen2.collectors.datafile.ftp.SftpClient     |2020-07-24T06:32:56.010Z
+    |WARN     |StrictHostKeyChecking is enabled but environment variable KNOWN_HOSTS_FILE_PATH is not set or points to not existing file [/home/datafile/.ssh/known_hosts]  -->  falling back to StrictHostKeyChecking='no'.
 
 To resolve this warning, provide a known_hosts file or disable StrictHostKeyChecking, see DFC config page - :ref:`strict_host_checking_config`.
 

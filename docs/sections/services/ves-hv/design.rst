@@ -29,7 +29,7 @@ Extendability
 
 HV-VES is designed to allow extending by adding new domain-specific proto files.
 
-The proto file (with the VES CommonHeader) comes with a binary-type **Payload** parameter, where domain-specific data should be placed. 
+The proto file (with the VES CommonHeader) comes with a binary-type **Payload** parameter, where domain-specific data should be placed.
 Domain-specific data are encoded as well with GPB. A domain-specific proto file is required to decode the data.
 This domain-specific proto has to be shared with analytics applications - HV-VES does not analyze domain-specific data.
 
@@ -39,7 +39,7 @@ Additional domains can be defined based on existing VES domains (like Fault, Hea
 There is also **stndDefined** domain supported by default in HV-VES. Events with this domain are expected to contain
 data payload described by OpenAPI schemas. HV-VES doesn't decode payload of stndDefined events thus it does not contain
 specific **stndDefined** proto files. The only difference of **stndDefined** domain is its specific routing. More
-details of stndDefined routing: :ref:`_stndDefined_domain`.
+details of stndDefined routing: :ref:`stndDefined_domain`.
 
 GPB proto files are backwards compatible, and a new domain can be added without affecting existing systems.
 
@@ -53,5 +53,3 @@ Implementation details
 - Netty is used by means of reactor-netty library.
 - Kotlin is used to write concise code with great interoperability with existing Java libraries.
 - Types defined in Λrrow library are also used when it improves readability or general cleanness of the code.
-
-
