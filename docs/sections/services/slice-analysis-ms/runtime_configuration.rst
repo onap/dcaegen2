@@ -151,7 +151,7 @@ Steps to Use Runtime Configuration
 
     request body: push.json
 
-    .. code-block:: bash
+.. code-block:: bash
 
     {
       "policies": [
@@ -172,4 +172,3 @@ How to Develop Your Own Runtime Configuration
 2. Create a policy based on your policy type
 3. Deploy the policy
 4. Verify in SliceMS that configurations received. (Needs to write code in SliceMS to deal with your configurations in advance.)
-

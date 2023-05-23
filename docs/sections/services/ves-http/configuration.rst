@@ -7,6 +7,7 @@ Configuration
 VES expects to be able to fetch configuration directly from consul service in following JSON format:
 
 .. code-block:: json
+
     {
       "collector.dynamic.config.update.frequency": "5",
       "event.transform.flag": "0",

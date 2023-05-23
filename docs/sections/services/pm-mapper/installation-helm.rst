@@ -94,4 +94,3 @@ It should be visible in PM-Mapper logs, for example:
 
 This logs fragment proves that the configuration source is Config Map: ``Got successful output from ConfigMap file``.
 It also prints the current configuration (the last log line above). PM-Mapper keeps checking the configuration file periodically (every 60s).
-

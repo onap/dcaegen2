@@ -88,4 +88,3 @@ Application configurations
 |dcae_cl_response_topic         | Dmaap topic URL to which Policy posts the      |
 |                               | message after successful control loop trigger  |
 +-------------------------------+------------------------------------------------+
-

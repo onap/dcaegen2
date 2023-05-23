@@ -163,7 +163,7 @@ To resolve this issue, you can either wait for that Kafka service to be availabl
 
 
 The above log is printed when the message payload size is too big.
-**HV-VES** does not handle messages that exceed maximum payload size specified under streams_publishes configuration (see :ref:`dmaap-connection-objects`)
+**HV-VES** does not handle messages that exceed maximum payload size.
 
 ====
 

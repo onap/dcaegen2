@@ -6,7 +6,7 @@
 Run-Time configuration
 ======================
 
-HV-VES dynamic configuration is primarily meant to provide DMaaP Connection Objects (see :ref:`dmaap-connection-objects`).
+HV-VES dynamic configuration is primarily meant to provide DMaaP Connection Objects.
 
 .. note:: Kafka config info.
     In the case of HV-VES, this configuration method is purely used as a generic reference.
