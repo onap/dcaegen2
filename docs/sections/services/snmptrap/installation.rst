@@ -55,8 +55,8 @@ Prerequisites
 trapd requires the following to run in a non-docker environment:
 
     - Python 3.6+
-    - Python module “pysnmp” 4.4.5
-    - Python module “requests” 2.18.3
+    - Python module "pysnmp" 4.4.5
+    - Python module "requests" 2.18.3
 
 To install prerequisites:
 
@@ -115,4 +115,3 @@ Start the application
 """""""""""""""""""""
 
     ``nohup /opt/app/snmptrap/bin/snmptrapd.sh start > /opt/app/snmptrap/logs/snmptrapd.out 2>&1 &``
-

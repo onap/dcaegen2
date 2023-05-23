@@ -20,7 +20,7 @@ DFC will handle the collection of bulk PM data flow:
 DFC is delivered as one **Docker container** which hosts application server.
 See `Delivery`_ for more information about the docker container.
 
-.. _Delivery: ./delivery.html
+.. _Delivery: ./delivery.rst
 
 Functionality
 """""""""""""
