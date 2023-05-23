@@ -1,5 +1,5 @@
-.. This work is licensed under a Creative Commons Attribution 4.0
-   International License. http://creativecommons.org/licenses/by/4.0
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
 
 .. _docs_kpi_computation_ms_overview:
 
@@ -35,6 +35,9 @@ Publish a file to the PM-Mapper using the following example curl:
     curl -k -X PUT https://dcae-pm-mapper:8443/delivery/<filename> -H 'X-DMAAP-DR-META:{"productName": "AcmeNode","vendorName": "Acme","lastEpochMicrosec": "1538478000000","sourceName": "oteNB5309","startEpochMicrosec": "1538478900000","timeZoneOffset": "UTC+05:00","location": "ftpes://127.0.0.1:22/ftp/rop/A20161224.1045-1100.bin.gz","compression": "gzip","fileFormatType": "org.3GPP.32.435#measCollec","fileFormatVersion": "V9"}' -H "Content-Type:application/xml" --data-binary @<filename> -H 'X-ONAP-RequestID: 12345' -H 'X-DMAAP-DR-PUBLISH-ID: 12345'
 
 Example type A file:
+
+.. code-block:: xml
+
     <?xml version="1.0" encoding="utf-8"?>
     <measCollecFile xmlns="http://www.3gpp.org/ftp/specs/archive/32_series/32.435#measCollec">
       <fileHeader dnPrefix="www.google.com" vendorName="CMCC" fileFormatVersion="32.435 V10.0">
@@ -73,11 +76,15 @@ Example type A file:
       </fileFooter>
     </measCollecFile>
 
+
 Curl the topic on Message Router to retrieve the published event:
 
     curl -k https://message-router:3905/events/unauthenticated.DCAE_KPI_OUTPUT/$ConsumerGroup/$ID
 
 Example message output:
+
+.. code-block:: json
+
     {
       "event": {
         "commonEventHeader": {
@@ -120,6 +127,7 @@ Example message output:
         }
       }
     }
+
 
 Interaction
 """""""""""
