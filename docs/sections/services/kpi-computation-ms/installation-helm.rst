@@ -52,7 +52,7 @@ Deployment steps
 
 - Update monitoring policy ID in below configuration which is used to enable Policy-Sync Side car container to be deployed and retrieves active policy configuration.
 
-  .. code-block :: bash
+  .. code-block :: yaml
 
     dcaePolicySyncImage: onap/org.onap.dcaegen2.deployments.dcae-services-policy-sync:1.0.1
     policies:
@@ -61,7 +61,7 @@ Deployment steps
 
 - Enable KPI MS component in oom/kubernetes/dcaegen2-services/values.yaml
 
-  .. code-block:: bash
+  .. code-block:: yaml
 
     dcae-kpi-ms:
       enabled: true

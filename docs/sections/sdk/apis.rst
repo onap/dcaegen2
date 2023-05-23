@@ -6,7 +6,7 @@ Available APIs
 
 
 .. toctree::
-    :depth: 3
+    :maxdepth: 3
 
 .. _config_binding_service_sdk:
 
@@ -113,7 +113,7 @@ crypt-password - an utility for BCrypt passwords
 ------------------------------------------------
 Library to generate and match cryptography password using BCrypt algorithm
 
-.. code-block:: java
+.. code-block:: bash
 
     java -jar crypt-password-${sdk.version}.jar password_to_crypt
 
@@ -379,7 +379,7 @@ Example JSON:
         "schemaReference": "https://forge.3gpp.org/rep/sa5/data-models/blob/REL-16/OpenAPI/faultMnS.yaml",
         "data":
         {
-            "exampleData: "SAMPLE_VALUE"
+            "exampleData": "SAMPLE_VALUE"
         }
     }
 

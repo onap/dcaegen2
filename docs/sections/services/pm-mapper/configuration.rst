@@ -25,7 +25,7 @@ Disable TLS
 Pm-mapper by default uses communication over TLS, but it is also possible to use plain http request. To disable TLS, set configuration flag 'enable_http' to true, and set the certificate paths to empty strings or remove them from the configuration. See the config.yaml examples below.
 
 .. code-block:: yaml
-    
+
   applicationConfig:
     enable_http: true
     key_store_path: ""
@@ -35,16 +35,16 @@ Pm-mapper by default uses communication over TLS, but it is also possible to use
 
 
 
-Or 
+Or
 
 .. code-block:: yaml
 
   applicationConfig:
     enable_http: true
-    #key_store_path: 
-    #key_store_pass_path: 
-    #trust_store_path: 
-    #trust_store_pass_path: 
+    #key_store_path:
+    #key_store_pass_path:
+    #trust_store_path:
+    #trust_store_pass_path:
 
 
 Unauthenticated topic
@@ -52,7 +52,7 @@ Unauthenticated topic
 To use unauthenticated topics :ref:`disable TLS <pm_mapper_disable_tls>`, and edit AAF credentials in configuration, it should be removed or set to empty string. See the examples below.
 
 .. code-block:: yaml
-    
+
   applicationConfig:
     aaf_identity: ""
     aaf_password: ""
@@ -61,10 +61,10 @@ To use unauthenticated topics :ref:`disable TLS <pm_mapper_disable_tls>`, and ed
 Or
 
 .. code-block:: yaml
-    
+
   applicationConfig:
-    #aaf_identity: 
-    #aaf_password: 
+    #aaf_identity:
+    #aaf_password:
 
 
 

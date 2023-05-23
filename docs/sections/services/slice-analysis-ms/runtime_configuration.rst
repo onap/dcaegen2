@@ -27,7 +27,7 @@ Deployment
 
      1. Enable dcae-slice-analysis-ms in values.yaml. When using the helm chart of OOM to pull up the whole onap environment, dcae-slice-analysis-ms will be automatically installed.
 
-            .. code-block:: bash
+            .. code-block:: yaml
 
                dcae-slice-analysis-ms:
                  enabled: true
@@ -37,7 +37,7 @@ Deployment
 
      1. Uncomment the following lines. "duration" is the interval of a thread in policy sync container to retrieve latest policy from XCAML PDP engine. The unit of "duration" is seconds.
 
-             .. code-block:: bash
+             .. code-block:: yaml
 
                 dcaePolicySyncImage: onap/org.onap.dcaegen2.deployments.dcae-services-policy-sync:1.0.1
                 policies:
@@ -76,7 +76,7 @@ Steps to Use Runtime Configuration
 
     request body: policy_type.json
 
-    .. code-block:: bash
+    .. code-block:: json
 
        {
           "tosca_definitions_version": "tosca_simple_yaml_1_1_0",
@@ -116,7 +116,7 @@ Steps to Use Runtime Configuration
 
     request body: slicems_config_policy.json
 
-    .. code-block:: bash
+    .. code-block:: json
 
         {
           "tosca_definitions_version": "tosca_simple_yaml_1_1_0",
@@ -143,24 +143,25 @@ Steps to Use Runtime Configuration
         }
 
 3. Deploy the policy
+
     command
 
     .. code-block:: bash
 
-    curl -w %{http_code} --silent -k --user 'username:password' -X POST "https://policyPAPApi:6969/policy/pap/v1/pdps/policies" -H "Accept: application/json" -H "Content-Type: application/json" -d @push.json
+       curl -w %{http_code} --silent -k --user 'username:password' -X POST "https://policyPAPApi:6969/policy/pap/v1/pdps/policies" -H "Accept: application/json" -H "Content-Type: application/json" -d @push.json
 
     request body: push.json
 
-    .. code-block:: bash
+    .. code-block:: json
 
-    {
-      "policies": [
-        {
-          "policy-id": "onap.dcae.slicems.config",
-           "policy-version": 1
-        }
-      ]
-    }
+       {
+         "policies": [
+           {
+             "policy-id": "onap.dcae.slicems.config",
+              "policy-version": 1
+           }
+         ]
+       }
 
 4. Verify in SliceMS that configurations received
 
@@ -168,8 +169,8 @@ Steps to Use Runtime Configuration
 
 How to Develop Your Own Runtime Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 1. Create your own policy type
 2. Create a policy based on your policy type
 3. Deploy the policy
 4. Verify in SliceMS that configurations received. (Needs to write code in SliceMS to deal with your configurations in advance.)
-

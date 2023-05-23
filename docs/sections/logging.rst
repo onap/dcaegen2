@@ -11,11 +11,10 @@ Platform Components Logging
 ---------------------------
 As all the platform components are containered and deployed under K8S as pod; corresponding log information can be accessed using ``kubectl get logs -n onap <pod_name>``
 
-More detailed audit/debug logs can be found within the pod. 
+More detailed audit/debug logs can be found within the pod.
 
 
 Component Logging
 -----------------
 
-Please refer to individual service component webpage for more information. In general the logs of service component can be accessed using ``kubectl get logs -n onap <pod_name>``   
-
+Please refer to individual service component webpage for more information. In general the logs of service component can be accessed using ``kubectl get logs -n onap <pod_name>``

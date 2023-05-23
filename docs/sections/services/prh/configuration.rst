@@ -1,6 +1,7 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
+.. _prh_configuration:
 
 Configuration
 =============
@@ -67,10 +68,9 @@ PRH fetches configuration directly from CBS service in the following JSON format
 
 The configuration is created from PRH helm charts by specifying **applicationConfig**  during ONAP OOM/Kubernetes deployment.
 
-For PRH 1.9.0 version (London) , a new mode has been introduced which allows early PNF registrations. This mode uses a direct Kafka consumer and not the DMAAP consumer. This mode is not the default mode and has to be activated by setting certain environment variables in the Helm chart values.yaml file under **applicationEnv**, as shown below: 
+For PRH 1.9.0 version (London) , a new mode has been introduced which allows early PNF registrations. This mode uses a direct Kafka consumer and not the DMAAP consumer. This mode is not the default mode and has to be activated by setting certain environment variables in the Helm chart values.yaml file under **applicationEnv**, as shown below:
 
 .. code-block:: yaml
-
 
         - name: kafkaBoostrapServerConfig
           value: onap-strimzi-kafka-bootstrap:9092
@@ -92,4 +92,3 @@ For PRH 1.9.0 version (London) , a new mode has been introduced which allows ear
             secretKeyRef:
               key: sasl.jaas.config
               name: strimzi-kafka-admin
-

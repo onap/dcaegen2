@@ -21,9 +21,9 @@ Default
 Certificate-based
 """""""""""""""""
 | There is an option to enable certificate-based authentication for PRH towards AAI service calls.
-| To achieve this secure flag needs to be turned on in PRH :ref:`configuration<prh_configuration>` :
+| To achieve this secure flag needs to be turned on in PRH :ref:`configuration <prh_configuration>` :
 
-.. code-block:: json
+.. code-block:: bash
 
   security.enableAaiCertAuth=true
 
@@ -39,9 +39,9 @@ Default
 Certificate-based
 """"""""""""""""""
 | There is an option to enable certificate-based authentication for PRH towards DMaaP Bus Controller service calls.
-| To achieve this secure flag needs to be turned on in PRH :ref:`configuration<prh_configuration>` :
+| To achieve this secure flag needs to be turned on in PRH :ref:`configuration <prh_configuration>` :
 
-.. code-block:: json
+.. code-block:: bash
 
   --security.enableDmaapCertAuth=true
 
@@ -55,7 +55,7 @@ PRH identity and certificate data
 | See :doc:`../../tls_enablement` for detailed information.
 |
 | PRH is using four files from ``tls-info`` DCAE volume (``cert.jks, jks.pass, trust.jks, trust.pass``).
-| Refer :ref:`configuration<prh_configuration>` for proper security attributes settings.
+| Refer :ref:`configuration <prh_configuration>` for proper security attributes settings.
 |
 | **IMPORTANT** Even when certificate-based authentication security features are disabled,
 | still all security settings needs to be provided in configuration to make PRH service start smoothly.

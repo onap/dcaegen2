@@ -6,7 +6,7 @@
 Run-Time configuration
 ======================
 
-HV-VES dynamic configuration is primarily meant to provide DMaaP Connection Objects (see :ref:`dmaap-connection-objects`).
+HV-VES dynamic configuration is primarily meant to provide DMaaP Connection Objects.
 
 .. note:: Kafka config info.
     In the case of HV-VES, this configuration method is purely used as a generic reference.
@@ -48,4 +48,4 @@ For more information, see :ref:`supported_domains`.
 Providing configuration during OOM deployment
 ---------------------------------------------
 
-The configuration is created from HV-VES Helm charts defined under **applicationConfig**  during ONAP OOM/Kubernetes deployment. 
+The configuration is created from HV-VES Helm charts defined under **applicationConfig**  during ONAP OOM/Kubernetes deployment.

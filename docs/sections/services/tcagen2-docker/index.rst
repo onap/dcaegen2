@@ -15,7 +15,6 @@ The TCA-gen2 is docker based mS intended to replace TCA/cdap version, which was 
 .. toctree::
    :maxdepth: 1
 
-   ./installation
    ./installation-helm.rst
    ./configuration
    ./functionality
