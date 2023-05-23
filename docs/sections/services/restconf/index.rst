@@ -16,6 +16,6 @@ Restconf Collector can subscribe multiple events from multiple controllers.
 .. toctree::
    :maxdepth: 1
 
-   ./installation
+   ./installation-helm
    ./functionality
    ./development_info
