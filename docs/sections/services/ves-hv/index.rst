@@ -26,7 +26,7 @@ High Volume VES Collector overview and functions
 
 .. toctree::
     :maxdepth: 1
-    
+
     architecture
     design
     repositories

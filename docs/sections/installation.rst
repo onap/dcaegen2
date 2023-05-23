@@ -8,6 +8,7 @@ DCAE Deployment (Installation)
    :maxdepth: 1
    :titlesonly:
 
+   ./dcaeservice_helm_template.rst
    ./installation_oom.rst
    ./installation_MS_ondemand.rst
    ./installation_test.rst
