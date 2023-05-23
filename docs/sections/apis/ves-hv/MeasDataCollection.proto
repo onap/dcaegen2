@@ -25,7 +25,7 @@ package org.onap.ves;
 // Note (2018-09): work is in progress for 3GPP TS 28.550. Changes will be made, if needed, to align with final version.
 // Differences/additions to 3GPP TS 28.550 are marked with "%%".
 
-message MeasDataCollection                  // top-level message 
+message MeasDataCollection                  // top-level message
 {
     // %% Combined messageFileHeader, measData (single instance), messageFileFooter (not needed: timestamp = collectionBeginTime + granularityPeriod).
     string formatVersion = 1;               // required, current value "28.550 2.0"
@@ -34,7 +34,7 @@ message MeasDataCollection                  // top-level message
     string measuredEntityDn = 4;            // DN as per 3GPP TS 32.300
     string measuredEntitySoftwareVersion = 5;
     repeated string measObjInstIdList = 6; // %%: optional, monitored object LDNs as per 3GPP TS 32.300 and 3GPP TS 32.432
-    repeated MeasInfo measInfo = 7; 
+    repeated MeasInfo measInfo = 7;
 }
 
 message MeasInfo
