@@ -432,4 +432,3 @@ The postgres DB also have a CL_flag set indicating control loop event with ONSET
 		2018-12-12 12:45:51,291 | __main__ | htbtworker | process_msg | 77 |  INFO | HBT:Getting :http://10.12.5.252:3904/events/unauthenticated.SEC_HEARTBEAT_INPUT/group1/1?timeout=15000
 		2018-12-12 12:45:51,292 | urllib3.connectionpool | connectionpool | _new_conn | 208 |  DEBUG | Starting new HTTP connection (1): 10.12.5.252
 		2018-12-12 12:46:00,585 | __main__ | db_monitoring | db_monitoring | 53 |  INFO | DBM: Active DB Monitoring Instance
-

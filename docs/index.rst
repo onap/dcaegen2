@@ -26,4 +26,3 @@ Data Collection, Analytics, and Events (DCAE)
  
 
 .. image:: https://bestpractices.coreinfrastructure.org/projects/1718/badge
-

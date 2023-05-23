@@ -100,7 +100,7 @@ services instances, processes would work differently as mentioned below.
 Handling of some of the failure scenarios
 -----------------------------------------
 
-Failure to download the configuration from CBS – In this case, local
+Failure to download the configuration from CBS - In this case, local
 configuration file etc/config.json is considered as the configuration
 file and vnf_table_1 is updated accordingly.
 
@@ -151,14 +151,14 @@ below parameters
 This is a single entry table.
 
 - The configuration status which would have one of the below.
-   - **RECONFIGURATION** – indicates CBS configuration processing is in
+   - **RECONFIGURATION** - indicates CBS configuration processing is in
       progress.
-   - **RUNNING** – CBS configuration is completed and ready to process HB
+   - **RUNNING** - CBS configuration is completed and ready to process HB
       event and send CL event.
-- The process ID – This indicates the main process ID of the active HB
+- The process ID - This indicates the main process ID of the active HB
   instance which is responsible to take care of reconfiguration
-- The source Name – It has 2 parts, hostname and service name. The
+- The source Name - It has 2 parts, hostname and service name. The
   hostname is the Docker container ID. The service name is the
   environment variable set for SERVICE_NAME
-- The last accessed time – The time last accessed by the main process
+- The last accessed time - The time last accessed by the main process
   having the above process ID.

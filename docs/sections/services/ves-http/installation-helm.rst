@@ -39,12 +39,14 @@ For small changes like this, it is also possible to inline the new value:
 
 After the upgrade, the new auth method value should be visible inside dev-dcae-ves-collector-application-config-configmap Config-Map.
 It can be verified by running:
-    .. code-block:: bash
+
+.. code-block:: bash
 
         kubectl -n onap get cm <config map name> -o yaml
 
 For VES Collector:
-    .. code-block:: bash
+
+.. code-block:: bash
 
         kubectl -n onap get cm dev-dcae-ves-collector-application-config-configmap -o yaml
 
@@ -112,7 +114,7 @@ Using external TLS certificates obtained using CMP v2 protocol
 
 In order to use the X.509 certificates obtained from the CMP v2 server (so called "operator`s certificates"), refer to the following description:
 
-:ref:`Enabling TLS with external x.509 certificates <external-tls-helm>`
+:ref:`Enabling TLS with external x.509 certificates <tls_enablement>`
 
 Example values for VES Collector:
     .. code-block:: bash
@@ -135,4 +137,3 @@ Example values for VES Collector:
                 name: ves-cmpv2-keystore-password
                 key: password
                 create: true
-

@@ -20,7 +20,7 @@ The characteristics of each event in the **perf3gpp** domain:
 - Grouping in one or more measured objects, for example, cells
 - One or more reported PM values for each measured object
 
-Due to the single granularity period per event, single equipment supporting multiple concurrent granularity periods might send more than one event at a given reporting time.
+Due to the single granularity period per event, single equipment supporting multiple concurrent granularity periods might send more than one event at a given reporting time. 
 
 The **perf3gpp** domain is based on 3GPP specifications:
 
