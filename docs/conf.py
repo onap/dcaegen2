@@ -4,8 +4,20 @@ version = "master"
 branch = 'latest'
 master_doc = 'index'
 
+author = "Open Network Automation Platform"
+# yamllint disable-line rule:line-length
+copyright = "ONAP. Licensed under Creative Commons Attribution 4.0 International License. http://creativecommons.org/licenses/by/4.0."
+
 linkcheck_ignore = [
-  r'http://localhost:\d+/'
+    r'http://localhost:\d+/',
+    r'http:/',
+    r'https://localhost:\d+/',
+    r'https:/',
+    r'jdbc:'
+]
+
+exclude_patterns = [
+    r'.tox/**.rst'
 ]
 
 extensions = [
@@ -33,6 +45,3 @@ html_last_updated_fmt = '%d-%b-%y %H:%M'
 
 def setup(app):
     app.add_css_file("css/ribbon.css")
-
-
-

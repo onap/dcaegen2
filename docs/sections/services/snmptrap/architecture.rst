@@ -4,12 +4,12 @@
 Architecture
 ============
 
-The ONAP **SNMPTRAP** project (referred to as **"trapd"** - as in "trap daemon" throughout 
+The ONAP **SNMPTRAP** project (referred to as **"trapd"** - as in "trap daemon" throughout
 this documentation) is a network facing ONAP platform component.
 
 The simple network management protocol (or "SNMP", for short) is a pervasive
-communication protocol standard used between managed devices and a management system.  
-It is used to relay data that can be valuable in the operation, fault identification 
+communication protocol standard used between managed devices and a management system.
+It is used to relay data that can be valuable in the operation, fault identification
 and planning processes of all networks.
 
 SNMP utilizes a message called a "trap" to inform SNMP managers of abnormal
@@ -22,10 +22,10 @@ software processes or anything else specific to the agent's environment.
 Capabilities
 ------------
 
-**trapd** receives SNMP traps and publishes them to a  message router (DMAAP/MR) 
+**trapd** receives SNMP traps and publishes them to a  message router (DMAAP/MR)
 instance based on attributes obtained from configuration binding service ("CBS").
 
-.. image:: ./ONAP_trapd.png 
+.. image:: ./ONAP_trapd.png
 
 
 Interactions

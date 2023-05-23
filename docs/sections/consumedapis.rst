@@ -7,8 +7,8 @@ Consumed APIs
 
 .. note::
    * This section is used to reference APIs that a software component depends on
-     and uses from other sources.  
-   
+     and uses from other sources.
+
    * Consumed APIs should be a specific link to the offered APIs from another component
      or external source.
 
