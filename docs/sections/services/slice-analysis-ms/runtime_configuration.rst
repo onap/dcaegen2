@@ -151,7 +151,7 @@ Steps to Use Runtime Configuration
 
     request body: push.json
 
-    .. code-block:: bash
+.. code-block:: bash
 
     {
       "policies": [

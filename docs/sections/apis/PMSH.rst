@@ -22,4 +22,4 @@ Offered APIs
    :header: "API name", "Swagger JSON", "Swagger YAML"
    :widths: 10,5,5
 
-   "PM Subscription Handler Service", ":download:`link <pmsh_swagger.json>`", ":download:`link <pmsh_swagger.yaml>`"
+   "PM Subscription Handler Service", ":download:`link <pmsh_swagger.json>`", ":download:`link <pmsh_swagger.yml>`"
