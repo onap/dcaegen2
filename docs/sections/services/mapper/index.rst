@@ -19,7 +19,7 @@ VES-Mapper provides a generic adapter to convert different formats of event and 
 
   ./flow.rst
   ./delivery.rst
-  ./installation.rst
+  ./installation-helm.rst
   ./mappingfile.rst
   ./SampleSnmpTrapConversion
   ./troubleshooting.rst

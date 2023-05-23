@@ -9,7 +9,7 @@ file located in datafile-app-server/config folder.
 
 To activate logging, please follow the instructions on this `page`_.
 
-.. _page: ../troubleshooting.rst
+.. _page: ./troubleshooting.rst
 
 
 **Where is the log file?**
