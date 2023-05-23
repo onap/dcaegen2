@@ -1,8 +1,8 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 
-Using Helm to deploy DCAE Microservices
-=======================================
+DCAE Service Template - Overview
+================================
 
 Background
 ----------
@@ -123,13 +123,13 @@ Example:
 **readinessCheck**:
 
 Many microservices depend on having other services
-up and running in the DCAE and ONAP environment–services like AAF to get
+up and running in the DCAE and ONAP environment - services like AAF to get
 certificates or DMaaP to communicate with other services.
 ``readinessCheck.wait_for`` is a list of the *containers* that the
 microservice needs to have available. If this parameter is present, an
 initContainer will run and wait for all of the listed containers to
-become ready. (Unfortunately, it’s necessary to know the name of a
-*container*; it isn’t sufficient to list the name of a service.)
+become ready. (Unfortunately, it's necessary to know the name of a
+*container*; it isn't sufficient to list the name of a service.)
 
 Example:
 
@@ -150,7 +150,7 @@ parameter has the following fields that apply to both types:
 1. ``initialDelaySeconds``: The number of seconds to wait after container startup before attempting the first readiness probe. *[Optional, default 5]*
 2. ``periodSeconds``: The number of seconds between readiness probes. *[Optional, default 15]*
 3. ``timeoutSeconds``: The number of seconds to wait for a connection to the container before timing out. *[Optional, default 1]*
-4. ``probeType``: The type of readiness probe–``httpGet`` for an HTTP probe or ``exec`` for a script-based probe. *[Optional, default ``httpGet``]*
+4. ``probeType``: The type of readiness probe - ``httpGet`` for an HTTP probe or ``exec`` for a script-based probe. *[Optional, default ``httpGet``]*
 
 For HTTP(S) readiness probes, the following fields are *required*:
 
@@ -201,7 +201,7 @@ not present, defaults to an empty object ({}).
 **applicationEnv:**
 
 Microservice-specific environment variables to be
-set for the microservice’s container. Environment variables can be set
+set for the microservice's container. Environment variables can be set
 to literal string values or a value from a Kubernetes Secret that has
 been set up using the ONAP OOM common secret template.
 
@@ -236,9 +236,9 @@ The ``applicationEnv`` section of ``values.yaml`` can contain an
 arbitrary number of environment variables and can contain both literal
 values and values from secrets. ``applicationEnv`` is optional. If it is
 not present in the ``values.yaml`` file, no microservice-specific
-environment variables will be set for the microservice’s container.
+environment variables will be set for the microservice's container.
 
-Note that ``applicationEnv`` is a YAML object (or “dictionary”), not an
+Note that ``applicationEnv`` is a YAML object (or "dictionary"), not an
 array.
 
 **externalVolumes:**
@@ -261,11 +261,11 @@ optional fields:
 4. ``readOnly``: *[Optional]* Boolean flag. Set to ``true`` to mount the volume
    as read-only. Defaults to ``false``.
 5. ``optional``: *[Optional]* Boolean flag. Set to ``true`` to make the
-   configMap optional (i.e., to allow the microservice’s pod to start even
-   if the configMap doesn’t exist). If set to ``false``, the configMap must
-   be present in order for the microservice’s pod to start. Defaults to
+   configMap optional (i.e., to allow the microservice's pod to start even
+   if the configMap doesn't exist). If set to ``false``, the configMap must
+   be present in order for the microservice's pod to start. Defaults to
    ``true``. *Note that this default is the opposite of the Kubernetes
-   default. We’ve done this to be consistent with the behavior of the DCAE
+   default. We've done this to be consistent with the behavior of the DCAE
    Cloudify plugin for Kubernetes (``k8splugin``), which always set
    ``optional`` to ``true`` and did not allow for overriding this value.*
 
@@ -282,15 +282,15 @@ Example of an ``externalVolumes`` section:
        mountPath: /opt/app/otherconfig
 
 The dcaegen2-services-common deployment template will set up a volume
-pointing to the specific configMap in the microservice’s pod and a
-volume mount (mounted at ``mountPath`` on the microservice’s container.)
+pointing to the specific configMap in the microservice's pod and a
+volume mount (mounted at ``mountPath`` on the microservice's container.)
 
 The ``externalVolumes`` section is optional. If it is not present, no
 external volumes will be set up for the microservice.
 
 **certDirectory:**
 
-Path to the directory in the microservice’s
+Path to the directory in the microservice's
 container file system where TLS-certificate information from CMPv2 should
 be mounted. This is an optional field. When it is present, the
 dcaegen2-services-common deployment template will set up an
@@ -327,13 +327,13 @@ If present, the dcaegen2-services-common deployment
 template will deploy a sidecar container that polls the ONAP policy
 subsystem for policy-driven configuration information.
 
-``policies`` is a YAML object (“dictionary”) that can contain the
+``policies`` is a YAML object ("dictionary") that can contain the
 following keys:
 
 1. ``policyID``: *[Optional]* A string representation of a JSON array of policy ID
-   values that the sidecar should monitor.   Default ‘[]’.
+   values that the sidecar should monitor.   Default '[]'.
 2. ``filter``: *[Optional]* A string representation of a JSON array of regular
-    expressions that match policy IDs that the sidecar should monitory. Default ‘[]’.
+    expressions that match policy IDs that the sidecar should monitory. Default '[]'.
 3. ``duration``: *[Optional]* The interval (in seconds) between polling requests
    made by the sidecar to the policy subsystem. Default: 2600.
 

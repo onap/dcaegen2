@@ -3,50 +3,32 @@
 .. _heartbeat-installation:
 
 
-Installation
-============
+Helm Installation
+=================
 
+The Heartbeat microservice can be deployed using helm charts in the oom repository.
 
-Following are steps if manual deployment/undeployment required. 
+Deployment steps
+~~~~~~~~~~~~~~~~
 
-Steps to deploy are shown below
+- Default app config values can be updated in oom/kubernetes/dcaegen2-services/components/dcae-heartbeat/values.yaml.
 
-- Heartbeat MS blueprint is available under bootstrap pod (under /blueprints/k8s-heartbeat.yaml). The blueprint is also maintained in gerrit and can be downloaded from  https://git.onap.org/dcaegen2/platform/blueprints/tree/blueprints/k8s-heartbeat.yaml
- 	
-          
-- Create an input file in DCAE bootstrap POD under / directory. Sample input file can be found under https://git.onap.org/dcaegen2/services/heartbeat/tree/dpo/k8s-heartbeat-inputs.yaml
+- Make the chart and deploy using the following command:
 
+  .. code-block:: bash
 
-- Enter the Bootstrap POD
-- Validate blueprint
-    .. code-block:: bash
-        
-        cfy blueprints validate /blueprints/k8s-heartbeat.yaml
-- Upload validated blueprint
-    .. code-block:: bash
-        
+    cd oom/kubernetes/
+    make dcaegen2-services
+    helm install dev-dcaegen2-services dcaegen2-services --namespace <namespace> --set global.masterPassword=<password>
 
-        cfy blueprints upload -b heartbeat /blueprints/k8s-heartbeat.yaml
-- Create deployment
-    .. code-block:: bash
-        
+- To deploy only RESTConf:
 
-        cfy deployments create -b heartbeat -i /k8s-heartbeat-input.yaml heartbeat
-- Deploy blueprint
-    .. code-block:: bash
-        
+  .. code-block:: bash
 
-        cfy executions start -d heartbeat install
+    helm install dev-dcae-heartbeat dcaegen2-services/components/dcae-heartbeat --namespace <namespace> --set global.masterPassword=<password>
 
-To undeploy heartbeat, steps are shown below
+- To Uninstall
 
-- Uninstall running heartbeat and delete deployment
-    .. code-block:: bash
-        
+  .. code-block:: bash
 
-        cfy uninstall heartbeat
-- Delete blueprint
-    .. code-block:: bash
-        
-
-        cfy blueprints delete heartbeat
+    helm uninstall dev-dcae-heartbeat

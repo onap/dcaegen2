@@ -39,4 +39,4 @@ Following is default configuration set for TCA during deployment.
         tca.enable_ecomp_logging: true
 
 
-Complete configuration and input defaults can be found on blueprint here - https://git.onap.org/dcaegen2/platform/blueprints/plain/blueprints/k8s-tcagen2.yaml 
+Complete configuration and input defaults can be found on blueprint here - https://git.onap.org/dcaegen2/platform/blueprints/plain/blueprints/k8s-tcagen2.yaml

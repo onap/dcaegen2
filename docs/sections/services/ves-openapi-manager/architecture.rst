@@ -27,4 +27,3 @@ VES OpenAPI Manager workflow can be split into phases:
 VES OpenAPI Manager workflow is presented on the diagram below.
 
 .. image:: resources/workflow.png
-
