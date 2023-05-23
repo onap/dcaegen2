@@ -42,7 +42,8 @@ Deployment steps
 
 
 3. To un-deploy
-    .. code-block:: bash
+
+.. code-block:: bash
 
         helm uninstall <slice_analysis_ms>
 
@@ -88,4 +89,3 @@ Application configurations
 |dcae_cl_response_topic         | Dmaap topic URL to which Policy posts the      |
 |                               | message after successful control loop trigger  |
 +-------------------------------+------------------------------------------------+
-

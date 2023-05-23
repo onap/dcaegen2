@@ -8,7 +8,7 @@ There are 4 processes created as below
 
 Main process
 ------------
- 
+
 This is the initial process which does the following.
 
 - Download CBS configuration and update the vnf_table_1
@@ -56,7 +56,7 @@ CBS polling process
 -------------------
 
 If the local configuration file (config/hbproperties.yaml) indicates
-that CBS polling is required, then main process would create the CBS 
+that CBS polling is required, then main process would create the CBS
 polling process. It does the following.
 
 - It takes the CBS polling interval from the configuration file.
@@ -85,12 +85,12 @@ services instances, processes would work differently as mentioned below.
      - Download CBS configuration and process it
      - Spawns processes
      - Periodically update hb_common with last accessed time to indicate that active instance is Alive.
-	 
+
     Inactive Instance:
         - Spawns processes
         - Constantly check hb_common entry for last accessed time
-        - If the last accessed time is more than a minute or so, then it assumes the role of active instance 
-    
+        - If the last accessed time is more than a minute or so, then it assumes the role of active instance
+
 **HB worker process:** Both active and inactive instance behaves the sames as metnioned in the Design section.
 
 **DB Monitoring process:** Both active periodically checks its process ID/hostname with hb_common data to know whether it is an active instance or not. If inactive instance it does nothing. If active instance, it behaves as mentioned in design section.
@@ -100,7 +100,7 @@ services instances, processes would work differently as mentioned below.
 Handling of some of the failure scenarios
 -----------------------------------------
 
-Failure to download the configuration from CBS – In this case, local
+Failure to download the configuration from CBS - In this case, local
 configuration file etc/config.json is considered as the configuration
 file and vnf_table_1 is updated accordingly.
 
@@ -119,7 +119,7 @@ Postgres Database
 
 There are 3 tables maintained.
 
-**Vnf_table_1 table:** 
+**Vnf_table_1 table:**
 This is table is indexed by eventName. Each entry
 has following parameters in it.
 
@@ -137,8 +137,8 @@ has following parameters in it.
    - closedLoopControlName
    - version
 
-**Vnf_table_2 table:** 
-For each sourceName there would be an entry in vnf_table_2. 
+**Vnf_table_2 table:**
+For each sourceName there would be an entry in vnf_table_2.
 This is indexed by eventName and SourceName. Each entry has
 below parameters
 
@@ -147,18 +147,18 @@ below parameters
 - Control loop event raised flag. 0 indicates not raised, 1 indicates
   CL event raised
 
-**hb_common table:** 
+**hb_common table:**
 This is a single entry table.
 
 - The configuration status which would have one of the below.
-   - **RECONFIGURATION** – indicates CBS configuration processing is in
+   - **RECONFIGURATION** - indicates CBS configuration processing is in
       progress.
-   - **RUNNING** – CBS configuration is completed and ready to process HB
+   - **RUNNING** - CBS configuration is completed and ready to process HB
       event and send CL event.
-- The process ID – This indicates the main process ID of the active HB
+- The process ID - This indicates the main process ID of the active HB
   instance which is responsible to take care of reconfiguration
-- The source Name – It has 2 parts, hostname and service name. The
+- The source Name - It has 2 parts, hostname and service name. The
   hostname is the Docker container ID. The service name is the
   environment variable set for SERVICE_NAME
-- The last accessed time – The time last accessed by the main process
+- The last accessed time - The time last accessed by the main process
   having the above process ID.

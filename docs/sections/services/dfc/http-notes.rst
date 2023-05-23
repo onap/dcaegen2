@@ -67,15 +67,14 @@ HTTPS connection with DFC
 The file ready message for https server is the same as used in other protocols and http. The only difference is that the scheme is set to
 "https":
 
-.. code-block:: bash
+.. code-block:: json
 
-   ...
-   "arrayOfNamedHashMap": [
+   {"arrayOfNamedHashMap": [
            {
              "name": "C_28532_measData_file.xml",
              "hashMap": {
-               "location": "https://login:password@server.com:443/file.xml.gz",
-   ...
+               "location": "https://login:password@server.com:443/file.xml.gz"
+   }}]}
 
 The processed uri depends on the https connection type that has to be established (client certificate authentication, basic
 authentication, and no authentication).

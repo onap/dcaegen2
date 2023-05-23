@@ -2,6 +2,7 @@ docs/.DS_Store
 *.DS_Store
 site
 .pydevproject
+.project
 # IDEA intellij project files
 .idea/
 *.iml

@@ -1,5 +1,6 @@
 .. This work is licensed under a
    Creative Commons Attribution 4.0 International License.
+   http://creativecommons.org/licenses/by/4.0
 
 ========================
 3GPP PM Mapper
@@ -13,7 +14,7 @@ Overview
 
 Component description can be found under `3GPP PM Mapper`_.
 
-.. _3GPP PM Mapper: ../../sections/services/pm-mapper/index.html
+.. _3GPP PM Mapper: ../../sections/services/pm-mapper/index.rst
 
 Paths
 =====

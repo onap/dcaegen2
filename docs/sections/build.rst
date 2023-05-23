@@ -88,4 +88,3 @@ Because of the uniform adoption of Maven framework, each project can be built by
 Artifacts
 ---------
 Building of DCAE projects produce three different kinds of artifacts: Java jar files, raw file artifacts (including yaml files, scripts, wagon packages, etc), Pypi packages, and docker container images.
-

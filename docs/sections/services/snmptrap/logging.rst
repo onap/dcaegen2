@@ -26,20 +26,18 @@ Defaults are shown below:
 
 .. code-block:: json
 
-    "files": {
-        <other json data>
-        ...
+    {"files": {
+        "<other json data>": "...",
         "roll_frequency": "day",
-        "minimum_severity_to_log": 3
-        <other json data>
-        ...
-    },
+        "minimum_severity_to_log": 3,
+        "<other json data>": "..."
+    }}
 
 
 Roll Frequency
 """"""""""""""
 
-Roll frequency can be modified based on your environment (e.g. if trapd is handling a 
+Roll frequency can be modified based on your environment (e.g. if trapd is handling a
 heavy trap load, you will probably want files to roll more frequently).  Valid "roll_frequency" values are:
 
 - minute
@@ -49,7 +47,7 @@ heavy trap load, you will probably want files to roll more frequently).  Valid "
 Minimum Severity To Log
 """""""""""""""""""""""
 
-Logging levels should be modified based on your need.  Log levels in lab environments should be "lower" 
+Logging levels should be modified based on your need.  Log levels in lab environments should be "lower"
 (e.g. minimum severity to log = "0" creates verbose logging) vs. production (values of "3" and above is a good choice).
 
 Valid "minimum_severity_to_log" values are:
@@ -74,7 +72,7 @@ values:
 
 .. code-block:: json
 
-    "files": {
+    {"files": {
         "runtime_base_dir": "/opt/app/snmptrap",
         "log_dir": "logs",
         "data_dir": "data",
@@ -84,10 +82,9 @@ values:
         "traps_stats_log": "snmptrapd_stats.csv",
         "perm_status_file": "snmptrapd_status.log",
         "roll_frequency": "hour",
-        "minimum_severity_to_log": 2
-        <other json data>
-        ...
-    },
+        "minimum_severity_to_log": 2,
+        "<other json data>": "..."
+    }}
 
 The base directory for all data logs is specified with:
 
@@ -123,8 +120,8 @@ An example from this log is shown below:
 
     1529960544.4896748 Mon Jun 25 17:02:24 2018; Mon Jun 25 17:02:24 2018 com.att.dcae.dmaap.IST3.DCAE-COLLECTOR-UCSNMP 15299605440000 1.3.6.1.4.1.999.0.1 server001 127.0.0.1 server001 v2c 751564798 0f40196a-78bb-11e8-bac7-005056865aac , "varbinds": [{"varbind_oid": "1.3.6.1.4.1.999.0.1.1", "varbind_type": "OctetString", "varbind_value": "TEST TRAP"}]
 
-*NOTE:*  Format of this log will change with 1.5.0; specifically, "varbinds" section will be reformatted/json struct removed and will be replaced with a flat file format.  
- 
+*NOTE:*  Format of this log will change with 1.5.0; specifically, "varbinds" section will be reformatted/json struct removed and will be replaced with a flat file format.
+
 PUBLISHED TRAPS
 ^^^^^^^^^^^^^^^
 
@@ -132,7 +129,7 @@ SNMPTRAP's main purpose is to receive and decode SNMP traps, then
 publish the results to a configured DMAAP/MR message bus.  Traps that
 are successfully published (e.g. publish attempt gets a "200/ok"
 response from the DMAAP/MR server) are logged to a file named by
-the technology being used combined with the topic being published to.  
+the technology being used combined with the topic being published to.
 
 If you find a trap in this published log, it has been acknowledged as
 received by DMAAP/MR.  If consumers complain of "missing traps", the
@@ -207,18 +204,17 @@ of that JSON configuration that influences EELF logging is:
 
 .. code-block:: json
 
-    "files": {
-        <other json data>
-        ...
+    {"files": {
+        "<other json data>": "...",
         "**eelf_base_dir**": "/opt/app/snmptrap/logs",
         "eelf_error": "error.log",
         "eelf_debug": "debug.log",
         "eelf_audit": "audit.log",
         "eelf_metrics": "metrics.log",
-        "roll_frequency": "hour",
+        "roll_frequency": "hour"
     },
-    <other json data>
-    ...
+    "<other json data>": "..."
+    }
 
 
 The base directory for all EELF logs is specified with:
@@ -272,10 +268,10 @@ Messages will be in the general format of:
     2018-04-25T17:28:48,034|snmp_engine_observer_cb|snmptrapd||||DETAILED|100||snmp trap arrived from 192.168.1.139, assigned uuid: 0f40196a-78bb-11e8-bac7-005056
     2018-04-25T17:28:48,036|notif_receiver_cb|snmptrapd||||DETAILED|100||processing varbinds for 0f40196a-78bb-11e8-bac7-005056
     2018-04-25T17:28:48,040|notif_receiver_cb|snmptrapd||||DETAILED|100||adding 0f40196a-78bb-11e8-bac7-005056 to buffer
-    
+
     2018-06-25T21:02:24,491|notif_receiver_cb|snmptrapd||||DETAILED|100||trap 0f40196a-78bb-11e8-bac7-005056865aac : {"uuid": "0f40196a-78bb-11e8-bac7-005056865aac", "agent address": "192.168.1.139", "agent name": "server001", "cambria.partition": "server001", "community": "", "community len": 0, "epoch_serno": 15299605440000, "protocol version": "v2c", "time received": 1529960544.4896748, "trap category": "com.companyname.dcae.dmaap.location.DCAE-COLLECTOR-UCSNMP", "sysUptime": "751564798", "notify OID": "1.3.6.1.4.1.999.0.1", "notify OID len": 9, "varbinds": [{"varbind_oid": "1.3.6.1.4.1.999.0.1.1", "varbind_type": "OctetString", "varbind_value": "TEST TRAP"}]}
     2018-06-25T21:02:24,496|post_dmaap|snmptrapd||||DETAILED|100||post_data_enclosed: {"uuid": "0f40196a-78bb-11e8-bac7-005056865aac", "agent address": "192.168.1.139", "agent name": "server001", "cambria.partition": "server001", "community": "", "community len": 0, "epoch_serno": 15299605440000, "protocol version": "v2c", "time received": 1529960544.4896748, "trap category": "com.att.dcae.dmaap.IST3.DCAE-COLLECTOR-UCSNMP", "sysUptime": "751564798", "notify OID": "1.3.6.1.4.1.999.0.1", "notify OID len": 9, "varbinds": [{"varbind_oid": "1.3.6.1.4.1.999.0.1.1", "varbind_type": "OctetString", "varbind_value": "TEST TRAP"}]}
-     
+
 
 Platform Status
 ^^^^^^^^^^^^^^^
@@ -291,6 +287,6 @@ A permanent (left to user to archive/compress/etc) status file is maintained in 
 Combined with **runtime_base_dir** and **log_dir** settings from snmptrapd.json, the perm_status_file in default installations
 can be found at:
 
-.. code-block:: json
+.. code-block:: bash
 
         /opt/app/uc/logs/snmptrapd_stats.log
