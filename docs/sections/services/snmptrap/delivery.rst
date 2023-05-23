@@ -20,4 +20,3 @@ Standalone
 .. code-block:: bash
 
     gerrit.onap.org:29418/dcaegen2/collectors/snmptrap
-

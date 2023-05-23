@@ -11,3 +11,4 @@ DCAE Deployment (Installation)
    ./installation_oom.rst
    ./installation_MS_ondemand.rst
    ./installation_test.rst
+   ./dcaeservice_helm_template.rst
