@@ -1,6 +1,6 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
-   
+
 .. _docs_slice_analysis_ms_overview:
 
 Architecture
@@ -44,7 +44,7 @@ Functional Description
 ----------------------
 - Slice Analysis ms consumes PM messages from PERFORMANCE_MEASUREMENTS topic.
 
-- For analysis Slice Analysis MS consumes various data from Config DB including List of Network  
+- For analysis Slice Analysis MS consumes various data from Config DB including List of Network
   Functions which serves the S-NSSAI, List of Near-RT RICs and the corresponding cell mappings of the
   S-NSSAI, Current Configuration of the Near-RT RICs, Slice Profile associated with the S-NSSAI and
   Subscriber details of the S-NSSAI (for sending the onset message to policy).

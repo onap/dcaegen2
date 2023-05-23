@@ -83,7 +83,7 @@ The configuration update process is very straightforward.
 The only step is to modify the Config Map which contains the configuration and save the change. PM-Mapper will detect the new configuration values after a while.
 It should be visible in PM-Mapper logs, for example:
 
-.. code-block:: text
+.. code-block:: log
 
     ...
     2022-02-11T08:04:02.627Z	main	INFO	org.onap.dcaegen2.services.sdk.rest.services.cbs.client.impl.CbsClientConfigMap		Got successful output from ConfigMap file
@@ -94,4 +94,3 @@ It should be visible in PM-Mapper logs, for example:
 
 This logs fragment proves that the configuration source is Config Map: ``Got successful output from ConfigMap file``.
 It also prints the current configuration (the last log line above). PM-Mapper keeps checking the configuration file periodically (every 60s).
-

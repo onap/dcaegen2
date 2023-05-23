@@ -23,7 +23,7 @@ Certificate-based
 | There is an option to enable certificate-based authentication for PRH towards AAI service calls.
 | To achieve this secure flag needs to be turned on in PRH :ref:`configuration<prh_configuration>` :
 
-.. code-block:: json
+.. code-block:: bash
 
   security.enableAaiCertAuth=true
 
@@ -41,7 +41,7 @@ Certificate-based
 | There is an option to enable certificate-based authentication for PRH towards DMaaP Bus Controller service calls.
 | To achieve this secure flag needs to be turned on in PRH :ref:`configuration<prh_configuration>` :
 
-.. code-block:: json
+.. code-block:: bash
 
   --security.enableDmaapCertAuth=true
 
