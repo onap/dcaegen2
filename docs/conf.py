@@ -5,7 +5,11 @@ branch = 'latest'
 master_doc = 'index'
 
 linkcheck_ignore = [
-  r'http://localhost:\d+/'
+    r'http://localhost:\d+/',
+    r'http:/',
+    r'https://localhost:\d+/',
+    r'https:/',
+    r'jdbc:'
 ]
 
 extensions = [
