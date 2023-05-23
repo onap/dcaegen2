@@ -253,9 +253,9 @@ scenario.
     +---------------------+------------------------------------------------------------------+
     | Text                | "Invalid input value for %1 %2: %3"                              |
     +---------------------+------------------------------------------------------------------+
-    | Variables           | %1 – “attribute”                                                 |
-    |                     | %2 – "event.stndDefinedFields.schemaReference"                   |
-    |                     | %3 – "Referred external schema not present in schema repository" |
+    | Variables           | %1 - "attribute"                                                 |
+    |                     | %2 - "event.stndDefinedFields.schemaReference"                   |
+    |                     | %3 - "Referred external schema not present in schema repository" |
     +---------------------+------------------------------------------------------------------+
     | HTTP status code(s) | 400 Bad request                                                  |
     +---------------------+------------------------------------------------------------------+
@@ -301,8 +301,8 @@ scenario.
     +---------------------+-----------------------------------------------------+
     | Text                | Mandatory input %1 %2 is missing from request       |
     +---------------------+-----------------------------------------------------+
-    | Variables           | %1 – “attribute”                                    |
-    |                     | %2 – "event.commonEventHeader.stndDefinedNamespace" |
+    | Variables           | %1 - "attribute"                                    |
+    |                     | %2 - "event.commonEventHeader.stndDefinedNamespace" |
     +---------------------+-----------------------------------------------------+
     | HTTP status code(s) | 400 Bad Request                                     |
     +---------------------+-----------------------------------------------------+
@@ -316,8 +316,8 @@ scenario.
     +---------------------+-----------------------------------------------------+
     | Text                | Mandatory input %1 %2 is empty in request           |
     +---------------------+-----------------------------------------------------+
-    | Variables           | %1 – “attribute”                                    |
-    |                     | %2 – "event.commonEventHeader.stndDefinedNamespace" |
+    | Variables           | %1 - "attribute"                                    |
+    |                     | %2 - "event.commonEventHeader.stndDefinedNamespace" |
     +---------------------+-----------------------------------------------------+
     | HTTP status code(s) | 400 Bad Request                                     |
     +---------------------+-----------------------------------------------------+
@@ -331,12 +331,9 @@ scenario.
     +---------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
     | Text                | "Invalid input value for %1 %2: %3"                                                                                                       |
     +---------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-    | Variables           | %1 – “attribute”                                                                                                                          |
-    |                     | %2 – "event.commonEventHeader.stndDefinedNamespace"                                                                                       |
-    |                     | %3 – "stndDefinedNamespace received not present in VES Collector routing configuration. Unable to route event to appropriate DMaaP topic" |
+    | Variables           | %1 - "attribute"                                                                                                                          |
+    |                     | %2 - "event.commonEventHeader.stndDefinedNamespace"                                                                                       |
+    |                     | %3 - "stndDefinedNamespace received not present in VES Collector routing configuration. Unable to route event to appropriate DMaaP topic" |
     +---------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
     | HTTP status code(s) | 400 Bad request                                                                                                                           |
     +---------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-

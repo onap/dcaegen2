@@ -30,8 +30,8 @@ Below is a list of DCAE Services and the corresponding helm chart override locat
    "SliceAnalysis mS", "https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components/dcae-slice-analysis-ms"
    "SNMPTrap Collector", "https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components/dcae-snmptrap-collector"
    "SON-Handler mS", "https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components/dcae-son-handler"
-   "TCAgen2", "https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components/dcae-tcagen2"  
-   "VESCollector", "https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components/dcae-ves-collector" 
+   "TCAgen2", "https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components/dcae-tcagen2"
+   "VESCollector", "https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components/dcae-ves-collector"
    "VESMapper", "https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components/dcae-ves-mapper"
    "VES-OpenAPIManager", "https://git.onap.org/oom/tree/kubernetes/dcaegen2-services/components/dcae-ves-openapi-manager"
 
