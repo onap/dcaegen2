@@ -1,7 +1,7 @@
 project = "onap"
-release = "master"
-version = "master"
-branch = 'latest'
+release = "london"
+version = "london"
+branch = 'london'
 master_doc = 'index'
 
 linkcheck_ignore = [
