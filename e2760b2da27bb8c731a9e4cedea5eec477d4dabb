@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "6d0185e5_ff52409d",
+        "filename": "docs/sections/offeredapis.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-05-31T21:40:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad76a89e_45eb72fa",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 0
+      },
+      "revId": "e2760b2da27bb8c731a9e4cedea5eec477d4dabb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dccdcf7a_76c1b161",
         "filename": "docs/sections/services/ves-http/tls-authentication.rst",
         "patchSetId": 40
@@ -93,6 +117,30 @@
       "revId": "e2760b2da27bb8c731a9e4cedea5eec477d4dabb",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "107fad0f_8493148e",
+        "filename": "docs/sections/services/ves-http/tls-authentication.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-05-31T21:40:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4026a9d7_4d932c61",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 22
+      },
+      "revId": "e2760b2da27bb8c731a9e4cedea5eec477d4dabb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
