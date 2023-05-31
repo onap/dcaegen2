@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e438329a_b796316b",
+        "filename": "docs/sections/offeredapis.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-05-31T20:32:56Z",
+      "side": 1,
+      "message": "Should be removed",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 0
+      },
+      "revId": "e2760b2da27bb8c731a9e4cedea5eec477d4dabb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dccdcf7a_76c1b161",
+        "filename": "docs/sections/services/ves-http/tls-authentication.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-05-31T20:32:56Z",
+      "side": 1,
+      "message": "Is this label used in any other rst? If not, can be removed.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 22
+      },
+      "revId": "e2760b2da27bb8c731a9e4cedea5eec477d4dabb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
