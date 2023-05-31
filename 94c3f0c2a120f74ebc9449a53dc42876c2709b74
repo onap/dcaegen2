@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3dbfb413_e3943a62",
+        "filename": "docs/sections/installation.rst",
+        "patchSetId": 36
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2023-05-31T20:14:40Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1cbd16ed_3154cfa7",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 34
+      },
+      "revId": "94c3f0c2a120f74ebc9449a53dc42876c2709b74",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4283d893_6879b3ab",
         "filename": "docs/sections/release-notes.rst",
         "patchSetId": 36
@@ -36,6 +60,30 @@
       "writtenOn": "2023-05-31T17:58:30Z",
       "side": 1,
       "message": "Generated page has duplicate \"DCAE Release Notes\" reference. This block can be removed.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 13
+      },
+      "revId": "94c3f0c2a120f74ebc9449a53dc42876c2709b74",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c93d2c98_85675086",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 36
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2023-05-31T20:14:40Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4283d893_6879b3ab",
       "range": {
         "startLine": 15,
         "startChar": 0,
