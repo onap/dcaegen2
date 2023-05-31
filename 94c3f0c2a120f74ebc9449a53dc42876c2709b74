@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1cbd16ed_3154cfa7",
+        "filename": "docs/sections/installation.rst",
+        "patchSetId": 36
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-05-31T17:58:30Z",
+      "side": 1,
+      "message": "Move this as first link and change title (inside dcaeservice_helm_template.rst) to \"DCAE Service Template - Overview\"",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 34
+      },
+      "revId": "94c3f0c2a120f74ebc9449a53dc42876c2709b74",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4283d893_6879b3ab",
+        "filename": "docs/sections/release-notes.rst",
+        "patchSetId": 36
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-05-31T17:58:30Z",
+      "side": 1,
+      "message": "Generated page has duplicate \"DCAE Release Notes\" reference. This block can be removed.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 13
+      },
+      "revId": "94c3f0c2a120f74ebc9449a53dc42876c2709b74",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51525b17_247fae5d",
+        "filename": "docs/tox.ini",
+        "patchSetId": 36
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-05-31T17:58:30Z",
+      "side": 1,
+      "message": "Was -W removed intentionally? Wonder how doc-rules check passed.",
+      "range": {
+        "startLine": 27,
+        "startChar": 23,
+        "endLine": 27,
+        "endChar": 27
+      },
+      "revId": "94c3f0c2a120f74ebc9449a53dc42876c2709b74",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
