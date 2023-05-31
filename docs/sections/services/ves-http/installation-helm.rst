@@ -39,11 +39,14 @@ For small changes like this, it is also possible to inline the new value:
 
 After the upgrade, the new auth method value should be visible inside dev-dcae-ves-collector-application-config-configmap Config-Map.
 It can be verified by running:
+
     .. code-block:: bash
 
         kubectl -n onap get cm <config map name> -o yaml
 
+
 For VES Collector:
+
     .. code-block:: bash
 
         kubectl -n onap get cm dev-dcae-ves-collector-application-config-configmap -o yaml
