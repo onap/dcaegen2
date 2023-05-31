@@ -35,17 +35,21 @@ For small changes like this, it is also possible to inline the new value:
 
 After the upgrade, the security.sslDisable property should be changed and visible inside dev-dcae-ves-collector-application-config-configmap Config-Map.
 It can be verified by running:
+
     .. code-block:: bash
 
         kubectl -n onap get cm <config map name> -o yaml
 
+
 For HV-VES Collector:
+
     .. code-block:: bash
 
         kubectl -n onap get cm dev-dcae-hv-ves-collector-application-config-configmap -o yaml
 
 
 For apply new configuration by HV-VES Collector the application restart might be necessary. It could be done by HV-VES helm reinstallation:
+
     .. code-block:: bash
 
         helm -n onap upgrade dev-dcaegen2-services --reuse-values --set dcae-hv-ves-collector.enabled="false" oom/kubernetes/dcaegen2-services
@@ -60,6 +64,7 @@ In order to use the X.509 certificates obtained from the CMP v2 server (so calle
 :ref:`Enabling TLS with external x.509 certificates <external-tls-helm>`
 
 Example values for HV-VES Collector:
+
     .. code-block:: bash
 
         global:

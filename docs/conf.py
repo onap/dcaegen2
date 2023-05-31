@@ -1,8 +1,15 @@
 project = "onap"
-release = "master"
-version = "master"
-branch = 'latest'
+release = "london"
+version = "london"
+branch = 'london'
 master_doc = 'index'
+
+author = "Open Network Automation Platform"
+# yamllint disable-line rule:line-length
+copyright = "ONAP. Licensed under Creative Commons Attribution 4.0 International License"
+exclude_patterns = [
+    '.tox'
+]
 
 linkcheck_ignore = [
   r'http://localhost:\d+/'

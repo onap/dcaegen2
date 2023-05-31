@@ -5,12 +5,6 @@
 HV-VES (High Volume VES)
 ========================
 
-
-.. contents::
-    :depth: 4
-
-..
-
 Overview
 ========
 
@@ -26,7 +20,7 @@ TCP Endpoint
 HV-VES is exposed as NodePort service on Kubernetes cluster on port 30222/tcp.
 By default, as of the Frankfurt release, all TCP communications are secured using
 SSL/TLS. Plain, insecure TCP connections without socket data encryption can be enabled if needed.
- (see ref:`ssl_tls_authorization`).
+(see ref:`ssl_tls_authorization`).
  
 Without TLS, client authentication/authorization is not possible. 
 Connections are stream-based (as opposed to request-based) and long-running.
@@ -69,7 +63,13 @@ Domains that are currently supported by HV-VES:
 - perf3gpp - basic domain to Kafka topic mapping
 - stndDefined - specific routing, when event has this domain, then stndDefinedNamespace field value is mapped to Kafka topic
 
-For domains descriptions, see :ref:`domains_supported_by_hvves`
+For domains descriptions, see :doc:`Supported Domains <./supported-domains>`
+
+.. toctree::
+   :maxdepth: 0
+
+   ./supported-domains
+
 
 .. _hv_ves_behaviors:
 
@@ -96,4 +96,3 @@ Messages handling:
 .. note:: xNF (VNF/PNF) can split  messages bigger than 1 MiB and set `sequence` field in CommonEventHeader accordingly. It is advised to use smaller than 1 MiB messages for GPBs encoding/decoding efficiency.
 
 - Skipped messages (for any of the above reasons) might not leave any trace in HV-VES logs.
-

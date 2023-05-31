@@ -34,11 +34,13 @@ The healthcheck service is exposed as a Kubernetes ClusterIP Service named
   Run the below commands before running "curl dcae-ms-healthcheck"
 
   * To get the dcae-ms-healthcheck pod name, run following command: 
+
   .. code-block:: bash
 
     kubectl  get pods -n onap | grep dcae-ms-healthcheck
 
   * Then enter in to the shell of the container, run the following command (substituting the pod name retrieved by the previous command):
+
   .. code-block:: bash
 
     kubectl exec -it <dcae-ms-healthcheck pod> -n onap bash
