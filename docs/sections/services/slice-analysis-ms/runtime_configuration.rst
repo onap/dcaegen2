@@ -114,6 +114,7 @@ Steps to Use Runtime Configuration
 
        curl --silent -k -w %{http_code}  --user 'username:password' -X POST "https://policyApiIp:6969/policy/api/v1/policytypes/onap.policies.monitoring.docker.slicems.app/versions/{versionNumber}}/policies" -H "Accept: application/json" -H "Content-Type: application/json" -d @slicems_config_policy.json
 
+
     request body: slicems_config_policy.json
 
     .. code-block:: bash
@@ -142,25 +143,29 @@ Steps to Use Runtime Configuration
           }
         }
 
+
 3. Deploy the policy
+
     command
 
     .. code-block:: bash
 
-    curl -w %{http_code} --silent -k --user 'username:password' -X POST "https://policyPAPApi:6969/policy/pap/v1/pdps/policies" -H "Accept: application/json" -H "Content-Type: application/json" -d @push.json
+       curl -w %{http_code} --silent -k --user 'username:password' -X POST "https://policyPAPApi:6969/policy/pap/v1/pdps/policies" -H "Accept: application/json" -H "Content-Type: application/json" -d @push.json
+
 
     request body: push.json
 
     .. code-block:: bash
 
-    {
-      "policies": [
-        {
-          "policy-id": "onap.dcae.slicems.config",
-           "policy-version": 1
-        }
-      ]
-    }
+       {
+         "policies": [
+           {
+             "policy-id": "onap.dcae.slicems.config",
+              "policy-version": 1
+           }
+         ]
+       }
+
 
 4. Verify in SliceMS that configurations received
 
@@ -168,8 +173,8 @@ Steps to Use Runtime Configuration
 
 How to Develop Your Own Runtime Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 1. Create your own policy type
 2. Create a policy based on your policy type
 3. Deploy the policy
 4. Verify in SliceMS that configurations received. (Needs to write code in SliceMS to deal with your configurations in advance.)
-

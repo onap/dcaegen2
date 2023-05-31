@@ -7,6 +7,7 @@ Configuration
 VES expects to be able to fetch configuration directly from consul service in following JSON format:
 
 .. code-block:: json
+
     {
       "collector.dynamic.config.update.frequency": "5",
       "event.transform.flag": "0",
@@ -88,5 +89,6 @@ VES expects to be able to fetch configuration directly from consul service in fo
       "services_calls": [],
       "header.authlist": "sample1,$2a$10$0buh.2WeYwN868YMwnNNEuNEAMNYVU9.FSMJGyIKV3dGET/7oGOi6"
     }
+
 
 During ONAP OOM/Kubernetes deployment this configuration is created from VES Cloudify blueprint.
