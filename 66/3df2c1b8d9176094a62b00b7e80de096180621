@@ -1,0 +1,8 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Thomas Kulik <thomas.kulik@telekom.de>
+Code-Review+2: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-by: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-at: Thu, 01 Jun 2023 13:07:06 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/dcaegen2/+/134606
+Project: dcaegen2
+Branch: refs/heads/master
