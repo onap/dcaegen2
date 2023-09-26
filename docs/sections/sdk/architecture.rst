@@ -90,6 +90,8 @@ DmaaP-MR Client
     * Support for authenticated topics pub/sub
     * Standardized logging
 
+    From version 1.9.4, as DMaaP is announced as deprecated project, this library uses Kafka directly instead of DMaaP APIs.
+
 ConfigBindingService Client
 +++++++++++++++++++++++++++
     Thin client wrapper to fetch configuration based on exposed properties during deployment from the file on a configMap/volume or from CBS api if configMap/volume does not exist. Provides option to periodically query and capture new configuration changes if any should be returned to application.

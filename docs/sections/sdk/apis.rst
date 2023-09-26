@@ -121,8 +121,8 @@ Library to generate and match cryptography password using BCrypt algorithm
 
 Can be used like maven dependency to match generated password.
 
-dmaap-client - a DMaaP MR client
---------------------------------
+dmaap-client - a DMaaP MR client (upto version 1.9.3)
+-----------------------------------------------------
 After parsing CBS sink definitions you will get a Source or Sink value object. It can be then directly used to communicate with DMaaP Message Router REST API.
 
 Writing message publisher
@@ -339,6 +339,79 @@ Configure request for authorized topics
 
 AAF Credentials are optional for subscribe/publish requests.
 Username and password are used for basic authentication header during sending HTTP request to dmaap-mr.
+
+dmaap-client - a Kafka client (For version 1.9.4)
+----------------------------------------------------
+
+Version 1.9.4 has tried to keep method signatures same as previous version so as to reduce impact on services using previous version of this library. You can create publisher and subscriber like it is done using previous version of this library (as shown above).
+
+Alternatively, version 1.9.4 of the library provides another constructor for creating them which is suggested to be used by new services.
+
+********************************
+Writing Publisher and subscriber
+********************************
+**Writing message publisher**
+
+.. code-block:: java
+
+    final MessageRouterPublisher publisher = new MessageRouterPublisherImpl();
+    final MessageRouterSink sinkDefinition; //... Sink definition obtained by parsing CBS response
+    final MessageRouterPublishRequest request = ImmutableMessageRouterPublishRequest.builder()
+            .sinkDefinition(sinkDefinition)
+            .build();
+
+**Writing message subscriber**
+
+.. code-block:: java
+
+    final MessageRouterPublisher subscriber = new MessageRouterSubscriberImpl();
+    final MessageRouterSource sourceDefinition; //... Source definition obtained by parsing CBS response
+    final MessageRouterSubscribeRequest request = ImmutableMessageRouterSubscribeRequest.builder()
+            .sourceDefinition(sourceDefinition)
+            .build();
+
+********************************
+Closing Publisher and subscriber
+********************************
+From version 1.9.4, the service needs to explicitly close the publisher and subscriber to avoid resource leakage. New close methods are introduced to do the same.
+
+**Closing message publisher**
+
+.. code-block:: java
+
+    publisher.close();
+
+**Closing message subscriber**
+
+.. code-block:: java
+
+    subscriber.close();
+
+******************************
+Environment variables required
+******************************
+If the service uses sdk library version 1.9.4, the service needs to ensure that two new environment variables are declared. These two environment variables are mandatory and are required to establish connection with kafka. They are as follows:
+
+.. code-block:: yaml
+
+    - name: BOOTSTRAP_SERVERS
+      value: onap-strimzi-kafka-bootstrap:9092
+    - name: JAAS_CONFIG
+	  valueFrom:
+        secretKeyRef:
+          key: sasl.jaas.config
+          name: strimzi-kafka-admin
+
+The service can also provide optional standard Kafka properties as environment variables to override the default values used by the library. Such property names must be prefixed with string "kafka.". An example is given below:
+
+.. code-block:: yaml
+
+    # To override Kafka property "max.poll.interval.ms"
+    - name: kafka.max.poll.interval.ms
+      value: 35000
+    # To override Kafka property "heartbeat.interval.ms"
+    - name: kafka.heartbeat.interval.ms
+      value: 50000
 
 hvvesclient-producer - a reference Java implementation of High Volume VES Collector client
 ------------------------------------------------------------------------------------------
