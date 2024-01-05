@@ -1,7 +1,7 @@
 project = "onap"
-release = "master"
-version = "master"
-branch = 'latest'
+release = "montreal"
+version = "montreal"
+branch = 'montreal'
 master_doc = 'index'
 
 author = "Open Network Automation Platform"
