@@ -1,0 +1,10 @@
+Code-Review+2: Thomas Kulik <thomas.kulik@telekom.de>
+Verified+1: Thomas Kulik <thomas.kulik@telekom.de>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Verified+1: ONAP Required GHA <releng+onap.required.gha@linuxfoundation.org>
+Code-Review+2: Tony Hansen <tony@att.com>
+Submitted-by: Tony Hansen <tony@att.com>
+Submitted-at: Tue, 20 Aug 2024 13:39:51 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/dcaegen2/+/138725
+Project: dcaegen2
+Branch: refs/heads/master
