@@ -26,7 +26,7 @@ in plug and play manner.
 
    "PNF Registration Handler", ":download:`link <PRH.json>`", ":download:`link <PRH.yaml>`"
 
-.. swaggerv2doc:: PRH.json
+.. openapi:: PRH.json
 
 Introduction
 ============
