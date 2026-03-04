@@ -23,8 +23,7 @@ exclude_patterns = [
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.graphviz',
-    'sphinxcontrib.blockdiag',
-    'sphinxcontrib.seqdiag',
+    'sphinxcontrib.mermaid',
     'sphinxcontrib.openapi',
     'sphinxcontrib.plantuml'
 ]
